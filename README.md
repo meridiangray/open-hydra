@@ -1,13 +1,15 @@
 <div align="center">
 
-# open-hydra
+# openhydra
+
+[![Support me on Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/meridiangray)
 
 [![Version](https://img.shields.io/badge/version-0.1.0-blue)](src/hydra/__init__.py)
 [![Status: alpha](https://img.shields.io/badge/status-alpha-orange)](#)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-3776AB?logo=python&logoColor=white)](pyproject.toml)
-[![License: AGPL v3+](https://img.shields.io/badge/license-AGPL--3.0--or--later-blue)](LICENSE)
+[![License: AGPL-3.0-only](https://img.shields.io/badge/license-AGPL--3.0--only-blue)](LICENSE)
 [![FollowTheMoney](https://img.shields.io/badge/data-FollowTheMoney-6f42c1)](https://followthemoney.tech)
-[![MCP server](https://img.shields.io/badge/MCP-hydra--mcp-black)](../hydra-mcp)
+[![MCP server](https://img.shields.io/badge/MCP-hydra--mcp-black)](https://github.com/meridiangray/openhydra-mcp)
 
 </div>
 
@@ -102,10 +104,10 @@ Hydra reads standard FollowTheMoney as it comes. Its own dialect writes links as
 
 ## Install
 
-Python 3.11 or later, from this folder:
+Python 3.11 or later, from GitHub:
 
 ```sh
-uv tool install .      # or: pip install .
+uv tool install git+https://github.com/meridiangray/openhydra      # or: pip install git+https://github.com/meridiangray/openhydra
 ```
 
 ## Quick start
@@ -121,7 +123,7 @@ hydra-ctl review                         # answer the questions one by one
 
 ## With an AI assistant
 
-[hydra-mcp](../hydra-mcp) is an MCP server that lets an assistant like Claude read a document, write its facts as records and save them to your archive, with the document kept as the source every entity cites. Anything uncertain is left for you in `hydra-ctl review`.
+[hydra-mcp](https://github.com/meridiangray/openhydra-mcp) is an MCP server that lets an assistant like Claude read a document, write its facts as records and save them to your archive, with the document kept as the source every entity cites. Anything uncertain is left for you in `hydra-ctl review`.
 
 ## Documentation
 

@@ -13,6 +13,11 @@ authors = [{ name = "Meridian Gray", email = "gray.crested645@passfwd.com" }]
 requires-python = ">=3.11"
 dependencies = ["PyYAML>=6", "pydantic>=2,<3"]
 
+[project.urls]
+Homepage = "https://meridiangray.github.io/openhydra/"
+Source = "https://github.com/meridiangray/openhydra"
+Issues = "https://github.com/meridiangray/openhydra/issues"
+
 [project.scripts]
 hydra-ctl = "hydra.cli:run"
 

@@ -1,6 +1,6 @@
 site_name: Hydra
 site_description: Hydra translates evidence into data points. Guides and command reference for hydra-ctl.
-# Set these to your GitHub repo before publishing
+# GitHub Pages: https://github.com/meridiangray/openhydra
 site_url: https://meridiangray.github.io/openhydra/
 repo_url: https://github.com/meridiangray/openhydra/
 edit_uri: edit/main/guide/docs/

@@ -1,35 +1,35 @@
 # Installation
 
-Hydra needs Python 3.11 or later. Install `hydra-ctl` from the `hydra-git` folder with [uv](https://docs.astral.sh/uv/) or pip:
+Hydra needs Python 3.11 or later. Install `hydra-ctl` from GitHub with [uv](https://docs.astral.sh/uv/) or pip:
 
 === "uv"
 
     ```sh
-    uv tool install ./hydra-git
+    uv tool install git+https://github.com/meridiangray/openhydra
     ```
 
 === "pip"
 
     ```sh
-    pip install ./hydra-git
+    pip install git+https://github.com/meridiangray/openhydra
     ```
 
 Then run `hydra-ctl` on its own to see the command list.
 
 ## Updating
 
-After pulling changes, install again:
+To get the latest version:
 
 === "uv"
 
     ```sh
-    uv tool install --reinstall ./hydra-git
+    uv tool install --reinstall git+https://github.com/meridiangray/openhydra
     ```
 
 === "pip"
 
     ```sh
-    pip install --force-reinstall --no-deps ./hydra-git
+    pip install --upgrade --force-reinstall --no-deps git+https://github.com/meridiangray/openhydra
     ```
 
 ## Removing

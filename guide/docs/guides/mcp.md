@@ -114,19 +114,19 @@ A path that is named but isn't an archive is an error, never a quiet fallback.
 
 ### 1. Install
 
-`hydra-mcp` is a Python package with a `hydra-mcp` command, like `hydra-ctl`. It depends on `open-hydra` (the `hydra-git` folder), which isn't on PyPI, so install both from their folders in one go:
+`hydra-mcp` is a Python package with a `hydra-mcp` command, like `hydra-ctl`. It depends on `open-hydra` (the `openhydra` repository). Neither is on PyPI, so install both from GitHub in one go:
 
 ```sh
-uv tool install ./hydra-mcp --with ./hydra-git
+uv tool install git+https://github.com/meridiangray/openhydra-mcp --with git+https://github.com/meridiangray/openhydra
 ```
 
 Or with pip, into any environment:
 
 ```sh
-pip install ./hydra-git ./hydra-mcp
+pip install git+https://github.com/meridiangray/openhydra git+https://github.com/meridiangray/openhydra-mcp
 ```
 
-Run these from the folder that holds `hydra-git` and `hydra-mcp`. Afterwards `hydra-mcp` is on your PATH. It speaks MCP over stdio, so running it by hand just waits for a client.
+Afterwards `hydra-mcp` is on your PATH. It speaks MCP over stdio, so running it by hand just waits for a client.
 
 ### 2. Add it to your client
 
@@ -177,4 +177,4 @@ Windows paths the assistant passes (`C:\cases\port`) are read as their WSL paths
 
 ### Updating
 
-After pulling changes, reinstall (`uv tool install --reinstall ./hydra-mcp --with ./hydra-git`, or the same `pip install` again) and restart the client.
+To update, run the install again with `uv tool install --reinstall` (or `pip install --force-reinstall`) and restart the client.
