@@ -2,6 +2,20 @@
 
 This walks through one archive from start to finish. You need [`hydra-ctl` installed](installation.md) and some FollowTheMoney JSON records.
 
+## No data yet? Try the demo
+
+Every example in this guide uses the Breaking Bad demo archive. To build it yourself:
+
+```sh
+git clone --depth 1 https://github.com/meridiangray/open-hydra
+hydra-ctl init demo --name "Breaking Bad"
+cp open-hydra/examples/demo/collections/*.json demo/collections/
+cp open-hydra/examples/demo/.hydra/rules/positions.yaml demo/.hydra/rules/
+cd demo
+hydra-ctl build
+hydra-ctl tree gus
+```
+
 ## 1. Create an archive
 
 ```sh

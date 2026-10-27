@@ -149,11 +149,11 @@ Repeat steps 3 to 7 as the data grows.
 
 ## Recipes
 
-Each of these has been built and checked with Hydra, and ships as a file in `src/hydra/recipes/` (`company.yaml`, `agency.yaml`, `criminal-organization.yaml`). None is on by default: an archive opts in by copying one into its `positions.yaml`, then adds its data's wordings to the titles.
+Each of these has been built and checked with Hydra. None is on by default. To use one, paste its block below at the end of `.hydra/rules/positions.yaml` (the shipped file holds only comments), add your data's wordings to the titles, then run `hydra-ctl check` and `hydra-ctl build`.
 
 ### A criminal organization
 
-With the generic positions switched off:
+Its titles overlap the generic positions, so switch those off first: `hydra-ctl defaults off generic`
 
 ```yaml
 Boss:        {titles: [boss, leader, don, kingpin]}

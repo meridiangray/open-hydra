@@ -28,7 +28,7 @@ Written by `hydra-ctl review` and `hydra-ctl answer`: one line per decision (thi
 
 ## .hydra/schema/
 
-The FollowTheMoney schema the archive uses, and Hydra's settings for it. These are background configuration: you can change them, but probably shouldn't. `hydra-ctl defaults` shows whether they are as shipped and restores them.
+The FollowTheMoney schema the archive uses, and Hydra's settings for it. These are background configuration: you can change them, but probably shouldn't. `hydra-ctl defaults` checks and restores `params/`, `direction.yaml` and the `extensions/` files. It doesn't touch `ftm/`; to restore that, see [open-hydra-schema](https://github.com/meridiangray/open-hydra-schema#using-it).
 
 | Path | Is |
 |---|---|
@@ -52,5 +52,3 @@ It is a helper for some annoying logic: leave it alone. It is also where `edge_p
 ### artifact.yaml
 
 `extensions/artifact.yaml` (with `collate.yaml`) holds extension types: Hydra's additions to FtM, such as the `sources` field on every entity and notes on relationships.
-
-It is linked to another tool, Scribble, which provides a UI for automated investigative data tasks and exports collection files into a Hydra archive.

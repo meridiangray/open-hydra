@@ -17,5 +17,5 @@
 #   Vice president:  {below: [Chief executive], titles: [vice president, vp, v.p., senior vice president]}
 #   Staff:           {below: [Vice president], titles: [staff, analyst, engineer, manager]}
 #   Board member:    {outside: true, titles: [director, board member, chairman]}
-# Ready-made ladders (company, agency, criminal organization) ship as recipes in
-# hydra's recipes/ folder: copy one's lines here to opt in.
+# Ready-made ladders (company, agency, criminal organization) are in the guide:
+# https://meridiangray.github.io/open-hydra/guides/hierarchy/#recipes

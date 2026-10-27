@@ -27,7 +27,7 @@ You then answer whatever it left open with `hydra-ctl todo` and `hydra-ctl revie
 | `save` | `records`, `source`, `collection`, `replace`, `archive` | Checks and saves records as a new collection with their evidence, then rebuilds |
 | `get_records` | `collection`, `name`, `offset`, `limit`, `archive` | Reads a saved collection back with each property's type, what each link resolved to after the build, and the save checks repeated. With no `collection`, lists them |
 | `link_image` | `image`, `kind`, `schema`, `position`, `titled`, `name`, `confirm`, `archive` | Previews, then on `confirm=true` adds, a [hints](hints.md) rule giving matching entities a `portrait`, an icon (`thumb`) or a `logo` |
-| `create_archive` | `path`, `name`, `confirm` | Previews, then on `confirm=true` creates, an empty archive in a new or empty folder (as `hydra-ctl init`) |
+| `create_archive` | `path`, `name`, `prefix`, `confirm` | Previews, then on `confirm=true` creates, an empty archive in a new or empty folder (as `hydra-ctl init`). `prefix` defaults to one made from the name; `none` gives each collection its own |
 
 `path` arguments must be full paths. A scanned PDF with no text layer is an error, never an empty source.
 
@@ -156,6 +156,20 @@ Add `--scope user` to make it available in every project, or `--scope project` t
 Restart the client, and the tools appear under `hydra`.
 
 If the client can't find the command, give its full path instead. `which hydra-mcp` (macOS, Linux) or `where hydra-mcp` (Windows) prints it.
+
+**Windows:** give the full path and double every backslash:
+
+```json
+"command": "C:\\Users\\you\\.local\\bin\\hydra-mcp.exe",
+"env": {"HYDRA_ARCHIVE": "C:\\cases\\case"}
+```
+
+**Installed in WSL, client on Windows:**
+
+```json
+"command": "wsl",
+"args": ["-d", "Debian", "--", "bash", "-lc", "HYDRA_ARCHIVE=/mnt/c/cases/case hydra-mcp"]
+```
 
 ### Updating
 

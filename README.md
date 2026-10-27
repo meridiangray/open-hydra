@@ -107,6 +107,18 @@ Python 3.11 or later, from GitHub:
 uv tool install git+https://github.com/meridiangray/open-hydra      # or: pip install git+https://github.com/meridiangray/open-hydra
 ```
 
+## Try it on the demo
+
+```sh
+git clone --depth 1 https://github.com/meridiangray/open-hydra
+hydra-ctl init demo --name "Breaking Bad"
+cp open-hydra/examples/demo/collections/*.json demo/collections/
+cp open-hydra/examples/demo/.hydra/rules/positions.yaml demo/.hydra/rules/
+cd demo
+hydra-ctl build
+hydra-ctl tree gus
+```
+
 ## Quick start
 
 ```sh

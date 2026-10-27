@@ -11,7 +11,7 @@ An archive is a folder. `hydra-ctl init <folder>` creates one there from the bui
 case/
 ├── hydra.yaml                      the archive's name, id prefix and FtM schema hash
 ├── collections/                    your records
-├── session/                        incoming data (not built yet)
+├── session/                        reserved; not used yet
 └── .hydra/                         managed by hydra
     ├── sources/entries/            the sources your records cite
     ├── rules/                      positions and media rules
@@ -26,17 +26,15 @@ case/
 
 ## session/
 
-`session/` is an API surface for agents to deliver raw `.json` data for rapid ingestion. It is a **highly volatile** feature, and nothing in it is built until it is moved into `collections/`.
+`session/` is reserved for a future feature. Nothing reads it yet: put records in `collections/`.
 
 ## resources/
 
-`.hydra/resources/` contains the icon and image media that hints point at. It can also act as a blob store for the source files that entities and relationships are derived from.
-
-This is **highly volatile**, and will soon change to use a portable S3 container instead of git LFS.
+`.hydra/resources/` holds the images that `hints.yaml` points at.
 
 ## Defaults
 
-Hydra ships generic defaults for the rule and schema files. Only change these if you want to set your own custom hierarchy; [`defaults`](../commands/settings.md#defaults) shows which ones you have changed and restores them.
+Hydra ships generic defaults for the rule and schema files. Only change these if you want to set your own custom hierarchy; [`defaults`](../commands/settings.md#defaults) shows which ones you have changed and restores them. It doesn't cover the FollowTheMoney schema in `.hydra/schema/ftm/`; see [Config files](../reference/config-files.md#hydraschema).
 
 ## The .hydra file
 

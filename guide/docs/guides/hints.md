@@ -25,6 +25,8 @@ hints:
 
 Image paths are inside `.hydra/resources/`. A path that leaves it is refused, and `check` reports it.
 
+The images above are examples. Only `icons/crown.svg`, `icons/briefcase.svg`, `icons/public-body.svg` and `icons/star-2.svg` ship; add your own with `hydra-ctl hints set`.
+
 ## Matching
 
 A rule can match a schema, a position, or any field. `name:` means the name only; write `name|alias:` (or `name|weakAlias:`) to reach aliases too, since an alias can be shared by someone else.

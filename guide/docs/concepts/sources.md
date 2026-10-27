@@ -61,5 +61,3 @@ sources
 A source in FtM is cited by a whole record, not by one of its fields, so Hydra can say which record cites a source but not which value the source supports.
 
 To source values one by one, write one record per source with only what that source says. The build merges them, and `claims` then traces each value to its own record and source.
-
-Later, each source entry could point to an archived copy of its page (ArchiveBox, for example), so a source survives when the page changes.
