@@ -1,0 +1,104 @@
+[
+ {
+  "id": "p-elodie",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Elodie Marchand"
+   ],
+   "birthDate": [
+    "1975-03-02"
+   ],
+   "notes": [
+    "named in a 2019 shipping invoice"
+   ]
+  }
+ },
+ {
+  "id": "p-weiss",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Juergen Weiss"
+   ],
+   "birthDate": [
+    "1961-11-30"
+   ],
+   "notes": [
+    "signatory, Hamburg"
+   ]
+  }
+ },
+ {
+  "id": "p-weiss-jr",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Jürgen Weiß"
+   ],
+   "birthDate": [
+    "1990-01-01"
+   ],
+   "notes": [
+    "a different man of the same name, a Leipzig student"
+   ]
+  }
+ },
+ {
+  "id": "p-voronov",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Aleksei Voronov"
+   ],
+   "birthDate": [
+    "1970-05-14"
+   ]
+  }
+ },
+ {
+  "id": "c-holding",
+  "schema": "Company",
+  "properties": {
+   "name": [
+    "NORDWIND HOLDING AG"
+   ],
+   "registrationNumber": [
+    "CHE101202303"
+   ]
+  }
+ },
+ {
+  "id": "c-nordwind-ltd",
+  "schema": "Company",
+  "properties": {
+   "name": [
+    "Nordwind Shipping Ltd"
+   ],
+   "jurisdiction": [
+    "gb"
+   ],
+   "notes": [
+    "unrelated UK company sharing a word"
+   ]
+  }
+ },
+ {
+  "id": "o-reefer",
+  "schema": "Ownership",
+  "properties": {
+   "owner": [
+    "Nordwind Holding AG"
+   ],
+   "asset": [
+    "Baltic Reefer Shipping OÜ"
+   ],
+   "percentage": [
+    "100"
+   ],
+   "startDate": [
+    "2012"
+   ]
+  }
+ }
+]

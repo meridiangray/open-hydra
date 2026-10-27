@@ -1,0 +1,693 @@
+[
+ {
+  "id": "doc-bb-casefile",
+  "schema": "Pages",
+  "properties": {
+   "name": [
+    "HEISENBERG INVESTIGATION — DEA/ABQ CASE FILE (2008-2010)"
+   ],
+   "notes": [
+    "compiled DEA case file on the 'Heisenberg' blue methamphetamine investigation"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-79256cf9",
+   "timestamp": "2026-10-14T00:10:22+00:00",
+   "ingest": "da625a9639a3"
+  }
+ },
+ {
+  "id": "pb-dea",
+  "schema": "PublicBody",
+  "properties": {
+   "name": [
+    "United States Drug Enforcement Administration"
+   ],
+   "weakAlias": [
+    "DEA"
+   ],
+   "jurisdiction": [
+    "us"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-79256cf9",
+   "timestamp": "2026-10-14T00:10:22+00:00",
+   "ingest": "da625a9639a3"
+  }
+ },
+ {
+  "id": "pb-dea-abq",
+  "schema": "PublicBody",
+  "properties": {
+   "name": [
+    "DEA Albuquerque Field Office"
+   ],
+   "jurisdiction": [
+    "us"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-79256cf9",
+   "timestamp": "2026-10-14T00:10:22+00:00",
+   "ingest": "da625a9639a3"
+  }
+ },
+ {
+  "id": "pb-faa",
+  "schema": "PublicBody",
+  "properties": {
+   "name": [
+    "Federal Aviation Administration"
+   ],
+   "weakAlias": [
+    "FAA"
+   ],
+   "jurisdiction": [
+    "us"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-79256cf9",
+   "timestamp": "2026-10-14T00:10:22+00:00",
+   "ingest": "da625a9639a3"
+  }
+ },
+ {
+  "id": "p-hank",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Henry R. Schrader"
+   ],
+   "weakAlias": [
+    "Hank",
+    "Hank Schrader"
+   ],
+   "deathDate": [
+    "2010"
+   ],
+   "position": [
+    "assistant special agent in charge"
+   ],
+   "sources": [
+    "doc-bb-casefile~p1"
+   ],
+   "notes": [
+    "DEA agent; ran the Heisenberg investigation; killed by Jack Welker at To'hajiilee"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-79256cf9",
+   "timestamp": "2026-10-14T00:10:22+00:00",
+   "ingest": "da625a9639a3"
+  }
+ },
+ {
+  "id": "p-gomez",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Steven Gomez"
+   ],
+   "weakAlias": [
+    "Gomie"
+   ],
+   "deathDate": [
+    "2010"
+   ],
+   "position": [
+    "special agent"
+   ],
+   "notes": [
+    "Hank's partner; killed at To'hajiilee"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-79256cf9",
+   "timestamp": "2026-10-14T00:10:22+00:00",
+   "ingest": "da625a9639a3"
+  }
+ },
+ {
+  "id": "p-merkert",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "George Merkert"
+   ],
+   "position": [
+    "assistant special agent in charge"
+   ],
+   "notes": [
+    "Albuquerque ASAC; left after it emerged he had befriended Fring"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-79256cf9",
+   "timestamp": "2026-10-14T00:10:22+00:00",
+   "ingest": "da625a9639a3"
+  }
+ },
+ {
+  "id": "p-margolis",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Donald Margolis"
+   ],
+   "notes": [
+    "air traffic controller; Jane's father; returned to work too soon — Wayfarer 515"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-79256cf9",
+   "timestamp": "2026-10-14T00:10:22+00:00",
+   "ingest": "da625a9639a3"
+  }
+ },
+ {
+  "id": "p-jane",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Jane Margolis"
+   ],
+   "deathDate": [
+    "2009"
+   ],
+   "notes": [
+    "Jesse's girlfriend; heroin overdose while he slept beside her"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-79256cf9",
+   "timestamp": "2026-10-14T00:10:22+00:00",
+   "ingest": "da625a9639a3"
+  }
+ },
+ {
+  "id": "p-marie",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Marie Schrader"
+   ],
+   "notes": [
+    "Hank's wife; Skyler's sister"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-79256cf9",
+   "timestamp": "2026-10-14T00:10:22+00:00",
+   "ingest": "da625a9639a3"
+  }
+ },
+ {
+  "id": "p-waltjr",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Walter White Jr."
+   ],
+   "weakAlias": [
+    "Flynn"
+   ],
+   "notes": [
+    "Walt and Skyler's son"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-79256cf9",
+   "timestamp": "2026-10-14T00:10:22+00:00",
+   "ingest": "da625a9639a3"
+  }
+ },
+ {
+  "id": "p-holly",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Holly White"
+   ],
+   "notes": [
+    "Walt and Skyler's daughter"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-79256cf9",
+   "timestamp": "2026-10-14T00:10:22+00:00",
+   "ingest": "da625a9639a3"
+  }
+ },
+ {
+  "id": "p-heisenberg-dea",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Heisenberg"
+   ],
+   "weakAlias": [
+    "the Heisenberg"
+   ],
+   "sources": [
+    "doc-bb-casefile~p1"
+   ],
+   "notes": [
+    "DEA sketch identity — proposed merge into Walter White via the Similar record"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-79256cf9",
+   "timestamp": "2026-10-14T00:10:22+00:00",
+   "ingest": "da625a9639a3"
+  }
+ },
+ {
+  "id": "rel-dea1",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "DEA Albuquerque Field Office"
+   ],
+   "organization": [
+    "United States Drug Enforcement Administration"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-79256cf9",
+   "timestamp": "2026-10-14T00:10:22+00:00",
+   "ingest": "da625a9639a3"
+  }
+ },
+ {
+  "id": "rel-dea2",
+  "schema": "Employment",
+  "properties": {
+   "employee": [
+    "George Merkert"
+   ],
+   "employer": [
+    "DEA Albuquerque Field Office"
+   ],
+   "role": [
+    "assistant special agent in charge"
+   ],
+   "endDate": [
+    "2010"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-79256cf9",
+   "timestamp": "2026-10-14T00:10:22+00:00",
+   "ingest": "da625a9639a3"
+  }
+ },
+ {
+  "id": "rel-dea3",
+  "schema": "Employment",
+  "properties": {
+   "employee": [
+    "Henry R. Schrader"
+   ],
+   "employer": [
+    "DEA Albuquerque Field Office"
+   ],
+   "role": [
+    "assistant special agent in charge"
+   ],
+   "endDate": [
+    "2010"
+   ],
+   "notes": [
+    "special agent, later ASAC"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-79256cf9",
+   "timestamp": "2026-10-14T00:10:22+00:00",
+   "ingest": "da625a9639a3"
+  }
+ },
+ {
+  "id": "rel-dea4",
+  "schema": "Employment",
+  "properties": {
+   "employee": [
+    "Steven Gomez"
+   ],
+   "employer": [
+    "DEA Albuquerque Field Office"
+   ],
+   "role": [
+    "special agent"
+   ],
+   "endDate": [
+    "2010"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-79256cf9",
+   "timestamp": "2026-10-14T00:10:22+00:00",
+   "ingest": "da625a9639a3"
+  }
+ },
+ {
+  "id": "rel-dea5",
+  "schema": "Employment",
+  "properties": {
+   "employee": [
+    "Donald Margolis"
+   ],
+   "employer": [
+    "Federal Aviation Administration"
+   ],
+   "role": [
+    "air traffic controller"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-79256cf9",
+   "timestamp": "2026-10-14T00:10:22+00:00",
+   "ingest": "da625a9639a3"
+  }
+ },
+ {
+  "id": "rel-dea6",
+  "schema": "Associate",
+  "properties": {
+   "person": [
+    "Domingo Gallardo Molina"
+   ],
+   "associate": [
+    "Henry R. Schrader"
+   ],
+   "relationship": [
+    "confidential informant"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-79256cf9",
+   "timestamp": "2026-10-14T00:10:22+00:00",
+   "ingest": "da625a9639a3"
+  }
+ },
+ {
+  "id": "rel-dea7",
+  "schema": "Associate",
+  "properties": {
+   "person": [
+    "Jane Margolis"
+   ],
+   "associate": [
+    "Jesse Bruce Pinkman"
+   ],
+   "relationship": [
+    "girlfriend"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-79256cf9",
+   "timestamp": "2026-10-14T00:10:22+00:00",
+   "ingest": "da625a9639a3"
+  }
+ },
+ {
+  "id": "fam-w1",
+  "schema": "Family",
+  "properties": {
+   "person": [
+    "Skyler White"
+   ],
+   "relative": [
+    "Walter Hartwell White"
+   ],
+   "relationship": [
+    "husband"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-79256cf9",
+   "timestamp": "2026-10-14T00:10:22+00:00",
+   "ingest": "da625a9639a3"
+  }
+ },
+ {
+  "id": "fam-w2",
+  "schema": "Family",
+  "properties": {
+   "person": [
+    "Walter White Jr."
+   ],
+   "relative": [
+    "Walter Hartwell White"
+   ],
+   "relationship": [
+    "father"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-79256cf9",
+   "timestamp": "2026-10-14T00:10:22+00:00",
+   "ingest": "da625a9639a3"
+  }
+ },
+ {
+  "id": "fam-w3",
+  "schema": "Family",
+  "properties": {
+   "person": [
+    "Holly White"
+   ],
+   "relative": [
+    "Walter Hartwell White"
+   ],
+   "relationship": [
+    "father"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-79256cf9",
+   "timestamp": "2026-10-14T00:10:22+00:00",
+   "ingest": "da625a9639a3"
+  }
+ },
+ {
+  "id": "fam-w4",
+  "schema": "Family",
+  "properties": {
+   "person": [
+    "Walter Hartwell White"
+   ],
+   "relative": [
+    "Henry R. Schrader"
+   ],
+   "relationship": [
+    "brother-in-law"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-79256cf9",
+   "timestamp": "2026-10-14T00:10:22+00:00",
+   "ingest": "da625a9639a3"
+  }
+ },
+ {
+  "id": "fam-w5",
+  "schema": "Family",
+  "properties": {
+   "person": [
+    "Marie Schrader"
+   ],
+   "relative": [
+    "Skyler White"
+   ],
+   "relationship": [
+    "sister"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-79256cf9",
+   "timestamp": "2026-10-14T00:10:22+00:00",
+   "ingest": "da625a9639a3"
+  }
+ },
+ {
+  "id": "fam-w6",
+  "schema": "Family",
+  "properties": {
+   "person": [
+    "Henry R. Schrader"
+   ],
+   "relative": [
+    "Marie Schrader"
+   ],
+   "relationship": [
+    "wife"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-79256cf9",
+   "timestamp": "2026-10-14T00:10:22+00:00",
+   "ingest": "da625a9639a3"
+  }
+ },
+ {
+  "id": "fam-w7",
+  "schema": "Family",
+  "properties": {
+   "person": [
+    "Jane Margolis"
+   ],
+   "relative": [
+    "Donald Margolis"
+   ],
+   "relationship": [
+    "father"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-79256cf9",
+   "timestamp": "2026-10-14T00:10:22+00:00",
+   "ingest": "da625a9639a3"
+  }
+ },
+ {
+  "id": "sim-heisenberg",
+  "schema": "Similar",
+  "properties": {
+   "candidate": [
+    "Heisenberg"
+   ],
+   "match": [
+    "Walter Hartwell White"
+   ],
+   "notes": [
+    "analyst assertion: the 'Heisenberg' sketch IS Walter White — lands proposed in the ledger for a verdict"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-79256cf9",
+   "timestamp": "2026-10-14T00:10:22+00:00",
+   "ingest": "da625a9639a3"
+  }
+ },
+ {
+  "id": "san-heisenberg",
+  "schema": "Sanction",
+  "properties": {
+   "entity": [
+    "Heisenberg"
+   ],
+   "authority": [
+    "DEA"
+   ],
+   "program": [
+    "Heisenberg investigation"
+   ],
+   "startDate": [
+    "2009"
+   ],
+   "reason": [
+    "blue methamphetamine manufacture; fugitive suspect"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-79256cf9",
+   "timestamp": "2026-10-14T00:10:22+00:00",
+   "ingest": "da625a9639a3"
+  }
+ },
+ {
+  "id": "san-fring",
+  "schema": "Sanction",
+  "properties": {
+   "entity": [
+    "Gustavo Fring"
+   ],
+   "authority": [
+    "DEA"
+   ],
+   "program": [
+    "Fring investigation"
+   ],
+   "startDate": [
+    "2010"
+   ],
+   "reason": [
+    "suspected cartel distributor; died before indictment"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-79256cf9",
+   "timestamp": "2026-10-14T00:10:22+00:00",
+   "ingest": "da625a9639a3"
+  }
+ },
+ {
+  "id": "prv-dea1",
+  "schema": "Documentation",
+  "properties": {
+   "document": [
+    "doc-bb-casefile~p1"
+   ],
+   "entity": [
+    "Heisenberg"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-79256cf9",
+   "timestamp": "2026-10-14T00:10:22+00:00",
+   "ingest": "da625a9639a3"
+  }
+ },
+ {
+  "id": "prv-dea2",
+  "schema": "Documentation",
+  "properties": {
+   "document": [
+    "doc-bb-casefile~p1"
+   ],
+   "entity": [
+    "Henry R. Schrader"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-79256cf9",
+   "timestamp": "2026-10-14T00:10:22+00:00",
+   "ingest": "da625a9639a3"
+  }
+ }
+]

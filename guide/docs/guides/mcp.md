@@ -1,6 +1,6 @@
 # hydra-mcp
 
-`hydra-mcp` is an [MCP](https://modelcontextprotocol.io) server that lets an AI assistant turn a file into records for a Hydra archive. The assistant reads the file, writes the facts as Hydra's FollowTheMoney JSON, and the server checks them and saves them with the file as the evidence every entity cites.
+`hydra-mcp` ([source on GitHub](https://github.com/meridiangray/open-hydra-mcp)) is an [MCP](https://modelcontextprotocol.io) server that lets an AI assistant turn a file into records for a Hydra archive. The assistant reads the file, writes the facts as Hydra's FollowTheMoney JSON, and the server checks them and saves them with the file as the evidence every entity cites.
 
 It doesn't guess. Anything uncertain is left for a person: a name that might be someone already in the archive becomes a merge question in `hydra-ctl review`, and a role the hierarchy doesn't rank is reported, not rewritten.
 
@@ -106,7 +106,7 @@ To undo a save, delete the files it lists in `undo`, then run `hydra-ctl build`.
 
 The archive is, in order: the tool's `archive` argument, the `HYDRA_ARCHIVE` environment variable, an archive activated with `hydra-ctl activate` in or above the folder the server starts in, or that folder if it is an archive.
 
-With no archive, nothing is written. `labelling_guidelines`, `read_file`, `describe_schema` and `check_records` still work on Hydra's defaults, `find_entities` returns nothing, and `save`, `get_records` and `link_image` refuse and tells the assistant to ask you for a folder or offer `create_archive`.
+With no archive, nothing is written. `labelling_guidelines`, `read_file`, `describe_schema` and `check_records` still work on Hydra's defaults, `find_entities` returns nothing, and `save`, `get_records` and `link_image` refuse and tell the assistant to ask you for a folder or offer `create_archive`.
 
 A path that is named but isn't an archive is an error, never a quiet fallback.
 
@@ -114,16 +114,16 @@ A path that is named but isn't an archive is an error, never a quiet fallback.
 
 ### 1. Install
 
-`hydra-mcp` is a Python package with a `hydra-mcp` command, like `hydra-ctl`. It depends on `open-hydra` (the `openhydra` repository). Neither is on PyPI, so install both from GitHub in one go:
+`hydra-mcp` is a Python package with a `hydra-mcp` command, like `hydra-ctl`. It depends on `open-hydra`, the main [open-hydra](https://github.com/meridiangray/open-hydra) package. Neither is on PyPI, so install both from GitHub in one go:
 
 ```sh
-uv tool install git+https://github.com/meridiangray/openhydra-mcp --with git+https://github.com/meridiangray/openhydra
+uv tool install git+https://github.com/meridiangray/open-hydra-mcp --with git+https://github.com/meridiangray/open-hydra
 ```
 
 Or with pip, into any environment:
 
 ```sh
-pip install git+https://github.com/meridiangray/openhydra git+https://github.com/meridiangray/openhydra-mcp
+pip install git+https://github.com/meridiangray/open-hydra git+https://github.com/meridiangray/open-hydra-mcp
 ```
 
 Afterwards `hydra-mcp` is on your PATH. It speaks MCP over stdio, so running it by hand just waits for a client.
@@ -156,24 +156,6 @@ Add `--scope user` to make it available in every project, or `--scope project` t
 Restart the client, and the tools appear under `hydra`.
 
 If the client can't find the command, give its full path instead. `which hydra-mcp` (macOS, Linux) or `where hydra-mcp` (Windows) prints it.
-
-### Windows with Hydra in WSL
-
-When the client runs on Windows and Hydra is installed inside WSL, start the server through `wsl.exe`. `wsl.exe` doesn't pass Windows environment variables on, so set the archive with `env`:
-
-```json
-{
-  "mcpServers": {
-    "hydra": {
-      "command": "wsl.exe",
-      "args": ["-d", "Debian", "--", "env", "HYDRA_ARCHIVE=/mnt/c/path/to/case",
-               "/home/<user>/.local/bin/hydra-mcp"]
-    }
-  }
-}
-```
-
-Windows paths the assistant passes (`C:\cases\port`) are read as their WSL paths (`/mnt/c/cases/port`).
 
 ### Updating
 

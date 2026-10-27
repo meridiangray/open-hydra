@@ -1,7 +1,5 @@
 # Hydra Contributor Agreement
 
-**DRAFT: not yet reviewed by a lawyer.**
-
 By submitting a contribution (code, documentation, data files, comments or anything else) to the Hydra project ("the Project"), you ("Contributor") agree to the following with Meridian Gray.
 
 1. **Assignment.** Contributor assigns to Meridian Gray all right, title and interest worldwide in the copyright and any related rights in the contribution, effective when it is submitted. Meridian Gray may use, change, license, sublicense, relicense or sell it under any terms, open or closed, now or later.
@@ -21,8 +19,6 @@ By submitting a contribution (code, documentation, data files, comments or anyth
 8. **No warranty.** Contributions are provided as is, without warranty.
 
 9. **Attribution.** Meridian Gray will keep a list of contributors in the Project but is not required to list them in every file.
-
-10. **Governing law.** <TO BE SET WITH A LAWYER: governing law and venue.>
 
 ## How to sign
 

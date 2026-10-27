@@ -1,4 +1,4 @@
-# Hydra
+# open-hydra
 
 Hydra translates evidence into data points with a simple, modular framework. It is a minimal framework that provides simple interfaces for investigative tasks such as conflicting data points, source provenance, and visualization-compatible data.
 

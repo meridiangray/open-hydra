@@ -1,0 +1,169 @@
+{
+ "format": 2,
+ "generated": "2026-10-14T01:08:18+00:00",
+ "summary": {
+  "collections": 6,
+  "records": 244,
+  "claims": 914,
+  "entities": 244,
+  "schemas": {
+   "Person": 57,
+   "Membership": 45,
+   "Family": 16,
+   "ProjectParticipant": 15,
+   "Ownership": 12,
+   "Documentation": 11,
+   "Employment": 10,
+   "RealEstate": 10,
+   "Event": 10,
+   "Organization": 8,
+   "Page": 6,
+   "Associate": 6,
+   "Company": 6,
+   "Address": 5,
+   "Project": 5,
+   "Directorship": 4,
+   "Representation": 4,
+   "PublicBody": 3,
+   "Sanction": 2,
+   "Vehicle": 2,
+   "Trip": 2,
+   "Pages": 1,
+   "Similar": 1,
+   "Position": 1,
+   "Occupancy": 1,
+   "Succession": 1
+  }
+ },
+ "collections": {
+  "cartel": {
+   "file": "cartel.json",
+   "format": "json",
+   "records": 38,
+   "claims": 138,
+   "entities": 38,
+   "schemas": {
+    "Person": 12,
+    "Membership": 10,
+    "Family": 8,
+    "Documentation": 3,
+    "Page": 2,
+    "Organization": 2,
+    "Associate": 1
+   },
+   "sha256": "1b772f85cf1117cbfbb86c604a427f5ef20f82693bce97530adbe12c82b4dfac",
+   "size_bytes": 14599
+  },
+  "dea": {
+   "file": "dea.json",
+   "format": "json",
+   "records": 32,
+   "claims": 103,
+   "entities": 32,
+   "schemas": {
+    "Person": 9,
+    "Family": 7,
+    "Employment": 4,
+    "PublicBody": 3,
+    "Associate": 2,
+    "Sanction": 2,
+    "Documentation": 2,
+    "Pages": 1,
+    "Membership": 1,
+    "Similar": 1
+   },
+   "sha256": "6e93950acc7ba4dbe442684bdd842e135713ef97c3a84e726324704964df0fe7",
+   "size_bytes": 11873
+  },
+  "fring": {
+   "file": "fring.json",
+   "format": "json",
+   "records": 42,
+   "claims": 148,
+   "entities": 42,
+   "schemas": {
+    "Person": 10,
+    "Membership": 9,
+    "RealEstate": 4,
+    "Ownership": 4,
+    "Documentation": 3,
+    "Company": 2,
+    "Employment": 2,
+    "Directorship": 2,
+    "Page": 1,
+    "Organization": 1,
+    "Position": 1,
+    "Occupancy": 1,
+    "Representation": 1,
+    "Associate": 1
+   },
+   "sha256": "a4c995689d08ca62b3beaec246143bd25c096693e7ea87c625c4be9ddf885440",
+   "size_bytes": 17301
+  },
+  "fring-condensed": {
+   "file": "fring-condensed.json",
+   "format": "json",
+   "records": 34,
+   "claims": 111,
+   "entities": 34,
+   "schemas": {
+    "Person": 10,
+    "Membership": 8,
+    "RealEstate": 4,
+    "Company": 2,
+    "Employment": 2,
+    "Directorship": 2,
+    "Ownership": 2,
+    "Page": 1,
+    "Organization": 1,
+    "Representation": 1,
+    "Associate": 1
+   },
+   "sha256": "94de8e335659ebe865a00f7dd4b0ba3285719521644ed8c0b795ac3fda9e0c55",
+   "size_bytes": 12338
+  },
+  "heisenberg": {
+   "file": "heisenberg.json",
+   "format": "json",
+   "records": 56,
+   "claims": 191,
+   "entities": 56,
+   "schemas": {
+    "Membership": 17,
+    "Person": 16,
+    "Organization": 4,
+    "Ownership": 4,
+    "Documentation": 3,
+    "Page": 2,
+    "Company": 2,
+    "Employment": 2,
+    "Representation": 2,
+    "RealEstate": 1,
+    "Associate": 1,
+    "Succession": 1,
+    "Family": 1
+   },
+   "sha256": "59d4cab368dd5b6ec3bc87075fd8fdf665ddccfecdffcbe195666760ed0502ac",
+   "size_bytes": 21088
+  },
+  "operations": {
+   "file": "operations.json",
+   "format": "json",
+   "records": 42,
+   "claims": 223,
+   "entities": 42,
+   "schemas": {
+    "ProjectParticipant": 15,
+    "Event": 10,
+    "Address": 5,
+    "Project": 5,
+    "Vehicle": 2,
+    "Ownership": 2,
+    "Trip": 2,
+    "RealEstate": 1
+   },
+   "sha256": "d71eb7888ba0ac1d5a88322b8b8f44b6b52478c5dd8e313cc2135b94286e8a3a",
+   "size_bytes": 18901
+  }
+ }
+}

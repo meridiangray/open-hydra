@@ -1,0 +1,13 @@
+# Which records are the same real-world entity (ids as prefixed by the build:
+# `<collection>:<local id>`). Every pair inside one cluster is a true match;
+# every other pair is not. Records not listed are their own entity.
+same:
+  - [registry:p-elodie, leaks:p-elodie]       # accent only
+  - [registry:p-juergen, leaks:p-weiss]       # German transliteration (ue, ss)
+  - [registry:p-aleksei, leaks:p-voronov]     # Cyrillic name, Latin alias
+  - [registry:c-holding, leaks:c-holding]     # same registration number, written two ways
+  - [registry:c-ports, press:c-ports]         # accents only
+# Traps (must never merge automatically):
+#   leaks:p-weiss-jr   same name as registry:p-juergen, different birth date
+#   leaks:c-nordwind-ltd  shares the word "Nordwind" with the group
+#   press:p-initial    "E. Marchand", too little to go on

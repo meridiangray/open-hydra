@@ -1,0 +1,32 @@
+exit 0
+Associate   outside
+  titles   associate
+           close associate
+           contact
+Leader
+│ titles   boss
+│          leader
+│          head of organization
+├── Member
+│     titles   member
+│              crew member
+└── Second-in-command
+    │ titles   second in command
+    │          deputy
+    └── Member ^
+          titles   member
+                   crew member
+
+unplaced titles   36
+  Head of Security                    criminal defense counsel     mechanic
+  air traffic controller              dealer                       money laundering
+  assistant                           distributor                  outside counsel
+  assistant cook                      enforcer                     planner
+  assistant special agent in charge   exterminator                 president
+  capo                                head of fast food division   security
+  chemist                             head of security             sicario
+  cook                                international distribution   special agent
+  corporate security consultant       lead chemist                 sponsor
+  counsel                             logistics                    spotter
+  crew                                logistics executive          underboss
+  crew chief                          manager                      unwitting shipping infrastructure

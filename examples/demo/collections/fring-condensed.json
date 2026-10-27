@@ -1,0 +1,727 @@
+[
+ {
+  "id": "doc-bb-casefile~p2",
+  "schema": "Page",
+  "properties": {
+   "index": [
+    "2"
+   ],
+   "document": [
+    "doc-bb-casefile"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "org-fring",
+  "schema": "Organization",
+  "properties": {
+   "name": [
+    "Gustavo Fring Organization"
+   ],
+   "weakAlias": [
+    "Fring drug empire",
+    "the Chicken Man's operation"
+   ],
+   "jurisdiction": [
+    "us"
+   ],
+   "dissolutionDate": [
+    "2010"
+   ],
+   "sources": [
+    "doc-bb-casefile~p2"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "co-madrigal",
+  "schema": "Company",
+  "properties": {
+   "name": [
+    "Madrigal Electromotive GmbH"
+   ],
+   "jurisdiction": [
+    "de"
+   ],
+   "sources": [
+    "doc-bb-casefile~p2"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "co-pollos",
+  "schema": "Company",
+  "properties": {
+   "name": [
+    "Los Pollos Hermanos"
+   ],
+   "jurisdiction": [
+    "us"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "re-pollos-abq",
+  "schema": "RealEstate",
+  "properties": {
+   "name": [
+    "Los Pollos Hermanos — Albuquerque flagship"
+   ],
+   "propertyType": [
+    "restaurant"
+   ],
+   "country": [
+    "us"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "re-farm",
+  "schema": "RealEstate",
+  "properties": {
+   "name": [
+    "Los Pollos Hermanos chicken farm"
+   ],
+   "propertyType": [
+    "farm"
+   ],
+   "country": [
+    "us"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "re-lavanderia",
+  "schema": "RealEstate",
+  "properties": {
+   "name": [
+    "Lavanderia Brillante"
+   ],
+   "propertyType": [
+    "industrial laundry"
+   ],
+   "address": [
+    "Albuquerque, NM"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "re-superlab",
+  "schema": "RealEstate",
+  "properties": {
+   "name": [
+    "The Superlab"
+   ],
+   "propertyType": [
+    "clandestine laboratory"
+   ],
+   "parent": [
+    "Lavanderia Brillante"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "p-fring",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Gustavo Fring"
+   ],
+   "weakAlias": [
+    "Gus",
+    "Gus Fring",
+    "the Chicken Man"
+   ],
+   "citizenship": [
+    "cl"
+   ],
+   "deathDate": [
+    "2010"
+   ],
+   "sources": [
+    "doc-bb-casefile~p2"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "p-mike",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Michael Ehrmantraut"
+   ],
+   "weakAlias": [
+    "Mike"
+   ],
+   "deathDate": [
+    "2010"
+   ],
+   "position": [
+    "head of security"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "p-tyrus",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Tyrus Kitt"
+   ],
+   "deathDate": [
+    "2010"
+   ],
+   "position": [
+    "enforcer"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "p-victor",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Victor"
+   ],
+   "deathDate": [
+    "2010"
+   ],
+   "position": [
+    "enforcer"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "p-gale",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Gale Boetticher"
+   ],
+   "deathDate": [
+    "2010"
+   ],
+   "position": [
+    "chemist"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "p-dennis",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Dennis Markowski"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "p-chris-mara",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Chris Mara"
+   ],
+   "deathDate": [
+    "2010"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "p-wachsberger",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Dan Wachsberger"
+   ],
+   "deathDate": [
+    "2010"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "p-schuler",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Peter Schuler"
+   ],
+   "deathDate": [
+    "2010"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "p-lydia",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Lydia Rodarte-Quayle"
+   ],
+   "deathDate": [
+    "2010"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "rel-fr-leader",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Gustavo Fring"
+   ],
+   "organization": [
+    "Gustavo Fring Organization"
+   ],
+   "role": [
+    "leader"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "rel-fr-security",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Michael Ehrmantraut"
+   ],
+   "organization": [
+    "Gustavo Fring Organization"
+   ],
+   "role": [
+    "head of security"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "rel-fr-enforcers",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Tyrus Kitt",
+    "Victor"
+   ],
+   "organization": [
+    "Gustavo Fring Organization"
+   ],
+   "role": [
+    "enforcer"
+   ],
+   "endDate": [
+    "2010"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "rel-fr-chemist",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Gale Boetticher"
+   ],
+   "organization": [
+    "Gustavo Fring Organization"
+   ],
+   "role": [
+    "chemist"
+   ],
+   "endDate": [
+    "2010"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "rel-fr-cooks",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Walter White",
+    "Jesse Pinkman"
+   ],
+   "organization": [
+    "Gustavo Fring Organization"
+   ],
+   "role": [
+    "cook"
+   ],
+   "startDate": [
+    "2009"
+   ],
+   "endDate": [
+    "2010"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "rel-fr-crew",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Dennis Markowski",
+    "Chris Mara"
+   ],
+   "organization": [
+    "Gustavo Fring Organization"
+   ],
+   "role": [
+    "member"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "rel-fr-cartel-org",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Gustavo Fring Organization"
+   ],
+   "organization": [
+    "Juarez Cartel"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "rel-fr-cartel-dist",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Gustavo Fring"
+   ],
+   "organization": [
+    "Juarez Cartel"
+   ],
+   "role": [
+    "distributor"
+   ],
+   "endDate": [
+    "2010"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "rel-fr-emp-mike",
+  "schema": "Employment",
+  "properties": {
+   "employee": [
+    "Michael Ehrmantraut"
+   ],
+   "employer": [
+    "Los Pollos Hermanos"
+   ],
+   "role": [
+    "corporate security consultant"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "rel-fr-emp-lydia",
+  "schema": "Employment",
+  "properties": {
+   "employee": [
+    "Lydia Rodarte-Quayle"
+   ],
+   "employer": [
+    "Madrigal Electromotive GmbH"
+   ],
+   "role": [
+    "logistics executive"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "rel-fr-dir-fring",
+  "schema": "Directorship",
+  "properties": {
+   "director": [
+    "Gustavo Fring"
+   ],
+   "organization": [
+    "Los Pollos Hermanos"
+   ],
+   "role": [
+    "president"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "rel-fr-dir-schuler",
+  "schema": "Directorship",
+  "properties": {
+   "director": [
+    "Peter Schuler"
+   ],
+   "organization": [
+    "Madrigal Electromotive GmbH"
+   ],
+   "role": [
+    "head of fast food division"
+   ],
+   "endDate": [
+    "2010"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "rel-own-madrigal",
+  "schema": "Ownership",
+  "properties": {
+   "owner": [
+    "Madrigal Electromotive GmbH"
+   ],
+   "asset": [
+    "Los Pollos Hermanos",
+    "Lavanderia Brillante"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "rel-own-pollos",
+  "schema": "Ownership",
+  "properties": {
+   "owner": [
+    "Los Pollos Hermanos"
+   ],
+   "asset": [
+    "Los Pollos Hermanos — Albuquerque flagship",
+    "Los Pollos Hermanos chicken farm"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "rel-fr-rep-counsel",
+  "schema": "Representation",
+  "properties": {
+   "agent": [
+    "Dan Wachsberger"
+   ],
+   "client": [
+    "Gustavo Fring Organization"
+   ],
+   "role": [
+    "outside counsel"
+   ],
+   "endDate": [
+    "2010"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ },
+ {
+  "id": "rel-fr-assoc-lydia",
+  "schema": "Associate",
+  "properties": {
+   "person": [
+    "Lydia Rodarte-Quayle"
+   ],
+   "associate": [
+    "Gustavo Fring"
+   ],
+   "relationship": [
+    "methylamine supplier"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-85265baf",
+   "timestamp": "2026-10-14T00:09:59+00:00",
+   "ingest": "74698adcacda"
+  }
+ }
+]

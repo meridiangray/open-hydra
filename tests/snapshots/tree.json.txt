@@ -1,0 +1,657 @@
+exit 0
+{
+ "tree": [
+  {
+   "name": "Casa Tranquila nursing home (RealEstate)",
+   "outside": false,
+   "source": null,
+   "titles": [],
+   "children": []
+  },
+  {
+   "name": "Dan Wachsberger (Person)",
+   "outside": false,
+   "source": null,
+   "titles": [],
+   "children": []
+  },
+  {
+   "name": "Declan's organization (Organization)",
+   "outside": false,
+   "source": null,
+   "titles": [],
+   "children": [
+    {
+     "name": "Declan (Person) — Leader",
+     "outside": false,
+     "source": null,
+     "titles": [],
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Federal Aviation Administration (PublicBody)",
+   "outside": false,
+   "source": null,
+   "titles": [],
+   "children": [
+    {
+     "name": "Donald Margolis (Person)",
+     "outside": false,
+     "source": null,
+     "titles": [],
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Heisenberg (Person)",
+   "outside": false,
+   "source": null,
+   "titles": [],
+   "children": []
+  },
+  {
+   "name": "Heisenberg Organization (Organization)",
+   "outside": false,
+   "source": null,
+   "titles": [],
+   "children": [
+    {
+     "name": "Jesse Bruce Pinkman (Person) — Leader",
+     "outside": false,
+     "source": null,
+     "titles": [],
+     "children": [
+      {
+       "name": "Huell Babineaux (Person) — Member",
+       "outside": false,
+       "source": null,
+       "titles": [],
+       "children": [],
+       "also": [
+        "also  Heisenberg Organization   Membership   member"
+       ]
+      },
+      {
+       "name": "Patrick Kuby (Person) — Member",
+       "outside": false,
+       "source": null,
+       "titles": [],
+       "children": [],
+       "also": [
+        "also  Heisenberg Organization   Membership   member"
+       ]
+      },
+      {
+       "name": "Todd Alquist (Person) — Member",
+       "outside": false,
+       "source": null,
+       "titles": [],
+       "children": [],
+       "also": [
+        "also  Dead freight methylamine heist     ProjectParticipant   mechanic",
+        "also  Heisenberg Organization            Membership           assistant cook",
+        "also  Jack Welker's gang                 Membership           member",
+        "also  Vamonos Pest                       Employment           exterminator",
+        "also  Vamonos Pest mobile cook program   ProjectParticipant   assistant"
+       ]
+      }
+     ],
+     "also": [
+      "also  Dead freight methylamine heist     ProjectParticipant   logistics",
+      "also  Evidence-room magnet operation     ProjectParticipant   crew",
+      "also  Gustavo Fring Organization         Membership           cook",
+      "also  Pinkman street crew                Membership           leader",
+      "also  Vamonos Pest mobile cook program   ProjectParticipant   cook"
+     ]
+    },
+    {
+     "name": "Walter Hartwell White (Person) — Leader",
+     "outside": false,
+     "source": null,
+     "titles": [],
+     "children": [
+      {
+       "name": "A1A Car Wash (Company)",
+       "outside": false,
+       "source": null,
+       "titles": [],
+       "children": [
+        {
+         "name": "Skyler White (Person)",
+         "outside": false,
+         "source": null,
+         "titles": [],
+         "children": [
+          {
+           "name": "White residence — 308 Negra Arroyo Lane (RealEstate)",
+           "outside": false,
+           "source": null,
+           "titles": [],
+           "children": [],
+           "also": [
+            "also  Walter Hartwell White   Ownership"
+           ]
+          }
+         ],
+         "also": [
+          "also  Heisenberg Organization   Membership   money laundering"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "The Crystal Ship (Vehicle)",
+       "outside": false,
+       "source": null,
+       "titles": [],
+       "children": []
+      },
+      {
+       "name": "Walter White's Pontiac Aztek (Vehicle)",
+       "outside": false,
+       "source": null,
+       "titles": [],
+       "children": []
+      }
+     ],
+     "also": [
+      "also  Dead freight methylamine heist     ProjectParticipant   planner",
+      "also  Evidence-room magnet operation     ProjectParticipant   planner",
+      "also  Gustavo Fring Organization         Membership           cook",
+      "also  Vamonos Pest mobile cook program   ProjectParticipant   cook"
+     ]
+    },
+    {
+     "name": "Czech Republic distribution channel (Project)",
+     "outside": false,
+     "source": null,
+     "titles": [],
+     "children": [
+      {
+       "name": "Madrigal Electromotive GmbH (Company)",
+       "outside": false,
+       "source": null,
+       "titles": [],
+       "children": [
+        {
+         "name": "Peter Schuler (Person)",
+         "outside": false,
+         "source": null,
+         "titles": [],
+         "children": []
+        },
+        {
+         "name": "Lavanderia Brillante (RealEstate)",
+         "outside": false,
+         "source": null,
+         "titles": [],
+         "children": [
+          {
+           "name": "The Superlab (RealEstate)",
+           "outside": false,
+           "source": null,
+           "titles": [],
+           "children": []
+          }
+         ]
+        },
+        {
+         "name": "Los Pollos Hermanos (Company)",
+         "outside": false,
+         "source": null,
+         "titles": [],
+         "children": [
+          {
+           "name": "Los Pollos Hermanos chicken farm (RealEstate)",
+           "outside": false,
+           "source": null,
+           "titles": [],
+           "children": []
+          },
+          {
+           "name": "Los Pollos Hermanos — Albuquerque flagship (RealEstate)",
+           "outside": false,
+           "source": null,
+           "titles": [],
+           "children": []
+          },
+          {
+           "name": "Michael Ehrmantraut (Person)",
+           "outside": false,
+           "source": null,
+           "titles": [],
+           "children": [],
+           "also": [
+            "also  Dead freight methylamine heist     ProjectParticipant   spotter",
+            "also  Evidence-room magnet operation     ProjectParticipant   crew",
+            "also  Gustavo Fring Organization         Membership           head of security",
+            "also  Heisenberg Organization            Membership           head of security",
+            "also  Superlab design and construction   ProjectParticipant   security"
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Dead freight methylamine heist (Project)",
+     "outside": false,
+     "source": null,
+     "titles": [],
+     "children": []
+    },
+    {
+     "name": "Evidence-room magnet operation (Project)",
+     "outside": false,
+     "source": null,
+     "titles": [],
+     "children": []
+    },
+    {
+     "name": "James Morgan McGill (Person)",
+     "outside": false,
+     "source": null,
+     "titles": [],
+     "children": []
+    },
+    {
+     "name": "Lydia Rodarte-Quayle (Person)",
+     "outside": false,
+     "source": null,
+     "titles": [],
+     "children": [],
+     "also": [
+      "also  Czech Republic distribution channel   ProjectParticipant   international distribution",
+      "also  Madrigal Electromotive GmbH           Employment           logistics executive"
+     ]
+    },
+    {
+     "name": "Pinkman street crew (Organization)",
+     "outside": false,
+     "source": null,
+     "titles": [],
+     "children": [
+      {
+       "name": "Brandon Mayhew (Person)",
+       "outside": false,
+       "source": null,
+       "titles": [],
+       "children": []
+      },
+      {
+       "name": "Christian Ortega (Person)",
+       "outside": false,
+       "source": null,
+       "titles": [],
+       "children": []
+      },
+      {
+       "name": "Skinny Pete (Person)",
+       "outside": false,
+       "source": null,
+       "titles": [],
+       "children": []
+      }
+     ]
+    },
+    {
+     "name": "Vamonos Pest (Company)",
+     "outside": false,
+     "source": null,
+     "titles": [],
+     "children": []
+    },
+    {
+     "name": "Vamonos Pest mobile cook program (Project)",
+     "outside": false,
+     "source": null,
+     "titles": [],
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Holly White (Person)",
+   "outside": false,
+   "source": null,
+   "titles": [],
+   "children": []
+  },
+  {
+   "name": "Jack Welker's gang (Organization)",
+   "outside": false,
+   "source": null,
+   "titles": [],
+   "children": [
+    {
+     "name": "Jack Welker (Person) — Leader",
+     "outside": false,
+     "source": null,
+     "titles": [],
+     "children": [
+      {
+       "name": "Kenny (Person) — Second-in-command",
+       "outside": false,
+       "source": null,
+       "titles": [],
+       "children": [],
+       "also": [
+        "also  Jack Welker's gang   Membership   second-in-command"
+       ]
+      },
+      {
+       "name": "Frankie (Person) — Member",
+       "outside": false,
+       "source": null,
+       "titles": [],
+       "children": [],
+       "also": [
+        "also  Jack Welker's gang   Membership   member"
+       ]
+      },
+      {
+       "name": "Lester (Person) — Member",
+       "outside": false,
+       "source": null,
+       "titles": [],
+       "children": [],
+       "also": [
+        "also  Jack Welker's gang   Membership   member"
+       ]
+      },
+      {
+       "name": "Matt (Person) — Member",
+       "outside": false,
+       "source": null,
+       "titles": [],
+       "children": [],
+       "also": [
+        "also  Jack Welker's gang   Membership   member"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Jane Margolis (Person)",
+   "outside": false,
+   "source": null,
+   "titles": [],
+   "children": []
+  },
+  {
+   "name": "Juarez Cartel (Organization)",
+   "outside": false,
+   "source": null,
+   "titles": [],
+   "children": [
+    {
+     "name": "Eladio Vuente (Person) — Leader",
+     "outside": false,
+     "source": null,
+     "titles": [],
+     "children": [
+      {
+       "name": "Gonzo (Person) — Member",
+       "outside": false,
+       "source": null,
+       "titles": [],
+       "children": [],
+       "also": [
+        "also  Tuco Salamanca's Albuquerque crew   Membership   member"
+       ]
+      },
+      {
+       "name": "Ignacio Varga (Person) — Member",
+       "outside": false,
+       "source": null,
+       "titles": [],
+       "children": [],
+       "also": [
+        "also  Tuco Salamanca's Albuquerque crew   Membership   member"
+       ]
+      },
+      {
+       "name": "No-Doze (Person) — Member",
+       "outside": false,
+       "source": null,
+       "titles": [],
+       "children": [],
+       "also": [
+        "also  Tuco Salamanca's Albuquerque crew   Membership   member"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Gustavo Fring Organization (Organization)",
+     "outside": false,
+     "source": null,
+     "titles": [],
+     "children": [
+      {
+       "name": "Gustavo Fring (Person) — Leader",
+       "outside": false,
+       "source": null,
+       "titles": [],
+       "children": [
+        {
+         "name": "Chris Mara (Person) — Member",
+         "outside": false,
+         "source": null,
+         "titles": [],
+         "children": [],
+         "also": [
+          "also  Gustavo Fring Organization   Membership   member"
+         ]
+        },
+        {
+         "name": "Dennis Markowski (Person) — Member",
+         "outside": false,
+         "source": null,
+         "titles": [],
+         "children": [],
+         "also": [
+          "also  Gustavo Fring Organization   Membership   member"
+         ]
+        }
+       ],
+       "also": [
+        "also  Juarez Cartel                      Membership           distributor",
+        "also  Los Pollos Hermanos                Directorship         president",
+        "also  Superlab design and construction   ProjectParticipant   sponsor"
+       ]
+      },
+      {
+       "name": "Gale Boetticher (Person)",
+       "outside": false,
+       "source": null,
+       "titles": [],
+       "children": [],
+       "also": [
+        "also  Superlab design and construction   ProjectParticipant   lead chemist"
+       ]
+      },
+      {
+       "name": "Superlab design and construction (Project)",
+       "outside": false,
+       "source": null,
+       "titles": [],
+       "children": []
+      },
+      {
+       "name": "Tyrus Kitt (Person)",
+       "outside": false,
+       "source": null,
+       "titles": [],
+       "children": []
+      },
+      {
+       "name": "Victor (Person)",
+       "outside": false,
+       "source": null,
+       "titles": [],
+       "children": []
+      }
+     ]
+    },
+    {
+     "name": "Hector Salamanca (Person)",
+     "outside": false,
+     "source": null,
+     "titles": [],
+     "children": []
+    },
+    {
+     "name": "Juan Bolsa (Person)",
+     "outside": false,
+     "source": null,
+     "titles": [],
+     "children": []
+    },
+    {
+     "name": "Lalo Salamanca (Person)",
+     "outside": false,
+     "source": null,
+     "titles": [],
+     "children": []
+    },
+    {
+     "name": "Leonel Salamanca (Person)",
+     "outside": false,
+     "source": null,
+     "titles": [],
+     "children": []
+    },
+    {
+     "name": "Marco Salamanca (Person)",
+     "outside": false,
+     "source": null,
+     "titles": [],
+     "children": []
+    },
+    {
+     "name": "Tuco Salamanca's Albuquerque crew (Organization)",
+     "outside": false,
+     "source": null,
+     "titles": [],
+     "children": [
+      {
+       "name": "Domingo Gallardo Molina (Person)",
+       "outside": false,
+       "source": null,
+       "titles": [],
+       "children": []
+      },
+      {
+       "name": "Tuco Salamanca (Person)",
+       "outside": false,
+       "source": null,
+       "titles": [],
+       "children": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Marie Schrader (Person)",
+   "outside": false,
+   "source": null,
+   "titles": [],
+   "children": []
+  },
+  {
+   "name": "Maximino Arciniega (Person)",
+   "outside": false,
+   "source": null,
+   "titles": [],
+   "children": []
+  },
+  {
+   "name": "United States Drug Enforcement Administration (PublicBody)",
+   "outside": false,
+   "source": null,
+   "titles": [],
+   "children": [
+    {
+     "name": "DEA Albuquerque Field Office (PublicBody)",
+     "outside": false,
+     "source": null,
+     "titles": [],
+     "children": [
+      {
+       "name": "George Merkert (Person)",
+       "outside": false,
+       "source": null,
+       "titles": [],
+       "children": []
+      },
+      {
+       "name": "Henry R. Schrader (Person)",
+       "outside": false,
+       "source": null,
+       "titles": [],
+       "children": []
+      },
+      {
+       "name": "Steven Gomez (Person)",
+       "outside": false,
+       "source": null,
+       "titles": [],
+       "children": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Walter White Jr. (Person)",
+   "outside": false,
+   "source": null,
+   "titles": [],
+   "children": []
+  },
+  {
+   "name": "operations:addr-abq (Address)",
+   "outside": false,
+   "source": null,
+   "titles": [],
+   "children": []
+  },
+  {
+   "name": "operations:addr-hacienda (Address)",
+   "outside": false,
+   "source": null,
+   "titles": [],
+   "children": []
+  },
+  {
+   "name": "operations:addr-hannover (Address)",
+   "outside": false,
+   "source": null,
+   "titles": [],
+   "children": []
+  },
+  {
+   "name": "operations:addr-juarez (Address)",
+   "outside": false,
+   "source": null,
+   "titles": [],
+   "children": []
+  },
+  {
+   "name": "operations:addr-tohajiilee (Address)",
+   "outside": false,
+   "source": null,
+   "titles": [],
+   "children": []
+  }
+ ]
+}

@@ -1,0 +1,10 @@
+exit 0
+[
+ {
+  "level": "info",
+  "code": "direction.both-ends-above",
+  "file": ".hydra/schema/direction.yaml",
+  "where": "Occupancy",
+  "message": "both ends (holder, post) are in `above`; the target, post, is the parent"
+ }
+]

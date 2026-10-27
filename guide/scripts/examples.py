@@ -1,6 +1,6 @@
 """Write the command examples the docs show: every example run on the demo, as raw text.
 
-The demo archive (hydra-tests/demo/collections) is built once at a fixed time, and
+The demo archive (examples/demo/collections) is built once at a fixed time, and
 each example runs on its own fresh copy, so what one example changes never reaches
 the next. The clock is pinned, colour is off and the terminal is 120 columns wide,
 so the same code always prints the same files. Each one is written to
@@ -11,7 +11,7 @@ then what it printed.
     python guide/scripts/examples.py --check   # exit 1 if any example changed
 
 Run it with hydra's dependencies installed (PyYAML, pydantic). It imports hydra from
-the hydra-git working tree this file sits in.
+the repository this file sits in.
 """
 from __future__ import annotations
 
@@ -28,7 +28,7 @@ from pathlib import Path
 
 GUIDE = Path(__file__).resolve().parents[1]
 HYDRA_GIT = GUIDE.parent
-DEMO = HYDRA_GIT.parent / "hydra-tests" / "demo" / "collections"
+DEMO = HYDRA_GIT / "examples" / "demo" / "collections"
 OUT = GUIDE / "docs" / "examples"
 PAGE = GUIDE / "docs" / "commands" / "output.md"
 sys.path.insert(0, str(HYDRA_GIT / "src"))

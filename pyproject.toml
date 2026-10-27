@@ -14,9 +14,9 @@ requires-python = ">=3.11"
 dependencies = ["PyYAML>=6", "pydantic>=2,<3"]
 
 [project.urls]
-Homepage = "https://meridiangray.github.io/openhydra/"
-Source = "https://github.com/meridiangray/openhydra"
-Issues = "https://github.com/meridiangray/openhydra/issues"
+Homepage = "https://meridiangray.github.io/open-hydra/"
+Source = "https://github.com/meridiangray/open-hydra"
+Issues = "https://github.com/meridiangray/open-hydra/issues"
 
 [project.scripts]
 hydra-ctl = "hydra.cli:run"
@@ -30,6 +30,10 @@ hydra = [
     "template/.hydra/**/*", "template/.hydra/**/.gitkeep",   # glob skips dot-folders unless named
     "recipes/*.yaml",
 ]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "tests"]
 
 [tool.uv]
 # rebuild on `uv tool install .` when the code or template changes, not only pyproject.toml

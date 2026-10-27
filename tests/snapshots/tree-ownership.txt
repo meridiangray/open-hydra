@@ -1,0 +1,20 @@
+exit 0
+  only        links   drawn   no link
+  ownership       9      13        66
+
+Heisenberg Organization (Organization)
+└── Vamonos Pest (Company)   Ownership
+
+Madrigal Electromotive GmbH (Company)
+├── Lavanderia Brillante (RealEstate)   Ownership
+└── Los Pollos Hermanos (Company)   Ownership
+    ├── Los Pollos Hermanos chicken farm (RealEstate)   Ownership
+    └── Los Pollos Hermanos — Albuquerque flagship (RealEstate)   Ownership
+
+Skyler White (Person)
+└── White residence — 308 Negra Arroyo Lane (RealEstate)   Ownership
+      also  Walter Hartwell White   Ownership
+Walter Hartwell White (Person)
+├── A1A Car Wash (Company)   Ownership
+├── The Crystal Ship (Vehicle)   Ownership
+└── Walter White's Pontiac Aztek (Vehicle)   Ownership

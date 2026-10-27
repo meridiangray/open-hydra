@@ -1,0 +1,56 @@
+exit 0
+  only         links   drawn   no link
+  membership      39      44        35
+
+Declan's organization (Organization)
+└── Declan (Person)   Membership   leader
+
+Heisenberg Organization (Organization)
+├── Jesse Bruce Pinkman (Person)   Membership   cook
+│     also  Gustavo Fring Organization   Membership   cook
+│     also  Pinkman street crew          Membership   leader
+├── Walter Hartwell White (Person)   Membership   leader
+│     also  Gustavo Fring Organization   Membership   cook
+├── James Morgan McGill (Person)   Membership   counsel
+├── Lydia Rodarte-Quayle (Person)   Membership   distributor
+├── Pinkman street crew (Organization)   Membership
+│   ├── Brandon Mayhew (Person)   Membership   dealer
+│   ├── Christian Ortega (Person)   Membership   dealer
+│   └── Skinny Pete (Person)   Membership   dealer
+├── Huell Babineaux (Person)   Membership   member
+├── Patrick Kuby (Person)   Membership   member
+├── Skyler White (Person)   Membership   money laundering
+└── Todd Alquist (Person)   Membership   assistant cook
+      also  Jack Welker's gang   Membership   member
+Jack Welker's gang (Organization)
+├── Jack Welker (Person)   Membership   leader
+├── Frankie (Person)   Membership   member
+├── Kenny (Person)   Membership   second-in-command
+├── Lester (Person)   Membership   member
+└── Matt (Person)   Membership   member
+Juarez Cartel (Organization)
+├── Eladio Vuente (Person)   Membership   leader
+├── Gustavo Fring Organization (Organization)   Membership
+│   ├── Gustavo Fring (Person)   Membership   leader
+│   │     also  Juarez Cartel   Membership   distributor
+│   ├── Gale Boetticher (Person)   Membership   chemist
+│   ├── Tyrus Kitt (Person)   Membership   enforcer
+│   ├── Victor (Person)   Membership   enforcer
+│   ├── Chris Mara (Person)   Membership   member
+│   ├── Dennis Markowski (Person)   Membership   member
+│   └── Michael Ehrmantraut (Person)   Membership   head of security
+│         also  Heisenberg Organization   Membership   head of security
+├── Hector Salamanca (Person)   Membership   capo
+├── Juan Bolsa (Person)   Membership   underboss
+├── Lalo Salamanca (Person)   Membership   capo
+├── Leonel Salamanca (Person)   Membership   sicario
+├── Marco Salamanca (Person)   Membership   sicario
+└── Tuco Salamanca's Albuquerque crew (Organization)   Membership
+    ├── Domingo Gallardo Molina (Person)   Membership   distributor
+    ├── Tuco Salamanca (Person)   Membership   crew chief
+    ├── Gonzo (Person)   Membership   member
+    ├── Ignacio Varga (Person)   Membership   member
+    └── No-Doze (Person)   Membership   member
+
+United States Drug Enforcement Administration (PublicBody)
+└── DEA Albuquerque Field Office (PublicBody)   Membership

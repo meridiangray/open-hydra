@@ -1,0 +1,182 @@
+[
+ {
+  "id": "c-holding",
+  "schema": "Company",
+  "properties": {
+   "name": [
+    "Nordwind Holding AG"
+   ],
+   "registrationNumber": [
+    "CHE-101.202.303"
+   ],
+   "jurisdiction": [
+    "ch"
+   ],
+   "incorporationDate": [
+    "1998"
+   ]
+  }
+ },
+ {
+  "id": "c-logistik",
+  "schema": "Company",
+  "properties": {
+   "name": [
+    "Nordwind Logistik GmbH"
+   ],
+   "registrationNumber": [
+    "HRB 4471"
+   ],
+   "jurisdiction": [
+    "de"
+   ],
+   "parent": [
+    "Nordwind Holding AG"
+   ]
+  }
+ },
+ {
+  "id": "c-polska",
+  "schema": "Company",
+  "properties": {
+   "name": [
+    "Nordwind Logistik Polska Sp. z o.o."
+   ],
+   "jurisdiction": [
+    "pl"
+   ],
+   "parent": [
+    "Nordwind Logistik GmbH"
+   ]
+  }
+ },
+ {
+  "id": "c-reefer",
+  "schema": "Company",
+  "properties": {
+   "name": [
+    "Baltic Reefer Shipping OÜ"
+   ],
+   "jurisdiction": [
+    "ee"
+   ]
+  }
+ },
+ {
+  "id": "c-ports",
+  "schema": "Company",
+  "properties": {
+   "name": [
+    "Société Générale des Ports Méridionaux SA"
+   ],
+   "jurisdiction": [
+    "fr"
+   ],
+   "registrationNumber": [
+    "RCS 552 100 554"
+   ]
+  }
+ },
+ {
+  "id": "p-elodie",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Élodie Marchand"
+   ],
+   "birthDate": [
+    "1975-03-02"
+   ],
+   "nationality": [
+    "fr"
+   ]
+  }
+ },
+ {
+  "id": "p-juergen",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Jürgen Weiß"
+   ],
+   "birthDate": [
+    "1961-11-30"
+   ],
+   "nationality": [
+    "de"
+   ]
+  }
+ },
+ {
+  "id": "p-aleksei",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Алексей Воронов"
+   ],
+   "alias": [
+    "Aleksei Voronov"
+   ],
+   "birthDate": [
+    "1970-05-14"
+   ],
+   "nationality": [
+    "ee"
+   ]
+  }
+ },
+ {
+  "id": "d-elodie",
+  "schema": "Directorship",
+  "properties": {
+   "director": [
+    "Élodie Marchand"
+   ],
+   "organization": [
+    "Société Générale des Ports Méridionaux SA"
+   ],
+   "role": [
+    "Présidente"
+   ],
+   "startDate": [
+    "2015"
+   ]
+  }
+ },
+ {
+  "id": "d-juergen",
+  "schema": "Directorship",
+  "properties": {
+   "director": [
+    "Jürgen Weiß"
+   ],
+   "organization": [
+    "Nordwind Logistik GmbH"
+   ],
+   "role": [
+    "Geschäftsführer"
+   ],
+   "startDate": [
+    "2009"
+   ]
+  }
+ },
+ {
+  "id": "d-aleksei",
+  "schema": "Directorship",
+  "properties": {
+   "director": [
+    "Алексей Воронов"
+   ],
+   "organization": [
+    "Baltic Reefer Shipping OÜ"
+   ],
+   "role": [
+    "Director"
+   ],
+   "startDate": [
+    "2012"
+   ]
+  }
+ }
+]

@@ -1,0 +1,1229 @@
+[
+ {
+  "id": "doc-bb-casefile~p1",
+  "schema": "Page",
+  "properties": {
+   "index": [
+    "1"
+   ],
+   "document": [
+    "doc-bb-casefile"
+   ],
+   "notes": [
+    "SUBJECT: unidentified cook 'Heisenberg' — composite sketch, blue methamphetamine"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "doc-bb-casefile~p5",
+  "schema": "Page",
+  "properties": {
+   "index": [
+    "5"
+   ],
+   "document": [
+    "doc-bb-casefile"
+   ],
+   "notes": [
+    "POST-FRING: White operation, Welker gang, Declan buyout, prison murders"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "org-heisenberg",
+  "schema": "Organization",
+  "properties": {
+   "name": [
+    "Heisenberg Organization"
+   ],
+   "weakAlias": [
+    "Walter White's operation",
+    "Heisenberg's empire"
+   ],
+   "jurisdiction": [
+    "us"
+   ],
+   "dissolutionDate": [
+    "2010"
+   ],
+   "sources": [
+    "doc-bb-casefile~p5"
+   ],
+   "notes": [
+    "Walter White's meth operation — RV cooks, then the post-Fring 'empire business'"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "org-welker",
+  "schema": "Organization",
+  "properties": {
+   "name": [
+    "Jack Welker's gang"
+   ],
+   "weakAlias": [
+    "the Aryan gang",
+    "the neo-Nazis"
+   ],
+   "dissolutionDate": [
+    "2010"
+   ],
+   "notes": [
+    "white supremacist gang; contracted enforcers, later took the operation by force"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "org-declan",
+  "schema": "Organization",
+  "properties": {
+   "name": [
+    "Declan's organization"
+   ],
+   "jurisdiction": [
+    "us"
+   ],
+   "dissolutionDate": [
+    "2010"
+   ],
+   "notes": [
+    "Phoenix-based rival distributor; bought out, then wiped out by the Welker gang"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "crew-jesse",
+  "schema": "Organization",
+  "properties": {
+   "name": [
+    "Pinkman street crew"
+   ],
+   "dissolutionDate": [
+    "2009"
+   ],
+   "notes": [
+    "Jesse's street-level dealers: Badger, Skinny Pete, Combo"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "co-vamonos",
+  "schema": "Company",
+  "properties": {
+   "name": [
+    "Vamonos Pest"
+   ],
+   "jurisdiction": [
+    "us"
+   ],
+   "notes": [
+    "fumigation company bought by White, Pinkman and Ehrmantraut; tent jobs hid mobile cook sites"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "co-carwash",
+  "schema": "Company",
+  "properties": {
+   "name": [
+    "A1A Car Wash"
+   ],
+   "jurisdiction": [
+    "us"
+   ],
+   "notes": [
+    "bought to launder the cook money; run by Skyler White"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "re-white",
+  "schema": "RealEstate",
+  "properties": {
+   "name": [
+    "White residence — 308 Negra Arroyo Lane"
+   ],
+   "propertyType": [
+    "house"
+   ],
+   "address": [
+    "308 Negra Arroyo Lane, Albuquerque, NM"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "p-walt",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Walter Hartwell White"
+   ],
+   "weakAlias": [
+    "Walt",
+    "Heisenberg",
+    "Mr. Lambert"
+   ],
+   "birthDate": [
+    "1958-09-07"
+   ],
+   "deathDate": [
+    "2010-09-07"
+   ],
+   "sources": [
+    "doc-bb-casefile~p1"
+   ],
+   "notes": [
+    "chemistry teacher turned meth manufacturer — 'Heisenberg'"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "p-jesse",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Jesse Bruce Pinkman"
+   ],
+   "weakAlias": [
+    "Cap'n Cook"
+   ],
+   "notes": [
+    "Walt's former student and partner; held as a slave-cook by the Welker gang in 2010"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "p-saul",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "James Morgan McGill"
+   ],
+   "weakAlias": [
+    "Saul Goodman",
+    "Gene Takavic"
+   ],
+   "notes": [
+    "criminal lawyer and consigliere to the White operation; later a Cinnabon manager in Omaha"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "p-skyler",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Skyler White"
+   ],
+   "weakAlias": [
+    "Skyler Lambert"
+   ],
+   "notes": [
+    "Walt's wife; laundered the proceeds through the A1A Car Wash"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "p-todd",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Todd Alquist"
+   ],
+   "deathDate": [
+    "2010"
+   ],
+   "notes": [
+    "Vamonos employee turned cook; Jack Welker's nephew; shot Drew Sharp"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "p-huell",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Huell Babineaux"
+   ],
+   "notes": [
+    "Saul's bodyguard and legbreaker"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "p-kuby",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Patrick Kuby"
+   ],
+   "notes": [
+    "Saul's fixer; ran the 'car wash' con on Bogdan"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "p-declan",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Declan"
+   ],
+   "deathDate": [
+    "2010"
+   ],
+   "notes": [
+    "Phoenix distributor; bought Mike's share of the operation; killed by the Welker gang"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "p-jack",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Jack Welker"
+   ],
+   "deathDate": [
+    "2010"
+   ],
+   "notes": [
+    "gang leader; executed Hank Schrader; killed by Walt's M60 rig"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "p-kenny",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Kenny"
+   ],
+   "deathDate": [
+    "2010"
+   ],
+   "notes": [
+    "Welker's second-in-command"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "p-frankie",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Frankie"
+   ],
+   "deathDate": [
+    "2010"
+   ],
+   "notes": [
+    "Welker gang member"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "p-lester",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Lester"
+   ],
+   "deathDate": [
+    "2010"
+   ],
+   "notes": [
+    "Welker gang member"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "p-matt",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Matt"
+   ],
+   "deathDate": [
+    "2010"
+   ],
+   "notes": [
+    "Welker gang member"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "p-badger",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Brandon Mayhew"
+   ],
+   "weakAlias": [
+    "Badger"
+   ],
+   "notes": [
+    "Jesse's friend and street dealer"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "p-skinnypete",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Skinny Pete"
+   ],
+   "notes": [
+    "Jesse's friend and street dealer"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "p-combo",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Christian Ortega"
+   ],
+   "weakAlias": [
+    "Combo"
+   ],
+   "deathDate": [
+    "2009"
+   ],
+   "notes": [
+    "Jesse's friend and street dealer; shot by Tomas on rival dealers' orders"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "rel-hb1",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Walter Hartwell White"
+   ],
+   "organization": [
+    "Heisenberg Organization"
+   ],
+   "role": [
+    "leader"
+   ],
+   "endDate": [
+    "2010"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "rel-hb2",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Jesse Bruce Pinkman"
+   ],
+   "organization": [
+    "Heisenberg Organization"
+   ],
+   "role": [
+    "cook"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "rel-hb3",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Michael Ehrmantraut"
+   ],
+   "organization": [
+    "Heisenberg Organization"
+   ],
+   "role": [
+    "head of security"
+   ],
+   "startDate": [
+    "2010"
+   ],
+   "endDate": [
+    "2010"
+   ],
+   "notes": [
+    "stayed on after Fring's death; killed by Walter White"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "rel-hb4",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "James Morgan McGill"
+   ],
+   "organization": [
+    "Heisenberg Organization"
+   ],
+   "role": [
+    "counsel"
+   ],
+   "endDate": [
+    "2010"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "rel-hb5",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Todd Alquist"
+   ],
+   "organization": [
+    "Heisenberg Organization"
+   ],
+   "role": [
+    "assistant cook"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "rel-hb6",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Todd Alquist"
+   ],
+   "organization": [
+    "Jack Welker's gang"
+   ],
+   "role": [
+    "member"
+   ],
+   "notes": [
+    "inside the White operation AND the Welker gang — dual scope"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "rel-hb7",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Skyler White"
+   ],
+   "organization": [
+    "Heisenberg Organization"
+   ],
+   "role": [
+    "money laundering"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "rel-hb8",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Lydia Rodarte-Quayle"
+   ],
+   "organization": [
+    "Heisenberg Organization"
+   ],
+   "role": [
+    "distributor"
+   ],
+   "notes": [
+    "inside Madrigal AND the Heisenberg operation — dual scope"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "rel-hb9",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Huell Babineaux",
+    "Patrick Kuby"
+   ],
+   "organization": [
+    "Heisenberg Organization"
+   ],
+   "role": [
+    "member"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "rel-hb10",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Pinkman street crew"
+   ],
+   "organization": [
+    "Heisenberg Organization"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "rel-hb11",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Jesse Bruce Pinkman"
+   ],
+   "organization": [
+    "Pinkman street crew"
+   ],
+   "role": [
+    "leader"
+   ],
+   "endDate": [
+    "2009"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "rel-hb12",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Brandon Mayhew",
+    "Skinny Pete"
+   ],
+   "organization": [
+    "Pinkman street crew"
+   ],
+   "role": [
+    "dealer"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "rel-hb13",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Christian Ortega"
+   ],
+   "organization": [
+    "Pinkman street crew"
+   ],
+   "role": [
+    "dealer"
+   ],
+   "endDate": [
+    "2009"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "rel-hb14",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Declan"
+   ],
+   "organization": [
+    "Declan's organization"
+   ],
+   "role": [
+    "leader"
+   ],
+   "endDate": [
+    "2010"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "rel-hb15",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Jack Welker"
+   ],
+   "organization": [
+    "Jack Welker's gang"
+   ],
+   "role": [
+    "leader"
+   ],
+   "endDate": [
+    "2010"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "rel-hb16",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Kenny"
+   ],
+   "organization": [
+    "Jack Welker's gang"
+   ],
+   "role": [
+    "second-in-command"
+   ],
+   "endDate": [
+    "2010"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "rel-hb17",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Frankie",
+    "Lester",
+    "Matt"
+   ],
+   "organization": [
+    "Jack Welker's gang"
+   ],
+   "role": [
+    "member"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "rel-hb18",
+  "schema": "Ownership",
+  "properties": {
+   "owner": [
+    "Heisenberg Organization"
+   ],
+   "asset": [
+    "Vamonos Pest"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "rel-hb19",
+  "schema": "Ownership",
+  "properties": {
+   "owner": [
+    "Walter Hartwell White"
+   ],
+   "asset": [
+    "A1A Car Wash"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "rel-hb20",
+  "schema": "Ownership",
+  "properties": {
+   "owner": [
+    "Walter Hartwell White"
+   ],
+   "asset": [
+    "White residence — 308 Negra Arroyo Lane"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "rel-hb21",
+  "schema": "Ownership",
+  "properties": {
+   "owner": [
+    "Skyler White"
+   ],
+   "asset": [
+    "White residence — 308 Negra Arroyo Lane"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "rel-hb22",
+  "schema": "Employment",
+  "properties": {
+   "employee": [
+    "Todd Alquist"
+   ],
+   "employer": [
+    "Vamonos Pest"
+   ],
+   "role": [
+    "exterminator"
+   ],
+   "notes": [
+    "the cover job — competes with 'assistant cook' for parentage"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "rel-hb23",
+  "schema": "Employment",
+  "properties": {
+   "employee": [
+    "Skyler White"
+   ],
+   "employer": [
+    "A1A Car Wash"
+   ],
+   "role": [
+    "manager"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "rel-hb24",
+  "schema": "Representation",
+  "properties": {
+   "agent": [
+    "James Morgan McGill"
+   ],
+   "client": [
+    "Walter Hartwell White"
+   ],
+   "role": [
+    "criminal defense counsel"
+   ],
+   "startDate": [
+    "2009"
+   ],
+   "endDate": [
+    "2010"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "rel-hb25",
+  "schema": "Representation",
+  "properties": {
+   "agent": [
+    "James Morgan McGill"
+   ],
+   "client": [
+    "Jesse Bruce Pinkman"
+   ],
+   "role": [
+    "criminal defense counsel"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "rel-hb26",
+  "schema": "Associate",
+  "properties": {
+   "person": [
+    "Walter Hartwell White"
+   ],
+   "associate": [
+    "Declan"
+   ],
+   "relationship": [
+    "rival distributor; bought out the partnership's share, later hostilities"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "rel-hb27",
+  "schema": "Succession",
+  "properties": {
+   "predecessor": [
+    "Gustavo Fring Organization"
+   ],
+   "successor": [
+    "Heisenberg Organization"
+   ],
+   "date": [
+    "2010"
+   ],
+   "notes": [
+    "the White operation inherited the Fring network's lab, contacts and methylamine supply"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "fam-hb1",
+  "schema": "Family",
+  "properties": {
+   "person": [
+    "Todd Alquist"
+   ],
+   "relative": [
+    "Jack Welker"
+   ],
+   "relationship": [
+    "uncle"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "prv-hb1",
+  "schema": "Documentation",
+  "properties": {
+   "document": [
+    "doc-bb-casefile~p1"
+   ],
+   "entity": [
+    "Walter Hartwell White"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "prv-hb2",
+  "schema": "Documentation",
+  "properties": {
+   "document": [
+    "doc-bb-casefile~p5"
+   ],
+   "entity": [
+    "Jack Welker's gang"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ },
+ {
+  "id": "prv-hb3",
+  "schema": "Documentation",
+  "properties": {
+   "document": [
+    "doc-bb-casefile~p5"
+   ],
+   "entity": [
+    "Declan's organization"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-050c836f",
+   "timestamp": "2026-10-14T00:10:14+00:00",
+   "ingest": "315055503741"
+  }
+ }
+]

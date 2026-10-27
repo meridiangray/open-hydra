@@ -1,0 +1,860 @@
+[
+ {
+  "id": "doc-bb-casefile~p3",
+  "schema": "Page",
+  "properties": {
+   "index": [
+    "3"
+   ],
+   "document": [
+    "doc-bb-casefile"
+   ],
+   "notes": [
+    "CARTEL: Juarez cartel structure — Eladio, Bolsa, the Salamanca family, Albuquerque crews"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "doc-bb-casefile~p4",
+  "schema": "Page",
+  "properties": {
+   "index": [
+    "4"
+   ],
+   "document": [
+    "doc-bb-casefile"
+   ],
+   "notes": [
+    "HISTORY: 1989 hacienda execution of Maximino Arciniega; origin of Fring/Salamanca feud"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "org-cartel",
+  "schema": "Organization",
+  "properties": {
+   "name": [
+    "Juarez Cartel"
+   ],
+   "weakAlias": [
+    "The Cartel",
+    "Juarez Cartel"
+   ],
+   "jurisdiction": [
+    "mx"
+   ],
+   "sources": [
+    "doc-bb-casefile~p3"
+   ],
+   "notes": [
+    "Mexican drug cartel headquartered in Ciudad Juarez; supplied and disciplined the Fring operation"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "crew-tuco",
+  "schema": "Organization",
+  "properties": {
+   "name": [
+    "Tuco Salamanca's Albuquerque crew"
+   ],
+   "dissolutionDate": [
+    "2008"
+   ],
+   "notes": [
+    "street-level distribution arm of the cartel in New Mexico"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "p-eladio",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Eladio Vuente"
+   ],
+   "weakAlias": [
+    "Don Eladio"
+   ],
+   "deathDate": [
+    "2010"
+   ],
+   "sources": [
+    "doc-bb-casefile~p3"
+   ],
+   "notes": [
+    "head of the Juarez Cartel; poisoned by Gustavo Fring at his own hacienda"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "p-bolsa",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Juan Bolsa"
+   ],
+   "deathDate": [
+    "2010"
+   ],
+   "sources": [
+    "doc-bb-casefile~p3"
+   ],
+   "notes": [
+    "cartel underboss; liaison to the Fring organization; killed in the hacienda massacre"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "p-hector",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Hector Salamanca"
+   ],
+   "weakAlias": [
+    "Tio",
+    "Don Hector"
+   ],
+   "deathDate": [
+    "2010"
+   ],
+   "sources": [
+    "doc-bb-casefile~p4"
+   ],
+   "notes": [
+    "cartel capo; executed Maximino Arciniega in 1989; died with Fring in the Casa Tranquila explosion"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "p-lalo",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Lalo Salamanca"
+   ],
+   "weakAlias": [
+    "Eduardo Salamanca",
+    "Jorge De Guzman"
+   ],
+   "deathDate": [
+    "2004"
+   ],
+   "notes": [
+    "Salamanca capo; investigated the Fring operation and the superlab; killed in it"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "p-tuco",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Tuco Salamanca"
+   ],
+   "deathDate": [
+    "2008"
+   ],
+   "sources": [
+    "doc-bb-casefile~p3"
+   ],
+   "notes": [
+    "ran the cartel's Albuquerque distribution; killed by Hank Schrader"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "p-marco",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Marco Salamanca"
+   ],
+   "deathDate": [
+    "2009"
+   ],
+   "notes": [
+    "one of 'the Cousins' — cartel hitmen; killed by Hank Schrader in the parking-lot ambush"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "p-leonel",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Leonel Salamanca"
+   ],
+   "deathDate": [
+    "2009"
+   ],
+   "notes": [
+    "one of 'the Cousins' — cartel hitmen; survived the ambush, finished by Ehrmantraut in hospital"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "p-nacho",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Ignacio Varga"
+   ],
+   "weakAlias": [
+    "Nacho"
+   ],
+   "deathDate": [
+    "2004"
+   ],
+   "notes": [
+    "Salamanca lieutenant; coerced into working for Fring against Lalo"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "p-nodoze",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "No-Doze"
+   ],
+   "deathDate": [
+    "2008"
+   ],
+   "notes": [
+    "Tuco's man; beaten to death by Tuco in the junkyard"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "p-gonzo",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Gonzo"
+   ],
+   "deathDate": [
+    "2008"
+   ],
+   "notes": [
+    "Tuco's man; died moving No-Doze's body"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "p-krazy8",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Domingo Gallardo Molina"
+   ],
+   "weakAlias": [
+    "Krazy-8",
+    "Krazy 8"
+   ],
+   "deathDate": [
+    "2008"
+   ],
+   "notes": [
+    "Tuco's distributor and DEA confidential informant; strangled by Walter White"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "p-max",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Maximino Arciniega"
+   ],
+   "weakAlias": [
+    "Max"
+   ],
+   "deathDate": [
+    "1989"
+   ],
+   "sources": [
+    "doc-bb-casefile~p4"
+   ],
+   "notes": [
+    "Fring's partner and co-founder of Los Pollos Hermanos; executed by Hector on Eladio's orders"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "rel-ct1",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Eladio Vuente"
+   ],
+   "organization": [
+    "Juarez Cartel"
+   ],
+   "role": [
+    "leader"
+   ],
+   "endDate": [
+    "2010"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "rel-ct2",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Juan Bolsa"
+   ],
+   "organization": [
+    "Juarez Cartel"
+   ],
+   "role": [
+    "underboss"
+   ],
+   "endDate": [
+    "2010"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "rel-ct3",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Hector Salamanca"
+   ],
+   "organization": [
+    "Juarez Cartel"
+   ],
+   "role": [
+    "capo"
+   ],
+   "endDate": [
+    "2010"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "rel-ct4",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Lalo Salamanca"
+   ],
+   "organization": [
+    "Juarez Cartel"
+   ],
+   "role": [
+    "capo"
+   ],
+   "endDate": [
+    "2004"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "rel-ct5",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Marco Salamanca",
+    "Leonel Salamanca"
+   ],
+   "organization": [
+    "Juarez Cartel"
+   ],
+   "role": [
+    "sicario"
+   ],
+   "endDate": [
+    "2009"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "rel-ct6",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Tuco Salamanca's Albuquerque crew"
+   ],
+   "organization": [
+    "Juarez Cartel"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "rel-ct7",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Tuco Salamanca"
+   ],
+   "organization": [
+    "Tuco Salamanca's Albuquerque crew"
+   ],
+   "role": [
+    "crew chief"
+   ],
+   "endDate": [
+    "2008"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "rel-ct8",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Domingo Gallardo Molina"
+   ],
+   "organization": [
+    "Tuco Salamanca's Albuquerque crew"
+   ],
+   "role": [
+    "distributor"
+   ],
+   "endDate": [
+    "2008"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "rel-ct9",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "No-Doze",
+    "Gonzo"
+   ],
+   "organization": [
+    "Tuco Salamanca's Albuquerque crew"
+   ],
+   "role": [
+    "member"
+   ],
+   "endDate": [
+    "2008"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "rel-ct10",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Ignacio Varga"
+   ],
+   "organization": [
+    "Tuco Salamanca's Albuquerque crew"
+   ],
+   "role": [
+    "member"
+   ],
+   "endDate": [
+    "2004"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "rel-max1",
+  "schema": "Associate",
+  "properties": {
+   "person": [
+    "Maximino Arciniega"
+   ],
+   "associate": [
+    "Gustavo Fring"
+   ],
+   "relationship": [
+    "business partner; co-founded Los Pollos Hermanos"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "fam-s1",
+  "schema": "Family",
+  "properties": {
+   "person": [
+    "Tuco Salamanca"
+   ],
+   "relative": [
+    "Hector Salamanca"
+   ],
+   "relationship": [
+    "uncle"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "fam-s2",
+  "schema": "Family",
+  "properties": {
+   "person": [
+    "Marco Salamanca"
+   ],
+   "relative": [
+    "Hector Salamanca"
+   ],
+   "relationship": [
+    "uncle"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "fam-s3",
+  "schema": "Family",
+  "properties": {
+   "person": [
+    "Leonel Salamanca"
+   ],
+   "relative": [
+    "Hector Salamanca"
+   ],
+   "relationship": [
+    "uncle"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "fam-s4",
+  "schema": "Family",
+  "properties": {
+   "person": [
+    "Lalo Salamanca"
+   ],
+   "relative": [
+    "Hector Salamanca"
+   ],
+   "relationship": [
+    "uncle"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "fam-s5",
+  "schema": "Family",
+  "properties": {
+   "person": [
+    "Marco Salamanca"
+   ],
+   "relative": [
+    "Leonel Salamanca"
+   ],
+   "relationship": [
+    "twin brother"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "fam-s6",
+  "schema": "Family",
+  "properties": {
+   "person": [
+    "Tuco Salamanca"
+   ],
+   "relative": [
+    "Marco Salamanca"
+   ],
+   "relationship": [
+    "cousin"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "fam-s7",
+  "schema": "Family",
+  "properties": {
+   "person": [
+    "Tuco Salamanca"
+   ],
+   "relative": [
+    "Leonel Salamanca"
+   ],
+   "relationship": [
+    "cousin"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "fam-s8",
+  "schema": "Family",
+  "properties": {
+   "person": [
+    "Lalo Salamanca"
+   ],
+   "relative": [
+    "Tuco Salamanca"
+   ],
+   "relationship": [
+    "cousin"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "prv-ct1",
+  "schema": "Documentation",
+  "properties": {
+   "document": [
+    "doc-bb-casefile~p3"
+   ],
+   "entity": [
+    "Juarez Cartel"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "prv-ct2",
+  "schema": "Documentation",
+  "properties": {
+   "document": [
+    "doc-bb-casefile~p3"
+   ],
+   "entity": [
+    "Tuco Salamanca"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ },
+ {
+  "id": "prv-ct3",
+  "schema": "Documentation",
+  "properties": {
+   "document": [
+    "doc-bb-casefile~p4"
+   ],
+   "entity": [
+    "Maximino Arciniega"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-133d2af9",
+   "timestamp": "2026-10-14T00:10:30+00:00",
+   "ingest": "18543f86ab0e"
+  }
+ }
+]

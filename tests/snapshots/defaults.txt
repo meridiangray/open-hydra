@@ -1,0 +1,8 @@
+exit 0
+generic    default
+hierarchy  default
+hints      default
+direction  default
+collate    default
+params     default
+artifact   default

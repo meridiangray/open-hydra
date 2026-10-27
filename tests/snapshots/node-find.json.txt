@@ -1,0 +1,51 @@
+exit 0
+[
+ {
+  "score": 1.0,
+  "id": "dea:p-heisenberg-dea",
+  "caption": "Heisenberg",
+  "schema": "Person",
+  "position": null,
+  "parent": null,
+  "matched": {
+   "field": "name",
+   "value": "Heisenberg"
+  }
+ },
+ {
+  "score": 1.0,
+  "id": "heisenberg:p-walt",
+  "caption": "Walter Hartwell White",
+  "schema": "Person",
+  "position": "Leader",
+  "parent": "Heisenberg Organization",
+  "matched": {
+   "field": "weakAlias",
+   "value": "Heisenberg"
+  }
+ },
+ {
+  "score": 0.95,
+  "id": "heisenberg:org-heisenberg",
+  "caption": "Heisenberg Organization",
+  "schema": "Organization",
+  "position": null,
+  "parent": null,
+  "matched": {
+   "field": "name",
+   "value": "Heisenberg Organization"
+  }
+ },
+ {
+  "score": 0.75,
+  "id": "dea:p-hank",
+  "caption": "Henry R. Schrader",
+  "schema": "Person",
+  "position": null,
+  "parent": "DEA Albuquerque Field Office",
+  "matched": {
+   "field": "notes",
+   "value": "DEA agent; ran the Heisenberg investigation; killed by Jack Welker at To'hajiilee"
+  }
+ }
+]

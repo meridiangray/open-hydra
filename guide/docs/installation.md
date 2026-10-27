@@ -5,13 +5,13 @@ Hydra needs Python 3.11 or later. Install `hydra-ctl` from GitHub with [uv](http
 === "uv"
 
     ```sh
-    uv tool install git+https://github.com/meridiangray/openhydra
+    uv tool install git+https://github.com/meridiangray/open-hydra
     ```
 
 === "pip"
 
     ```sh
-    pip install git+https://github.com/meridiangray/openhydra
+    pip install git+https://github.com/meridiangray/open-hydra
     ```
 
 Then run `hydra-ctl` on its own to see the command list.
@@ -23,13 +23,13 @@ To get the latest version:
 === "uv"
 
     ```sh
-    uv tool install --reinstall git+https://github.com/meridiangray/openhydra
+    uv tool install --reinstall git+https://github.com/meridiangray/open-hydra
     ```
 
 === "pip"
 
     ```sh
-    pip install --upgrade --force-reinstall --no-deps git+https://github.com/meridiangray/openhydra
+    pip install --upgrade --force-reinstall --no-deps git+https://github.com/meridiangray/open-hydra
     ```
 
 ## Removing

@@ -1,0 +1,55 @@
+exit 0
+{
+ "claims": 914,
+ "entities": 227,
+ "collections": {
+  "operations": 223,
+  "heisenberg": 191,
+  "fring": 148,
+  "cartel": 138,
+  "fring-condensed": 111,
+  "dea": 103
+ },
+ "schemas": {
+  "Person": 201,
+  "Membership": 176,
+  "Event": 102,
+  "Family": 48,
+  "ProjectParticipant": 45,
+  "Organization": 41,
+  "Employment": 36,
+  "RealEstate": 34,
+  "Ownership": 27,
+  "Project": 24,
+  "Documentation": 22,
+  "Associate": 18,
+  "Company": 18,
+  "Page": 17,
+  "Address": 17,
+  "Trip": 17,
+  "Representation": 16,
+  "Directorship": 14,
+  "Sanction": 10,
+  "Vehicle": 9,
+  "PublicBody": 8,
+  "Succession": 4,
+  "Similar": 3,
+  "Occupancy": 3,
+  "Pages": 2,
+  "Position": 2
+ },
+ "props": {
+  "name": 105,
+  "notes": 83,
+  "role": 73,
+  "member": 55,
+  "organization": 55,
+  "involved": 50,
+  "weakAlias": 43,
+  "deathDate": 42,
+  "endDate": 36,
+  "person": 22
+ },
+ "disputed": 0,
+ "disputed_examples": []
+}

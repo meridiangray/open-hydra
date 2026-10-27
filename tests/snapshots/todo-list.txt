@@ -1,0 +1,56 @@
+exit 0
+merges   14
+    row                      record                          record                         conflict   group
+    merge-00783b8a5bab5fa8   operations:ev-cousins           operations:ev-wayfarer
+    merge-049613bec1847886   operations:ev-tohajiilee        operations:ev-tuco             date
+    merge-25859111f32a53ef   heisenberg:org-heisenberg       heisenberg:p-walt                         grp-320ae7194e7a
+    merge-2e8c9a6a7e563ef2   operations:ev-boxcutter         operations:ev-casa-tranquila              grp-c4a89b43db05
+    merge-3296ae23a9395f1b   dea:p-heisenberg-dea            heisenberg:p-walt                         grp-320ae7194e7a
+    merge-346800259d4f3845   heisenberg:re-white             operations:re-casa-tranquila              grp-3d0328c87b2e
+    merge-57584e86d07f1bb0   operations:ev-boxcutter         operations:ev-wayfarer         date       grp-c4a89b43db05
+    merge-5bc6a18cdabb97c9   operations:ev-boxcutter         operations:ev-cousins          date       grp-c4a89b43db05
+    merge-976285752386a83c   fring-condensed:re-lavanderia   operations:re-casa-tranquila              grp-f02b35b32e4f
+    merge-9a6ff3acbbfa175a   operations:ev-max               operations:ev-pool             date       grp-bd35718f67c3
+    merge-a43c30854f076b22   operations:ev-felina            operations:ev-pool             country    grp-bd35718f67c3
+    merge-aabdb6238cdaf4e2   heisenberg:re-white             sess-96cfcd44:re-lavanderia               grp-3d0328c87b2e
+    merge-b696ef171dede45d   operations:re-casa-tranquila    sess-96cfcd44:re-lavanderia               grp-f02b35b32e4f
+    merge-d91ee9e8d271b80c   fring-condensed:re-lavanderia   heisenberg:re-white                       grp-3d0328c87b2e
+
+references   3
+    row                    record                         field                  value          candidates
+    ref-afcb9619d7e1fa48   dea:prv-dea1                   Documentation.entity   Heisenberg     3
+        1  Heisenberg                Person         dea:p-heisenberg-dea
+        2  Walter Hartwell White     Person         heisenberg:p-walt
+        3  Heisenberg Organization   Organization   heisenberg:org-heisenberg
+    ref-c34c2c3a7c4506d8   fring-condensed:rel-fr-cooks   Membership.member      Walter White   3
+        1  Walter White Jr.          Person         dea:p-waltjr
+        2  Walter Hartwell White     Person         heisenberg:p-walt
+        3  Heisenberg Organization   Organization   heisenberg:org-heisenberg
+    ref-ffee52ededc75eab   dea:san-heisenberg             Sanction.entity        Heisenberg     3
+        1  Heisenberg                Person         dea:p-heisenberg-dea
+        2  Walter Hartwell White     Person         heisenberg:p-walt
+        3  Heisenberg Organization   Organization   heisenberg:org-heisenberg
+
+placements   20
+    row                      record                       parent                      placed by
+    place-0885d03a61bc38c9   heisenberg:p-skyler          heisenberg:co-carwash       Employment (several parents)
+    place-0c4118cdee03bca9   heisenberg:p-kenny           heisenberg:p-jack           rules: Second-in-command below Leader
+    place-27e1c9910e192843   cartel:p-nacho               cartel:p-eladio             rules: Member below Leader
+    place-280778f8e19939a8   cartel:p-gonzo               cartel:p-eladio             rules: Member below Leader
+    place-2ffedf81d00118e1   heisenberg:p-kuby            heisenberg:p-jesse          rules: Member below Leader
+    place-4da066e8eb1c2280   sess-96cfcd44:p-chris-mara   sess-96cfcd44:p-fring       rules: Member below Leader
+    place-6b19e4077b1c5674   heisenberg:p-jesse           heisenberg:org-heisenberg   Membership (several parents)
+    place-7646c3aa76c72dbd   sess-96cfcd44:p-dennis       sess-96cfcd44:p-fring       rules: Member below Leader
+    place-7e2ec44e85b36063   heisenberg:p-frankie         heisenberg:p-jack           rules: Member below Leader
+    place-8133214d179ac23f   heisenberg:p-todd            heisenberg:p-jesse          rules: Member below Leader
+    place-82e6c53997c8299f   sess-96cfcd44:p-fring        sess-96cfcd44:org-fring     Membership (several parents)
+    place-8c4b38261fcc8f06   sess-96cfcd44:p-gale         sess-96cfcd44:org-fring     Membership (several parents)
+    place-937682b3379856bf   heisenberg:p-matt            heisenberg:p-jack           rules: Member below Leader
+    place-9bd53eff43c113e5   heisenberg:re-white          heisenberg:p-skyler         Ownership (several parents)
+    place-c418b6493a0b3f1e   sess-96cfcd44:p-mike         sess-96cfcd44:co-pollos     Employment (several parents)
+    place-cf481d4b402ec422   heisenberg:p-walt            heisenberg:org-heisenberg   Membership (several parents)
+    place-f5366e57980a065e   heisenberg:p-lester          heisenberg:p-jack           rules: Member below Leader
+    place-f56afed688593447   sess-96cfcd44:p-lydia        heisenberg:org-heisenberg   Membership (several parents)
+    place-fa861538ff9bd5f0   heisenberg:p-huell           heisenberg:p-jesse          rules: Member below Leader
+    place-fc95bcb4d4e1a2ad   cartel:p-nodoze              cartel:p-eladio             rules: Member below Leader
+

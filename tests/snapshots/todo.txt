@@ -1,0 +1,8 @@
+exit 0
+  kind             open
+  merges             14
+  references          3
+  placements         20
+  stale               0
+  contradictions      0
+  verdicts            0

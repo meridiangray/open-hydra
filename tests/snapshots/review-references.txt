@@ -1,0 +1,139 @@
+review   demo
+
+  kind         rows   questions
+  references      3           3
+  total           3           3
+
+[1/3] Reference · a name with 3 possible records
+  dea:prv-dea1   Documentation.entity   Heisenberg
+
+  ┌─ Link from ─────────────────────────────────┐
+  │ dea:prv-dea1   Documentation                │
+  │    document   heisenberg:doc-bb-casefile~p1 │
+  │  → entity     Heisenberg                    │
+  └─────────────────────────────────────────────┘
+
+  1  dea:p-heisenberg-dea   Person
+     name            = Heisenberg
+     notes             DEA sketch identity — proposed merge into Walter White via the Similar record
+     sources           heisenberg:doc-bb-casefile~p1
+     weakAlias         the Heisenberg
+
+  2  heisenberg:p-walt   Person
+     birthDate         1958-09-07
+     deathDate         2010-09-07
+     name              Walter Hartwell White
+     notes             chemistry teacher turned meth manufacturer — 'Heisenberg'
+     sources           heisenberg:doc-bb-casefile~p1
+     weakAlias         Walt
+                     = Heisenberg
+                       Mr. Lambert
+
+  3  heisenberg:org-heisenberg   Organization
+     dissolutionDate   2010
+     jurisdiction      us
+     name              Heisenberg Organization
+     notes             Walter White's meth operation — RV cooks, then the post-Fring 'empire business'
+     sources           heisenberg:doc-bb-casefile~p5
+     weakAlias         Walter White's operation
+                       Heisenberg's empire
+
+  [all fields]   name fields   matching fields      Tab / Shift+Tab
+Which record is "Heisenberg"?
+  1  Heisenberg                dea:p-heisenberg-dea
+  2  Walter Hartwell White     heisenberg:p-walt
+  3  Heisenberg Organization   heisenberg:org-heisenberg
+  4  none of these             
+  ? not sure   u undo   q quit
+
+[2/3] Reference · a name with 3 possible records
+  fring-condensed:rel-fr-cooks   Membership.member   Walter White
+
+  ┌─ Link from ──────────────────────────────────┐
+  │ fring-condensed:rel-fr-cooks   Membership    │
+  │    endDate        2010                       │
+  │  → member         Walter White               │
+  │                   Jesse Pinkman              │
+  │    organization   Gustavo Fring Organization │
+  │    role           cook                       │
+  │    startDate      2009                       │
+  └──────────────────────────────────────────────┘
+
+  1  dea:p-waltjr   Person
+     name              Walter White Jr.
+     notes             Walt and Skyler's son
+     weakAlias         Flynn
+
+  2  heisenberg:p-walt   Person
+     birthDate         1958-09-07
+     deathDate         2010-09-07
+     name              Walter Hartwell White
+     notes             chemistry teacher turned meth manufacturer — 'Heisenberg'
+     sources           heisenberg:doc-bb-casefile~p1
+     weakAlias         Walt
+                       Heisenberg
+                       Mr. Lambert
+
+  3  heisenberg:org-heisenberg   Organization
+     dissolutionDate   2010
+     jurisdiction      us
+     name              Heisenberg Organization
+     notes             Walter White's meth operation — RV cooks, then the post-Fring 'empire business'
+     sources           heisenberg:doc-bb-casefile~p5
+     weakAlias         Walter White's operation
+                       Heisenberg's empire
+
+  [all fields]   name fields   matching fields      Tab / Shift+Tab
+Which record is "Walter White"?
+  1  Walter White Jr.          dea:p-waltjr
+  2  Walter Hartwell White     heisenberg:p-walt
+  3  Heisenberg Organization   heisenberg:org-heisenberg
+  4  none of these             
+  ? not sure   u undo   q quit
+
+[3/3] Reference · a name with 3 possible records
+  dea:san-heisenberg   Sanction.entity   Heisenberg
+
+  ┌─ Link from ───────────────────────────────────────────────────────┐
+  │ dea:san-heisenberg   Sanction                                     │
+  │    authority   DEA                                                │
+  │  → entity      Heisenberg                                         │
+  │    program     Heisenberg investigation                           │
+  │    reason      blue methamphetamine manufacture; fugitive suspect │
+  │    startDate   2009                                               │
+  └───────────────────────────────────────────────────────────────────┘
+
+  1  dea:p-heisenberg-dea   Person
+     name            = Heisenberg
+     notes             DEA sketch identity — proposed merge into Walter White via the Similar record
+     sources           heisenberg:doc-bb-casefile~p1
+     weakAlias         the Heisenberg
+
+  2  heisenberg:p-walt   Person
+     birthDate         1958-09-07
+     deathDate         2010-09-07
+     name              Walter Hartwell White
+     notes             chemistry teacher turned meth manufacturer — 'Heisenberg'
+     sources           heisenberg:doc-bb-casefile~p1
+     weakAlias         Walt
+                     = Heisenberg
+                       Mr. Lambert
+
+  3  heisenberg:org-heisenberg   Organization
+     dissolutionDate   2010
+     jurisdiction      us
+     name              Heisenberg Organization
+     notes             Walter White's meth operation — RV cooks, then the post-Fring 'empire business'
+     sources           heisenberg:doc-bb-casefile~p5
+     weakAlias         Walter White's operation
+                       Heisenberg's empire
+
+  [all fields]   name fields   matching fields      Tab / Shift+Tab
+Which record is "Heisenberg"?
+  1  Heisenberg                dea:p-heisenberg-dea
+  2  Walter Hartwell White     heisenberg:p-walt
+  3  Heisenberg Organization   heisenberg:org-heisenberg
+  4  none of these             
+  ? not sure   u undo   q quit
+
+  answered   0

@@ -1,8 +1,8 @@
-site_name: Hydra
+site_name: open-hydra
 site_description: Hydra translates evidence into data points. Guides and command reference for hydra-ctl.
-# GitHub Pages: https://github.com/meridiangray/openhydra
-site_url: https://meridiangray.github.io/openhydra/
-repo_url: https://github.com/meridiangray/openhydra/
+# GitHub Pages: https://github.com/meridiangray/open-hydra
+site_url: https://meridiangray.github.io/open-hydra/
+repo_url: https://github.com/meridiangray/open-hydra/
 edit_uri: edit/main/guide/docs/
 
 docs_dir: guide/docs

@@ -1,0 +1,61 @@
+exit 0
+Associate   outside
+  titles   associate
+           close associate
+           contact
+Leader
+│ titles   boss
+│          leader
+│          head of organization
+│ records  Declan                  Person
+│          Eladio Vuente           Person
+│          Gustavo Fring           Person
+│          Jack Welker             Person
+│          Jesse Bruce Pinkman     Person
+│          Walter Hartwell White   Person
+├── Member
+│     titles   member
+│              crew member
+│     records  Chris Mara         Person
+│              Dennis Markowski   Person
+│              Frankie            Person
+│              Gonzo              Person
+│              Huell Babineaux    Person
+│              Ignacio Varga      Person
+│              Lester             Person
+│              Matt               Person
+│              No-Doze            Person
+│              Patrick Kuby       Person
+│              Todd Alquist       Person
+└── Second-in-command
+    │ titles   second in command
+    │          deputy
+    │ records  Kenny   Person
+    └── Member ^
+          titles   member
+                   crew member
+          records  Chris Mara         Person
+                   Dennis Markowski   Person
+                   Frankie            Person
+                   Gonzo              Person
+                   Huell Babineaux    Person
+                   Ignacio Varga      Person
+                   Lester             Person
+                   Matt               Person
+                   No-Doze            Person
+                   Patrick Kuby       Person
+                   Todd Alquist       Person
+
+unplaced titles   36
+  Head of Security                    criminal defense counsel     mechanic
+  air traffic controller              dealer                       money laundering
+  assistant                           distributor                  outside counsel
+  assistant cook                      enforcer                     planner
+  assistant special agent in charge   exterminator                 president
+  capo                                head of fast food division   security
+  chemist                             head of security             sicario
+  cook                                international distribution   special agent
+  corporate security consultant       lead chemist                 sponsor
+  counsel                             logistics                    spotter
+  crew                                logistics executive          underboss
+  crew chief                          manager                      unwitting shipping infrastructure

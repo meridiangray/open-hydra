@@ -1,0 +1,19 @@
+exit 0
+Gustavo Fring (Person) — Leader
+│ also  Juarez Cartel                      Membership           distributor
+│ also  Los Pollos Hermanos                Directorship         president
+│ also  Superlab design and construction   ProjectParticipant   sponsor
+├── Chris Mara (Person) — Member
+│     also  Gustavo Fring Organization   Membership   member
+└── Dennis Markowski (Person) — Member
+      also  Gustavo Fring Organization   Membership   member
+Gustavo Fring Organization (Organization)
+├── Gustavo Fring (Person) — Leader ^
+│     also  Juarez Cartel                      Membership           distributor
+│     also  Los Pollos Hermanos                Directorship         president
+│     also  Superlab design and construction   ProjectParticipant   sponsor
+├── Gale Boetticher (Person)
+│     also  Superlab design and construction   ProjectParticipant   lead chemist
+├── Superlab design and construction (Project)
+├── Tyrus Kitt (Person)
+└── Victor (Person)

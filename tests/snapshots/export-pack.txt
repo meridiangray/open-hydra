@@ -1,0 +1,24 @@
+exit 0
+Exported demo as ftm to <tmp>/out/e.jsonl
+  entities   ftm schema
+       227   65c772987032
+
+exit 0
+Exported demo as csv to <tmp>/out/csv
+  entities   nodes   edges   unlinked relationships   ftm schema
+       227     102     302                        1   65c772987032
+
+exit 0
+Exported demo as graphml to <tmp>/out/g.graphml
+  entities   nodes   edges   unlinked relationships   ftm schema
+       227     102     302                        1   65c772987032
+
+8bdabbf4dbce6aa4  out/csv/edges.csv
+461979147efa6049  out/csv/nodes.csv
+d5a5c158af98d35b  out/e.jsonl
+fedb8ff5ba1d4da8  out/g.graphml
+exit 0
+Packed demo into <tmp>/out/demo.hydra
+  size     build
+  173 KB   included
+

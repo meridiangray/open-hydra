@@ -1,0 +1,118 @@
+exit 0
+Casa Tranquila nursing home (RealEstate)
+Dan Wachsberger (Person)
+Declan's organization (Organization)
+\-- Declan (Person) — Leader
+Federal Aviation Administration (PublicBody)
+\-- Donald Margolis (Person)
+Heisenberg (Person)
+Heisenberg Organization (Organization)
+|-- Jesse Bruce Pinkman (Person) — Leader
+|   | also  Dead freight methylamine heist     ProjectParticipant   logistics
+|   | also  Evidence-room magnet operation     ProjectParticipant   crew
+|   | also  Gustavo Fring Organization         Membership           cook
+|   | also  Pinkman street crew                Membership           leader
+|   | also  Vamonos Pest mobile cook program   ProjectParticipant   cook
+|   |-- Huell Babineaux (Person) — Member
+|   |     also  Heisenberg Organization   Membership   member
+|   |-- Patrick Kuby (Person) — Member
+|   |     also  Heisenberg Organization   Membership   member
+|   \-- Todd Alquist (Person) — Member
+|         also  Dead freight methylamine heist     ProjectParticipant   mechanic
+|         also  Heisenberg Organization            Membership           assistant cook
+|         also  Jack Welker's gang                 Membership           member
+|         also  Vamonos Pest                       Employment           exterminator
+|         also  Vamonos Pest mobile cook program   ProjectParticipant   assistant
+|-- Walter Hartwell White (Person) — Leader
+|   | also  Dead freight methylamine heist     ProjectParticipant   planner
+|   | also  Evidence-room magnet operation     ProjectParticipant   planner
+|   | also  Gustavo Fring Organization         Membership           cook
+|   | also  Vamonos Pest mobile cook program   ProjectParticipant   cook
+|   |-- A1A Car Wash (Company)
+|   |   \-- Skyler White (Person)
+|   |       | also  Heisenberg Organization   Membership   money laundering
+|   |       \-- White residence — 308 Negra Arroyo Lane (RealEstate)
+|   |             also  Walter Hartwell White   Ownership
+|   |-- The Crystal Ship (Vehicle)
+|   \-- Walter White's Pontiac Aztek (Vehicle)
+|-- Czech Republic distribution channel (Project)
+|   \-- Madrigal Electromotive GmbH (Company)
+|       |-- Peter Schuler (Person)
+|       |-- Lavanderia Brillante (RealEstate)
+|       |   \-- The Superlab (RealEstate)
+|       \-- Los Pollos Hermanos (Company)
+|           |-- Los Pollos Hermanos chicken farm (RealEstate)
+|           |-- Los Pollos Hermanos — Albuquerque flagship (RealEstate)
+|           \-- Michael Ehrmantraut (Person)
+|                 also  Dead freight methylamine heist     ProjectParticipant   spotter
+|                 also  Evidence-room magnet operation     ProjectParticipant   crew
+|                 also  Gustavo Fring Organization         Membership           head of security
+|                 also  Heisenberg Organization            Membership           head of security
+|                 also  Superlab design and construction   ProjectParticipant   security
+|-- Dead freight methylamine heist (Project)
+|-- Evidence-room magnet operation (Project)
+|-- James Morgan McGill (Person)
+|-- Lydia Rodarte-Quayle (Person)
+|     also  Czech Republic distribution channel   ProjectParticipant   international distribution
+|     also  Madrigal Electromotive GmbH           Employment           logistics executive
+|-- Pinkman street crew (Organization)
+|   |-- Brandon Mayhew (Person)
+|   |-- Christian Ortega (Person)
+|   \-- Skinny Pete (Person)
+|-- Vamonos Pest (Company)
+\-- Vamonos Pest mobile cook program (Project)
+Holly White (Person)
+Jack Welker's gang (Organization)
+\-- Jack Welker (Person) — Leader
+    |-- Kenny (Person) — Second-in-command
+    |     also  Jack Welker's gang   Membership   second-in-command
+    |-- Frankie (Person) — Member
+    |     also  Jack Welker's gang   Membership   member
+    |-- Lester (Person) — Member
+    |     also  Jack Welker's gang   Membership   member
+    \-- Matt (Person) — Member
+          also  Jack Welker's gang   Membership   member
+Jane Margolis (Person)
+Juarez Cartel (Organization)
+|-- Eladio Vuente (Person) — Leader
+|   |-- Gonzo (Person) — Member
+|   |     also  Tuco Salamanca's Albuquerque crew   Membership   member
+|   |-- Ignacio Varga (Person) — Member
+|   |     also  Tuco Salamanca's Albuquerque crew   Membership   member
+|   \-- No-Doze (Person) — Member
+|         also  Tuco Salamanca's Albuquerque crew   Membership   member
+|-- Gustavo Fring Organization (Organization)
+|   |-- Gustavo Fring (Person) — Leader
+|   |   | also  Juarez Cartel                      Membership           distributor
+|   |   | also  Los Pollos Hermanos                Directorship         president
+|   |   | also  Superlab design and construction   ProjectParticipant   sponsor
+|   |   |-- Chris Mara (Person) — Member
+|   |   |     also  Gustavo Fring Organization   Membership   member
+|   |   \-- Dennis Markowski (Person) — Member
+|   |         also  Gustavo Fring Organization   Membership   member
+|   |-- Gale Boetticher (Person)
+|   |     also  Superlab design and construction   ProjectParticipant   lead chemist
+|   |-- Superlab design and construction (Project)
+|   |-- Tyrus Kitt (Person)
+|   \-- Victor (Person)
+|-- Hector Salamanca (Person)
+|-- Juan Bolsa (Person)
+|-- Lalo Salamanca (Person)
+|-- Leonel Salamanca (Person)
+|-- Marco Salamanca (Person)
+\-- Tuco Salamanca's Albuquerque crew (Organization)
+    |-- Domingo Gallardo Molina (Person)
+    \-- Tuco Salamanca (Person)
+Marie Schrader (Person)
+Maximino Arciniega (Person)
+United States Drug Enforcement Administration (PublicBody)
+\-- DEA Albuquerque Field Office (PublicBody)
+    |-- George Merkert (Person)
+    |-- Henry R. Schrader (Person)
+    \-- Steven Gomez (Person)
+Walter White Jr. (Person)
+operations:addr-abq (Address)
+operations:addr-hacienda (Address)
+operations:addr-hannover (Address)
+operations:addr-juarez (Address)
+operations:addr-tohajiilee (Address)

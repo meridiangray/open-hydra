@@ -1,0 +1,1099 @@
+[
+ {
+  "id": "addr-abq",
+  "schema": "Address",
+  "properties": {
+   "full": [
+    "Albuquerque, New Mexico, United States"
+   ],
+   "city": [
+    "Albuquerque"
+   ],
+   "state": [
+    "New Mexico"
+   ],
+   "country": [
+    "us"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "addr-tohajiilee",
+  "schema": "Address",
+  "properties": {
+   "full": [
+    "To'hajiilee, Navajo reservation, New Mexico"
+   ],
+   "state": [
+    "New Mexico"
+   ],
+   "country": [
+    "us"
+   ],
+   "remarks": [
+    "first cook site; burial site of the money — and of Schrader and Gomez"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "addr-juarez",
+  "schema": "Address",
+  "properties": {
+   "full": [
+    "Ciudad Juarez, Chihuahua, Mexico"
+   ],
+   "city": [
+    "Ciudad Juarez"
+   ],
+   "country": [
+    "mx"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "addr-hannover",
+  "schema": "Address",
+  "properties": {
+   "full": [
+    "Hanover, Lower Saxony, Germany"
+   ],
+   "city": [
+    "Hanover"
+   ],
+   "country": [
+    "de"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "addr-hacienda",
+  "schema": "Address",
+  "properties": {
+   "full": [
+    "Don Eladio's hacienda, Mexico"
+   ],
+   "country": [
+    "mx"
+   ],
+   "remarks": [
+    "cartel headquarters; poolside executions in 1989 and 2010"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "veh-rv",
+  "schema": "Vehicle",
+  "properties": {
+   "name": [
+    "The Crystal Ship"
+   ],
+   "type": [
+    "recreational vehicle"
+   ],
+   "model": [
+    "1986 Fleetwood Bounder"
+   ],
+   "deregistrationDate": [
+    "2010"
+   ],
+   "notes": [
+    "the original mobile meth lab; crushed at the junkyard"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "veh-aztek",
+  "schema": "Vehicle",
+  "properties": {
+   "name": [
+    "Walter White's Pontiac Aztek"
+   ],
+   "type": [
+    "SUV"
+   ],
+   "model": [
+    "2004 Pontiac Aztek"
+   ],
+   "notes": [
+    "the beige Aztek"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "re-casa-tranquila",
+  "schema": "RealEstate",
+  "properties": {
+   "name": [
+    "Casa Tranquila nursing home"
+   ],
+   "propertyType": [
+    "nursing home"
+   ],
+   "address": [
+    "Albuquerque, NM"
+   ],
+   "notes": [
+    "Hector Salamanca's residence; destroyed in the explosion that killed Fring"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "rel-ops1",
+  "schema": "Ownership",
+  "properties": {
+   "owner": [
+    "Walter Hartwell White"
+   ],
+   "asset": [
+    "The Crystal Ship"
+   ],
+   "notes": [
+    "bought for the first desert cook"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "rel-ops2",
+  "schema": "Ownership",
+  "properties": {
+   "owner": [
+    "Walter Hartwell White"
+   ],
+   "asset": [
+    "Walter White's Pontiac Aztek"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "trip-rv-cook",
+  "schema": "Trip",
+  "properties": {
+   "name": [
+    "Desert cook run"
+   ],
+   "vehicle": [
+    "The Crystal Ship"
+   ],
+   "startLocation": [
+    "Albuquerque, New Mexico, United States"
+   ],
+   "endLocation": [
+    "To'hajiilee, Navajo reservation, New Mexico"
+   ],
+   "involved": [
+    "Walter Hartwell White",
+    "Jesse Bruce Pinkman"
+   ],
+   "startDate": [
+    "2008"
+   ],
+   "endDate": [
+    "2009"
+   ],
+   "summary": [
+    "RV cooks in the badlands outside Albuquerque"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "trip-juarez",
+  "schema": "Trip",
+  "properties": {
+   "name": [
+    "Juarez lab instruction"
+   ],
+   "startLocation": [
+    "Albuquerque, New Mexico, United States"
+   ],
+   "endLocation": [
+    "Ciudad Juarez, Chihuahua, Mexico"
+   ],
+   "involved": [
+    "Jesse Bruce Pinkman",
+    "Michael Ehrmantraut",
+    "Gustavo Fring"
+   ],
+   "startDate": [
+    "2010"
+   ],
+   "summary": [
+    "Jesse sent to teach the cartel's chemists the blue-meth cook — cover for the poisoning"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "ev-max",
+  "schema": "Event",
+  "properties": {
+   "name": [
+    "Maximino Arciniega executed at the hacienda"
+   ],
+   "date": [
+    "1989"
+   ],
+   "location": [
+    "Don Eladio's hacienda"
+   ],
+   "country": [
+    "mx"
+   ],
+   "organizer": [
+    "Eladio Vuente"
+   ],
+   "involved": [
+    "Hector Salamanca",
+    "Maximino Arciniega",
+    "Gustavo Fring",
+    "Eladio Vuente",
+    "Juan Bolsa"
+   ],
+   "summary": [
+    "Hector shot Max on Eladio's orders — the origin of the Fring/Salamanca feud"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "ev-tuco",
+  "schema": "Event",
+  "properties": {
+   "name": [
+    "Junkyard shootout — Tuco Salamanca killed"
+   ],
+   "date": [
+    "2008"
+   ],
+   "location": [
+    "To'hajiilee"
+   ],
+   "country": [
+    "us"
+   ],
+   "involved": [
+    "Henry R. Schrader",
+    "Tuco Salamanca",
+    "Walter Hartwell White",
+    "Jesse Bruce Pinkman"
+   ],
+   "summary": [
+    "Hank tracked Walt's car and killed Tuco in a shootout"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "ev-wayfarer",
+  "schema": "Event",
+  "properties": {
+   "name": [
+    "Wayfarer 515 mid-air collision"
+   ],
+   "date": [
+    "2009"
+   ],
+   "location": [
+    "Albuquerque, NM"
+   ],
+   "country": [
+    "us"
+   ],
+   "involved": [
+    "Donald Margolis"
+   ],
+   "summary": [
+    "air traffic controller Donald Margolis, grieving Jane's death, let two planes collide over ABQ"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "ev-cousins",
+  "schema": "Event",
+  "properties": {
+   "name": [
+    "Cousins' assassination attempt on Hank Schrader"
+   ],
+   "date": [
+    "2009"
+   ],
+   "location": [
+    "Albuquerque, NM"
+   ],
+   "country": [
+    "us"
+   ],
+   "organizer": [
+    "Juan Bolsa"
+   ],
+   "involved": [
+    "Henry R. Schrader",
+    "Marco Salamanca",
+    "Leonel Salamanca",
+    "Michael Ehrmantraut"
+   ],
+   "summary": [
+    "Hank survived the parking-lot ambush; Marco dead, Leonel later finished in hospital"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "ev-boxcutter",
+  "schema": "Event",
+  "properties": {
+   "name": [
+    "Gale Boetticher murdered; Victor killed"
+   ],
+   "date": [
+    "2010"
+   ],
+   "location": [
+    "Albuquerque, NM"
+   ],
+   "country": [
+    "us"
+   ],
+   "organizer": [
+    "Walter Hartwell White"
+   ],
+   "involved": [
+    "Jesse Bruce Pinkman",
+    "Gale Boetticher",
+    "Victor",
+    "Gustavo Fring",
+    "Michael Ehrmantraut"
+   ],
+   "summary": [
+    "Jesse killed Gale on Walt's instruction; Fring slit Victor's throat with a box cutter"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "ev-pool",
+  "schema": "Event",
+  "properties": {
+   "name": [
+    "Cartel leadership massacred at the hacienda"
+   ],
+   "date": [
+    "2010"
+   ],
+   "location": [
+    "Don Eladio's hacienda"
+   ],
+   "country": [
+    "mx"
+   ],
+   "organizer": [
+    "Gustavo Fring"
+   ],
+   "involved": [
+    "Gustavo Fring",
+    "Michael Ehrmantraut",
+    "Jesse Bruce Pinkman",
+    "Eladio Vuente",
+    "Juan Bolsa"
+   ],
+   "summary": [
+    "Fring poisoned the tequila — Eladio, Bolsa and the cartel leadership dead"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "ev-casa-tranquila",
+  "schema": "Event",
+  "properties": {
+   "name": [
+    "Casa Tranquila explosion"
+   ],
+   "date": [
+    "2010"
+   ],
+   "location": [
+    "Casa Tranquila, Albuquerque"
+   ],
+   "country": [
+    "us"
+   ],
+   "organizer": [
+    "Walter Hartwell White"
+   ],
+   "involved": [
+    "Gustavo Fring",
+    "Hector Salamanca",
+    "Tyrus Kitt",
+    "Walter Hartwell White"
+   ],
+   "summary": [
+    "Hector detonated Walt's pipe bomb, killing Fring, Tyrus and himself"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "ev-prison",
+  "schema": "Event",
+  "properties": {
+   "name": [
+    "Ten-witness prison murder operation"
+   ],
+   "date": [
+    "2010"
+   ],
+   "country": [
+    "us"
+   ],
+   "organizer": [
+    "Jack Welker"
+   ],
+   "involved": [
+    "Jack Welker",
+    "Kenny",
+    "Walter Hartwell White",
+    "Dan Wachsberger"
+   ],
+   "summary": [
+    "Welker's gang killed the nine Fring legacy witnesses plus Wachsberger across three jails in two minutes"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "ev-tohajiilee",
+  "schema": "Event",
+  "properties": {
+   "name": [
+    "To'hajiilee shootout"
+   ],
+   "date": [
+    "2010"
+   ],
+   "location": [
+    "To'hajiilee"
+   ],
+   "country": [
+    "us"
+   ],
+   "organizer": [
+    "Jack Welker"
+   ],
+   "involved": [
+    "Jack Welker",
+    "Kenny",
+    "Todd Alquist",
+    "Henry R. Schrader",
+    "Steven Gomez",
+    "Walter Hartwell White",
+    "Jesse Bruce Pinkman"
+   ],
+   "summary": [
+    "Schrader and Gomez killed; Walt's money seized; Jesse taken as a slave-cook"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "ev-felina",
+  "schema": "Event",
+  "properties": {
+   "name": [
+    "Welker compound massacre — Walter White's last act"
+   ],
+   "date": [
+    "2010"
+   ],
+   "location": [
+    "Jack Welker's compound, New Mexico"
+   ],
+   "country": [
+    "us"
+   ],
+   "organizer": [
+    "Walter Hartwell White"
+   ],
+   "involved": [
+    "Walter Hartwell White",
+    "Jack Welker",
+    "Kenny",
+    "Todd Alquist",
+    "Jesse Bruce Pinkman",
+    "Lydia Rodarte-Quayle"
+   ],
+   "summary": [
+    "Walt's M60 rig wiped out the gang; Jesse freed; Lydia poisoned with ricin"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "proj-superlab",
+  "schema": "Project",
+  "properties": {
+   "name": [
+    "Superlab design and construction"
+   ],
+   "projectId": [
+    "SUPERLAB-01"
+   ],
+   "status": [
+    "completed"
+   ],
+   "organization": [
+    "Gustavo Fring Organization"
+   ],
+   "goal": [
+    "a concealed industrial-scale meth lab under the Lavanderia Brillante"
+   ],
+   "startDate": [
+    "2009"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "proj-train-heist",
+  "schema": "Project",
+  "properties": {
+   "name": [
+    "Dead freight methylamine heist"
+   ],
+   "projectId": [
+    "DEADFREIGHT"
+   ],
+   "status": [
+    "completed"
+   ],
+   "organization": [
+    "Heisenberg Organization"
+   ],
+   "goal": [
+    "siphon 1,000 gallons of methylamine from a stopped train in the dead zone"
+   ],
+   "notes": [
+    "Drew Sharp witnessed the landing; Todd shot him"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "proj-vamonos",
+  "schema": "Project",
+  "properties": {
+   "name": [
+    "Vamonos Pest mobile cook program"
+   ],
+   "status": [
+    "active"
+   ],
+   "organization": [
+    "Heisenberg Organization"
+   ],
+   "goal": [
+    "cook inside tented fumigation houses — the lab that moves"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "proj-magnet",
+  "schema": "Project",
+  "properties": {
+   "name": [
+    "Evidence-room magnet operation"
+   ],
+   "status": [
+    "completed"
+   ],
+   "organization": [
+    "Heisenberg Organization"
+   ],
+   "goal": [
+    "wipe Fring's laptop in APD evidence lockup with a truck-mounted electromagnet"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "proj-czech",
+  "schema": "Project",
+  "properties": {
+   "name": [
+    "Czech Republic distribution channel"
+   ],
+   "status": [
+    "active"
+   ],
+   "organization": [
+    "Heisenberg Organization"
+   ],
+   "goal": [
+    "blue meth to the Czech market via Madrigal shipping infrastructure"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "pp-1",
+  "schema": "ProjectParticipant",
+  "properties": {
+   "participant": [
+    "Gustavo Fring"
+   ],
+   "project": [
+    "Superlab design and construction"
+   ],
+   "role": [
+    "sponsor"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "pp-2",
+  "schema": "ProjectParticipant",
+  "properties": {
+   "participant": [
+    "Gale Boetticher"
+   ],
+   "project": [
+    "Superlab design and construction"
+   ],
+   "role": [
+    "lead chemist"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "pp-3",
+  "schema": "ProjectParticipant",
+  "properties": {
+   "participant": [
+    "Michael Ehrmantraut"
+   ],
+   "project": [
+    "Superlab design and construction"
+   ],
+   "role": [
+    "security"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "pp-4",
+  "schema": "ProjectParticipant",
+  "properties": {
+   "participant": [
+    "Walter Hartwell White"
+   ],
+   "project": [
+    "Dead freight methylamine heist"
+   ],
+   "role": [
+    "planner"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "pp-5",
+  "schema": "ProjectParticipant",
+  "properties": {
+   "participant": [
+    "Jesse Bruce Pinkman"
+   ],
+   "project": [
+    "Dead freight methylamine heist"
+   ],
+   "role": [
+    "logistics"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "pp-6",
+  "schema": "ProjectParticipant",
+  "properties": {
+   "participant": [
+    "Todd Alquist"
+   ],
+   "project": [
+    "Dead freight methylamine heist"
+   ],
+   "role": [
+    "mechanic"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "pp-7",
+  "schema": "ProjectParticipant",
+  "properties": {
+   "participant": [
+    "Michael Ehrmantraut"
+   ],
+   "project": [
+    "Dead freight methylamine heist"
+   ],
+   "role": [
+    "spotter"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "pp-8",
+  "schema": "ProjectParticipant",
+  "properties": {
+   "participant": [
+    "Walter Hartwell White"
+   ],
+   "project": [
+    "Vamonos Pest mobile cook program"
+   ],
+   "role": [
+    "cook"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "pp-9",
+  "schema": "ProjectParticipant",
+  "properties": {
+   "participant": [
+    "Jesse Bruce Pinkman"
+   ],
+   "project": [
+    "Vamonos Pest mobile cook program"
+   ],
+   "role": [
+    "cook"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "pp-10",
+  "schema": "ProjectParticipant",
+  "properties": {
+   "participant": [
+    "Todd Alquist"
+   ],
+   "project": [
+    "Vamonos Pest mobile cook program"
+   ],
+   "role": [
+    "assistant"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "pp-11",
+  "schema": "ProjectParticipant",
+  "properties": {
+   "participant": [
+    "Walter Hartwell White"
+   ],
+   "project": [
+    "Evidence-room magnet operation"
+   ],
+   "role": [
+    "planner"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "pp-12",
+  "schema": "ProjectParticipant",
+  "properties": {
+   "participant": [
+    "Jesse Bruce Pinkman"
+   ],
+   "project": [
+    "Evidence-room magnet operation"
+   ],
+   "role": [
+    "crew"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "pp-13",
+  "schema": "ProjectParticipant",
+  "properties": {
+   "participant": [
+    "Michael Ehrmantraut"
+   ],
+   "project": [
+    "Evidence-room magnet operation"
+   ],
+   "role": [
+    "crew"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "pp-14",
+  "schema": "ProjectParticipant",
+  "properties": {
+   "participant": [
+    "Lydia Rodarte-Quayle"
+   ],
+   "project": [
+    "Czech Republic distribution channel"
+   ],
+   "role": [
+    "international distribution"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ },
+ {
+  "id": "pp-15",
+  "schema": "ProjectParticipant",
+  "properties": {
+   "participant": [
+    "Madrigal Electromotive GmbH"
+   ],
+   "project": [
+    "Czech Republic distribution channel"
+   ],
+   "role": [
+    "unwitting shipping infrastructure"
+   ]
+  },
+  "_meta": {
+   "agent_id": "agent",
+   "session_id": "sess-eb666535",
+   "timestamp": "2026-10-14T00:10:38+00:00",
+   "ingest": "03f748679750"
+  }
+ }
+]

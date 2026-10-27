@@ -1,6 +1,6 @@
 <div align="center">
 
-# openhydra
+# open-hydra
 
 [![Support me on Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/meridiangray)
 
@@ -9,17 +9,17 @@
 [![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-3776AB?logo=python&logoColor=white)](pyproject.toml)
 [![License: AGPL-3.0-only](https://img.shields.io/badge/license-AGPL--3.0--only-blue)](LICENSE)
 [![FollowTheMoney](https://img.shields.io/badge/data-FollowTheMoney-6f42c1)](https://followthemoney.tech)
-[![MCP server](https://img.shields.io/badge/MCP-hydra--mcp-black)](https://github.com/meridiangray/openhydra-mcp)
+[![MCP server](https://img.shields.io/badge/MCP-hydra--mcp-black)](https://github.com/meridiangray/open-hydra-mcp)
 
 </div>
 
 Hydra translates evidence into data points with a simple framework. It gives investigators simple interfaces for the hard parts of labelled data: sources that conflict, provenance for every value, and hierarchies that render easily to a directed graph.
 
-OpenHydra expects [FollowTheMoney](https://github.com/alephdata/followthemoney) style data with one important difference: OpenHydra uses field values and not entity IDs as field values. 
+open-hydra expects [FollowTheMoney](https://github.com/alephdata/followthemoney) style data with one important difference: open-hydra uses field values and not entity IDs as field values. 
 
 ## What it looks like
 
-Every example below is the Breaking Bad demo archive that ships with the tests.
+Every example below uses a small demo archive built from fictional characters (the Breaking Bad cast).
 
 Records become a tree, drawn once under one parent, with every other parent listed so nothing is hidden:
 
@@ -104,7 +104,7 @@ Hydra reads standard FollowTheMoney as it comes. Its own dialect writes links as
 Python 3.11 or later, from GitHub:
 
 ```sh
-uv tool install git+https://github.com/meridiangray/openhydra      # or: pip install git+https://github.com/meridiangray/openhydra
+uv tool install git+https://github.com/meridiangray/open-hydra      # or: pip install git+https://github.com/meridiangray/open-hydra
 ```
 
 ## Quick start
@@ -120,7 +120,7 @@ hydra-ctl review                         # answer the questions one by one
 
 ## With an AI assistant
 
-[hydra-mcp](https://github.com/meridiangray/openhydra-mcp) is an MCP server that lets an assistant like Claude read a document, write its facts as records and save them to your archive, with the document kept as the source every entity cites. Anything uncertain is left for you in `hydra-ctl review`.
+[hydra-mcp](https://github.com/meridiangray/open-hydra-mcp) is an MCP server that lets an assistant like Claude read a document, write its facts as records and save them to your archive, with the document kept as the source every entity cites. Anything uncertain is left for you in `hydra-ctl review`.
 
 ## Documentation
 

@@ -1,0 +1,53 @@
+[
+ {
+  "id": "doc-report",
+  "schema": "Document",
+  "properties": {
+   "title": [
+    "Hafenbericht 2021"
+   ],
+   "fileName": [
+    "hafenbericht-2021.pdf"
+   ]
+  }
+ },
+ {
+  "id": "doc-docs",
+  "schema": "Documentation",
+  "properties": {
+   "document": [
+    "doc-report"
+   ],
+   "entity": [
+    "Élodie Marchand"
+   ],
+   "role": [
+    "named"
+   ]
+  }
+ },
+ {
+  "id": "c-ports",
+  "schema": "Company",
+  "properties": {
+   "name": [
+    "Societe Generale des Ports Meridionaux SA"
+   ],
+   "jurisdiction": [
+    "fr"
+   ]
+  }
+ },
+ {
+  "id": "p-initial",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "E. Marchand"
+   ],
+   "notes": [
+    "quoted; first name not given"
+   ]
+  }
+ }
+]
