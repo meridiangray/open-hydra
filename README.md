@@ -15,10 +15,7 @@
 
 Hydra translates evidence into data points with a simple framework. It gives investigators simple interfaces for the hard parts of labelled data: sources that conflict, provenance for every value, and hierarchies that render easily to a directed graph.
 
-OpenHydra expects [FollowTheMoney](FollowTheMoney) style data with one important difference: OpenHydra uses field values and not entity IDs as field values. 
-
-> [!WARNING]
-> Hydra is in alpha. Core components are still under development and may change before the stable release.
+OpenHydra expects [FollowTheMoney](https://github.com/alephdata/followthemoney) style data with one important difference: OpenHydra uses field values and not entity IDs as field values. 
 
 ## What it looks like
 
