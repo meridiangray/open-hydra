@@ -1,0 +1,3 @@
+$ hydra-ctl import ../opensanctions.ftm.jsonl --format ftm
+Imported opensanctions.ftm.jsonl as collection opensanctions: 227 records
+Rebuilt breakingbad: 227 records, 227 entities, 35 open questions

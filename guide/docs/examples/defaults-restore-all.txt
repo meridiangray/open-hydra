@@ -1,0 +1,2 @@
+$ hydra-ctl defaults restore --all --yes
+nothing to restore: generic, hierarchy, hints, direction, collate, params, artifact as shipped

@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "open-hydra"
+dynamic = ["version"]
+description = "Hydra: an offline compiler for investigative entity data"
+readme = "README.md"
+license = "AGPL-3.0-only AND MIT"      # the program code is AGPL; the template it copies into archives is MIT
+license-files = ["LICENSE", "NOTICE.md", "src/hydra/template/.hydra/LICENSE-template.txt"]
+authors = [{ name = "Meridian Gray", email = "gray.crested645@passfwd.com" }]
+requires-python = ">=3.11"
+dependencies = ["PyYAML>=6", "pydantic>=2,<3"]
+
+[project.scripts]
+hydra-ctl = "hydra.cli:run"
+
+[tool.setuptools.dynamic]
+version = { attr = "hydra.__version__" }
+
+[tool.setuptools.package-data]
+hydra = [
+    "template/**/*", "template/**/.gitkeep",
+    "template/.hydra/**/*", "template/.hydra/**/.gitkeep",   # glob skips dot-folders unless named
+    "recipes/*.yaml",
+]
+
+[tool.uv]
+# rebuild on `uv tool install .` when the code or template changes, not only pyproject.toml
+cache-keys = [{ file = "pyproject.toml" }, { file = "src/**/*.py" }, { file = "src/hydra/template/**/*" }, { file = "src/hydra/template/.hydra/**/*" }, { file = "src/hydra/recipes/*.yaml" }]

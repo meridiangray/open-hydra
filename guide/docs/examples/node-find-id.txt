@@ -1,0 +1,4 @@
+$ hydra-ctl node find p-walt --field id
+score   name                    schema   id                  position   parent                    matched
+1.00    Walter Hartwell White   Person   heisenberg:p-walt   Leader     Heisenberg Organization   id  heisenberg:p-walt
+0.85    Walter White Jr.        Person   dea:p-waltjr                                             id  dea:p-waltjr

@@ -1,0 +1,132 @@
+# common.yaml — per-schema extra entry fields (the Record-card / wizard
+# 'fill these in' list beyond what FTM marks featured/required/caption).
+# Schema -> [props]. Kept OUT of followthemoney/ so those files stay upstream.
+Address:
+- postalCode
+- region
+- state
+Article:
+- publisher
+- sourceUrl
+Audio:
+- author
+- date
+- duration
+CallForTenders:
+- title
+Company:
+- alias
+- dissolutionDate
+- legalForm
+- status
+- sector
+- taxNumber
+- vatCode
+- email
+- phone
+- website
+- address
+- notes
+Contract:
+- title
+Document:
+- author
+- date
+- publisher
+- accessNumber
+Email:
+- to
+HyperText:
+- author
+- date
+- publisher
+- sourceUrl
+Identification:
+- authority
+Image:
+- author
+- date
+Interest:
+- role
+- status
+Interval:
+- date
+- startDate
+- endDate
+- summary
+- description
+- recordId
+- sourceUrl
+- publisher
+LegalEntity:
+- website
+Organization:
+- alias
+- sector
+- registrationNumber
+- jurisdiction
+- incorporationDate
+- dissolutionDate
+- email
+- phone
+- website
+- address
+- notes
+Page:
+- pageNumber
+Pages:
+- author
+- date
+- publisher
+Person:
+- title
+- firstName
+- secondName
+- fatherName
+- motherName
+- birthPlace
+- birthCountry
+- deathDate
+- citizenship
+- passportNumber
+- idNumber
+- gender
+- position
+- education
+- religion
+- political
+- spokenLanguage
+- address
+- notes
+PlainText:
+- author
+- date
+- publisher
+Position:
+- inceptionDate
+- dissolutionDate
+- numberOfSeats
+RealEstate:
+- parent
+Sanction:
+- reason
+- listingDate
+- provisions
+- duration
+- status
+Table:
+- author
+- date
+- rowCount
+Thing:
+- alias
+- summary
+- description
+- address
+- notes
+- keywords
+- sourceUrl
+Video:
+- author
+- date
+- duration

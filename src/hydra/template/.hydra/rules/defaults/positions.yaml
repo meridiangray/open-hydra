@@ -1,0 +1,14 @@
+# Positions only: names, `below`/`above`, `titles`, `outside`. Relationship policy
+# is in direction.yaml, icons and media in hints.yaml.
+
+# The default ranks are about an organization's own leadership only. Corporate
+# ranks (CEO, vice president, staff) and boards are left to positions.yaml, which
+# has an example: one shared ladder for every kind of relationship put employees
+# under board members and companies under people.
+
+positions:
+  Leader:            {titles: [boss, leader, head of organization]}
+  Second-in-command: {below: [Leader], titles: [second in command, deputy]}
+  Member:            {below: [Second-in-command, Leader], titles: [member, crew member]}
+  Associate:         {outside: true, titles: [associate, close associate, contact]}
+

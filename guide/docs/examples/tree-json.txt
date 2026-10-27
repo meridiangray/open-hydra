@@ -1,0 +1,90 @@
+$ hydra-ctl tree gus --format json
+{
+ "tree": [
+  {
+   "name": "Gustavo Fring (Person) — Leader",
+   "outside": false,
+   "source": null,
+   "titles": [],
+   "children": [
+    {
+     "name": "Chris Mara (Person) — Member",
+     "outside": false,
+     "source": null,
+     "titles": [],
+     "children": [],
+     "also": [
+      "also  Gustavo Fring Organization   Membership   member"
+     ]
+    },
+    {
+     "name": "Dennis Markowski (Person) — Member",
+     "outside": false,
+     "source": null,
+     "titles": [],
+     "children": [],
+     "also": [
+      "also  Gustavo Fring Organization   Membership   member"
+     ]
+    }
+   ],
+   "also": [
+    "also  Juarez Cartel                      Membership           distributor",
+    "also  Los Pollos Hermanos                Directorship         president",
+    "also  Superlab design and construction   ProjectParticipant   sponsor"
+   ]
+  },
+  {
+   "name": "Gustavo Fring Organization (Organization)",
+   "outside": false,
+   "source": null,
+   "titles": [],
+   "children": [
+    {
+     "name": "Gustavo Fring (Person) — Leader",
+     "outside": false,
+     "source": null,
+     "titles": [],
+     "children": [],
+     "also": [
+      "also  Juarez Cartel                      Membership           distributor",
+      "also  Los Pollos Hermanos                Directorship         president",
+      "also  Superlab design and construction   ProjectParticipant   sponsor"
+     ],
+     "dup": true
+    },
+    {
+     "name": "Gale Boetticher (Person)",
+     "outside": false,
+     "source": null,
+     "titles": [],
+     "children": [],
+     "also": [
+      "also  Superlab design and construction   ProjectParticipant   lead chemist"
+     ]
+    },
+    {
+     "name": "Superlab design and construction (Project)",
+     "outside": false,
+     "source": null,
+     "titles": [],
+     "children": []
+    },
+    {
+     "name": "Tyrus Kitt (Person)",
+     "outside": false,
+     "source": null,
+     "titles": [],
+     "children": []
+    },
+    {
+     "name": "Victor (Person)",
+     "outside": false,
+     "source": null,
+     "titles": [],
+     "children": []
+    }
+   ]
+  }
+ ]
+}

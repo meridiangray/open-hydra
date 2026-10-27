@@ -1,0 +1,22 @@
+# RealEstate.param.yaml — Matching and autofold parameters for 'RealEstate'
+
+schema: RealEstate
+
+match:
+  - name
+  - alias
+  - weakAlias
+  - registrationNumber
+  - titleNumber
+  - cadastralCode
+  - address
+
+distinct:
+  - country
+  - registrationNumber
+  - titleNumber
+  - cadastralCode
+
+fold:
+  - parent
+  - addressEntity

@@ -1,0 +1,42 @@
+$ hydra-ctl claims gus
+entity          type     id                      claims   collections
+Gustavo Fring   Person   sess-96cfcd44:p-fring       15             2
+
+    field         value                                                          record                    collection
+    citizenship   cl                                                             sess-96cfcd44:p-fring     fring
+                                                                                 fring-condensed:p-fring   fring-condensed
+    deathDate     2010                                                           sess-96cfcd44:p-fring     fring
+                                                                                 fring-condensed:p-fring   fring-condensed
+    name          Gustavo Fring                                                  sess-96cfcd44:p-fring     fring
+                                                                                 fring-condensed:p-fring   fring-condensed
+    notes         Chilean emigre; cartel distributor who built his own manufa…   sess-96cfcd44:p-fring     fring
+    sources       fring-condensed:doc-bb-casefile~p2                             fring-condensed:p-fring   fring-condensed
+                  sess-96cfcd44:doc-bb-casefile~p2                               sess-96cfcd44:p-fring     fring
+    weakAlias     Gus                                                            sess-96cfcd44:p-fring     fring
+                                                                                 fring-condensed:p-fring   fring-condensed
+                  Gus Fring                                                      sess-96cfcd44:p-fring     fring
+                                                                                 fring-condensed:p-fring   fring-condensed
+                  the Chicken Man                                                sess-96cfcd44:p-fring     fring
+                                                                                 fring-condensed:p-fring   fring-condensed
+
+  documented in     HEISENBERG INVESTIGATION — DEA/ABQ CASE FILE (2008-2010) p.2
+
+entity                       type           id                        claims   collections
+Gustavo Fring Organization   Organization   sess-96cfcd44:org-fring       13             2
+
+    field             value                                                          record                      collection
+    dissolutionDate   2010                                                           sess-96cfcd44:org-fring     fring
+                                                                                     fring-condensed:org-fring   fring-condensed
+    jurisdiction      us                                                             sess-96cfcd44:org-fring     fring
+                                                                                     fring-condensed:org-fring   fring-condensed
+    name              Gustavo Fring Organization                                     sess-96cfcd44:org-fring     fring
+                                                                                     fring-condensed:org-fring   fring-condensed
+    notes             methamphetamine manufacturing and distribution network run …   sess-96cfcd44:org-fring     fring
+    sources           fring-condensed:doc-bb-casefile~p2                             fring-condensed:org-fring   fring-condensed
+                      sess-96cfcd44:doc-bb-casefile~p2                               sess-96cfcd44:org-fring     fring
+    weakAlias         Fring drug empire                                              sess-96cfcd44:org-fring     fring
+                                                                                     fring-condensed:org-fring   fring-condensed
+                      the Chicken Man's operation                                    sess-96cfcd44:org-fring     fring
+                                                                                     fring-condensed:org-fring   fring-condensed
+
+  documented in     HEISENBERG INVESTIGATION — DEA/ABQ CASE FILE (2008-2010) p.2

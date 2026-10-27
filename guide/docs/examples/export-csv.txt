@@ -1,0 +1,4 @@
+$ hydra-ctl export --format csv -o ../graph
+Exported breakingbad as csv to ~/cases/graph
+  entities   nodes   edges   unlinked relationships   ftm schema
+       227     102     302                        1   65c772987032

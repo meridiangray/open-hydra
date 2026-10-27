@@ -1,0 +1,73 @@
+$ hydra-ctl tree employment membership --stubs
+  only                    links   drawn   no link
+  employment membership      44      55        26
+
+Declan's organization (Organization)
+└── Declan (Person)   Membership   leader
+
+Federal Aviation Administration (PublicBody)
+└── Donald Margolis (Person)   Employment   air traffic controller
+
+Gray Matter Technologies (Organization)   stub
+├── Walter Hartwell White (Person)   Employment   co-founder
+│     also  Gustavo Fring Organization   Membership   cook
+│     also  Heisenberg Organization      Membership   leader
+└── Gretchen Schwartz (LegalEntity)   Membership   co-founder   stub
+Heisenberg Organization (Organization)
+├── Jesse Bruce Pinkman (Person)   Membership   cook
+│     also  Gustavo Fring Organization   Membership   cook
+│     also  Pinkman street crew          Membership   leader
+├── James Morgan McGill (Person)   Membership   counsel
+├── Pinkman street crew (Organization)   Membership
+│   ├── Brandon Mayhew (Person)   Membership   dealer
+│   ├── Christian Ortega (Person)   Membership   dealer
+│   └── Skinny Pete (Person)   Membership   dealer
+├── Huell Babineaux (Person)   Membership   member
+└── Patrick Kuby (Person)   Membership   member
+Jack Welker's gang (Organization)
+├── Jack Welker (Person)   Membership   leader
+├── Frankie (Person)   Membership   member
+├── Kenny (Person)   Membership   second-in-command
+├── Lester (Person)   Membership   member
+└── Matt (Person)   Membership   member
+Juarez Cartel (Organization)
+├── Eladio Vuente (Person)   Membership   leader
+├── Gustavo Fring Organization (Organization)   Membership
+│   ├── Gustavo Fring (Person)   Membership   leader
+│   │     also  Juarez Cartel   Membership   distributor
+│   ├── Gale Boetticher (Person)   Membership   chemist
+│   ├── Tyrus Kitt (Person)   Membership   enforcer
+│   ├── Victor (Person)   Membership   enforcer
+│   ├── Chris Mara (Person)   Membership   member
+│   └── Dennis Markowski (Person)   Membership   member
+├── Hector Salamanca (Person)   Membership   capo
+├── Juan Bolsa (Person)   Membership   underboss
+├── Lalo Salamanca (Person)   Membership   capo
+├── Leonel Salamanca (Person)   Membership   sicario
+├── Marco Salamanca (Person)   Membership   sicario
+└── Tuco Salamanca's Albuquerque crew (Organization)   Membership
+    ├── Domingo Gallardo Molina (Person)   Membership   distributor
+    ├── Tuco Salamanca (Person)   Membership   crew chief
+    ├── Gonzo (Person)   Membership   member
+    ├── Ignacio Varga (Person)   Membership   member
+    └── No-Doze (Person)   Membership   member
+A1A Car Wash (Company)
+└── Skyler White (Person)   Employment   manager
+      also  Heisenberg Organization   Membership   money laundering
+Los Pollos Hermanos (Company)
+└── Michael Ehrmantraut (Person)   Employment   corporate security consultant
+      also  Gustavo Fring Organization   Membership   head of security
+      also  Heisenberg Organization      Membership   head of security
+Madrigal Electromotive GmbH (Company)
+└── Lydia Rodarte-Quayle (Person)   Employment   logistics executive
+      also  Heisenberg Organization   Membership   distributor
+Vamonos Pest (Company)
+└── Todd Alquist (Person)   Employment   exterminator
+      also  Heisenberg Organization   Membership   assistant cook
+      also  Jack Welker's gang        Membership   member
+
+United States Drug Enforcement Administration (PublicBody)
+└── DEA Albuquerque Field Office (PublicBody)   Membership
+    ├── George Merkert (Person)   Employment   assistant special agent in charge
+    ├── Henry R. Schrader (Person)   Employment   assistant special agent in charge
+    └── Steven Gomez (Person)   Employment   special agent

@@ -1,0 +1,18 @@
+# Project.param.yaml — Matching and autofold parameters for 'Project'
+
+schema: Project
+
+match:
+  - name
+  - alias
+  - weakAlias
+  - projectId
+
+distinct:
+  - projectId
+  - organization
+  - startDate
+  - endDate
+
+fold:
+  - organization

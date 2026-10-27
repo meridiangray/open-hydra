@@ -1,0 +1,10 @@
+$ hydra-ctl node find walt
+score   name                           schema         id                          position   parent                    matched
+1.00    Walter Hartwell White          Person         heisenberg:p-walt           Leader     Heisenberg Organization   weakAlias  Walt
+0.85    Walter White Jr.               Person         dea:p-waltjr                                                     id  dea:p-waltjr
+0.75    Holly White                    Person         dea:p-holly                                                      notes  Walt and Skyler's daughter
+0.75    Jack Welker                    Person         heisenberg:p-jack           Leader     Jack Welker's gang        notes  gang leader; executed Hank Schrader; killed by Wa…
+0.75    Jesse Bruce Pinkman            Person         heisenberg:p-jesse          Leader     Heisenberg Organization   notes  Walt's former student and partner; held as a slav…
+0.75    Skyler White                   Person         heisenberg:p-skyler                    A1A Car Wash              notes  Walt's wife; laundered the proceeds through the A…
+0.71    Heisenberg Organization        Organization   heisenberg:org-heisenberg                                        weakAlias  Walter White's operation
+0.70    Walter White's Pontiac Aztek   Vehicle        operations:veh-aztek                   Walter Hartwell White

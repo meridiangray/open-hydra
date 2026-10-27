@@ -1,0 +1,21 @@
+# BankAccount.param.yaml — Matching and autofold parameters for 'BankAccount'
+
+schema: BankAccount
+
+match:
+  - iban
+  - accountNumber
+  - name
+  - alias
+  - weakAlias
+
+distinct:
+  - iban
+  - accountNumber
+  - bic
+  - bank
+  - openingDate
+  - closingDate
+
+fold:
+  - bank

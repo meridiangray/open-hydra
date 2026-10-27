@@ -1,0 +1,16 @@
+# CryptoWallet.param.yaml — Matching and autofold parameters for 'CryptoWallet'
+
+schema: CryptoWallet
+
+match:
+  - publicKey
+  - name
+  - alias
+  - weakAlias
+
+distinct:
+  - publicKey
+  - currencySymbol
+
+fold:
+  - holder

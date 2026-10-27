@@ -1,0 +1,3 @@
+$ hydra-ctl hints
+  0  {position: Leader}   {thumb: icons/crown.svg}   images on 6
+  1  {position: Second-in-command}   {thumb: icons/star-2.svg}   images on 1

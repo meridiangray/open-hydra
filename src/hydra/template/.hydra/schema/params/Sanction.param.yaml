@@ -1,0 +1,21 @@
+# Sanction.param.yaml — Matching and autofold parameters for 'Sanction'
+
+schema: Sanction
+
+match:
+  - authorityId
+  - unscId
+  - programId
+  - entity
+  - program
+
+distinct:
+  - authorityId
+  - unscId
+  - listingDate
+  - startDate
+  - endDate
+
+fold:
+  - entity
+  - authority

@@ -1,0 +1,34 @@
+$ hydra-ctl tree family --format mermaid
+flowchart TD
+    %% record tree — breakingbad (GENERATED)
+    p_marie["Marie Schrader"]
+    p_hank["Henry R. Schrader<br/><i>assistant special agent in charge</i>"]
+    p_skyler["Skyler White<br/><i>manager</i>"]
+    p_walt["Walter Hartwell White<br/><i>Leader</i>"]
+    p_holly["Holly White"]
+    p_waltjr["Walter White Jr."]
+    p_margolis["Donald Margolis<br/><i>air traffic controller</i>"]
+    p_jane["Jane Margolis"]
+    p_hector["Hector Salamanca<br/><i>capo</i>"]
+    p_lalo["Lalo Salamanca<br/><i>capo</i>"]
+    p_leonel["Leonel Salamanca<br/><i>sicario</i>"]
+    p_marco["Marco Salamanca<br/><i>sicario</i>"]
+    p_tuco["Tuco Salamanca<br/><i>crew chief</i>"]
+    p_jack["Jack Welker<br/><i>Leader</i>"]
+    p_todd["Todd Alquist<br/><i>Member</i>"]
+    p_walt -->|"child (father)"| p_holly
+    p_walt -->|"child (father)"| p_waltjr
+    p_margolis -->|"child (father)"| p_jane
+    p_marie -.-|"sister"| p_skyler
+    p_hank -.-|"wife"| p_marie
+    p_skyler -.-|"husband"| p_walt
+    p_walt -.-|"brother-in-law"| p_hank
+    p_lalo -.-|"uncle"| p_hector
+    p_lalo -.-|"cousin"| p_tuco
+    p_leonel -.-|"uncle"| p_hector
+    p_marco -.-|"uncle"| p_hector
+    p_marco -.-|"twin brother"| p_leonel
+    p_tuco -.-|"uncle"| p_hector
+    p_tuco -.-|"cousin"| p_leonel
+    p_tuco -.-|"cousin"| p_marco
+    p_todd -.-|"uncle"| p_jack

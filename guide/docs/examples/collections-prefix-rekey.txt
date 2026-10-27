@@ -1,0 +1,8 @@
+$ hydra-ctl collections prefix dea agency
+1 decision(s) are filed under dea: ids; the new prefix would orphan them.
+Run again with --rekey to rewrite them. Nothing changed.
+
+$ hydra-ctl collections prefix dea agency --rekey
+Changed dea's prefix: dea -> agency (1 decision rewritten)
+Rebuilt breakingbad: 244 records, 226 entities, 33 open questions
+1 of 1 rewritten decisions found their rows

@@ -1,0 +1,62 @@
+$ hydra-ctl review --only merges
+review   breakingbad
+
+  kind     rows   questions
+  merges     14           7
+  total      14           7
+
+[1/7] Merge
+  Cousins' assassination attempt on Hank Schrader   and   Wayfarer 515 mid-air collision
+
+  operations:ev-cousins   Event
+     country     us
+     date        2009
+     involved    Henry R. Schrader
+                 Marco Salamanca
+                 Leonel Salamanca
+                 Michael Ehrmantraut
+     location    Albuquerque, NM
+     name        Cousins' assassination attempt on Hank Schrader
+     organizer   Juan Bolsa
+     summary     Hank survived the parking-lot ambush; Marco dead, Leonel later finished in hospital
+
+  operations:ev-wayfarer   Event
+     country   = us
+     date      = 2009
+     involved    Donald Margolis
+     location  = Albuquerque, NM
+     name        Wayfarer 515 mid-air collision
+     summary     air traffic controller Donald Margolis, grieving Jane's death, let two planes collide over ABQ
+
+  [all fields]   fields in both   conflicting fields      Tab / Shift+Tab
+Which is better?
+  1  one entity
+  2  two entities
+  ? not sure   u undo   q quit
+> 2
+  saved   two entities
+
+[2/7] Merge · conflicting: date
+  To'hajiilee shootout   and   Junkyard shootout — Tuco Salamanca killed
+
+  operations:ev-tohajiilee   Event
+     date        2010
+
+  operations:ev-tuco   Event
+     date      ≠ 2008
+
+  all fields   fields in both   [conflicting fields]      Tab / Shift+Tab
+Which is better?
+  1  one entity
+  2  two entities
+  ? not sure   u undo   q quit
+> q
+
+  answered   1
+
+  kind         before   now
+  merges           14    13
+  references        3     3
+  placements       20    20
+
+Rebuilt breakingbad: 244 records, 227 entities, 36 open questions

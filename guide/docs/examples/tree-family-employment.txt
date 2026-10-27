@@ -1,0 +1,47 @@
+$ hydra-ctl tree family employment
+  only                links   drawn   no link
+  family employment      11      25        54
+
+Federal Aviation Administration (PublicBody)
+└── Donald Margolis (Person)   Employment   air traffic controller
+    └── Jane Margolis (Person)   Family   child (father)
+
+Marie Schrader (Person)
+  also  Skyler White   Family   sister   sideways
+A1A Car Wash (Company)
+└── Skyler White (Person)   Employment   manager
+      also  Walter Hartwell White   Family   husband   sideways
+DEA Albuquerque Field Office (PublicBody)
+├── George Merkert (Person)   Employment   assistant special agent in charge
+├── Henry R. Schrader (Person)   Employment   assistant special agent in charge
+│     also  Marie Schrader   Family   wife   sideways
+└── Steven Gomez (Person)   Employment   special agent
+Walter Hartwell White (Person)
+│ also  Henry R. Schrader   Family   brother-in-law   sideways
+├── Holly White (Person)   Family   child (father)
+└── Walter White Jr. (Person)   Family   child (father)
+
+Hector Salamanca (Person)
+Lalo Salamanca (Person)
+  also  Hector Salamanca   Family   uncle    sideways
+  also  Tuco Salamanca     Family   cousin   sideways
+Leonel Salamanca (Person)
+  also  Hector Salamanca   Family   uncle   sideways
+Marco Salamanca (Person)
+  also  Hector Salamanca   Family   uncle          sideways
+  also  Leonel Salamanca   Family   twin brother   sideways
+Tuco Salamanca (Person)
+  also  Hector Salamanca   Family   uncle    sideways
+  also  Leonel Salamanca   Family   cousin   sideways
+  also  Marco Salamanca    Family   cousin   sideways
+
+Jack Welker (Person)
+Vamonos Pest (Company)
+└── Todd Alquist (Person)   Employment   exterminator
+      also  Jack Welker   Family   uncle   sideways
+
+Los Pollos Hermanos (Company)
+└── Michael Ehrmantraut (Person)   Employment   corporate security consultant
+
+Madrigal Electromotive GmbH (Company)
+└── Lydia Rodarte-Quayle (Person)   Employment   logistics executive

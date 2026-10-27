@@ -1,0 +1,2 @@
+$ hydra-ctl init ../case-one.hydra
+Opened ../case-one.hydra into ~/cases/case-one (144 files)

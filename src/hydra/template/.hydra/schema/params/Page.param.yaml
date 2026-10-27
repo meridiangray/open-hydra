@@ -1,0 +1,16 @@
+# Page.param.yaml — Matching and autofold parameters for 'Page'
+
+schema: Page
+
+match:
+  - document
+  - index
+  - pageNumber
+
+distinct:
+  - document
+  - index
+  - pageNumber
+
+fold:
+  - document

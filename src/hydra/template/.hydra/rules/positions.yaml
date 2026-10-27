@@ -1,0 +1,21 @@
+# .hydra/rules/positions.yaml — relational hierarchy for this subject archive.
+# Format: Position: {below: [Superior], titles: [other words for it]}
+# Icons and thumbnails do not go here: write them in .hydra/rules/hints.yaml
+# (match: {position: Leader}, set: {badge: crown}).
+# Example:
+#   Leader: {}
+#   Underboss: {below: [Leader]}
+#
+# A corporate chain, kept apart from the Leader chain by its own names and
+# titles. List only the rank directly above in `below`: when two ranks are named,
+# the first in alphabetical order wins. Titles are the aliases a record's role is
+# matched against, whole, ignoring case and accents. Punctuation counts as a
+# space: "Vice-President" matches "vice president", but "V.P." needs its own entry
+# (v.p.), and "VP of Sales" needs its own too. Add every wording your data uses;
+# `hydra-ctl positions --unplaced` lists the titles no position takes yet.
+#   Chief executive: {titles: [ceo, chief executive officer, president, managing director]}
+#   Vice president:  {below: [Chief executive], titles: [vice president, vp, v.p., senior vice president]}
+#   Staff:           {below: [Vice president], titles: [staff, analyst, engineer, manager]}
+#   Board member:    {outside: true, titles: [director, board member, chairman]}
+# Ready-made ladders (company, agency, criminal organization) ship as recipes in
+# hydra's recipes/ folder: copy one's lines here to opt in.

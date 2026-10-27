@@ -1,0 +1,53 @@
+# Hydra (hydra-ctl). Also works nested in the old hydra repo (this file wins
+# over the root .gitignore for paths in here).
+
+# Python
+__pycache__/
+*.py[co]
+.pytest_cache/
+
+# environments
+.venv/
+.venv-pypy/
+
+# built packages (uv build)
+dist/
+build/
+*.egg-info/
+
+# made while working with archives: activation markers, backups that reset /
+# defaults restore write, pack temp files, packs, default export outputs
+.hydra-activate
+*.bak
+*.hydra
+# ...but not an archive's internals folder, which `*.hydra` also matches
+!.hydra/
+*.hydra.part
+*.ftm.jsonl
+*.hydra-ftm.jsonl
+*.graphml
+*-graph/
+
+# an archive's parse cache (derived; rebuilt when missing)
+.hydra/cache/
+
+# the template ships empty: never commit a build of it, keep the folders
+src/hydra/template/.hydra/parsed/*
+!src/hydra/template/.hydra/parsed/.gitkeep
+
+# the root .gitignore ignores every `session/`; the template's ingest folders
+# must ship (init copies them into every archive)
+!src/hydra/template/session/
+!src/hydra/template/session/**
+
+# editors, OS, local tooling
+.vscode/
+.idea/
+.claude/
+.DS_Store
+Thumbs.db
+.env
+.env.*
+
+# mkdocs output
+site/

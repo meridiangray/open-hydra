@@ -1,0 +1,3 @@
+$ hydra-ctl answer merge-00783b8a5bab5fa8 confirm
+Recorded merge-00783b8a5bab5fa8: {status: confirmed, basis: 548f4d78fc5654ba}
+Rebuilt breakingbad: 244 records, 226 entities, 36 open questions

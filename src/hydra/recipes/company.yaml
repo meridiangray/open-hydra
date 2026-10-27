@@ -1,0 +1,7 @@
+# A company: a chain of command kept apart from the generic Leader chain by its
+# own rank names, with the board beside it (board members never rank staff).
+# Works with the generic positions on or off.
+Chief executive: {titles: [ceo, chief executive officer, president, managing director]}
+Vice president:  {below: [Chief executive], titles: [vice president, vp, v.p., senior vice president]}
+Staff:           {below: [Vice president], titles: [staff, analyst, engineer, manager]}
+Board member:    {outside: true, titles: [director, board member, chairman]}

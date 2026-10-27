@@ -1,0 +1,7 @@
+# A government agency, from its director down to field agents.
+# Works with the generic positions on or off. Uses "director" for the agency's
+# head, so it does not combine with the company recipe (where it is the board).
+Agency director:         {titles: [director, administrator, commissioner]}
+Deputy director:         {below: [Agency director], titles: [deputy director, deputy administrator]}
+Special agent in charge: {below: [Deputy director], titles: [special agent in charge, sac, field office head]}
+Special agent:           {below: [Special agent in charge], titles: [special agent, agent, investigator]}

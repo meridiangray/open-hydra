@@ -1,0 +1,4 @@
+$ hydra-ctl pack -o ../breakingbad.hydra
+Packed breakingbad into ~/cases/breakingbad.hydra
+  size     build
+  172 KB   included

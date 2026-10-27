@@ -1,0 +1,4 @@
+$ hydra-ctl hints set thumb icons/crown.svg --position Second-in-command
+Added hints[2]: {position: Second-in-command}   {thumb: icons/crown.svg}
+Rebuilt breakingbad: 244 records, 227 entities, 37 open questions
+  reaches   1 node

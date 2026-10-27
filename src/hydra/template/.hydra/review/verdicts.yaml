@@ -1,0 +1,6 @@
+# .hydra/review/verdicts.yaml — review decisions, one per line, read on every build.
+#   merge-…/place-…: confirmed | rejected        (or {status: confirmed, basis: <hash>})
+#   ref-…: <record id>                           pin an ambiguous/unresolved reference
+#   cap-<record id>: <one of its names>          show that name as the node's caption
+#   stub-<name>: <Schema>                        make a name no record has into one entity (`stubs graduate`)
+# Every verdicts.yaml under .hydra/review/, at any depth, is read too.

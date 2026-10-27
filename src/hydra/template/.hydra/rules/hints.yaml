@@ -1,0 +1,34 @@
+# .hydra/rules/hints.yaml — every icon, portrait, logo and badge is linked here, by
+# the entity's own data; records never name their own image, and position files
+# never hold media. A rule says what a node IS (`match:`) and what it gets
+# (`set:`); there are no ids. Every key in `match:` must hold:
+#   schema: Person            the node is-a Person
+#   position: Leader          the node's position (see defaults/positions.yaml / positions.yaml)
+#   name: Walter White        a property: equals (case and accents set aside)
+#   name|alias: Walter White  several properties joined with |: any of them equals
+#                             (`name` alone never reaches aliases: ask for them)
+#   name: [A, B]              equals any of
+#   notes: {contains: rx}     regular expression (also tried with accents set aside)
+#   birthDate: {exists: true} has a value
+#   titled: [cook, chemist]   a title the data states: the entity's own `position`,
+#                             the `role` on a relationship where it is the member,
+#                             employee, director, owner..., or a post it holds
+#                             (name or alias). Never a default. Takes a value, a
+#                             list or {contains: rx}. Display only: no position.
+#   linked_by: Document       has linked evidence of that schema
+#   any: [{...}, {...}]       any of these matches
+# `set:` takes thumb (an icon), portrait, logo (paths inside .hydra/resources/,
+# e.g. icons/crown.svg), badge (a plain label) and position.
+# Images add up: every rule that matches adds its thumb, portrait or logo to the
+# node's list, in file order, with which rule and which field matched. The last
+# badge set is the main one. A rule that matches nothing is listed under
+# `override_misses` in the read's report.
+
+hints:
+  - match: {position: Leader}
+    set:   {thumb: icons/crown.svg}
+  - match: {position: Second-in-command}
+    set:   {thumb: icons/star-2.svg}
+
+  # - match: {schema: PublicBody}
+  #   set:   {thumb: icons/public-body.svg}

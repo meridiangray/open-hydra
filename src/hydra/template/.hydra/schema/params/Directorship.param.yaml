@@ -1,0 +1,17 @@
+# Directorship.param.yaml — Matching and autofold parameters for 'Directorship'
+
+schema: Directorship
+
+match:
+  - director
+  - organization
+  - role
+
+distinct:
+  - startDate
+  - endDate
+
+fold:
+  - director
+  - organization
+  - role

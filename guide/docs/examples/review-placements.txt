@@ -1,0 +1,68 @@
+$ hydra-ctl review --only placements
+review   breakingbad
+
+  kind         rows   questions
+  placements     20          20
+  total          20          20
+
+[1/20] Placement · Employment (several parents)
+  Skyler White
+
+  ┌─ Placing ──────────────────────────────────────────────────────────────────────┐
+  │ heisenberg:p-skyler   Person                                                   │
+  │    name           Skyler White                                                 │
+  │    notes          Walt's wife; laundered the proceeds through the A1A Car Wash │
+  │    weakAlias      Skyler Lambert                                               │
+  └────────────────────────────────────────────────────────────────────────────────┘
+
+  1  heisenberg:rel-hb23   Employment   now
+     employee       Skyler White
+     employer       A1A Car Wash
+     role           manager
+
+  2  heisenberg:rel-hb7   Membership
+     member         Skyler White
+     organization   Heisenberg Organization
+     role           money laundering
+
+Which is better?
+  1  under A1A Car Wash              heisenberg:co-carwash   now
+  2  under Heisenberg Organization   heisenberg:org-heisenberg
+  ? not sure   u undo   q quit
+> 2
+  saved   Skyler White under Heisenberg Organization
+
+[2/20] Placement · rules: Second-in-command below Leader
+  Kenny
+
+  ┌─ Placing ────────────────────────────────────┐
+  │ heisenberg:p-kenny   Person                  │
+  │    deathDate      2010                       │
+  │    name           Kenny                      │
+  │    notes          Welker's second-in-command │
+  └──────────────────────────────────────────────┘
+
+  1  heisenberg:p-jack   rules: Second-in-command below Leader   now
+
+  2  heisenberg:rel-hb16   Membership
+     endDate        2010
+     member         Kenny
+     organization   Jack Welker's gang
+     role           second-in-command
+
+Which is better?
+  1  under Jack Welker          heisenberg:p-jack   now
+  2  under Jack Welker's gang   heisenberg:org-welker
+  ? not sure   u undo   q quit
+> a
+  pick a number from 1 to 2, ? not sure, u undo or q quit
+> q
+
+  answered   1
+
+  kind         before   now
+  merges           14    14
+  references        3     3
+  placements       20    19
+
+Rebuilt breakingbad: 244 records, 227 entities, 36 open questions

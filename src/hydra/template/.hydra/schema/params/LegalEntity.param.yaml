@@ -1,0 +1,31 @@
+# LegalEntity.param.yaml — Matching and autofold parameters for 'LegalEntity'
+
+schema: LegalEntity
+
+match:
+  - name
+  - alias
+  - weakAlias
+  - previousName
+  - registrationNumber
+  - idNumber
+  - taxNumber
+  - vatCode
+  - leiCode
+  - dunsCode
+  - email
+  - phone
+  - website
+
+distinct:
+  - incorporationDate
+  - dissolutionDate
+  - jurisdiction
+  - country
+  - registrationNumber
+  - idNumber
+  - taxNumber
+  - leiCode
+
+fold:
+  - parent

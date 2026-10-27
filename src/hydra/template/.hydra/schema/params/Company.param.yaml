@@ -1,0 +1,37 @@
+# Company.param.yaml — Matching and autofold parameters for 'Company'
+
+schema: Company
+
+match:
+  - name
+  - alias
+  - weakAlias
+  - previousName
+  - registrationNumber
+  - taxNumber
+  - vatCode
+  - irsCode
+  - cikCode
+  - leiCode
+  - dunsCode
+  - isinCode
+  - ticker
+  - swiftBic
+  - email
+  - phone
+  - website
+
+distinct:
+  - incorporationDate
+  - dissolutionDate
+  - jurisdiction
+  - country
+  - registrationNumber
+  - taxNumber
+  - vatCode
+  - irsCode
+  - cikCode
+  - leiCode
+
+fold:
+  - parent

@@ -1,0 +1,16 @@
+# Identification.param.yaml — Matching and autofold parameters for 'Identification'
+
+schema: Identification
+
+match:
+  - number
+  - holder
+  - country
+
+distinct:
+  - number
+  - country
+  - type
+
+fold:
+  - holder

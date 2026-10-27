@@ -1,0 +1,14 @@
+$ hydra-ctl defaults off generic
+off: generic; build to apply
+
+$ hydra-ctl defaults
+generic    off
+hierarchy  default
+hints      default
+direction  default
+collate    default
+params     default
+artifact   default
+
+$ hydra-ctl defaults on
+off: none; build to apply

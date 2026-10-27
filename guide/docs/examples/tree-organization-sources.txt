@@ -1,0 +1,135 @@
+$ hydra-ctl tree organization sources
+Declan's organization (Organization)
+└── Declan (Person) — Leader
+Federal Aviation Administration (PublicBody)
+└── Donald Margolis (Person)
+Heisenberg Organization (Organization)
+├── Jesse Bruce Pinkman (Person) — Leader
+│   │ also  Dead freight methylamine heist     ProjectParticipant   logistics
+│   │ also  Evidence-room magnet operation     ProjectParticipant   crew
+│   │ also  Gustavo Fring Organization         Membership           cook
+│   │ also  Pinkman street crew                Membership           leader
+│   │ also  Vamonos Pest mobile cook program   ProjectParticipant   cook
+│   ├── Huell Babineaux (Person) — Member
+│   │     also  Heisenberg Organization   Membership   member
+│   ├── Patrick Kuby (Person) — Member
+│   │     also  Heisenberg Organization   Membership   member
+│   └── Todd Alquist (Person) — Member
+│         also  Dead freight methylamine heist     ProjectParticipant   mechanic
+│         also  Heisenberg Organization            Membership           assistant cook
+│         also  Jack Welker's gang                 Membership           member
+│         also  Vamonos Pest                       Employment           exterminator
+│         also  Vamonos Pest mobile cook program   ProjectParticipant   assistant
+├── Walter Hartwell White (Person) — Leader
+│   │ also  Dead freight methylamine heist     ProjectParticipant   planner
+│   │ also  Evidence-room magnet operation     ProjectParticipant   planner
+│   │ also  Gustavo Fring Organization         Membership           cook
+│   │ also  Vamonos Pest mobile cook program   ProjectParticipant   cook
+│   ├── A1A Car Wash (Company)
+│   │   └── Skyler White (Person)
+│   │       │ also  Heisenberg Organization   Membership   money laundering
+│   │       └── White residence — 308 Negra Arroyo Lane (RealEstate)
+│   │             also  Walter Hartwell White   Ownership
+│   ├── The Crystal Ship (Vehicle)
+│   └── Walter White's Pontiac Aztek (Vehicle)
+├── Czech Republic distribution channel (Project)
+│   └── Madrigal Electromotive GmbH (Company)
+│       ├── Peter Schuler (Person)
+│       ├── Lavanderia Brillante (RealEstate)
+│       │   └── The Superlab (RealEstate)
+│       └── Los Pollos Hermanos (Company)
+│           ├── Los Pollos Hermanos chicken farm (RealEstate)
+│           ├── Los Pollos Hermanos — Albuquerque flagship (RealEstate)
+│           └── Michael Ehrmantraut (Person)
+│                 also  Dead freight methylamine heist     ProjectParticipant   spotter
+│                 also  Evidence-room magnet operation     ProjectParticipant   crew
+│                 also  Gustavo Fring Organization         Membership           head of security
+│                 also  Heisenberg Organization            Membership           head of security
+│                 also  Superlab design and construction   ProjectParticipant   security
+├── Dead freight methylamine heist (Project)
+├── Evidence-room magnet operation (Project)
+├── James Morgan McGill (Person)
+├── Lydia Rodarte-Quayle (Person)
+│     also  Czech Republic distribution channel   ProjectParticipant   international distribution
+│     also  Madrigal Electromotive GmbH           Employment           logistics executive
+├── Pinkman street crew (Organization)
+│   ├── Brandon Mayhew (Person)
+│   ├── Christian Ortega (Person)
+│   └── Skinny Pete (Person)
+├── Vamonos Pest (Company)
+└── Vamonos Pest mobile cook program (Project)
+Jack Welker's gang (Organization)
+└── Jack Welker (Person) — Leader
+    ├── Kenny (Person) — Second-in-command
+    │     also  Jack Welker's gang   Membership   second-in-command
+    ├── Frankie (Person) — Member
+    │     also  Jack Welker's gang   Membership   member
+    ├── Lester (Person) — Member
+    │     also  Jack Welker's gang   Membership   member
+    └── Matt (Person) — Member
+          also  Jack Welker's gang   Membership   member
+Juarez Cartel (Organization)
+├── Eladio Vuente (Person) — Leader
+│   ├── Gonzo (Person) — Member
+│   │     also  Tuco Salamanca's Albuquerque crew   Membership   member
+│   ├── Ignacio Varga (Person) — Member
+│   │     also  Tuco Salamanca's Albuquerque crew   Membership   member
+│   └── No-Doze (Person) — Member
+│         also  Tuco Salamanca's Albuquerque crew   Membership   member
+├── Gustavo Fring Organization (Organization)
+│   ├── Gustavo Fring (Person) — Leader
+│   │   │ also  Juarez Cartel                      Membership           distributor
+│   │   │ also  Los Pollos Hermanos                Directorship         president
+│   │   │ also  Superlab design and construction   ProjectParticipant   sponsor
+│   │   ├── Chris Mara (Person) — Member
+│   │   │     also  Gustavo Fring Organization   Membership   member
+│   │   └── Dennis Markowski (Person) — Member
+│   │         also  Gustavo Fring Organization   Membership   member
+│   ├── Gale Boetticher (Person)
+│   │     also  Superlab design and construction   ProjectParticipant   lead chemist
+│   ├── Superlab design and construction (Project)
+│   ├── Tyrus Kitt (Person)
+│   └── Victor (Person)
+├── Hector Salamanca (Person)
+├── Juan Bolsa (Person)
+├── Lalo Salamanca (Person)
+├── Leonel Salamanca (Person)
+├── Marco Salamanca (Person)
+└── Tuco Salamanca's Albuquerque crew (Organization)
+    ├── Domingo Gallardo Molina (Person)
+    └── Tuco Salamanca (Person)
+United States Drug Enforcement Administration (PublicBody)
+└── DEA Albuquerque Field Office (PublicBody)
+    ├── George Merkert (Person)
+    ├── Henry R. Schrader (Person)
+    └── Steven Gomez (Person)
+
+sources
+
+  entities   66
+
+  documents
+
+  HEISENBERG INVESTIGATION — DEA/ABQ CASE FILE (2008-2010) (Pages)   dea:doc-bb-casefile
+  ├── p.1 (Page)   heisenberg:doc-bb-casefile~p1
+  │   ├── Henry R. Schrader (Person)   sources   dea:p-hank
+  │   └── Walter Hartwell White (Person)   sources   heisenberg:p-walt
+  ├── p.2 (Page)   fring-condensed:doc-bb-casefile~p2
+  │   ├── Gustavo Fring (Person)   sources of fring-condensed:p-fring   sess-96cfcd44:p-fring
+  │   ├── Gustavo Fring Organization (Organization)   sources of fring-condensed:org-fring   sess-96cfcd44:org-fring
+  │   └── Madrigal Electromotive GmbH (Company)   sources of fring-condensed:co-madrigal   sess-96cfcd44:co-madrigal
+  ├── p.2 (Page)   sess-96cfcd44:doc-bb-casefile~p2
+  │   ├── Gustavo Fring (Person)   sources   sess-96cfcd44:p-fring
+  │   ├── Gustavo Fring Organization (Organization)   sources   sess-96cfcd44:org-fring
+  │   └── Madrigal Electromotive GmbH (Company)   sources   sess-96cfcd44:co-madrigal
+  ├── p.3 (Page)   cartel:doc-bb-casefile~p3
+  │   ├── Eladio Vuente (Person)   sources   cartel:p-eladio
+  │   ├── Juan Bolsa (Person)   sources   cartel:p-bolsa
+  │   ├── Juarez Cartel (Organization)   sources   cartel:org-cartel
+  │   └── Tuco Salamanca (Person)   sources   cartel:p-tuco
+  ├── p.4 (Page)   cartel:doc-bb-casefile~p4
+  │   └── Hector Salamanca (Person)   sources   cartel:p-hector
+  └── p.5 (Page)   heisenberg:doc-bb-casefile~p5
+      └── Heisenberg Organization (Organization)   sources   heisenberg:org-heisenberg
+
+  uncited    55

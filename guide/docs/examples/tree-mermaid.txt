@@ -1,0 +1,215 @@
+$ hydra-ctl tree --format mermaid
+flowchart TD
+    %% record tree — breakingbad (GENERATED)
+    p_wachsberger["Dan Wachsberger"]
+    org_declan["Declan's organization"]
+    p_declan["Declan<br/><i>Leader</i>"]
+    pb_faa["Federal Aviation Administration"]
+    p_margolis["Donald Margolis<br/><i>air traffic controller</i>"]
+    org_heisenberg["Heisenberg Organization"]
+    p_jesse["Jesse Bruce Pinkman<br/><i>Leader</i>"]
+    p_huell["Huell Babineaux<br/><i>Member</i>"]
+    p_kuby["Patrick Kuby<br/><i>Member</i>"]
+    p_todd["Todd Alquist<br/><i>Member</i>"]
+    p_walt["Walter Hartwell White<br/><i>Leader</i>"]
+    co_carwash["A1A Car Wash"]
+    p_skyler["Skyler White<br/><i>manager</i>"]
+    re_white["White residence — 308 Negra Arroyo Lane"]
+    veh_rv["The Crystal Ship"]
+    veh_aztek["Walter White's Pontiac Aztek"]
+    proj_czech["Czech Republic distribution channel<br/><i>organization</i>"]
+    co_madrigal["Madrigal Electromotive GmbH<br/><i>unwitting shipping infrastructure</i>"]
+    p_schuler["Peter Schuler<br/><i>head of fast food division</i>"]
+    re_lavanderia["Lavanderia Brillante"]
+    re_superlab["The Superlab<br/><i>parent</i>"]
+    co_pollos["Los Pollos Hermanos"]
+    re_farm["Los Pollos Hermanos chicken farm"]
+    re_pollos_abq["Los Pollos Hermanos — Albuquerque flagship"]
+    p_mike["Michael Ehrmantraut<br/><i>corporate security consultant</i>"]
+    proj_train_heist["Dead freight methylamine heist<br/><i>organization</i>"]
+    proj_magnet["Evidence-room magnet operation<br/><i>organization</i>"]
+    p_saul["James Morgan McGill<br/><i>counsel</i>"]
+    p_lydia["Lydia Rodarte-Quayle<br/><i>distributor</i>"]
+    crew_jesse["Pinkman street crew"]
+    p_badger["Brandon Mayhew<br/><i>dealer</i>"]
+    p_combo["Christian Ortega<br/><i>dealer</i>"]
+    p_skinnypete["Skinny Pete<br/><i>dealer</i>"]
+    co_vamonos["Vamonos Pest"]
+    proj_vamonos["Vamonos Pest mobile cook program<br/><i>organization</i>"]
+    p_holly["Holly White"]
+    org_welker["Jack Welker's gang"]
+    p_jack["Jack Welker<br/><i>Leader</i>"]
+    p_kenny["Kenny<br/><i>Second-in-command</i>"]
+    p_frankie["Frankie<br/><i>Member</i>"]
+    p_lester["Lester<br/><i>Member</i>"]
+    p_matt["Matt<br/><i>Member</i>"]
+    p_jane["Jane Margolis"]
+    org_cartel["Juarez Cartel"]
+    p_eladio["Eladio Vuente<br/><i>Leader</i>"]
+    p_gonzo["Gonzo<br/><i>Member</i>"]
+    p_nacho["Ignacio Varga<br/><i>Member</i>"]
+    p_nodoze["No-Doze<br/><i>Member</i>"]
+    org_fring["Gustavo Fring Organization"]
+    p_fring["Gustavo Fring<br/><i>Leader</i>"]
+    p_chris_mara["Chris Mara<br/><i>Member</i>"]
+    p_dennis["Dennis Markowski<br/><i>Member</i>"]
+    p_gale["Gale Boetticher<br/><i>chemist</i>"]
+    proj_superlab["Superlab design and construction<br/><i>organization</i>"]
+    p_tyrus["Tyrus Kitt<br/><i>enforcer</i>"]
+    p_victor["Victor<br/><i>enforcer</i>"]
+    p_hector["Hector Salamanca<br/><i>capo</i>"]
+    p_bolsa["Juan Bolsa<br/><i>underboss</i>"]
+    p_lalo["Lalo Salamanca<br/><i>capo</i>"]
+    p_leonel["Leonel Salamanca<br/><i>sicario</i>"]
+    p_marco["Marco Salamanca<br/><i>sicario</i>"]
+    crew_tuco["Tuco Salamanca's Albuquerque crew"]
+    p_krazy8["Domingo Gallardo Molina<br/><i>distributor</i>"]
+    p_tuco["Tuco Salamanca<br/><i>crew chief</i>"]
+    p_marie["Marie Schrader"]
+    p_max["Maximino Arciniega"]
+    pb_dea["United States Drug Enforcement Administration"]
+    pb_dea_abq["DEA Albuquerque Field Office"]
+    p_merkert["George Merkert<br/><i>assistant special agent in charge</i>"]
+    p_hank["Henry R. Schrader<br/><i>assistant special agent in charge</i>"]
+    p_gomez["Steven Gomez<br/><i>special agent</i>"]
+    p_waltjr["Walter White Jr."]
+    org_declan -->|"leader"| p_declan
+    pb_faa -->|"air traffic controller"| p_margolis
+    org_heisenberg -->|"cook"| p_jesse
+    org_heisenberg -->|"leader"| p_walt
+    org_heisenberg --> proj_czech
+    org_heisenberg --> proj_train_heist
+    org_heisenberg --> proj_magnet
+    org_heisenberg -->|"counsel"| p_saul
+    org_heisenberg -->|"distributor"| p_lydia
+    org_heisenberg --> crew_jesse
+    org_heisenberg --> co_vamonos
+    org_heisenberg --> proj_vamonos
+    p_jesse --> p_huell
+    p_jesse --> p_kuby
+    p_jesse --> p_todd
+    p_walt --> co_carwash
+    p_walt --> veh_rv
+    p_walt --> veh_aztek
+    co_carwash -->|"manager"| p_skyler
+    p_skyler --> re_white
+    proj_czech -->|"unwitting shipping infrastructure"| co_madrigal
+    co_madrigal -->|"head of fast food division"| p_schuler
+    co_madrigal --> re_lavanderia
+    co_madrigal --> co_pollos
+    re_lavanderia --> re_superlab
+    co_pollos --> re_farm
+    co_pollos --> re_pollos_abq
+    co_pollos -->|"corporate security consultant"| p_mike
+    crew_jesse -->|"dealer"| p_badger
+    crew_jesse -->|"dealer"| p_combo
+    crew_jesse -->|"dealer"| p_skinnypete
+    org_welker -->|"leader"| p_jack
+    p_jack --> p_kenny
+    p_jack --> p_frankie
+    p_jack --> p_lester
+    p_jack --> p_matt
+    org_cartel -->|"leader"| p_eladio
+    org_cartel --> org_fring
+    org_cartel -->|"capo"| p_hector
+    org_cartel -->|"underboss"| p_bolsa
+    org_cartel -->|"capo"| p_lalo
+    org_cartel -->|"sicario"| p_leonel
+    org_cartel -->|"sicario"| p_marco
+    org_cartel --> crew_tuco
+    p_eladio --> p_gonzo
+    p_eladio --> p_nacho
+    p_eladio --> p_nodoze
+    org_fring -->|"leader"| p_fring
+    org_fring -->|"chemist"| p_gale
+    org_fring --> proj_superlab
+    org_fring -->|"enforcer"| p_tyrus
+    org_fring -->|"enforcer"| p_victor
+    p_fring --> p_chris_mara
+    p_fring --> p_dennis
+    crew_tuco -->|"distributor"| p_krazy8
+    crew_tuco -->|"crew chief"| p_tuco
+    pb_dea --> pb_dea_abq
+    pb_dea_abq -->|"assistant special agent in charge"| p_merkert
+    pb_dea_abq -->|"assistant special agent in charge"| p_hank
+    pb_dea_abq -->|"special agent"| p_gomez
+    proj_train_heist -.->|"logistics"| p_jesse
+    proj_magnet -.->|"crew"| p_jesse
+    org_fring -.->|"cook"| p_jesse
+    crew_jesse -.->|"leader"| p_jesse
+    proj_vamonos -.->|"cook"| p_jesse
+    org_heisenberg -.->|"member"| p_huell
+    org_heisenberg -.->|"member"| p_kuby
+    proj_train_heist -.->|"mechanic"| p_todd
+    org_heisenberg -.->|"assistant cook"| p_todd
+    org_welker -.->|"member"| p_todd
+    co_vamonos -.->|"exterminator"| p_todd
+    proj_vamonos -.->|"assistant"| p_todd
+    proj_train_heist -.->|"planner"| p_walt
+    proj_magnet -.->|"planner"| p_walt
+    org_fring -.->|"cook"| p_walt
+    proj_vamonos -.->|"cook"| p_walt
+    org_heisenberg -.->|"money laundering"| p_skyler
+    p_walt -.-> re_white
+    proj_train_heist -.->|"spotter"| p_mike
+    proj_magnet -.->|"crew"| p_mike
+    org_fring -.->|"head of security"| p_mike
+    org_heisenberg -.->|"head of security"| p_mike
+    proj_superlab -.->|"security"| p_mike
+    proj_czech -.->|"international distribution"| p_lydia
+    co_madrigal -.->|"logistics executive"| p_lydia
+    org_welker -.->|"second-in-command"| p_kenny
+    org_welker -.->|"member"| p_frankie
+    org_welker -.->|"member"| p_lester
+    org_welker -.->|"member"| p_matt
+    crew_tuco -.->|"member"| p_gonzo
+    crew_tuco -.->|"member"| p_nacho
+    crew_tuco -.->|"member"| p_nodoze
+    org_cartel -.->|"distributor"| p_fring
+    co_pollos -.->|"president"| p_fring
+    proj_superlab -.->|"sponsor"| p_fring
+    org_fring -.->|"member"| p_chris_mara
+    org_fring -.->|"member"| p_dennis
+    proj_superlab -.->|"lead chemist"| p_gale
+    p_wachsberger -.-|"outside counsel"| org_fring
+    p_wachsberger -.-|"outside counsel"| org_fring
+    p_jesse -.-|"logistics"| proj_train_heist
+    p_jesse -.-|"crew"| proj_magnet
+    p_jesse -.-|"cook"| proj_vamonos
+    p_todd -.-|"mechanic"| proj_train_heist
+    p_todd -.-|"uncle"| p_jack
+    p_todd -.-|"assistant"| proj_vamonos
+    p_walt -.-|"planner"| proj_train_heist
+    p_walt -.-|"rival distributor; bought out the partnership's share, later hostilities"| p_declan
+    p_walt -.-|"planner"| proj_magnet
+    p_walt -.-|"brother-in-law"| p_hank
+    p_walt -.-|"cook"| proj_vamonos
+    p_skyler -.-|"husband"| p_walt
+    p_mike -.-|"spotter"| proj_train_heist
+    p_mike -.-|"crew"| proj_magnet
+    p_mike -.-|"security"| proj_superlab
+    p_saul -.-|"criminal defense counsel"| p_jesse
+    p_saul -.-|"criminal defense counsel"| p_walt
+    p_lydia -.-|"international distribution"| proj_czech
+    p_lydia -.-|"methylamine supplier"| p_fring
+    p_lydia -.-|"methylamine supplier"| p_fring
+    p_holly -.-|"father"| p_walt
+    p_jane -.-|"father"| p_margolis
+    p_jane -.-|"girlfriend"| p_jesse
+    org_fring -.- org_heisenberg
+    p_fring -.-|"sponsor"| proj_superlab
+    p_gale -.-|"lead chemist"| proj_superlab
+    p_lalo -.-|"uncle"| p_hector
+    p_lalo -.-|"cousin"| p_tuco
+    p_leonel -.-|"uncle"| p_hector
+    p_marco -.-|"uncle"| p_hector
+    p_marco -.-|"twin brother"| p_leonel
+    p_krazy8 -.-|"confidential informant"| p_hank
+    p_tuco -.-|"uncle"| p_hector
+    p_tuco -.-|"cousin"| p_leonel
+    p_tuco -.-|"cousin"| p_marco
+    p_marie -.-|"sister"| p_skyler
+    p_max -.-|"business partner; co-founded Los Pollos Hermanos"| p_fring
+    p_hank -.-|"wife"| p_marie
+    p_waltjr -.-|"father"| p_walt
+    %% no links: Casa Tranquila nursing home, Heisenberg, operations:addr-abq, operations:addr-hacienda, operations:addr-hannover, operations:addr-juarez, operations:addr-tohajiilee

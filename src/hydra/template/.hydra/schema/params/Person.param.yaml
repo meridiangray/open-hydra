@@ -1,0 +1,30 @@
+# Person.param.yaml — Matching and autofold parameters for 'Person'
+
+schema: Person
+
+match:
+  - name
+  - alias
+  - weakAlias
+  - previousName
+  - passportNumber
+  - socialSecurityNumber
+  - idNumber
+  - taxNumber
+  - email
+  - phone
+
+distinct:
+  - birthDate
+  - deathDate
+  - nameSuffix
+  - nationality
+  - citizenship
+  - passportNumber
+  - socialSecurityNumber
+  - idNumber
+
+fold:
+  - position
+  - title
+  - parent

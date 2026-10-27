@@ -1,0 +1,20 @@
+# Position.param.yaml — Matching and autofold parameters for 'Position'
+
+schema: Position
+
+match:
+  - name
+  - alias
+  - weakAlias
+  - organization
+
+distinct:
+  - organization
+  - country
+  - subnationalArea
+  - inceptionDate
+  - dissolutionDate
+
+fold:
+  - organization
+  - name

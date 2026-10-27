@@ -1,0 +1,14 @@
+# Similar.param.yaml — Matching and autofold parameters for 'Similar'
+
+schema: Similar
+
+match:
+  - candidate
+  - match
+
+distinct: []
+
+fold:
+  - candidate
+  - match
+  - criteria

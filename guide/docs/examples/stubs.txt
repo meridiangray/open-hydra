@@ -1,0 +1,4 @@
+$ hydra-ctl stubs
+  name                       links   fields                                        fits           as
+  Gray Matter Technologies       2   Membership.organization Employment.employer   Organization   -
+  Gretchen Schwartz              1   Membership.member                             LegalEntity    -

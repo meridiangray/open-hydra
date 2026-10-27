@@ -1,0 +1,23 @@
+# Event.param.yaml — Matching and autofold parameters for 'Event'
+
+schema: Event
+
+match:
+  - name
+  - alias
+  - weakAlias
+  - date
+  - startDate
+  - location
+
+distinct:
+  - date
+  - startDate
+  - endDate
+  - country
+  - location
+
+fold:
+  - organizer
+  - involved
+  - addressEntity

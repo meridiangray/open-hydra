@@ -1,0 +1,2 @@
+$ hydra-ctl defaults restore hints params --yes
+nothing to restore: hints, params as shipped

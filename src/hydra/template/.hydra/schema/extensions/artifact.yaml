@@ -1,0 +1,57 @@
+# .hydra/schema/extensions/artifact.yaml — extension types carried by this archive.
+# Same patch role as .hydra/schema/: a name that already exists merges onto the type.
+Artifact:
+  extends: [Document]
+  label: Artifact
+  properties: {}
+
+# `sources`: the documents an entity comes from, such as an Article in
+# sources/entries/ (FtM calls it `proof`: ingest reads `proof` as `sources`, and
+# `export --format ftm` writes it back as `proof`). Relationships carry none.
+Thing:
+  properties:
+    sources:
+      label: Sources
+      type: entity
+      range: Document
+      reverse:
+        name: sourced
+        label: Entities sourced
+
+# Free-text annotation on interval/edge records and case-file pages.
+Interval:
+  properties:
+    notes:
+      label: Notes
+      type: text
+Similar:
+  properties:
+    notes:
+      label: Notes
+      type: text
+Page:
+  properties:
+    notes:
+      label: Notes
+      type: text
+
+# Prop-form vertical: a project is parented under a legal entity, or under
+# another project. Both names are in .hydra/schema/direction.yaml `above`, so the pointer
+# stays on the child; `reverse` gives the parent its own view (LegalEntity.projects,
+# Project.subprojects) without a stored field.
+Project:
+  properties:
+    organization:
+      label: Organization
+      type: entity
+      range: LegalEntity
+      reverse:
+        name: projects
+        label: Projects
+    parent:
+      label: Parent project
+      type: entity
+      range: Project
+      reverse:
+        name: subprojects
+        label: Subprojects

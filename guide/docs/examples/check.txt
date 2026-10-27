@@ -1,0 +1,11 @@
+$ hydra-ctl check
+  code                        level   found by   count   file
+  direction.both-ends-above   info    check          1   .hydra/schema/direction.yaml
+
+  code                        where       message
+  direction.both-ends-above   Occupancy   both ends (holder, post) are in `above`; the target, post, is the parent
+
+             check   old build
+  errors         0           0
+  warnings       0           0
+  info           1           1

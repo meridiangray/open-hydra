@@ -1,0 +1,20 @@
+# Document.param.yaml — Matching and autofold parameters for 'Document'
+
+schema: Document
+
+match:
+  - contentHash
+  - title
+  - fileName
+  - accessNumber
+  - messageId
+  - sourceUrl
+
+distinct:
+  - contentHash
+  - accessNumber
+  - messageId
+  - date
+
+fold:
+  - parent

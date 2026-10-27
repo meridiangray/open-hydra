@@ -1,0 +1,21 @@
+# ContractAward.param.yaml — Matching and autofold parameters for 'ContractAward'
+
+schema: ContractAward
+
+match:
+  - contract
+  - supplier
+  - lotNumber
+  - documentNumber
+
+distinct:
+  - lotNumber
+  - documentNumber
+  - startDate
+  - endDate
+
+fold:
+  - supplier
+  - contract
+  - callForTenders
+  - role

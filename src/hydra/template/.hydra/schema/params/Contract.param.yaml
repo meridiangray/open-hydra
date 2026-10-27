@@ -1,0 +1,19 @@
+# Contract.param.yaml — Matching and autofold parameters for 'Contract'
+
+schema: Contract
+
+match:
+  - title
+  - name
+  - procedureNumber
+  - noticeId
+
+distinct:
+  - procedureNumber
+  - noticeId
+  - contractDate
+  - authority
+
+fold:
+  - authority
+  - project

@@ -1,0 +1,17 @@
+# Employment.param.yaml — Matching and autofold parameters for 'Employment'
+
+schema: Employment
+
+match:
+  - employee
+  - employer
+  - role
+
+distinct:
+  - startDate
+  - endDate
+
+fold:
+  - employee
+  - employer
+  - role

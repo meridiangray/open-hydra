@@ -1,0 +1,34 @@
+# Organization.param.yaml — Matching and autofold parameters for 'Organization'
+
+schema: Organization
+
+match:
+  - name
+  - alias
+  - weakAlias
+  - previousName
+  - registrationNumber
+  - idNumber
+  - taxNumber
+  - vatCode
+  - leiCode
+  - dunsCode
+  - cageCode
+  - permId
+  - email
+  - phone
+  - website
+
+distinct:
+  - incorporationDate
+  - dissolutionDate
+  - jurisdiction
+  - country
+  - registrationNumber
+  - idNumber
+  - taxNumber
+  - leiCode
+
+fold:
+  - parent
+  - department

@@ -1,0 +1,90 @@
+# direction.yaml — which end of a relationship is the parent, and which
+# relationships are sideways. The FTM schema says which two properties an edge
+# connects, but not which end contains the other: Membership's target
+# `organization` is the parent, while Ownership's target `asset` is the child
+# and its source `owner` the parent. That is a fact about what the relationship
+# means, so it is written down here.
+
+# Property names that mark the HIGHER end of a vertical link. An edge schema's
+# target is checked first, then its source; a plain entity-typed property on a
+# non-edge schema (Position.organization, BankAccount.bank, Vehicle.operator,
+# Person.parent) is judged by its name alone.
+above:
+  - organization
+  - employer
+  - post
+  - holder
+  - owner
+  - parent
+  - superior
+  - authority
+  - project
+  - case
+  - bank
+  - operator
+  - contract
+
+# Always sideways, never a parent candidate, even if a property name matches
+# `above`.
+lateral:
+  - Succession
+  - Representation
+  - Family
+  - Associate
+  - UnknownLink
+  - Payment
+  - Debt
+  - Documentation
+  - Mention
+  - Sanction
+
+# Both a sideways tie and a vertical candidate: a participant sits under the
+# record's own `project`, and keeps a sideways tie to it.
+dual:
+  - ProjectParticipant
+
+# Links that put a person in an organization's governing tier (not the plain
+# "belonging" tier).
+governing:
+  - Directorship
+  - Occupancy
+  - Ownership
+
+# The title used when a link has no `role`. Empty by default: a record with no
+# role gets no title, so the position rules never rank anyone (or any
+# organization) by a title the data doesn't contain. Direct-property folds take
+# their title from the record's own title field (Position.name, Person.position).
+# To opt in, for example:
+#   edge_positions:
+#     Membership: Member
+edge_positions: {}
+
+# Never drawn as tree nodes; they stay reachable as `linked` evidence on the
+# nodes they attach to. Matched by ancestry, so every subtype is covered
+# (Analyzable covers Document, Email, Message, Note, Folder, Package,
+# PlainText, HyperText, Table, Artifact...).
+exclude:
+  - Analyzable
+  - Page
+  - Mention
+  - Call
+  - Post
+
+# Entity-typed properties that are deliberately neither a parent link nor
+# sideways: they are kept as relations (`rels`) on the node, but never place
+# anything. Move one into `above` to make it a parent link. `lint` reports any
+# entity property that is in none of these lists.
+ignore:
+  - Assessment.author
+  - CallForTenders.onBehalfOf
+  - CallForTenders.tenderers
+  - EconomicActivity.bankAccount
+  - EconomicActivity.bankForeign
+  - EconomicActivity.bankRub
+  - EconomicActivity.contractHolder
+  - EconomicActivity.declarant
+  - EconomicActivity.receiver
+  - EconomicActivity.sender
+  - EconomicActivity.transport
+  - Security.issuer
+  - TaxRoll.taxee

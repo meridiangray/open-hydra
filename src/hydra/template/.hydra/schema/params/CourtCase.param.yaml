@@ -1,0 +1,17 @@
+# CourtCase.param.yaml — Matching and autofold parameters for 'CourtCase'
+
+schema: CourtCase
+
+match:
+  - caseNumber
+  - name
+  - alias
+  - weakAlias
+
+distinct:
+  - caseNumber
+  - court
+  - fileDate
+  - closeDate
+
+fold: []

@@ -1,0 +1,3 @@
+$ hydra-ctl import ../case.graphml --format graphml
+Imported case.graphml as collection case: 226 records, 74 derived edges left out
+Rebuilt breakingbad: 226 records, 226 entities, 20 open questions

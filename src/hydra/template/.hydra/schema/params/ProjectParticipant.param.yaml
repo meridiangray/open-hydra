@@ -1,0 +1,17 @@
+# ProjectParticipant.param.yaml — Matching and autofold parameters for 'ProjectParticipant'
+
+schema: ProjectParticipant
+
+match:
+  - participant
+  - project
+  - role
+
+distinct:
+  - startDate
+  - endDate
+
+fold:
+  - participant
+  - project
+  - role

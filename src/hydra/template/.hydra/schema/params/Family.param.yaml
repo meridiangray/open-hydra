@@ -1,0 +1,17 @@
+# Family.param.yaml — Matching and autofold parameters for 'Family'
+
+schema: Family
+
+match:
+  - person
+  - relative
+  - relationship
+
+distinct:
+  - startDate
+  - endDate
+
+fold:
+  - person
+  - relative
+  - relationship

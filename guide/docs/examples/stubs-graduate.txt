@@ -1,0 +1,7 @@
+$ hydra-ctl stubs graduate "Gretchen Schwartz"
+  graduated   Gretchen Schwartz   LegalEntity   stub:gretchen-schwartz
+Rebuilt breakingbad: 246 records, 230 entities, 39 open questions
+
+$ hydra-ctl stubs drop "Gretchen Schwartz"
+  dropped   Gretchen Schwartz
+Rebuilt breakingbad: 246 records, 229 entities, 40 open questions

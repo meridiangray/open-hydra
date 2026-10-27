@@ -1,0 +1,5 @@
+$ hydra-ctl reset --only placements --yes
+This removes 1 decision(s) from ~/cases/breakingbad/.hydra/review/verdicts.yaml: 1 placements.
+A backup is written to verdicts.yaml.20260101-000000.bak first.
+Removed 1 decision from ~/cases/breakingbad/.hydra/review/verdicts.yaml (backup verdicts.yaml.20260101-000000.bak)
+Rebuilt breakingbad: 244 records, 227 entities, 37 open questions

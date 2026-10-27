@@ -1,0 +1,4 @@
+$ hydra-ctl export --format graphml -o ../breakingbad.graphml
+Exported breakingbad as graphml to ~/cases/breakingbad.graphml
+  entities   nodes   edges   unlinked relationships   ftm schema
+       227     102     302                        1   65c772987032

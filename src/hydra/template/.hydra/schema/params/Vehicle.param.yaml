@@ -1,0 +1,19 @@
+# Vehicle.param.yaml — Matching and autofold parameters for 'Vehicle'
+
+schema: Vehicle
+
+match:
+  - name
+  - alias
+  - weakAlias
+  - registrationNumber
+
+distinct:
+  - registrationNumber
+  - model
+  - type
+  - buildDate
+
+fold:
+  - owner
+  - operator

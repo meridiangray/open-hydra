@@ -1,0 +1,4 @@
+$ hydra-ctl hints set thumb ../pics/flask.svg --titled "cook|chemist"
+Added hints[2]: {titled: {contains: cook|chemist}}   {thumb: icons/flask.svg}
+Rebuilt breakingbad: 244 records, 227 entities, 37 open questions
+  reaches   4 nodes

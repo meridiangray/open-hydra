@@ -1,0 +1,18 @@
+# Post.param.yaml — Matching and autofold parameters for 'Post'
+
+schema: Post
+
+match:
+  - holder
+  - organization
+  - role
+  - summary
+
+distinct:
+  - startDate
+  - endDate
+
+fold:
+  - holder
+  - organization
+  - role

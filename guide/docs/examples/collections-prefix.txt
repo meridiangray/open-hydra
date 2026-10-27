@@ -1,0 +1,3 @@
+$ hydra-ctl collections prefix dea agency
+Changed dea's prefix: dea -> agency
+Rebuilt breakingbad: 244 records, 227 entities, 37 open questions

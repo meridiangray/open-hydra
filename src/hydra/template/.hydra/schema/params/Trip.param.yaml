@@ -1,0 +1,23 @@
+# Trip.param.yaml — Matching and autofold parameters for 'Trip'
+
+schema: Trip
+
+match:
+  - name
+  - startLocation
+  - endLocation
+  - vehicle
+  - startDate
+
+distinct:
+  - startDate
+  - endDate
+  - startLocation
+  - endLocation
+
+fold:
+  - organizer
+  - involved
+  - startLocation
+  - endLocation
+  - vehicle

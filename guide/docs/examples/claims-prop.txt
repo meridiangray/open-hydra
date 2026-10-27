@@ -1,0 +1,32 @@
+$ hydra-ctl claims "Gustavo Fring" --prop weakAlias
+entity          type     id                      claims   collections
+Gustavo Fring   Person   sess-96cfcd44:p-fring        6             2
+
+    field       value             record                    collection
+    weakAlias   Gus               sess-96cfcd44:p-fring     fring
+                                  fring-condensed:p-fring   fring-condensed
+                Gus Fring         sess-96cfcd44:p-fring     fring
+                                  fring-condensed:p-fring   fring-condensed
+                the Chicken Man   sess-96cfcd44:p-fring     fring
+                                  fring-condensed:p-fring   fring-condensed
+
+  documented in     HEISENBERG INVESTIGATION — DEA/ABQ CASE FILE (2008-2010) p.2
+
+entity                       type           id                        claims   collections
+Gustavo Fring Organization   Organization   sess-96cfcd44:org-fring        4             2
+
+    field       value                         record                      collection
+    weakAlias   Fring drug empire             sess-96cfcd44:org-fring     fring
+                                              fring-condensed:org-fring   fring-condensed
+                the Chicken Man's operation   sess-96cfcd44:org-fring     fring
+                                              fring-condensed:org-fring   fring-condensed
+
+  documented in     HEISENBERG INVESTIGATION — DEA/ABQ CASE FILE (2008-2010) p.2
+
+entity          type     id                claims   collections
+Eladio Vuente   Person   cartel:p-eladio        1             1
+
+    field       value        record            collection
+    weakAlias   Don Eladio   cartel:p-eladio   cartel
+
+  documented in     HEISENBERG INVESTIGATION — DEA/ABQ CASE FILE (2008-2010) p.3

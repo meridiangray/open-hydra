@@ -1,0 +1,15 @@
+# Occupancy.param.yaml — Matching and autofold parameters for 'Occupancy'
+
+schema: Occupancy
+
+match:
+  - holder
+  - post
+
+distinct:
+  - startDate
+  - endDate
+
+fold:
+  - holder
+  - post

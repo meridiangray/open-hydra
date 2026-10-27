@@ -1,0 +1,17 @@
+# Representation.param.yaml — Matching and autofold parameters for 'Representation'
+
+schema: Representation
+
+match:
+  - agent
+  - client
+  - role
+
+distinct:
+  - startDate
+  - endDate
+
+fold:
+  - agent
+  - client
+  - role

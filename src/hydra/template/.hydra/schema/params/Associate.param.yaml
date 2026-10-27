@@ -1,0 +1,17 @@
+# Associate.param.yaml — Matching and autofold parameters for 'Associate'
+
+schema: Associate
+
+match:
+  - person
+  - associate
+  - relationship
+
+distinct:
+  - startDate
+  - endDate
+
+fold:
+  - person
+  - associate
+  - relationship

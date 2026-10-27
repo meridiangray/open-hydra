@@ -1,0 +1,8 @@
+$ hydra-ctl activate breakingbad
+Activated ~/cases/breakingbad
+
+$ hydra-ctl activate
+~/cases/breakingbad
+
+$ hydra-ctl deactivate
+Deactivated ~/cases/breakingbad

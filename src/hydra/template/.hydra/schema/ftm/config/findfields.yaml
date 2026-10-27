@@ -1,0 +1,54 @@
+# findfields.yaml — Step 1 of the spatial / semantic / virtual model.
+#
+# The INTERSECTION of the FollowTheMoney ontology with the three cross-cutting
+# dimensions. An Artifact is an entity of an FTM type (Document -> Article / Image /
+# Audio / Video / ...); given ANY entity we read its properties and bucket each into a
+# dimension using the rules below — primarily by the property's FTM *type* (robust:
+# every FTM property has exactly one type), with per-name overrides where a generic
+# type (string / identifier) actually carries dimensional meaning.
+#
+# Two-step design (per the ontology plan):
+#   Step 1 (THIS FILE, now): read an entity's FTM properties and classify the ones that
+#           already carry spatial / semantic / virtual meaning in the FTM ontology.
+#   Step 2 (LATER, not built): our own dimension-specific fields (semantic.yaml /
+#           spatial.yaml / virtual.yaml) that CONSTRAIN against these FTM fields so
+#           every record crosslinks. This file is the bridge those constraints reference.
+#
+# NOTE: this file is config, NOT an FTM schema — ftm.load() skips it by name.
+
+dimensions:
+
+  spatial:                     # WHERE — geography, jurisdiction, physical location
+    label: Spatial
+    types: [country, address]
+    # (the type map covers every FTM spatial prop: birthCountry, citizenship,
+    #  contextCountry, country, departure/destination/origin/detectedCountry, flag,
+    #  jurisdiction, mainCountry, nationality, pastFlags, tradingCountry, address, full,
+    #  location, locationMentioned). Add string-typed spatial props here as they appear.
+    properties: []
+
+  semantic:                    # MEANING — the content itself, names, topics, language
+    label: Semantic
+    types: [name, text, html, topic, language]
+    # type map covers: name/alias/previousName/weakAlias, *Mentioned names, bodyText,
+    # description, summary, notes, purpose, reason, decisionReason, goodsDescription,
+    # translatedText, bodyHtml, topics, language/detected/spoken/translatedLanguage.
+    properties: [title]        # string-typed, but the primary semantic label
+
+  virtual:                     # ONLINE — digital presence, endpoints, handles, hashes
+    label: Virtual
+    types: [url, email, phone, ip, iban, checksum]
+    # type map covers: website + *Url, email/contextEmail/emailMentioned, phone/number/
+    # caller/receiverNumber/contextPhone/phoneMentioned, ipAddress/ipMentioned, iban/
+    # ibanMentioned, contentHash/csvHash/pdfHash.
+    properties: []
+
+# Props never bucketed even when their type matches — internal housekeeping / provenance
+# / search plumbing that isn't real spatial/semantic/virtual content.
+exclude:
+  - indexText            # full-text search index, not readable content
+  - processingStatus
+  - processingError
+  - processingAgent
+  - processedAt
+  - crawler

@@ -1,0 +1,18 @@
+# Ownership.param.yaml — Matching and autofold parameters for 'Ownership'
+
+schema: Ownership
+
+match:
+  - owner
+  - asset
+  - role
+
+distinct:
+  - startDate
+  - endDate
+
+fold:
+  - owner
+  - asset
+  - role
+  - percentage

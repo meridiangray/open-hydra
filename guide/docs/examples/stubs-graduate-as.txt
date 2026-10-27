@@ -1,0 +1,3 @@
+$ hydra-ctl stubs graduate "Gray Matter Technologies" --as Company
+  graduated   Gray Matter Technologies   Company   stub:gray-matter-technologies
+Rebuilt breakingbad: 246 records, 230 entities, 38 open questions

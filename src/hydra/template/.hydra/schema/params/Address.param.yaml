@@ -1,0 +1,24 @@
+# Address.param.yaml — Matching and autofold parameters for 'Address'
+
+schema: Address
+
+match:
+  - full
+  - name
+  - street
+  - city
+  - postalCode
+  - osmId
+  - googlePlaceId
+
+distinct:
+  - country
+  - state
+  - city
+  - postalCode
+  - street
+  - postOfficeBox
+  - osmId
+  - googlePlaceId
+
+fold: []

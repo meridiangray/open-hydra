@@ -1,0 +1,20 @@
+# Pages.param.yaml — Matching and autofold parameters for 'Pages'
+
+schema: Pages
+
+match:
+  - contentHash
+  - pdfHash
+  - title
+  - fileName
+  - accessNumber
+  - sourceUrl
+
+distinct:
+  - contentHash
+  - pdfHash
+  - accessNumber
+  - date
+
+fold:
+  - parent

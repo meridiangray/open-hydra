@@ -1,0 +1,24 @@
+$ hydra-ctl tree gus --format mermaid --direction LR
+flowchart LR
+    %% record tree — breakingbad (GENERATED)
+    p_fring["Gustavo Fring<br/><i>Leader</i>"]
+    p_chris_mara["Chris Mara<br/><i>Member</i>"]
+    p_dennis["Dennis Markowski<br/><i>Member</i>"]
+    org_fring["Gustavo Fring Organization"]
+    p_gale["Gale Boetticher<br/><i>chemist</i>"]
+    proj_superlab["Superlab design and construction<br/><i>organization</i>"]
+    p_tyrus["Tyrus Kitt<br/><i>enforcer</i>"]
+    p_victor["Victor<br/><i>enforcer</i>"]
+    p_fring --> p_chris_mara
+    p_fring --> p_dennis
+    org_fring -->|"leader"| p_fring
+    org_fring -->|"chemist"| p_gale
+    org_fring --> proj_superlab
+    org_fring -->|"enforcer"| p_tyrus
+    org_fring -->|"enforcer"| p_victor
+    proj_superlab -.->|"sponsor"| p_fring
+    org_fring -.->|"member"| p_chris_mara
+    org_fring -.->|"member"| p_dennis
+    proj_superlab -.->|"lead chemist"| p_gale
+    p_fring -.-|"sponsor"| proj_superlab
+    p_gale -.-|"lead chemist"| proj_superlab

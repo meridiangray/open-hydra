@@ -1,0 +1,26 @@
+# PublicBody.param.yaml — Matching and autofold parameters for 'PublicBody'
+
+schema: PublicBody
+
+match:
+  - name
+  - alias
+  - weakAlias
+  - previousName
+  - registrationNumber
+  - idNumber
+  - cageCode
+  - uniqueEntityId
+  - website
+
+distinct:
+  - jurisdiction
+  - country
+  - incorporationDate
+  - dissolutionDate
+  - registrationNumber
+  - idNumber
+
+fold:
+  - parent
+  - department

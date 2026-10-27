@@ -1,0 +1,16 @@
+# Succession.param.yaml — Matching and autofold parameters for 'Succession'
+
+schema: Succession
+
+match:
+  - predecessor
+  - successor
+
+distinct:
+  - date
+  - startDate
+  - endDate
+
+fold:
+  - predecessor
+  - successor

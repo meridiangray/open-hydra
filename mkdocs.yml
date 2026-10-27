@@ -1,0 +1,66 @@
+site_name: Hydra
+site_description: Hydra translates evidence into data points. Guides and command reference for hydra-ctl.
+# Set these to your GitHub repo before publishing
+site_url: https://meridiangray.github.io/openhydra/
+repo_url: https://github.com/meridiangray/openhydra/
+edit_uri: edit/main/guide/docs/
+
+docs_dir: guide/docs
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle: { icon: material/weather-night, name: Dark mode }
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle: { icon: material/weather-sunny, name: Light mode }
+
+markdown_extensions:
+  - admonition
+  - def_list
+  - tables
+  - toc: { permalink: true }
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.snippets:
+      base_path: [guide/docs/examples]
+      check_paths: true
+
+nav:
+  - Home: index.md
+  - Getting started:
+      - Installation: installation.md
+      - Quickstart: quickstart.md
+  - Concepts:
+      - How Hydra works: concepts/how-hydra-works.md
+      - Hydra Archives: concepts/archive.md
+      - Records and collections: concepts/records.md
+      - Sources: concepts/sources.md
+  - Guides:
+      - Reviewing: guides/reviewing.md
+      - Defining Hierarchies: guides/hierarchy.md
+      - Images and badges: guides/hints.md
+      - hydra-mcp (AI assistants): guides/mcp.md
+  - Command reference:
+      - Overview: commands/index.md
+      - Setup and build: commands/setup.md
+      - Explore: commands/inspect.md
+      - Review and decide: commands/review.md
+      - Pack and export: commands/share.md
+      - Settings: commands/settings.md
+      - Example output: commands/output.md
+  - Reference:
+      - Config files: reference/config-files.md

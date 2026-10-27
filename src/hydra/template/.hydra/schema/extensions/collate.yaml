@@ -1,0 +1,77 @@
+Similar:
+  properties:
+    status:
+      label: "Review status"
+      type: string
+    scope:
+      label: "Scope"
+      description: "Organizations the compared entities were seen in"
+    candidateNode:
+      label: "Candidate node"
+      type: identifier
+      hidden: true
+    matchNode:
+      label: "Match node"
+      type: identifier
+      hidden: true
+
+Placement:
+  label: "Placement"
+  plural: "Placements"
+  description: >
+    A position of one entity under another in a rendered hierarchy read,
+    as decided by the hierarchy fuzzer (from relation records, position
+    chains, or a branch helper rule) or by a reviewer.
+  extends:
+    - Interval
+  matchable: false
+  generated: true
+  featured:
+    - subordinate
+    - superior
+    - status
+  required:
+    - subordinate
+    - superior
+  caption:
+    - criteria
+  edge:
+    source: subordinate
+    label: "placed under"
+    target: superior
+    directed: true
+  properties:
+    subordinate:
+      label: "Subordinate"
+      type: entity
+      range: Thing
+      reverse:
+        name: placedUnder
+        label: "Placed under"
+    superior:
+      label: "Superior"
+      type: entity
+      range: Thing
+      reverse:
+        name: placedOver
+        label: "Placed over"
+    read:
+      label: "Read"
+      description: "self = formed from the corpus alone; reviewed = with the helper"
+    status:
+      label: "Review status"
+      type: string
+    scope:
+      label: "Scope"
+    criteria:
+      label: "Criteria"
+    matcher:
+      label: "Matcher"
+    subordinateNode:
+      label: "Subordinate node"
+      type: identifier
+      hidden: true
+    superiorNode:
+      label: "Superior node"
+      type: identifier
+      hidden: true

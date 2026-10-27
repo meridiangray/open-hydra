@@ -1,0 +1,23 @@
+$ hydra-ctl todo --list placements
+placements   20
+    row                      record                       parent                      placed by
+    place-0885d03a61bc38c9   heisenberg:p-skyler          heisenberg:co-carwash       Employment (several parents)
+    place-0c4118cdee03bca9   heisenberg:p-kenny           heisenberg:p-jack           rules: Second-in-command below Leader
+    place-27e1c9910e192843   cartel:p-nacho               cartel:p-eladio             rules: Member below Leader
+    place-280778f8e19939a8   cartel:p-gonzo               cartel:p-eladio             rules: Member below Leader
+    place-2ffedf81d00118e1   heisenberg:p-kuby            heisenberg:p-jesse          rules: Member below Leader
+    place-4da066e8eb1c2280   sess-96cfcd44:p-chris-mara   sess-96cfcd44:p-fring       rules: Member below Leader
+    place-6b19e4077b1c5674   heisenberg:p-jesse           heisenberg:org-heisenberg   Membership (several parents)
+    place-7646c3aa76c72dbd   sess-96cfcd44:p-dennis       sess-96cfcd44:p-fring       rules: Member below Leader
+    place-7e2ec44e85b36063   heisenberg:p-frankie         heisenberg:p-jack           rules: Member below Leader
+    place-8133214d179ac23f   heisenberg:p-todd            heisenberg:p-jesse          rules: Member below Leader
+    place-82e6c53997c8299f   sess-96cfcd44:p-fring        sess-96cfcd44:org-fring     Membership (several parents)
+    place-8c4b38261fcc8f06   sess-96cfcd44:p-gale         sess-96cfcd44:org-fring     Membership (several parents)
+    place-937682b3379856bf   heisenberg:p-matt            heisenberg:p-jack           rules: Member below Leader
+    place-9bd53eff43c113e5   heisenberg:re-white          heisenberg:p-skyler         Ownership (several parents)
+    place-c418b6493a0b3f1e   sess-96cfcd44:p-mike         sess-96cfcd44:co-pollos     Employment (several parents)
+    place-cf481d4b402ec422   heisenberg:p-walt            heisenberg:org-heisenberg   Membership (several parents)
+    place-f5366e57980a065e   heisenberg:p-lester          heisenberg:p-jack           rules: Member below Leader
+    place-f56afed688593447   sess-96cfcd44:p-lydia        heisenberg:org-heisenberg   Membership (several parents)
+    place-fa861538ff9bd5f0   heisenberg:p-huell           heisenberg:p-jesse          rules: Member below Leader
+    place-fc95bcb4d4e1a2ad   cartel:p-nodoze              cartel:p-eladio             rules: Member below Leader

@@ -1,0 +1,7 @@
+# A criminal organization. Its titles overlap the generic positions (leader,
+# second in command), so it needs them switched off: `hydra-ctl defaults off generic`.
+Boss:        {titles: [boss, leader, don, kingpin]}
+Underboss:   {below: [Boss], titles: [underboss, second in command]}
+Lieutenant:  {below: [Underboss], titles: [lieutenant, capo, captain]}
+Soldier:     {below: [Lieutenant], titles: [soldier, enforcer, crew member]}
+Lawyer:      {outside: true, titles: [lawyer, attorney, consigliere]}

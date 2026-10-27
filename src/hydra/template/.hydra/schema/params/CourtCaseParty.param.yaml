@@ -1,0 +1,17 @@
+# CourtCaseParty.param.yaml — Matching and autofold parameters for 'CourtCaseParty'
+
+schema: CourtCaseParty
+
+match:
+  - party
+  - case
+  - role
+
+distinct:
+  - startDate
+  - endDate
+
+fold:
+  - party
+  - case
+  - role

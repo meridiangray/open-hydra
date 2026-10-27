@@ -1,0 +1,17 @@
+# Membership.param.yaml — Matching and autofold parameters for 'Membership'
+
+schema: Membership
+
+match:
+  - member
+  - organization
+  - role
+
+distinct:
+  - startDate
+  - endDate
+
+fold:
+  - member
+  - organization
+  - role

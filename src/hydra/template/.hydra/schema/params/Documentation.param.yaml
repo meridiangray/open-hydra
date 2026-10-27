@@ -1,0 +1,14 @@
+# Documentation.param.yaml — Matching and autofold parameters for 'Documentation'
+
+schema: Documentation
+
+match:
+  - document
+  - entity
+
+distinct: []
+
+fold:
+  - document
+  - entity
+  - role
