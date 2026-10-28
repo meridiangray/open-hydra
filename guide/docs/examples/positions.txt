@@ -1,4 +1,7 @@
 $ hydra-ctl positions
+Analyst
+  titles   analyst
+           research analyst
 Associate   outside
   titles   associate
            close associate
@@ -17,16 +20,8 @@ Leader
           titles   member
                    crew member
 
-unplaced titles   36
-  Head of Security                    criminal defense counsel     mechanic
-  air traffic controller              dealer                       money laundering
-  assistant                           distributor                  outside counsel
-  assistant cook                      enforcer                     planner
-  assistant special agent in charge   exterminator                 president
-  capo                                head of fast food division   security
-  chemist                             head of security             sicario
-  cook                                international distribution   special agent
-  corporate security consultant       lead chemist                 sponsor
-  counsel                             logistics                    spotter
-  crew                                logistics executive          underboss
-  crew chief                          manager                      unwitting shipping infrastructure
+unplaced titles   8
+  Analyst                            adviser on counterterrorism to the Israeli Prime Minister
+  Attache for Scientific Affairs     fighter pilot
+  Counselor for Scientific Affairs   secretary
+  Prime Minister                     senior career official in Israeli intelligence

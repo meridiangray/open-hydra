@@ -5,6 +5,6 @@ Thank you for helping. Before a pull request can merge you must agree to the [Co
 - Only submit work you wrote, or material whose licence you name in the pull request.
 - Do not paste code from other projects without saying where it came from.
 - Do not include personal data or real case material in examples or tests.
-- Run the tests before opening a pull request: `pip install -e . pytest`, then `python -m pytest`. The demo archive they use is in `examples/demo/`.
+- Run the tests before opening a pull request: `pip install -e . pytest`, then `python -m pytest`. The archive most tests build is in `tests/corpus/engine-fixture/` (it holds the merge, reference and placement cases the engine is tested on); the public demo is in `examples/demo/`.
 
 Maintainer notes: never merge outside code before the CLA is signed. Don't merge a pull request until its description includes the agreement sentence from the CLA.

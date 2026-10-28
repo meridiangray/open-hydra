@@ -1,130 +1,29 @@
 $ hydra-ctl tree --format mermaid --vertical --direction LR
 flowchart LR
-    %% record tree — breakingbad (GENERATED)
-    org_declan["Declan's organization"]
-    p_declan["Declan<br/><i>Leader</i>"]
-    pb_faa["Federal Aviation Administration"]
-    p_margolis["Donald Margolis<br/><i>air traffic controller</i>"]
-    org_heisenberg["Heisenberg Organization"]
-    p_jesse["Jesse Bruce Pinkman<br/><i>Leader</i>"]
-    p_huell["Huell Babineaux<br/><i>Member</i>"]
-    p_kuby["Patrick Kuby<br/><i>Member</i>"]
-    p_todd["Todd Alquist<br/><i>Member</i>"]
-    p_walt["Walter Hartwell White<br/><i>Leader</i>"]
-    co_carwash["A1A Car Wash"]
-    p_skyler["Skyler White<br/><i>manager</i>"]
-    re_white["White residence — 308 Negra Arroyo Lane"]
-    veh_rv["The Crystal Ship"]
-    veh_aztek["Walter White's Pontiac Aztek"]
-    proj_czech["Czech Republic distribution channel<br/><i>organization</i>"]
-    co_madrigal["Madrigal Electromotive GmbH<br/><i>unwitting shipping infrastructure</i>"]
-    p_schuler["Peter Schuler<br/><i>head of fast food division</i>"]
-    re_lavanderia["Lavanderia Brillante"]
-    re_superlab["The Superlab<br/><i>parent</i>"]
-    co_pollos["Los Pollos Hermanos"]
-    re_farm["Los Pollos Hermanos chicken farm"]
-    re_pollos_abq["Los Pollos Hermanos — Albuquerque flagship"]
-    p_mike["Michael Ehrmantraut<br/><i>corporate security consultant</i>"]
-    proj_train_heist["Dead freight methylamine heist<br/><i>organization</i>"]
-    proj_magnet["Evidence-room magnet operation<br/><i>organization</i>"]
-    p_saul["James Morgan McGill<br/><i>counsel</i>"]
-    p_lydia["Lydia Rodarte-Quayle<br/><i>distributor</i>"]
-    crew_jesse["Pinkman street crew"]
-    p_badger["Brandon Mayhew<br/><i>dealer</i>"]
-    p_combo["Christian Ortega<br/><i>dealer</i>"]
-    p_skinnypete["Skinny Pete<br/><i>dealer</i>"]
-    co_vamonos["Vamonos Pest"]
-    proj_vamonos["Vamonos Pest mobile cook program<br/><i>organization</i>"]
-    org_welker["Jack Welker's gang"]
-    p_jack["Jack Welker<br/><i>Leader</i>"]
-    p_kenny["Kenny<br/><i>Second-in-command</i>"]
-    p_frankie["Frankie<br/><i>Member</i>"]
-    p_lester["Lester<br/><i>Member</i>"]
-    p_matt["Matt<br/><i>Member</i>"]
-    org_cartel["Juarez Cartel"]
-    p_eladio["Eladio Vuente<br/><i>Leader</i>"]
-    p_gonzo["Gonzo<br/><i>Member</i>"]
-    p_nacho["Ignacio Varga<br/><i>Member</i>"]
-    p_nodoze["No-Doze<br/><i>Member</i>"]
-    org_fring["Gustavo Fring Organization"]
-    p_fring["Gustavo Fring<br/><i>Leader</i>"]
-    p_chris_mara["Chris Mara<br/><i>Member</i>"]
-    p_dennis["Dennis Markowski<br/><i>Member</i>"]
-    p_gale["Gale Boetticher<br/><i>chemist</i>"]
-    proj_superlab["Superlab design and construction<br/><i>organization</i>"]
-    p_tyrus["Tyrus Kitt<br/><i>enforcer</i>"]
-    p_victor["Victor<br/><i>enforcer</i>"]
-    p_hector["Hector Salamanca<br/><i>capo</i>"]
-    p_bolsa["Juan Bolsa<br/><i>underboss</i>"]
-    p_lalo["Lalo Salamanca<br/><i>capo</i>"]
-    p_leonel["Leonel Salamanca<br/><i>sicario</i>"]
-    p_marco["Marco Salamanca<br/><i>sicario</i>"]
-    crew_tuco["Tuco Salamanca's Albuquerque crew"]
-    p_krazy8["Domingo Gallardo Molina<br/><i>distributor</i>"]
-    p_tuco["Tuco Salamanca<br/><i>crew chief</i>"]
-    pb_dea["United States Drug Enforcement Administration"]
-    pb_dea_abq["DEA Albuquerque Field Office"]
-    p_merkert["George Merkert<br/><i>assistant special agent in charge</i>"]
-    p_hank["Henry R. Schrader<br/><i>assistant special agent in charge</i>"]
-    p_gomez["Steven Gomez<br/><i>special agent</i>"]
-    org_declan -->|"leader"| p_declan
-    pb_faa -->|"air traffic controller"| p_margolis
-    org_heisenberg -->|"cook"| p_jesse
-    org_heisenberg -->|"leader"| p_walt
-    org_heisenberg --> proj_czech
-    org_heisenberg --> proj_train_heist
-    org_heisenberg --> proj_magnet
-    org_heisenberg -->|"counsel"| p_saul
-    org_heisenberg -->|"distributor"| p_lydia
-    org_heisenberg --> crew_jesse
-    org_heisenberg --> co_vamonos
-    org_heisenberg --> proj_vamonos
-    p_jesse --> p_huell
-    p_jesse --> p_kuby
-    p_jesse --> p_todd
-    p_walt --> co_carwash
-    p_walt --> veh_rv
-    p_walt --> veh_aztek
-    co_carwash -->|"manager"| p_skyler
-    p_skyler --> re_white
-    proj_czech -->|"unwitting shipping infrastructure"| co_madrigal
-    co_madrigal -->|"head of fast food division"| p_schuler
-    co_madrigal --> re_lavanderia
-    co_madrigal --> co_pollos
-    re_lavanderia --> re_superlab
-    co_pollos --> re_farm
-    co_pollos --> re_pollos_abq
-    co_pollos -->|"corporate security consultant"| p_mike
-    crew_jesse -->|"dealer"| p_badger
-    crew_jesse -->|"dealer"| p_combo
-    crew_jesse -->|"dealer"| p_skinnypete
-    org_welker -->|"leader"| p_jack
-    p_jack --> p_kenny
-    p_jack --> p_frankie
-    p_jack --> p_lester
-    p_jack --> p_matt
-    org_cartel -->|"leader"| p_eladio
-    org_cartel --> org_fring
-    org_cartel -->|"capo"| p_hector
-    org_cartel -->|"underboss"| p_bolsa
-    org_cartel -->|"capo"| p_lalo
-    org_cartel -->|"sicario"| p_leonel
-    org_cartel -->|"sicario"| p_marco
-    org_cartel --> crew_tuco
-    p_eladio --> p_gonzo
-    p_eladio --> p_nacho
-    p_eladio --> p_nodoze
-    org_fring -->|"leader"| p_fring
-    org_fring -->|"chemist"| p_gale
-    org_fring --> proj_superlab
-    org_fring -->|"enforcer"| p_tyrus
-    org_fring -->|"enforcer"| p_victor
-    p_fring --> p_chris_mara
-    p_fring --> p_dennis
-    crew_tuco -->|"distributor"| p_krazy8
-    crew_tuco -->|"crew chief"| p_tuco
-    pb_dea --> pb_dea_abq
-    pb_dea_abq -->|"assistant special agent in charge"| p_merkert
-    pb_dea_abq -->|"assistant special agent in charge"| p_hank
-    pb_dea_abq -->|"special agent"| p_gomez
-    %% no links: Casa Tranquila nursing home, Dan Wachsberger, Heisenberg, Holly White, Jane Margolis, Marie Schrader, Maximino Arciniega, Walter White Jr., operations:addr-abq, operations:addr-hacienda, operations:addr-hannover, operations:addr-juarez, operations:addr-tohajiilee
+    %% record tree — pollard (GENERATED)
+    org_2hzt03a6z9["Israel"]
+    per_sjje7bahkq["Shamir<br/><i>Prime Minister</i>"]
+    org_ez802bp11f["Israeli Air Force"]
+    per_6q0b4zamfq["Aviem Sella<br/><i>fighter pilot</i>"]
+    org_6t8fkjn4kr["Israeli Consulate New York"]
+    per_p8w1q8cajn["Joseph Yagur<br/><i>Counselor for Scientific Affairs</i>"]
+    org_xfqaxke58a["Israeli Embassy in Washington, D.C."]
+    per_jyft1ret42["Ilan Ravid<br/><i>Attache for Scientific Affairs</i>"]
+    per_89cafr9tn9["Irit Erb<br/><i>secretary</i>"]
+    org_mspn9nxg7s["Naval Security and Investigative Command"]
+    org_tfadg8t3xv["Naval Investigative Service"]
+    org_8b2fsev104["Anti-Terrorist Alert Center"]
+    org_1phejc0ngk["Navy Field Operational Intelligence Office"]
+    org_3kk63smvp7["Naval Ocean Surveillance Information Center"]
+    org_ctk7r6bt77["Task Force 168"]
+    per_w3v2f7z7pe["Jonathan Jay Pollard<br/><i>Analyst</i>"]
+    org_2hzt03a6z9 --> per_sjje7bahkq
+    org_ez802bp11f -->|"fighter pilot"| per_6q0b4zamfq
+    org_6t8fkjn4kr -->|"Counselor for Scientific Affairs"| per_p8w1q8cajn
+    org_xfqaxke58a -->|"Attache for Scientific Affairs"| per_jyft1ret42
+    org_xfqaxke58a -->|"secretary"| per_89cafr9tn9
+    org_mspn9nxg7s --> org_tfadg8t3xv
+    org_tfadg8t3xv --> org_8b2fsev104
+    org_1phejc0ngk --> org_3kk63smvp7
+    org_ctk7r6bt77 --> per_w3v2f7z7pe
+    %% no links: Anne Henderson-Pollard, Central Intelligence Agency, Department of Defense, Federal Bureau of Investigation, Foreign Denial and Deception Analysis Committee, New York University, Office of Naval Intelligence, Rafael Eitan

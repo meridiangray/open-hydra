@@ -1,146 +1,62 @@
 $ hydra-ctl details --format json
 {
- "archive": "~/cases/breakingbad",
- "name": "breakingbad",
+ "archive": "~/cases//pollard",
+ "name": "Pollard case",
  "subject": null,
  "built": "2026-01-01T00:00:00+00:00",
  "collections": {
-  "cartel": {
-   "prefix": "cartel",
-   "records": 38,
-   "claims": 138,
+  "pollard-damage-assessment": {
+   "prefix": "pollard",
+   "records": 44,
+   "claims": 146,
    "in_others": 0,
-   "citations": 6
+   "citations": 25
   },
-  "dea": {
-   "prefix": "dea",
-   "records": 32,
-   "claims": 103,
-   "in_others": 0,
-   "citations": 2
-  },
-  "fring-condensed": {
-   "prefix": "fring-condensed",
-   "records": 34,
-   "claims": 111,
-   "in_others": 17,
-   "citations": 3
-  },
-  "fring": {
-   "prefix": "fring",
-   "records": 42,
-   "claims": 148,
-   "in_others": 17,
-   "citations": 3
-  },
-  "heisenberg": {
-   "prefix": "heisenberg",
-   "records": 56,
-   "claims": 191,
-   "in_others": 0,
-   "citations": 2
-  },
-  "operations": {
-   "prefix": "operations",
-   "records": 42,
-   "claims": 223,
+  "sources/pollard-damage-assessment": {
+   "prefix": "pollard",
+   "records": 1,
+   "claims": 10,
    "in_others": 0,
    "citations": 0
   }
  },
- "records": 244,
- "entities": 227,
- "claims": 914,
+ "records": 45,
+ "entities": 45,
+ "claims": 156,
  "schemas": {
-  "Person": {
-   "records": 57,
-   "entities": 47
-  },
-  "Membership": {
-   "records": 45,
-   "entities": 45
-  },
-  "Family": {
-   "records": 16,
-   "entities": 16
-  },
-  "ProjectParticipant": {
+  "PublicBody": {
    "records": 15,
    "entities": 15
   },
-  "Ownership": {
-   "records": 12,
-   "entities": 12
-  },
-  "Documentation": {
-   "records": 11,
-   "entities": 11
+  "Person": {
+   "records": 8,
+   "entities": 8
   },
   "Employment": {
-   "records": 10,
-   "entities": 10
-  },
-  "Event": {
-   "records": 10,
-   "entities": 10
-  },
-  "Organization": {
-   "records": 8,
+   "records": 7,
    "entities": 7
   },
-  "RealEstate": {
-   "records": 10,
-   "entities": 6
+  "Membership": {
+   "records": 5,
+   "entities": 5
   },
   "Associate": {
-   "records": 6,
-   "entities": 6
-  },
-  "Page": {
-   "records": 6,
-   "entities": 6
-  },
-  "Address": {
-   "records": 5,
-   "entities": 5
-  },
-  "Project": {
-   "records": 5,
-   "entities": 5
-  },
-  "Company": {
-   "records": 6,
-   "entities": 4
-  },
-  "Directorship": {
    "records": 4,
    "entities": 4
   },
-  "Representation": {
-   "records": 4,
-   "entities": 4
+  "Document": {
+   "records": 1,
+   "entities": 1
   },
-  "PublicBody": {
-   "records": 3,
-   "entities": 3
-  },
-  "Sanction": {
-   "records": 2,
-   "entities": 2
-  },
-  "Trip": {
-   "records": 2,
-   "entities": 2
-  },
-  "Vehicle": {
-   "records": 2,
-   "entities": 2
+  "Family": {
+   "records": 1,
+   "entities": 1
   },
   "Occupancy": {
    "records": 1,
    "entities": 1
   },
-  "Pages": {
+  "Organization": {
    "records": 1,
    "entities": 1
   },
@@ -148,41 +64,33 @@ $ hydra-ctl details --format json
    "records": 1,
    "entities": 1
   },
-  "Similar": {
-   "records": 1,
-   "entities": 1
-  },
-  "Succession": {
+  "Representation": {
    "records": 1,
    "entities": 1
   }
  },
  "reads": {
   "generic": {
-   "nodes": 79,
-   "roots": 19,
-   "positioned": 18
+   "nodes": 24,
+   "roots": 15,
+   "positioned": 0
   },
   "declared": {
-   "nodes": 79,
-   "roots": 19,
-   "positioned": 18
+   "nodes": 24,
+   "roots": 15,
+   "positioned": 1
   }
  },
  "open": {
-  "placements": 20,
-  "references": 3,
-  "merges": 14
+  "placements": 2
  },
  "automatic": {
-  "placements": 40,
-  "references": 0,
-  "merges": 17
+  "placements": 7
  },
  "issues": {
   "error": 0,
   "warning": 0,
-  "info": 1
+  "info": 3
  },
  "newer_than_build": [
   ".hydra/resources/.gitkeep",
@@ -308,13 +216,9 @@ $ hydra-ctl details --format json
   ".hydra/schema/params/Trip.param.yaml",
   ".hydra/schema/params/Vehicle.param.yaml",
   ".hydra/sources/entries/.gitkeep",
+  ".hydra/sources/entries/pollard-damage-assessment.json",
   "collections/.gitkeep",
-  "collections/cartel.json",
-  "collections/dea.json",
-  "collections/fring-condensed.json",
-  "collections/fring.json",
-  "collections/heisenberg.json",
-  "collections/operations.json",
+  "collections/pollard-damage-assessment.json",
   "hydra.yaml"
  ]
 }

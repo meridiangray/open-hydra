@@ -1,21 +1,30 @@
 # Sources
 
-`.hydra/sources/entries/` holds the material your data comes from: one record per source, usually an FtM `Article` with a title, publisher and link. Each file is a JSON list, like a collection:
+`.hydra/sources/entries/` holds the material your data comes from: one record per source, usually an FtM `Article` or `Document` with a title, publisher and link. The demo's one entry, with some fields left out (its id is made from the file's `contentHash`, so one file is one id wherever it is added). Each file is a JSON list, like a collection:
 
 ```json
 [
   {
-    "id": "wp-gus",
-    "schema": "Article",
+    "id": "doc-v9g25vcmkx",
+    "schema": "Document",
     "properties": {
       "title": [
-        "Gus Fring"
+        "The Jonathan Jay Pollard Espionage Case: A Damage Assessment"
       ],
       "publisher": [
-        "Wikipedia"
+        "Foreign Denial and Deception Analysis Committee, Director of Central Intelligence"
       ],
-      "sourceUrl": [
-        "https://en.wikipedia.org/wiki/Gus_Fring"
+      "publishedAt": [
+        "1987-10-30"
+      ],
+      "fileName": [
+        "2007-010-doc1.pdf"
+      ],
+      "mimeType": [
+        "application/pdf"
+      ],
+      "contentHash": [
+        "e5acaf72330a527a867c71615f220e61cb4f148e"
       ]
     }
   }
@@ -39,7 +48,7 @@ Neither appears as a box in the tree; both show up as evidence on the records th
 `hydra-ctl sources` draws what cites what, and the word `sources` after `claims`, `node find` or `tree` lists the sources behind just that result:
 
 ```sh
-hydra-ctl sources "Walter Hartwell White"
+hydra-ctl sources sella
 ```
 
 ```text
@@ -47,11 +56,10 @@ sources
 
   entities   1
 
-  documents
+  entries
 
-  HEISENBERG INVESTIGATION — DEA/ABQ CASE FILE (2008-2010) (Pages)   dea:doc-bb-casefile
-  └── p.1 (Page)   heisenberg:doc-bb-casefile~p1
-      └── Walter Hartwell White (Person)   sources   heisenberg:p-walt
+  The Jonathan Jay Pollard Espionage Case: A Damage Assessment (Document)   Foreign Denial and Deception Analysis Committee, Director of Central Intelligence   pollard:doc-v9g25vcmkx
+  └── Aviem Sella (Person)   sources   pollard:per-6q0b4zamfq
 
   uncited    0
 ```

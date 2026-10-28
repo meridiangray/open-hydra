@@ -3,7 +3,7 @@ off: generic; build to apply
 
 $ hydra-ctl defaults
 generic    off
-hierarchy  default
+hierarchy  changed
 hints      default
 direction  default
 collate    default

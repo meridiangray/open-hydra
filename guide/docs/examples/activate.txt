@@ -1,8 +1,8 @@
-$ hydra-ctl activate breakingbad
-Activated ~/cases/breakingbad
+$ hydra-ctl activate pollard
+Activated ~/cases/pollard
 
 $ hydra-ctl activate
-~/cases/breakingbad
+~/cases/pollard
 
 $ hydra-ctl deactivate
-Deactivated ~/cases/breakingbad
+Deactivated ~/cases/pollard

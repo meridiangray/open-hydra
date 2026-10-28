@@ -4,16 +4,18 @@ This walks through one archive from start to finish. You need [`hydra-ctl` insta
 
 ## No data yet? Try the demo
 
-Every example in this guide uses the Breaking Bad demo archive. To build it yourself:
+Every example in this guide uses the Pollard demo archive, built from the public record of one espionage case. To build it yourself:
 
 ```sh
 git clone --depth 1 https://github.com/meridiangray/open-hydra
-hydra-ctl init demo --name "Breaking Bad"
+hydra-ctl init demo --name "Pollard case" --prefix pollard
 cp open-hydra/examples/demo/collections/*.json demo/collections/
 cp open-hydra/examples/demo/.hydra/rules/positions.yaml demo/.hydra/rules/
+mkdir -p demo/.hydra/sources/entries
+cp open-hydra/examples/demo/.hydra/sources/entries/*.json demo/.hydra/sources/entries/
 cd demo
 hydra-ctl build
-hydra-ctl tree gus
+hydra-ctl tree "task force"
 ```
 
 ## 1. Create an archive

@@ -5,22 +5,22 @@ Hints link icons, portraits, logos and badges to entities by the entities' own d
 The rules live in `.hydra/rules/hints.yaml`, and the images in `.hydra/resources/`. The quickest way to add one is [`hints set`](../commands/settings.md#hints-set), which copies the image in and writes the rule for you:
 
 ```sh
-hydra-ctl hints set portrait ~/pics/gus.webp --schema Person --name "Gustavo Fring"
-hydra-ctl hints set thumb icons/crown.svg --position Leader
+hydra-ctl hints set portrait ~/pics/pollard.webp --schema Person --name "Jonathan Jay Pollard"
+hydra-ctl hints set thumb icons/crown.svg --position Analyst
 ```
 
 ## hints.yaml
 
 ```yaml
 hints:
-  - match: {position: Leader}
+  - match: {position: Analyst}
     set:   {thumb: icons/crown.svg}
-  - match: {schema: Person, name: Gustavo Fring}
-    set:   {portrait: portraits/gus.webp}
-  - match: {schema: Company, name: Los Pollos Hermanos}
-    set:   {logo: portraits/los-pollos.webp}
-  - match: {titled: {contains: "sicario|hitman"}}
-    set:   {thumb: icons/target.svg, badge: muscle}
+  - match: {schema: Person, name: Jonathan Jay Pollard}
+    set:   {portrait: portraits/pollard.webp}
+  - match: {schema: PublicBody, name: Task Force 168}
+    set:   {logo: portraits/tf168.webp}
+  - match: {titled: {contains: "fighter pilot|secretary"}}
+    set:   {thumb: icons/briefcase.svg}
 ```
 
 Image paths are inside `.hydra/resources/`. A path that leaves it is refused, and `check` reports it.

@@ -1,58 +1,84 @@
 $ hydra-ctl review --only placements
-review   breakingbad
+review   Pollard case
 
   kind         rows   questions
-  placements     20          20
-  total          20          20
+  placements      2           2
+  total           2           2
 
-[1/20] Placement · Employment (several parents)
-  Skyler White
+[1/2] Placement · Membership (several parents)
+  Jonathan Jay Pollard
 
-  ┌─ Placing ──────────────────────────────────────────────────────────────────────┐
-  │ heisenberg:p-skyler   Person                                                   │
-  │    name           Skyler White                                                 │
-  │    notes          Walt's wife; laundered the proceeds through the A1A Car Wash │
-  │    weakAlias      Skyler Lambert                                               │
-  └────────────────────────────────────────────────────────────────────────────────┘
+  ┌─ Placing ────────────────────────────────┐
+  │ pollard:per-w3v2f7z7pe   Person          │
+  │    alias          Jonathan Pollard       │
+  │    name           Jonathan Jay Pollard   │
+  │    sources        pollard:doc-v9g25vcmkx │
+  │    weakAlias      Pollard                │
+  └──────────────────────────────────────────┘
 
-  1  heisenberg:rel-hb23   Employment   now
-     employee       Skyler White
-     employer       A1A Car Wash
-     role           manager
+  1  pollard:mem-tg0re7j07m   Membership   now
+     member         Jonathan Jay Pollard
+     notes          Volunteer to Task Force 168 (TF-168), the naval intelligence element responsible for HUMINT collection; Pollard was assigned to collect information from a South African defense attache.
+     organization   Task Force 168
+     startDate      1980-02
 
-  2  heisenberg:rel-hb7   Membership
-     member         Skyler White
-     organization   Heisenberg Organization
-     role           money laundering
+  2  pollard:emp-6s4h8c5hez   Employment
+     employee       Jonathan Jay Pollard
+     employer       Anti-Terrorist Alert Center
+     endDate        1985-11
+     notes          Began temporary duty with ATAC in June 1984 as a watchstander; permanently assigned in October 1984 as analyst responsible for assessing terrorist activities.
+     role           analyst
+     startDate      1984-06
+
+  3  pollard:emp-06j8t52g03   Employment
+     employee       Jonathan Jay Pollard
+     employer       Naval Ocean Surveillance Information Center
+     notes          Research analyst, Naval Ocean Surveillance Information Center, Suitland, Maryland (merchant shipping analyst and watch officer).
+     role           research analyst
+     startDate      1979-09
+
+  4  pollard:emp-1bz3xhft0s   Employment
+     employee       Jonathan Jay Pollard
+     employer       Navy Field Operational Intelligence Office
+     endDate        1985-11
+     notes          An employee of the Navy Field Operational Intelligence Office from 1979 until November 1985.
+     role           analyst
+     startDate      1979-09
 
 Which is better?
-  1  under A1A Car Wash              heisenberg:co-carwash   now
-  2  under Heisenberg Organization   heisenberg:org-heisenberg
+  1  under Task Force 168                                pollard:org-ctk7r6bt77   now
+  2  under Anti-Terrorist Alert Center                   pollard:org-8b2fsev104
+  3  under Naval Ocean Surveillance Information Center   pollard:org-3kk63smvp7
+  4  under Navy Field Operational Intelligence Office    pollard:org-1phejc0ngk
   ? not sure   u undo   q quit
 > 2
-  saved   Skyler White under Heisenberg Organization
+  saved   Jonathan Jay Pollard under Anti-Terrorist Alert Center
 
-[2/20] Placement · rules: Second-in-command below Leader
-  Kenny
+[2/2] Placement · Employment (several parents)
+  Aviem Sella
 
-  ┌─ Placing ────────────────────────────────────┐
-  │ heisenberg:p-kenny   Person                  │
-  │    deathDate      2010                       │
-  │    name           Kenny                      │
-  │    notes          Welker's second-in-command │
-  └──────────────────────────────────────────────┘
+  ┌─ Placing ────────────────────────────────┐
+  │ pollard:per-6q0b4zamfq   Person          │
+  │    name           Aviem Sella            │
+  │    sources        pollard:doc-v9g25vcmkx │
+  │    title          Col.                   │
+  │    weakAlias      Sella                  │
+  └──────────────────────────────────────────┘
 
-  1  heisenberg:p-jack   rules: Second-in-command below Leader   now
+  1  pollard:emp-dsj4t8669k   Employment   now
+     employee       Aviem Sella
+     employer       Israeli Air Force
+     notes          A highly successful fighter pilot on study leave from the Israeli Air Force, officially resident in the US to pursue a doctorate in computer sciences at New York University.
+     role           fighter pilot
 
-  2  heisenberg:rel-hb16   Membership
-     endDate        2010
-     member         Kenny
-     organization   Jack Welker's gang
-     role           second-in-command
+  2  pollard:mem-9jvb9yj94m   Membership
+     member         Aviem Sella
+     notes          Sella's official reason for residency in the United States in 1984 was his pursuit of a doctorate in computer sciences at New York University.
+     organization   New York University
 
 Which is better?
-  1  under Jack Welker          heisenberg:p-jack   now
-  2  under Jack Welker's gang   heisenberg:org-welker
+  1  under Israeli Air Force     pollard:org-ez802bp11f   now
+  2  under New York University   pollard:org-f8xs95cwk2
   ? not sure   u undo   q quit
 > a
   pick a number from 1 to 2, ? not sure, u undo or q quit
@@ -61,8 +87,6 @@ Which is better?
   answered   1
 
   kind         before   now
-  merges           14    14
-  references        3     3
-  placements       20    19
+  placements        2     1
 
-Rebuilt breakingbad: 244 records, 227 entities, 36 open questions
+Rebuilt Pollard case: 45 records, 45 entities, 1 open question

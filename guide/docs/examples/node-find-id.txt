@@ -1,4 +1,3 @@
-$ hydra-ctl node find p-walt --field id
-score   name                    schema   id                  position   parent                    matched
-1.00    Walter Hartwell White   Person   heisenberg:p-walt   Leader     Heisenberg Organization   id  heisenberg:p-walt
-0.85    Walter White Jr.        Person   dea:p-waltjr                                             id  dea:p-waltjr
+$ hydra-ctl node find per-w3v2f7z7pe --field id
+score   name                   schema   id                       position   parent           matched
+1.00    Jonathan Jay Pollard   Person   pollard:per-w3v2f7z7pe   Analyst    Task Force 168   id  pollard:per-w3v2f7z7pe

@@ -1,8 +1,8 @@
 $ hydra-ctl todo
   kind             open
-  merges             14
-  references          3
-  placements         20
+  merges              0
+  references          0
+  placements          2
   stale               0
   contradictions      0
   verdicts            0

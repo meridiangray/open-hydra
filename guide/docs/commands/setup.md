@@ -4,7 +4,7 @@
 
 ```sh
 hydra-ctl init htest
-hydra-ctl init htest --name "Breaking Bad" --prefix bb
+hydra-ctl init htest --name "Pollard case" --prefix pollard
 hydra-ctl init htest.hydra
 ```
 
@@ -37,7 +37,7 @@ hydra-ctl deactivate
 
 ```sh
 hydra-ctl import ~/exports/opensanctions.json --format ftm
-hydra-ctl import case.hydra-ftm.jsonl --format hydra-ftm --name fring
+hydra-ctl import case.hydra-ftm.jsonl --format hydra-ftm --name pollard
 hydra-ctl import case-graph --format csv
 hydra-ctl import case.graphml --format graphml --force
 ```

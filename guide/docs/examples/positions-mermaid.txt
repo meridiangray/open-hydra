@@ -1,17 +1,18 @@
 $ hydra-ctl positions --format mermaid
 graph TD
-    %% position graph — breakingbad (GENERATED)
+    %% position graph — pollard (GENERATED)
     classDef generic fill:#dbeafe,stroke:#9ca3af,color:#111827
     classDef declared fill:#dcfce7,stroke:#9ca3af,color:#111827
     classDef both fill:#fef3c7,stroke:#9ca3af,color:#111827
     classDef implied fill:#f3f4f6,stroke:#9ca3af,color:#111827
     classDef outside fill:#ffffff,stroke:#d1d5db,stroke-dasharray:4 3,color:#111827
-    P1 --> P3
-    P3 --> P2
-    P1 --> P2
-    P1["Leader<br/>3 titles"]:::generic
-    P3["Second-in-command<br/>2 titles"]:::generic
-    P2["Member<br/>2 titles"]:::generic
-    P0["Associate<br/>3 titles"]:::outside
-    %% outside / no relations: Associate
-    %% observed titles with no rule: Head of Security, air traffic controller, assistant, assistant cook, assistant special agent in charge, capo, chemist, cook, corporate security consultant, counsel, crew, crew chief, criminal defense counsel, dealer, distributor, enforcer, exterminator, head of fast food division, head of security, international distribution, lead chemist, logistics, logistics executive, manager, mechanic, money laundering, outside counsel, planner, president, security, sicario, special agent, sponsor, spotter, underboss, unwitting shipping infrastructure
+    P2 --> P4
+    P4 --> P3
+    P2 --> P3
+    P0["Analyst<br/>2 titles"]:::outside
+    P2["Leader<br/>3 titles"]:::generic
+    P4["Second-in-command<br/>2 titles"]:::generic
+    P3["Member<br/>2 titles"]:::generic
+    P1["Associate<br/>3 titles"]:::outside
+    %% outside / no relations: Analyst, Associate
+    %% observed titles with no rule: Analyst, Attache for Scientific Affairs, Counselor for Scientific Affairs, Prime Minister, adviser on counterterrorism to the Israeli Prime Minister, fighter pilot, secretary, senior career official in Israeli intelligence

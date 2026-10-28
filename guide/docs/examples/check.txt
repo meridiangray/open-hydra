@@ -8,4 +8,4 @@ $ hydra-ctl check
              check   old build
   errors         0           0
   warnings       0           0
-  info           1           1
+  info           1           3

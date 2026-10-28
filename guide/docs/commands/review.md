@@ -33,12 +33,12 @@ Asks the open questions one at a time. Each starts with what kind of question it
 Then it asks "Which is better?" with the alternatives numbered and the current one marked "now". A merge with conflicting fields opens on just those fields; Tab shows the rest.
 
 ```text
-[1/47] Placement · Employment (several parents)
-  Skyler White
+[2/2] Placement · Membership (several parents)
+  Aviem Sella
   …
 Which is better?
-  1  under A1A Car Wash              heisenberg:co-carwash   now
-  2  under Heisenberg Organization   heisenberg:org-heisenberg
+  1  under Israeli Air Force     pollard:org-ez802bp11f   now
+  2  under New York University   pollard:org-f8xs95cwk2
   ? not sure   u undo   q quit
 ```
 
@@ -61,7 +61,7 @@ Each answer is saved at once, and the archive is rebuilt once at the end.
 hydra-ctl answer merge-3f2a… confirm
 hydra-ctl answer place-17bd… reject
 hydra-ctl answer ref-520d… 2
-hydra-ctl answer cap-heisenberg:p-walt "Heisenberg"
+hydra-ctl answer cap-pollard:per-w3v2f7z7pe "Jonathan Pollard"
 hydra-ctl answer place-17bd… clear
 ```
 
@@ -76,7 +76,7 @@ Records one decision, for scripts. The ids come from `todo --list`.
 | `ref-…` | A candidate number, a record id, none or clear |
 | `cap-` and a record id | One of the entity's names (not an alias), or clear |
 
-An entity has several names once records are merged. In the demo, confirming that the DEA's "Heisenberg" is Walter makes `cap-heisenberg:p-walt "Heisenberg"` valid.
+An entity has several names once records are merged. In the demo, with a press file added that calls him "Jonathan Pollard", confirming the two are one man makes `cap-pollard:per-w3v2f7z7pe "Jonathan Pollard"` valid.
 
 | Option | Does |
 |---|---|
@@ -105,9 +105,9 @@ To clear a single decision, use [`answer`](#answer) with clear.
 
 ```sh
 hydra-ctl stubs
-hydra-ctl stubs graduate "Gretchen Schwartz"
-hydra-ctl stubs graduate "Gretchen Schwartz" --as Person
-hydra-ctl stubs drop "Gretchen Schwartz"
+hydra-ctl stubs graduate "Lakam"
+hydra-ctl stubs graduate "Israeli Ministry of Defense" --as PublicBody
+hydra-ctl stubs drop "Lakam"
 ```
 
 [See the output of each example](output.md#stubs)

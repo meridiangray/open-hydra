@@ -8,12 +8,12 @@ These commands read the last build. None of them write anything.
 
 | Word | Does | Example |
 |---|---|---|
-| A type, such as person, organization or company | Keeps that type and its subtypes (organization includes companies) | `hydra-ctl claims person gus` |
+| A type, such as person, organization or company | Keeps that type and its subtypes (organization includes companies) | `hydra-ctl claims person anne` |
 | A relationship (`tree` only): ownership, membership, employment, directorship, occupancy or family | Draws the chart along it | `hydra-ctl tree family employment` |
-| `sources` | Adds the sources of what the command returned | `hydra-ctl claims gus sources` |
-| Anything else | The search, matched against names first and then other fields | `hydra-ctl node find walt` |
+| `sources` | Adds the sources of what the command returned | `hydra-ctl claims pollard sources` |
+| Anything else | The search, matched against names first and then other fields | `hydra-ctl node find pollard` |
 
-Several search words make one search, so `claims walter white` and `claims "walter white"` are the same. A word may match the start of a name: `gus` finds Gustavo Fring.
+Several search words make one search, so `claims jonathan jay` and `claims "jonathan jay"` are the same. A word may match the start of a name: `jon` finds Jonathan Jay Pollard.
 
 | Option | Does |
 |---|---|
@@ -42,8 +42,8 @@ Lists every problem in the archive's files (rules, params, records and decisions
 
              check   old build
   errors         0           0
-  warnings       0           1
-  info           1           1
+  warnings       0           0
+  info           1           3
 ```
 
 | Option | Does |
@@ -70,7 +70,7 @@ One screen with the archive's name, when it was built, its collections and prefi
 ```sh
 hydra-ctl tree
 hydra-ctl tree person
-hydra-ctl tree gus
+hydra-ctl tree "task force"
 hydra-ctl tree family
 hydra-ctl tree family employment
 hydra-ctl tree organization sources
@@ -81,11 +81,11 @@ hydra-ctl tree organization sources
 Draws every record once, under one parent, like an org chart. A record's other parents are listed under it, so nothing is hidden.
 
 ```text
-Gustavo Fring Organization (Organization)
-├── Gustavo Fring (Person) — Leader
-│   │ also  Juarez Cartel                      Membership           distributor
-│   │ also  Los Pollos Hermanos                Directorship         president
-│   │ also  Superlab design and construction   ProjectParticipant   sponsor
+Task Force 168 (PublicBody)
+└── Jonathan Jay Pollard (Person) — Analyst
+      also  Anti-Terrorist Alert Center                   Employment   analyst
+      also  Naval Ocean Surveillance Information Center   Employment   research analyst
+      also  Navy Field Operational Intelligence Office    Employment   analyst
 ```
 
 When there is a reason the other parent isn't the drawn one, the line ends with it: `rejected` (you said no in review), `cycle` (it would make a loop) or `earlier` (its dates don't overlap the drawn one). With no word, both parents hold at once and the chart shows one.
@@ -94,7 +94,7 @@ When there is a reason the other parent isn't the drawn one, the line ends with 
 |---|---|
 | `tree` | The whole chart |
 | `tree person` | From each person not below another person |
-| `tree gus` | From the records the search names |
+| `tree "task force"` | From the records the search names |
 | `tree family` | Only family links, and only the people in them |
 | `tree family employment` | Both kinds, the first one a record has deciding its parent |
 | `tree organization sources` | The chart, then the sources of everything drawn |
@@ -106,10 +106,9 @@ A relationship word draws only links of that kind. Every record at either end of
 Records joined by these links are drawn together, with a blank line between unconnected groups, so one family reads as one block.
 
 ```text
-Walter Hartwell White (Person)
-│ also  Henry R. Schrader   Family   brother-in-law   sideways
-├── Holly White (Person)   Family   child (father)
-└── Walter White Jr. (Person)   Family   child (father)
+Anne Henderson-Pollard (Person)
+Jonathan Jay Pollard (Person)
+  also  Anne Henderson-Pollard   Family   wife   sideways
 ```
 
 For family, the relationship text decides the direction. It describes the relative from the person's side, so father, mother or parent puts the relative above the person, and son, daughter or child puts the person above the relative.
@@ -130,7 +129,7 @@ Relationship charts only change what is displayed. Nothing is rebuilt or saved, 
 
 ```sh
 hydra-ctl tree --format mermaid > chart.mmd
-hydra-ctl tree gus --format mermaid --vertical --direction LR
+hydra-ctl tree --format mermaid --vertical --direction LR
 hydra-ctl tree family --format mermaid
 ```
 
@@ -156,57 +155,57 @@ Mermaid lays out every line as if it went down, so sideways and other-parent lin
 | `--singletons` | Records with no line as boxes, instead of listing them in the `%% no links:` comment | Keeping every record on the chart after `--vertical` or `--lateral` drops its lines |
 | `--direction LR` | Left to right instead of top-down (`TD`, the default) | Wide, shallow trees |
 
-The options combine. Here is each one on the same search, `tree gus`:
+The options combine. Here is each one on the whole archive, `tree`:
 
 === "default"
 
     Both kinds of line. The dotted lines cross the hierarchy.
 
     ```mermaid
-    --8<-- "tree-gus-mermaid.txt:2:"
+    --8<-- "tree-all-mermaid.txt:2:"
     ```
 
-    [tree-gus-mermaid.txt](../examples/tree-gus-mermaid.txt)
+    [tree-all-mermaid.txt](../examples/tree-all-mermaid.txt)
 
 === "--vertical"
 
     Only who sits under whom.
 
     ```mermaid
-    --8<-- "tree-gus-mermaid-vertical.txt:2:"
+    --8<-- "tree-all-mermaid-vertical.txt:2:"
     ```
 
-    [tree-gus-mermaid-vertical.txt](../examples/tree-gus-mermaid-vertical.txt)
+    [tree-all-mermaid-vertical.txt](../examples/tree-all-mermaid-vertical.txt)
 
 === "--lateral"
 
-    Only the other ties. Tyrus Kitt and Victor have none, so they are left out and named in the closing comment.
+    Only the other ties. Records with none are left out and named in the closing comment.
 
     ```mermaid
-    --8<-- "tree-gus-mermaid-lateral.txt:2:"
+    --8<-- "tree-all-mermaid-lateral.txt:2:"
     ```
 
-    [tree-gus-mermaid-lateral.txt](../examples/tree-gus-mermaid-lateral.txt)
+    [tree-all-mermaid-lateral.txt](../examples/tree-all-mermaid-lateral.txt)
 
 === "--lateral --singletons"
 
-    The same, with Tyrus Kitt and Victor drawn as boxes.
+    The same, with those records drawn as boxes.
 
     ```mermaid
-    --8<-- "tree-gus-mermaid-singletons.txt:2:"
+    --8<-- "tree-all-mermaid-singletons.txt:2:"
     ```
 
-    [tree-gus-mermaid-singletons.txt](../examples/tree-gus-mermaid-singletons.txt)
+    [tree-all-mermaid-singletons.txt](../examples/tree-all-mermaid-singletons.txt)
 
 === "--direction LR"
 
     The default chart, laid out left to right.
 
     ```mermaid
-    --8<-- "tree-gus-mermaid-lr.txt:2:"
+    --8<-- "tree-all-mermaid-lr.txt:2:"
     ```
 
-    [tree-gus-mermaid-lr.txt](../examples/tree-gus-mermaid-lr.txt)
+    [tree-all-mermaid-lr.txt](../examples/tree-all-mermaid-lr.txt)
 
 `sources` can't be used with `--format mermaid`, because the source list would break the chart.
 
@@ -224,14 +223,18 @@ hydra-ctl positions --format mermaid
 Draws the position ladder from the hierarchy rules: each position under the one above it, with the titles that count as it listed underneath. Then it lists the titles found in the data that no position takes, so you can see what the rules are missing.
 
 ```text
-Counsel   outside
-  titles   lawyer
-           attorney
-           criminal defense counsel
-  records  James Morgan McGill   Person
+Analyst
+  titles   analyst
+           research analyst
+  records  Jonathan Jay Pollard   Person
+Associate   outside
+  titles   associate
+           close associate
+           contact
 Leader
 │ titles   boss
 │          leader
+│          head of organization
 ```
 
 `outside` marks a position that is off the ladder, `implied` one only the rules imply, and `^` a position met a second time. Problems in the rules, such as a position placed under one that isn't defined, are listed at the end.
@@ -251,9 +254,9 @@ Leader
 
 ```sh
 hydra-ctl claims
-hydra-ctl claims gus
-hydra-ctl claims person ouali
-hydra-ctl claims gus sources --format json
+hydra-ctl claims pollard
+hydra-ctl claims person anne
+hydra-ctl claims pollard sources --format json
 ```
 
 [See the output of each example](output.md#claims)
@@ -263,31 +266,34 @@ Shows where each value of an entity came from, grouped by property, with the rec
 Up to 10 entities are shown, best match first. A line "merged upstream from" lists ids an upstream tool merged into the entity.
 
 ```text
-entity          type     id                      claims   collections
-Gustavo Fring   Person   sess-96cfcd44:p-fring       15             2
+entity                 type     id                       claims   collections
+Jonathan Jay Pollard   Person   pollard:per-w3v2f7z7pe        4             1
 
-    field         value                                  record                    collection
-    citizenship   cl                                     sess-96cfcd44:p-fring     fring
-                                                         fring-condensed:p-fring   fring-condensed
-    deathDate     2010                                   sess-96cfcd44:p-fring     fring
+    field       value                    record                   collection
+    alias       Jonathan Pollard         pollard:per-w3v2f7z7pe   pollard-damage-assessment
+    name        Jonathan Jay Pollard     pollard:per-w3v2f7z7pe   pollard-damage-assessment
+    sources     pollard:doc-v9g25vcmkx   pollard:per-w3v2f7z7pe   pollard-damage-assessment
+    weakAlias   Pollard                  pollard:per-w3v2f7z7pe   pollard-damage-assessment
+
     …
 
-  documented in     HEISENBERG INVESTIGATION — DEA/ABQ CASE FILE (2008-2010) p.2
+
 ```
 
 Without a search, or as `claims summary`, it counts the claims behind the whole archive by collection, type and property. It also counts how many identity fields, such as a birth date, collections give differently (disputed).
 
 ```text
-claims summary   breakingbad
+claims summary   Pollard case
 
-  claims        914
-  entities      227
-  collections     6
+  claims        156
+  entities       45
+  collections     2
   disputed        0
 
-  collection        claims      schema               claims      property       claims
-  operations           223      Person                  201      name              105
-  heisenberg           191      Membership              176      notes              83
+  collection                          claims      schema           claims      property       claims
+  pollard-damage-assessment              146      PublicBody           38      name               25
+  sources/pollard-damage-assessment       10      Person               32      sources            25
+                                                  Employment           30      notes              14
   …
 ```
 
@@ -302,9 +308,9 @@ claims summary   breakingbad
 ## node find
 
 ```sh
-hydra-ctl node find walt
-hydra-ctl node find person heisenberg
-hydra-ctl node find europol-ouali-karim --field id
+hydra-ctl node find pollard
+hydra-ctl node find person jay
+hydra-ctl node find per-w3v2f7z7pe --field id
 ```
 
 [See the output of each example](output.md#node-find)
@@ -312,10 +318,9 @@ hydra-ctl node find europol-ouali-karim --field id
 Gives the records closest to a value, each with a score, and says which field matched.
 
 ```text
-score   name                      schema         id                          position   parent                    matched
-1.00    Heisenberg                Person         dea:p-heisenberg-dea
-1.00    Walter Hartwell White     Person         heisenberg:p-walt           Leader     Heisenberg Organization   weakAlias  Heisenberg
-0.95    Heisenberg Organization   Organization   heisenberg:org-heisenberg
+score   name                     schema   id                       position   parent           matched
+1.00    Jonathan Jay Pollard     Person   pollard:per-w3v2f7z7pe   Analyst    Task Force 168   weakAlias  Pollard
+0.93    Anne Henderson-Pollard   Person   pollard:per-jbcv7nwbwb
 ```
 
 An equal name or identifier scores 1.00, a name holding all the words 0.90 or more, part of an id 0.85, another field equal to the value 0.80, and another field holding its words 0.75. Anything else is scored by how close it is to a name, so typos still find.
@@ -333,9 +338,9 @@ An equal name or identifier scores 1.00, a name holding all the words 0.90 or mo
 
 ```sh
 hydra-ctl sources
-hydra-ctl sources hank
+hydra-ctl sources sella
 hydra-ctl sources person --uncited
-hydra-ctl sources casefile
+hydra-ctl sources damage
 hydra-ctl sources --format json
 ```
 
@@ -347,24 +352,21 @@ Each entity's line names the field that cites the source. It names the record to
 
 A document's pages sit under it, and whoever cites a page sits under that page. Documents that are part of the data, such as a case file and its pages, are listed apart from the source entries, and entities that cite nothing are counted.
 
-In the demo, everything traces to one case file:
+In the demo, everything traces to one source entry, the damage assessment:
 
 ```text
-  HEISENBERG INVESTIGATION — DEA/ABQ CASE FILE (2008-2010) (Pages)   dea:doc-bb-casefile
-  ├── p.1 (Page)   heisenberg:doc-bb-casefile~p1
-  │   ├── Heisenberg (Person)   sources   dea:p-heisenberg-dea
-  │   ├── Henry R. Schrader (Person)   sources   dea:p-hank
-  │   └── Walter Hartwell White (Person)   sources   heisenberg:p-walt
+  The Jonathan Jay Pollard Espionage Case: A Damage Assessment (Document)   Foreign Denial and Deception Analysis Committee, Director of Central Intelligence   pollard:doc-v9g25vcmkx
+  └── Aviem Sella (Person)   sources   pollard:per-6q0b4zamfq
   …
 ```
 
 | Command | Draws |
 |---|---|
 | `sources` | Every source |
-| `sources hank` | Only the sources the entities the search names cite, with only those entities under them (names first, other fields only when no name matches) |
+| `sources sella` | Only the sources the entities the search names cite, with only those entities under them (names first, other fields only when no name matches) |
 | `sources person` | The same for every person |
 | `sources person --uncited` | The same, and also names each person citing nothing, so you can see what still needs a source |
-| `sources casefile` | Searches the sources themselves (id, title, publisher and link) when no entity matches, and draws each with everything citing it |
+| `sources damage` | Searches the sources themselves (id, title, publisher and link) when no entity matches, and draws each with everything citing it |
 
 The word `sources` after `claims`, `node find` or `tree` draws the same for just what that command returned. [Sources](../concepts/sources.md) covers how they are stored.
 

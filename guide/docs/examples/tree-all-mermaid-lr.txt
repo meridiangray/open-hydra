@@ -1,0 +1,42 @@
+$ hydra-ctl tree --format mermaid --direction LR
+flowchart LR
+    %% record tree — pollard (GENERATED)
+    per_jbcv7nwbwb["Anne Henderson-Pollard"]
+    org_2hzt03a6z9["Israel"]
+    per_sjje7bahkq["Shamir<br/><i>Prime Minister</i>"]
+    org_ez802bp11f["Israeli Air Force"]
+    per_6q0b4zamfq["Aviem Sella<br/><i>fighter pilot</i>"]
+    org_6t8fkjn4kr["Israeli Consulate New York"]
+    per_p8w1q8cajn["Joseph Yagur<br/><i>Counselor for Scientific Affairs</i>"]
+    org_xfqaxke58a["Israeli Embassy in Washington, D.C."]
+    per_jyft1ret42["Ilan Ravid<br/><i>Attache for Scientific Affairs</i>"]
+    per_89cafr9tn9["Irit Erb<br/><i>secretary</i>"]
+    org_mspn9nxg7s["Naval Security and Investigative Command"]
+    org_tfadg8t3xv["Naval Investigative Service"]
+    org_8b2fsev104["Anti-Terrorist Alert Center"]
+    org_1phejc0ngk["Navy Field Operational Intelligence Office"]
+    org_3kk63smvp7["Naval Ocean Surveillance Information Center"]
+    org_f8xs95cwk2["New York University"]
+    per_9n72sstcw8["Rafael Eitan<br/><i>senior career official in Israeli intelligence</i>"]
+    org_ctk7r6bt77["Task Force 168"]
+    per_w3v2f7z7pe["Jonathan Jay Pollard<br/><i>Analyst</i>"]
+    org_2hzt03a6z9 --> per_sjje7bahkq
+    org_ez802bp11f -->|"fighter pilot"| per_6q0b4zamfq
+    org_6t8fkjn4kr -->|"Counselor for Scientific Affairs"| per_p8w1q8cajn
+    org_xfqaxke58a -->|"Attache for Scientific Affairs"| per_jyft1ret42
+    org_xfqaxke58a -->|"secretary"| per_89cafr9tn9
+    org_mspn9nxg7s --> org_tfadg8t3xv
+    org_tfadg8t3xv --> org_8b2fsev104
+    org_1phejc0ngk --> org_3kk63smvp7
+    org_ctk7r6bt77 --> per_w3v2f7z7pe
+    org_f8xs95cwk2 -.-> per_6q0b4zamfq
+    org_8b2fsev104 -.->|"analyst"| per_w3v2f7z7pe
+    org_3kk63smvp7 -.->|"research analyst"| per_w3v2f7z7pe
+    org_1phejc0ngk -.->|"analyst"| per_w3v2f7z7pe
+    per_w3v2f7z7pe -.-|"wife"| per_jbcv7nwbwb
+    per_w3v2f7z7pe -.-|"first handler"| per_6q0b4zamfq
+    per_w3v2f7z7pe -.-|"handler"| per_89cafr9tn9
+    per_w3v2f7z7pe -.- org_2hzt03a6z9
+    per_w3v2f7z7pe -.-|"primary, direct handler"| per_p8w1q8cajn
+    per_w3v2f7z7pe -.-|"senior Israeli official in charge of the case"| per_9n72sstcw8
+    %% no links: Central Intelligence Agency, Department of Defense, Federal Bureau of Investigation, Foreign Denial and Deception Analysis Committee, Office of Naval Intelligence

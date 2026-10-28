@@ -33,9 +33,9 @@ hydra-ctl export case-one.hydra --format graphml
 Writes the archive for other tools, and reports what it wrote:
 
 ```text
-Exported breakingbad as csv to breakingbad-graph
+Exported Pollard-case as csv to ~/cases/graph
   entities   nodes   edges   unlinked relationships   ftm schema
-       227     102     302                        1   65c772987032
+        45      26      54                        0   65c772987032
 ```
 
 | Format | Is |

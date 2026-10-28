@@ -1,560 +1,214 @@
 $ hydra-ctl sources --format json
 {
  "matched": "entities",
- "entities": 79,
- "entries": [],
- "documents": [
+ "entities": 24,
+ "entries": [
   {
-   "id": "dea:doc-bb-casefile",
-   "schema": "Pages",
-   "title": "HEISENBERG INVESTIGATION — DEA/ABQ CASE FILE (2008-2010)",
-   "publisher": "",
+   "id": "pollard:doc-v9g25vcmkx",
+   "schema": "Document",
+   "title": "The Jonathan Jay Pollard Espionage Case: A Damage Assessment",
+   "publisher": "Foreign Denial and Deception Analysis Committee, Director of Central Intelligence",
    "url": "",
-   "collection": "dea",
-   "entry": false,
+   "collection": "sources/pollard-damage-assessment",
+   "entry": true,
    "document": "",
    "page": "",
-   "cited_by": [],
-   "pages": [
+   "cited_by": [
     {
-     "id": "heisenberg:doc-bb-casefile~p1",
-     "schema": "Page",
-     "title": "HEISENBERG INVESTIGATION — DEA/ABQ CASE FILE (2008-2010) p.1",
-     "publisher": "",
-     "url": "",
-     "collection": "heisenberg",
-     "entry": false,
-     "document": "dea:doc-bb-casefile",
-     "page": "1",
-     "cited_by": [
-      {
-       "id": "dea:p-heisenberg-dea",
-       "caption": "Heisenberg",
-       "schema": "Person",
-       "records": [
-        "dea:p-heisenberg-dea"
-       ]
-      },
-      {
-       "id": "dea:p-hank",
-       "caption": "Henry R. Schrader",
-       "schema": "Person",
-       "records": [
-        "dea:p-hank"
-       ]
-      },
-      {
-       "id": "heisenberg:p-walt",
-       "caption": "Walter Hartwell White",
-       "schema": "Person",
-       "records": [
-        "heisenberg:p-walt"
-       ]
-      }
+     "id": "pollard:per-jbcv7nwbwb",
+     "caption": "Anne Henderson-Pollard",
+     "schema": "Person",
+     "records": [
+      "pollard:per-jbcv7nwbwb"
      ]
     },
     {
-     "id": "fring-condensed:doc-bb-casefile~p2",
-     "schema": "Page",
-     "title": "HEISENBERG INVESTIGATION — DEA/ABQ CASE FILE (2008-2010) p.2",
-     "publisher": "",
-     "url": "",
-     "collection": "fring-condensed",
-     "entry": false,
-     "document": "dea:doc-bb-casefile",
-     "page": "2",
-     "cited_by": [
-      {
-       "id": "sess-96cfcd44:p-fring",
-       "caption": "Gustavo Fring",
-       "schema": "Person",
-       "records": [
-        "fring-condensed:p-fring"
-       ]
-      },
-      {
-       "id": "sess-96cfcd44:org-fring",
-       "caption": "Gustavo Fring Organization",
-       "schema": "Organization",
-       "records": [
-        "fring-condensed:org-fring"
-       ]
-      },
-      {
-       "id": "sess-96cfcd44:co-madrigal",
-       "caption": "Madrigal Electromotive GmbH",
-       "schema": "Company",
-       "records": [
-        "fring-condensed:co-madrigal"
-       ]
-      }
+     "id": "pollard:org-8b2fsev104",
+     "caption": "Anti-Terrorist Alert Center",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-8b2fsev104"
      ]
     },
     {
-     "id": "sess-96cfcd44:doc-bb-casefile~p2",
-     "schema": "Page",
-     "title": "HEISENBERG INVESTIGATION — DEA/ABQ CASE FILE (2008-2010) p.2",
-     "publisher": "",
-     "url": "",
-     "collection": "fring",
-     "entry": false,
-     "document": "dea:doc-bb-casefile",
-     "page": "2",
-     "cited_by": [
-      {
-       "id": "sess-96cfcd44:p-fring",
-       "caption": "Gustavo Fring",
-       "schema": "Person",
-       "records": [
-        "sess-96cfcd44:p-fring"
-       ]
-      },
-      {
-       "id": "sess-96cfcd44:org-fring",
-       "caption": "Gustavo Fring Organization",
-       "schema": "Organization",
-       "records": [
-        "sess-96cfcd44:org-fring"
-       ]
-      },
-      {
-       "id": "sess-96cfcd44:co-madrigal",
-       "caption": "Madrigal Electromotive GmbH",
-       "schema": "Company",
-       "records": [
-        "sess-96cfcd44:co-madrigal"
-       ]
-      }
+     "id": "pollard:per-6q0b4zamfq",
+     "caption": "Aviem Sella",
+     "schema": "Person",
+     "records": [
+      "pollard:per-6q0b4zamfq"
      ]
     },
     {
-     "id": "cartel:doc-bb-casefile~p3",
-     "schema": "Page",
-     "title": "HEISENBERG INVESTIGATION — DEA/ABQ CASE FILE (2008-2010) p.3",
-     "publisher": "",
-     "url": "",
-     "collection": "cartel",
-     "entry": false,
-     "document": "dea:doc-bb-casefile",
-     "page": "3",
-     "cited_by": [
-      {
-       "id": "cartel:p-eladio",
-       "caption": "Eladio Vuente",
-       "schema": "Person",
-       "records": [
-        "cartel:p-eladio"
-       ]
-      },
-      {
-       "id": "cartel:p-bolsa",
-       "caption": "Juan Bolsa",
-       "schema": "Person",
-       "records": [
-        "cartel:p-bolsa"
-       ]
-      },
-      {
-       "id": "cartel:org-cartel",
-       "caption": "Juarez Cartel",
-       "schema": "Organization",
-       "records": [
-        "cartel:org-cartel"
-       ]
-      },
-      {
-       "id": "cartel:p-tuco",
-       "caption": "Tuco Salamanca",
-       "schema": "Person",
-       "records": [
-        "cartel:p-tuco"
-       ]
-      }
+     "id": "pollard:org-kma9pjvdcc",
+     "caption": "Central Intelligence Agency",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-kma9pjvdcc"
      ]
     },
     {
-     "id": "cartel:doc-bb-casefile~p4",
-     "schema": "Page",
-     "title": "HEISENBERG INVESTIGATION — DEA/ABQ CASE FILE (2008-2010) p.4",
-     "publisher": "",
-     "url": "",
-     "collection": "cartel",
-     "entry": false,
-     "document": "dea:doc-bb-casefile",
-     "page": "4",
-     "cited_by": [
-      {
-       "id": "cartel:p-hector",
-       "caption": "Hector Salamanca",
-       "schema": "Person",
-       "records": [
-        "cartel:p-hector"
-       ]
-      },
-      {
-       "id": "cartel:p-max",
-       "caption": "Maximino Arciniega",
-       "schema": "Person",
-       "records": [
-        "cartel:p-max"
-       ]
-      }
+     "id": "pollard:org-jgy4y4pe9x",
+     "caption": "Department of Defense",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-jgy4y4pe9x"
      ]
     },
     {
-     "id": "heisenberg:doc-bb-casefile~p5",
-     "schema": "Page",
-     "title": "HEISENBERG INVESTIGATION — DEA/ABQ CASE FILE (2008-2010) p.5",
-     "publisher": "",
-     "url": "",
-     "collection": "heisenberg",
-     "entry": false,
-     "document": "dea:doc-bb-casefile",
-     "page": "5",
-     "cited_by": [
-      {
-       "id": "heisenberg:org-heisenberg",
-       "caption": "Heisenberg Organization",
-       "schema": "Organization",
-       "records": [
-        "heisenberg:org-heisenberg"
-       ]
-      }
+     "id": "pollard:org-qyewkz38cq",
+     "caption": "Federal Bureau of Investigation",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-qyewkz38cq"
+     ]
+    },
+    {
+     "id": "pollard:org-bvzgp9f1t6",
+     "caption": "Foreign Denial and Deception Analysis Committee",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-bvzgp9f1t6"
+     ]
+    },
+    {
+     "id": "pollard:per-jyft1ret42",
+     "caption": "Ilan Ravid",
+     "schema": "Person",
+     "records": [
+      "pollard:per-jyft1ret42"
+     ]
+    },
+    {
+     "id": "pollard:per-89cafr9tn9",
+     "caption": "Irit Erb",
+     "schema": "Person",
+     "records": [
+      "pollard:per-89cafr9tn9"
+     ]
+    },
+    {
+     "id": "pollard:org-2hzt03a6z9",
+     "caption": "Israel",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-2hzt03a6z9"
+     ]
+    },
+    {
+     "id": "pollard:org-ez802bp11f",
+     "caption": "Israeli Air Force",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-ez802bp11f"
+     ]
+    },
+    {
+     "id": "pollard:org-6t8fkjn4kr",
+     "caption": "Israeli Consulate New York",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-6t8fkjn4kr"
+     ]
+    },
+    {
+     "id": "pollard:org-xfqaxke58a",
+     "caption": "Israeli Embassy in Washington, D.C.",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-xfqaxke58a"
+     ]
+    },
+    {
+     "id": "pollard:per-w3v2f7z7pe",
+     "caption": "Jonathan Jay Pollard",
+     "schema": "Person",
+     "records": [
+      "pollard:per-w3v2f7z7pe"
+     ]
+    },
+    {
+     "id": "pollard:per-p8w1q8cajn",
+     "caption": "Joseph Yagur",
+     "schema": "Person",
+     "records": [
+      "pollard:per-p8w1q8cajn"
+     ]
+    },
+    {
+     "id": "pollard:org-tfadg8t3xv",
+     "caption": "Naval Investigative Service",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-tfadg8t3xv"
+     ]
+    },
+    {
+     "id": "pollard:org-3kk63smvp7",
+     "caption": "Naval Ocean Surveillance Information Center",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-3kk63smvp7"
+     ]
+    },
+    {
+     "id": "pollard:org-mspn9nxg7s",
+     "caption": "Naval Security and Investigative Command",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-mspn9nxg7s"
+     ]
+    },
+    {
+     "id": "pollard:org-1phejc0ngk",
+     "caption": "Navy Field Operational Intelligence Office",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-1phejc0ngk"
+     ]
+    },
+    {
+     "id": "pollard:org-f8xs95cwk2",
+     "caption": "New York University",
+     "schema": "Organization",
+     "records": [
+      "pollard:org-f8xs95cwk2"
+     ]
+    },
+    {
+     "id": "pollard:org-06228nm4ax",
+     "caption": "Office of Naval Intelligence",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-06228nm4ax"
+     ]
+    },
+    {
+     "id": "pollard:per-9n72sstcw8",
+     "caption": "Rafael Eitan",
+     "schema": "Person",
+     "records": [
+      "pollard:per-9n72sstcw8"
+     ]
+    },
+    {
+     "id": "pollard:per-sjje7bahkq",
+     "caption": "Shamir",
+     "schema": "Person",
+     "records": [
+      "pollard:per-sjje7bahkq"
+     ]
+    },
+    {
+     "id": "pollard:org-ctk7r6bt77",
+     "caption": "Task Force 168",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-ctk7r6bt77"
      ]
     }
    ]
   }
  ],
- "unsourced": [
-  {
-   "id": "heisenberg:co-carwash",
-   "caption": "A1A Car Wash",
-   "schema": "Company"
-  },
-  {
-   "id": "heisenberg:p-badger",
-   "caption": "Brandon Mayhew",
-   "schema": "Person"
-  },
-  {
-   "id": "operations:re-casa-tranquila",
-   "caption": "Casa Tranquila nursing home",
-   "schema": "RealEstate"
-  },
-  {
-   "id": "sess-96cfcd44:p-chris-mara",
-   "caption": "Chris Mara",
-   "schema": "Person"
-  },
-  {
-   "id": "heisenberg:p-combo",
-   "caption": "Christian Ortega",
-   "schema": "Person"
-  },
-  {
-   "id": "operations:proj-czech",
-   "caption": "Czech Republic distribution channel",
-   "schema": "Project"
-  },
-  {
-   "id": "sess-96cfcd44:p-wachsberger",
-   "caption": "Dan Wachsberger",
-   "schema": "Person"
-  },
-  {
-   "id": "dea:pb-dea-abq",
-   "caption": "DEA Albuquerque Field Office",
-   "schema": "PublicBody"
-  },
-  {
-   "id": "operations:proj-train-heist",
-   "caption": "Dead freight methylamine heist",
-   "schema": "Project"
-  },
-  {
-   "id": "heisenberg:p-declan",
-   "caption": "Declan",
-   "schema": "Person"
-  },
-  {
-   "id": "heisenberg:org-declan",
-   "caption": "Declan's organization",
-   "schema": "Organization"
-  },
-  {
-   "id": "sess-96cfcd44:p-dennis",
-   "caption": "Dennis Markowski",
-   "schema": "Person"
-  },
-  {
-   "id": "cartel:p-krazy8",
-   "caption": "Domingo Gallardo Molina",
-   "schema": "Person"
-  },
-  {
-   "id": "dea:p-margolis",
-   "caption": "Donald Margolis",
-   "schema": "Person"
-  },
-  {
-   "id": "operations:proj-magnet",
-   "caption": "Evidence-room magnet operation",
-   "schema": "Project"
-  },
-  {
-   "id": "dea:pb-faa",
-   "caption": "Federal Aviation Administration",
-   "schema": "PublicBody"
-  },
-  {
-   "id": "heisenberg:p-frankie",
-   "caption": "Frankie",
-   "schema": "Person"
-  },
-  {
-   "id": "sess-96cfcd44:p-gale",
-   "caption": "Gale Boetticher",
-   "schema": "Person"
-  },
-  {
-   "id": "dea:p-merkert",
-   "caption": "George Merkert",
-   "schema": "Person"
-  },
-  {
-   "id": "cartel:p-gonzo",
-   "caption": "Gonzo",
-   "schema": "Person"
-  },
-  {
-   "id": "dea:p-holly",
-   "caption": "Holly White",
-   "schema": "Person"
-  },
-  {
-   "id": "heisenberg:p-huell",
-   "caption": "Huell Babineaux",
-   "schema": "Person"
-  },
-  {
-   "id": "cartel:p-nacho",
-   "caption": "Ignacio Varga",
-   "schema": "Person"
-  },
-  {
-   "id": "heisenberg:p-jack",
-   "caption": "Jack Welker",
-   "schema": "Person"
-  },
-  {
-   "id": "heisenberg:org-welker",
-   "caption": "Jack Welker's gang",
-   "schema": "Organization"
-  },
-  {
-   "id": "heisenberg:p-saul",
-   "caption": "James Morgan McGill",
-   "schema": "Person"
-  },
-  {
-   "id": "dea:p-jane",
-   "caption": "Jane Margolis",
-   "schema": "Person"
-  },
-  {
-   "id": "heisenberg:p-jesse",
-   "caption": "Jesse Bruce Pinkman",
-   "schema": "Person"
-  },
-  {
-   "id": "heisenberg:p-kenny",
-   "caption": "Kenny",
-   "schema": "Person"
-  },
-  {
-   "id": "cartel:p-lalo",
-   "caption": "Lalo Salamanca",
-   "schema": "Person"
-  },
-  {
-   "id": "sess-96cfcd44:re-lavanderia",
-   "caption": "Lavanderia Brillante",
-   "schema": "RealEstate"
-  },
-  {
-   "id": "cartel:p-leonel",
-   "caption": "Leonel Salamanca",
-   "schema": "Person"
-  },
-  {
-   "id": "heisenberg:p-lester",
-   "caption": "Lester",
-   "schema": "Person"
-  },
-  {
-   "id": "sess-96cfcd44:co-pollos",
-   "caption": "Los Pollos Hermanos",
-   "schema": "Company"
-  },
-  {
-   "id": "sess-96cfcd44:re-farm",
-   "caption": "Los Pollos Hermanos chicken farm",
-   "schema": "RealEstate"
-  },
-  {
-   "id": "fring-condensed:re-pollos-abq",
-   "caption": "Los Pollos Hermanos — Albuquerque flagship",
-   "schema": "RealEstate"
-  },
-  {
-   "id": "sess-96cfcd44:p-lydia",
-   "caption": "Lydia Rodarte-Quayle",
-   "schema": "Person"
-  },
-  {
-   "id": "cartel:p-marco",
-   "caption": "Marco Salamanca",
-   "schema": "Person"
-  },
-  {
-   "id": "dea:p-marie",
-   "caption": "Marie Schrader",
-   "schema": "Person"
-  },
-  {
-   "id": "heisenberg:p-matt",
-   "caption": "Matt",
-   "schema": "Person"
-  },
-  {
-   "id": "sess-96cfcd44:p-mike",
-   "caption": "Michael Ehrmantraut",
-   "schema": "Person"
-  },
-  {
-   "id": "cartel:p-nodoze",
-   "caption": "No-Doze",
-   "schema": "Person"
-  },
-  {
-   "id": "operations:addr-abq",
-   "caption": "operations:addr-abq",
-   "schema": "Address"
-  },
-  {
-   "id": "operations:addr-hacienda",
-   "caption": "operations:addr-hacienda",
-   "schema": "Address"
-  },
-  {
-   "id": "operations:addr-hannover",
-   "caption": "operations:addr-hannover",
-   "schema": "Address"
-  },
-  {
-   "id": "operations:addr-juarez",
-   "caption": "operations:addr-juarez",
-   "schema": "Address"
-  },
-  {
-   "id": "operations:addr-tohajiilee",
-   "caption": "operations:addr-tohajiilee",
-   "schema": "Address"
-  },
-  {
-   "id": "heisenberg:p-kuby",
-   "caption": "Patrick Kuby",
-   "schema": "Person"
-  },
-  {
-   "id": "sess-96cfcd44:p-schuler",
-   "caption": "Peter Schuler",
-   "schema": "Person"
-  },
-  {
-   "id": "heisenberg:crew-jesse",
-   "caption": "Pinkman street crew",
-   "schema": "Organization"
-  },
-  {
-   "id": "heisenberg:p-skinnypete",
-   "caption": "Skinny Pete",
-   "schema": "Person"
-  },
-  {
-   "id": "heisenberg:p-skyler",
-   "caption": "Skyler White",
-   "schema": "Person"
-  },
-  {
-   "id": "dea:p-gomez",
-   "caption": "Steven Gomez",
-   "schema": "Person"
-  },
-  {
-   "id": "operations:proj-superlab",
-   "caption": "Superlab design and construction",
-   "schema": "Project"
-  },
-  {
-   "id": "operations:veh-rv",
-   "caption": "The Crystal Ship",
-   "schema": "Vehicle"
-  },
-  {
-   "id": "sess-96cfcd44:re-superlab",
-   "caption": "The Superlab",
-   "schema": "RealEstate"
-  },
-  {
-   "id": "heisenberg:p-todd",
-   "caption": "Todd Alquist",
-   "schema": "Person"
-  },
-  {
-   "id": "cartel:crew-tuco",
-   "caption": "Tuco Salamanca's Albuquerque crew",
-   "schema": "Organization"
-  },
-  {
-   "id": "sess-96cfcd44:p-tyrus",
-   "caption": "Tyrus Kitt",
-   "schema": "Person"
-  },
-  {
-   "id": "dea:pb-dea",
-   "caption": "United States Drug Enforcement Administration",
-   "schema": "PublicBody"
-  },
-  {
-   "id": "heisenberg:co-vamonos",
-   "caption": "Vamonos Pest",
-   "schema": "Company"
-  },
-  {
-   "id": "operations:proj-vamonos",
-   "caption": "Vamonos Pest mobile cook program",
-   "schema": "Project"
-  },
-  {
-   "id": "sess-96cfcd44:p-victor",
-   "caption": "Victor",
-   "schema": "Person"
-  },
-  {
-   "id": "dea:p-waltjr",
-   "caption": "Walter White Jr.",
-   "schema": "Person"
-  },
-  {
-   "id": "operations:veh-aztek",
-   "caption": "Walter White's Pontiac Aztek",
-   "schema": "Vehicle"
-  },
-  {
-   "id": "heisenberg:re-white",
-   "caption": "White residence — 308 Negra Arroyo Lane",
-   "schema": "RealEstate"
-  }
- ]
+ "documents": [],
+ "unsourced": []
 }

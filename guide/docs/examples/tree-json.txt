@@ -1,88 +1,23 @@
-$ hydra-ctl tree gus --format json
+$ hydra-ctl tree "task force" --format json
 {
  "tree": [
   {
-   "name": "Gustavo Fring (Person) — Leader",
+   "name": "Task Force 168 (PublicBody)",
    "outside": false,
    "source": null,
    "titles": [],
    "children": [
     {
-     "name": "Chris Mara (Person) — Member",
+     "name": "Jonathan Jay Pollard (Person) — Analyst",
      "outside": false,
      "source": null,
      "titles": [],
      "children": [],
      "also": [
-      "also  Gustavo Fring Organization   Membership   member"
+      "also  Anti-Terrorist Alert Center                   Employment   analyst",
+      "also  Naval Ocean Surveillance Information Center   Employment   research analyst",
+      "also  Navy Field Operational Intelligence Office    Employment   analyst"
      ]
-    },
-    {
-     "name": "Dennis Markowski (Person) — Member",
-     "outside": false,
-     "source": null,
-     "titles": [],
-     "children": [],
-     "also": [
-      "also  Gustavo Fring Organization   Membership   member"
-     ]
-    }
-   ],
-   "also": [
-    "also  Juarez Cartel                      Membership           distributor",
-    "also  Los Pollos Hermanos                Directorship         president",
-    "also  Superlab design and construction   ProjectParticipant   sponsor"
-   ]
-  },
-  {
-   "name": "Gustavo Fring Organization (Organization)",
-   "outside": false,
-   "source": null,
-   "titles": [],
-   "children": [
-    {
-     "name": "Gustavo Fring (Person) — Leader",
-     "outside": false,
-     "source": null,
-     "titles": [],
-     "children": [],
-     "also": [
-      "also  Juarez Cartel                      Membership           distributor",
-      "also  Los Pollos Hermanos                Directorship         president",
-      "also  Superlab design and construction   ProjectParticipant   sponsor"
-     ],
-     "dup": true
-    },
-    {
-     "name": "Gale Boetticher (Person)",
-     "outside": false,
-     "source": null,
-     "titles": [],
-     "children": [],
-     "also": [
-      "also  Superlab design and construction   ProjectParticipant   lead chemist"
-     ]
-    },
-    {
-     "name": "Superlab design and construction (Project)",
-     "outside": false,
-     "source": null,
-     "titles": [],
-     "children": []
-    },
-    {
-     "name": "Tyrus Kitt (Person)",
-     "outside": false,
-     "source": null,
-     "titles": [],
-     "children": []
-    },
-    {
-     "name": "Victor (Person)",
-     "outside": false,
-     "source": null,
-     "titles": [],
-     "children": []
     }
    ]
   }

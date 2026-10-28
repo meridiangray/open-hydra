@@ -1,28 +1,23 @@
 $ hydra-ctl build --force --verbose
-Built breakingbad: 244 records, 227 entities, 37 open questions
-records: 244
-claims: 914
+Built Pollard case: 45 records, 45 entities, 2 open questions
+records: 45
+claims: 156
 reads:
   generic:
     file: .hydra/parsed/generic.json
-    nodes: 79
-    roots: 19
-    positioned: 18
+    nodes: 24
+    roots: 15
+    positioned: 0
   declared:
     file: .hydra/parsed/declared.json
-    nodes: 79
-    roots: 19
-    positioned: 18
+    nodes: 24
+    roots: 15
+    positioned: 1
 ledger:
   placements:
-    auto: 40
-    proposed: 20
-  references:
-    proposed: 3
-  merges:
-    auto: 17
-    proposed: 14
+    auto: 7
+    proposed: 2
 issue_counts:
   error: 0
   warning: 0
-  info: 1
+  info: 3

@@ -1,2 +1,2 @@
-$ hydra-ctl init ../htest --name "Breaking Bad" --prefix bb
-Initialized empty Hydra archive "Breaking Bad" in ~/cases/htest (id prefix bb)
+$ hydra-ctl init ../htest --name "Pollard case" --prefix pollard
+Initialized empty Hydra archive "Pollard case" in ~/cases/htest (id prefix pollard)

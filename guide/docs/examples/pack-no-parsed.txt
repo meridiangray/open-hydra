@@ -1,4 +1,4 @@
 $ hydra-ctl pack -o ../case-one.hydra --no-parsed
-Packed breakingbad into ~/cases/case-one.hydra
-  size     build
-  103 KB   left out
+Packed pollard into ~/cases/case-one.hydra
+  size    build
+  93 KB   left out

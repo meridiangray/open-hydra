@@ -1,4 +1,4 @@
-$ hydra-ctl hints set thumb ../pics/flask.svg --titled "cook|chemist"
-Added hints[2]: {titled: {contains: cook|chemist}}   {thumb: icons/flask.svg}
-Rebuilt breakingbad: 244 records, 227 entities, 37 open questions
-  reaches   4 nodes
+$ hydra-ctl hints set thumb ../pics/flask.svg --titled "fighter pilot|secretary"
+Added hints[2]: {titled: {contains: fighter pilot|secretary}}   {thumb: icons/flask.svg}
+Rebuilt Pollard case: 45 records, 45 entities, 2 open questions
+  reaches   2 nodes

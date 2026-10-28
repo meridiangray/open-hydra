@@ -2,51 +2,40 @@
 
 Your `collections/` folder holds `.json` files, each one a collection. A file can be a JSON list of records or JSON lines, one record per line.
 
-Hydra expects each record's `id` and `schema`, with its `properties`, the way FollowTheMoney writes them. Two records from the demo's `collections/heisenberg.json`:
+Hydra expects each record's `id` and `schema`, with its `properties`, the way FollowTheMoney writes them. Two records from the demo's `collections/pollard-damage-assessment.json` (the second one's `notes` are left out):
 
 ```json
 [
   {
-    "id": "p-walt",
+    "id": "per-w3v2f7z7pe",
     "schema": "Person",
     "properties": {
       "name": [
-        "Walter Hartwell White"
+        "Jonathan Jay Pollard"
+      ],
+      "alias": [
+        "Jonathan Pollard"
       ],
       "weakAlias": [
-        "Walt",
-        "Heisenberg",
-        "Mr. Lambert"
-      ],
-      "birthDate": [
-        "1958-09-07"
-      ],
-      "deathDate": [
-        "2010-09-07"
+        "Pollard"
       ],
       "sources": [
-        "doc-bb-casefile~p1"
-      ],
-      "notes": [
-        "chemistry teacher turned meth manufacturer — 'Heisenberg'"
+        "doc-v9g25vcmkx"
       ]
     }
   },
   {
-    "id": "rel-hb1",
+    "id": "mem-tg0re7j07m",
     "schema": "Membership",
     "properties": {
       "member": [
-        "Walter Hartwell White"
+        "Jonathan Jay Pollard"
       ],
       "organization": [
-        "Heisenberg Organization"
+        "Task Force 168"
       ],
-      "role": [
-        "leader"
-      ],
-      "endDate": [
-        "2010"
+      "startDate": [
+        "1980-02"
       ]
     }
   }
@@ -57,7 +46,9 @@ Everything in `collections/` is linked. You can copy a file in and run `build`, 
 
 ## Ids
 
-Every id is written as `<prefix>:<id>`, so records from different collections never collide. The prefix is the archive's, or one made from the collection's file name; `hydra-ctl collections` shows them, and the build stores them in `collections/manifest.json`.
+Every id is written as `<prefix>:<id>`, so records from different collections never collide. The prefix is the archive's, or one made from the collection's file name; `hydra-ctl collections` shows them, and the build stores them in `collections/manifest.json`. Only the first `:` splits the prefix from the id.
+
+Hydra takes any id made of letters, digits, `-` and `_`. The ids in the demo are the form [hydra-mcp](https://github.com/meridiangray/open-hydra-mcp) makes: a three-letter code for the kind of record, an underscore and ten random characters (`per-w3v2f7z7pe` is a Person, `mem-tg0re7j07m` a Membership). The id says nothing about the name, so correcting a name never moves it, and the same person in two collections has two ids that a merge question can join. A page of a document is the document's id and `~p4`.
 
 The collection's name is its file name, so rename a file before you start reviewing. Afterwards, change its prefix with `hydra-ctl collections prefix`, so your decisions follow.
 
@@ -72,21 +63,18 @@ Here is the demo's Membership above as each export writes it. Both are JSON line
     ```json
     {
       "datasets": [
-        "heisenberg"
+        "pollard-damage-assessment"
       ],
-      "id": "heisenberg:rel-hb1",
+      "id": "pollard:mem-tg0re7j07m",
       "properties": {
-        "endDate": [
-          "2010"
-        ],
         "member": [
-          "heisenberg:p-walt"
+          "pollard:per-w3v2f7z7pe"
         ],
         "organization": [
-          "heisenberg:org-heisenberg"
+          "pollard:org-ctk7r6bt77"
         ],
-        "role": [
-          "leader"
+        "startDate": [
+          "1980-02"
         ]
       },
       "schema": "Membership"
@@ -98,21 +86,18 @@ Here is the demo's Membership above as each export writes it. Both are JSON line
     ```json
     {
       "datasets": [
-        "heisenberg"
+        "pollard-damage-assessment"
       ],
-      "id": "heisenberg:rel-hb1",
+      "id": "pollard:mem-tg0re7j07m",
       "properties": {
-        "endDate": [
-          "2010"
-        ],
         "member": [
-          "Walter Hartwell White"
+          "Jonathan Jay Pollard"
         ],
         "organization": [
-          "Heisenberg Organization"
+          "Task Force 168"
         ],
-        "role": [
-          "leader"
+        "startDate": [
+          "1980-02"
         ]
       },
       "schema": "Membership"

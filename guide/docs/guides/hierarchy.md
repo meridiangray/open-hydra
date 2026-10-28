@@ -136,7 +136,7 @@ Repeat steps 3 to 7 as the data grows.
 :   A company and a criminal crew need different rank names and titles. Ranks with the same name are one rank everywhere in the archive.
 
 **Watch organization memberships.**
-:   An organization whose Membership role is a position title is ranked like a person: a crew that is a "member" of a cartel goes under the cartel's Leader. For one organization inside another, use a role that is not a rank, such as "affiliate", "unit" or "branch", or leave the role blank.
+:   An organization whose Membership role is a position title is ranked like a person: a unit that is a "member" of an agency goes under the agency's Leader. For one organization inside another, use a role that is not a rank, such as "affiliate", "unit" or "branch", or leave the role blank.
 
 **Add other languages as aliases.**
 :   `titles: [boss, jefe, capo]`. Accents are already ignored, so `líder` matches `lider`.

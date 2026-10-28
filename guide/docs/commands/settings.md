@@ -4,8 +4,8 @@
 
 ```sh
 hydra-ctl collections
-hydra-ctl collections prefix europol eu
-hydra-ctl collections prefix europol eu --rekey
+hydra-ctl collections prefix press media
+hydra-ctl collections prefix press media --rekey
 ```
 
 [See the output of each example](output.md#collections)
@@ -13,12 +13,10 @@ hydra-ctl collections prefix europol eu --rekey
 Lists each collection (one per file in `collections/`) with its id prefix, and whether that prefix is the archive's, set in the manifest, or made from the file name.
 
 ```text
-  prefixes set in   manifest
+  prefixes set in   archive
 
-  collection        prefix            records   own prefix   claims   in others   citations
-  cartel            cartel                 38            0      138           0           6
-  dea               dea                    32            0      103           0           2
-  …
+  collection                  prefix    records   own prefix   claims   in others   citations
+  pollard-damage-assessment   pollard        44            0      146           0          25
 ```
 
 `prefix` changes a collection's prefix. It refuses while decisions are filed under the old ids, unless `--rekey` rewrites them.
@@ -69,10 +67,10 @@ artifact   default
 
 ```sh
 hydra-ctl hints
-hydra-ctl hints set portrait ~/pics/gus.webp --schema Person --name "Gustavo Fring"
-hydra-ctl hints set thumb icons/crown.svg --position Leader
-hydra-ctl hints set thumb ~/pics/flask.svg --titled "cook|chemist"
-hydra-ctl hints set logo ~/pics/pollos.webp --schema Company --name "Los Pollos Hermanos"
+hydra-ctl hints set portrait ~/pics/pollard.webp --schema Person --name "Jonathan Jay Pollard"
+hydra-ctl hints set thumb icons/crown.svg --position Analyst
+hydra-ctl hints set thumb ~/pics/flask.svg --titled "fighter pilot|secretary"
+hydra-ctl hints set logo ~/pics/tf168.webp --schema PublicBody --name "Task Force 168"
 ```
 
 [See the output of each example](output.md#hints)

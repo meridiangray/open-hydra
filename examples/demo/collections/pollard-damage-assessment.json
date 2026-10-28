@@ -1,0 +1,702 @@
+[
+ {
+  "id": "per-w3v2f7z7pe",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Jonathan Jay Pollard"
+   ],
+   "alias": [
+    "Jonathan Pollard"
+   ],
+   "weakAlias": [
+    "Pollard"
+   ],
+   "sources": [
+    "doc-v9g25vcmkx"
+   ]
+  }
+ },
+ {
+  "id": "per-jbcv7nwbwb",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Anne Henderson-Pollard"
+   ],
+   "alias": [
+    "Anne Henderson"
+   ],
+   "weakAlias": [
+    "Henderson"
+   ],
+   "notes": [
+    "Witting of her husband's espionage activities, Anne Henderson-Pollard assisted him at the time of his initial interrogation on 18 and 19 November by removing and attempting to conceal classified material that Jonathan Pollard had stored in their apartment."
+   ],
+   "sources": [
+    "doc-v9g25vcmkx"
+   ]
+  }
+ },
+ {
+  "id": "per-6q0b4zamfq",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Aviem Sella"
+   ],
+   "title": [
+    "Col."
+   ],
+   "weakAlias": [
+    "Sella"
+   ],
+   "sources": [
+    "doc-v9g25vcmkx"
+   ]
+  }
+ },
+ {
+  "id": "per-p8w1q8cajn",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Joseph Yagur"
+   ],
+   "alias": [
+    "Yossi Yagur"
+   ],
+   "weakAlias": [
+    "Yagur"
+   ],
+   "sources": [
+    "doc-v9g25vcmkx"
+   ]
+  }
+ },
+ {
+  "id": "per-9n72sstcw8",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Rafael Eitan"
+   ],
+   "alias": [
+    "Rafi Eitan"
+   ],
+   "weakAlias": [
+    "Eitan"
+   ],
+   "position": [
+    "senior career official in Israeli intelligence",
+    "adviser on counterterrorism to the Israeli Prime Minister"
+   ],
+   "sources": [
+    "doc-v9g25vcmkx"
+   ]
+  }
+ },
+ {
+  "id": "per-89cafr9tn9",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Irit Erb"
+   ],
+   "weakAlias": [
+    "Erb"
+   ],
+   "sources": [
+    "doc-v9g25vcmkx"
+   ]
+  }
+ },
+ {
+  "id": "per-jyft1ret42",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Ilan Ravid"
+   ],
+   "weakAlias": [
+    "Ravid"
+   ],
+   "sources": [
+    "doc-v9g25vcmkx"
+   ]
+  }
+ },
+ {
+  "id": "per-sjje7bahkq",
+  "schema": "Person",
+  "properties": {
+   "name": [
+    "Shamir"
+   ],
+   "weakAlias": [
+    "Shamir"
+   ],
+   "sources": [
+    "doc-v9g25vcmkx"
+   ]
+  }
+ },
+ {
+  "id": "org-2hzt03a6z9",
+  "schema": "PublicBody",
+  "properties": {
+   "name": [
+    "Israel"
+   ],
+   "sources": [
+    "doc-v9g25vcmkx"
+   ]
+  }
+ },
+ {
+  "id": "org-1phejc0ngk",
+  "schema": "PublicBody",
+  "properties": {
+   "name": [
+    "Navy Field Operational Intelligence Office"
+   ],
+   "alias": [
+    "NFOIO"
+   ],
+   "sources": [
+    "doc-v9g25vcmkx"
+   ]
+  }
+ },
+ {
+  "id": "org-3kk63smvp7",
+  "schema": "PublicBody",
+  "properties": {
+   "name": [
+    "Naval Ocean Surveillance Information Center"
+   ],
+   "alias": [
+    "NOSIC"
+   ],
+   "sources": [
+    "doc-v9g25vcmkx"
+   ]
+  }
+ },
+ {
+  "id": "org-tfadg8t3xv",
+  "schema": "PublicBody",
+  "properties": {
+   "name": [
+    "Naval Investigative Service"
+   ],
+   "alias": [
+    "NIS"
+   ],
+   "sources": [
+    "doc-v9g25vcmkx"
+   ]
+  }
+ },
+ {
+  "id": "org-8b2fsev104",
+  "schema": "PublicBody",
+  "properties": {
+   "name": [
+    "Anti-Terrorist Alert Center"
+   ],
+   "alias": [
+    "ATAC"
+   ],
+   "sources": [
+    "doc-v9g25vcmkx"
+   ]
+  }
+ },
+ {
+  "id": "org-mspn9nxg7s",
+  "schema": "PublicBody",
+  "properties": {
+   "name": [
+    "Naval Security and Investigative Command"
+   ],
+   "sources": [
+    "doc-v9g25vcmkx"
+   ]
+  }
+ },
+ {
+  "id": "org-ctk7r6bt77",
+  "schema": "PublicBody",
+  "properties": {
+   "name": [
+    "Task Force 168"
+   ],
+   "alias": [
+    "TF-168"
+   ],
+   "sources": [
+    "doc-v9g25vcmkx"
+   ]
+  }
+ },
+ {
+  "id": "org-06228nm4ax",
+  "schema": "PublicBody",
+  "properties": {
+   "name": [
+    "Office of Naval Intelligence"
+   ],
+   "alias": [
+    "ONI"
+   ],
+   "sources": [
+    "doc-v9g25vcmkx"
+   ]
+  }
+ },
+ {
+  "id": "org-qyewkz38cq",
+  "schema": "PublicBody",
+  "properties": {
+   "name": [
+    "Federal Bureau of Investigation"
+   ],
+   "alias": [
+    "FBI"
+   ],
+   "sources": [
+    "doc-v9g25vcmkx"
+   ]
+  }
+ },
+ {
+  "id": "org-kma9pjvdcc",
+  "schema": "PublicBody",
+  "properties": {
+   "name": [
+    "Central Intelligence Agency"
+   ],
+   "alias": [
+    "CIA"
+   ],
+   "sources": [
+    "doc-v9g25vcmkx"
+   ]
+  }
+ },
+ {
+  "id": "org-jgy4y4pe9x",
+  "schema": "PublicBody",
+  "properties": {
+   "name": [
+    "Department of Defense"
+   ],
+   "sources": [
+    "doc-v9g25vcmkx"
+   ]
+  }
+ },
+ {
+  "id": "org-bvzgp9f1t6",
+  "schema": "PublicBody",
+  "properties": {
+   "name": [
+    "Foreign Denial and Deception Analysis Committee"
+   ],
+   "sources": [
+    "doc-v9g25vcmkx"
+   ]
+  }
+ },
+ {
+  "id": "org-xfqaxke58a",
+  "schema": "PublicBody",
+  "properties": {
+   "name": [
+    "Israeli Embassy in Washington, D.C."
+   ],
+   "sources": [
+    "doc-v9g25vcmkx"
+   ]
+  }
+ },
+ {
+  "id": "org-6t8fkjn4kr",
+  "schema": "PublicBody",
+  "properties": {
+   "name": [
+    "Israeli Consulate New York"
+   ],
+   "sources": [
+    "doc-v9g25vcmkx"
+   ]
+  }
+ },
+ {
+  "id": "org-ez802bp11f",
+  "schema": "PublicBody",
+  "properties": {
+   "name": [
+    "Israeli Air Force"
+   ],
+   "sources": [
+    "doc-v9g25vcmkx"
+   ]
+  }
+ },
+ {
+  "id": "org-f8xs95cwk2",
+  "schema": "Organization",
+  "properties": {
+   "name": [
+    "New York University"
+   ],
+   "alias": [
+    "NYU"
+   ],
+   "sources": [
+    "doc-v9g25vcmkx"
+   ]
+  }
+ },
+ {
+  "id": "pos-0s04wsmekc",
+  "schema": "Position",
+  "properties": {
+   "name": [
+    "Prime Minister"
+   ],
+   "organization": [
+    "Israel"
+   ],
+   "sources": [
+    "doc-v9g25vcmkx"
+   ]
+  }
+ },
+ {
+  "id": "occ-f0pm08t3rp",
+  "schema": "Occupancy",
+  "properties": {
+   "holder": [
+    "Shamir"
+   ],
+   "post": [
+    "Prime Minister"
+   ]
+  }
+ },
+ {
+  "id": "emp-1bz3xhft0s",
+  "schema": "Employment",
+  "properties": {
+   "employee": [
+    "Jonathan Jay Pollard"
+   ],
+   "employer": [
+    "Navy Field Operational Intelligence Office"
+   ],
+   "role": [
+    "analyst"
+   ],
+   "startDate": [
+    "1979-09"
+   ],
+   "endDate": [
+    "1985-11"
+   ],
+   "notes": [
+    "An employee of the Navy Field Operational Intelligence Office from 1979 until November 1985."
+   ]
+  }
+ },
+ {
+  "id": "mem-mzkfhykcpa",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Naval Ocean Surveillance Information Center"
+   ],
+   "organization": [
+    "Navy Field Operational Intelligence Office"
+   ]
+  }
+ },
+ {
+  "id": "emp-06j8t52g03",
+  "schema": "Employment",
+  "properties": {
+   "employee": [
+    "Jonathan Jay Pollard"
+   ],
+   "employer": [
+    "Naval Ocean Surveillance Information Center"
+   ],
+   "role": [
+    "research analyst"
+   ],
+   "startDate": [
+    "1979-09"
+   ],
+   "notes": [
+    "Research analyst, Naval Ocean Surveillance Information Center, Suitland, Maryland (merchant shipping analyst and watch officer)."
+   ]
+  }
+ },
+ {
+  "id": "mem-tg0re7j07m",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Jonathan Jay Pollard"
+   ],
+   "organization": [
+    "Task Force 168"
+   ],
+   "startDate": [
+    "1980-02"
+   ],
+   "notes": [
+    "Volunteer to Task Force 168 (TF-168), the naval intelligence element responsible for HUMINT collection; Pollard was assigned to collect information from a South African defense attache."
+   ]
+  }
+ },
+ {
+  "id": "mem-ts81c0pvrm",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Anti-Terrorist Alert Center"
+   ],
+   "organization": [
+    "Naval Investigative Service"
+   ]
+  }
+ },
+ {
+  "id": "emp-6s4h8c5hez",
+  "schema": "Employment",
+  "properties": {
+   "employee": [
+    "Jonathan Jay Pollard"
+   ],
+   "employer": [
+    "Anti-Terrorist Alert Center"
+   ],
+   "role": [
+    "analyst"
+   ],
+   "startDate": [
+    "1984-06"
+   ],
+   "endDate": [
+    "1985-11"
+   ],
+   "notes": [
+    "Began temporary duty with ATAC in June 1984 as a watchstander; permanently assigned in October 1984 as analyst responsible for assessing terrorist activities."
+   ]
+  }
+ },
+ {
+  "id": "mem-sxaw1scqcf",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Naval Investigative Service"
+   ],
+   "organization": [
+    "Naval Security and Investigative Command"
+   ]
+  }
+ },
+ {
+  "id": "rep-vgx59hfj2d",
+  "schema": "Representation",
+  "properties": {
+   "agent": [
+    "Jonathan Jay Pollard"
+   ],
+   "client": [
+    "Israel"
+   ],
+   "startDate": [
+    "1984-06"
+   ],
+   "endDate": [
+    "1985-11-21"
+   ],
+   "notes": [
+    "Jonathan Pollard's espionage career on behalf of Israel lasted from June 1984 until his arrest on 21 November 1985. He pleaded guilty to conspiracy to commit espionage on 5 June 1986 and was sentenced to life imprisonment on 4 March 1987."
+   ]
+  }
+ },
+ {
+  "id": "asc-pfhvg9qgjp",
+  "schema": "Associate",
+  "properties": {
+   "person": [
+    "Jonathan Jay Pollard"
+   ],
+   "associate": [
+    "Aviem Sella"
+   ],
+   "relationship": [
+    "first handler"
+   ],
+   "notes": [
+    "Pollard passed classified material to Sella at at least three meetings, June-August 1984."
+   ]
+  }
+ },
+ {
+  "id": "asc-wbvwfxhe53",
+  "schema": "Associate",
+  "properties": {
+   "person": [
+    "Jonathan Jay Pollard"
+   ],
+   "associate": [
+    "Joseph Yagur"
+   ],
+   "relationship": [
+    "primary, direct handler"
+   ],
+   "notes": [
+    "Direct handling of Pollard in the United States was transferred from Sella to Joseph (Yossi) Yagur at the Paris meetings in November 1984."
+   ]
+  }
+ },
+ {
+  "id": "asc-257mz6prke",
+  "schema": "Associate",
+  "properties": {
+   "person": [
+    "Jonathan Jay Pollard"
+   ],
+   "associate": [
+    "Irit Erb"
+   ],
+   "relationship": [
+    "handler"
+   ],
+   "notes": [
+    "From late January 1985 Pollard delivered material to Yagur at Erb's apartment on Van Ness Street, N.W.; Erb was one of Pollard's three handlers."
+   ]
+  }
+ },
+ {
+  "id": "asc-kf2y1mef6y",
+  "schema": "Associate",
+  "properties": {
+   "person": [
+    "Jonathan Jay Pollard"
+   ],
+   "associate": [
+    "Rafael Eitan"
+   ],
+   "relationship": [
+    "senior Israeli official in charge of the case"
+   ],
+   "notes": [
+    "At the Paris meetings in November 1984 Pollard met Rafael (Rafi) Eitan, the person in charge of the operation."
+   ]
+  }
+ },
+ {
+  "id": "fam-019fd36t7f",
+  "schema": "Family",
+  "properties": {
+   "person": [
+    "Jonathan Jay Pollard"
+   ],
+   "relative": [
+    "Anne Henderson-Pollard"
+   ],
+   "relationship": [
+    "wife"
+   ],
+   "notes": [
+    "Pollard and Anne Henderson became engaged in 1984 and married in Venice, Italy, in 1985; they were arrested together on 21 November 1985."
+   ]
+  }
+ },
+ {
+  "id": "emp-dsj4t8669k",
+  "schema": "Employment",
+  "properties": {
+   "employee": [
+    "Aviem Sella"
+   ],
+   "employer": [
+    "Israeli Air Force"
+   ],
+   "role": [
+    "fighter pilot"
+   ],
+   "notes": [
+    "A highly successful fighter pilot on study leave from the Israeli Air Force, officially resident in the US to pursue a doctorate in computer sciences at New York University."
+   ]
+  }
+ },
+ {
+  "id": "mem-9jvb9yj94m",
+  "schema": "Membership",
+  "properties": {
+   "member": [
+    "Aviem Sella"
+   ],
+   "organization": [
+    "New York University"
+   ],
+   "notes": [
+    "Sella's official reason for residency in the United States in 1984 was his pursuit of a doctorate in computer sciences at New York University."
+   ]
+  }
+ },
+ {
+  "id": "emp-w8nhej5db8",
+  "schema": "Employment",
+  "properties": {
+   "employee": [
+    "Joseph Yagur"
+   ],
+   "employer": [
+    "Israeli Consulate New York"
+   ],
+   "role": [
+    "Counselor for Scientific Affairs"
+   ]
+  }
+ },
+ {
+  "id": "emp-0tp4v92d42",
+  "schema": "Employment",
+  "properties": {
+   "employee": [
+    "Irit Erb"
+   ],
+   "employer": [
+    "Israeli Embassy in Washington, D.C."
+   ],
+   "role": [
+    "secretary"
+   ]
+  }
+ },
+ {
+  "id": "emp-8pheg9wnf2",
+  "schema": "Employment",
+  "properties": {
+   "employee": [
+    "Ilan Ravid"
+   ],
+   "employer": [
+    "Israeli Embassy in Washington, D.C."
+   ],
+   "role": [
+    "Attache for Scientific Affairs"
+   ]
+  }
+ }
+]

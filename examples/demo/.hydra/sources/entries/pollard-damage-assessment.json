@@ -1,0 +1,38 @@
+[
+ {
+  "id": "doc-v9g25vcmkx",
+  "schema": "Document",
+  "properties": {
+   "title": [
+    "The Jonathan Jay Pollard Espionage Case: A Damage Assessment"
+   ],
+   "retrievedAt": [
+    "2026-10-23"
+   ],
+   "fileName": [
+    "2007-010-doc1.pdf"
+   ],
+   "mimeType": [
+    "application/pdf"
+   ],
+   "contentHash": [
+    "e5acaf72330a527a867c71615f220e61cb4f148e"
+   ],
+   "fileSize": [
+    "5712289"
+   ],
+   "publisher": [
+    "Foreign Denial and Deception Analysis Committee, Director of Central Intelligence"
+   ],
+   "publishedAt": [
+    "1987-10-30"
+   ],
+   "processingAgent": [
+    "hydra-mcp files.read (pypdf 6.20.1)"
+   ],
+   "notes": [
+    "sha1 of the text extracted from this file: fc6bd273776287a8ad83e4de808502e683475cfa"
+   ]
+  }
+ }
+]

@@ -1,2 +1,2 @@
 $ hydra-ctl build --force
-Built breakingbad: 244 records, 227 entities, 37 open questions
+Built Pollard case: 45 records, 45 entities, 2 open questions

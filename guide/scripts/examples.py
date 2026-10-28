@@ -28,7 +28,8 @@ from pathlib import Path
 
 GUIDE = Path(__file__).resolve().parents[1]
 HYDRA_GIT = GUIDE.parent
-DEMO = HYDRA_GIT / "examples" / "demo" / "collections"
+DEMO_DIR = HYDRA_GIT / "examples" / "demo"
+DEMO = DEMO_DIR / "collections"
 OUT = GUIDE / "docs" / "examples"
 PAGE = GUIDE / "docs" / "commands" / "output.md"
 sys.path.insert(0, str(HYDRA_GIT / "src"))
@@ -36,7 +37,7 @@ sys.path.insert(0, str(HYDRA_GIT / "src"))
 from hydra import build, cli, layout  # noqa: E402
 from hydra.cli import review  # noqa: E402
 
-NAME = "breakingbad"                  # the archive's folder, as the examples show it
+NAME = "pollard"                        # the archive's folder, as the examples show it
 SHOWN = "~/cases"                     # what the folder above it is shown as
 FIXED = datetime(2026, 1, 1, tzinfo=timezone.utc)
 
@@ -117,23 +118,47 @@ def _ids(kind: str, on: str = "") -> list[str]:
     return [q["id"] for q in rows if not on or on in json.dumps(q.get("row") or {})]
 
 
-GRAY_MATTER = [
-    {"id": "mem-graymatter", "schema": "Membership",
-     "properties": {"member": ["Gretchen Schwartz"], "organization": ["Gray Matter Technologies"],
-                    "role": ["co-founder"]}},
-    {"id": "emp-graymatter", "schema": "Employment",
-     "properties": {"employee": ["Walter Hartwell White"], "employer": ["Gray Matter Technologies"],
-                    "role": ["co-founder"]}},
+LAKAM = [
+    {"id": "mem-lakam", "schema": "Membership",
+     "properties": {"member": ["Lakam"], "organization": ["Israeli Ministry of Defense"]}},
+    {"id": "mem-lakam-eitan", "schema": "Membership",
+     "properties": {"member": ["Rafael Eitan"], "organization": ["Lakam"]}},
+]
+
+# The demo is one collection, so it asks no merge or reference questions. These two records,
+# as a second collection (a press file), are how the examples that need them get them:
+# the same man under a shorter name, and a link that names only "Jonathan".
+PRESS = [
+    {"id": "per-k3m8v1qz5t", "schema": "Person",
+     "properties": {"name": ["Jonathan Pollard"], "alias": ["Jay Pollard"], "birthDate": ["1954"],
+                    "notes": ["Navy analyst, arrested in 1985"]}},
+    {"id": "emp-b7d2n9x4hc", "schema": "Employment",
+     "properties": {"employee": ["Jonathan"], "employer": ["Naval Investigative Service"], "role": ["analyst"]}},
 ]
 
 
-def with_stubs(make):
-    """The demo has no stubs: add links to two names no record has, and rebuild first."""
-    def go(ws: Path) -> str:
-        (ws / layout.COLLECTIONS_DIR / "graymatter.json").write_text(json.dumps(GRAY_MATTER, indent=1) + "\n")
-        _capture(lambda: cli.main(["build"]))
-        return make(ws)
-    return go
+def _demo_id(name: str) -> str:
+    """The id the demo file gives a record of this name."""
+    for f in sorted(DEMO.glob("*.json")):
+        for r in json.loads(f.read_text(encoding="utf-8")):
+            if name in (r.get("properties") or {}).get("name", []):
+                return r["id"]
+    raise SystemExit(f"examples: no demo record named {name!r}")
+
+
+def _with(file: str, rows: list):
+    """Add a collection no demo record has, and rebuild first."""
+    def deco(make):
+        def go(ws: Path) -> str:
+            (ws / layout.COLLECTIONS_DIR / file).write_text(json.dumps(rows, indent=1) + "\n")
+            _capture(lambda: cli.main(["build"]))
+            return make(ws)
+        return go
+    return deco
+
+
+with_stubs = _with("lakam.json", LAKAM)      # the demo has no stubs: links to two names no record has
+with_press = _with("press.json", PRESS)
 
 
 def _icon(ws: Path) -> str:
@@ -165,12 +190,12 @@ def cmds(*argvs: list[str]):
 
 EXAMPLES: dict[str, tuple[str, object]] = {
     # setup
-    "init": ("init", lambda ws: run(["init", "../htest", "--name", "Breaking Bad", "--prefix", "bb"])),
+    "init": ("init", lambda ws: run(["init", "../htest", "--name", "Pollard case", "--prefix", "pollard"])),
     "init-pack": ("init", lambda ws: (_capture(lambda: cli.main(["pack", "-o", "../case-one.hydra"])),
                                       run(["init", "../case-one.hydra"]))[1]),
     "activate": ("activate", lambda ws: (os.chdir(ws.parent), cmds(["activate", NAME], ["activate"], ["deactivate"])(ws))[1]),
     "import-ftm": ("import", _import("ftm", "opensanctions.ftm.jsonl")),
-    "import-hydra-ftm": ("import", _import("hydra-ftm", "case.hydra-ftm.jsonl", "--name", "fring")),
+    "import-hydra-ftm": ("import", _import("hydra-ftm", "case.hydra-ftm.jsonl", "--name", "pollard")),
     "import-csv": ("import", _import("csv", "case-graph")),
     "import-graphml": ("import", _import("graphml", "case.graphml")),
     "build": ("build", cmds(["build"])),
@@ -183,20 +208,20 @@ EXAMPLES: dict[str, tuple[str, object]] = {
     "details-json": ("details", cmds(["details", "--format", "json"])),
     "tree": ("tree", cmds(["tree"])),
     "tree-person": ("tree", cmds(["tree", "person"])),
-    "tree-gus": ("tree", cmds(["tree", "gus"])),
-    "tree-gus-mermaid": ("tree", cmds(["tree", "gus", "--format", "mermaid"])),
-    "tree-gus-mermaid-vertical": ("tree", cmds(["tree", "gus", "--format", "mermaid", "--vertical"])),
-    "tree-gus-mermaid-lateral": ("tree", cmds(["tree", "gus", "--format", "mermaid", "--lateral"])),
-    "tree-gus-mermaid-lr": ("tree", cmds(["tree", "gus", "--format", "mermaid", "--direction", "LR"])),
-    "tree-gus-mermaid-singletons": ("tree", cmds(["tree", "gus", "--format", "mermaid", "--lateral",
+    "tree-task-force": ("tree", cmds(["tree", "task force"])),
+    "tree-all-mermaid": ("tree", cmds(["tree", "--format", "mermaid"])),
+    "tree-all-mermaid-vertical": ("tree", cmds(["tree", "--format", "mermaid", "--vertical"])),
+    "tree-all-mermaid-lateral": ("tree", cmds(["tree", "--format", "mermaid", "--lateral"])),
+    "tree-all-mermaid-lr": ("tree", cmds(["tree", "--format", "mermaid", "--direction", "LR"])),
+    "tree-all-mermaid-singletons": ("tree", cmds(["tree", "--format", "mermaid", "--lateral",
                                                   "--singletons"])),
     "tree-family": ("tree", cmds(["tree", "family"])),
     "tree-family-employment": ("tree", cmds(["tree", "family", "employment"])),
     "tree-organization-sources": ("tree", cmds(["tree", "organization", "sources"])),
     "tree-stubs": ("tree", with_stubs(cmds(["tree", "employment", "membership", "--stubs"]))),
     "tree-generic": ("tree", cmds(["tree", "--read", "generic"])),
-    "tree-ascii": ("tree", cmds(["tree", "gus", "--ascii"])),
-    "tree-json": ("tree", cmds(["tree", "gus", "--format", "json"])),
+    "tree-ascii": ("tree", cmds(["tree", "task force", "--ascii"])),
+    "tree-json": ("tree", cmds(["tree", "task force", "--format", "json"])),
     "tree-mermaid": ("tree", cmds(["tree", "--format", "mermaid"])),
     "tree-mermaid-vertical": ("tree", cmds(["tree", "--format", "mermaid", "--vertical", "--direction", "LR"])),
     "tree-mermaid-family": ("tree", cmds(["tree", "family", "--format", "mermaid"])),
@@ -206,62 +231,65 @@ EXAMPLES: dict[str, tuple[str, object]] = {
     "positions-unplaced-json": ("positions", cmds(["positions", "--unplaced", "--format", "json"])),
     "positions-mermaid": ("positions", cmds(["positions", "--format", "mermaid"])),
     "claims": ("claims", cmds(["claims"])),
-    "claims-gus": ("claims", cmds(["claims", "gus"])),
-    "claims-person-walt": ("claims", cmds(["claims", "person", "walt"])),
-    "claims-prop": ("claims", cmds(["claims", "Gustavo Fring", "--prop", "weakAlias"])),
-    "claims-gus-sources-json": ("claims", cmds(["claims", "gus", "sources", "--format", "json"])),
+    "claims-pollard": ("claims", cmds(["claims", "pollard"])),
+    "claims-person-anne": ("claims", cmds(["claims", "person", "anne"])),
+    "claims-prop": ("claims", cmds(["claims", "Jonathan Jay Pollard", "--prop", "weakAlias"])),
+    "claims-pollard-sources-json": ("claims", cmds(["claims", "pollard", "sources", "--format", "json"])),
     "claims-summary": ("claims", cmds(["claims", "summary"])),
-    "node-find": ("node find", cmds(["node", "find", "walt"])),
-    "node-find-person": ("node find", cmds(["node", "find", "person", "heisenberg"])),
-    "node-find-id": ("node find", cmds(["node", "find", "p-walt", "--field", "id"])),
+    "node-find": ("node find", cmds(["node", "find", "pollard"])),
+    "node-find-person": ("node find", cmds(["node", "find", "person", "jay"])),
+    "node-find-id": ("node find", lambda ws: run(["node", "find", _demo_id("Jonathan Jay Pollard"), "--field", "id"])),
     "sources": ("sources", cmds(["sources"])),
-    "sources-hank": ("sources", cmds(["sources", "hank"])),
+    "sources-sella": ("sources", cmds(["sources", "sella"])),
     "sources-person-uncited": ("sources", cmds(["sources", "person", "--uncited"])),
-    "sources-casefile": ("sources", cmds(["sources", "casefile"])),
+    "sources-damage": ("sources", cmds(["sources", "damage"])),
     "sources-json": ("sources", cmds(["sources", "--format", "json"])),
     # decide
     "todo": ("todo", cmds(["todo"])),
     "todo-list": ("todo", cmds(["todo", "--list"])),
     "todo-list-placements": ("todo", cmds(["todo", "--list", "placements"])),
     "todo-json": ("todo", cmds(["todo", "--format", "json"])),
-    "review-merges": ("review", lambda ws: run_review(["review", "--only", "merges"], ["2"])),   # two different events: keep them apart
-    "review-references": ("review", lambda ws: run_review(["review", "--only", "references"], ["2"])),
+    "review-merges": ("review", with_press(lambda ws: run_review(["review", "--only", "merges"], ["1"]))),   # the same man: one entity
+    "review-references": ("review", with_press(lambda ws: run_review(["review", "--only", "references"], ["2"]))),
     "review-placements": ("review", lambda ws: run_review(["review", "--only", "placements"], ["2", "a"])),
-    "answer-merge": ("answer", lambda ws: run(["answer", _ids("merges")[0], "confirm"])),
+    "tree-after-review": ("review", lambda ws: (
+        _capture(lambda: cli.main(["answer", _ids("placements", on=_demo_id("Jonathan Jay Pollard"))[0], "reject"])),
+        run(["tree", "pollard"]))[1]),
+    "answer-merge": ("answer", with_press(lambda ws: run(["answer", _ids("merges")[0], "confirm"]))),
     "answer-placement": ("answer", lambda ws: cmds(["answer", _ids("placements")[0], "reject"],
                                                     ["answer", _ids("placements")[0], "clear"])(ws)),
-    "answer-reference": ("answer", lambda ws: run(["answer", _ids("references")[0], "2"])),
-    "reset": ("reset", lambda ws: (_capture(lambda: cli.main(["answer", _ids("merges")[0], "confirm"])),
-                                   run(["reset", "--yes"]))[1]),
+    "answer-reference": ("answer", with_press(lambda ws: run(["answer", _ids("references")[0], "2"]))),
+    "reset": ("reset", with_press(lambda ws: (_capture(lambda: cli.main(["answer", _ids("merges")[0], "confirm"])),
+                                              run(["reset", "--yes"]))[1])),
     "reset-only": ("reset", lambda ws: (_capture(lambda: cli.main(["answer", _ids("placements")[0], "reject"])),
                                         run(["reset", "--only", "placements", "--yes"]))[1]),
     "stubs": ("stubs", with_stubs(cmds(["stubs"]))),
-    "stubs-graduate": ("stubs", with_stubs(cmds(["stubs", "graduate", "Gretchen Schwartz"],
-                                                ["stubs", "drop", "Gretchen Schwartz"]))),
-    "stubs-graduate-as": ("stubs", with_stubs(cmds(["stubs", "graduate", "Gray Matter Technologies",
-                                                    "--as", "Company"]))),
+    "stubs-graduate": ("stubs", with_stubs(cmds(["stubs", "graduate", "Lakam"],
+                                                ["stubs", "drop", "Lakam"]))),
+    "stubs-graduate-as": ("stubs", with_stubs(cmds(["stubs", "graduate", "Israeli Ministry of Defense",
+                                                    "--as", "PublicBody"]))),
     # share
-    "pack": ("pack", cmds(["pack", "-o", "../breakingbad.hydra"])),
+    "pack": ("pack", cmds(["pack", "-o", "../pollard.hydra"])),
     "pack-no-parsed": ("pack", cmds(["pack", "-o", "../case-one.hydra", "--no-parsed"])),
     "unpack": ("unpack", lambda ws: (_capture(lambda: cli.main(["pack", "-o", "../case-one.hydra"])),
                                      run(["unpack", "../case-one.hydra"]))[1]),
-    "export-ftm": ("export", _export("ftm", "../breakingbad.ftm.jsonl")),
-    "export-hydra-ftm": ("export", _export("hydra-ftm", "../breakingbad.hydra-ftm.jsonl")),
+    "export-ftm": ("export", _export("ftm", "../pollard.ftm.jsonl")),
+    "export-hydra-ftm": ("export", _export("hydra-ftm", "../pollard.hydra-ftm.jsonl")),
     "export-csv": ("export", _export("csv", "../graph")),
-    "export-graphml": ("export", _export("graphml", "../breakingbad.graphml")),
+    "export-graphml": ("export", _export("graphml", "../pollard.graphml")),
     # settings
     "collections": ("collections", cmds(["collections"])),
-    "collections-prefix": ("collections", cmds(["collections", "prefix", "dea", "agency"])),
-    "collections-prefix-rekey": ("collections", lambda ws: (
-        _capture(lambda: cli.main(["answer", _ids("merges", on='"dea:')[0], "confirm"])),
-        cmds(["collections", "prefix", "dea", "agency"], ["collections", "prefix", "dea", "agency", "--rekey"])(ws))[1]),
+    "collections-prefix": ("collections", with_press(cmds(["collections", "prefix", "press", "media"]))),
+    "collections-prefix-rekey": ("collections", with_press(lambda ws: (
+        _capture(lambda: cli.main(["answer", _ids("merges", on=PRESS[0]["id"])[0], "confirm"])),
+        cmds(["collections", "prefix", "press", "media"], ["collections", "prefix", "press", "media", "--rekey"])(ws))[1])),
     "defaults": ("defaults", cmds(["defaults"])),
     "defaults-off-on": ("defaults", cmds(["defaults", "off", "generic"], ["defaults"], ["defaults", "on"])),
     "defaults-restore": ("defaults", cmds(["defaults", "restore", "hints", "params", "--yes"])),
     "defaults-restore-all": ("defaults", cmds(["defaults", "restore", "--all", "--yes"])),
     "hints": ("hints", cmds(["hints"])),
-    "hints-set-position": ("hints", cmds(["hints", "set", "thumb", "icons/crown.svg", "--position", "Second-in-command"])),
-    "hints-set-titled": ("hints", lambda ws: run(["hints", "set", "thumb", _icon(ws), "--titled", "cook|chemist"])),
+    "hints-set-position": ("hints", cmds(["hints", "set", "thumb", "icons/crown.svg", "--position", "Analyst"])),
+    "hints-set-titled": ("hints", lambda ws: run(["hints", "set", "thumb", _icon(ws), "--titled", "fighter pilot|secretary"])),
 }
 
 
@@ -269,7 +297,7 @@ EXAMPLES: dict[str, tuple[str, object]] = {
 
 
 def _clean(text: str, ws: Path) -> str:
-    """Paths as a person's would read (~/cases/breakingbad/...), no trailing blanks."""
+    """Paths as a person's would read (~/cases/pollard/...), no trailing blanks."""
     for p in {str(ws.parent), str(ws.parent.resolve()), ws.parent.as_posix()}:
         text = text.replace(p.replace("\\", "\\\\"), SHOWN).replace(p, SHOWN)   # JSON escapes the backslashes
     text = re.sub(r"~/cases[^\s'\"]*", lambda m: m[0].replace("\\", "/"), text)
@@ -287,10 +315,14 @@ def generate(dest: Path) -> dict[str, str]:
     written, home = {}, os.getcwd()
     with tempfile.TemporaryDirectory() as tmp:
         base = Path(tmp) / "base" / NAME
-        _capture(lambda: cli.main(["init", str(base)]))
+        _capture(lambda: cli.main(["init", str(base), "--name", "Pollard case", "--prefix", "pollard"]))
         for f in sorted(DEMO.glob("*.json")):
             if f.name != "manifest.json":
                 (base / layout.COLLECTIONS_DIR / f.name).write_bytes(f.read_bytes())
+        for rel in (".hydra/rules/positions.yaml", ".hydra/sources/entries/pollard-damage-assessment.json"):
+            if (DEMO_DIR / rel).is_file():
+                (base / rel).parent.mkdir(parents=True, exist_ok=True)
+                (base / rel).write_bytes((DEMO_DIR / rel).read_bytes())
         build.build_archive(base, now=FIXED.isoformat())
         for i, (name, (_, make)) in enumerate(EXAMPLES.items()):
             ws = Path(tmp) / f"run{i}" / NAME
@@ -311,7 +343,7 @@ def page() -> str:
              "node find", "sources", "todo", "review", "answer", "reset", "stubs", "pack", "unpack", "export",
              "collections", "defaults", "hints"]
     out = ["# Example output", "",
-           "What each command prints, run on the Breaking Bad demo archive. Every example is also a raw text file "
+           "What each command prints, run on the Pollard demo archive. Every example is also a raw text file "
            "in `docs/examples/`, linked above its output, and all of them are generated by `guide/scripts/examples.py`.", "",
            "<!-- generated by guide/scripts/examples.py: edit the script, not this page -->", ""]
     for command in order:

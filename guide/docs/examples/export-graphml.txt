@@ -1,4 +1,4 @@
-$ hydra-ctl export --format graphml -o ../breakingbad.graphml
-Exported breakingbad as graphml to ~/cases/breakingbad.graphml
+$ hydra-ctl export --format graphml -o ../pollard.graphml
+Exported Pollard-case as graphml to ~/cases/pollard.graphml
   entities   nodes   edges   unlinked relationships   ftm schema
-       227     102     302                        1   65c772987032
+        45      26      54                        0   65c772987032

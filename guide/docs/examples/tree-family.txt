@@ -1,35 +1,7 @@
 $ hydra-ctl tree family
   only     links   drawn   no link
-  family       3      15        64
+  family       0       2        22
 
-Marie Schrader (Person)
-  also  Skyler White   Family   sister   sideways
-Henry R. Schrader (Person)
-  also  Marie Schrader   Family   wife   sideways
-Skyler White (Person)
-  also  Walter Hartwell White   Family   husband   sideways
-Walter Hartwell White (Person)
-│ also  Henry R. Schrader   Family   brother-in-law   sideways
-├── Holly White (Person)   Family   child (father)
-└── Walter White Jr. (Person)   Family   child (father)
-
-Donald Margolis (Person)
-└── Jane Margolis (Person)   Family   child (father)
-
-Hector Salamanca (Person)
-Lalo Salamanca (Person)
-  also  Hector Salamanca   Family   uncle    sideways
-  also  Tuco Salamanca     Family   cousin   sideways
-Leonel Salamanca (Person)
-  also  Hector Salamanca   Family   uncle   sideways
-Marco Salamanca (Person)
-  also  Hector Salamanca   Family   uncle          sideways
-  also  Leonel Salamanca   Family   twin brother   sideways
-Tuco Salamanca (Person)
-  also  Hector Salamanca   Family   uncle    sideways
-  also  Leonel Salamanca   Family   cousin   sideways
-  also  Marco Salamanca    Family   cousin   sideways
-
-Jack Welker (Person)
-Todd Alquist (Person)
-  also  Jack Welker   Family   uncle   sideways
+Anne Henderson-Pollard (Person)
+Jonathan Jay Pollard (Person)
+  also  Anne Henderson-Pollard   Family   wife   sideways

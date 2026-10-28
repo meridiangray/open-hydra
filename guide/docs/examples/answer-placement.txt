@@ -1,7 +1,7 @@
-$ hydra-ctl answer place-0885d03a61bc38c9 reject
-Recorded place-0885d03a61bc38c9: rejected
-Rebuilt breakingbad: 244 records, 227 entities, 37 open questions
+$ hydra-ctl answer place-1fcb5c9cb4e5a9a9 reject
+Recorded place-1fcb5c9cb4e5a9a9: rejected
+Rebuilt Pollard case: 45 records, 45 entities, 3 open questions
 
-$ hydra-ctl answer place-0885d03a61bc38c9 clear
-Cleared place-0885d03a61bc38c9
-Rebuilt breakingbad: 244 records, 227 entities, 37 open questions
+$ hydra-ctl answer place-1fcb5c9cb4e5a9a9 clear
+Cleared place-1fcb5c9cb4e5a9a9
+Rebuilt Pollard case: 45 records, 45 entities, 2 open questions

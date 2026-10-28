@@ -7,9 +7,9 @@ Run `hydra-ctl` alone for the list, or `hydra-ctl <command> --help` for one comm
 ```sh
 hydra-ctl details                         # one-screen summary
 hydra-ctl tree                            # the org chart
-hydra-ctl tree person gus                 # start at a search
+hydra-ctl tree "task force"                # start at a search
 hydra-ctl positions                       # the position ladder and titles nothing takes
-hydra-ctl claims "Walter Hartwell White"  # read the claims for "Walter Hartwell White"
+hydra-ctl claims "Jonathan Jay Pollard"  # read the claims for "Jonathan Jay Pollard"
 hydra-ctl sources                         # which documents cite what
 hydra-ctl hints                           # image and badge rules, with hit counts
 hydra-ctl check                           # problems in the files

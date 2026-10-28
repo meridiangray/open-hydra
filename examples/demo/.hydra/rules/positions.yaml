@@ -1,38 +1,4 @@
-# breakingbad-declared.yaml — the declared hierarchy for the Breaking Bad
-# corpus (tests/corpus/breakingbad/*.jsonld), as the analyst defines it.
-#
-# Companion to the five collections: after ingesting them onto a subject
-# branch (e.g. `heisenberg`), apply this file with
-#   fuzzy.set_declared("heisenberg", Path("breakingbad-declared.yaml").read_text())
-# or `hydra rules set heisenberg declared --file breakingbad-declared.yaml`.
-# The `subject:` identity is preserved by set_declared — no need to carry it here.
-#
-# Positions named here REPLACE inherited relations for them. Everything is
-# relational: `below:` reads "sits under". `outside: true` = attached to the
-# org but outside the chain of command (never a placement target).
-
-Underboss:        {below: [Leader]}
-Capo:             {below: [Leader],
-                   titles: [captain, don]}
-Head of security: {below: [Leader],
-                   titles: [security chief, corporate security consultant]}
-Enforcer:         {below: [Head of security, Capo],
-                   titles: [sicario, hitman, soldier, muscle]}
-Cook:             {below: [Leader],
-                   titles: [chemist, meth cook, assistant cook, lead chemist]}
-Distributor:      {below: [Underboss, Crew chief],
-                   titles: [dealer, street dealer, supplier, courier]}
-Counsel:          {outside: true,
-                   titles: [lawyer, attorney, criminal defense counsel, outside counsel]}
-Financier:        {below: [Leader],
-                   titles: [money laundering, money launderer, bookkeeper]}
-Crew chief:       {below: [Underboss, Second-in-command],
-                   titles: [chief]}            # inherited said [Second-in-command]
-Member:           {below: [Crew chief, Head of security, Second-in-command]}
-                                              # inherited said [Crew chief, Second-in-command]
-
-# inside pb-dea / pb-dea-abq scope — the position graph is shared vocabulary,
-# placement stays inside each node's own org
-Assistant special agent in charge: {below: [Leader], titles: [asac]}
-Special agent:    {below: [Assistant special agent in charge]}
-
+# Positions for the Pollard demo. One rank is enough here: the titles below are what
+# the records' roles are matched against. The titles the demo's other roles use
+# (fighter pilot, secretary...) are left out on purpose: `hydra-ctl positions --unplaced` lists them.
+Analyst: {titles: [analyst, research analyst]}

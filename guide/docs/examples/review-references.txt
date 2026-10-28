@@ -1,105 +1,46 @@
 $ hydra-ctl review --only references
-review   breakingbad
+review   Pollard case
 
   kind         rows   questions
-  references      3           3
-  total           3           3
+  references      1           1
+  total           1           1
 
-[1/3] Reference · a name with 3 possible records
-  dea:prv-dea1   Documentation.entity   Heisenberg
+[1/1] Reference · a name with 2 possible records
+  pollard:emp-b7d2n9x4hc   Employment.employee   Jonathan
 
-  ┌─ Link from ─────────────────────────────────┐
-  │ dea:prv-dea1   Documentation                │
-  │    document   heisenberg:doc-bb-casefile~p1 │
-  │  → entity     Heisenberg                    │
-  └─────────────────────────────────────────────┘
+  ┌─ Link from ───────────────────────────────┐
+  │ pollard:emp-b7d2n9x4hc   Employment       │
+  │  → employee   Jonathan                    │
+  │    employer   Naval Investigative Service │
+  │    role       analyst                     │
+  └───────────────────────────────────────────┘
 
-  1  dea:p-heisenberg-dea   Person
-     name            = Heisenberg
-     notes             DEA sketch identity — proposed merge into Walter White via the Similar record
-     sources           heisenberg:doc-bb-casefile~p1
-     weakAlias         the Heisenberg
+  1  pollard:per-k3m8v1qz5t   Person
+     alias       Jay Pollard
+     birthDate   1954
+     name        Jonathan Pollard
+     notes       Navy analyst, arrested in 1985
 
-  2  heisenberg:p-walt   Person
-     birthDate         1958-09-07
-     deathDate         2010-09-07
-     name              Walter Hartwell White
-     notes             chemistry teacher turned meth manufacturer — 'Heisenberg'
-     sources           heisenberg:doc-bb-casefile~p1
-     weakAlias         Walt
-                     = Heisenberg
-                       Mr. Lambert
-
-  3  heisenberg:org-heisenberg   Organization
-     dissolutionDate   2010
-     jurisdiction      us
-     name              Heisenberg Organization
-     notes             Walter White's meth operation — RV cooks, then the post-Fring 'empire business'
-     sources           heisenberg:doc-bb-casefile~p5
-     weakAlias         Walter White's operation
-                       Heisenberg's empire
+  2  pollard:per-w3v2f7z7pe   Person
+     alias       Jonathan Pollard
+     name        Jonathan Jay Pollard
+     sources     pollard:doc-v9g25vcmkx
+     weakAlias   Pollard
 
   [all fields]   name fields   matching fields      Tab / Shift+Tab
-Which record is "Heisenberg"?
-  1  Heisenberg                dea:p-heisenberg-dea
-  2  Walter Hartwell White     heisenberg:p-walt
-  3  Heisenberg Organization   heisenberg:org-heisenberg
-  4  none of these
+Which record is "Jonathan"?
+  1  Jonathan Pollard       pollard:per-k3m8v1qz5t
+  2  Jonathan Jay Pollard   pollard:per-w3v2f7z7pe
+  3  neither
   ? not sure   u undo   q quit
 > 2
-  saved   Walter Hartwell White
-
-[2/3] Reference · a name with 3 possible records
-  fring-condensed:rel-fr-cooks   Membership.member   Walter White
-
-  ┌─ Link from ──────────────────────────────────┐
-  │ fring-condensed:rel-fr-cooks   Membership    │
-  │    endDate        2010                       │
-  │  → member         Walter White               │
-  │                   Jesse Pinkman              │
-  │    organization   Gustavo Fring Organization │
-  │    role           cook                       │
-  │    startDate      2009                       │
-  └──────────────────────────────────────────────┘
-
-  1  dea:p-waltjr   Person
-     name              Walter White Jr.
-     notes             Walt and Skyler's son
-     weakAlias         Flynn
-
-  2  heisenberg:p-walt   Person
-     birthDate         1958-09-07
-     deathDate         2010-09-07
-     name              Walter Hartwell White
-     notes             chemistry teacher turned meth manufacturer — 'Heisenberg'
-     sources           heisenberg:doc-bb-casefile~p1
-     weakAlias         Walt
-                       Heisenberg
-                       Mr. Lambert
-
-  3  heisenberg:org-heisenberg   Organization
-     dissolutionDate   2010
-     jurisdiction      us
-     name              Heisenberg Organization
-     notes             Walter White's meth operation — RV cooks, then the post-Fring 'empire business'
-     sources           heisenberg:doc-bb-casefile~p5
-     weakAlias         Walter White's operation
-                       Heisenberg's empire
-
-  [all fields]   name fields   matching fields      Tab / Shift+Tab
-Which record is "Walter White"?
-  1  Walter White Jr.          dea:p-waltjr
-  2  Walter Hartwell White     heisenberg:p-walt
-  3  Heisenberg Organization   heisenberg:org-heisenberg
-  4  none of these
-  ? not sure   u undo   q quit
-> q
+  saved   Jonathan Jay Pollard
 
   answered   1
 
   kind         before   now
-  merges           14    14
-  references        3     2
-  placements       20    20
+  merges            1     1
+  references        1     0
+  placements        2     2
 
-Rebuilt breakingbad: 244 records, 227 entities, 36 open questions
+Rebuilt Pollard case: 47 records, 47 entities, 3 open questions

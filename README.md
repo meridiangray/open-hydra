@@ -19,76 +19,75 @@ open-hydra expects [FollowTheMoney](https://github.com/alephdata/followthemoney)
 
 ## What it looks like
 
-Every example below uses a small demo archive built from fictional characters (the Breaking Bad cast).
+Every example below uses a small demo archive built from the public record of one espionage case: Jonathan Pollard, from a declassified damage assessment.
 
 Records become a tree, drawn once under one parent, with every other parent listed so nothing is hidden:
 
 ```text
-$ hydra-ctl tree gus
-Gustavo Fring (Person) — Leader
-│ also  Juarez Cartel                      Membership           distributor
-│ also  Los Pollos Hermanos                Directorship         president
-│ also  Superlab design and construction   ProjectParticipant   sponsor
-├── Chris Mara (Person) — Member
-│     also  Gustavo Fring Organization   Membership   member
-└── Dennis Markowski (Person) — Member
-      also  Gustavo Fring Organization   Membership   member
+$ hydra-ctl tree "task force"
+Task Force 168 (PublicBody)
+└── Jonathan Jay Pollard (Person) — Analyst
+      also  Anti-Terrorist Alert Center                   Employment   analyst
+      also  Naval Ocean Surveillance Information Center   Employment   research analyst
+      also  Navy Field Operational Intelligence Office    Employment   analyst
 ```
 
 Every value keeps the record, collection and source it came from:
 
 ```text
-$ hydra-ctl claims gus
-entity          type     id                      claims   collections
-Gustavo Fring   Person   sess-96cfcd44:p-fring       15             2
+$ hydra-ctl claims pollard
+entity                 type     id                       claims   collections
+Jonathan Jay Pollard   Person   pollard:per-w3v2f7z7pe        4             1
 
-    field         value                                                          record                    collection
-    deathDate     2010                                                           sess-96cfcd44:p-fring     fring
-                                                                                 fring-condensed:p-fring   fring-condensed
-    sources       fring-condensed:doc-bb-casefile~p2                             fring-condensed:p-fring   fring-condensed
-                  sess-96cfcd44:doc-bb-casefile~p2                               sess-96cfcd44:p-fring     fring
+    field       value                    record                   collection
+    alias       Jonathan Pollard         pollard:per-w3v2f7z7pe   pollard-damage-assessment
+    name        Jonathan Jay Pollard     pollard:per-w3v2f7z7pe   pollard-damage-assessment
+    sources     pollard:doc-v9g25vcmkx   pollard:per-w3v2f7z7pe   pollard-damage-assessment
+    weakAlias   Pollard                  pollard:per-w3v2f7z7pe   pollard-damage-assessment
     …
 ```
 
-When the sources disagree, Hydra asks instead of guessing, and opens on the fields in conflict:
+When the sources disagree, Hydra asks instead of guessing. Here a second file calls the same man "Jonathan Pollard", and it asks whether they are one entity:
 
 ```text
-$ hydra-ctl review --only merges
-[2/7] Merge · conflicting: date
-  To'hajiilee shootout   and   Junkyard shootout — Tuco Salamanca killed
+[1/1] Merge
+  Jonathan Pollard   and   Jonathan Jay Pollard
 
-  operations:ev-tohajiilee   Event
-     date        2010
+  pollard:per-k3m8v1qz5t   Person
+     alias       Jay Pollard
+     birthDate   1954
+     name        Jonathan Pollard
+     notes       Navy analyst, arrested in 1985
 
-  operations:ev-tuco   Event
-     date      ≠ 2008
+  pollard:per-w3v2f7z7pe   Person
+     alias       Jonathan Pollard
+     name        Jonathan Jay Pollard
+     sources     pollard:doc-v9g25vcmkx
+     weakAlias   Pollard
 
-  all fields   fields in both   [conflicting fields]      Tab / Shift+Tab
+  [all fields]   fields in both   conflicting fields      Tab / Shift+Tab
 Which is better?
   1  one entity
   2  two entities
   ? not sure   u undo   q quit
 ```
 
-And any tree exports as a Mermaid chart, which renders right here on GitHub (`hydra-ctl tree gus --format mermaid --vertical`):
+And any tree exports as a Mermaid chart, which renders right here on GitHub (`hydra-ctl tree israeli --format mermaid --vertical`):
 
 ```mermaid
 flowchart TD
-    p_fring["Gustavo Fring<br/><i>Leader</i>"]
-    p_chris_mara["Chris Mara<br/><i>Member</i>"]
-    p_dennis["Dennis Markowski<br/><i>Member</i>"]
-    org_fring["Gustavo Fring Organization"]
-    p_gale["Gale Boetticher<br/><i>chemist</i>"]
-    proj_superlab["Superlab design and construction<br/><i>organization</i>"]
-    p_tyrus["Tyrus Kitt<br/><i>enforcer</i>"]
-    p_victor["Victor<br/><i>enforcer</i>"]
-    p_fring --> p_chris_mara
-    p_fring --> p_dennis
-    org_fring -->|"leader"| p_fring
-    org_fring -->|"chemist"| p_gale
-    org_fring --> proj_superlab
-    org_fring -->|"enforcer"| p_tyrus
-    org_fring -->|"enforcer"| p_victor
+    %% record tree — pollard (GENERATED)
+    org-ez802bp11f["Israeli Air Force"]
+    per-6q0b4zamfq["Aviem Sella<br/><i>fighter pilot</i>"]
+    org-6t8fkjn4kr["Israeli Consulate New York"]
+    per-p8w1q8cajn["Joseph Yagur<br/><i>Counselor for Scientific Affairs</i>"]
+    org-xfqaxke58a["Israeli Embassy in Washington, D.C."]
+    per-jyft1ret42["Ilan Ravid<br/><i>Attache for Scientific Affairs</i>"]
+    per-89cafr9tn9["Irit Erb<br/><i>secretary</i>"]
+    org-ez802bp11f -->|"fighter pilot"| per-6q0b4zamfq
+    org-6t8fkjn4kr -->|"Counselor for Scientific Affairs"| per-p8w1q8cajn
+    org-xfqaxke58a -->|"Attache for Scientific Affairs"| per-jyft1ret42
+    org-xfqaxke58a -->|"secretary"| per-89cafr9tn9
 ```
 
 ## How it works
@@ -111,12 +110,14 @@ uv tool install git+https://github.com/meridiangray/open-hydra      # or: pip in
 
 ```sh
 git clone --depth 1 https://github.com/meridiangray/open-hydra
-hydra-ctl init demo --name "Breaking Bad"
+hydra-ctl init demo --name "Pollard case" --prefix pollard
 cp open-hydra/examples/demo/collections/*.json demo/collections/
 cp open-hydra/examples/demo/.hydra/rules/positions.yaml demo/.hydra/rules/
+mkdir -p demo/.hydra/sources/entries
+cp open-hydra/examples/demo/.hydra/sources/entries/*.json demo/.hydra/sources/entries/
 cd demo
 hydra-ctl build
-hydra-ctl tree gus
+hydra-ctl tree "task force"
 ```
 
 ## Quick start

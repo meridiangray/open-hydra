@@ -1,0 +1,6 @@
+$ hydra-ctl tree pollard
+Jonathan Jay Pollard (Person) — Analyst
+  also  Anti-Terrorist Alert Center                  Employment   analyst
+  also  Navy Field Operational Intelligence Office   Employment   analyst
+  also  Task Force 168                               Membership             rejected
+Anne Henderson-Pollard (Person)

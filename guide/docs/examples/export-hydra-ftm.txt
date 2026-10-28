@@ -1,4 +1,4 @@
-$ hydra-ctl export --format hydra-ftm -o ../breakingbad.hydra-ftm.jsonl
-Exported breakingbad as hydra-ftm to ~/cases/breakingbad.hydra-ftm.jsonl
+$ hydra-ctl export --format hydra-ftm -o ../pollard.hydra-ftm.jsonl
+Exported Pollard-case as hydra-ftm to ~/cases/pollard.hydra-ftm.jsonl
   entities   ftm schema
-       227   65c772987032
+        45   65c772987032

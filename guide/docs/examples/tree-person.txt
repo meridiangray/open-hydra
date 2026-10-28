@@ -1,90 +1,13 @@
 $ hydra-ctl tree person
-Dan Wachsberger (Person)
-Declan (Person) — Leader
-Donald Margolis (Person)
-Heisenberg (Person)
-Jesse Bruce Pinkman (Person) — Leader
-│ also  Dead freight methylamine heist     ProjectParticipant   logistics
-│ also  Evidence-room magnet operation     ProjectParticipant   crew
-│ also  Gustavo Fring Organization         Membership           cook
-│ also  Pinkman street crew                Membership           leader
-│ also  Vamonos Pest mobile cook program   ProjectParticipant   cook
-├── Huell Babineaux (Person) — Member
-│     also  Heisenberg Organization   Membership   member
-├── Patrick Kuby (Person) — Member
-│     also  Heisenberg Organization   Membership   member
-└── Todd Alquist (Person) — Member
-      also  Dead freight methylamine heist     ProjectParticipant   mechanic
-      also  Heisenberg Organization            Membership           assistant cook
-      also  Jack Welker's gang                 Membership           member
-      also  Vamonos Pest                       Employment           exterminator
-      also  Vamonos Pest mobile cook program   ProjectParticipant   assistant
-Walter Hartwell White (Person) — Leader
-│ also  Dead freight methylamine heist     ProjectParticipant   planner
-│ also  Evidence-room magnet operation     ProjectParticipant   planner
-│ also  Gustavo Fring Organization         Membership           cook
-│ also  Vamonos Pest mobile cook program   ProjectParticipant   cook
-├── A1A Car Wash (Company)
-│   └── Skyler White (Person)
-│       │ also  Heisenberg Organization   Membership   money laundering
-│       └── White residence — 308 Negra Arroyo Lane (RealEstate)
-│             also  Walter Hartwell White   Ownership
-├── The Crystal Ship (Vehicle)
-└── Walter White's Pontiac Aztek (Vehicle)
-Peter Schuler (Person)
-Michael Ehrmantraut (Person)
-  also  Dead freight methylamine heist     ProjectParticipant   spotter
-  also  Evidence-room magnet operation     ProjectParticipant   crew
-  also  Gustavo Fring Organization         Membership           head of security
-  also  Heisenberg Organization            Membership           head of security
-  also  Superlab design and construction   ProjectParticipant   security
-James Morgan McGill (Person)
-Lydia Rodarte-Quayle (Person)
-  also  Czech Republic distribution channel   ProjectParticipant   international distribution
-  also  Madrigal Electromotive GmbH           Employment           logistics executive
-Brandon Mayhew (Person)
-Christian Ortega (Person)
-Skinny Pete (Person)
-Holly White (Person)
-Jack Welker (Person) — Leader
-├── Kenny (Person) — Second-in-command
-│     also  Jack Welker's gang   Membership   second-in-command
-├── Frankie (Person) — Member
-│     also  Jack Welker's gang   Membership   member
-├── Lester (Person) — Member
-│     also  Jack Welker's gang   Membership   member
-└── Matt (Person) — Member
-      also  Jack Welker's gang   Membership   member
-Jane Margolis (Person)
-Eladio Vuente (Person) — Leader
-├── Gonzo (Person) — Member
-│     also  Tuco Salamanca's Albuquerque crew   Membership   member
-├── Ignacio Varga (Person) — Member
-│     also  Tuco Salamanca's Albuquerque crew   Membership   member
-└── No-Doze (Person) — Member
-      also  Tuco Salamanca's Albuquerque crew   Membership   member
-Gustavo Fring (Person) — Leader
-│ also  Juarez Cartel                      Membership           distributor
-│ also  Los Pollos Hermanos                Directorship         president
-│ also  Superlab design and construction   ProjectParticipant   sponsor
-├── Chris Mara (Person) — Member
-│     also  Gustavo Fring Organization   Membership   member
-└── Dennis Markowski (Person) — Member
-      also  Gustavo Fring Organization   Membership   member
-Gale Boetticher (Person)
-  also  Superlab design and construction   ProjectParticipant   lead chemist
-Tyrus Kitt (Person)
-Victor (Person)
-Hector Salamanca (Person)
-Juan Bolsa (Person)
-Lalo Salamanca (Person)
-Leonel Salamanca (Person)
-Marco Salamanca (Person)
-Domingo Gallardo Molina (Person)
-Tuco Salamanca (Person)
-Marie Schrader (Person)
-Maximino Arciniega (Person)
-George Merkert (Person)
-Henry R. Schrader (Person)
-Steven Gomez (Person)
-Walter White Jr. (Person)
+Anne Henderson-Pollard (Person)
+Shamir (Person)
+Aviem Sella (Person)
+  also  New York University   Membership
+Joseph Yagur (Person)
+Ilan Ravid (Person)
+Irit Erb (Person)
+Rafael Eitan (Person)
+Jonathan Jay Pollard (Person) — Analyst
+  also  Anti-Terrorist Alert Center                   Employment   analyst
+  also  Naval Ocean Surveillance Information Center   Employment   research analyst
+  also  Navy Field Operational Intelligence Office    Employment   analyst

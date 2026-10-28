@@ -1,4 +1,4 @@
-$ hydra-ctl pack -o ../breakingbad.hydra
-Packed breakingbad into ~/cases/breakingbad.hydra
+$ hydra-ctl pack -o ../pollard.hydra
+Packed pollard into ~/cases/pollard.hydra
   size     build
-  172 KB   included
+  113 KB   included

@@ -1,5 +1,3 @@
-$ hydra-ctl node find person heisenberg
-score   name                    schema   id                     position   parent                         matched
-1.00    Heisenberg              Person   dea:p-heisenberg-dea
-1.00    Walter Hartwell White   Person   heisenberg:p-walt      Leader     Heisenberg Organization        weakAlias  Heisenberg
-0.75    Henry R. Schrader       Person   dea:p-hank                        DEA Albuquerque Field Office   notes  DEA agent; ran the Heisenberg investigation; kill…
+$ hydra-ctl node find person jay
+score   name                   schema   id                       position   parent           matched
+0.93    Jonathan Jay Pollard   Person   pollard:per-w3v2f7z7pe   Analyst    Task Force 168

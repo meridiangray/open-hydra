@@ -1,20 +1,20 @@
 $ hydra-ctl claims summary
-claims summary   breakingbad
+claims summary   Pollard case
 
-  claims        914
-  entities      227
-  collections     6
+  claims        156
+  entities       45
+  collections     2
   disputed        0
 
-  collection        claims      schema               claims      property       claims
-  operations           223      Person                  201      name              105
-  heisenberg           191      Membership              176      notes              83
-  fring                148      Event                   102      role               73
-  cartel               138      Family                   48      member             55
-  fring-condensed      111      ProjectParticipant       45      organization       55
-  dea                  103      Organization             41      involved           50
-                                Employment               36      weakAlias          43
-                                RealEstate               34      deathDate          42
-                                Ownership                27      endDate            36
-                                Project                  24      person             22
-                                16 more                 180
+  collection                          claims      schema           claims      property       claims
+  pollard-damage-assessment              146      PublicBody           38      name               25
+  sources/pollard-damage-assessment       10      Person               32      sources            25
+                                                  Employment           30      notes              14
+                                                  Associate            16      alias              13
+                                                  Membership           13      weakAlias           8
+                                                  Document             10      employee            7
+                                                  Representation        5      employer            7
+                                                  Family                4      role                7
+                                                  Organization          3      organization        6
+                                                  Position              3      person              5
+                                                  1 more                2

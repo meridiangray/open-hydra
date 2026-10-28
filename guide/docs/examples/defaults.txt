@@ -1,6 +1,6 @@
 $ hydra-ctl defaults
 generic    default
-hierarchy  default
+hierarchy  changed
 hints      default
 direction  default
 collate    default

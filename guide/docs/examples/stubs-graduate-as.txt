@@ -1,3 +1,3 @@
-$ hydra-ctl stubs graduate "Gray Matter Technologies" --as Company
-  graduated   Gray Matter Technologies   Company   stub:gray-matter-technologies
-Rebuilt breakingbad: 246 records, 230 entities, 38 open questions
+$ hydra-ctl stubs graduate "Israeli Ministry of Defense" --as PublicBody
+  graduated   Israeli Ministry of Defense   PublicBody   stub:israeli-ministry-of-defense
+Rebuilt Pollard case: 47 records, 48 entities, 4 open questions

@@ -10,13 +10,15 @@ hydra-ctl review            # answer them one by one
 
 ```text
   kind             open
-  merges             14
-  references          3
-  placements         47
+  merges              0
+  references          0
+  placements          2
   stale               0
   contradictions      0
-  verdicts            1
+  verdicts            0
 ```
+
+The demo asks only two placement questions. The merge and reference screens below come from adding a second collection that names the same man differently (`press.json`: "Jonathan Pollard", and a link that says only "Jonathan").
 
 Each answer is saved at once to `.hydra/review/verdicts.yaml`, and the archive is rebuilt once at the end. `hydra-ctl review --only placements` asks just one kind.
 
@@ -33,19 +35,25 @@ Each answer is saved at once to `.hydra/review/verdicts.yaml`, and the archive i
 
 ## Merges
 
-A merge asks whether two records are one entity or two. A merge with a conflict opens on the conflicting fields, since that is what you have to decide:
+A merge asks whether two records are one entity or two. A merge with a conflict opens on just the conflicting fields, since that is what you have to decide. Here two records might be one man:
 
 ```text
-[2/7] Merge · conflicting: date
-  To'hajiilee shootout   and   Junkyard shootout — Tuco Salamanca killed
+[1/1] Merge
+  Jonathan Pollard   and   Jonathan Jay Pollard
 
-  operations:ev-tohajiilee   Event
-     date        2010
+  pollard:per-k3m8v1qz5t   Person
+     alias       Jay Pollard
+     birthDate   1954
+     name        Jonathan Pollard
+     notes       Navy analyst, arrested in 1985
 
-  operations:ev-tuco   Event
-     date      ≠ 2008
+  pollard:per-w3v2f7z7pe   Person
+     alias       Jonathan Pollard
+     name        Jonathan Jay Pollard
+     sources     pollard:doc-v9g25vcmkx
+     weakAlias   Pollard
 
-  all fields   fields in both   [conflicting fields]      Tab / Shift+Tab
+  [all fields]   fields in both   conflicting fields      Tab / Shift+Tab
 Which is better?
   1  one entity
   2  two entities
@@ -56,35 +64,36 @@ Press Tab to see every field of both records, with `=` for the same and `≠` fo
 
 ## References
 
-A link written as a name that fits more than one record is asked as a reference. Here, which record does the Documentation record mean by "Heisenberg"?
+A link written as a name that fits more than one record is asked as a reference. Here, which record does the Employment record mean by "Jonathan"?
 
 ```text
-[1/3] Reference · a name with 3 possible records
-  dea:prv-dea1   Documentation.entity   Heisenberg
+[1/1] Reference · a name with 2 possible records
+  pollard:emp-b7d2n9x4hc   Employment.employee   Jonathan
 
-  ┌─ Link from ─────────────────────────────────┐
-  │ dea:prv-dea1   Documentation                │
-  │    document   heisenberg:doc-bb-casefile~p1 │
-  │  → entity     Heisenberg                    │
-  └─────────────────────────────────────────────┘
+  ┌─ Link from ───────────────────────────────┐
+  │ pollard:emp-b7d2n9x4hc   Employment       │
+  │  → employee   Jonathan                    │
+  │    employer   Naval Investigative Service │
+  │    role       analyst                     │
+  └───────────────────────────────────────────┘
 
-  1  dea:p-heisenberg-dea   Person
-     name            = Heisenberg
-     …
+  1  pollard:per-k3m8v1qz5t   Person
+     alias       Jay Pollard
+     birthDate   1954
+     name        Jonathan Pollard
+     notes       Navy analyst, arrested in 1985
 
-  2  heisenberg:p-walt   Person
-     name              Walter Hartwell White
-     …
+  2  pollard:per-w3v2f7z7pe   Person
+     alias       Jonathan Pollard
+     name        Jonathan Jay Pollard
+     sources     pollard:doc-v9g25vcmkx
+     weakAlias   Pollard
 
-  3  heisenberg:org-heisenberg   Organization
-     name              Heisenberg Organization
-     …
-
-Which record is "Heisenberg"?
-  1  Heisenberg                dea:p-heisenberg-dea
-  2  Walter Hartwell White     heisenberg:p-walt
-  3  Heisenberg Organization   heisenberg:org-heisenberg
-  4  none of these
+  [all fields]   name fields   matching fields      Tab / Shift+Tab
+Which record is "Jonathan"?
+  1  Jonathan Pollard       pollard:per-k3m8v1qz5t
+  2  Jonathan Jay Pollard   pollard:per-w3v2f7z7pe
+  3  neither
   ? not sure   u undo   q quit
 ```
 
@@ -93,13 +102,14 @@ Which record is "Heisenberg"?
 When the rules put a record under one parent and the data offers another, you pick the one the tree draws. Picking `a` keeps every placement made by the same rule.
 
 ```text
-[5/47] Placement · rules: Member below Leader
-  Huell Babineaux
+[1/2] Placement · Membership (several parents)
+  Jonathan Jay Pollard
   …
 Which is better?
-  1  under Walter Hartwell White     heisenberg:p-walt   now
-  2  under Heisenberg Organization   heisenberg:org-heisenberg
-  a  keep all 13 placed by rules: Member below Leader
+  1  under Task Force 168                                pollard:org-ctk7r6bt77   now
+  2  under Anti-Terrorist Alert Center                   pollard:org-8b2fsev104
+  3  under Naval Ocean Surveillance Information Center   pollard:org-3kk63smvp7
+  4  under Navy Field Operational Intelligence Office    pollard:org-1phejc0ngk
   ? not sure   u undo   q quit
 ```
 
@@ -130,18 +140,19 @@ Which is better?
 
 ## The tree after review
 
+After you reject Task Force 168 as his parent, the tree draws him under another and says why the first isn't the one:
+
 ```sh
-hydra-ctl tree "Heisenberg Organization"
+hydra-ctl answer place-… reject
+hydra-ctl tree pollard
 ```
 
 ```text
-Heisenberg Organization (Organization)
-├── Walter Hartwell White (Person) — Leader
-│   │ also  Dead freight methylamine heist     ProjectParticipant   planner
-│   │ also  Gustavo Fring Organization         Membership           cook
-│   ├── Brandon Mayhew (Person) — Distributor
-│   │     also  Pinkman street crew   Membership   dealer
-│   …
+Jonathan Jay Pollard (Person) — Analyst
+  also  Anti-Terrorist Alert Center                  Employment   analyst
+  also  Navy Field Operational Intelligence Office   Employment   analyst
+  also  Task Force 168                               Membership             rejected
+Anne Henderson-Pollard (Person)
 ```
 
 Each `also` line is another parent the record has. A word at the end says why it isn't the drawn one, such as `rejected` for a parent you turned down; see [`tree`](../commands/inspect.md#tree).

@@ -1,3 +1,3 @@
 $ hydra-ctl import ../case-graph --format csv
-Imported case-graph as collection case: 226 records, 74 derived edges left out
-Rebuilt breakingbad: 226 records, 226 entities, 20 open questions
+Imported case-graph as collection case: 45 records, 9 derived edges left out
+Rebuilt Pollard case: 45 records, 45 entities, 2 open questions, 1 error, 1 warning

@@ -1,3 +1,3 @@
-$ hydra-ctl answer merge-00783b8a5bab5fa8 confirm
-Recorded merge-00783b8a5bab5fa8: {status: confirmed, basis: 548f4d78fc5654ba}
-Rebuilt breakingbad: 244 records, 226 entities, 36 open questions
+$ hydra-ctl answer merge-86249992956ed3ab confirm
+Recorded merge-86249992956ed3ab: {status: confirmed, basis: 02b82d3a6530abca}
+Rebuilt Pollard case: 47 records, 46 entities, 2 open questions
