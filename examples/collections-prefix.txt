@@ -1,0 +1,3 @@
+$ hydra-ctl collections prefix press media
+Changed press's prefix: pollard -> media
+Rebuilt Pollard case: 47 records, 47 entities, 4 open questions

@@ -1,0 +1,4 @@
+$ hydra-ctl export --format ftm -o ../pollard.ftm.jsonl
+Exported Pollard-case as ftm to ~/cases/pollard.ftm.jsonl
+  entities   ftm schema
+        45   65c772987032

@@ -1,0 +1,22 @@
+$ hydra-ctl tree family employment
+  only                links   drawn   no link
+  family employment       5      12        12
+
+Anne Henderson-Pollard (Person)
+Navy Field Operational Intelligence Office (PublicBody)
+Anti-Terrorist Alert Center (PublicBody)
+└── Jonathan Jay Pollard (Person)   Employment   analyst
+      also  Naval Ocean Surveillance Information Center   Employment   research analyst
+      also  Navy Field Operational Intelligence Office    Employment   analyst
+      also  Anne Henderson-Pollard                        Family       wife               sideways
+Naval Ocean Surveillance Information Center (PublicBody)
+
+Israeli Air Force (PublicBody)
+└── Aviem Sella (Person)   Employment   fighter pilot
+
+Israeli Consulate New York (PublicBody)
+└── Joseph Yagur (Person)   Employment   Counselor for Scientific Affairs
+
+Israeli Embassy in Washington, D.C. (PublicBody)
+├── Ilan Ravid (Person)   Employment   Attache for Scientific Affairs
+└── Irit Erb (Person)   Employment   secretary

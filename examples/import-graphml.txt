@@ -1,0 +1,3 @@
+$ hydra-ctl import ../case.graphml --format graphml
+Imported case.graphml as collection case: 45 records, 9 derived edges left out
+Rebuilt Pollard case: 45 records, 45 entities, 2 open questions, 1 error, 1 warning

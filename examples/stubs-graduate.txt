@@ -1,0 +1,7 @@
+$ hydra-ctl stubs graduate Lakam
+  graduated   Lakam   Organization   stub:lakam
+Rebuilt Pollard case: 47 records, 48 entities, 3 open questions
+
+$ hydra-ctl stubs drop Lakam
+  dropped   Lakam
+Rebuilt Pollard case: 47 records, 47 entities, 5 open questions

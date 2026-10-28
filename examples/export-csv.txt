@@ -1,0 +1,4 @@
+$ hydra-ctl export --format csv -o ../graph
+Exported Pollard-case as csv to ~/cases/graph
+  entities   nodes   edges   unlinked relationships   ftm schema
+        45      26      54                        0   65c772987032

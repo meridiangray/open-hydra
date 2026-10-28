@@ -1,0 +1,15 @@
+$ hydra-ctl positions --unplaced --format json
+{
+ "tree": [],
+ "unrelated": [
+  "Analyst",
+  "Attache for Scientific Affairs",
+  "Counselor for Scientific Affairs",
+  "Prime Minister",
+  "adviser on counterterrorism to the Israeli Prime Minister",
+  "fighter pilot",
+  "secretary",
+  "senior career official in Israeli intelligence"
+ ],
+ "issues": []
+}

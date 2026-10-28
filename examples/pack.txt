@@ -1,0 +1,4 @@
+$ hydra-ctl pack -o ../pollard.hydra
+Packed pollard into ~/cases/pollard.hydra
+  size     build
+  113 KB   included

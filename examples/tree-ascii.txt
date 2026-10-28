@@ -1,0 +1,6 @@
+$ hydra-ctl tree "task force" --ascii
+Task Force 168 (PublicBody)
+\-- Jonathan Jay Pollard (Person) — Analyst
+      also  Anti-Terrorist Alert Center                   Employment   analyst
+      also  Naval Ocean Surveillance Information Center   Employment   research analyst
+      also  Navy Field Operational Intelligence Office    Employment   analyst

@@ -1,0 +1,3 @@
+$ hydra-ctl node find person jay
+score   name                   schema   id                       position   parent           matched
+0.93    Jonathan Jay Pollard   Person   pollard:per-w3v2f7z7pe   Analyst    Task Force 168

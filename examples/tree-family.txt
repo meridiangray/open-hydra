@@ -1,0 +1,7 @@
+$ hydra-ctl tree family
+  only     links   drawn   no link
+  family       0       2        22
+
+Anne Henderson-Pollard (Person)
+Jonathan Jay Pollard (Person)
+  also  Anne Henderson-Pollard   Family   wife   sideways

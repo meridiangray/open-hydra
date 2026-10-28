@@ -1,0 +1,5 @@
+$ hydra-ctl todo --list placements
+placements   2
+    row                      record                   parent                   placed by
+    place-1fcb5c9cb4e5a9a9   pollard:per-w3v2f7z7pe   pollard:org-ctk7r6bt77   Membership (several parents)
+    place-a343b83ee80fa96b   pollard:per-6q0b4zamfq   pollard:org-ez802bp11f   Employment (several parents)

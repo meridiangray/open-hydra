@@ -1,0 +1,6 @@
+$ hydra-ctl tree family --format mermaid
+flowchart TD
+    %% record tree — pollard (GENERATED)
+    per_jbcv7nwbwb["Anne Henderson-Pollard"]
+    per_w3v2f7z7pe["Jonathan Jay Pollard<br/><i>Analyst</i>"]
+    per_w3v2f7z7pe -.-|"wife"| per_jbcv7nwbwb

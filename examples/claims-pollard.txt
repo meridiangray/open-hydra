@@ -1,0 +1,23 @@
+$ hydra-ctl claims pollard
+entity                 type     id                       claims   collections
+Jonathan Jay Pollard   Person   pollard:per-w3v2f7z7pe        4             1
+
+    field       value                    record                   collection
+    alias       Jonathan Pollard         pollard:per-w3v2f7z7pe   pollard-damage-assessment
+    name        Jonathan Jay Pollard     pollard:per-w3v2f7z7pe   pollard-damage-assessment
+    sources     pollard:doc-v9g25vcmkx   pollard:per-w3v2f7z7pe   pollard-damage-assessment
+    weakAlias   Pollard                  pollard:per-w3v2f7z7pe   pollard-damage-assessment
+
+  documented in     The Jonathan Jay Pollard Espionage Case: A Damage Assessment
+
+entity                   type     id                       claims   collections
+Anne Henderson-Pollard   Person   pollard:per-jbcv7nwbwb        5             1
+
+    field       value                                                          record                   collection
+    alias       Anne Henderson                                                 pollard:per-jbcv7nwbwb   pollard-damage-assessment
+    name        Anne Henderson-Pollard                                         pollard:per-jbcv7nwbwb   pollard-damage-assessment
+    notes       Witting of her husband's espionage activities, Anne Henders…   pollard:per-jbcv7nwbwb   pollard-damage-assessment
+    sources     pollard:doc-v9g25vcmkx                                         pollard:per-jbcv7nwbwb   pollard-damage-assessment
+    weakAlias   Henderson                                                      pollard:per-jbcv7nwbwb   pollard-damage-assessment
+
+  documented in     The Jonathan Jay Pollard Espionage Case: A Damage Assessment

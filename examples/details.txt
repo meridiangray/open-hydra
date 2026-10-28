@@ -1,0 +1,38 @@
+$ hydra-ctl details
+Pollard case
+built   2026-01-01 00:00:00 UTC
+
+records    45
+entities   45
+claims     156
+changed    .hydra/resources/.gitkeep
+changed    .hydra/resources/icons/LICENSE-lucide.txt
+changed    .hydra/resources/icons/briefcase.svg
+changed    124 more
+
+collection                           prefix   records   claims   in others   citations
+pollard-damage-assessment           pollard        44      146           0          25
+sources/pollard-damage-assessment   pollard         1       10           0           0
+
+type         entities   records
+PublicBody         15        15
+Person              8         8
+Employment          7         7
+Membership          5         5
+Associate           4         4
+Document            1         1
+Family              1         1
+Occupancy           1         1
+3 more              3         3
+
+review       automatic   open
+placements           7      2
+
+tree         nodes   roots   positioned
+declared        24      15            1
+generic         24      15            0
+
+issues       count
+errors           0
+warnings         0
+info             3

@@ -1,0 +1,4 @@
+$ hydra-ctl defaults restore --all --yes
+This restores 1 file(s) from the template: .hydra/rules/positions.yaml
+1 changed file(s) are backed up first, as <file>.20260101-000000.bak
+Restored 1 file from the template

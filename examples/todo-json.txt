@@ -1,0 +1,58 @@
+$ hydra-ctl todo --format json
+{
+ "merges": [],
+ "references": [],
+ "placements": [
+  {
+   "id": "place-1fcb5c9cb4e5a9a9",
+   "status": "proposed",
+   "what": "Jonathan Jay Pollard under Task Force 168 — Membership (several parents)",
+   "row": {
+    "criteria": "Membership (several parents)",
+    "id": "place-1fcb5c9cb4e5a9a9",
+    "matcher": "hydra/hier",
+    "reads": [
+     "generic",
+     "declared"
+    ],
+    "records": [
+     "pollard:mem-tg0re7j07m"
+    ],
+    "rel": "placedUnder",
+    "scope": "Task Force 168",
+    "status": "proposed",
+    "sub": "pollard:per-w3v2f7z7pe",
+    "subcap": "Jonathan Jay Pollard",
+    "sup": "pollard:org-ctk7r6bt77",
+    "supcap": "Task Force 168"
+   }
+  },
+  {
+   "id": "place-a343b83ee80fa96b",
+   "status": "proposed",
+   "what": "Aviem Sella under Israeli Air Force — Employment (several parents)",
+   "row": {
+    "criteria": "Employment (several parents)",
+    "id": "place-a343b83ee80fa96b",
+    "matcher": "hydra/hier",
+    "reads": [
+     "generic",
+     "declared"
+    ],
+    "records": [
+     "pollard:emp-dsj4t8669k"
+    ],
+    "rel": "placedUnder",
+    "scope": "Israeli Air Force",
+    "status": "proposed",
+    "sub": "pollard:per-6q0b4zamfq",
+    "subcap": "Aviem Sella",
+    "sup": "pollard:org-ez802bp11f",
+    "supcap": "Israeli Air Force"
+   }
+  }
+ ],
+ "stale": [],
+ "contradictions": [],
+ "verdicts": []
+}

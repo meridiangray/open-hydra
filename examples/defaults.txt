@@ -1,0 +1,8 @@
+$ hydra-ctl defaults
+generic    default
+hierarchy  changed
+hints      default
+direction  default
+collate    default
+params     default
+artifact   default

@@ -1,0 +1,241 @@
+$ hydra-ctl claims pollard sources --format json
+{
+ "entities": [
+  {
+   "id": "pollard:per-w3v2f7z7pe",
+   "caption": "Jonathan Jay Pollard",
+   "schema": "Person",
+   "referents": [
+    "pollard:per-w3v2f7z7pe"
+   ],
+   "props": {
+    "alias": [
+     {
+      "value": "Jonathan Pollard",
+      "also": [],
+      "collections": [
+       "pollard-damage-assessment"
+      ],
+      "sources": [
+       {
+        "collection": "pollard-damage-assessment",
+        "record": "pollard:per-w3v2f7z7pe",
+        "evidence": [
+         "The Jonathan Jay Pollard Espionage Case: A Damage Assessment"
+        ]
+       }
+      ],
+      "review": []
+     }
+    ],
+    "name": [
+     {
+      "value": "Jonathan Jay Pollard",
+      "also": [],
+      "collections": [
+       "pollard-damage-assessment"
+      ],
+      "sources": [
+       {
+        "collection": "pollard-damage-assessment",
+        "record": "pollard:per-w3v2f7z7pe",
+        "evidence": [
+         "The Jonathan Jay Pollard Espionage Case: A Damage Assessment"
+        ]
+       }
+      ],
+      "review": []
+     }
+    ],
+    "sources": [
+     {
+      "value": "pollard:doc-v9g25vcmkx",
+      "also": [],
+      "collections": [
+       "pollard-damage-assessment"
+      ],
+      "sources": [
+       {
+        "collection": "pollard-damage-assessment",
+        "record": "pollard:per-w3v2f7z7pe",
+        "evidence": [
+         "The Jonathan Jay Pollard Espionage Case: A Damage Assessment"
+        ]
+       }
+      ],
+      "review": []
+     }
+    ],
+    "weakAlias": [
+     {
+      "value": "Pollard",
+      "also": [],
+      "collections": [
+       "pollard-damage-assessment"
+      ],
+      "sources": [
+       {
+        "collection": "pollard-damage-assessment",
+        "record": "pollard:per-w3v2f7z7pe",
+        "evidence": [
+         "The Jonathan Jay Pollard Espionage Case: A Damage Assessment"
+        ]
+       }
+      ],
+      "review": []
+     }
+    ]
+   },
+   "disputed": [],
+   "documented_in": [
+    "The Jonathan Jay Pollard Espionage Case: A Damage Assessment"
+   ]
+  },
+  {
+   "id": "pollard:per-jbcv7nwbwb",
+   "caption": "Anne Henderson-Pollard",
+   "schema": "Person",
+   "referents": [
+    "pollard:per-jbcv7nwbwb"
+   ],
+   "props": {
+    "alias": [
+     {
+      "value": "Anne Henderson",
+      "also": [],
+      "collections": [
+       "pollard-damage-assessment"
+      ],
+      "sources": [
+       {
+        "collection": "pollard-damage-assessment",
+        "record": "pollard:per-jbcv7nwbwb",
+        "evidence": [
+         "The Jonathan Jay Pollard Espionage Case: A Damage Assessment"
+        ]
+       }
+      ],
+      "review": []
+     }
+    ],
+    "name": [
+     {
+      "value": "Anne Henderson-Pollard",
+      "also": [],
+      "collections": [
+       "pollard-damage-assessment"
+      ],
+      "sources": [
+       {
+        "collection": "pollard-damage-assessment",
+        "record": "pollard:per-jbcv7nwbwb",
+        "evidence": [
+         "The Jonathan Jay Pollard Espionage Case: A Damage Assessment"
+        ]
+       }
+      ],
+      "review": []
+     }
+    ],
+    "notes": [
+     {
+      "value": "Witting of her husband's espionage activities, Anne Henderson-Pollard assisted him at the time of his initial interrogation on 18 and 19 November by removing and attempting to conceal classified material that Jonathan Pollard had stored in their apartment.",
+      "also": [],
+      "collections": [
+       "pollard-damage-assessment"
+      ],
+      "sources": [
+       {
+        "collection": "pollard-damage-assessment",
+        "record": "pollard:per-jbcv7nwbwb",
+        "evidence": [
+         "The Jonathan Jay Pollard Espionage Case: A Damage Assessment"
+        ]
+       }
+      ],
+      "review": []
+     }
+    ],
+    "sources": [
+     {
+      "value": "pollard:doc-v9g25vcmkx",
+      "also": [],
+      "collections": [
+       "pollard-damage-assessment"
+      ],
+      "sources": [
+       {
+        "collection": "pollard-damage-assessment",
+        "record": "pollard:per-jbcv7nwbwb",
+        "evidence": [
+         "The Jonathan Jay Pollard Espionage Case: A Damage Assessment"
+        ]
+       }
+      ],
+      "review": []
+     }
+    ],
+    "weakAlias": [
+     {
+      "value": "Henderson",
+      "also": [],
+      "collections": [
+       "pollard-damage-assessment"
+      ],
+      "sources": [
+       {
+        "collection": "pollard-damage-assessment",
+        "record": "pollard:per-jbcv7nwbwb",
+        "evidence": [
+         "The Jonathan Jay Pollard Espionage Case: A Damage Assessment"
+        ]
+       }
+      ],
+      "review": []
+     }
+    ]
+   },
+   "disputed": [],
+   "documented_in": [
+    "The Jonathan Jay Pollard Espionage Case: A Damage Assessment"
+   ]
+  }
+ ],
+ "sources": {
+  "matched": "entities",
+  "entities": 2,
+  "entries": [
+   {
+    "id": "pollard:doc-v9g25vcmkx",
+    "schema": "Document",
+    "title": "The Jonathan Jay Pollard Espionage Case: A Damage Assessment",
+    "publisher": "Foreign Denial and Deception Analysis Committee, Director of Central Intelligence",
+    "url": "",
+    "collection": "sources/pollard-damage-assessment",
+    "entry": true,
+    "document": "",
+    "page": "",
+    "cited_by": [
+     {
+      "id": "pollard:per-jbcv7nwbwb",
+      "caption": "Anne Henderson-Pollard",
+      "schema": "Person",
+      "records": [
+       "pollard:per-jbcv7nwbwb"
+      ]
+     },
+     {
+      "id": "pollard:per-w3v2f7z7pe",
+      "caption": "Jonathan Jay Pollard",
+      "schema": "Person",
+      "records": [
+       "pollard:per-w3v2f7z7pe"
+      ]
+     }
+    ]
+   }
+  ],
+  "documents": [],
+  "unsourced": []
+ }
+}

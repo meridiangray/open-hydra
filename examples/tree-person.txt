@@ -1,0 +1,13 @@
+$ hydra-ctl tree person
+Anne Henderson-Pollard (Person)
+Shamir (Person)
+Aviem Sella (Person)
+  also  New York University   Membership
+Joseph Yagur (Person)
+Ilan Ravid (Person)
+Irit Erb (Person)
+Rafael Eitan (Person)
+Jonathan Jay Pollard (Person) — Analyst
+  also  Anti-Terrorist Alert Center                   Employment   analyst
+  also  Naval Ocean Surveillance Information Center   Employment   research analyst
+  also  Navy Field Operational Intelligence Office    Employment   analyst

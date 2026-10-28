@@ -1,0 +1,4 @@
+$ hydra-ctl export --format graphml -o ../pollard.graphml
+Exported Pollard-case as graphml to ~/cases/pollard.graphml
+  entities   nodes   edges   unlinked relationships   ftm schema
+        45      26      54                        0   65c772987032

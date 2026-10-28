@@ -1,0 +1,11 @@
+$ hydra-ctl sources sella
+sources
+
+  entities   1
+
+  entries
+
+  The Jonathan Jay Pollard Espionage Case: A Damage Assessment (Document)   Foreign Denial and Deception Analysis Committee, Director of Central Intelligence   pollard:doc-v9g25vcmkx
+  └── Aviem Sella (Person)   sources   pollard:per-6q0b4zamfq
+
+  uncited    0

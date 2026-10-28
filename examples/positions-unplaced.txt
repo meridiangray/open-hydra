@@ -1,0 +1,6 @@
+$ hydra-ctl positions --unplaced
+unplaced titles   8
+  Analyst                            adviser on counterterrorism to the Israeli Prime Minister
+  Attache for Scientific Affairs     fighter pilot
+  Counselor for Scientific Affairs   secretary
+  Prime Minister                     senior career official in Israeli intelligence

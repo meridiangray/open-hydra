@@ -1,0 +1,25 @@
+$ hydra-ctl tree --format mermaid --lateral
+flowchart TD
+    %% record tree — pollard (GENERATED)
+    per_jbcv7nwbwb["Anne Henderson-Pollard"]
+    org_2hzt03a6z9["Israel"]
+    per_6q0b4zamfq["Aviem Sella<br/><i>fighter pilot</i>"]
+    per_p8w1q8cajn["Joseph Yagur<br/><i>Counselor for Scientific Affairs</i>"]
+    per_89cafr9tn9["Irit Erb<br/><i>secretary</i>"]
+    org_8b2fsev104["Anti-Terrorist Alert Center"]
+    org_1phejc0ngk["Navy Field Operational Intelligence Office"]
+    org_3kk63smvp7["Naval Ocean Surveillance Information Center"]
+    org_f8xs95cwk2["New York University"]
+    per_9n72sstcw8["Rafael Eitan<br/><i>senior career official in Israeli intelligence</i>"]
+    per_w3v2f7z7pe["Jonathan Jay Pollard<br/><i>Analyst</i>"]
+    org_f8xs95cwk2 -.-> per_6q0b4zamfq
+    org_8b2fsev104 -.->|"analyst"| per_w3v2f7z7pe
+    org_3kk63smvp7 -.->|"research analyst"| per_w3v2f7z7pe
+    org_1phejc0ngk -.->|"analyst"| per_w3v2f7z7pe
+    per_w3v2f7z7pe -.-|"wife"| per_jbcv7nwbwb
+    per_w3v2f7z7pe -.-|"first handler"| per_6q0b4zamfq
+    per_w3v2f7z7pe -.-|"handler"| per_89cafr9tn9
+    per_w3v2f7z7pe -.- org_2hzt03a6z9
+    per_w3v2f7z7pe -.-|"primary, direct handler"| per_p8w1q8cajn
+    per_w3v2f7z7pe -.-|"senior Israeli official in charge of the case"| per_9n72sstcw8
+    %% no links: Central Intelligence Agency, Department of Defense, Federal Bureau of Investigation, Foreign Denial and Deception Analysis Committee, Shamir, Israeli Air Force, Israeli Consulate New York, Israeli Embassy in Washington, D.C., Ilan Ravid, Naval Security and Investigative Command, Naval Investigative Service, Office of Naval Intelligence, Task Force 168

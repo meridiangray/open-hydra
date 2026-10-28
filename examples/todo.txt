@@ -1,0 +1,8 @@
+$ hydra-ctl todo
+  kind             open
+  merges              0
+  references          0
+  placements          2
+  stale               0
+  contradictions      0
+  verdicts            0

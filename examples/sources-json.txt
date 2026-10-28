@@ -1,0 +1,214 @@
+$ hydra-ctl sources --format json
+{
+ "matched": "entities",
+ "entities": 24,
+ "entries": [
+  {
+   "id": "pollard:doc-v9g25vcmkx",
+   "schema": "Document",
+   "title": "The Jonathan Jay Pollard Espionage Case: A Damage Assessment",
+   "publisher": "Foreign Denial and Deception Analysis Committee, Director of Central Intelligence",
+   "url": "",
+   "collection": "sources/pollard-damage-assessment",
+   "entry": true,
+   "document": "",
+   "page": "",
+   "cited_by": [
+    {
+     "id": "pollard:per-jbcv7nwbwb",
+     "caption": "Anne Henderson-Pollard",
+     "schema": "Person",
+     "records": [
+      "pollard:per-jbcv7nwbwb"
+     ]
+    },
+    {
+     "id": "pollard:org-8b2fsev104",
+     "caption": "Anti-Terrorist Alert Center",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-8b2fsev104"
+     ]
+    },
+    {
+     "id": "pollard:per-6q0b4zamfq",
+     "caption": "Aviem Sella",
+     "schema": "Person",
+     "records": [
+      "pollard:per-6q0b4zamfq"
+     ]
+    },
+    {
+     "id": "pollard:org-kma9pjvdcc",
+     "caption": "Central Intelligence Agency",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-kma9pjvdcc"
+     ]
+    },
+    {
+     "id": "pollard:org-jgy4y4pe9x",
+     "caption": "Department of Defense",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-jgy4y4pe9x"
+     ]
+    },
+    {
+     "id": "pollard:org-qyewkz38cq",
+     "caption": "Federal Bureau of Investigation",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-qyewkz38cq"
+     ]
+    },
+    {
+     "id": "pollard:org-bvzgp9f1t6",
+     "caption": "Foreign Denial and Deception Analysis Committee",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-bvzgp9f1t6"
+     ]
+    },
+    {
+     "id": "pollard:per-jyft1ret42",
+     "caption": "Ilan Ravid",
+     "schema": "Person",
+     "records": [
+      "pollard:per-jyft1ret42"
+     ]
+    },
+    {
+     "id": "pollard:per-89cafr9tn9",
+     "caption": "Irit Erb",
+     "schema": "Person",
+     "records": [
+      "pollard:per-89cafr9tn9"
+     ]
+    },
+    {
+     "id": "pollard:org-2hzt03a6z9",
+     "caption": "Israel",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-2hzt03a6z9"
+     ]
+    },
+    {
+     "id": "pollard:org-ez802bp11f",
+     "caption": "Israeli Air Force",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-ez802bp11f"
+     ]
+    },
+    {
+     "id": "pollard:org-6t8fkjn4kr",
+     "caption": "Israeli Consulate New York",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-6t8fkjn4kr"
+     ]
+    },
+    {
+     "id": "pollard:org-xfqaxke58a",
+     "caption": "Israeli Embassy in Washington, D.C.",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-xfqaxke58a"
+     ]
+    },
+    {
+     "id": "pollard:per-w3v2f7z7pe",
+     "caption": "Jonathan Jay Pollard",
+     "schema": "Person",
+     "records": [
+      "pollard:per-w3v2f7z7pe"
+     ]
+    },
+    {
+     "id": "pollard:per-p8w1q8cajn",
+     "caption": "Joseph Yagur",
+     "schema": "Person",
+     "records": [
+      "pollard:per-p8w1q8cajn"
+     ]
+    },
+    {
+     "id": "pollard:org-tfadg8t3xv",
+     "caption": "Naval Investigative Service",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-tfadg8t3xv"
+     ]
+    },
+    {
+     "id": "pollard:org-3kk63smvp7",
+     "caption": "Naval Ocean Surveillance Information Center",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-3kk63smvp7"
+     ]
+    },
+    {
+     "id": "pollard:org-mspn9nxg7s",
+     "caption": "Naval Security and Investigative Command",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-mspn9nxg7s"
+     ]
+    },
+    {
+     "id": "pollard:org-1phejc0ngk",
+     "caption": "Navy Field Operational Intelligence Office",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-1phejc0ngk"
+     ]
+    },
+    {
+     "id": "pollard:org-f8xs95cwk2",
+     "caption": "New York University",
+     "schema": "Organization",
+     "records": [
+      "pollard:org-f8xs95cwk2"
+     ]
+    },
+    {
+     "id": "pollard:org-06228nm4ax",
+     "caption": "Office of Naval Intelligence",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-06228nm4ax"
+     ]
+    },
+    {
+     "id": "pollard:per-9n72sstcw8",
+     "caption": "Rafael Eitan",
+     "schema": "Person",
+     "records": [
+      "pollard:per-9n72sstcw8"
+     ]
+    },
+    {
+     "id": "pollard:per-sjje7bahkq",
+     "caption": "Shamir",
+     "schema": "Person",
+     "records": [
+      "pollard:per-sjje7bahkq"
+     ]
+    },
+    {
+     "id": "pollard:org-ctk7r6bt77",
+     "caption": "Task Force 168",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-ctk7r6bt77"
+     ]
+    }
+   ]
+  }
+ ],
+ "documents": [],
+ "unsourced": []
+}

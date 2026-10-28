@@ -1,0 +1,25 @@
+$ hydra-ctl tree "task force" --format json
+{
+ "tree": [
+  {
+   "name": "Task Force 168 (PublicBody)",
+   "outside": false,
+   "source": null,
+   "titles": [],
+   "children": [
+    {
+     "name": "Jonathan Jay Pollard (Person) — Analyst",
+     "outside": false,
+     "source": null,
+     "titles": [],
+     "children": [],
+     "also": [
+      "also  Anti-Terrorist Alert Center                   Employment   analyst",
+      "also  Naval Ocean Surveillance Information Center   Employment   research analyst",
+      "also  Navy Field Operational Intelligence Office    Employment   analyst"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,4 @@
+$ hydra-ctl stubs
+  name                          links   fields                                      fits           as
+  Lakam                             2   Membership.organization Membership.member   Organization   -
+  Israeli Ministry of Defense       1   Membership.organization                     Organization   -

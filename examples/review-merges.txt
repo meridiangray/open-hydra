@@ -1,0 +1,38 @@
+$ hydra-ctl review --only merges
+review   Pollard case
+
+  kind     rows   questions
+  merges      1           1
+  total       1           1
+
+[1/1] Merge
+  Jonathan Pollard   and   Jonathan Jay Pollard
+
+  pollard:per-k3m8v1qz5t   Person
+     alias       Jay Pollard
+     birthDate   1954
+     name        Jonathan Pollard
+     notes       Navy analyst, arrested in 1985
+
+  pollard:per-w3v2f7z7pe   Person
+     alias       Jonathan Pollard
+     name        Jonathan Jay Pollard
+     sources     pollard:doc-v9g25vcmkx
+     weakAlias   Pollard
+
+  [all fields]   fields in both   conflicting fields      Tab / Shift+Tab
+Which is better?
+  1  one entity
+  2  two entities
+  ? not sure   u undo   q quit
+> 1
+  saved   one entity
+
+  answered   1
+
+  kind         before   now
+  merges            1     0
+  references        1     0
+  placements        2     2
+
+Rebuilt Pollard case: 47 records, 46 entities, 2 open questions

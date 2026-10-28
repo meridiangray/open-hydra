@@ -1,0 +1,4 @@
+$ hydra-ctl hints set thumb icons/crown.svg --position Analyst
+Added hints[2]: {position: Analyst}   {thumb: icons/crown.svg}
+Rebuilt Pollard case: 45 records, 45 entities, 2 open questions
+  reaches   1 node

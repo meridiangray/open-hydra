@@ -1,0 +1,20 @@
+$ hydra-ctl claims summary
+claims summary   Pollard case
+
+  claims        156
+  entities       45
+  collections     2
+  disputed        0
+
+  collection                          claims      schema           claims      property       claims
+  pollard-damage-assessment              146      PublicBody           38      name               25
+  sources/pollard-damage-assessment       10      Person               32      sources            25
+                                                  Employment           30      notes              14
+                                                  Associate            16      alias              13
+                                                  Membership           13      weakAlias           8
+                                                  Document             10      employee            7
+                                                  Representation        5      employer            7
+                                                  Family                4      role                7
+                                                  Organization          3      organization        6
+                                                  Position              3      person              5
+                                                  1 more                2

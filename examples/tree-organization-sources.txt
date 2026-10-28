@@ -1,0 +1,59 @@
+$ hydra-ctl tree organization sources
+Central Intelligence Agency (PublicBody)
+Department of Defense (PublicBody)
+Federal Bureau of Investigation (PublicBody)
+Foreign Denial and Deception Analysis Committee (PublicBody)
+Israel (PublicBody)
+└── Shamir (Person)
+Israeli Air Force (PublicBody)
+└── Aviem Sella (Person)
+      also  New York University   Membership
+Israeli Consulate New York (PublicBody)
+└── Joseph Yagur (Person)
+Israeli Embassy in Washington, D.C. (PublicBody)
+├── Ilan Ravid (Person)
+└── Irit Erb (Person)
+Naval Security and Investigative Command (PublicBody)
+└── Naval Investigative Service (PublicBody)
+    └── Anti-Terrorist Alert Center (PublicBody)
+Navy Field Operational Intelligence Office (PublicBody)
+└── Naval Ocean Surveillance Information Center (PublicBody)
+New York University (Organization)
+Office of Naval Intelligence (PublicBody)
+Task Force 168 (PublicBody)
+└── Jonathan Jay Pollard (Person) — Analyst
+      also  Anti-Terrorist Alert Center                   Employment   analyst
+      also  Naval Ocean Surveillance Information Center   Employment   research analyst
+      also  Navy Field Operational Intelligence Office    Employment   analyst
+
+sources
+
+  entities   22
+
+  entries
+
+  The Jonathan Jay Pollard Espionage Case: A Damage Assessment (Document)   Foreign Denial and Deception Analysis Committee, Director of Central Intelligence   pollard:doc-v9g25vcmkx
+  ├── Anti-Terrorist Alert Center (PublicBody)   sources   pollard:org-8b2fsev104
+  ├── Aviem Sella (Person)   sources   pollard:per-6q0b4zamfq
+  ├── Central Intelligence Agency (PublicBody)   sources   pollard:org-kma9pjvdcc
+  ├── Department of Defense (PublicBody)   sources   pollard:org-jgy4y4pe9x
+  ├── Federal Bureau of Investigation (PublicBody)   sources   pollard:org-qyewkz38cq
+  ├── Foreign Denial and Deception Analysis Committee (PublicBody)   sources   pollard:org-bvzgp9f1t6
+  ├── Ilan Ravid (Person)   sources   pollard:per-jyft1ret42
+  ├── Irit Erb (Person)   sources   pollard:per-89cafr9tn9
+  ├── Israel (PublicBody)   sources   pollard:org-2hzt03a6z9
+  ├── Israeli Air Force (PublicBody)   sources   pollard:org-ez802bp11f
+  ├── Israeli Consulate New York (PublicBody)   sources   pollard:org-6t8fkjn4kr
+  ├── Israeli Embassy in Washington, D.C. (PublicBody)   sources   pollard:org-xfqaxke58a
+  ├── Jonathan Jay Pollard (Person)   sources   pollard:per-w3v2f7z7pe
+  ├── Joseph Yagur (Person)   sources   pollard:per-p8w1q8cajn
+  ├── Naval Investigative Service (PublicBody)   sources   pollard:org-tfadg8t3xv
+  ├── Naval Ocean Surveillance Information Center (PublicBody)   sources   pollard:org-3kk63smvp7
+  ├── Naval Security and Investigative Command (PublicBody)   sources   pollard:org-mspn9nxg7s
+  ├── Navy Field Operational Intelligence Office (PublicBody)   sources   pollard:org-1phejc0ngk
+  ├── New York University (Organization)   sources   pollard:org-f8xs95cwk2
+  ├── Office of Naval Intelligence (PublicBody)   sources   pollard:org-06228nm4ax
+  ├── Shamir (Person)   sources   pollard:per-sjje7bahkq
+  └── Task Force 168 (PublicBody)   sources   pollard:org-ctk7r6bt77
+
+  uncited    0

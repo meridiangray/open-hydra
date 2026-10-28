@@ -1,0 +1,8 @@
+$ hydra-ctl claims "Jonathan Jay Pollard" --prop weakAlias
+entity                 type     id                       claims   collections
+Jonathan Jay Pollard   Person   pollard:per-w3v2f7z7pe        1             1
+
+    field       value     record                   collection
+    weakAlias   Pollard   pollard:per-w3v2f7z7pe   pollard-damage-assessment
+
+  documented in     The Jonathan Jay Pollard Espionage Case: A Damage Assessment

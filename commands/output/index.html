@@ -1,0 +1,4128 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Hydra translates evidence into data points. Guides and command reference for hydra-ctl.">
+      
+      
+      
+        <link rel="canonical" href="https://meridiangray.github.io/open-hydra/commands/output/">
+      
+      
+        <link rel="prev" href="../settings/">
+      
+      
+        <link rel="next" href="../../reference/config-files/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Example output - open-hydra</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#example-output" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="open-hydra" class="md-header__button md-logo" aria-label="open-hydra" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            open-hydra
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Example output
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/meridiangray/open-hydra/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="open-hydra" class="md-nav__button md-logo" aria-label="open-hydra" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    open-hydra
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/meridiangray/open-hydra/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quickstart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/how-hydra-works/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How Hydra works
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/archive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hydra Archives
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/records/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Records and collections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/reviewing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reviewing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/hierarchy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Defining Hierarchies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/hints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Images and badges
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/mcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    hydra-mcp (AI assistants)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Command reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Command reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup and build
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inspect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Review and decide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../share/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pack and export
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example output
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example output
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#init" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        init
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        activate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        import
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        build
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        check
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        details
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tree
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        positions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#claims" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        claims
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-find" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        node find
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sources
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        todo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        review
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#answer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        answer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stubs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        stubs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unpack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        unpack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        export
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        collections
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defaults" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        defaults
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hints
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/config-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Config files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#init" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        init
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        activate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        import
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        build
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        check
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        details
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tree
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        positions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#claims" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        claims
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-find" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        node find
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sources
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        todo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        review
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#answer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        answer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stubs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        stubs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unpack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        unpack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        export
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        collections
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defaults" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        defaults
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hints
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="example-output">Example output<a class="headerlink" href="#example-output" title="Permanent link">&para;</a></h1>
+<p>What each command prints, run on the Pollard demo archive. Every example is also a raw text file in <code>docs/examples/</code>, linked above its output, and all of them are generated by <code>guide/scripts/examples.py</code>.</p>
+<!-- generated by guide/scripts/examples.py: edit the script, not this page -->
+
+<h2 id="init">init<a class="headerlink" href="#init" title="Permanent link">&para;</a></h2>
+<details class="example">
+<summary><code>hydra-ctl init ../htest --name 'Pollard case' --prefix pollard</code></summary>
+<p><a href="../../examples/init.txt">init.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl init ../htest --name "Pollard case" --prefix pollard
+Initialized empty Hydra archive "Pollard case" in ~/cases/htest (id prefix pollard)
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl init ../case-one.hydra</code></summary>
+<p><a href="../../examples/init-pack.txt">init-pack.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl init ../case-one.hydra
+Opened ../case-one.hydra into ~/cases/case-one (140 files)
+</code></pre></div>
+</details>
+<h2 id="activate">activate<a class="headerlink" href="#activate" title="Permanent link">&para;</a></h2>
+<details class="example">
+<summary><code>hydra-ctl activate pollard</code></summary>
+<p><a href="../../examples/activate.txt">activate.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl activate pollard
+Activated ~/cases/pollard
+
+$ hydra-ctl activate
+~/cases/pollard
+
+$ hydra-ctl deactivate
+Deactivated ~/cases/pollard
+</code></pre></div>
+</details>
+<h2 id="import">import<a class="headerlink" href="#import" title="Permanent link">&para;</a></h2>
+<details class="example">
+<summary><code>hydra-ctl import ../opensanctions.ftm.jsonl --format ftm</code></summary>
+<p><a href="../../examples/import-ftm.txt">import-ftm.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl import ../opensanctions.ftm.jsonl --format ftm
+Imported opensanctions.ftm.jsonl as collection opensanctions: 45 records
+Rebuilt Pollard case: 45 records, 45 entities, 2 open questions, 1 error, 1 warning
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl import ../case.hydra-ftm.jsonl --format hydra-ftm --name pollard</code></summary>
+<p><a href="../../examples/import-hydra-ftm.txt">import-hydra-ftm.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl import ../case.hydra-ftm.jsonl --format hydra-ftm --name pollard
+Imported case.hydra-ftm.jsonl as collection pollard: 45 records
+Rebuilt Pollard case: 45 records, 45 entities, 2 open questions, 1 error, 1 warning
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl import ../case-graph --format csv</code></summary>
+<p><a href="../../examples/import-csv.txt">import-csv.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl import ../case-graph --format csv
+Imported case-graph as collection case: 45 records, 9 derived edges left out
+Rebuilt Pollard case: 45 records, 45 entities, 2 open questions, 1 error, 1 warning
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl import ../case.graphml --format graphml</code></summary>
+<p><a href="../../examples/import-graphml.txt">import-graphml.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl import ../case.graphml --format graphml
+Imported case.graphml as collection case: 45 records, 9 derived edges left out
+Rebuilt Pollard case: 45 records, 45 entities, 2 open questions, 1 error, 1 warning
+</code></pre></div>
+</details>
+<h2 id="build">build<a class="headerlink" href="#build" title="Permanent link">&para;</a></h2>
+<details class="example">
+<summary><code>hydra-ctl build</code></summary>
+<p><a href="../../examples/build.txt">build.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl build
+Built Pollard case: 45 records, 45 entities, 2 open questions
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl build --force</code></summary>
+<p><a href="../../examples/build-force.txt">build-force.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl build --force
+Built Pollard case: 45 records, 45 entities, 2 open questions
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl build --force --verbose</code></summary>
+<p><a href="../../examples/build-verbose.txt">build-verbose.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl build --force --verbose
+Built Pollard case: 45 records, 45 entities, 2 open questions
+records: 45
+claims: 156
+reads:
+  generic:
+    file: .hydra/parsed/generic.json
+    nodes: 24
+    roots: 15
+    positioned: 0
+  declared:
+    file: .hydra/parsed/declared.json
+    nodes: 24
+    roots: 15
+    positioned: 1
+ledger:
+  placements:
+    auto: 7
+    proposed: 2
+issue_counts:
+  error: 0
+  warning: 0
+  info: 3
+</code></pre></div>
+</details>
+<h2 id="check">check<a class="headerlink" href="#check" title="Permanent link">&para;</a></h2>
+<details class="example">
+<summary><code>hydra-ctl check</code></summary>
+<p><a href="../../examples/check.txt">check.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl check
+  code                        level   found by   count   file
+  direction.both-ends-above   info    check          1   .hydra/schema/direction.yaml
+
+  code                        where       message
+  direction.both-ends-above   Occupancy   both ends (holder, post) are in `above`; the target, post, is the parent
+
+             check   old build
+  errors         0           0
+  warnings       0           0
+  info           1           3
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl check --format json</code></summary>
+<p><a href="../../examples/check-json.txt">check-json.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl check --format json
+[
+ {
+  "level": "info",
+  "code": "direction.both-ends-above",
+  "file": ".hydra/schema/direction.yaml",
+  "where": "Occupancy",
+  "message": "both ends (holder, post) are in `above`; the target, post, is the parent"
+ }
+]
+</code></pre></div>
+</details>
+<h2 id="details">details<a class="headerlink" href="#details" title="Permanent link">&para;</a></h2>
+<details class="example">
+<summary><code>hydra-ctl details</code></summary>
+<p><a href="../../examples/details.txt">details.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl details
+Pollard case
+built   2026-01-01 00:00:00 UTC
+
+records    45
+entities   45
+claims     156
+changed    .hydra/resources/.gitkeep
+changed    .hydra/resources/icons/LICENSE-lucide.txt
+changed    .hydra/resources/icons/briefcase.svg
+changed    124 more
+
+collection                           prefix   records   claims   in others   citations
+pollard-damage-assessment           pollard        44      146           0          25
+sources/pollard-damage-assessment   pollard         1       10           0           0
+
+type         entities   records
+PublicBody         15        15
+Person              8         8
+Employment          7         7
+Membership          5         5
+Associate           4         4
+Document            1         1
+Family              1         1
+Occupancy           1         1
+3 more              3         3
+
+review       automatic   open
+placements           7      2
+
+tree         nodes   roots   positioned
+declared        24      15            1
+generic         24      15            0
+
+issues       count
+errors           0
+warnings         0
+info             3
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl details --format json</code></summary>
+<p><a href="../../examples/details-json.txt">details-json.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl details --format json
+{
+ "archive": "~/cases//pollard",
+ "name": "Pollard case",
+ "subject": null,
+ "built": "2026-01-01T00:00:00+00:00",
+ "collections": {
+  "pollard-damage-assessment": {
+   "prefix": "pollard",
+   "records": 44,
+   "claims": 146,
+   "in_others": 0,
+   "citations": 25
+  },
+  "sources/pollard-damage-assessment": {
+   "prefix": "pollard",
+   "records": 1,
+   "claims": 10,
+   "in_others": 0,
+   "citations": 0
+  }
+ },
+ "records": 45,
+ "entities": 45,
+ "claims": 156,
+ "schemas": {
+  "PublicBody": {
+   "records": 15,
+   "entities": 15
+  },
+  "Person": {
+   "records": 8,
+   "entities": 8
+  },
+  "Employment": {
+   "records": 7,
+   "entities": 7
+  },
+  "Membership": {
+   "records": 5,
+   "entities": 5
+  },
+  "Associate": {
+   "records": 4,
+   "entities": 4
+  },
+  "Document": {
+   "records": 1,
+   "entities": 1
+  },
+  "Family": {
+   "records": 1,
+   "entities": 1
+  },
+  "Occupancy": {
+   "records": 1,
+   "entities": 1
+  },
+  "Organization": {
+   "records": 1,
+   "entities": 1
+  },
+  "Position": {
+   "records": 1,
+   "entities": 1
+  },
+  "Representation": {
+   "records": 1,
+   "entities": 1
+  }
+ },
+ "reads": {
+  "generic": {
+   "nodes": 24,
+   "roots": 15,
+   "positioned": 0
+  },
+  "declared": {
+   "nodes": 24,
+   "roots": 15,
+   "positioned": 1
+  }
+ },
+ "open": {
+  "placements": 2
+ },
+ "automatic": {
+  "placements": 7
+ },
+ "issues": {
+  "error": 0,
+  "warning": 0,
+  "info": 3
+ },
+ "newer_than_build": [
+  ".hydra/resources/.gitkeep",
+  ".hydra/resources/icons/LICENSE-lucide.txt",
+  ".hydra/resources/icons/briefcase.svg",
+  ".hydra/resources/icons/crown.svg",
+  ".hydra/resources/icons/public-body.svg",
+  ".hydra/resources/icons/star-2.svg",
+  ".hydra/review/verdicts.yaml",
+  ".hydra/rules/defaults/positions.yaml",
+  ".hydra/rules/hints.yaml",
+  ".hydra/rules/positions.yaml",
+  ".hydra/schema/direction.yaml",
+  ".hydra/schema/extensions/artifact.yaml",
+  ".hydra/schema/extensions/collate.yaml",
+  ".hydra/schema/ftm/config/common.yaml",
+  ".hydra/schema/ftm/config/findfields.yaml",
+  ".hydra/schema/ftm/followthemoney/Address.yaml",
+  ".hydra/schema/ftm/followthemoney/Airplane.yaml",
+  ".hydra/schema/ftm/followthemoney/Analyzable.yaml",
+  ".hydra/schema/ftm/followthemoney/Article.yaml",
+  ".hydra/schema/ftm/followthemoney/Assessment.yaml",
+  ".hydra/schema/ftm/followthemoney/Asset.yaml",
+  ".hydra/schema/ftm/followthemoney/Associate.yaml",
+  ".hydra/schema/ftm/followthemoney/Audio.yaml",
+  ".hydra/schema/ftm/followthemoney/BankAccount.yaml",
+  ".hydra/schema/ftm/followthemoney/Call.yaml",
+  ".hydra/schema/ftm/followthemoney/CallForTenders.yaml",
+  ".hydra/schema/ftm/followthemoney/Company.yaml",
+  ".hydra/schema/ftm/followthemoney/Contract.yaml",
+  ".hydra/schema/ftm/followthemoney/ContractAward.yaml",
+  ".hydra/schema/ftm/followthemoney/CourtCase.yaml",
+  ".hydra/schema/ftm/followthemoney/CourtCaseParty.yaml",
+  ".hydra/schema/ftm/followthemoney/CryptoWallet.yaml",
+  ".hydra/schema/ftm/followthemoney/Debt.yaml",
+  ".hydra/schema/ftm/followthemoney/Directorship.yaml",
+  ".hydra/schema/ftm/followthemoney/Document.yaml",
+  ".hydra/schema/ftm/followthemoney/Documentation.yml",
+  ".hydra/schema/ftm/followthemoney/EconomicActivity.yaml",
+  ".hydra/schema/ftm/followthemoney/Email.yaml",
+  ".hydra/schema/ftm/followthemoney/Employment.yaml",
+  ".hydra/schema/ftm/followthemoney/Event.yaml",
+  ".hydra/schema/ftm/followthemoney/Family.yaml",
+  ".hydra/schema/ftm/followthemoney/Folder.yaml",
+  ".hydra/schema/ftm/followthemoney/HyperText.yaml",
+  ".hydra/schema/ftm/followthemoney/Identification.yaml",
+  ".hydra/schema/ftm/followthemoney/Image.yaml",
+  ".hydra/schema/ftm/followthemoney/Interest.yaml",
+  ".hydra/schema/ftm/followthemoney/Interval.yaml",
+  ".hydra/schema/ftm/followthemoney/LegalEntity.yaml",
+  ".hydra/schema/ftm/followthemoney/License.yaml",
+  ".hydra/schema/ftm/followthemoney/Membership.yaml",
+  ".hydra/schema/ftm/followthemoney/Mention.yaml",
+  ".hydra/schema/ftm/followthemoney/Message.yaml",
+  ".hydra/schema/ftm/followthemoney/Note.yaml",
+  ".hydra/schema/ftm/followthemoney/Occupancy.yaml",
+  ".hydra/schema/ftm/followthemoney/Organization.yaml",
+  ".hydra/schema/ftm/followthemoney/Ownership.yaml",
+  ".hydra/schema/ftm/followthemoney/Package.yaml",
+  ".hydra/schema/ftm/followthemoney/Page.yaml",
+  ".hydra/schema/ftm/followthemoney/Pages.yaml",
+  ".hydra/schema/ftm/followthemoney/Passport.yaml",
+  ".hydra/schema/ftm/followthemoney/Payment.yaml",
+  ".hydra/schema/ftm/followthemoney/Person.yaml",
+  ".hydra/schema/ftm/followthemoney/PlainText.yaml",
+  ".hydra/schema/ftm/followthemoney/Position.yaml",
+  ".hydra/schema/ftm/followthemoney/Post.yaml",
+  ".hydra/schema/ftm/followthemoney/Project.yaml",
+  ".hydra/schema/ftm/followthemoney/ProjectParticipant.yaml",
+  ".hydra/schema/ftm/followthemoney/PublicBody.yaml",
+  ".hydra/schema/ftm/followthemoney/RealEstate.yaml",
+  ".hydra/schema/ftm/followthemoney/Representation.yaml",
+  ".hydra/schema/ftm/followthemoney/Sanction.yaml",
+  ".hydra/schema/ftm/followthemoney/Security.yaml",
+  ".hydra/schema/ftm/followthemoney/Similar.yaml",
+  ".hydra/schema/ftm/followthemoney/Succession.yaml",
+  ".hydra/schema/ftm/followthemoney/Table.yaml",
+  ".hydra/schema/ftm/followthemoney/TaxRoll.yaml",
+  ".hydra/schema/ftm/followthemoney/Thing.yaml",
+  ".hydra/schema/ftm/followthemoney/Trip.yaml",
+  ".hydra/schema/ftm/followthemoney/UnknownLink.yaml",
+  ".hydra/schema/ftm/followthemoney/UserAccount.yaml",
+  ".hydra/schema/ftm/followthemoney/Value.yaml",
+  ".hydra/schema/ftm/followthemoney/Vehicle.yaml",
+  ".hydra/schema/ftm/followthemoney/Vessel.yaml",
+  ".hydra/schema/ftm/followthemoney/Video.yaml",
+  ".hydra/schema/ftm/followthemoney/Workbook.yaml",
+  ".hydra/schema/params/Address.param.yaml",
+  ".hydra/schema/params/Associate.param.yaml",
+  ".hydra/schema/params/BankAccount.param.yaml",
+  ".hydra/schema/params/Company.param.yaml",
+  ".hydra/schema/params/Contract.param.yaml",
+  ".hydra/schema/params/ContractAward.param.yaml",
+  ".hydra/schema/params/CourtCase.param.yaml",
+  ".hydra/schema/params/CourtCaseParty.param.yaml",
+  ".hydra/schema/params/CryptoWallet.param.yaml",
+  ".hydra/schema/params/Directorship.param.yaml",
+  ".hydra/schema/params/Document.param.yaml",
+  ".hydra/schema/params/Documentation.param.yaml",
+  ".hydra/schema/params/Employment.param.yaml",
+  ".hydra/schema/params/Event.param.yaml",
+  ".hydra/schema/params/Family.param.yaml",
+  ".hydra/schema/params/Identification.param.yaml",
+  ".hydra/schema/params/LegalEntity.param.yaml",
+  ".hydra/schema/params/Membership.param.yaml",
+  ".hydra/schema/params/Occupancy.param.yaml",
+  ".hydra/schema/params/Organization.param.yaml",
+  ".hydra/schema/params/Ownership.param.yaml",
+  ".hydra/schema/params/Page.param.yaml",
+  ".hydra/schema/params/Pages.param.yaml",
+  ".hydra/schema/params/Payment.param.yaml",
+  ".hydra/schema/params/Person.param.yaml",
+  ".hydra/schema/params/Position.param.yaml",
+  ".hydra/schema/params/Post.param.yaml",
+  ".hydra/schema/params/Project.param.yaml",
+  ".hydra/schema/params/ProjectParticipant.param.yaml",
+  ".hydra/schema/params/PublicBody.param.yaml",
+  ".hydra/schema/params/RealEstate.param.yaml",
+  ".hydra/schema/params/Representation.param.yaml",
+  ".hydra/schema/params/Sanction.param.yaml",
+  ".hydra/schema/params/Similar.param.yaml",
+  ".hydra/schema/params/Succession.param.yaml",
+  ".hydra/schema/params/Trip.param.yaml",
+  ".hydra/schema/params/Vehicle.param.yaml",
+  ".hydra/sources/entries/.gitkeep",
+  ".hydra/sources/entries/pollard-damage-assessment.json",
+  "collections/.gitkeep",
+  "collections/pollard-damage-assessment.json",
+  "hydra.yaml"
+ ]
+}
+</code></pre></div>
+</details>
+<h2 id="tree">tree<a class="headerlink" href="#tree" title="Permanent link">&para;</a></h2>
+<details class="example">
+<summary><code>hydra-ctl tree</code></summary>
+<p><a href="../../examples/tree.txt">tree.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl tree
+Anne Henderson-Pollard (Person)
+Central Intelligence Agency (PublicBody)
+Department of Defense (PublicBody)
+Federal Bureau of Investigation (PublicBody)
+Foreign Denial and Deception Analysis Committee (PublicBody)
+Israel (PublicBody)
+└── Shamir (Person)
+Israeli Air Force (PublicBody)
+└── Aviem Sella (Person)
+      also  New York University   Membership
+Israeli Consulate New York (PublicBody)
+└── Joseph Yagur (Person)
+Israeli Embassy in Washington, D.C. (PublicBody)
+├── Ilan Ravid (Person)
+└── Irit Erb (Person)
+Naval Security and Investigative Command (PublicBody)
+└── Naval Investigative Service (PublicBody)
+    └── Anti-Terrorist Alert Center (PublicBody)
+Navy Field Operational Intelligence Office (PublicBody)
+└── Naval Ocean Surveillance Information Center (PublicBody)
+New York University (Organization)
+Office of Naval Intelligence (PublicBody)
+Rafael Eitan (Person)
+Task Force 168 (PublicBody)
+└── Jonathan Jay Pollard (Person) — Analyst
+      also  Anti-Terrorist Alert Center                   Employment   analyst
+      also  Naval Ocean Surveillance Information Center   Employment   research analyst
+      also  Navy Field Operational Intelligence Office    Employment   analyst
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl tree person</code></summary>
+<p><a href="../../examples/tree-person.txt">tree-person.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl tree person
+Anne Henderson-Pollard (Person)
+Shamir (Person)
+Aviem Sella (Person)
+  also  New York University   Membership
+Joseph Yagur (Person)
+Ilan Ravid (Person)
+Irit Erb (Person)
+Rafael Eitan (Person)
+Jonathan Jay Pollard (Person) — Analyst
+  also  Anti-Terrorist Alert Center                   Employment   analyst
+  also  Naval Ocean Surveillance Information Center   Employment   research analyst
+  also  Navy Field Operational Intelligence Office    Employment   analyst
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl tree 'task force'</code></summary>
+<p><a href="../../examples/tree-task-force.txt">tree-task-force.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl tree "task force"
+Task Force 168 (PublicBody)
+└── Jonathan Jay Pollard (Person) — Analyst
+      also  Anti-Terrorist Alert Center                   Employment   analyst
+      also  Naval Ocean Surveillance Information Center   Employment   research analyst
+      also  Navy Field Operational Intelligence Office    Employment   analyst
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl tree --format mermaid</code></summary>
+<p><a href="../../examples/tree-all-mermaid.txt">tree-all-mermaid.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl tree --format mermaid
+flowchart TD
+    %% record tree — pollard (GENERATED)
+    per_jbcv7nwbwb["Anne Henderson-Pollard"]
+    org_2hzt03a6z9["Israel"]
+    per_sjje7bahkq["Shamir&lt;br/&gt;&lt;i&gt;Prime Minister&lt;/i&gt;"]
+    org_ez802bp11f["Israeli Air Force"]
+    per_6q0b4zamfq["Aviem Sella&lt;br/&gt;&lt;i&gt;fighter pilot&lt;/i&gt;"]
+    org_6t8fkjn4kr["Israeli Consulate New York"]
+    per_p8w1q8cajn["Joseph Yagur&lt;br/&gt;&lt;i&gt;Counselor for Scientific Affairs&lt;/i&gt;"]
+    org_xfqaxke58a["Israeli Embassy in Washington, D.C."]
+    per_jyft1ret42["Ilan Ravid&lt;br/&gt;&lt;i&gt;Attache for Scientific Affairs&lt;/i&gt;"]
+    per_89cafr9tn9["Irit Erb&lt;br/&gt;&lt;i&gt;secretary&lt;/i&gt;"]
+    org_mspn9nxg7s["Naval Security and Investigative Command"]
+    org_tfadg8t3xv["Naval Investigative Service"]
+    org_8b2fsev104["Anti-Terrorist Alert Center"]
+    org_1phejc0ngk["Navy Field Operational Intelligence Office"]
+    org_3kk63smvp7["Naval Ocean Surveillance Information Center"]
+    org_f8xs95cwk2["New York University"]
+    per_9n72sstcw8["Rafael Eitan&lt;br/&gt;&lt;i&gt;senior career official in Israeli intelligence&lt;/i&gt;"]
+    org_ctk7r6bt77["Task Force 168"]
+    per_w3v2f7z7pe["Jonathan Jay Pollard&lt;br/&gt;&lt;i&gt;Analyst&lt;/i&gt;"]
+    org_2hzt03a6z9 --&gt; per_sjje7bahkq
+    org_ez802bp11f --&gt;|"fighter pilot"| per_6q0b4zamfq
+    org_6t8fkjn4kr --&gt;|"Counselor for Scientific Affairs"| per_p8w1q8cajn
+    org_xfqaxke58a --&gt;|"Attache for Scientific Affairs"| per_jyft1ret42
+    org_xfqaxke58a --&gt;|"secretary"| per_89cafr9tn9
+    org_mspn9nxg7s --&gt; org_tfadg8t3xv
+    org_tfadg8t3xv --&gt; org_8b2fsev104
+    org_1phejc0ngk --&gt; org_3kk63smvp7
+    org_ctk7r6bt77 --&gt; per_w3v2f7z7pe
+    org_f8xs95cwk2 -.-&gt; per_6q0b4zamfq
+    org_8b2fsev104 -.-&gt;|"analyst"| per_w3v2f7z7pe
+    org_3kk63smvp7 -.-&gt;|"research analyst"| per_w3v2f7z7pe
+    org_1phejc0ngk -.-&gt;|"analyst"| per_w3v2f7z7pe
+    per_w3v2f7z7pe -.-|"wife"| per_jbcv7nwbwb
+    per_w3v2f7z7pe -.-|"first handler"| per_6q0b4zamfq
+    per_w3v2f7z7pe -.-|"handler"| per_89cafr9tn9
+    per_w3v2f7z7pe -.- org_2hzt03a6z9
+    per_w3v2f7z7pe -.-|"primary, direct handler"| per_p8w1q8cajn
+    per_w3v2f7z7pe -.-|"senior Israeli official in charge of the case"| per_9n72sstcw8
+    %% no links: Central Intelligence Agency, Department of Defense, Federal Bureau of Investigation, Foreign Denial and Deception Analysis Committee, Office of Naval Intelligence
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl tree --format mermaid --vertical</code></summary>
+<p><a href="../../examples/tree-all-mermaid-vertical.txt">tree-all-mermaid-vertical.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl tree --format mermaid --vertical
+flowchart TD
+    %% record tree — pollard (GENERATED)
+    org_2hzt03a6z9["Israel"]
+    per_sjje7bahkq["Shamir&lt;br/&gt;&lt;i&gt;Prime Minister&lt;/i&gt;"]
+    org_ez802bp11f["Israeli Air Force"]
+    per_6q0b4zamfq["Aviem Sella&lt;br/&gt;&lt;i&gt;fighter pilot&lt;/i&gt;"]
+    org_6t8fkjn4kr["Israeli Consulate New York"]
+    per_p8w1q8cajn["Joseph Yagur&lt;br/&gt;&lt;i&gt;Counselor for Scientific Affairs&lt;/i&gt;"]
+    org_xfqaxke58a["Israeli Embassy in Washington, D.C."]
+    per_jyft1ret42["Ilan Ravid&lt;br/&gt;&lt;i&gt;Attache for Scientific Affairs&lt;/i&gt;"]
+    per_89cafr9tn9["Irit Erb&lt;br/&gt;&lt;i&gt;secretary&lt;/i&gt;"]
+    org_mspn9nxg7s["Naval Security and Investigative Command"]
+    org_tfadg8t3xv["Naval Investigative Service"]
+    org_8b2fsev104["Anti-Terrorist Alert Center"]
+    org_1phejc0ngk["Navy Field Operational Intelligence Office"]
+    org_3kk63smvp7["Naval Ocean Surveillance Information Center"]
+    org_ctk7r6bt77["Task Force 168"]
+    per_w3v2f7z7pe["Jonathan Jay Pollard&lt;br/&gt;&lt;i&gt;Analyst&lt;/i&gt;"]
+    org_2hzt03a6z9 --&gt; per_sjje7bahkq
+    org_ez802bp11f --&gt;|"fighter pilot"| per_6q0b4zamfq
+    org_6t8fkjn4kr --&gt;|"Counselor for Scientific Affairs"| per_p8w1q8cajn
+    org_xfqaxke58a --&gt;|"Attache for Scientific Affairs"| per_jyft1ret42
+    org_xfqaxke58a --&gt;|"secretary"| per_89cafr9tn9
+    org_mspn9nxg7s --&gt; org_tfadg8t3xv
+    org_tfadg8t3xv --&gt; org_8b2fsev104
+    org_1phejc0ngk --&gt; org_3kk63smvp7
+    org_ctk7r6bt77 --&gt; per_w3v2f7z7pe
+    %% no links: Anne Henderson-Pollard, Central Intelligence Agency, Department of Defense, Federal Bureau of Investigation, Foreign Denial and Deception Analysis Committee, New York University, Office of Naval Intelligence, Rafael Eitan
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl tree --format mermaid --lateral</code></summary>
+<p><a href="../../examples/tree-all-mermaid-lateral.txt">tree-all-mermaid-lateral.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl tree --format mermaid --lateral
+flowchart TD
+    %% record tree — pollard (GENERATED)
+    per_jbcv7nwbwb["Anne Henderson-Pollard"]
+    org_2hzt03a6z9["Israel"]
+    per_6q0b4zamfq["Aviem Sella&lt;br/&gt;&lt;i&gt;fighter pilot&lt;/i&gt;"]
+    per_p8w1q8cajn["Joseph Yagur&lt;br/&gt;&lt;i&gt;Counselor for Scientific Affairs&lt;/i&gt;"]
+    per_89cafr9tn9["Irit Erb&lt;br/&gt;&lt;i&gt;secretary&lt;/i&gt;"]
+    org_8b2fsev104["Anti-Terrorist Alert Center"]
+    org_1phejc0ngk["Navy Field Operational Intelligence Office"]
+    org_3kk63smvp7["Naval Ocean Surveillance Information Center"]
+    org_f8xs95cwk2["New York University"]
+    per_9n72sstcw8["Rafael Eitan&lt;br/&gt;&lt;i&gt;senior career official in Israeli intelligence&lt;/i&gt;"]
+    per_w3v2f7z7pe["Jonathan Jay Pollard&lt;br/&gt;&lt;i&gt;Analyst&lt;/i&gt;"]
+    org_f8xs95cwk2 -.-&gt; per_6q0b4zamfq
+    org_8b2fsev104 -.-&gt;|"analyst"| per_w3v2f7z7pe
+    org_3kk63smvp7 -.-&gt;|"research analyst"| per_w3v2f7z7pe
+    org_1phejc0ngk -.-&gt;|"analyst"| per_w3v2f7z7pe
+    per_w3v2f7z7pe -.-|"wife"| per_jbcv7nwbwb
+    per_w3v2f7z7pe -.-|"first handler"| per_6q0b4zamfq
+    per_w3v2f7z7pe -.-|"handler"| per_89cafr9tn9
+    per_w3v2f7z7pe -.- org_2hzt03a6z9
+    per_w3v2f7z7pe -.-|"primary, direct handler"| per_p8w1q8cajn
+    per_w3v2f7z7pe -.-|"senior Israeli official in charge of the case"| per_9n72sstcw8
+    %% no links: Central Intelligence Agency, Department of Defense, Federal Bureau of Investigation, Foreign Denial and Deception Analysis Committee, Shamir, Israeli Air Force, Israeli Consulate New York, Israeli Embassy in Washington, D.C., Ilan Ravid, Naval Security and Investigative Command, Naval Investigative Service, Office of Naval Intelligence, Task Force 168
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl tree --format mermaid --direction LR</code></summary>
+<p><a href="../../examples/tree-all-mermaid-lr.txt">tree-all-mermaid-lr.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl tree --format mermaid --direction LR
+flowchart LR
+    %% record tree — pollard (GENERATED)
+    per_jbcv7nwbwb["Anne Henderson-Pollard"]
+    org_2hzt03a6z9["Israel"]
+    per_sjje7bahkq["Shamir&lt;br/&gt;&lt;i&gt;Prime Minister&lt;/i&gt;"]
+    org_ez802bp11f["Israeli Air Force"]
+    per_6q0b4zamfq["Aviem Sella&lt;br/&gt;&lt;i&gt;fighter pilot&lt;/i&gt;"]
+    org_6t8fkjn4kr["Israeli Consulate New York"]
+    per_p8w1q8cajn["Joseph Yagur&lt;br/&gt;&lt;i&gt;Counselor for Scientific Affairs&lt;/i&gt;"]
+    org_xfqaxke58a["Israeli Embassy in Washington, D.C."]
+    per_jyft1ret42["Ilan Ravid&lt;br/&gt;&lt;i&gt;Attache for Scientific Affairs&lt;/i&gt;"]
+    per_89cafr9tn9["Irit Erb&lt;br/&gt;&lt;i&gt;secretary&lt;/i&gt;"]
+    org_mspn9nxg7s["Naval Security and Investigative Command"]
+    org_tfadg8t3xv["Naval Investigative Service"]
+    org_8b2fsev104["Anti-Terrorist Alert Center"]
+    org_1phejc0ngk["Navy Field Operational Intelligence Office"]
+    org_3kk63smvp7["Naval Ocean Surveillance Information Center"]
+    org_f8xs95cwk2["New York University"]
+    per_9n72sstcw8["Rafael Eitan&lt;br/&gt;&lt;i&gt;senior career official in Israeli intelligence&lt;/i&gt;"]
+    org_ctk7r6bt77["Task Force 168"]
+    per_w3v2f7z7pe["Jonathan Jay Pollard&lt;br/&gt;&lt;i&gt;Analyst&lt;/i&gt;"]
+    org_2hzt03a6z9 --&gt; per_sjje7bahkq
+    org_ez802bp11f --&gt;|"fighter pilot"| per_6q0b4zamfq
+    org_6t8fkjn4kr --&gt;|"Counselor for Scientific Affairs"| per_p8w1q8cajn
+    org_xfqaxke58a --&gt;|"Attache for Scientific Affairs"| per_jyft1ret42
+    org_xfqaxke58a --&gt;|"secretary"| per_89cafr9tn9
+    org_mspn9nxg7s --&gt; org_tfadg8t3xv
+    org_tfadg8t3xv --&gt; org_8b2fsev104
+    org_1phejc0ngk --&gt; org_3kk63smvp7
+    org_ctk7r6bt77 --&gt; per_w3v2f7z7pe
+    org_f8xs95cwk2 -.-&gt; per_6q0b4zamfq
+    org_8b2fsev104 -.-&gt;|"analyst"| per_w3v2f7z7pe
+    org_3kk63smvp7 -.-&gt;|"research analyst"| per_w3v2f7z7pe
+    org_1phejc0ngk -.-&gt;|"analyst"| per_w3v2f7z7pe
+    per_w3v2f7z7pe -.-|"wife"| per_jbcv7nwbwb
+    per_w3v2f7z7pe -.-|"first handler"| per_6q0b4zamfq
+    per_w3v2f7z7pe -.-|"handler"| per_89cafr9tn9
+    per_w3v2f7z7pe -.- org_2hzt03a6z9
+    per_w3v2f7z7pe -.-|"primary, direct handler"| per_p8w1q8cajn
+    per_w3v2f7z7pe -.-|"senior Israeli official in charge of the case"| per_9n72sstcw8
+    %% no links: Central Intelligence Agency, Department of Defense, Federal Bureau of Investigation, Foreign Denial and Deception Analysis Committee, Office of Naval Intelligence
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl tree --format mermaid --lateral --singletons</code></summary>
+<p><a href="../../examples/tree-all-mermaid-singletons.txt">tree-all-mermaid-singletons.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl tree --format mermaid --lateral --singletons
+flowchart TD
+    %% record tree — pollard (GENERATED)
+    per_jbcv7nwbwb["Anne Henderson-Pollard"]
+    org_kma9pjvdcc["Central Intelligence Agency"]
+    org_jgy4y4pe9x["Department of Defense"]
+    org_qyewkz38cq["Federal Bureau of Investigation"]
+    org_bvzgp9f1t6["Foreign Denial and Deception Analysis Committee"]
+    org_2hzt03a6z9["Israel"]
+    per_sjje7bahkq["Shamir&lt;br/&gt;&lt;i&gt;Prime Minister&lt;/i&gt;"]
+    org_ez802bp11f["Israeli Air Force"]
+    per_6q0b4zamfq["Aviem Sella&lt;br/&gt;&lt;i&gt;fighter pilot&lt;/i&gt;"]
+    org_6t8fkjn4kr["Israeli Consulate New York"]
+    per_p8w1q8cajn["Joseph Yagur&lt;br/&gt;&lt;i&gt;Counselor for Scientific Affairs&lt;/i&gt;"]
+    org_xfqaxke58a["Israeli Embassy in Washington, D.C."]
+    per_jyft1ret42["Ilan Ravid&lt;br/&gt;&lt;i&gt;Attache for Scientific Affairs&lt;/i&gt;"]
+    per_89cafr9tn9["Irit Erb&lt;br/&gt;&lt;i&gt;secretary&lt;/i&gt;"]
+    org_mspn9nxg7s["Naval Security and Investigative Command"]
+    org_tfadg8t3xv["Naval Investigative Service"]
+    org_8b2fsev104["Anti-Terrorist Alert Center"]
+    org_1phejc0ngk["Navy Field Operational Intelligence Office"]
+    org_3kk63smvp7["Naval Ocean Surveillance Information Center"]
+    org_f8xs95cwk2["New York University"]
+    org_06228nm4ax["Office of Naval Intelligence"]
+    per_9n72sstcw8["Rafael Eitan&lt;br/&gt;&lt;i&gt;senior career official in Israeli intelligence&lt;/i&gt;"]
+    org_ctk7r6bt77["Task Force 168"]
+    per_w3v2f7z7pe["Jonathan Jay Pollard&lt;br/&gt;&lt;i&gt;Analyst&lt;/i&gt;"]
+    org_f8xs95cwk2 -.-&gt; per_6q0b4zamfq
+    org_8b2fsev104 -.-&gt;|"analyst"| per_w3v2f7z7pe
+    org_3kk63smvp7 -.-&gt;|"research analyst"| per_w3v2f7z7pe
+    org_1phejc0ngk -.-&gt;|"analyst"| per_w3v2f7z7pe
+    per_w3v2f7z7pe -.-|"wife"| per_jbcv7nwbwb
+    per_w3v2f7z7pe -.-|"first handler"| per_6q0b4zamfq
+    per_w3v2f7z7pe -.-|"handler"| per_89cafr9tn9
+    per_w3v2f7z7pe -.- org_2hzt03a6z9
+    per_w3v2f7z7pe -.-|"primary, direct handler"| per_p8w1q8cajn
+    per_w3v2f7z7pe -.-|"senior Israeli official in charge of the case"| per_9n72sstcw8
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl tree family</code></summary>
+<p><a href="../../examples/tree-family.txt">tree-family.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl tree family
+  only     links   drawn   no link
+  family       0       2        22
+
+Anne Henderson-Pollard (Person)
+Jonathan Jay Pollard (Person)
+  also  Anne Henderson-Pollard   Family   wife   sideways
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl tree family employment</code></summary>
+<p><a href="../../examples/tree-family-employment.txt">tree-family-employment.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl tree family employment
+  only                links   drawn   no link
+  family employment       5      12        12
+
+Anne Henderson-Pollard (Person)
+Navy Field Operational Intelligence Office (PublicBody)
+Anti-Terrorist Alert Center (PublicBody)
+└── Jonathan Jay Pollard (Person)   Employment   analyst
+      also  Naval Ocean Surveillance Information Center   Employment   research analyst
+      also  Navy Field Operational Intelligence Office    Employment   analyst
+      also  Anne Henderson-Pollard                        Family       wife               sideways
+Naval Ocean Surveillance Information Center (PublicBody)
+
+Israeli Air Force (PublicBody)
+└── Aviem Sella (Person)   Employment   fighter pilot
+
+Israeli Consulate New York (PublicBody)
+└── Joseph Yagur (Person)   Employment   Counselor for Scientific Affairs
+
+Israeli Embassy in Washington, D.C. (PublicBody)
+├── Ilan Ravid (Person)   Employment   Attache for Scientific Affairs
+└── Irit Erb (Person)   Employment   secretary
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl tree organization sources</code></summary>
+<p><a href="../../examples/tree-organization-sources.txt">tree-organization-sources.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl tree organization sources
+Central Intelligence Agency (PublicBody)
+Department of Defense (PublicBody)
+Federal Bureau of Investigation (PublicBody)
+Foreign Denial and Deception Analysis Committee (PublicBody)
+Israel (PublicBody)
+└── Shamir (Person)
+Israeli Air Force (PublicBody)
+└── Aviem Sella (Person)
+      also  New York University   Membership
+Israeli Consulate New York (PublicBody)
+└── Joseph Yagur (Person)
+Israeli Embassy in Washington, D.C. (PublicBody)
+├── Ilan Ravid (Person)
+└── Irit Erb (Person)
+Naval Security and Investigative Command (PublicBody)
+└── Naval Investigative Service (PublicBody)
+    └── Anti-Terrorist Alert Center (PublicBody)
+Navy Field Operational Intelligence Office (PublicBody)
+└── Naval Ocean Surveillance Information Center (PublicBody)
+New York University (Organization)
+Office of Naval Intelligence (PublicBody)
+Task Force 168 (PublicBody)
+└── Jonathan Jay Pollard (Person) — Analyst
+      also  Anti-Terrorist Alert Center                   Employment   analyst
+      also  Naval Ocean Surveillance Information Center   Employment   research analyst
+      also  Navy Field Operational Intelligence Office    Employment   analyst
+
+sources
+
+  entities   22
+
+  entries
+
+  The Jonathan Jay Pollard Espionage Case: A Damage Assessment (Document)   Foreign Denial and Deception Analysis Committee, Director of Central Intelligence   pollard:doc-v9g25vcmkx
+  ├── Anti-Terrorist Alert Center (PublicBody)   sources   pollard:org-8b2fsev104
+  ├── Aviem Sella (Person)   sources   pollard:per-6q0b4zamfq
+  ├── Central Intelligence Agency (PublicBody)   sources   pollard:org-kma9pjvdcc
+  ├── Department of Defense (PublicBody)   sources   pollard:org-jgy4y4pe9x
+  ├── Federal Bureau of Investigation (PublicBody)   sources   pollard:org-qyewkz38cq
+  ├── Foreign Denial and Deception Analysis Committee (PublicBody)   sources   pollard:org-bvzgp9f1t6
+  ├── Ilan Ravid (Person)   sources   pollard:per-jyft1ret42
+  ├── Irit Erb (Person)   sources   pollard:per-89cafr9tn9
+  ├── Israel (PublicBody)   sources   pollard:org-2hzt03a6z9
+  ├── Israeli Air Force (PublicBody)   sources   pollard:org-ez802bp11f
+  ├── Israeli Consulate New York (PublicBody)   sources   pollard:org-6t8fkjn4kr
+  ├── Israeli Embassy in Washington, D.C. (PublicBody)   sources   pollard:org-xfqaxke58a
+  ├── Jonathan Jay Pollard (Person)   sources   pollard:per-w3v2f7z7pe
+  ├── Joseph Yagur (Person)   sources   pollard:per-p8w1q8cajn
+  ├── Naval Investigative Service (PublicBody)   sources   pollard:org-tfadg8t3xv
+  ├── Naval Ocean Surveillance Information Center (PublicBody)   sources   pollard:org-3kk63smvp7
+  ├── Naval Security and Investigative Command (PublicBody)   sources   pollard:org-mspn9nxg7s
+  ├── Navy Field Operational Intelligence Office (PublicBody)   sources   pollard:org-1phejc0ngk
+  ├── New York University (Organization)   sources   pollard:org-f8xs95cwk2
+  ├── Office of Naval Intelligence (PublicBody)   sources   pollard:org-06228nm4ax
+  ├── Shamir (Person)   sources   pollard:per-sjje7bahkq
+  └── Task Force 168 (PublicBody)   sources   pollard:org-ctk7r6bt77
+
+  uncited    0
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl tree employment membership --stubs</code></summary>
+<p><a href="../../examples/tree-stubs.txt">tree-stubs.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl tree employment membership --stubs
+  only                    links   drawn   no link
+  employment membership      10      18         8
+
+Israeli Air Force (PublicBody)
+└── Aviem Sella (Person)   Employment   fighter pilot
+      also  New York University   Membership
+New York University (Organization)
+
+Israeli Consulate New York (PublicBody)
+└── Joseph Yagur (Person)   Employment   Counselor for Scientific Affairs
+
+Israeli Embassy in Washington, D.C. (PublicBody)
+├── Ilan Ravid (Person)   Employment   Attache for Scientific Affairs
+└── Irit Erb (Person)   Employment   secretary
+
+Israeli Ministry of Defense (Organization)   stub
+└── Lakam (Organization)   Membership   stub
+    └── Rafael Eitan (Person)   Membership
+
+Naval Security and Investigative Command (PublicBody)
+└── Naval Investigative Service (PublicBody)   Membership
+    └── Anti-Terrorist Alert Center (PublicBody)   Membership
+        └── Jonathan Jay Pollard (Person)   Employment   analyst
+              also  Naval Ocean Surveillance Information Center   Employment   research analyst
+              also  Navy Field Operational Intelligence Office    Employment   analyst
+              also  Task Force 168                                Membership
+Navy Field Operational Intelligence Office (PublicBody)
+└── Naval Ocean Surveillance Information Center (PublicBody)   Membership
+Task Force 168 (PublicBody)
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl tree --read generic</code></summary>
+<p><a href="../../examples/tree-generic.txt">tree-generic.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl tree --read generic
+Anne Henderson-Pollard (Person)
+Central Intelligence Agency (PublicBody)
+Department of Defense (PublicBody)
+Federal Bureau of Investigation (PublicBody)
+Foreign Denial and Deception Analysis Committee (PublicBody)
+Israel (PublicBody)
+└── Shamir (Person)
+Israeli Air Force (PublicBody)
+└── Aviem Sella (Person)
+      also  New York University   Membership
+Israeli Consulate New York (PublicBody)
+└── Joseph Yagur (Person)
+Israeli Embassy in Washington, D.C. (PublicBody)
+├── Ilan Ravid (Person)
+└── Irit Erb (Person)
+Naval Security and Investigative Command (PublicBody)
+└── Naval Investigative Service (PublicBody)
+    └── Anti-Terrorist Alert Center (PublicBody)
+Navy Field Operational Intelligence Office (PublicBody)
+└── Naval Ocean Surveillance Information Center (PublicBody)
+New York University (Organization)
+Office of Naval Intelligence (PublicBody)
+Rafael Eitan (Person)
+Task Force 168 (PublicBody)
+└── Jonathan Jay Pollard (Person)
+      also  Anti-Terrorist Alert Center                   Employment   analyst
+      also  Naval Ocean Surveillance Information Center   Employment   research analyst
+      also  Navy Field Operational Intelligence Office    Employment   analyst
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl tree 'task force' --ascii</code></summary>
+<p><a href="../../examples/tree-ascii.txt">tree-ascii.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl tree "task force" --ascii
+Task Force 168 (PublicBody)
+\-- Jonathan Jay Pollard (Person) — Analyst
+      also  Anti-Terrorist Alert Center                   Employment   analyst
+      also  Naval Ocean Surveillance Information Center   Employment   research analyst
+      also  Navy Field Operational Intelligence Office    Employment   analyst
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl tree 'task force' --format json</code></summary>
+<p><a href="../../examples/tree-json.txt">tree-json.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl tree "task force" --format json
+{
+ "tree": [
+  {
+   "name": "Task Force 168 (PublicBody)",
+   "outside": false,
+   "source": null,
+   "titles": [],
+   "children": [
+    {
+     "name": "Jonathan Jay Pollard (Person) — Analyst",
+     "outside": false,
+     "source": null,
+     "titles": [],
+     "children": [],
+     "also": [
+      "also  Anti-Terrorist Alert Center                   Employment   analyst",
+      "also  Naval Ocean Surveillance Information Center   Employment   research analyst",
+      "also  Navy Field Operational Intelligence Office    Employment   analyst"
+     ]
+    }
+   ]
+  }
+ ]
+}
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl tree --format mermaid</code></summary>
+<p><a href="../../examples/tree-mermaid.txt">tree-mermaid.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl tree --format mermaid
+flowchart TD
+    %% record tree — pollard (GENERATED)
+    per_jbcv7nwbwb["Anne Henderson-Pollard"]
+    org_2hzt03a6z9["Israel"]
+    per_sjje7bahkq["Shamir&lt;br/&gt;&lt;i&gt;Prime Minister&lt;/i&gt;"]
+    org_ez802bp11f["Israeli Air Force"]
+    per_6q0b4zamfq["Aviem Sella&lt;br/&gt;&lt;i&gt;fighter pilot&lt;/i&gt;"]
+    org_6t8fkjn4kr["Israeli Consulate New York"]
+    per_p8w1q8cajn["Joseph Yagur&lt;br/&gt;&lt;i&gt;Counselor for Scientific Affairs&lt;/i&gt;"]
+    org_xfqaxke58a["Israeli Embassy in Washington, D.C."]
+    per_jyft1ret42["Ilan Ravid&lt;br/&gt;&lt;i&gt;Attache for Scientific Affairs&lt;/i&gt;"]
+    per_89cafr9tn9["Irit Erb&lt;br/&gt;&lt;i&gt;secretary&lt;/i&gt;"]
+    org_mspn9nxg7s["Naval Security and Investigative Command"]
+    org_tfadg8t3xv["Naval Investigative Service"]
+    org_8b2fsev104["Anti-Terrorist Alert Center"]
+    org_1phejc0ngk["Navy Field Operational Intelligence Office"]
+    org_3kk63smvp7["Naval Ocean Surveillance Information Center"]
+    org_f8xs95cwk2["New York University"]
+    per_9n72sstcw8["Rafael Eitan&lt;br/&gt;&lt;i&gt;senior career official in Israeli intelligence&lt;/i&gt;"]
+    org_ctk7r6bt77["Task Force 168"]
+    per_w3v2f7z7pe["Jonathan Jay Pollard&lt;br/&gt;&lt;i&gt;Analyst&lt;/i&gt;"]
+    org_2hzt03a6z9 --&gt; per_sjje7bahkq
+    org_ez802bp11f --&gt;|"fighter pilot"| per_6q0b4zamfq
+    org_6t8fkjn4kr --&gt;|"Counselor for Scientific Affairs"| per_p8w1q8cajn
+    org_xfqaxke58a --&gt;|"Attache for Scientific Affairs"| per_jyft1ret42
+    org_xfqaxke58a --&gt;|"secretary"| per_89cafr9tn9
+    org_mspn9nxg7s --&gt; org_tfadg8t3xv
+    org_tfadg8t3xv --&gt; org_8b2fsev104
+    org_1phejc0ngk --&gt; org_3kk63smvp7
+    org_ctk7r6bt77 --&gt; per_w3v2f7z7pe
+    org_f8xs95cwk2 -.-&gt; per_6q0b4zamfq
+    org_8b2fsev104 -.-&gt;|"analyst"| per_w3v2f7z7pe
+    org_3kk63smvp7 -.-&gt;|"research analyst"| per_w3v2f7z7pe
+    org_1phejc0ngk -.-&gt;|"analyst"| per_w3v2f7z7pe
+    per_w3v2f7z7pe -.-|"wife"| per_jbcv7nwbwb
+    per_w3v2f7z7pe -.-|"first handler"| per_6q0b4zamfq
+    per_w3v2f7z7pe -.-|"handler"| per_89cafr9tn9
+    per_w3v2f7z7pe -.- org_2hzt03a6z9
+    per_w3v2f7z7pe -.-|"primary, direct handler"| per_p8w1q8cajn
+    per_w3v2f7z7pe -.-|"senior Israeli official in charge of the case"| per_9n72sstcw8
+    %% no links: Central Intelligence Agency, Department of Defense, Federal Bureau of Investigation, Foreign Denial and Deception Analysis Committee, Office of Naval Intelligence
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl tree --format mermaid --vertical --direction LR</code></summary>
+<p><a href="../../examples/tree-mermaid-vertical.txt">tree-mermaid-vertical.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl tree --format mermaid --vertical --direction LR
+flowchart LR
+    %% record tree — pollard (GENERATED)
+    org_2hzt03a6z9["Israel"]
+    per_sjje7bahkq["Shamir&lt;br/&gt;&lt;i&gt;Prime Minister&lt;/i&gt;"]
+    org_ez802bp11f["Israeli Air Force"]
+    per_6q0b4zamfq["Aviem Sella&lt;br/&gt;&lt;i&gt;fighter pilot&lt;/i&gt;"]
+    org_6t8fkjn4kr["Israeli Consulate New York"]
+    per_p8w1q8cajn["Joseph Yagur&lt;br/&gt;&lt;i&gt;Counselor for Scientific Affairs&lt;/i&gt;"]
+    org_xfqaxke58a["Israeli Embassy in Washington, D.C."]
+    per_jyft1ret42["Ilan Ravid&lt;br/&gt;&lt;i&gt;Attache for Scientific Affairs&lt;/i&gt;"]
+    per_89cafr9tn9["Irit Erb&lt;br/&gt;&lt;i&gt;secretary&lt;/i&gt;"]
+    org_mspn9nxg7s["Naval Security and Investigative Command"]
+    org_tfadg8t3xv["Naval Investigative Service"]
+    org_8b2fsev104["Anti-Terrorist Alert Center"]
+    org_1phejc0ngk["Navy Field Operational Intelligence Office"]
+    org_3kk63smvp7["Naval Ocean Surveillance Information Center"]
+    org_ctk7r6bt77["Task Force 168"]
+    per_w3v2f7z7pe["Jonathan Jay Pollard&lt;br/&gt;&lt;i&gt;Analyst&lt;/i&gt;"]
+    org_2hzt03a6z9 --&gt; per_sjje7bahkq
+    org_ez802bp11f --&gt;|"fighter pilot"| per_6q0b4zamfq
+    org_6t8fkjn4kr --&gt;|"Counselor for Scientific Affairs"| per_p8w1q8cajn
+    org_xfqaxke58a --&gt;|"Attache for Scientific Affairs"| per_jyft1ret42
+    org_xfqaxke58a --&gt;|"secretary"| per_89cafr9tn9
+    org_mspn9nxg7s --&gt; org_tfadg8t3xv
+    org_tfadg8t3xv --&gt; org_8b2fsev104
+    org_1phejc0ngk --&gt; org_3kk63smvp7
+    org_ctk7r6bt77 --&gt; per_w3v2f7z7pe
+    %% no links: Anne Henderson-Pollard, Central Intelligence Agency, Department of Defense, Federal Bureau of Investigation, Foreign Denial and Deception Analysis Committee, New York University, Office of Naval Intelligence, Rafael Eitan
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl tree family --format mermaid</code></summary>
+<p><a href="../../examples/tree-mermaid-family.txt">tree-mermaid-family.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl tree family --format mermaid
+flowchart TD
+    %% record tree — pollard (GENERATED)
+    per_jbcv7nwbwb["Anne Henderson-Pollard"]
+    per_w3v2f7z7pe["Jonathan Jay Pollard&lt;br/&gt;&lt;i&gt;Analyst&lt;/i&gt;"]
+    per_w3v2f7z7pe -.-|"wife"| per_jbcv7nwbwb
+</code></pre></div>
+</details>
+<h2 id="positions">positions<a class="headerlink" href="#positions" title="Permanent link">&para;</a></h2>
+<details class="example">
+<summary><code>hydra-ctl positions</code></summary>
+<p><a href="../../examples/positions.txt">positions.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl positions
+Analyst
+  titles   analyst
+           research analyst
+Associate   outside
+  titles   associate
+           close associate
+           contact
+Leader
+│ titles   boss
+│          leader
+│          head of organization
+├── Member
+│     titles   member
+│              crew member
+└── Second-in-command
+    │ titles   second in command
+    │          deputy
+    └── Member ^
+          titles   member
+                   crew member
+
+unplaced titles   8
+  Analyst                            adviser on counterterrorism to the Israeli Prime Minister
+  Attache for Scientific Affairs     fighter pilot
+  Counselor for Scientific Affairs   secretary
+  Prime Minister                     senior career official in Israeli intelligence
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl positions --tree --nodes</code></summary>
+<p><a href="../../examples/positions-tree-nodes.txt">positions-tree-nodes.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl positions --tree --nodes
+Analyst
+  titles   analyst
+           research analyst
+  records  Jonathan Jay Pollard   Person
+Associate   outside
+  titles   associate
+           close associate
+           contact
+Leader
+│ titles   boss
+│          leader
+│          head of organization
+├── Member
+│     titles   member
+│              crew member
+└── Second-in-command
+    │ titles   second in command
+    │          deputy
+    └── Member ^
+          titles   member
+                   crew member
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl positions --unplaced</code></summary>
+<p><a href="../../examples/positions-unplaced.txt">positions-unplaced.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl positions --unplaced
+unplaced titles   8
+  Analyst                            adviser on counterterrorism to the Israeli Prime Minister
+  Attache for Scientific Affairs     fighter pilot
+  Counselor for Scientific Affairs   secretary
+  Prime Minister                     senior career official in Israeli intelligence
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl positions --unplaced --format json</code></summary>
+<p><a href="../../examples/positions-unplaced-json.txt">positions-unplaced-json.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl positions --unplaced --format json
+{
+ "tree": [],
+ "unrelated": [
+  "Analyst",
+  "Attache for Scientific Affairs",
+  "Counselor for Scientific Affairs",
+  "Prime Minister",
+  "adviser on counterterrorism to the Israeli Prime Minister",
+  "fighter pilot",
+  "secretary",
+  "senior career official in Israeli intelligence"
+ ],
+ "issues": []
+}
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl positions --format mermaid</code></summary>
+<p><a href="../../examples/positions-mermaid.txt">positions-mermaid.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl positions --format mermaid
+graph TD
+    %% position graph — pollard (GENERATED)
+    classDef generic fill:#dbeafe,stroke:#9ca3af,color:#111827
+    classDef declared fill:#dcfce7,stroke:#9ca3af,color:#111827
+    classDef both fill:#fef3c7,stroke:#9ca3af,color:#111827
+    classDef implied fill:#f3f4f6,stroke:#9ca3af,color:#111827
+    classDef outside fill:#ffffff,stroke:#d1d5db,stroke-dasharray:4 3,color:#111827
+    P2 --&gt; P4
+    P4 --&gt; P3
+    P2 --&gt; P3
+    P0["Analyst&lt;br/&gt;2 titles"]:::outside
+    P2["Leader&lt;br/&gt;3 titles"]:::generic
+    P4["Second-in-command&lt;br/&gt;2 titles"]:::generic
+    P3["Member&lt;br/&gt;2 titles"]:::generic
+    P1["Associate&lt;br/&gt;3 titles"]:::outside
+    %% outside / no relations: Analyst, Associate
+    %% observed titles with no rule: Analyst, Attache for Scientific Affairs, Counselor for Scientific Affairs, Prime Minister, adviser on counterterrorism to the Israeli Prime Minister, fighter pilot, secretary, senior career official in Israeli intelligence
+</code></pre></div>
+</details>
+<h2 id="claims">claims<a class="headerlink" href="#claims" title="Permanent link">&para;</a></h2>
+<details class="example">
+<summary><code>hydra-ctl claims</code></summary>
+<p><a href="../../examples/claims.txt">claims.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl claims
+claims summary   Pollard case
+
+  claims        156
+  entities       45
+  collections     2
+  disputed        0
+
+  collection                          claims      schema           claims      property       claims
+  pollard-damage-assessment              146      PublicBody           38      name               25
+  sources/pollard-damage-assessment       10      Person               32      sources            25
+                                                  Employment           30      notes              14
+                                                  Associate            16      alias              13
+                                                  Membership           13      weakAlias           8
+                                                  Document             10      employee            7
+                                                  Representation        5      employer            7
+                                                  Family                4      role                7
+                                                  Organization          3      organization        6
+                                                  Position              3      person              5
+                                                  1 more                2
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl claims pollard</code></summary>
+<p><a href="../../examples/claims-pollard.txt">claims-pollard.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl claims pollard
+entity                 type     id                       claims   collections
+Jonathan Jay Pollard   Person   pollard:per-w3v2f7z7pe        4             1
+
+    field       value                    record                   collection
+    alias       Jonathan Pollard         pollard:per-w3v2f7z7pe   pollard-damage-assessment
+    name        Jonathan Jay Pollard     pollard:per-w3v2f7z7pe   pollard-damage-assessment
+    sources     pollard:doc-v9g25vcmkx   pollard:per-w3v2f7z7pe   pollard-damage-assessment
+    weakAlias   Pollard                  pollard:per-w3v2f7z7pe   pollard-damage-assessment
+
+  documented in     The Jonathan Jay Pollard Espionage Case: A Damage Assessment
+
+entity                   type     id                       claims   collections
+Anne Henderson-Pollard   Person   pollard:per-jbcv7nwbwb        5             1
+
+    field       value                                                          record                   collection
+    alias       Anne Henderson                                                 pollard:per-jbcv7nwbwb   pollard-damage-assessment
+    name        Anne Henderson-Pollard                                         pollard:per-jbcv7nwbwb   pollard-damage-assessment
+    notes       Witting of her husband's espionage activities, Anne Henders…   pollard:per-jbcv7nwbwb   pollard-damage-assessment
+    sources     pollard:doc-v9g25vcmkx                                         pollard:per-jbcv7nwbwb   pollard-damage-assessment
+    weakAlias   Henderson                                                      pollard:per-jbcv7nwbwb   pollard-damage-assessment
+
+  documented in     The Jonathan Jay Pollard Espionage Case: A Damage Assessment
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl claims person anne</code></summary>
+<p><a href="../../examples/claims-person-anne.txt">claims-person-anne.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl claims person anne
+entity                   type     id                       claims   collections
+Anne Henderson-Pollard   Person   pollard:per-jbcv7nwbwb        5             1
+
+    field       value                                                          record                   collection
+    alias       Anne Henderson                                                 pollard:per-jbcv7nwbwb   pollard-damage-assessment
+    name        Anne Henderson-Pollard                                         pollard:per-jbcv7nwbwb   pollard-damage-assessment
+    notes       Witting of her husband's espionage activities, Anne Henders…   pollard:per-jbcv7nwbwb   pollard-damage-assessment
+    sources     pollard:doc-v9g25vcmkx                                         pollard:per-jbcv7nwbwb   pollard-damage-assessment
+    weakAlias   Henderson                                                      pollard:per-jbcv7nwbwb   pollard-damage-assessment
+
+  documented in     The Jonathan Jay Pollard Espionage Case: A Damage Assessment
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl claims 'Jonathan Jay Pollard' --prop weakAlias</code></summary>
+<p><a href="../../examples/claims-prop.txt">claims-prop.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl claims "Jonathan Jay Pollard" --prop weakAlias
+entity                 type     id                       claims   collections
+Jonathan Jay Pollard   Person   pollard:per-w3v2f7z7pe        1             1
+
+    field       value     record                   collection
+    weakAlias   Pollard   pollard:per-w3v2f7z7pe   pollard-damage-assessment
+
+  documented in     The Jonathan Jay Pollard Espionage Case: A Damage Assessment
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl claims pollard sources --format json</code></summary>
+<p><a href="../../examples/claims-pollard-sources-json.txt">claims-pollard-sources-json.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl claims pollard sources --format json
+{
+ "entities": [
+  {
+   "id": "pollard:per-w3v2f7z7pe",
+   "caption": "Jonathan Jay Pollard",
+   "schema": "Person",
+   "referents": [
+    "pollard:per-w3v2f7z7pe"
+   ],
+   "props": {
+    "alias": [
+     {
+      "value": "Jonathan Pollard",
+      "also": [],
+      "collections": [
+       "pollard-damage-assessment"
+      ],
+      "sources": [
+       {
+        "collection": "pollard-damage-assessment",
+        "record": "pollard:per-w3v2f7z7pe",
+        "evidence": [
+         "The Jonathan Jay Pollard Espionage Case: A Damage Assessment"
+        ]
+       }
+      ],
+      "review": []
+     }
+    ],
+    "name": [
+     {
+      "value": "Jonathan Jay Pollard",
+      "also": [],
+      "collections": [
+       "pollard-damage-assessment"
+      ],
+      "sources": [
+       {
+        "collection": "pollard-damage-assessment",
+        "record": "pollard:per-w3v2f7z7pe",
+        "evidence": [
+         "The Jonathan Jay Pollard Espionage Case: A Damage Assessment"
+        ]
+       }
+      ],
+      "review": []
+     }
+    ],
+    "sources": [
+     {
+      "value": "pollard:doc-v9g25vcmkx",
+      "also": [],
+      "collections": [
+       "pollard-damage-assessment"
+      ],
+      "sources": [
+       {
+        "collection": "pollard-damage-assessment",
+        "record": "pollard:per-w3v2f7z7pe",
+        "evidence": [
+         "The Jonathan Jay Pollard Espionage Case: A Damage Assessment"
+        ]
+       }
+      ],
+      "review": []
+     }
+    ],
+    "weakAlias": [
+     {
+      "value": "Pollard",
+      "also": [],
+      "collections": [
+       "pollard-damage-assessment"
+      ],
+      "sources": [
+       {
+        "collection": "pollard-damage-assessment",
+        "record": "pollard:per-w3v2f7z7pe",
+        "evidence": [
+         "The Jonathan Jay Pollard Espionage Case: A Damage Assessment"
+        ]
+       }
+      ],
+      "review": []
+     }
+    ]
+   },
+   "disputed": [],
+   "documented_in": [
+    "The Jonathan Jay Pollard Espionage Case: A Damage Assessment"
+   ]
+  },
+  {
+   "id": "pollard:per-jbcv7nwbwb",
+   "caption": "Anne Henderson-Pollard",
+   "schema": "Person",
+   "referents": [
+    "pollard:per-jbcv7nwbwb"
+   ],
+   "props": {
+    "alias": [
+     {
+      "value": "Anne Henderson",
+      "also": [],
+      "collections": [
+       "pollard-damage-assessment"
+      ],
+      "sources": [
+       {
+        "collection": "pollard-damage-assessment",
+        "record": "pollard:per-jbcv7nwbwb",
+        "evidence": [
+         "The Jonathan Jay Pollard Espionage Case: A Damage Assessment"
+        ]
+       }
+      ],
+      "review": []
+     }
+    ],
+    "name": [
+     {
+      "value": "Anne Henderson-Pollard",
+      "also": [],
+      "collections": [
+       "pollard-damage-assessment"
+      ],
+      "sources": [
+       {
+        "collection": "pollard-damage-assessment",
+        "record": "pollard:per-jbcv7nwbwb",
+        "evidence": [
+         "The Jonathan Jay Pollard Espionage Case: A Damage Assessment"
+        ]
+       }
+      ],
+      "review": []
+     }
+    ],
+    "notes": [
+     {
+      "value": "Witting of her husband's espionage activities, Anne Henderson-Pollard assisted him at the time of his initial interrogation on 18 and 19 November by removing and attempting to conceal classified material that Jonathan Pollard had stored in their apartment.",
+      "also": [],
+      "collections": [
+       "pollard-damage-assessment"
+      ],
+      "sources": [
+       {
+        "collection": "pollard-damage-assessment",
+        "record": "pollard:per-jbcv7nwbwb",
+        "evidence": [
+         "The Jonathan Jay Pollard Espionage Case: A Damage Assessment"
+        ]
+       }
+      ],
+      "review": []
+     }
+    ],
+    "sources": [
+     {
+      "value": "pollard:doc-v9g25vcmkx",
+      "also": [],
+      "collections": [
+       "pollard-damage-assessment"
+      ],
+      "sources": [
+       {
+        "collection": "pollard-damage-assessment",
+        "record": "pollard:per-jbcv7nwbwb",
+        "evidence": [
+         "The Jonathan Jay Pollard Espionage Case: A Damage Assessment"
+        ]
+       }
+      ],
+      "review": []
+     }
+    ],
+    "weakAlias": [
+     {
+      "value": "Henderson",
+      "also": [],
+      "collections": [
+       "pollard-damage-assessment"
+      ],
+      "sources": [
+       {
+        "collection": "pollard-damage-assessment",
+        "record": "pollard:per-jbcv7nwbwb",
+        "evidence": [
+         "The Jonathan Jay Pollard Espionage Case: A Damage Assessment"
+        ]
+       }
+      ],
+      "review": []
+     }
+    ]
+   },
+   "disputed": [],
+   "documented_in": [
+    "The Jonathan Jay Pollard Espionage Case: A Damage Assessment"
+   ]
+  }
+ ],
+ "sources": {
+  "matched": "entities",
+  "entities": 2,
+  "entries": [
+   {
+    "id": "pollard:doc-v9g25vcmkx",
+    "schema": "Document",
+    "title": "The Jonathan Jay Pollard Espionage Case: A Damage Assessment",
+    "publisher": "Foreign Denial and Deception Analysis Committee, Director of Central Intelligence",
+    "url": "",
+    "collection": "sources/pollard-damage-assessment",
+    "entry": true,
+    "document": "",
+    "page": "",
+    "cited_by": [
+     {
+      "id": "pollard:per-jbcv7nwbwb",
+      "caption": "Anne Henderson-Pollard",
+      "schema": "Person",
+      "records": [
+       "pollard:per-jbcv7nwbwb"
+      ]
+     },
+     {
+      "id": "pollard:per-w3v2f7z7pe",
+      "caption": "Jonathan Jay Pollard",
+      "schema": "Person",
+      "records": [
+       "pollard:per-w3v2f7z7pe"
+      ]
+     }
+    ]
+   }
+  ],
+  "documents": [],
+  "unsourced": []
+ }
+}
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl claims summary</code></summary>
+<p><a href="../../examples/claims-summary.txt">claims-summary.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl claims summary
+claims summary   Pollard case
+
+  claims        156
+  entities       45
+  collections     2
+  disputed        0
+
+  collection                          claims      schema           claims      property       claims
+  pollard-damage-assessment              146      PublicBody           38      name               25
+  sources/pollard-damage-assessment       10      Person               32      sources            25
+                                                  Employment           30      notes              14
+                                                  Associate            16      alias              13
+                                                  Membership           13      weakAlias           8
+                                                  Document             10      employee            7
+                                                  Representation        5      employer            7
+                                                  Family                4      role                7
+                                                  Organization          3      organization        6
+                                                  Position              3      person              5
+                                                  1 more                2
+</code></pre></div>
+</details>
+<h2 id="node-find">node find<a class="headerlink" href="#node-find" title="Permanent link">&para;</a></h2>
+<details class="example">
+<summary><code>hydra-ctl node find pollard</code></summary>
+<p><a href="../../examples/node-find.txt">node-find.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl node find pollard
+score   name                     schema   id                       position   parent           matched
+1.00    Jonathan Jay Pollard     Person   pollard:per-w3v2f7z7pe   Analyst    Task Force 168   weakAlias  Pollard
+0.93    Anne Henderson-Pollard   Person   pollard:per-jbcv7nwbwb
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl node find person jay</code></summary>
+<p><a href="../../examples/node-find-person.txt">node-find-person.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl node find person jay
+score   name                   schema   id                       position   parent           matched
+0.93    Jonathan Jay Pollard   Person   pollard:per-w3v2f7z7pe   Analyst    Task Force 168
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl node find per-w3v2f7z7pe --field id</code></summary>
+<p><a href="../../examples/node-find-id.txt">node-find-id.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl node find per-w3v2f7z7pe --field id
+score   name                   schema   id                       position   parent           matched
+1.00    Jonathan Jay Pollard   Person   pollard:per-w3v2f7z7pe   Analyst    Task Force 168   id  pollard:per-w3v2f7z7pe
+</code></pre></div>
+</details>
+<h2 id="sources">sources<a class="headerlink" href="#sources" title="Permanent link">&para;</a></h2>
+<details class="example">
+<summary><code>hydra-ctl sources</code></summary>
+<p><a href="../../examples/sources.txt">sources.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl sources
+sources   Pollard case
+
+  entries
+
+  The Jonathan Jay Pollard Espionage Case: A Damage Assessment (Document)   Foreign Denial and Deception Analysis Committee, Director of Central Intelligence   pollard:doc-v9g25vcmkx
+  ├── Anne Henderson-Pollard (Person)   sources   pollard:per-jbcv7nwbwb
+  ├── Anti-Terrorist Alert Center (PublicBody)   sources   pollard:org-8b2fsev104
+  ├── Aviem Sella (Person)   sources   pollard:per-6q0b4zamfq
+  ├── Central Intelligence Agency (PublicBody)   sources   pollard:org-kma9pjvdcc
+  ├── Department of Defense (PublicBody)   sources   pollard:org-jgy4y4pe9x
+  ├── Federal Bureau of Investigation (PublicBody)   sources   pollard:org-qyewkz38cq
+  ├── Foreign Denial and Deception Analysis Committee (PublicBody)   sources   pollard:org-bvzgp9f1t6
+  ├── Ilan Ravid (Person)   sources   pollard:per-jyft1ret42
+  ├── Irit Erb (Person)   sources   pollard:per-89cafr9tn9
+  ├── Israel (PublicBody)   sources   pollard:org-2hzt03a6z9
+  ├── Israeli Air Force (PublicBody)   sources   pollard:org-ez802bp11f
+  ├── Israeli Consulate New York (PublicBody)   sources   pollard:org-6t8fkjn4kr
+  ├── Israeli Embassy in Washington, D.C. (PublicBody)   sources   pollard:org-xfqaxke58a
+  ├── Jonathan Jay Pollard (Person)   sources   pollard:per-w3v2f7z7pe
+  ├── Joseph Yagur (Person)   sources   pollard:per-p8w1q8cajn
+  ├── Naval Investigative Service (PublicBody)   sources   pollard:org-tfadg8t3xv
+  ├── Naval Ocean Surveillance Information Center (PublicBody)   sources   pollard:org-3kk63smvp7
+  ├── Naval Security and Investigative Command (PublicBody)   sources   pollard:org-mspn9nxg7s
+  ├── Navy Field Operational Intelligence Office (PublicBody)   sources   pollard:org-1phejc0ngk
+  ├── New York University (Organization)   sources   pollard:org-f8xs95cwk2
+  ├── Office of Naval Intelligence (PublicBody)   sources   pollard:org-06228nm4ax
+  ├── Rafael Eitan (Person)   sources   pollard:per-9n72sstcw8
+  ├── Shamir (Person)   sources   pollard:per-sjje7bahkq
+  └── Task Force 168 (PublicBody)   sources   pollard:org-ctk7r6bt77
+
+  uncited   0
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl sources sella</code></summary>
+<p><a href="../../examples/sources-sella.txt">sources-sella.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl sources sella
+sources
+
+  entities   1
+
+  entries
+
+  The Jonathan Jay Pollard Espionage Case: A Damage Assessment (Document)   Foreign Denial and Deception Analysis Committee, Director of Central Intelligence   pollard:doc-v9g25vcmkx
+  └── Aviem Sella (Person)   sources   pollard:per-6q0b4zamfq
+
+  uncited    0
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl sources person --uncited</code></summary>
+<p><a href="../../examples/sources-person-uncited.txt">sources-person-uncited.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl sources person --uncited
+sources
+
+  entities   8
+
+  entries
+
+  The Jonathan Jay Pollard Espionage Case: A Damage Assessment (Document)   Foreign Denial and Deception Analysis Committee, Director of Central Intelligence   pollard:doc-v9g25vcmkx
+  ├── Anne Henderson-Pollard (Person)   sources   pollard:per-jbcv7nwbwb
+  ├── Aviem Sella (Person)   sources   pollard:per-6q0b4zamfq
+  ├── Ilan Ravid (Person)   sources   pollard:per-jyft1ret42
+  ├── Irit Erb (Person)   sources   pollard:per-89cafr9tn9
+  ├── Jonathan Jay Pollard (Person)   sources   pollard:per-w3v2f7z7pe
+  ├── Joseph Yagur (Person)   sources   pollard:per-p8w1q8cajn
+  ├── Rafael Eitan (Person)   sources   pollard:per-9n72sstcw8
+  └── Shamir (Person)   sources   pollard:per-sjje7bahkq
+
+  uncited    0
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl sources damage</code></summary>
+<p><a href="../../examples/sources-damage.txt">sources-damage.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl sources damage
+sources
+
+  entities   24
+
+  entries
+
+  The Jonathan Jay Pollard Espionage Case: A Damage Assessment (Document)   Foreign Denial and Deception Analysis Committee, Director of Central Intelligence   pollard:doc-v9g25vcmkx
+  ├── Anne Henderson-Pollard (Person)   sources   pollard:per-jbcv7nwbwb
+  ├── Anti-Terrorist Alert Center (PublicBody)   sources   pollard:org-8b2fsev104
+  ├── Aviem Sella (Person)   sources   pollard:per-6q0b4zamfq
+  ├── Central Intelligence Agency (PublicBody)   sources   pollard:org-kma9pjvdcc
+  ├── Department of Defense (PublicBody)   sources   pollard:org-jgy4y4pe9x
+  ├── Federal Bureau of Investigation (PublicBody)   sources   pollard:org-qyewkz38cq
+  ├── Foreign Denial and Deception Analysis Committee (PublicBody)   sources   pollard:org-bvzgp9f1t6
+  ├── Ilan Ravid (Person)   sources   pollard:per-jyft1ret42
+  ├── Irit Erb (Person)   sources   pollard:per-89cafr9tn9
+  ├── Israel (PublicBody)   sources   pollard:org-2hzt03a6z9
+  ├── Israeli Air Force (PublicBody)   sources   pollard:org-ez802bp11f
+  ├── Israeli Consulate New York (PublicBody)   sources   pollard:org-6t8fkjn4kr
+  ├── Israeli Embassy in Washington, D.C. (PublicBody)   sources   pollard:org-xfqaxke58a
+  ├── Jonathan Jay Pollard (Person)   sources   pollard:per-w3v2f7z7pe
+  ├── Joseph Yagur (Person)   sources   pollard:per-p8w1q8cajn
+  ├── Naval Investigative Service (PublicBody)   sources   pollard:org-tfadg8t3xv
+  ├── Naval Ocean Surveillance Information Center (PublicBody)   sources   pollard:org-3kk63smvp7
+  ├── Naval Security and Investigative Command (PublicBody)   sources   pollard:org-mspn9nxg7s
+  ├── Navy Field Operational Intelligence Office (PublicBody)   sources   pollard:org-1phejc0ngk
+  ├── New York University (Organization)   sources   pollard:org-f8xs95cwk2
+  ├── Office of Naval Intelligence (PublicBody)   sources   pollard:org-06228nm4ax
+  ├── Rafael Eitan (Person)   sources   pollard:per-9n72sstcw8
+  ├── Shamir (Person)   sources   pollard:per-sjje7bahkq
+  └── Task Force 168 (PublicBody)   sources   pollard:org-ctk7r6bt77
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl sources --format json</code></summary>
+<p><a href="../../examples/sources-json.txt">sources-json.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl sources --format json
+{
+ "matched": "entities",
+ "entities": 24,
+ "entries": [
+  {
+   "id": "pollard:doc-v9g25vcmkx",
+   "schema": "Document",
+   "title": "The Jonathan Jay Pollard Espionage Case: A Damage Assessment",
+   "publisher": "Foreign Denial and Deception Analysis Committee, Director of Central Intelligence",
+   "url": "",
+   "collection": "sources/pollard-damage-assessment",
+   "entry": true,
+   "document": "",
+   "page": "",
+   "cited_by": [
+    {
+     "id": "pollard:per-jbcv7nwbwb",
+     "caption": "Anne Henderson-Pollard",
+     "schema": "Person",
+     "records": [
+      "pollard:per-jbcv7nwbwb"
+     ]
+    },
+    {
+     "id": "pollard:org-8b2fsev104",
+     "caption": "Anti-Terrorist Alert Center",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-8b2fsev104"
+     ]
+    },
+    {
+     "id": "pollard:per-6q0b4zamfq",
+     "caption": "Aviem Sella",
+     "schema": "Person",
+     "records": [
+      "pollard:per-6q0b4zamfq"
+     ]
+    },
+    {
+     "id": "pollard:org-kma9pjvdcc",
+     "caption": "Central Intelligence Agency",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-kma9pjvdcc"
+     ]
+    },
+    {
+     "id": "pollard:org-jgy4y4pe9x",
+     "caption": "Department of Defense",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-jgy4y4pe9x"
+     ]
+    },
+    {
+     "id": "pollard:org-qyewkz38cq",
+     "caption": "Federal Bureau of Investigation",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-qyewkz38cq"
+     ]
+    },
+    {
+     "id": "pollard:org-bvzgp9f1t6",
+     "caption": "Foreign Denial and Deception Analysis Committee",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-bvzgp9f1t6"
+     ]
+    },
+    {
+     "id": "pollard:per-jyft1ret42",
+     "caption": "Ilan Ravid",
+     "schema": "Person",
+     "records": [
+      "pollard:per-jyft1ret42"
+     ]
+    },
+    {
+     "id": "pollard:per-89cafr9tn9",
+     "caption": "Irit Erb",
+     "schema": "Person",
+     "records": [
+      "pollard:per-89cafr9tn9"
+     ]
+    },
+    {
+     "id": "pollard:org-2hzt03a6z9",
+     "caption": "Israel",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-2hzt03a6z9"
+     ]
+    },
+    {
+     "id": "pollard:org-ez802bp11f",
+     "caption": "Israeli Air Force",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-ez802bp11f"
+     ]
+    },
+    {
+     "id": "pollard:org-6t8fkjn4kr",
+     "caption": "Israeli Consulate New York",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-6t8fkjn4kr"
+     ]
+    },
+    {
+     "id": "pollard:org-xfqaxke58a",
+     "caption": "Israeli Embassy in Washington, D.C.",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-xfqaxke58a"
+     ]
+    },
+    {
+     "id": "pollard:per-w3v2f7z7pe",
+     "caption": "Jonathan Jay Pollard",
+     "schema": "Person",
+     "records": [
+      "pollard:per-w3v2f7z7pe"
+     ]
+    },
+    {
+     "id": "pollard:per-p8w1q8cajn",
+     "caption": "Joseph Yagur",
+     "schema": "Person",
+     "records": [
+      "pollard:per-p8w1q8cajn"
+     ]
+    },
+    {
+     "id": "pollard:org-tfadg8t3xv",
+     "caption": "Naval Investigative Service",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-tfadg8t3xv"
+     ]
+    },
+    {
+     "id": "pollard:org-3kk63smvp7",
+     "caption": "Naval Ocean Surveillance Information Center",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-3kk63smvp7"
+     ]
+    },
+    {
+     "id": "pollard:org-mspn9nxg7s",
+     "caption": "Naval Security and Investigative Command",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-mspn9nxg7s"
+     ]
+    },
+    {
+     "id": "pollard:org-1phejc0ngk",
+     "caption": "Navy Field Operational Intelligence Office",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-1phejc0ngk"
+     ]
+    },
+    {
+     "id": "pollard:org-f8xs95cwk2",
+     "caption": "New York University",
+     "schema": "Organization",
+     "records": [
+      "pollard:org-f8xs95cwk2"
+     ]
+    },
+    {
+     "id": "pollard:org-06228nm4ax",
+     "caption": "Office of Naval Intelligence",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-06228nm4ax"
+     ]
+    },
+    {
+     "id": "pollard:per-9n72sstcw8",
+     "caption": "Rafael Eitan",
+     "schema": "Person",
+     "records": [
+      "pollard:per-9n72sstcw8"
+     ]
+    },
+    {
+     "id": "pollard:per-sjje7bahkq",
+     "caption": "Shamir",
+     "schema": "Person",
+     "records": [
+      "pollard:per-sjje7bahkq"
+     ]
+    },
+    {
+     "id": "pollard:org-ctk7r6bt77",
+     "caption": "Task Force 168",
+     "schema": "PublicBody",
+     "records": [
+      "pollard:org-ctk7r6bt77"
+     ]
+    }
+   ]
+  }
+ ],
+ "documents": [],
+ "unsourced": []
+}
+</code></pre></div>
+</details>
+<h2 id="todo">todo<a class="headerlink" href="#todo" title="Permanent link">&para;</a></h2>
+<details class="example">
+<summary><code>hydra-ctl todo</code></summary>
+<p><a href="../../examples/todo.txt">todo.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl todo
+  kind             open
+  merges              0
+  references          0
+  placements          2
+  stale               0
+  contradictions      0
+  verdicts            0
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl todo --list</code></summary>
+<p><a href="../../examples/todo-list.txt">todo-list.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl todo --list
+placements   2
+    row                      record                   parent                   placed by
+    place-1fcb5c9cb4e5a9a9   pollard:per-w3v2f7z7pe   pollard:org-ctk7r6bt77   Membership (several parents)
+    place-a343b83ee80fa96b   pollard:per-6q0b4zamfq   pollard:org-ez802bp11f   Employment (several parents)
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl todo --list placements</code></summary>
+<p><a href="../../examples/todo-list-placements.txt">todo-list-placements.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl todo --list placements
+placements   2
+    row                      record                   parent                   placed by
+    place-1fcb5c9cb4e5a9a9   pollard:per-w3v2f7z7pe   pollard:org-ctk7r6bt77   Membership (several parents)
+    place-a343b83ee80fa96b   pollard:per-6q0b4zamfq   pollard:org-ez802bp11f   Employment (several parents)
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl todo --format json</code></summary>
+<p><a href="../../examples/todo-json.txt">todo-json.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl todo --format json
+{
+ "merges": [],
+ "references": [],
+ "placements": [
+  {
+   "id": "place-1fcb5c9cb4e5a9a9",
+   "status": "proposed",
+   "what": "Jonathan Jay Pollard under Task Force 168 — Membership (several parents)",
+   "row": {
+    "criteria": "Membership (several parents)",
+    "id": "place-1fcb5c9cb4e5a9a9",
+    "matcher": "hydra/hier",
+    "reads": [
+     "generic",
+     "declared"
+    ],
+    "records": [
+     "pollard:mem-tg0re7j07m"
+    ],
+    "rel": "placedUnder",
+    "scope": "Task Force 168",
+    "status": "proposed",
+    "sub": "pollard:per-w3v2f7z7pe",
+    "subcap": "Jonathan Jay Pollard",
+    "sup": "pollard:org-ctk7r6bt77",
+    "supcap": "Task Force 168"
+   }
+  },
+  {
+   "id": "place-a343b83ee80fa96b",
+   "status": "proposed",
+   "what": "Aviem Sella under Israeli Air Force — Employment (several parents)",
+   "row": {
+    "criteria": "Employment (several parents)",
+    "id": "place-a343b83ee80fa96b",
+    "matcher": "hydra/hier",
+    "reads": [
+     "generic",
+     "declared"
+    ],
+    "records": [
+     "pollard:emp-dsj4t8669k"
+    ],
+    "rel": "placedUnder",
+    "scope": "Israeli Air Force",
+    "status": "proposed",
+    "sub": "pollard:per-6q0b4zamfq",
+    "subcap": "Aviem Sella",
+    "sup": "pollard:org-ez802bp11f",
+    "supcap": "Israeli Air Force"
+   }
+  }
+ ],
+ "stale": [],
+ "contradictions": [],
+ "verdicts": []
+}
+</code></pre></div>
+</details>
+<h2 id="review">review<a class="headerlink" href="#review" title="Permanent link">&para;</a></h2>
+<details class="example">
+<summary><code>hydra-ctl review --only merges</code></summary>
+<p><a href="../../examples/review-merges.txt">review-merges.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl review --only merges
+review   Pollard case
+
+  kind     rows   questions
+  merges      1           1
+  total       1           1
+
+[1/1] Merge
+  Jonathan Pollard   and   Jonathan Jay Pollard
+
+  pollard:per-k3m8v1qz5t   Person
+     alias       Jay Pollard
+     birthDate   1954
+     name        Jonathan Pollard
+     notes       Navy analyst, arrested in 1985
+
+  pollard:per-w3v2f7z7pe   Person
+     alias       Jonathan Pollard
+     name        Jonathan Jay Pollard
+     sources     pollard:doc-v9g25vcmkx
+     weakAlias   Pollard
+
+  [all fields]   fields in both   conflicting fields      Tab / Shift+Tab
+Which is better?
+  1  one entity
+  2  two entities
+  ? not sure   u undo   q quit
+&gt; 1
+  saved   one entity
+
+  answered   1
+
+  kind         before   now
+  merges            1     0
+  references        1     0
+  placements        2     2
+
+Rebuilt Pollard case: 47 records, 46 entities, 2 open questions
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl review --only references</code></summary>
+<p><a href="../../examples/review-references.txt">review-references.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl review --only references
+review   Pollard case
+
+  kind         rows   questions
+  references      1           1
+  total           1           1
+
+[1/1] Reference · a name with 2 possible records
+  pollard:emp-b7d2n9x4hc   Employment.employee   Jonathan
+
+  ┌─ Link from ───────────────────────────────┐
+  │ pollard:emp-b7d2n9x4hc   Employment       │
+  │  → employee   Jonathan                    │
+  │    employer   Naval Investigative Service │
+  │    role       analyst                     │
+  └───────────────────────────────────────────┘
+
+  1  pollard:per-k3m8v1qz5t   Person
+     alias       Jay Pollard
+     birthDate   1954
+     name        Jonathan Pollard
+     notes       Navy analyst, arrested in 1985
+
+  2  pollard:per-w3v2f7z7pe   Person
+     alias       Jonathan Pollard
+     name        Jonathan Jay Pollard
+     sources     pollard:doc-v9g25vcmkx
+     weakAlias   Pollard
+
+  [all fields]   name fields   matching fields      Tab / Shift+Tab
+Which record is "Jonathan"?
+  1  Jonathan Pollard       pollard:per-k3m8v1qz5t
+  2  Jonathan Jay Pollard   pollard:per-w3v2f7z7pe
+  3  neither
+  ? not sure   u undo   q quit
+&gt; 2
+  saved   Jonathan Jay Pollard
+
+  answered   1
+
+  kind         before   now
+  merges            1     1
+  references        1     0
+  placements        2     2
+
+Rebuilt Pollard case: 47 records, 47 entities, 3 open questions
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl review --only placements</code></summary>
+<p><a href="../../examples/review-placements.txt">review-placements.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl review --only placements
+review   Pollard case
+
+  kind         rows   questions
+  placements      2           2
+  total           2           2
+
+[1/2] Placement · Membership (several parents)
+  Jonathan Jay Pollard
+
+  ┌─ Placing ────────────────────────────────┐
+  │ pollard:per-w3v2f7z7pe   Person          │
+  │    alias          Jonathan Pollard       │
+  │    name           Jonathan Jay Pollard   │
+  │    sources        pollard:doc-v9g25vcmkx │
+  │    weakAlias      Pollard                │
+  └──────────────────────────────────────────┘
+
+  1  pollard:mem-tg0re7j07m   Membership   now
+     member         Jonathan Jay Pollard
+     notes          Volunteer to Task Force 168 (TF-168), the naval intelligence element responsible for HUMINT collection; Pollard was assigned to collect information from a South African defense attache.
+     organization   Task Force 168
+     startDate      1980-02
+
+  2  pollard:emp-6s4h8c5hez   Employment
+     employee       Jonathan Jay Pollard
+     employer       Anti-Terrorist Alert Center
+     endDate        1985-11
+     notes          Began temporary duty with ATAC in June 1984 as a watchstander; permanently assigned in October 1984 as analyst responsible for assessing terrorist activities.
+     role           analyst
+     startDate      1984-06
+
+  3  pollard:emp-06j8t52g03   Employment
+     employee       Jonathan Jay Pollard
+     employer       Naval Ocean Surveillance Information Center
+     notes          Research analyst, Naval Ocean Surveillance Information Center, Suitland, Maryland (merchant shipping analyst and watch officer).
+     role           research analyst
+     startDate      1979-09
+
+  4  pollard:emp-1bz3xhft0s   Employment
+     employee       Jonathan Jay Pollard
+     employer       Navy Field Operational Intelligence Office
+     endDate        1985-11
+     notes          An employee of the Navy Field Operational Intelligence Office from 1979 until November 1985.
+     role           analyst
+     startDate      1979-09
+
+Which is better?
+  1  under Task Force 168                                pollard:org-ctk7r6bt77   now
+  2  under Anti-Terrorist Alert Center                   pollard:org-8b2fsev104
+  3  under Naval Ocean Surveillance Information Center   pollard:org-3kk63smvp7
+  4  under Navy Field Operational Intelligence Office    pollard:org-1phejc0ngk
+  ? not sure   u undo   q quit
+&gt; 2
+  saved   Jonathan Jay Pollard under Anti-Terrorist Alert Center
+
+[2/2] Placement · Employment (several parents)
+  Aviem Sella
+
+  ┌─ Placing ────────────────────────────────┐
+  │ pollard:per-6q0b4zamfq   Person          │
+  │    name           Aviem Sella            │
+  │    sources        pollard:doc-v9g25vcmkx │
+  │    title          Col.                   │
+  │    weakAlias      Sella                  │
+  └──────────────────────────────────────────┘
+
+  1  pollard:emp-dsj4t8669k   Employment   now
+     employee       Aviem Sella
+     employer       Israeli Air Force
+     notes          A highly successful fighter pilot on study leave from the Israeli Air Force, officially resident in the US to pursue a doctorate in computer sciences at New York University.
+     role           fighter pilot
+
+  2  pollard:mem-9jvb9yj94m   Membership
+     member         Aviem Sella
+     notes          Sella's official reason for residency in the United States in 1984 was his pursuit of a doctorate in computer sciences at New York University.
+     organization   New York University
+
+Which is better?
+  1  under Israeli Air Force     pollard:org-ez802bp11f   now
+  2  under New York University   pollard:org-f8xs95cwk2
+  ? not sure   u undo   q quit
+&gt; a
+  pick a number from 1 to 2, ? not sure, u undo or q quit
+&gt; q
+
+  answered   1
+
+  kind         before   now
+  placements        2     1
+
+Rebuilt Pollard case: 45 records, 45 entities, 1 open question
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl tree pollard</code></summary>
+<p><a href="../../examples/tree-after-review.txt">tree-after-review.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl tree pollard
+Jonathan Jay Pollard (Person) — Analyst
+  also  Anti-Terrorist Alert Center                  Employment   analyst
+  also  Navy Field Operational Intelligence Office   Employment   analyst
+  also  Task Force 168                               Membership             rejected
+Anne Henderson-Pollard (Person)
+</code></pre></div>
+</details>
+<h2 id="answer">answer<a class="headerlink" href="#answer" title="Permanent link">&para;</a></h2>
+<details class="example">
+<summary><code>hydra-ctl answer merge-86249992956ed3ab confirm</code></summary>
+<p><a href="../../examples/answer-merge.txt">answer-merge.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl answer merge-86249992956ed3ab confirm
+Recorded merge-86249992956ed3ab: {status: confirmed, basis: 02b82d3a6530abca}
+Rebuilt Pollard case: 47 records, 46 entities, 2 open questions
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl answer place-1fcb5c9cb4e5a9a9 reject</code></summary>
+<p><a href="../../examples/answer-placement.txt">answer-placement.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl answer place-1fcb5c9cb4e5a9a9 reject
+Recorded place-1fcb5c9cb4e5a9a9: rejected
+Rebuilt Pollard case: 45 records, 45 entities, 3 open questions
+
+$ hydra-ctl answer place-1fcb5c9cb4e5a9a9 clear
+Cleared place-1fcb5c9cb4e5a9a9
+Rebuilt Pollard case: 45 records, 45 entities, 2 open questions
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl answer ref-0cdfad5fa09cf83e 2</code></summary>
+<p><a href="../../examples/answer-reference.txt">answer-reference.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl answer ref-0cdfad5fa09cf83e 2
+Recorded ref-0cdfad5fa09cf83e: pollard:per-w3v2f7z7pe
+Rebuilt Pollard case: 47 records, 47 entities, 3 open questions
+</code></pre></div>
+</details>
+<h2 id="reset">reset<a class="headerlink" href="#reset" title="Permanent link">&para;</a></h2>
+<details class="example">
+<summary><code>hydra-ctl reset --yes</code></summary>
+<p><a href="../../examples/reset.txt">reset.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl reset --yes
+This removes 1 decision(s) from ~/cases/pollard/.hydra/review/verdicts.yaml: 1 merges.
+A backup is written to verdicts.yaml.20260101-000000.bak first.
+Removed 1 decision from ~/cases/pollard/.hydra/review/verdicts.yaml (backup verdicts.yaml.20260101-000000.bak)
+Rebuilt Pollard case: 47 records, 47 entities, 4 open questions
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl reset --only placements --yes</code></summary>
+<p><a href="../../examples/reset-only.txt">reset-only.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl reset --only placements --yes
+This removes 1 decision(s) from ~/cases/pollard/.hydra/review/verdicts.yaml: 1 placements.
+A backup is written to verdicts.yaml.20260101-000000.bak first.
+Removed 1 decision from ~/cases/pollard/.hydra/review/verdicts.yaml (backup verdicts.yaml.20260101-000000.bak)
+Rebuilt Pollard case: 45 records, 45 entities, 2 open questions
+</code></pre></div>
+</details>
+<h2 id="stubs">stubs<a class="headerlink" href="#stubs" title="Permanent link">&para;</a></h2>
+<details class="example">
+<summary><code>hydra-ctl stubs</code></summary>
+<p><a href="../../examples/stubs.txt">stubs.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl stubs
+  name                          links   fields                                      fits           as
+  Lakam                             2   Membership.organization Membership.member   Organization   -
+  Israeli Ministry of Defense       1   Membership.organization                     Organization   -
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl stubs graduate Lakam</code></summary>
+<p><a href="../../examples/stubs-graduate.txt">stubs-graduate.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl stubs graduate Lakam
+  graduated   Lakam   Organization   stub:lakam
+Rebuilt Pollard case: 47 records, 48 entities, 3 open questions
+
+$ hydra-ctl stubs drop Lakam
+  dropped   Lakam
+Rebuilt Pollard case: 47 records, 47 entities, 5 open questions
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl stubs graduate 'Israeli Ministry of Defense' --as PublicBody</code></summary>
+<p><a href="../../examples/stubs-graduate-as.txt">stubs-graduate-as.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl stubs graduate "Israeli Ministry of Defense" --as PublicBody
+  graduated   Israeli Ministry of Defense   PublicBody   stub:israeli-ministry-of-defense
+Rebuilt Pollard case: 47 records, 48 entities, 4 open questions
+</code></pre></div>
+</details>
+<h2 id="pack">pack<a class="headerlink" href="#pack" title="Permanent link">&para;</a></h2>
+<details class="example">
+<summary><code>hydra-ctl pack -o ../pollard.hydra</code></summary>
+<p><a href="../../examples/pack.txt">pack.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl pack -o ../pollard.hydra
+Packed pollard into ~/cases/pollard.hydra
+  size     build
+  113 KB   included
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl pack -o ../case-one.hydra --no-parsed</code></summary>
+<p><a href="../../examples/pack-no-parsed.txt">pack-no-parsed.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl pack -o ../case-one.hydra --no-parsed
+Packed pollard into ~/cases/case-one.hydra
+  size    build
+  93 KB   left out
+</code></pre></div>
+</details>
+<h2 id="unpack">unpack<a class="headerlink" href="#unpack" title="Permanent link">&para;</a></h2>
+<details class="example">
+<summary><code>hydra-ctl unpack ../case-one.hydra</code></summary>
+<p><a href="../../examples/unpack.txt">unpack.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl unpack ../case-one.hydra
+Unpacked ../case-one.hydra into ~/cases/case-one
+</code></pre></div>
+</details>
+<h2 id="export">export<a class="headerlink" href="#export" title="Permanent link">&para;</a></h2>
+<details class="example">
+<summary><code>hydra-ctl export --format ftm -o ../pollard.ftm.jsonl</code></summary>
+<p><a href="../../examples/export-ftm.txt">export-ftm.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl export --format ftm -o ../pollard.ftm.jsonl
+Exported Pollard-case as ftm to ~/cases/pollard.ftm.jsonl
+  entities   ftm schema
+        45   65c772987032
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl export --format hydra-ftm -o ../pollard.hydra-ftm.jsonl</code></summary>
+<p><a href="../../examples/export-hydra-ftm.txt">export-hydra-ftm.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl export --format hydra-ftm -o ../pollard.hydra-ftm.jsonl
+Exported Pollard-case as hydra-ftm to ~/cases/pollard.hydra-ftm.jsonl
+  entities   ftm schema
+        45   65c772987032
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl export --format csv -o ../graph</code></summary>
+<p><a href="../../examples/export-csv.txt">export-csv.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl export --format csv -o ../graph
+Exported Pollard-case as csv to ~/cases/graph
+  entities   nodes   edges   unlinked relationships   ftm schema
+        45      26      54                        0   65c772987032
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl export --format graphml -o ../pollard.graphml</code></summary>
+<p><a href="../../examples/export-graphml.txt">export-graphml.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl export --format graphml -o ../pollard.graphml
+Exported Pollard-case as graphml to ~/cases/pollard.graphml
+  entities   nodes   edges   unlinked relationships   ftm schema
+        45      26      54                        0   65c772987032
+</code></pre></div>
+</details>
+<h2 id="collections">collections<a class="headerlink" href="#collections" title="Permanent link">&para;</a></h2>
+<details class="example">
+<summary><code>hydra-ctl collections</code></summary>
+<p><a href="../../examples/collections.txt">collections.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl collections
+  prefixes set in   archive
+
+  collection                  prefix    records   own prefix   claims   in others   citations
+  pollard-damage-assessment   pollard        44            0      146           0          25
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl collections prefix press media</code></summary>
+<p><a href="../../examples/collections-prefix.txt">collections-prefix.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl collections prefix press media
+Changed press's prefix: pollard -&gt; media
+Rebuilt Pollard case: 47 records, 47 entities, 4 open questions
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl collections prefix press media</code></summary>
+<p><a href="../../examples/collections-prefix-rekey.txt">collections-prefix-rekey.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl collections prefix press media
+1 decision(s) are filed under pollard: ids; the new prefix would orphan them.
+Run again with --rekey to rewrite them. Nothing changed.
+
+$ hydra-ctl collections prefix press media --rekey
+Changed press's prefix: pollard -&gt; media (1 decision rewritten)
+Rebuilt Pollard case: 47 records, 46 entities, 2 open questions
+1 of 1 rewritten decisions found their rows
+</code></pre></div>
+</details>
+<h2 id="defaults">defaults<a class="headerlink" href="#defaults" title="Permanent link">&para;</a></h2>
+<details class="example">
+<summary><code>hydra-ctl defaults</code></summary>
+<p><a href="../../examples/defaults.txt">defaults.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl defaults
+generic    default
+hierarchy  changed
+hints      default
+direction  default
+collate    default
+params     default
+artifact   default
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl defaults off generic</code></summary>
+<p><a href="../../examples/defaults-off-on.txt">defaults-off-on.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl defaults off generic
+off: generic; build to apply
+
+$ hydra-ctl defaults
+generic    off
+hierarchy  changed
+hints      default
+direction  default
+collate    default
+params     default
+artifact   default
+
+$ hydra-ctl defaults on
+off: none; build to apply
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl defaults restore hints params --yes</code></summary>
+<p><a href="../../examples/defaults-restore.txt">defaults-restore.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl defaults restore hints params --yes
+nothing to restore: hints, params as shipped
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl defaults restore --all --yes</code></summary>
+<p><a href="../../examples/defaults-restore-all.txt">defaults-restore-all.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl defaults restore --all --yes
+This restores 1 file(s) from the template: .hydra/rules/positions.yaml
+1 changed file(s) are backed up first, as &lt;file&gt;.20260101-000000.bak
+Restored 1 file from the template
+</code></pre></div>
+</details>
+<h2 id="hints">hints<a class="headerlink" href="#hints" title="Permanent link">&para;</a></h2>
+<details class="example">
+<summary><code>hydra-ctl hints</code></summary>
+<p><a href="../../examples/hints.txt">hints.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl hints
+  0  {position: Leader}   {thumb: icons/crown.svg}
+  1  {position: Second-in-command}   {thumb: icons/star-2.svg}
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl hints set thumb icons/crown.svg --position Analyst</code></summary>
+<p><a href="../../examples/hints-set-position.txt">hints-set-position.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl hints set thumb icons/crown.svg --position Analyst
+Added hints[2]: {position: Analyst}   {thumb: icons/crown.svg}
+Rebuilt Pollard case: 45 records, 45 entities, 2 open questions
+  reaches   1 node
+</code></pre></div>
+</details>
+<details class="example">
+<summary><code>hydra-ctl hints set thumb ../pics/flask.svg --titled 'fighter pilot|secretary'</code></summary>
+<p><a href="../../examples/hints-set-titled.txt">hints-set-titled.txt</a></p>
+<div class="highlight"><pre><span></span><code>$ hydra-ctl hints set thumb ../pics/flask.svg --titled "fighter pilot|secretary"
+Added hints[2]: {titled: {contains: fighter pilot|secretary}}   {thumb: icons/flask.svg}
+Rebuilt Pollard case: 45 records, 45 entities, 2 open questions
+  reaches   2 nodes
+</code></pre></div>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../settings/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Settings">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Settings
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../reference/config-files/" class="md-footer__link md-footer__link--next" aria-label="Next: Config files">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Config files
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

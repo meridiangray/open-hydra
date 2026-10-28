@@ -1,0 +1,4 @@
+$ hydra-ctl hints set thumb ../pics/flask.svg --titled "fighter pilot|secretary"
+Added hints[2]: {titled: {contains: fighter pilot|secretary}}   {thumb: icons/flask.svg}
+Rebuilt Pollard case: 45 records, 45 entities, 2 open questions
+  reaches   2 nodes

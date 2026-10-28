@@ -1,0 +1,46 @@
+$ hydra-ctl review --only references
+review   Pollard case
+
+  kind         rows   questions
+  references      1           1
+  total           1           1
+
+[1/1] Reference · a name with 2 possible records
+  pollard:emp-b7d2n9x4hc   Employment.employee   Jonathan
+
+  ┌─ Link from ───────────────────────────────┐
+  │ pollard:emp-b7d2n9x4hc   Employment       │
+  │  → employee   Jonathan                    │
+  │    employer   Naval Investigative Service │
+  │    role       analyst                     │
+  └───────────────────────────────────────────┘
+
+  1  pollard:per-k3m8v1qz5t   Person
+     alias       Jay Pollard
+     birthDate   1954
+     name        Jonathan Pollard
+     notes       Navy analyst, arrested in 1985
+
+  2  pollard:per-w3v2f7z7pe   Person
+     alias       Jonathan Pollard
+     name        Jonathan Jay Pollard
+     sources     pollard:doc-v9g25vcmkx
+     weakAlias   Pollard
+
+  [all fields]   name fields   matching fields      Tab / Shift+Tab
+Which record is "Jonathan"?
+  1  Jonathan Pollard       pollard:per-k3m8v1qz5t
+  2  Jonathan Jay Pollard   pollard:per-w3v2f7z7pe
+  3  neither
+  ? not sure   u undo   q quit
+> 2
+  saved   Jonathan Jay Pollard
+
+  answered   1
+
+  kind         before   now
+  merges            1     1
+  references        1     0
+  placements        2     2
+
+Rebuilt Pollard case: 47 records, 47 entities, 3 open questions

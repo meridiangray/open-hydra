@@ -1,0 +1,18 @@
+$ hydra-ctl sources person --uncited
+sources
+
+  entities   8
+
+  entries
+
+  The Jonathan Jay Pollard Espionage Case: A Damage Assessment (Document)   Foreign Denial and Deception Analysis Committee, Director of Central Intelligence   pollard:doc-v9g25vcmkx
+  ├── Anne Henderson-Pollard (Person)   sources   pollard:per-jbcv7nwbwb
+  ├── Aviem Sella (Person)   sources   pollard:per-6q0b4zamfq
+  ├── Ilan Ravid (Person)   sources   pollard:per-jyft1ret42
+  ├── Irit Erb (Person)   sources   pollard:per-89cafr9tn9
+  ├── Jonathan Jay Pollard (Person)   sources   pollard:per-w3v2f7z7pe
+  ├── Joseph Yagur (Person)   sources   pollard:per-p8w1q8cajn
+  ├── Rafael Eitan (Person)   sources   pollard:per-9n72sstcw8
+  └── Shamir (Person)   sources   pollard:per-sjje7bahkq
+
+  uncited    0

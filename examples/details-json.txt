@@ -1,0 +1,224 @@
+$ hydra-ctl details --format json
+{
+ "archive": "~/cases//pollard",
+ "name": "Pollard case",
+ "subject": null,
+ "built": "2026-01-01T00:00:00+00:00",
+ "collections": {
+  "pollard-damage-assessment": {
+   "prefix": "pollard",
+   "records": 44,
+   "claims": 146,
+   "in_others": 0,
+   "citations": 25
+  },
+  "sources/pollard-damage-assessment": {
+   "prefix": "pollard",
+   "records": 1,
+   "claims": 10,
+   "in_others": 0,
+   "citations": 0
+  }
+ },
+ "records": 45,
+ "entities": 45,
+ "claims": 156,
+ "schemas": {
+  "PublicBody": {
+   "records": 15,
+   "entities": 15
+  },
+  "Person": {
+   "records": 8,
+   "entities": 8
+  },
+  "Employment": {
+   "records": 7,
+   "entities": 7
+  },
+  "Membership": {
+   "records": 5,
+   "entities": 5
+  },
+  "Associate": {
+   "records": 4,
+   "entities": 4
+  },
+  "Document": {
+   "records": 1,
+   "entities": 1
+  },
+  "Family": {
+   "records": 1,
+   "entities": 1
+  },
+  "Occupancy": {
+   "records": 1,
+   "entities": 1
+  },
+  "Organization": {
+   "records": 1,
+   "entities": 1
+  },
+  "Position": {
+   "records": 1,
+   "entities": 1
+  },
+  "Representation": {
+   "records": 1,
+   "entities": 1
+  }
+ },
+ "reads": {
+  "generic": {
+   "nodes": 24,
+   "roots": 15,
+   "positioned": 0
+  },
+  "declared": {
+   "nodes": 24,
+   "roots": 15,
+   "positioned": 1
+  }
+ },
+ "open": {
+  "placements": 2
+ },
+ "automatic": {
+  "placements": 7
+ },
+ "issues": {
+  "error": 0,
+  "warning": 0,
+  "info": 3
+ },
+ "newer_than_build": [
+  ".hydra/resources/.gitkeep",
+  ".hydra/resources/icons/LICENSE-lucide.txt",
+  ".hydra/resources/icons/briefcase.svg",
+  ".hydra/resources/icons/crown.svg",
+  ".hydra/resources/icons/public-body.svg",
+  ".hydra/resources/icons/star-2.svg",
+  ".hydra/review/verdicts.yaml",
+  ".hydra/rules/defaults/positions.yaml",
+  ".hydra/rules/hints.yaml",
+  ".hydra/rules/positions.yaml",
+  ".hydra/schema/direction.yaml",
+  ".hydra/schema/extensions/artifact.yaml",
+  ".hydra/schema/extensions/collate.yaml",
+  ".hydra/schema/ftm/config/common.yaml",
+  ".hydra/schema/ftm/config/findfields.yaml",
+  ".hydra/schema/ftm/followthemoney/Address.yaml",
+  ".hydra/schema/ftm/followthemoney/Airplane.yaml",
+  ".hydra/schema/ftm/followthemoney/Analyzable.yaml",
+  ".hydra/schema/ftm/followthemoney/Article.yaml",
+  ".hydra/schema/ftm/followthemoney/Assessment.yaml",
+  ".hydra/schema/ftm/followthemoney/Asset.yaml",
+  ".hydra/schema/ftm/followthemoney/Associate.yaml",
+  ".hydra/schema/ftm/followthemoney/Audio.yaml",
+  ".hydra/schema/ftm/followthemoney/BankAccount.yaml",
+  ".hydra/schema/ftm/followthemoney/Call.yaml",
+  ".hydra/schema/ftm/followthemoney/CallForTenders.yaml",
+  ".hydra/schema/ftm/followthemoney/Company.yaml",
+  ".hydra/schema/ftm/followthemoney/Contract.yaml",
+  ".hydra/schema/ftm/followthemoney/ContractAward.yaml",
+  ".hydra/schema/ftm/followthemoney/CourtCase.yaml",
+  ".hydra/schema/ftm/followthemoney/CourtCaseParty.yaml",
+  ".hydra/schema/ftm/followthemoney/CryptoWallet.yaml",
+  ".hydra/schema/ftm/followthemoney/Debt.yaml",
+  ".hydra/schema/ftm/followthemoney/Directorship.yaml",
+  ".hydra/schema/ftm/followthemoney/Document.yaml",
+  ".hydra/schema/ftm/followthemoney/Documentation.yml",
+  ".hydra/schema/ftm/followthemoney/EconomicActivity.yaml",
+  ".hydra/schema/ftm/followthemoney/Email.yaml",
+  ".hydra/schema/ftm/followthemoney/Employment.yaml",
+  ".hydra/schema/ftm/followthemoney/Event.yaml",
+  ".hydra/schema/ftm/followthemoney/Family.yaml",
+  ".hydra/schema/ftm/followthemoney/Folder.yaml",
+  ".hydra/schema/ftm/followthemoney/HyperText.yaml",
+  ".hydra/schema/ftm/followthemoney/Identification.yaml",
+  ".hydra/schema/ftm/followthemoney/Image.yaml",
+  ".hydra/schema/ftm/followthemoney/Interest.yaml",
+  ".hydra/schema/ftm/followthemoney/Interval.yaml",
+  ".hydra/schema/ftm/followthemoney/LegalEntity.yaml",
+  ".hydra/schema/ftm/followthemoney/License.yaml",
+  ".hydra/schema/ftm/followthemoney/Membership.yaml",
+  ".hydra/schema/ftm/followthemoney/Mention.yaml",
+  ".hydra/schema/ftm/followthemoney/Message.yaml",
+  ".hydra/schema/ftm/followthemoney/Note.yaml",
+  ".hydra/schema/ftm/followthemoney/Occupancy.yaml",
+  ".hydra/schema/ftm/followthemoney/Organization.yaml",
+  ".hydra/schema/ftm/followthemoney/Ownership.yaml",
+  ".hydra/schema/ftm/followthemoney/Package.yaml",
+  ".hydra/schema/ftm/followthemoney/Page.yaml",
+  ".hydra/schema/ftm/followthemoney/Pages.yaml",
+  ".hydra/schema/ftm/followthemoney/Passport.yaml",
+  ".hydra/schema/ftm/followthemoney/Payment.yaml",
+  ".hydra/schema/ftm/followthemoney/Person.yaml",
+  ".hydra/schema/ftm/followthemoney/PlainText.yaml",
+  ".hydra/schema/ftm/followthemoney/Position.yaml",
+  ".hydra/schema/ftm/followthemoney/Post.yaml",
+  ".hydra/schema/ftm/followthemoney/Project.yaml",
+  ".hydra/schema/ftm/followthemoney/ProjectParticipant.yaml",
+  ".hydra/schema/ftm/followthemoney/PublicBody.yaml",
+  ".hydra/schema/ftm/followthemoney/RealEstate.yaml",
+  ".hydra/schema/ftm/followthemoney/Representation.yaml",
+  ".hydra/schema/ftm/followthemoney/Sanction.yaml",
+  ".hydra/schema/ftm/followthemoney/Security.yaml",
+  ".hydra/schema/ftm/followthemoney/Similar.yaml",
+  ".hydra/schema/ftm/followthemoney/Succession.yaml",
+  ".hydra/schema/ftm/followthemoney/Table.yaml",
+  ".hydra/schema/ftm/followthemoney/TaxRoll.yaml",
+  ".hydra/schema/ftm/followthemoney/Thing.yaml",
+  ".hydra/schema/ftm/followthemoney/Trip.yaml",
+  ".hydra/schema/ftm/followthemoney/UnknownLink.yaml",
+  ".hydra/schema/ftm/followthemoney/UserAccount.yaml",
+  ".hydra/schema/ftm/followthemoney/Value.yaml",
+  ".hydra/schema/ftm/followthemoney/Vehicle.yaml",
+  ".hydra/schema/ftm/followthemoney/Vessel.yaml",
+  ".hydra/schema/ftm/followthemoney/Video.yaml",
+  ".hydra/schema/ftm/followthemoney/Workbook.yaml",
+  ".hydra/schema/params/Address.param.yaml",
+  ".hydra/schema/params/Associate.param.yaml",
+  ".hydra/schema/params/BankAccount.param.yaml",
+  ".hydra/schema/params/Company.param.yaml",
+  ".hydra/schema/params/Contract.param.yaml",
+  ".hydra/schema/params/ContractAward.param.yaml",
+  ".hydra/schema/params/CourtCase.param.yaml",
+  ".hydra/schema/params/CourtCaseParty.param.yaml",
+  ".hydra/schema/params/CryptoWallet.param.yaml",
+  ".hydra/schema/params/Directorship.param.yaml",
+  ".hydra/schema/params/Document.param.yaml",
+  ".hydra/schema/params/Documentation.param.yaml",
+  ".hydra/schema/params/Employment.param.yaml",
+  ".hydra/schema/params/Event.param.yaml",
+  ".hydra/schema/params/Family.param.yaml",
+  ".hydra/schema/params/Identification.param.yaml",
+  ".hydra/schema/params/LegalEntity.param.yaml",
+  ".hydra/schema/params/Membership.param.yaml",
+  ".hydra/schema/params/Occupancy.param.yaml",
+  ".hydra/schema/params/Organization.param.yaml",
+  ".hydra/schema/params/Ownership.param.yaml",
+  ".hydra/schema/params/Page.param.yaml",
+  ".hydra/schema/params/Pages.param.yaml",
+  ".hydra/schema/params/Payment.param.yaml",
+  ".hydra/schema/params/Person.param.yaml",
+  ".hydra/schema/params/Position.param.yaml",
+  ".hydra/schema/params/Post.param.yaml",
+  ".hydra/schema/params/Project.param.yaml",
+  ".hydra/schema/params/ProjectParticipant.param.yaml",
+  ".hydra/schema/params/PublicBody.param.yaml",
+  ".hydra/schema/params/RealEstate.param.yaml",
+  ".hydra/schema/params/Representation.param.yaml",
+  ".hydra/schema/params/Sanction.param.yaml",
+  ".hydra/schema/params/Similar.param.yaml",
+  ".hydra/schema/params/Succession.param.yaml",
+  ".hydra/schema/params/Trip.param.yaml",
+  ".hydra/schema/params/Vehicle.param.yaml",
+  ".hydra/sources/entries/.gitkeep",
+  ".hydra/sources/entries/pollard-damage-assessment.json",
+  "collections/.gitkeep",
+  "collections/pollard-damage-assessment.json",
+  "hydra.yaml"
+ ]
+}

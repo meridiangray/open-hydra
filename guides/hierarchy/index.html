@@ -1,0 +1,1737 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Hydra translates evidence into data points. Guides and command reference for hydra-ctl.">
+      
+      
+      
+        <link rel="canonical" href="https://meridiangray.github.io/open-hydra/guides/hierarchy/">
+      
+      
+        <link rel="prev" href="../reviewing/">
+      
+      
+        <link rel="next" href="../hints/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Defining Hierarchies - open-hydra</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#defining-hierarchies" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="open-hydra" class="md-header__button md-logo" aria-label="open-hydra" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            open-hydra
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Defining Hierarchies
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/meridiangray/open-hydra/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="open-hydra" class="md-nav__button md-logo" aria-label="open-hydra" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    open-hydra
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/meridiangray/open-hydra/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quickstart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/how-hydra-works/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How Hydra works
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/archive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hydra Archives
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/records/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Records and collections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reviewing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reviewing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Defining Hierarchies
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Defining Hierarchies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-hydra-builds-a-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Hydra builds a tree
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-a-records-title-comes-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where a record's title comes from
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The format
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defaultspositionsyaml-and-positionsyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        defaults/positions.yaml and positions.yaml
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#labelling-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Labelling strategies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step by step
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rules-that-keep-a-hierarchy-valid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rules that keep a hierarchy valid
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recipes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recipes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-criminal-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A criminal organization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-company" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A company
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-government-agency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A government agency
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For agents
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Images and badges
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    hydra-mcp (AI assistants)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Command reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Command reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup and build
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/inspect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Review and decide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/share/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pack and export
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/output/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example output
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/config-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Config files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-hydra-builds-a-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Hydra builds a tree
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-a-records-title-comes-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where a record's title comes from
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The format
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defaultspositionsyaml-and-positionsyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        defaults/positions.yaml and positions.yaml
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#labelling-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Labelling strategies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step by step
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rules-that-keep-a-hierarchy-valid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rules that keep a hierarchy valid
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recipes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recipes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-criminal-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A criminal organization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-company" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A company
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-government-agency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A government agency
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For agents
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="defining-hierarchies">Defining Hierarchies<a class="headerlink" href="#defining-hierarchies" title="Permanent link">&para;</a></h1>
+<p>This guide is for anyone writing <code>.hydra/rules/positions.yaml</code> from scratch, whether a person or an agent working on their behalf. The defaults Hydra ships are deliberately small. Most investigations need their own ladder of ranks, and this is how to build one that Hydra reads the way you mean it.</p>
+<h2 id="how-hydra-builds-a-tree">How Hydra builds a tree<a class="headerlink" href="#how-hydra-builds-a-tree" title="Permanent link">&para;</a></h2>
+<p>Hydra places every record in two steps.</p>
+<ol>
+<li><strong>The records decide which organization.</strong> A Membership, Employment, Directorship or Ownership record links two entities, and <code>direction.yaml</code> says which end is the parent: the organization above its member, the employer above its employee, the owner above what it owns. When the records give a record several possible parents, review asks you to choose.</li>
+<li><strong>Positions rank people inside an organization.</strong> Once a record is inside an organization, the position rules decide who it sits under there: a Soldier under the Lieutenant, a Lieutenant under the Underboss. This is what <code>positions.yaml</code> controls.</li>
+</ol>
+<p>The position rules only work inside organizations. They never decide which organization someone belongs to, and once you confirm an organization for someone in review, they never move them out of it.</p>
+<h2 id="where-a-records-title-comes-from">Where a record's title comes from<a class="headerlink" href="#where-a-records-title-comes-from" title="Permanent link">&para;</a></h2>
+<p>The rules rank a record by its title. Hydra takes the first of these that matches a position:</p>
+<ol>
+<li>the <code>role</code> on the relationship that places it (its Membership, Employment, Directorship…)</li>
+<li>the <code>role</code> on its other relationships</li>
+<li>its own <code>position</code> field</li>
+</ol>
+<p>A title matches a position when it equals the position's name or one of its <code>titles</code>, whole. Case and accents don't matter, and punctuation counts as a space:</p>
+<table>
+<thead>
+<tr>
+<th>Role in the record</th>
+<th>Matches the title</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vice-President</code></td>
+<td><code>vice president</code></td>
+<td>the hyphen counts as a space</td>
+</tr>
+<tr>
+<td><code>Vice Président</code></td>
+<td><code>vice president</code></td>
+<td>accents are ignored</td>
+</tr>
+<tr>
+<td><code>VP</code></td>
+<td><code>vp</code></td>
+<td>case is ignored</td>
+</tr>
+<tr>
+<td><code>V.P.</code></td>
+<td><code>v.p.</code> only</td>
+<td>the dots become spaces: "v p"</td>
+</tr>
+<tr>
+<td><code>VP of Sales</code></td>
+<td><code>vp of sales</code> only</td>
+<td>the whole role must match</td>
+</tr>
+</tbody>
+</table>
+<p>A record with no role and no <code>position</code> gets no title, so the rules leave it directly under its organization. Hydra never ranks anyone by a title the data doesn't contain.</p>
+<p>(<code>direction.yaml</code> can opt in to filling a blank role with <code>edge_positions</code>, but that is off by default for this reason.)</p>
+<h2 id="the-format">The format<a class="headerlink" href="#the-format" title="Permanent link">&para;</a></h2>
+<p>Each position is one line:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Position name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">below</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">Rank above</span><span class="p p-Indicator">],</span><span class="nt"> titles</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">other words for it</span><span class="p p-Indicator">]}</span>
+</code></pre></div>
+<dl>
+<dt><code>titles</code></dt>
+<dd>The position's aliases: every wording your data uses for it. The position's own name counts as a title too.</dd>
+<dt><code>below</code></dt>
+<dd>The rank directly above. A record goes under the nearest member of its organization who holds that rank, and if nobody does, under the rank above that.</dd>
+<dt><code>above</code></dt>
+<dd>The same link written from the other side: <code>Underboss: {above: [Lieutenant]}</code> means Lieutenant is below Underboss. Use one or the other, not both, for the same link.</dd>
+<dt><code>outside: true</code></dt>
+<dd>A position beside the organization rather than in it, such as a lawyer or an associate. Outside positions never rank anyone and are never ranked.</dd>
+</dl>
+<h2 id="defaultspositionsyaml-and-positionsyaml">defaults/positions.yaml and positions.yaml<a class="headerlink" href="#defaultspositionsyaml-and-positionsyaml" title="Permanent link">&para;</a></h2>
+<p><code>defaults/positions.yaml</code> ships with four positions about an organization's own leadership. <code>positions.yaml</code> is yours and ships empty.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">positions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Leader</span><span class="p">:</span><span class="w">            </span><span class="p p-Indicator">{</span><span class="nt">titles</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">boss</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">leader</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">head of organization</span><span class="p p-Indicator">]}</span>
+<span class="w">  </span><span class="nt">Second-in-command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">below</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">Leader</span><span class="p p-Indicator">],</span><span class="nt"> titles</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">second in command</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">deputy</span><span class="p p-Indicator">]}</span>
+<span class="w">  </span><span class="nt">Member</span><span class="p">:</span><span class="w">            </span><span class="p p-Indicator">{</span><span class="nt">below</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">Second-in-command</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Leader</span><span class="p p-Indicator">],</span><span class="nt"> titles</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">member</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">crew member</span><span class="p p-Indicator">]}</span>
+<span class="w">  </span><span class="nt">Associate</span><span class="p">:</span><span class="w">         </span><span class="p p-Indicator">{</span><span class="nt">outside</span><span class="p">:</span><span class="w"> </span><span class="nv">true</span><span class="p p-Indicator">,</span><span class="nt"> titles</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">associate</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">close associate</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">contact</span><span class="p p-Indicator">]}</span>
+</code></pre></div>
+<p>A position you name in <code>positions.yaml</code> that also exists in the defaults keeps its generic titles and adds yours. It keeps its generic place in the ladder too, unless your entry gives its own <code>below</code> or <code>above</code>, which then replace the generic ones.</p>
+<p>So mapping your data's wording onto a default rank is one line, and nothing moves: <code>Leader: {titles: [administrator, chair]}</code> makes "administrator" and "chair" rank as Leader. Keep the wording in the records as the source has it; the title does the mapping.</p>
+<p>A new name in <code>positions.yaml</code> simply adds a position, and it can sit under a generic one (<code>below: [Leader]</code>). The demo archive, for instance, moves Member down a level:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Member</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">below</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">Crew chief</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Head of security</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Second-in-command</span><span class="p p-Indicator">]}</span>
+</code></pre></div>
+<p>To start from nothing, switch the generic positions off with <code>hydra-ctl defaults off generic</code>, and <code>positions.yaml</code> is the whole ladder. The shipped <code>hints.yaml</code> still gives icons to Leader and Second-in-command, so <code>check</code> warns <code>hints.unknown-position</code> until you point those two rules at your own ranks (<code>match: {position: Boss}</code>) or remove them.</p>
+<h2 id="labelling-strategies">Labelling strategies<a class="headerlink" href="#labelling-strategies" title="Permanent link">&para;</a></h2>
+<p>If your data's roles don't line up with the hierarchy, you have a few options:</p>
+<ol>
+<li>Label your positions using existing labels in the hierarchy.</li>
+<li>Modify the hierarchy to fit your data.</li>
+<li>Add the wording your data uses as a title on an existing position.</li>
+</ol>
+<p>It's reasonable to gather some data first, then shape <code>positions.yaml</code> after.</p>
+<h2 id="step-by-step">Step by step<a class="headerlink" href="#step-by-step" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Build once and look at the titles your data uses.</strong>
+   <div class="highlight"><pre><span></span><code>hydra-ctl<span class="w"> </span>build
+hydra-ctl<span class="w"> </span>positions<span class="w"> </span>--unplaced
+</code></pre></div>
+   This lists every role and position wording found in the data that no position takes yet. These are your raw material.</li>
+<li><strong>Sketch the ladder top down.</strong> One name per rank, then, for each rank, the wordings from step 1 that mean it.</li>
+<li><strong>Write <code>positions.yaml</code>.</strong> In each <code>below</code>, name only the rank directly above.</li>
+<li><strong>Check the files.</strong>
+   <div class="highlight"><pre><span></span><code>hydra-ctl<span class="w"> </span>check
+</code></pre></div>
+   It reports a title claimed by two positions (<code>positions.title-twice</code>; the first position wins), a misspelled key, or an outside position with a <code>below</code>.</li>
+<li><strong>Build and read the ladder.</strong>
+   <div class="highlight"><pre><span></span><code>hydra-ctl<span class="w"> </span>build
+hydra-ctl<span class="w"> </span>positions<span class="w"> </span>--tree<span class="w"> </span>--nodes
+</code></pre></div>
+   The ladder shows each position, its titles and who holds it. Problems the ladder itself has are listed at the end under <code>issues</code>: a position named in a <code>below</code> that you never defined, or a loop (A below B, B below A), which Hydra cuts.</li>
+<li><strong>Look at the tree.</strong>
+   <div class="highlight"><pre><span></span><code>hydra-ctl<span class="w"> </span>tree
+hydra-ctl<span class="w"> </span>positions<span class="w"> </span>--unplaced
+</code></pre></div>
+   Each record now sits under its rank. Anything still listed by <code>--unplaced</code> is a wording you haven't given a position, which may be fine (not every role is a rank) or an alias to add.</li>
+<li><strong>Review the placements.</strong> <code>hydra-ctl review --only placements</code> asks about each placement the rules made. <code>a</code> keeps every placement one rule made at once, a number picks another parent, and your answers stay through later builds.</li>
+</ol>
+<p>Repeat steps 3 to 7 as the data grows.</p>
+<h2 id="rules-that-keep-a-hierarchy-valid">Rules that keep a hierarchy valid<a class="headerlink" href="#rules-that-keep-a-hierarchy-valid" title="Permanent link">&para;</a></h2>
+<dl>
+<dt><strong>Name one rank in <code>below</code>.</strong></dt>
+<dd><code>Staff: {below: [Vice president]}</code> falls back to the chief executive on its own when there is no vice president. <code>Staff: {below: [Vice president, Chief executive]}</code> puts both on the same level, and the first in alphabetical order wins: staff end up under the chief executive.</dd>
+<dt><strong>Give each title to one position.</strong></dt>
+<dd>If two positions claim "director", the first wins and <code>check</code> warns.</dd>
+<dt><strong>Define every position you name.</strong></dt>
+<dd>A <code>below</code> that names an undefined position creates an empty "implied" one and an issue.</dd>
+<dt><strong>No loops.</strong></dt>
+<dd>If A is below B and B below A, Hydra cuts one link and reports it.</dd>
+<dt><strong>Keep separate chains separate.</strong></dt>
+<dd>A company and a criminal crew need different rank names and titles. Ranks with the same name are one rank everywhere in the archive.</dd>
+<dt><strong>Watch organization memberships.</strong></dt>
+<dd>An organization whose Membership role is a position title is ranked like a person: a unit that is a "member" of an agency goes under the agency's Leader. For one organization inside another, use a role that is not a rank, such as "affiliate", "unit" or "branch", or leave the role blank.</dd>
+<dt><strong>Add other languages as aliases.</strong></dt>
+<dd><code>titles: [boss, jefe, capo]</code>. Accents are already ignored, so <code>líder</code> matches <code>lider</code>.</dd>
+<dt><strong>Quote values with commas, colons or <code>#</code>.</strong></dt>
+<dd>Inside <code>{…}</code>, write <code>titles: ["head, operations"]</code>, or YAML splits the value.</dd>
+<dt><strong>Icons go elsewhere.</strong></dt>
+<dd><code>positions.yaml</code> only holds positions. Icons and badges by position go in <a href="../hints/"><code>hints.yaml</code></a> (<code>match: {position: Lieutenant}</code>).</dd>
+</dl>
+<h2 id="recipes">Recipes<a class="headerlink" href="#recipes" title="Permanent link">&para;</a></h2>
+<p>Each of these has been built and checked with Hydra. None is on by default. To use one, paste its block below at the end of <code>.hydra/rules/positions.yaml</code> (the shipped file holds only comments), add your data's wordings to the titles, then run <code>hydra-ctl check</code> and <code>hydra-ctl build</code>.</p>
+<h3 id="a-criminal-organization">A criminal organization<a class="headerlink" href="#a-criminal-organization" title="Permanent link">&para;</a></h3>
+<p>Its titles overlap the generic positions, so switch those off first: <code>hydra-ctl defaults off generic</code></p>
+<div class="highlight"><pre><span></span><code><span class="nt">Boss</span><span class="p">:</span><span class="w">        </span><span class="p p-Indicator">{</span><span class="nt">titles</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">boss</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">leader</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">don</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">kingpin</span><span class="p p-Indicator">]}</span>
+<span class="nt">Underboss</span><span class="p">:</span><span class="w">   </span><span class="p p-Indicator">{</span><span class="nt">below</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">Boss</span><span class="p p-Indicator">],</span><span class="nt"> titles</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">underboss</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">second in command</span><span class="p p-Indicator">]}</span>
+<span class="nt">Lieutenant</span><span class="p">:</span><span class="w">  </span><span class="p p-Indicator">{</span><span class="nt">below</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">Underboss</span><span class="p p-Indicator">],</span><span class="nt"> titles</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">lieutenant</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">capo</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">captain</span><span class="p p-Indicator">]}</span>
+<span class="nt">Soldier</span><span class="p">:</span><span class="w">     </span><span class="p p-Indicator">{</span><span class="nt">below</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">Lieutenant</span><span class="p p-Indicator">],</span><span class="nt"> titles</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">soldier</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">enforcer</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">crew member</span><span class="p p-Indicator">]}</span>
+<span class="nt">Lawyer</span><span class="p">:</span><span class="w">      </span><span class="p p-Indicator">{</span><span class="nt">outside</span><span class="p">:</span><span class="w"> </span><span class="nv">true</span><span class="p p-Indicator">,</span><span class="nt"> titles</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">lawyer</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">attorney</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">consigliere</span><span class="p p-Indicator">]}</span>
+</code></pre></div>
+<h3 id="a-company">A company<a class="headerlink" href="#a-company" title="Permanent link">&para;</a></h3>
+<p>Kept apart from the generic Leader chain:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Chief executive</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">titles</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">ceo</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">chief executive officer</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">president</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">managing director</span><span class="p p-Indicator">]}</span>
+<span class="nt">Vice president</span><span class="p">:</span><span class="w">  </span><span class="p p-Indicator">{</span><span class="nt">below</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">Chief executive</span><span class="p p-Indicator">],</span><span class="nt"> titles</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">vice president</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">vp</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">v.p.</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">senior vice president</span><span class="p p-Indicator">]}</span>
+<span class="nt">Staff</span><span class="p">:</span><span class="w">           </span><span class="p p-Indicator">{</span><span class="nt">below</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">Vice president</span><span class="p p-Indicator">],</span><span class="nt"> titles</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">staff</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">analyst</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">engineer</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">manager</span><span class="p p-Indicator">]}</span>
+<span class="nt">Board member</span><span class="p">:</span><span class="w">    </span><span class="p p-Indicator">{</span><span class="nt">outside</span><span class="p">:</span><span class="w"> </span><span class="nv">true</span><span class="p p-Indicator">,</span><span class="nt"> titles</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">director</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">board member</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">chairman</span><span class="p p-Indicator">]}</span>
+</code></pre></div>
+<p>The board sits beside the chain, so board members never rank staff, and staff never rank under a director. The defaults leave corporate ranks out on purpose: one shared ladder for every kind of relationship put employees under board members and companies under people.</p>
+<h3 id="a-government-agency">A government agency<a class="headerlink" href="#a-government-agency" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">Agency director</span><span class="p">:</span><span class="w">          </span><span class="p p-Indicator">{</span><span class="nt">titles</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">director</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">administrator</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">commissioner</span><span class="p p-Indicator">]}</span>
+<span class="nt">Deputy director</span><span class="p">:</span><span class="w">          </span><span class="p p-Indicator">{</span><span class="nt">below</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">Agency director</span><span class="p p-Indicator">],</span><span class="nt"> titles</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">deputy director</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">deputy administrator</span><span class="p p-Indicator">]}</span>
+<span class="nt">Special agent in charge</span><span class="p">:</span><span class="w">  </span><span class="p p-Indicator">{</span><span class="nt">below</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">Deputy director</span><span class="p p-Indicator">],</span><span class="nt"> titles</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">special agent in charge</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">sac</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">field office head</span><span class="p p-Indicator">]}</span>
+<span class="nt">Special agent</span><span class="p">:</span><span class="w">            </span><span class="p p-Indicator">{</span><span class="nt">below</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">Special agent in charge</span><span class="p p-Indicator">],</span><span class="nt"> titles</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">special agent</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">agent</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">investigator</span><span class="p p-Indicator">]}</span>
+</code></pre></div>
+<p>With records whose roles say "Administrator", "Deputy Administrator", "SAC" and "special agent", this draws (the <code>also</code> lines left out):</p>
+<div class="highlight"><pre><span></span><code>Federal Customs Agency (PublicBody)
+└── Dana Hale (Person) — Agency director
+    └── Rob Kerr (Person) — Deputy director
+        └── Lia Ortiz (Person) — Special agent in charge
+            └── Sam Webb (Person) — Special agent
+</code></pre></div>
+<p>A fifth role in the same data, "Task Force Officer", shows up in <code>positions --unplaced</code> until you give it a position.</p>
+<p>The company and agency recipes both use "director" for different ranks. In one archive, pick one meaning per title.</p>
+<h2 id="for-agents">For agents<a class="headerlink" href="#for-agents" title="Permanent link">&para;</a></h2>
+<p>An agent building a hierarchy should follow the steps above, reading Hydra's own output instead of guessing:</p>
+<ul>
+<li><strong>Read the titles in use:</strong> <code>hydra-ctl positions --unplaced --format json</code> returns <code>{"unrelated": [...], "issues": [...]}</code>. Only give positions to wordings that appear there. Never invent titles the data doesn't use.</li>
+<li><strong>Read the current ladder:</strong> <code>hydra-ctl positions --format json</code>.</li>
+<li><strong>Write only <code>positions.yaml</code>.</strong> Leave <code>defaults/positions.yaml</code> and <code>direction.yaml</code> as shipped unless the person asks.</li>
+<li><strong>Validate before finishing:</strong> <code>hydra-ctl check</code> must show no errors and no <code>positions.*</code> or <code>hints.unknown-position</code> warnings, and after <code>hydra-ctl build</code>, <code>hydra-ctl positions --format json</code> must return <code>"issues": []</code>.</li>
+<li><strong>Leave the decisions to the person.</strong> Don't answer review questions on their behalf. A hierarchy proposes placements, and the person confirms them.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../reviewing/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Reviewing">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Reviewing
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../hints/" class="md-footer__link md-footer__link--next" aria-label="Next: Images and badges">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Images and badges
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

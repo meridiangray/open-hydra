@@ -1,0 +1,5 @@
+$ hydra-ctl reset --yes
+This removes 1 decision(s) from ~/cases/pollard/.hydra/review/verdicts.yaml: 1 merges.
+A backup is written to verdicts.yaml.20260101-000000.bak first.
+Removed 1 decision from ~/cases/pollard/.hydra/review/verdicts.yaml (backup verdicts.yaml.20260101-000000.bak)
+Rebuilt Pollard case: 47 records, 47 entities, 4 open questions

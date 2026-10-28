@@ -1,0 +1,3 @@
+$ hydra-ctl answer ref-0cdfad5fa09cf83e 2
+Recorded ref-0cdfad5fa09cf83e: pollard:per-w3v2f7z7pe
+Rebuilt Pollard case: 47 records, 47 entities, 3 open questions

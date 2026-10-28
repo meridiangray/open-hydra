@@ -1,0 +1,8 @@
+$ hydra-ctl collections prefix press media
+1 decision(s) are filed under pollard: ids; the new prefix would orphan them.
+Run again with --rekey to rewrite them. Nothing changed.
+
+$ hydra-ctl collections prefix press media --rekey
+Changed press's prefix: pollard -> media (1 decision rewritten)
+Rebuilt Pollard case: 47 records, 46 entities, 2 open questions
+1 of 1 rewritten decisions found their rows

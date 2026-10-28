@@ -1,0 +1,22 @@
+$ hydra-ctl positions --tree --nodes
+Analyst
+  titles   analyst
+           research analyst
+  records  Jonathan Jay Pollard   Person
+Associate   outside
+  titles   associate
+           close associate
+           contact
+Leader
+│ titles   boss
+│          leader
+│          head of organization
+├── Member
+│     titles   member
+│              crew member
+└── Second-in-command
+    │ titles   second in command
+    │          deputy
+    └── Member ^
+          titles   member
+                   crew member

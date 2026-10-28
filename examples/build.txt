@@ -1,0 +1,2 @@
+$ hydra-ctl build
+Built Pollard case: 45 records, 45 entities, 2 open questions

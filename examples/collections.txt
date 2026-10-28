@@ -1,0 +1,5 @@
+$ hydra-ctl collections
+  prefixes set in   archive
+
+  collection                  prefix    records   own prefix   claims   in others   citations
+  pollard-damage-assessment   pollard        44            0      146           0          25

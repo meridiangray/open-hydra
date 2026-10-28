@@ -1,0 +1,3 @@
+$ hydra-ctl import ../case.hydra-ftm.jsonl --format hydra-ftm --name pollard
+Imported case.hydra-ftm.jsonl as collection pollard: 45 records
+Rebuilt Pollard case: 45 records, 45 entities, 2 open questions, 1 error, 1 warning

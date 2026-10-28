@@ -1,0 +1,2 @@
+$ hydra-ctl unpack ../case-one.hydra
+Unpacked ../case-one.hydra into ~/cases/case-one

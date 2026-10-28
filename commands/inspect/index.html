@@ -1,0 +1,2247 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Hydra translates evidence into data points. Guides and command reference for hydra-ctl.">
+      
+      
+      
+        <link rel="canonical" href="https://meridiangray.github.io/open-hydra/commands/inspect/">
+      
+      
+        <link rel="prev" href="../setup/">
+      
+      
+        <link rel="next" href="../review/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Explore - open-hydra</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#explore" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="open-hydra" class="md-header__button md-logo" aria-label="open-hydra" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            open-hydra
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Explore
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/meridiangray/open-hydra/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="open-hydra" class="md-nav__button md-logo" aria-label="open-hydra" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    open-hydra
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/meridiangray/open-hydra/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quickstart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/how-hydra-works/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How Hydra works
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/archive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hydra Archives
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/records/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Records and collections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/reviewing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reviewing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/hierarchy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Defining Hierarchies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/hints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Images and badges
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/mcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    hydra-mcp (AI assistants)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Command reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Command reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup and build
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explore
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#searches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Searches
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        check
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        details
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tree
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#relationship-charts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relationship charts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mermaid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mermaid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mermaid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mermaid-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mermaid options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        positions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#claims" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        claims
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-find" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        node find
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sources
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Review and decide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../share/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pack and export
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../output/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example output
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/config-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Config files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#searches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Searches
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        check
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        details
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tree
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#relationship-charts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relationship charts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mermaid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mermaid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mermaid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mermaid-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mermaid options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        positions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#claims" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        claims
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-find" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        node find
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sources
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="explore">Explore<a class="headerlink" href="#explore" title="Permanent link">&para;</a></h1>
+<p>These commands read the last build. None of them write anything.</p>
+<h2 id="searches">Searches<a class="headerlink" href="#searches" title="Permanent link">&para;</a></h2>
+<p><code>tree</code>, <code>claims</code>, <code>sources</code> and <code>node find</code> understand the same kinds of word, in any order and any capitalisation:</p>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Does</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A type, such as person, organization or company</td>
+<td>Keeps that type and its subtypes (organization includes companies)</td>
+<td><code>hydra-ctl claims person anne</code></td>
+</tr>
+<tr>
+<td>A relationship (<code>tree</code> only): ownership, membership, employment, directorship, occupancy or family</td>
+<td>Draws the chart along it</td>
+<td><code>hydra-ctl tree family employment</code></td>
+</tr>
+<tr>
+<td><code>sources</code></td>
+<td>Adds the sources of what the command returned</td>
+<td><code>hydra-ctl claims pollard sources</code></td>
+</tr>
+<tr>
+<td>Anything else</td>
+<td>The search, matched against names first and then other fields</td>
+<td><code>hydra-ctl node find pollard</code></td>
+</tr>
+</tbody>
+</table>
+<p>Several search words make one search, so <code>claims jonathan jay</code> and <code>claims "jonathan jay"</code> are the same. A word may match the start of a name: <code>jon</code> finds Jonathan Jay Pollard.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--names</code></td>
+<td>Searches names and ids only</td>
+</tr>
+<tr>
+<td><code>--no-text</code></td>
+<td>Searches every field except free text (notes, descriptions)</td>
+</tr>
+</tbody>
+</table>
+<p><code>search</code> in <a href="../../reference/config-files/#hydrayaml"><code>hydra.yaml</code></a> sets how far searches look when neither flag is given.</p>
+<h2 id="check">check<a class="headerlink" href="#check" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>hydra-ctl<span class="w"> </span>check
+hydra-ctl<span class="w"> </span>check<span class="w"> </span>--format<span class="w"> </span>json
+</code></pre></div>
+<p><a href="../output/#check">See the output of each example</a></p>
+<p>Lists every problem in the archive's files (rules, params, records and decisions) as errors, warnings and infos, without building. It exits with status 1 when there is an error.</p>
+<div class="highlight"><pre><span></span><code>  code                        level   found by   count   file
+  direction.both-ends-above   info    check          1   .hydra/schema/direction.yaml
+
+  code                        where       message
+  direction.both-ends-above   Occupancy   both ends (holder, post) are in `above`; the target, post, is the parent
+
+             check   old build
+  errors         0           0
+  warnings       0           0
+  info           1           3
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--format &lt;text / json&gt;</code></td>
+<td>Chooses how to print it (text by default)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="details">details<a class="headerlink" href="#details" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>hydra-ctl<span class="w"> </span>details
+hydra-ctl<span class="w"> </span>details<span class="w"> </span>htest.hydra<span class="w"> </span>--format<span class="w"> </span>json
+</code></pre></div>
+<p><a href="../output/#details">See the output of each example</a></p>
+<p>One screen with the archive's name, when it was built, its collections and prefixes, records and entities by type, tree size, open questions and issues. It warns when files changed since the build, and never builds.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--format json</code></td>
+<td>Prints it as data</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tree">tree<a class="headerlink" href="#tree" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>hydra-ctl<span class="w"> </span>tree
+hydra-ctl<span class="w"> </span>tree<span class="w"> </span>person
+hydra-ctl<span class="w"> </span>tree<span class="w"> </span><span class="s2">"task force"</span>
+hydra-ctl<span class="w"> </span>tree<span class="w"> </span>family
+hydra-ctl<span class="w"> </span>tree<span class="w"> </span>family<span class="w"> </span>employment
+hydra-ctl<span class="w"> </span>tree<span class="w"> </span>organization<span class="w"> </span>sources
+</code></pre></div>
+<p><a href="../output/#tree">See the output of each example</a></p>
+<p>Draws every record once, under one parent, like an org chart. A record's other parents are listed under it, so nothing is hidden.</p>
+<div class="highlight"><pre><span></span><code>Task Force 168 (PublicBody)
+└── Jonathan Jay Pollard (Person) — Analyst
+      also  Anti-Terrorist Alert Center                   Employment   analyst
+      also  Naval Ocean Surveillance Information Center   Employment   research analyst
+      also  Navy Field Operational Intelligence Office    Employment   analyst
+</code></pre></div>
+<p>When there is a reason the other parent isn't the drawn one, the line ends with it: <code>rejected</code> (you said no in review), <code>cycle</code> (it would make a loop) or <code>earlier</code> (its dates don't overlap the drawn one). With no word, both parents hold at once and the chart shows one.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Draws</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tree</code></td>
+<td>The whole chart</td>
+</tr>
+<tr>
+<td><code>tree person</code></td>
+<td>From each person not below another person</td>
+</tr>
+<tr>
+<td><code>tree "task force"</code></td>
+<td>From the records the search names</td>
+</tr>
+<tr>
+<td><code>tree family</code></td>
+<td>Only family links, and only the people in them</td>
+</tr>
+<tr>
+<td><code>tree family employment</code></td>
+<td>Both kinds, the first one a record has deciding its parent</td>
+</tr>
+<tr>
+<td><code>tree organization sources</code></td>
+<td>The chart, then the sources of everything drawn</td>
+</tr>
+</tbody>
+</table>
+<h3 id="relationship-charts">Relationship charts<a class="headerlink" href="#relationship-charts" title="Permanent link">&para;</a></h3>
+<p>A relationship word draws only links of that kind. Every record at either end of one is drawn, each labelled with its link, and records with none are left out (the header counts them).</p>
+<p>Records joined by these links are drawn together, with a blank line between unconnected groups, so one family reads as one block.</p>
+<div class="highlight"><pre><span></span><code>Anne Henderson-Pollard (Person)
+Jonathan Jay Pollard (Person)
+  also  Anne Henderson-Pollard   Family   wife   sideways
+</code></pre></div>
+<p>For family, the relationship text decides the direction. It describes the relative from the person's side, so father, mother or parent puts the relative above the person, and son, daughter or child puts the person above the relative.</p>
+<p>A child's line reads from the child's side ("child (father)" means the record says father). Anything else, such as spouse, sibling, uncle or in-law, stays sideways and is listed under the record's <code>person</code> on a "sideways" line.</p>
+<p>Relationship charts only change what is displayed. Nothing is rebuilt or saved, and a parent you rejected or one that would make a loop is never used.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--read &lt;declared / generic&gt;</code></td>
+<td>Uses your hierarchy rules (declared, the default) or the generic ones only</td>
+</tr>
+<tr>
+<td><code>--stubs</code></td>
+<td>Also draws the names no record has where their links would put them, as if each were graduated (nothing is saved; see <a href="../review/#stubs"><code>stubs</code></a>)</td>
+</tr>
+<tr>
+<td><code>--format &lt;text / json / mermaid&gt;</code></td>
+<td>Chooses how to print it</td>
+</tr>
+<tr>
+<td><code>--ascii</code></td>
+<td>Uses plain ASCII lines instead of box drawing</td>
+</tr>
+<tr>
+<td><code>--vertical</code>, <code>--lateral</code>, <code>--direction</code>, <code>--singletons</code></td>
+<td>Mermaid only; see <a href="#mermaid">below</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="mermaid">Mermaid<a class="headerlink" href="#mermaid" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>hydra-ctl<span class="w"> </span>tree<span class="w"> </span>--format<span class="w"> </span>mermaid<span class="w"> </span>&gt;<span class="w"> </span>chart.mmd
+hydra-ctl<span class="w"> </span>tree<span class="w"> </span>--format<span class="w"> </span>mermaid<span class="w"> </span>--vertical<span class="w"> </span>--direction<span class="w"> </span>LR
+hydra-ctl<span class="w"> </span>tree<span class="w"> </span>family<span class="w"> </span>--format<span class="w"> </span>mermaid
+</code></pre></div>
+<p><code>--format mermaid</code> prints the same chart as a Mermaid flowchart, which renders on GitHub, in mermaid.live and in most Markdown editors. Every way of choosing what to draw (a type, a search, a relationship, <code>--read</code>, <code>--stubs</code>) works the same.</p>
+<table>
+<thead>
+<tr>
+<th>Line</th>
+<th>Means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Solid arrow <code>--&gt;</code></td>
+<td>The parent the record is drawn under, labelled with the role</td>
+</tr>
+<tr>
+<td>Dotted arrow <code>-.-&gt;</code></td>
+<td>One of its other parents (the <code>also</code> lines), labelled with the role</td>
+</tr>
+<tr>
+<td>Dotted line <code>-.-</code></td>
+<td>A sideways link, such as Associate or Family, labelled with its wording</td>
+</tr>
+<tr>
+<td><code>%% no links:</code> comment</td>
+<td>The records left with no line, which Mermaid doesn't draw</td>
+</tr>
+</tbody>
+</table>
+<p>Labels come only from the records, never from your review choices.</p>
+<h4 id="mermaid-options">Mermaid options<a class="headerlink" href="#mermaid-options" title="Permanent link">&para;</a></h4>
+<p>Mermaid lays out every line as if it went down, so sideways and other-parent lines pull records onto the wrong rows. On anything bigger than a small search, draw one kind of line at a time.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Draws</th>
+<th>Use it for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--vertical</code></td>
+<td>Only the solid lines</td>
+<td>The hierarchy itself, the org chart</td>
+</tr>
+<tr>
+<td><code>--lateral</code></td>
+<td>Only the dotted lines</td>
+<td>Who else each record is tied to</td>
+</tr>
+<tr>
+<td><code>--singletons</code></td>
+<td>Records with no line as boxes, instead of listing them in the <code>%% no links:</code> comment</td>
+<td>Keeping every record on the chart after <code>--vertical</code> or <code>--lateral</code> drops its lines</td>
+</tr>
+<tr>
+<td><code>--direction LR</code></td>
+<td>Left to right instead of top-down (<code>TD</code>, the default)</td>
+<td>Wide, shallow trees</td>
+</tr>
+</tbody>
+</table>
+<p>The options combine. Here is each one on the whole archive, <code>tree</code>:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">default</label><label for="__tabbed_1_2">--vertical</label><label for="__tabbed_1_3">--lateral</label><label for="__tabbed_1_4">--lateral --singletons</label><label for="__tabbed_1_5">--direction LR</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Both kinds of line. The dotted lines cross the hierarchy.</p>
+<pre class="mermaid"><code>flowchart TD
+    %% record tree — pollard (GENERATED)
+    per_jbcv7nwbwb["Anne Henderson-Pollard"]
+    org_2hzt03a6z9["Israel"]
+    per_sjje7bahkq["Shamir&lt;br/&gt;&lt;i&gt;Prime Minister&lt;/i&gt;"]
+    org_ez802bp11f["Israeli Air Force"]
+    per_6q0b4zamfq["Aviem Sella&lt;br/&gt;&lt;i&gt;fighter pilot&lt;/i&gt;"]
+    org_6t8fkjn4kr["Israeli Consulate New York"]
+    per_p8w1q8cajn["Joseph Yagur&lt;br/&gt;&lt;i&gt;Counselor for Scientific Affairs&lt;/i&gt;"]
+    org_xfqaxke58a["Israeli Embassy in Washington, D.C."]
+    per_jyft1ret42["Ilan Ravid&lt;br/&gt;&lt;i&gt;Attache for Scientific Affairs&lt;/i&gt;"]
+    per_89cafr9tn9["Irit Erb&lt;br/&gt;&lt;i&gt;secretary&lt;/i&gt;"]
+    org_mspn9nxg7s["Naval Security and Investigative Command"]
+    org_tfadg8t3xv["Naval Investigative Service"]
+    org_8b2fsev104["Anti-Terrorist Alert Center"]
+    org_1phejc0ngk["Navy Field Operational Intelligence Office"]
+    org_3kk63smvp7["Naval Ocean Surveillance Information Center"]
+    org_f8xs95cwk2["New York University"]
+    per_9n72sstcw8["Rafael Eitan&lt;br/&gt;&lt;i&gt;senior career official in Israeli intelligence&lt;/i&gt;"]
+    org_ctk7r6bt77["Task Force 168"]
+    per_w3v2f7z7pe["Jonathan Jay Pollard&lt;br/&gt;&lt;i&gt;Analyst&lt;/i&gt;"]
+    org_2hzt03a6z9 --&gt; per_sjje7bahkq
+    org_ez802bp11f --&gt;|"fighter pilot"| per_6q0b4zamfq
+    org_6t8fkjn4kr --&gt;|"Counselor for Scientific Affairs"| per_p8w1q8cajn
+    org_xfqaxke58a --&gt;|"Attache for Scientific Affairs"| per_jyft1ret42
+    org_xfqaxke58a --&gt;|"secretary"| per_89cafr9tn9
+    org_mspn9nxg7s --&gt; org_tfadg8t3xv
+    org_tfadg8t3xv --&gt; org_8b2fsev104
+    org_1phejc0ngk --&gt; org_3kk63smvp7
+    org_ctk7r6bt77 --&gt; per_w3v2f7z7pe
+    org_f8xs95cwk2 -.-&gt; per_6q0b4zamfq
+    org_8b2fsev104 -.-&gt;|"analyst"| per_w3v2f7z7pe
+    org_3kk63smvp7 -.-&gt;|"research analyst"| per_w3v2f7z7pe
+    org_1phejc0ngk -.-&gt;|"analyst"| per_w3v2f7z7pe
+    per_w3v2f7z7pe -.-|"wife"| per_jbcv7nwbwb
+    per_w3v2f7z7pe -.-|"first handler"| per_6q0b4zamfq
+    per_w3v2f7z7pe -.-|"handler"| per_89cafr9tn9
+    per_w3v2f7z7pe -.- org_2hzt03a6z9
+    per_w3v2f7z7pe -.-|"primary, direct handler"| per_p8w1q8cajn
+    per_w3v2f7z7pe -.-|"senior Israeli official in charge of the case"| per_9n72sstcw8
+    %% no links: Central Intelligence Agency, Department of Defense, Federal Bureau of Investigation, Foreign Denial and Deception Analysis Committee, Office of Naval Intelligence
+</code></pre>
+<p><a href="../../examples/tree-all-mermaid.txt">tree-all-mermaid.txt</a></p>
+</div>
+<div class="tabbed-block">
+<p>Only who sits under whom.</p>
+<pre class="mermaid"><code>flowchart TD
+    %% record tree — pollard (GENERATED)
+    org_2hzt03a6z9["Israel"]
+    per_sjje7bahkq["Shamir&lt;br/&gt;&lt;i&gt;Prime Minister&lt;/i&gt;"]
+    org_ez802bp11f["Israeli Air Force"]
+    per_6q0b4zamfq["Aviem Sella&lt;br/&gt;&lt;i&gt;fighter pilot&lt;/i&gt;"]
+    org_6t8fkjn4kr["Israeli Consulate New York"]
+    per_p8w1q8cajn["Joseph Yagur&lt;br/&gt;&lt;i&gt;Counselor for Scientific Affairs&lt;/i&gt;"]
+    org_xfqaxke58a["Israeli Embassy in Washington, D.C."]
+    per_jyft1ret42["Ilan Ravid&lt;br/&gt;&lt;i&gt;Attache for Scientific Affairs&lt;/i&gt;"]
+    per_89cafr9tn9["Irit Erb&lt;br/&gt;&lt;i&gt;secretary&lt;/i&gt;"]
+    org_mspn9nxg7s["Naval Security and Investigative Command"]
+    org_tfadg8t3xv["Naval Investigative Service"]
+    org_8b2fsev104["Anti-Terrorist Alert Center"]
+    org_1phejc0ngk["Navy Field Operational Intelligence Office"]
+    org_3kk63smvp7["Naval Ocean Surveillance Information Center"]
+    org_ctk7r6bt77["Task Force 168"]
+    per_w3v2f7z7pe["Jonathan Jay Pollard&lt;br/&gt;&lt;i&gt;Analyst&lt;/i&gt;"]
+    org_2hzt03a6z9 --&gt; per_sjje7bahkq
+    org_ez802bp11f --&gt;|"fighter pilot"| per_6q0b4zamfq
+    org_6t8fkjn4kr --&gt;|"Counselor for Scientific Affairs"| per_p8w1q8cajn
+    org_xfqaxke58a --&gt;|"Attache for Scientific Affairs"| per_jyft1ret42
+    org_xfqaxke58a --&gt;|"secretary"| per_89cafr9tn9
+    org_mspn9nxg7s --&gt; org_tfadg8t3xv
+    org_tfadg8t3xv --&gt; org_8b2fsev104
+    org_1phejc0ngk --&gt; org_3kk63smvp7
+    org_ctk7r6bt77 --&gt; per_w3v2f7z7pe
+    %% no links: Anne Henderson-Pollard, Central Intelligence Agency, Department of Defense, Federal Bureau of Investigation, Foreign Denial and Deception Analysis Committee, New York University, Office of Naval Intelligence, Rafael Eitan
+</code></pre>
+<p><a href="../../examples/tree-all-mermaid-vertical.txt">tree-all-mermaid-vertical.txt</a></p>
+</div>
+<div class="tabbed-block">
+<p>Only the other ties. Records with none are left out and named in the closing comment.</p>
+<pre class="mermaid"><code>flowchart TD
+    %% record tree — pollard (GENERATED)
+    per_jbcv7nwbwb["Anne Henderson-Pollard"]
+    org_2hzt03a6z9["Israel"]
+    per_6q0b4zamfq["Aviem Sella&lt;br/&gt;&lt;i&gt;fighter pilot&lt;/i&gt;"]
+    per_p8w1q8cajn["Joseph Yagur&lt;br/&gt;&lt;i&gt;Counselor for Scientific Affairs&lt;/i&gt;"]
+    per_89cafr9tn9["Irit Erb&lt;br/&gt;&lt;i&gt;secretary&lt;/i&gt;"]
+    org_8b2fsev104["Anti-Terrorist Alert Center"]
+    org_1phejc0ngk["Navy Field Operational Intelligence Office"]
+    org_3kk63smvp7["Naval Ocean Surveillance Information Center"]
+    org_f8xs95cwk2["New York University"]
+    per_9n72sstcw8["Rafael Eitan&lt;br/&gt;&lt;i&gt;senior career official in Israeli intelligence&lt;/i&gt;"]
+    per_w3v2f7z7pe["Jonathan Jay Pollard&lt;br/&gt;&lt;i&gt;Analyst&lt;/i&gt;"]
+    org_f8xs95cwk2 -.-&gt; per_6q0b4zamfq
+    org_8b2fsev104 -.-&gt;|"analyst"| per_w3v2f7z7pe
+    org_3kk63smvp7 -.-&gt;|"research analyst"| per_w3v2f7z7pe
+    org_1phejc0ngk -.-&gt;|"analyst"| per_w3v2f7z7pe
+    per_w3v2f7z7pe -.-|"wife"| per_jbcv7nwbwb
+    per_w3v2f7z7pe -.-|"first handler"| per_6q0b4zamfq
+    per_w3v2f7z7pe -.-|"handler"| per_89cafr9tn9
+    per_w3v2f7z7pe -.- org_2hzt03a6z9
+    per_w3v2f7z7pe -.-|"primary, direct handler"| per_p8w1q8cajn
+    per_w3v2f7z7pe -.-|"senior Israeli official in charge of the case"| per_9n72sstcw8
+    %% no links: Central Intelligence Agency, Department of Defense, Federal Bureau of Investigation, Foreign Denial and Deception Analysis Committee, Shamir, Israeli Air Force, Israeli Consulate New York, Israeli Embassy in Washington, D.C., Ilan Ravid, Naval Security and Investigative Command, Naval Investigative Service, Office of Naval Intelligence, Task Force 168
+</code></pre>
+<p><a href="../../examples/tree-all-mermaid-lateral.txt">tree-all-mermaid-lateral.txt</a></p>
+</div>
+<div class="tabbed-block">
+<p>The same, with those records drawn as boxes.</p>
+<pre class="mermaid"><code>flowchart TD
+    %% record tree — pollard (GENERATED)
+    per_jbcv7nwbwb["Anne Henderson-Pollard"]
+    org_kma9pjvdcc["Central Intelligence Agency"]
+    org_jgy4y4pe9x["Department of Defense"]
+    org_qyewkz38cq["Federal Bureau of Investigation"]
+    org_bvzgp9f1t6["Foreign Denial and Deception Analysis Committee"]
+    org_2hzt03a6z9["Israel"]
+    per_sjje7bahkq["Shamir&lt;br/&gt;&lt;i&gt;Prime Minister&lt;/i&gt;"]
+    org_ez802bp11f["Israeli Air Force"]
+    per_6q0b4zamfq["Aviem Sella&lt;br/&gt;&lt;i&gt;fighter pilot&lt;/i&gt;"]
+    org_6t8fkjn4kr["Israeli Consulate New York"]
+    per_p8w1q8cajn["Joseph Yagur&lt;br/&gt;&lt;i&gt;Counselor for Scientific Affairs&lt;/i&gt;"]
+    org_xfqaxke58a["Israeli Embassy in Washington, D.C."]
+    per_jyft1ret42["Ilan Ravid&lt;br/&gt;&lt;i&gt;Attache for Scientific Affairs&lt;/i&gt;"]
+    per_89cafr9tn9["Irit Erb&lt;br/&gt;&lt;i&gt;secretary&lt;/i&gt;"]
+    org_mspn9nxg7s["Naval Security and Investigative Command"]
+    org_tfadg8t3xv["Naval Investigative Service"]
+    org_8b2fsev104["Anti-Terrorist Alert Center"]
+    org_1phejc0ngk["Navy Field Operational Intelligence Office"]
+    org_3kk63smvp7["Naval Ocean Surveillance Information Center"]
+    org_f8xs95cwk2["New York University"]
+    org_06228nm4ax["Office of Naval Intelligence"]
+    per_9n72sstcw8["Rafael Eitan&lt;br/&gt;&lt;i&gt;senior career official in Israeli intelligence&lt;/i&gt;"]
+    org_ctk7r6bt77["Task Force 168"]
+    per_w3v2f7z7pe["Jonathan Jay Pollard&lt;br/&gt;&lt;i&gt;Analyst&lt;/i&gt;"]
+    org_f8xs95cwk2 -.-&gt; per_6q0b4zamfq
+    org_8b2fsev104 -.-&gt;|"analyst"| per_w3v2f7z7pe
+    org_3kk63smvp7 -.-&gt;|"research analyst"| per_w3v2f7z7pe
+    org_1phejc0ngk -.-&gt;|"analyst"| per_w3v2f7z7pe
+    per_w3v2f7z7pe -.-|"wife"| per_jbcv7nwbwb
+    per_w3v2f7z7pe -.-|"first handler"| per_6q0b4zamfq
+    per_w3v2f7z7pe -.-|"handler"| per_89cafr9tn9
+    per_w3v2f7z7pe -.- org_2hzt03a6z9
+    per_w3v2f7z7pe -.-|"primary, direct handler"| per_p8w1q8cajn
+    per_w3v2f7z7pe -.-|"senior Israeli official in charge of the case"| per_9n72sstcw8
+</code></pre>
+<p><a href="../../examples/tree-all-mermaid-singletons.txt">tree-all-mermaid-singletons.txt</a></p>
+</div>
+<div class="tabbed-block">
+<p>The default chart, laid out left to right.</p>
+<pre class="mermaid"><code>flowchart LR
+    %% record tree — pollard (GENERATED)
+    per_jbcv7nwbwb["Anne Henderson-Pollard"]
+    org_2hzt03a6z9["Israel"]
+    per_sjje7bahkq["Shamir&lt;br/&gt;&lt;i&gt;Prime Minister&lt;/i&gt;"]
+    org_ez802bp11f["Israeli Air Force"]
+    per_6q0b4zamfq["Aviem Sella&lt;br/&gt;&lt;i&gt;fighter pilot&lt;/i&gt;"]
+    org_6t8fkjn4kr["Israeli Consulate New York"]
+    per_p8w1q8cajn["Joseph Yagur&lt;br/&gt;&lt;i&gt;Counselor for Scientific Affairs&lt;/i&gt;"]
+    org_xfqaxke58a["Israeli Embassy in Washington, D.C."]
+    per_jyft1ret42["Ilan Ravid&lt;br/&gt;&lt;i&gt;Attache for Scientific Affairs&lt;/i&gt;"]
+    per_89cafr9tn9["Irit Erb&lt;br/&gt;&lt;i&gt;secretary&lt;/i&gt;"]
+    org_mspn9nxg7s["Naval Security and Investigative Command"]
+    org_tfadg8t3xv["Naval Investigative Service"]
+    org_8b2fsev104["Anti-Terrorist Alert Center"]
+    org_1phejc0ngk["Navy Field Operational Intelligence Office"]
+    org_3kk63smvp7["Naval Ocean Surveillance Information Center"]
+    org_f8xs95cwk2["New York University"]
+    per_9n72sstcw8["Rafael Eitan&lt;br/&gt;&lt;i&gt;senior career official in Israeli intelligence&lt;/i&gt;"]
+    org_ctk7r6bt77["Task Force 168"]
+    per_w3v2f7z7pe["Jonathan Jay Pollard&lt;br/&gt;&lt;i&gt;Analyst&lt;/i&gt;"]
+    org_2hzt03a6z9 --&gt; per_sjje7bahkq
+    org_ez802bp11f --&gt;|"fighter pilot"| per_6q0b4zamfq
+    org_6t8fkjn4kr --&gt;|"Counselor for Scientific Affairs"| per_p8w1q8cajn
+    org_xfqaxke58a --&gt;|"Attache for Scientific Affairs"| per_jyft1ret42
+    org_xfqaxke58a --&gt;|"secretary"| per_89cafr9tn9
+    org_mspn9nxg7s --&gt; org_tfadg8t3xv
+    org_tfadg8t3xv --&gt; org_8b2fsev104
+    org_1phejc0ngk --&gt; org_3kk63smvp7
+    org_ctk7r6bt77 --&gt; per_w3v2f7z7pe
+    org_f8xs95cwk2 -.-&gt; per_6q0b4zamfq
+    org_8b2fsev104 -.-&gt;|"analyst"| per_w3v2f7z7pe
+    org_3kk63smvp7 -.-&gt;|"research analyst"| per_w3v2f7z7pe
+    org_1phejc0ngk -.-&gt;|"analyst"| per_w3v2f7z7pe
+    per_w3v2f7z7pe -.-|"wife"| per_jbcv7nwbwb
+    per_w3v2f7z7pe -.-|"first handler"| per_6q0b4zamfq
+    per_w3v2f7z7pe -.-|"handler"| per_89cafr9tn9
+    per_w3v2f7z7pe -.- org_2hzt03a6z9
+    per_w3v2f7z7pe -.-|"primary, direct handler"| per_p8w1q8cajn
+    per_w3v2f7z7pe -.-|"senior Israeli official in charge of the case"| per_9n72sstcw8
+    %% no links: Central Intelligence Agency, Department of Defense, Federal Bureau of Investigation, Foreign Denial and Deception Analysis Committee, Office of Naval Intelligence
+</code></pre>
+<p><a href="../../examples/tree-all-mermaid-lr.txt">tree-all-mermaid-lr.txt</a></p>
+</div>
+</div>
+</div>
+<p><code>sources</code> can't be used with <code>--format mermaid</code>, because the source list would break the chart.</p>
+<h2 id="positions">positions<a class="headerlink" href="#positions" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>hydra-ctl<span class="w"> </span>positions
+hydra-ctl<span class="w"> </span>positions<span class="w"> </span>--tree<span class="w"> </span>--nodes
+hydra-ctl<span class="w"> </span>positions<span class="w"> </span>--unplaced
+hydra-ctl<span class="w"> </span>positions<span class="w"> </span>--format<span class="w"> </span>mermaid
+</code></pre></div>
+<p><a href="../output/#positions">See the output of each example</a></p>
+<p>Draws the position ladder from the hierarchy rules: each position under the one above it, with the titles that count as it listed underneath. Then it lists the titles found in the data that no position takes, so you can see what the rules are missing.</p>
+<div class="highlight"><pre><span></span><code>Analyst
+  titles   analyst
+           research analyst
+  records  Jonathan Jay Pollard   Person
+Associate   outside
+  titles   associate
+           close associate
+           contact
+Leader
+│ titles   boss
+│          leader
+│          head of organization
+</code></pre></div>
+<p><code>outside</code> marks a position that is off the ladder, <code>implied</code> one only the rules imply, and <code>^</code> a position met a second time. Problems in the rules, such as a position placed under one that isn't defined, are listed at the end.</p>
+<p><code>position</code> works as well. To change the ladder, see <a href="../../guides/hierarchy/">Defining Hierarchies</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--tree</code></td>
+<td>Shows only the position tree</td>
+</tr>
+<tr>
+<td><code>--unplaced</code></td>
+<td>Shows only the titles no position takes</td>
+</tr>
+<tr>
+<td><code>--nodes</code></td>
+<td>Lists the records holding each position under it</td>
+</tr>
+<tr>
+<td><code>--read &lt;declared / generic&gt;</code></td>
+<td>Uses your hierarchy rules (declared, the default) or the generic ones only</td>
+</tr>
+<tr>
+<td><code>--format &lt;text / json / mermaid&gt;</code></td>
+<td>Chooses how to print it; mermaid draws the position graph</td>
+</tr>
+<tr>
+<td><code>--ascii</code></td>
+<td>Uses plain ASCII lines instead of box drawing</td>
+</tr>
+</tbody>
+</table>
+<h2 id="claims">claims<a class="headerlink" href="#claims" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>hydra-ctl<span class="w"> </span>claims
+hydra-ctl<span class="w"> </span>claims<span class="w"> </span>pollard
+hydra-ctl<span class="w"> </span>claims<span class="w"> </span>person<span class="w"> </span>anne
+hydra-ctl<span class="w"> </span>claims<span class="w"> </span>pollard<span class="w"> </span>sources<span class="w"> </span>--format<span class="w"> </span>json
+</code></pre></div>
+<p><a href="../output/#claims">See the output of each example</a></p>
+<p>Shows where each value of an entity came from, grouped by property, with the record and collection behind it and the source it cites. Values the sources disagree on are marked with <code>≠</code>.</p>
+<p>Up to 10 entities are shown, best match first. A line "merged upstream from" lists ids an upstream tool merged into the entity.</p>
+<div class="highlight"><pre><span></span><code>entity                 type     id                       claims   collections
+Jonathan Jay Pollard   Person   pollard:per-w3v2f7z7pe        4             1
+
+    field       value                    record                   collection
+    alias       Jonathan Pollard         pollard:per-w3v2f7z7pe   pollard-damage-assessment
+    name        Jonathan Jay Pollard     pollard:per-w3v2f7z7pe   pollard-damage-assessment
+    sources     pollard:doc-v9g25vcmkx   pollard:per-w3v2f7z7pe   pollard-damage-assessment
+    weakAlias   Pollard                  pollard:per-w3v2f7z7pe   pollard-damage-assessment
+
+    …
+</code></pre></div>
+<p>Without a search, or as <code>claims summary</code>, it counts the claims behind the whole archive by collection, type and property. It also counts how many identity fields, such as a birth date, collections give differently (disputed).</p>
+<div class="highlight"><pre><span></span><code>claims summary   Pollard case
+
+  claims        156
+  entities       45
+  collections     2
+  disputed        0
+
+  collection                          claims      schema           claims      property       claims
+  pollard-damage-assessment              146      PublicBody           38      name               25
+  sources/pollard-damage-assessment       10      Person               32      sources            25
+                                                  Employment           30      notes              14
+  …
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--type &lt;type&gt;</code></td>
+<td>Does the same as a type word</td>
+</tr>
+<tr>
+<td><code>--prop &lt;property&gt;</code></td>
+<td>Shows only that property</td>
+</tr>
+<tr>
+<td><code>--collection &lt;name&gt;</code></td>
+<td>Shows only claims from that collection</td>
+</tr>
+<tr>
+<td><code>--exact</code></td>
+<td>Makes a name or value have to equal the search</td>
+</tr>
+<tr>
+<td><code>--format &lt;text / json&gt;</code></td>
+<td>Chooses how to print it (text by default)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="node-find">node find<a class="headerlink" href="#node-find" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>hydra-ctl<span class="w"> </span>node<span class="w"> </span>find<span class="w"> </span>pollard
+hydra-ctl<span class="w"> </span>node<span class="w"> </span>find<span class="w"> </span>person<span class="w"> </span>jay
+hydra-ctl<span class="w"> </span>node<span class="w"> </span>find<span class="w"> </span>per-w3v2f7z7pe<span class="w"> </span>--field<span class="w"> </span>id
+</code></pre></div>
+<p><a href="../output/#node-find">See the output of each example</a></p>
+<p>Gives the records closest to a value, each with a score, and says which field matched.</p>
+<div class="highlight"><pre><span></span><code>score   name                     schema   id                       position   parent           matched
+1.00    Jonathan Jay Pollard     Person   pollard:per-w3v2f7z7pe   Analyst    Task Force 168   weakAlias  Pollard
+0.93    Anne Henderson-Pollard   Person   pollard:per-jbcv7nwbwb
+</code></pre></div>
+<p>An equal name or identifier scores 1.00, a name holding all the words 0.90 or more, part of an id 0.85, another field equal to the value 0.80, and another field holding its words 0.75. Anything else is scored by how close it is to a name, so typos still find.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--field &lt;any / name / id / identifier / value&gt;</code></td>
+<td>Chooses where to look (<code>any</code> by default)</td>
+</tr>
+<tr>
+<td><code>--type &lt;type&gt;</code></td>
+<td>Does the same as a type word</td>
+</tr>
+<tr>
+<td><code>--limit &lt;n&gt;</code></td>
+<td>Shows at most that many (10 by default, 0 for all)</td>
+</tr>
+<tr>
+<td><code>--min &lt;score&gt;</code></td>
+<td>Hides anything lower (0.6 by default)</td>
+</tr>
+<tr>
+<td><code>--read &lt;declared / generic&gt;</code></td>
+<td>Chooses which read to search</td>
+</tr>
+<tr>
+<td><code>--format json</code></td>
+<td>Prints it as data</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sources">sources<a class="headerlink" href="#sources" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>hydra-ctl<span class="w"> </span>sources
+hydra-ctl<span class="w"> </span>sources<span class="w"> </span>sella
+hydra-ctl<span class="w"> </span>sources<span class="w"> </span>person<span class="w"> </span>--uncited
+hydra-ctl<span class="w"> </span>sources<span class="w"> </span>damage
+hydra-ctl<span class="w"> </span>sources<span class="w"> </span>--format<span class="w"> </span>json
+</code></pre></div>
+<p><a href="../output/#sources">See the output of each example</a></p>
+<p>Draws a tree per source, the source on top. Each source entry in <code>.hydra/sources/entries/</code> shows its type, publisher, id and link, with the entities that cite it underneath.</p>
+<p>Each entity's line names the field that cites the source. It names the record too when the entity was merged from several records and the citation came from one of the others.</p>
+<p>A document's pages sit under it, and whoever cites a page sits under that page. Documents that are part of the data, such as a case file and its pages, are listed apart from the source entries, and entities that cite nothing are counted.</p>
+<p>In the demo, everything traces to one source entry, the damage assessment:</p>
+<div class="highlight"><pre><span></span><code>  The Jonathan Jay Pollard Espionage Case: A Damage Assessment (Document)   Foreign Denial and Deception Analysis Committee, Director of Central Intelligence   pollard:doc-v9g25vcmkx
+  └── Aviem Sella (Person)   sources   pollard:per-6q0b4zamfq
+  …
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Draws</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sources</code></td>
+<td>Every source</td>
+</tr>
+<tr>
+<td><code>sources sella</code></td>
+<td>Only the sources the entities the search names cite, with only those entities under them (names first, other fields only when no name matches)</td>
+</tr>
+<tr>
+<td><code>sources person</code></td>
+<td>The same for every person</td>
+</tr>
+<tr>
+<td><code>sources person --uncited</code></td>
+<td>The same, and also names each person citing nothing, so you can see what still needs a source</td>
+</tr>
+<tr>
+<td><code>sources damage</code></td>
+<td>Searches the sources themselves (id, title, publisher and link) when no entity matches, and draws each with everything citing it</td>
+</tr>
+</tbody>
+</table>
+<p>The word <code>sources</code> after <code>claims</code>, <code>node find</code> or <code>tree</code> draws the same for just what that command returned. <a href="../../concepts/sources/">Sources</a> covers how they are stored.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--uncited</code></td>
+<td>Names each entity citing nothing, not just how many</td>
+</tr>
+<tr>
+<td><code>--format &lt;text / json&gt;</code></td>
+<td>Chooses how to print it (text by default)</td>
+</tr>
+<tr>
+<td><code>--ascii</code></td>
+<td>Uses plain ASCII lines instead of box drawing</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../setup/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Setup and build">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Setup and build
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../review/" class="md-footer__link md-footer__link--next" aria-label="Next: Review and decide">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Review and decide
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

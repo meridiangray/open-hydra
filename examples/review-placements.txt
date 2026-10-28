@@ -1,0 +1,92 @@
+$ hydra-ctl review --only placements
+review   Pollard case
+
+  kind         rows   questions
+  placements      2           2
+  total           2           2
+
+[1/2] Placement · Membership (several parents)
+  Jonathan Jay Pollard
+
+  ┌─ Placing ────────────────────────────────┐
+  │ pollard:per-w3v2f7z7pe   Person          │
+  │    alias          Jonathan Pollard       │
+  │    name           Jonathan Jay Pollard   │
+  │    sources        pollard:doc-v9g25vcmkx │
+  │    weakAlias      Pollard                │
+  └──────────────────────────────────────────┘
+
+  1  pollard:mem-tg0re7j07m   Membership   now
+     member         Jonathan Jay Pollard
+     notes          Volunteer to Task Force 168 (TF-168), the naval intelligence element responsible for HUMINT collection; Pollard was assigned to collect information from a South African defense attache.
+     organization   Task Force 168
+     startDate      1980-02
+
+  2  pollard:emp-6s4h8c5hez   Employment
+     employee       Jonathan Jay Pollard
+     employer       Anti-Terrorist Alert Center
+     endDate        1985-11
+     notes          Began temporary duty with ATAC in June 1984 as a watchstander; permanently assigned in October 1984 as analyst responsible for assessing terrorist activities.
+     role           analyst
+     startDate      1984-06
+
+  3  pollard:emp-06j8t52g03   Employment
+     employee       Jonathan Jay Pollard
+     employer       Naval Ocean Surveillance Information Center
+     notes          Research analyst, Naval Ocean Surveillance Information Center, Suitland, Maryland (merchant shipping analyst and watch officer).
+     role           research analyst
+     startDate      1979-09
+
+  4  pollard:emp-1bz3xhft0s   Employment
+     employee       Jonathan Jay Pollard
+     employer       Navy Field Operational Intelligence Office
+     endDate        1985-11
+     notes          An employee of the Navy Field Operational Intelligence Office from 1979 until November 1985.
+     role           analyst
+     startDate      1979-09
+
+Which is better?
+  1  under Task Force 168                                pollard:org-ctk7r6bt77   now
+  2  under Anti-Terrorist Alert Center                   pollard:org-8b2fsev104
+  3  under Naval Ocean Surveillance Information Center   pollard:org-3kk63smvp7
+  4  under Navy Field Operational Intelligence Office    pollard:org-1phejc0ngk
+  ? not sure   u undo   q quit
+> 2
+  saved   Jonathan Jay Pollard under Anti-Terrorist Alert Center
+
+[2/2] Placement · Employment (several parents)
+  Aviem Sella
+
+  ┌─ Placing ────────────────────────────────┐
+  │ pollard:per-6q0b4zamfq   Person          │
+  │    name           Aviem Sella            │
+  │    sources        pollard:doc-v9g25vcmkx │
+  │    title          Col.                   │
+  │    weakAlias      Sella                  │
+  └──────────────────────────────────────────┘
+
+  1  pollard:emp-dsj4t8669k   Employment   now
+     employee       Aviem Sella
+     employer       Israeli Air Force
+     notes          A highly successful fighter pilot on study leave from the Israeli Air Force, officially resident in the US to pursue a doctorate in computer sciences at New York University.
+     role           fighter pilot
+
+  2  pollard:mem-9jvb9yj94m   Membership
+     member         Aviem Sella
+     notes          Sella's official reason for residency in the United States in 1984 was his pursuit of a doctorate in computer sciences at New York University.
+     organization   New York University
+
+Which is better?
+  1  under Israeli Air Force     pollard:org-ez802bp11f   now
+  2  under New York University   pollard:org-f8xs95cwk2
+  ? not sure   u undo   q quit
+> a
+  pick a number from 1 to 2, ? not sure, u undo or q quit
+> q
+
+  answered   1
+
+  kind         before   now
+  placements        2     1
+
+Rebuilt Pollard case: 45 records, 45 entities, 1 open question

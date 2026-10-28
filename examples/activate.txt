@@ -1,0 +1,8 @@
+$ hydra-ctl activate pollard
+Activated ~/cases/pollard
+
+$ hydra-ctl activate
+~/cases/pollard
+
+$ hydra-ctl deactivate
+Deactivated ~/cases/pollard

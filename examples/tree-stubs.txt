@@ -1,0 +1,30 @@
+$ hydra-ctl tree employment membership --stubs
+  only                    links   drawn   no link
+  employment membership      10      18         8
+
+Israeli Air Force (PublicBody)
+└── Aviem Sella (Person)   Employment   fighter pilot
+      also  New York University   Membership
+New York University (Organization)
+
+Israeli Consulate New York (PublicBody)
+└── Joseph Yagur (Person)   Employment   Counselor for Scientific Affairs
+
+Israeli Embassy in Washington, D.C. (PublicBody)
+├── Ilan Ravid (Person)   Employment   Attache for Scientific Affairs
+└── Irit Erb (Person)   Employment   secretary
+
+Israeli Ministry of Defense (Organization)   stub
+└── Lakam (Organization)   Membership   stub
+    └── Rafael Eitan (Person)   Membership
+
+Naval Security and Investigative Command (PublicBody)
+└── Naval Investigative Service (PublicBody)   Membership
+    └── Anti-Terrorist Alert Center (PublicBody)   Membership
+        └── Jonathan Jay Pollard (Person)   Employment   analyst
+              also  Naval Ocean Surveillance Information Center   Employment   research analyst
+              also  Navy Field Operational Intelligence Office    Employment   analyst
+              also  Task Force 168                                Membership
+Navy Field Operational Intelligence Office (PublicBody)
+└── Naval Ocean Surveillance Information Center (PublicBody)   Membership
+Task Force 168 (PublicBody)

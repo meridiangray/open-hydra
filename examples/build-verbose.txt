@@ -1,0 +1,23 @@
+$ hydra-ctl build --force --verbose
+Built Pollard case: 45 records, 45 entities, 2 open questions
+records: 45
+claims: 156
+reads:
+  generic:
+    file: .hydra/parsed/generic.json
+    nodes: 24
+    roots: 15
+    positioned: 0
+  declared:
+    file: .hydra/parsed/declared.json
+    nodes: 24
+    roots: 15
+    positioned: 1
+ledger:
+  placements:
+    auto: 7
+    proposed: 2
+issue_counts:
+  error: 0
+  warning: 0
+  info: 3
