@@ -1,10 +1,10 @@
 exit 0
   prefixes set in   manifest
 
-  collection        prefix            records   own prefix   claims   in others   citations
-  cartel            cartel                 38            0      138           0           6
-  dea               dea                    32            0      103           0           2
-  fring-condensed   fring-condensed        34            0      111          17           3
-  fring             fring                  42           18      148          17           3
-  heisenberg        heisenberg             56            0      191           0           2
-  operations        operations             42            0      223           0           0
+  collection           prefix               records   own prefix   claims   in others   citations
+  consortium           consortium                38            0      138           0           6
+  dce                  dce                       32            0      103           0           2
+  fairbank-condensed   fairbank-condensed        34            0      111          17           3
+  fairbank             fairbank                  42           18      148          17           3
+  hawthorne            hawthorne                 56            0      191           0           2
+  operations           operations                42            0      223           0           0

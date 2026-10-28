@@ -1,6 +1,6 @@
 """reads.py (shape tree + read emission) against the real demo corpus.
 Structural invariants of the IR, plus the named acceptance bar that a bare,
-ambiguous "Walter White" never lands Walter White Jr. under a container."""
+ambiguous "Wallace Wright" never lands Wallace Wright Jr. under a container."""
 
 import yaml
 
@@ -52,19 +52,19 @@ def test_no_cycles_in_primary_parent_chain():
             cur = ir["nodes"][cur]["pid"]
 
 
-def test_walter_white_jr_is_never_placed_by_the_ambiguous_bare_name():
+def test_wallace_wright_jr_is_never_placed_by_the_ambiguous_bare_name():
     ir = _ir()
-    jr = next(n for n in ir["nodes"].values() if n["caption"] == "Walter White Jr.")
+    jr = next(n for n in ir["nodes"].values() if n["caption"] == "Wallace Wright Jr.")
     assert jr["pid"] is None
     ambiguous = ir["report"]["fold"]["ambiguous_endpoints"]
-    assert any(set(a["candidates"]) >= {"p-walt", "p-waltjr"} for a in ambiguous)
+    assert any(set(a["candidates"]) >= {"p-wal", "p-waljr"} for a in ambiguous)
 
 
-def test_walter_keeps_every_container_as_alternates():
+def test_wallace_keeps_every_container_as_alternates():
     ir = _ir()
-    w = next(n for n in ir["nodes"].values() if n["caption"] == "Walter Hartwell White")
-    assert "org-heisenberg" in w["alt"] + [w["pid"]]
-    assert {"leader", "cook", "planner"} <= set(w["positions"])
+    w = next(n for n in ir["nodes"].values() if n["caption"] == "Wallace Hollis Wright")
+    assert "org-hawthorne" in w["alt"] + [w["pid"]]
+    assert {"leader", "chef", "planner"} <= set(w["positions"])
 
 
 def test_declared_read_differs_only_through_rules_and_deterministic():
@@ -80,27 +80,27 @@ def test_ledger_has_placement_and_sameas_rows():
     assert {"sameAs", "placedUnder"} <= rels
 
 
-def test_walter_is_placed_under_heisenberg_as_leader_not_under_a_project():
+def test_wallace_is_placed_under_hawthorne_as_leader_not_under_a_project():
     """Legal-entity containers outrank projects; between his two ended
-    memberships the higher role (Leader over cook) wins over recency."""
+    memberships the higher role (Leader over chef) wins over recency."""
     ir = _ir()
-    n = ir["nodes"]["p-walt"]
-    assert n["pid"] == "org-heisenberg" and n["position"] == "Leader"
+    n = ir["nodes"]["p-wal"]
+    assert n["pid"] == "org-hawthorne" and n["position"] == "Leader"
 
 
 def test_hints_overrides_match_by_condition_not_by_id():
     ir = _ir(overrides={"hints": [
-        {"match": {"schema": "Person", "name|alias": "Walter Hartwell White"}, "set": {"badge": "star"}},
+        {"match": {"schema": "Person", "name|alias": "Wallace Hollis Wright"}, "set": {"badge": "star"}},
         {"match": {"name": "Nobody At All"}, "set": {"badge": "x"}},
         {"match": {"schema": "Person"}},
         {"when": {"schema_is": "PublicBody"}, "thumb": "icons/pb.svg"},    # not a rule: only match:/set:
-    ], "p-walt": {"badge": "old"}})
+    ], "p-wal": {"badge": "old"}})
     hit = [n for n in ir["nodes"].values() if n["badge"] == "star"]
-    assert hit and all("Walter Hartwell White" in n["props"]["name"] for n in hit)
+    assert hit and all("Wallace Hollis Wright" in n["props"]["name"] for n in hit)
     misses = ir["report"]["override_misses"]
     assert "hints[1]" in misses
     assert any(m.startswith("hints[2]") for m in misses)
-    assert any(m.startswith("p-walt") for m in misses)
+    assert any(m.startswith("p-wal") for m in misses)
     assert not any(n["badge"] == "old" for n in ir["nodes"].values())
 
 

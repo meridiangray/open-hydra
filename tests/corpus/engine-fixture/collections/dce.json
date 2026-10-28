@@ -1,13 +1,13 @@
 [
  {
-  "id": "doc-bb-casefile",
+  "id": "doc-bq-casefile",
   "schema": "Pages",
   "properties": {
    "name": [
-    "HEISENBERG INVESTIGATION — DEA/ABQ CASE FILE (2008-2010)"
+    "HAWTHORNE INVESTIGATION — DCE/ALD CASE FILE (2008-2010)"
    ],
    "notes": [
-    "compiled DEA case file on the 'Heisenberg' blue methamphetamine investigation"
+    "Note on HAWTHORNE INVESTIGATION — DCE/ALD CASE FILE (2008-2010). Mentions DCE, Hawthorne."
    ]
   },
   "_meta": {
@@ -18,14 +18,14 @@
   }
  },
  {
-  "id": "pb-dea",
+  "id": "pb-dce",
   "schema": "PublicBody",
   "properties": {
    "name": [
-    "United States Drug Enforcement Administration"
+    "United States Department of Customs and Excise"
    ],
    "weakAlias": [
-    "DEA"
+    "DCE"
    ],
    "jurisdiction": [
     "us"
@@ -39,11 +39,11 @@
   }
  },
  {
-  "id": "pb-dea-abq",
+  "id": "pb-dce-ald",
   "schema": "PublicBody",
   "properties": {
    "name": [
-    "DEA Albuquerque Field Office"
+    "DCE Alderton Field Office"
    ],
    "jurisdiction": [
     "us"
@@ -78,15 +78,15 @@
   }
  },
  {
-  "id": "p-hank",
+  "id": "p-hal",
   "schema": "Person",
   "properties": {
    "name": [
-    "Henry R. Schrader"
+    "Harold R. Sharpe"
    ],
    "weakAlias": [
-    "Hank",
-    "Hank Schrader"
+    "Hal",
+    "Hal Sharpe"
    ],
    "deathDate": [
     "2010"
@@ -95,10 +95,10 @@
     "assistant special agent in charge"
    ],
    "sources": [
-    "doc-bb-casefile~p1"
+    "doc-bq-casefile~p1"
    ],
    "notes": [
-    "DEA agent; ran the Heisenberg investigation; killed by Jack Welker at To'hajiilee"
+    "Note on Harold R. Sharpe. Mentions DCE, Hawthorne, Jake Weston, the Hawthorne, Jake Weston."
    ]
   },
   "_meta": {
@@ -109,14 +109,14 @@
   }
  },
  {
-  "id": "p-gomez",
+  "id": "p-gray",
   "schema": "Person",
   "properties": {
    "name": [
-    "Steven Gomez"
+    "Simon Gray"
    ],
    "weakAlias": [
-    "Gomie"
+    "Grey"
    ],
    "deathDate": [
     "2010"
@@ -125,7 +125,7 @@
     "special agent"
    ],
    "notes": [
-    "Hank's partner; killed at To'hajiilee"
+    "Note on Simon Gray. Mentions Hal."
    ]
   },
   "_meta": {
@@ -140,13 +140,13 @@
   "schema": "Person",
   "properties": {
    "name": [
-    "George Merkert"
+    "Gordon Merkert"
    ],
    "position": [
     "assistant special agent in charge"
    ],
    "notes": [
-    "Albuquerque ASAC; left after it emerged he had befriended Fring"
+    "Note on Gordon Merkert. Mentions Alderton ASAC, Fairbank."
    ]
   },
   "_meta": {
@@ -157,14 +157,14 @@
   }
  },
  {
-  "id": "p-margolis",
+  "id": "p-marlowe",
   "schema": "Person",
   "properties": {
    "name": [
-    "Donald Margolis"
+    "Douglas Marlowe"
    ],
    "notes": [
-    "air traffic controller; Jane's father; returned to work too soon — Wayfarer 515"
+    "Note on Douglas Marlowe. Mentions Joan."
    ]
   },
   "_meta": {
@@ -175,17 +175,17 @@
   }
  },
  {
-  "id": "p-jane",
+  "id": "p-joan",
   "schema": "Person",
   "properties": {
    "name": [
-    "Jane Margolis"
+    "Joan Marlowe"
    ],
    "deathDate": [
     "2009"
    ],
    "notes": [
-    "Jesse's girlfriend; heroin overdose while he slept beside her"
+    "Note on Joan Marlowe. Mentions Jordan."
    ]
   },
   "_meta": {
@@ -196,14 +196,14 @@
   }
  },
  {
-  "id": "p-marie",
+  "id": "p-maren",
   "schema": "Person",
   "properties": {
    "name": [
-    "Marie Schrader"
+    "Maren Sharpe"
    ],
    "notes": [
-    "Hank's wife; Skyler's sister"
+    "Note on Maren Sharpe. Mentions Hal, Sasha."
    ]
   },
   "_meta": {
@@ -214,17 +214,17 @@
   }
  },
  {
-  "id": "p-waltjr",
+  "id": "p-waljr",
   "schema": "Person",
   "properties": {
    "name": [
-    "Walter White Jr."
+    "Wallace Wright Jr."
    ],
    "weakAlias": [
-    "Flynn"
+    "Finn"
    ],
    "notes": [
-    "Walt and Skyler's son"
+    "Note on Wallace Wright Jr.. Mentions Wal, Sasha."
    ]
   },
   "_meta": {
@@ -235,14 +235,14 @@
   }
  },
  {
-  "id": "p-holly",
+  "id": "p-hannah",
   "schema": "Person",
   "properties": {
    "name": [
-    "Holly White"
+    "Hannah Wright"
    ],
    "notes": [
-    "Walt and Skyler's daughter"
+    "Note on Hannah Wright. Mentions Wal, Sasha."
    ]
   },
   "_meta": {
@@ -253,20 +253,20 @@
   }
  },
  {
-  "id": "p-heisenberg-dea",
+  "id": "p-hawthorne-dce",
   "schema": "Person",
   "properties": {
    "name": [
-    "Heisenberg"
+    "Hawthorne"
    ],
    "weakAlias": [
-    "the Heisenberg"
+    "the Hawthorne"
    ],
    "sources": [
-    "doc-bb-casefile~p1"
+    "doc-bq-casefile~p1"
    ],
    "notes": [
-    "DEA sketch identity — proposed merge into Walter White via the Similar record"
+    "Note on Hawthorne. Mentions DCE, Wallace Wright."
    ]
   },
   "_meta": {
@@ -281,10 +281,10 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "DEA Albuquerque Field Office"
+    "DCE Alderton Field Office"
    ],
    "organization": [
-    "United States Drug Enforcement Administration"
+    "United States Department of Customs and Excise"
    ]
   },
   "_meta": {
@@ -299,10 +299,10 @@
   "schema": "Employment",
   "properties": {
    "employee": [
-    "George Merkert"
+    "Gordon Merkert"
    ],
    "employer": [
-    "DEA Albuquerque Field Office"
+    "DCE Alderton Field Office"
    ],
    "role": [
     "assistant special agent in charge"
@@ -323,10 +323,10 @@
   "schema": "Employment",
   "properties": {
    "employee": [
-    "Henry R. Schrader"
+    "Harold R. Sharpe"
    ],
    "employer": [
-    "DEA Albuquerque Field Office"
+    "DCE Alderton Field Office"
    ],
    "role": [
     "assistant special agent in charge"
@@ -335,7 +335,7 @@
     "2010"
    ],
    "notes": [
-    "special agent, later ASAC"
+    "Note on rel-dea3."
    ]
   },
   "_meta": {
@@ -350,10 +350,10 @@
   "schema": "Employment",
   "properties": {
    "employee": [
-    "Steven Gomez"
+    "Simon Gray"
    ],
    "employer": [
-    "DEA Albuquerque Field Office"
+    "DCE Alderton Field Office"
    ],
    "role": [
     "special agent"
@@ -374,7 +374,7 @@
   "schema": "Employment",
   "properties": {
    "employee": [
-    "Donald Margolis"
+    "Douglas Marlowe"
    ],
    "employer": [
     "Federal Aviation Administration"
@@ -395,13 +395,13 @@
   "schema": "Associate",
   "properties": {
    "person": [
-    "Domingo Gallardo Molina"
+    "Damian Galway Morrow"
    ],
    "associate": [
-    "Henry R. Schrader"
+    "Harold R. Sharpe"
    ],
    "relationship": [
-    "confidential informant"
+    "named contact"
    ]
   },
   "_meta": {
@@ -416,10 +416,10 @@
   "schema": "Associate",
   "properties": {
    "person": [
-    "Jane Margolis"
+    "Joan Marlowe"
    ],
    "associate": [
-    "Jesse Bruce Pinkman"
+    "Jordan Brooks Pelham"
    ],
    "relationship": [
     "girlfriend"
@@ -437,10 +437,10 @@
   "schema": "Family",
   "properties": {
    "person": [
-    "Skyler White"
+    "Sasha Wright"
    ],
    "relative": [
-    "Walter Hartwell White"
+    "Wallace Hollis Wright"
    ],
    "relationship": [
     "husband"
@@ -458,10 +458,10 @@
   "schema": "Family",
   "properties": {
    "person": [
-    "Walter White Jr."
+    "Wallace Wright Jr."
    ],
    "relative": [
-    "Walter Hartwell White"
+    "Wallace Hollis Wright"
    ],
    "relationship": [
     "father"
@@ -479,10 +479,10 @@
   "schema": "Family",
   "properties": {
    "person": [
-    "Holly White"
+    "Hannah Wright"
    ],
    "relative": [
-    "Walter Hartwell White"
+    "Wallace Hollis Wright"
    ],
    "relationship": [
     "father"
@@ -500,10 +500,10 @@
   "schema": "Family",
   "properties": {
    "person": [
-    "Walter Hartwell White"
+    "Wallace Hollis Wright"
    ],
    "relative": [
-    "Henry R. Schrader"
+    "Harold R. Sharpe"
    ],
    "relationship": [
     "brother-in-law"
@@ -521,10 +521,10 @@
   "schema": "Family",
   "properties": {
    "person": [
-    "Marie Schrader"
+    "Maren Sharpe"
    ],
    "relative": [
-    "Skyler White"
+    "Sasha Wright"
    ],
    "relationship": [
     "sister"
@@ -542,10 +542,10 @@
   "schema": "Family",
   "properties": {
    "person": [
-    "Henry R. Schrader"
+    "Harold R. Sharpe"
    ],
    "relative": [
-    "Marie Schrader"
+    "Maren Sharpe"
    ],
    "relationship": [
     "wife"
@@ -563,10 +563,10 @@
   "schema": "Family",
   "properties": {
    "person": [
-    "Jane Margolis"
+    "Joan Marlowe"
    ],
    "relative": [
-    "Donald Margolis"
+    "Douglas Marlowe"
    ],
    "relationship": [
     "father"
@@ -580,17 +580,17 @@
   }
  },
  {
-  "id": "sim-heisenberg",
+  "id": "sim-hawthorne",
   "schema": "Similar",
   "properties": {
    "candidate": [
-    "Heisenberg"
+    "Hawthorne"
    ],
    "match": [
-    "Walter Hartwell White"
+    "Wallace Hollis Wright"
    ],
    "notes": [
-    "analyst assertion: the 'Heisenberg' sketch IS Walter White — lands proposed in the ledger for a verdict"
+    "Note on sim-hawthorne. Mentions IS Wallace Wright, Hawthorne."
    ]
   },
   "_meta": {
@@ -601,23 +601,23 @@
   }
  },
  {
-  "id": "san-heisenberg",
+  "id": "san-hawthorne",
   "schema": "Sanction",
   "properties": {
    "entity": [
-    "Heisenberg"
+    "Hawthorne"
    ],
    "authority": [
-    "DEA"
+    "DCE"
    ],
    "program": [
-    "Heisenberg investigation"
+    "Hawthorne investigation"
    ],
    "startDate": [
     "2009"
    ],
    "reason": [
-    "blue methamphetamine manufacture; fugitive suspect"
+    "Reason for san-hawthorne."
    ]
   },
   "_meta": {
@@ -628,23 +628,23 @@
   }
  },
  {
-  "id": "san-fring",
+  "id": "san-fairbank",
   "schema": "Sanction",
   "properties": {
    "entity": [
-    "Gustavo Fring"
+    "Gideon Fairbank"
    ],
    "authority": [
-    "DEA"
+    "DCE"
    ],
    "program": [
-    "Fring investigation"
+    "Fairbank investigation"
    ],
    "startDate": [
     "2010"
    ],
    "reason": [
-    "suspected cartel distributor; died before indictment"
+    "Reason for san-fairbank."
    ]
   },
   "_meta": {
@@ -659,10 +659,10 @@
   "schema": "Documentation",
   "properties": {
    "document": [
-    "doc-bb-casefile~p1"
+    "doc-bq-casefile~p1"
    ],
    "entity": [
-    "Heisenberg"
+    "Hawthorne"
    ]
   },
   "_meta": {
@@ -677,10 +677,10 @@
   "schema": "Documentation",
   "properties": {
    "document": [
-    "doc-bb-casefile~p1"
+    "doc-bq-casefile~p1"
    ],
    "entity": [
-    "Henry R. Schrader"
+    "Harold R. Sharpe"
    ]
   },
   "_meta": {

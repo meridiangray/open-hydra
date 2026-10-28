@@ -36,8 +36,8 @@
   }
  },
  "collections": {
-  "cartel": {
-   "file": "cartel.json",
+  "consortium": {
+   "file": "consortium.json",
    "format": "json",
    "records": 38,
    "claims": 138,
@@ -54,8 +54,8 @@
    "sha256": "1b772f85cf1117cbfbb86c604a427f5ef20f82693bce97530adbe12c82b4dfac",
    "size_bytes": 14599
   },
-  "dea": {
-   "file": "dea.json",
+  "dce": {
+   "file": "dce.json",
    "format": "json",
    "records": 32,
    "claims": 103,
@@ -75,8 +75,8 @@
    "sha256": "6e93950acc7ba4dbe442684bdd842e135713ef97c3a84e726324704964df0fe7",
    "size_bytes": 11873
   },
-  "fring": {
-   "file": "fring.json",
+  "fairbank": {
+   "file": "fairbank.json",
    "format": "json",
    "records": 42,
    "claims": 148,
@@ -100,8 +100,8 @@
    "sha256": "a4c995689d08ca62b3beaec246143bd25c096693e7ea87c625c4be9ddf885440",
    "size_bytes": 17301
   },
-  "fring-condensed": {
-   "file": "fring-condensed.json",
+  "fairbank-condensed": {
+   "file": "fairbank-condensed.json",
    "format": "json",
    "records": 34,
    "claims": 111,
@@ -122,8 +122,8 @@
    "sha256": "94de8e335659ebe865a00f7dd4b0ba3285719521644ed8c0b795ac3fda9e0c55",
    "size_bytes": 12338
   },
-  "heisenberg": {
-   "file": "heisenberg.json",
+  "hawthorne": {
+   "file": "hawthorne.json",
    "format": "json",
    "records": 56,
    "claims": 191,

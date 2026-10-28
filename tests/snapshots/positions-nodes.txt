@@ -7,55 +7,55 @@ Leader
 │ titles   boss
 │          leader
 │          head of organization
-│ records  Declan                  Person
-│          Eladio Vuente           Person
-│          Gustavo Fring           Person
-│          Jack Welker             Person
-│          Jesse Bruce Pinkman     Person
-│          Walter Hartwell White   Person
+│ records  Desmond                 Person
+│          Elias Vaughn            Person
+│          Gideon Fairbank         Person
+│          Jake Weston             Person
+│          Jordan Brooks Pelham    Person
+│          Wallace Hollis Wright   Person
 ├── Member
 │     titles   member
 │              crew member
-│     records  Chris Mara         Person
-│              Dennis Markowski   Person
-│              Frankie            Person
-│              Gonzo              Person
-│              Huell Babineaux    Person
-│              Ignacio Varga      Person
-│              Lester             Person
-│              Matt               Person
-│              No-Doze            Person
-│              Patrick Kuby       Person
-│              Todd Alquist       Person
+│     records  Chad Maddox    Person
+│              Dexter Marsh   Person
+│              Freddie        Person
+│              Gizmo          Person
+│              Hugh Babcock   Person
+│              Ivan Varley    Person
+│              Leroy          Person
+│              Mitch          Person
+│              No-Dune        Person
+│              Paul Kemp      Person
+│              Tyler Alford   Person
 └── Second-in-command
     │ titles   second in command
     │          deputy
-    │ records  Kenny   Person
+    │ records  Kyle   Person
     └── Member ^
           titles   member
                    crew member
-          records  Chris Mara         Person
-                   Dennis Markowski   Person
-                   Frankie            Person
-                   Gonzo              Person
-                   Huell Babineaux    Person
-                   Ignacio Varga      Person
-                   Lester             Person
-                   Matt               Person
-                   No-Doze            Person
-                   Patrick Kuby       Person
-                   Todd Alquist       Person
+          records  Chad Maddox    Person
+                   Dexter Marsh   Person
+                   Freddie        Person
+                   Gizmo          Person
+                   Hugh Babcock   Person
+                   Ivan Varley    Person
+                   Leroy          Person
+                   Mitch          Person
+                   No-Dune        Person
+                   Paul Kemp      Person
+                   Tyler Alford   Person
 
 unplaced titles   36
-  Head of Security                    criminal defense counsel     mechanic
-  air traffic controller              dealer                       money laundering
-  assistant                           distributor                  outside counsel
-  assistant cook                      enforcer                     planner
-  assistant special agent in charge   exterminator                 president
-  capo                                head of fast food division   security
-  chemist                             head of security             sicario
-  cook                                international distribution   special agent
-  corporate security consultant       lead chemist                 sponsor
-  counsel                             logistics                    spotter
-  crew                                logistics executive          underboss
+  Head of Security                    defense counsel              mechanic
+  air traffic controller              dispatcher                   outside counsel
+  assistant                           distributor                  planner
+  assistant chef                      escort                       president
+  assistant special agent in charge   exterminator                 security
+  cataloguer                          head of fast food division   sentinel
+  chef                                head of security             special agent
+  coordinator                         international distribution   sponsor
+  corporate security consultant       lead cataloguer              spotter
+  counsel                             logistics                    treasury
+  crew                                logistics executive          undersecretary
   crew chief                          manager                      unwitting shipping infrastructure

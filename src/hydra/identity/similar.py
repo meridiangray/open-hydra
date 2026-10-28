@@ -2,7 +2,7 @@
 
 A `Similar` record names two things (`candidate`, `match`) and asserts they are
 one. Each side is looked up with the permissive `index.search()`, because the
-point of the record is often a name that is itself ambiguous ("Heisenberg"). Every
+point of the record is often a name that is itself ambiguous ("Hawthorne"). Every
 pair it yields is a `proposed` sameAs row, never auto; the hits for one value
 form a group, so confirming one rejects the others. Runs after every merge pass,
 against the final indices, so both ends are already-merged survivors."""
@@ -92,7 +92,7 @@ def apply_similar(records: list[dict], by_id: dict, schema_names: list[str],
                         asked.append(row)
                         identical.append(row)
                 # Candidate hits for one Similar value are alternatives of one
-                # question ("which record does `Heisenberg` mean?"): that is a
+                # question ("which record does `Hawthorne` mean?"): that is a
                 # fork by construction, whatever the per-record degrees say.
                 if len(asked) > 1:
                     gid = ids.similar_group_key(r["id"], cv, mv)
@@ -126,7 +126,7 @@ def absorb(id_a: str, id_b: str, by_id: dict, indices: dict,
     Person; equal schemas fall back to the richer record. Incompatible kinds
     never reach here (the caller turns them into a `conflict` row) — a raw
     property-KEY count across two different vocabularies is not a meaningful
-    comparison, which is how an Organization once swallowed Walter White."""
+    comparison, which is how an Organization once swallowed Wallace Wright."""
     sa, sb = by_id[id_a]["schema"], by_id[id_b]["schema"]
     ra = indices[sa].records.get(id_a, by_id[id_a])
     rb = indices[sb].records.get(id_b, by_id[id_b])

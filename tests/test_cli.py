@@ -27,12 +27,12 @@ def test_init_asks_for_the_name_and_the_prefix_at_a_terminal(tmp_path):
     import yaml
     from hydra.cli import init as init_cli
     meta = lambda d: yaml.safe_load((d / layout.MANIFEST).read_text(encoding="utf-8"))
-    answers = iter(["Case: Fring #2", "Not OK!", ""])                 # a bad prefix is asked again
+    answers = iter(["Case: Fairbank #2", "Not OK!", ""])                 # a bad prefix is asked again
     asked = []
     assert init_cli.main([str(tmp_path / "a")], say=lambda _: None,
                          ask=lambda q: asked.append(q) or next(answers)) == 0
-    assert asked[0] == "Archive name [a]: " and asked[1].startswith("Id prefix [case-fring-2]") and len(asked) == 3
-    assert meta(tmp_path / "a")["name"] == "Case: Fring #2" and meta(tmp_path / "a")["prefix"] == "case-fring-2"
+    assert asked[0] == "Archive name [a]: " and asked[1].startswith("Id prefix [case-fairbank-2]") and len(asked) == 3
+    assert meta(tmp_path / "a")["name"] == "Case: Fairbank #2" and meta(tmp_path / "a")["prefix"] == "case-fairbank-2"
     answers = iter(["", "none"])                                      # Enter: the folder's name; none: no prefix
     init_cli.main([str(tmp_path / "b")], say=lambda _: None, ask=lambda _: next(answers))
     assert meta(tmp_path / "b")["name"] == "b" and "prefix" not in meta(tmp_path / "b")
@@ -146,19 +146,19 @@ def test_searches_can_leave_out_free_text_or_everything_but_names(tmp_path, caps
     still counts), `--names` leaves names and ids; `search:` in hydra.yaml sets it."""
     from hydra.cli import node
     arch = _built(tmp_path)
-    ids = lambda mode: {h["id"] for h in node.find(arch, "albuquerque", limit=0, search=mode)}
+    ids = lambda mode: {h["id"] for h in node.find(arch, "alderton", limit=0, search=mode)}
     every, no_text, names = ids("all"), ids("no-text"), ids("names")
     assert names < no_text < every
-    assert "dea:p-merkert" in every and "dea:p-merkert" not in no_text          # only his notes say it
-    assert "operations:addr-abq" in no_text and "operations:addr-abq" not in names   # a city is not free text
+    assert "dce:p-merkert" in every and "dce:p-merkert" not in no_text          # only his notes say it
+    assert "operations:addr-ald" in no_text and "operations:addr-ald" not in names   # a city is not free text
     capsys.readouterr()
-    cli.main(["tree", str(arch), "person", "albuquerque"])
-    assert "George Merkert" in capsys.readouterr().out
-    cli.main(["tree", str(arch), "person", "albuquerque", "--no-text"])
+    cli.main(["tree", str(arch), "person", "alderton"])
+    assert "Gordon Merkert" in capsys.readouterr().out
+    cli.main(["tree", str(arch), "person", "alderton", "--no-text"])
     assert capsys.readouterr().out == "no record matches\n"
     (arch / layout.MANIFEST).write_text((arch / layout.MANIFEST).read_text(encoding="utf-8") + "search: no-text\n",
                                         encoding="utf-8")
-    cli.main(["claims", str(arch), "person", "albuquerque"])                  # the archive's default now
+    cli.main(["claims", str(arch), "person", "alderton"])                  # the archive's default now
     assert "no entity matches" in capsys.readouterr().out
 
 
@@ -271,22 +271,22 @@ def test_building_an_empty_archive_says_what_to_do(tmp_path):
 def test_node_find_ranks_typos_types_and_ids(tmp_path, capsys):
     arch = _built(tmp_path)
     from hydra.cli import node
-    top = node.find(arch, "walter wite", limit=2)
-    assert {h["id"] for h in top} == {"heisenberg:p-walt", "dea:p-waltjr"}
-    people = node.find(arch, "heisenberg", kind="person")
-    assert {h["id"] for h in people[:2]} == {"dea:p-heisenberg-dea", "heisenberg:p-walt"}   # named so, first
-    hank = next(h for h in people if h["id"] == "dea:p-hank")                              # then a field naming him
-    assert hank["matched"]["field"] not in node.NAMES and hank["score"] < people[1]["score"]
+    top = node.find(arch, "wallace wrigt", limit=2)
+    assert {h["id"] for h in top} == {"hawthorne:p-wal", "dce:p-waljr"}
+    people = node.find(arch, "hawthorne", kind="person")
+    assert {h["id"] for h in people[:2]} == {"dce:p-hawthorne-dce", "hawthorne:p-wal"}   # named so, first
+    hal = next(h for h in people if h["id"] == "dce:p-hal")                              # then a field naming him
+    assert hal["matched"]["field"] not in node.NAMES and hal["score"] < people[1]["score"]
     assert all(h["schema"] == "Person" for h in people)
-    exact = node.find(arch, "p-walt", field="id", limit=1)[0]
-    assert exact["id"] == "heisenberg:p-walt" and exact["score"] == 1.0
+    exact = node.find(arch, "p-wal", field="id", limit=1)[0]
+    assert exact["id"] == "hawthorne:p-wal" and exact["score"] == 1.0
     assert node.find(arch, "zzzz qqqq") == []
     capsys.readouterr()
-    assert cli.main(["node", "find", str(arch), "salamanka", "--limit", "2"]) == 0
-    assert "Salamanca" in capsys.readouterr().out
-    assert cli.main(["node", "find", str(arch), "PERSON", "heisenberg", "--format", "json"]) == 0      # a type word, any case
+    assert cli.main(["node", "find", str(arch), "sandovel", "--limit", "2"]) == 0
+    assert "Sandoval" in capsys.readouterr().out
+    assert cli.main(["node", "find", str(arch), "PERSON", "hawthorne", "--format", "json"]) == 0      # a type word, any case
     worded = json.loads(capsys.readouterr().out)
-    assert cli.main(["node", "find", str(arch), "heisenberg", "--type", "Person", "--format", "json"]) == 0
+    assert cli.main(["node", "find", str(arch), "hawthorne", "--type", "Person", "--format", "json"]) == 0
     assert json.loads(capsys.readouterr().out) == worded
 
 
@@ -375,30 +375,30 @@ def test_review_shows_what_a_group_option_disagrees_on(tmp_path):
 
 
 def test_review_asks_which_is_better_and_a_different_parent_moves_the_record(tmp_path):
-    """Two placement questions, each answered with option 2: Los Pollos Hermanos
-    moves from one owner to the other, and Hector from under the leader (a
-    position rule) to the cartel he is a member of."""
+    """Two placement questions, each answered with option 2: Loyal Provisions
+    moves from one owner to the other, and Hugo from under the leader (a
+    position rule) to the consortium he is a member of."""
     arch = tmp_path / "w"
     cli.main(["init", str(arch), "--name", "w"])
     R = lambda i, s, **p: {"id": i, "schema": s, "properties": {k: [v] for k, v in p.items()}}
-    rows = [R("juarez", "Organization", name="Juárez Cartel"), R("eladio", "Person", name="Eladio Vuente"),
-            R("hector", "Person", name="Hector Salamanca"),
-            R("m1", "Membership", member="eladio", organization="juarez", role="leader"),
-            R("m2", "Membership", member="hector", organization="juarez", role="member"),
-            R("lph", "Company", name="Los Pollos Hermanos"), R("madrigal", "Company", name="Madrigal Electromotive"),
-            R("gus", "Person", name="Gustavo Fring"),
-            R("o1", "Ownership", owner="madrigal", asset="lph", role="parent company"),
-            R("o2", "Ownership", owner="gus", asset="lph", role="co-founder")]
+    rows = [R("jericho", "Organization", name="Juárez Consortium"), R("elias", "Person", name="Elias Vaughn"),
+            R("hugo", "Person", name="Hugo Sandoval"),
+            R("m1", "Membership", member="elias", organization="jericho", role="leader"),
+            R("m2", "Membership", member="hugo", organization="jericho", role="member"),
+            R("lph", "Company", name="Loyal Provisions"), R("meridian", "Company", name="Meridian Electrotech"),
+            R("gid", "Person", name="Gideon Fairbank"),
+            R("o1", "Ownership", owner="meridian", asset="lph", role="parent company"),
+            R("o2", "Ownership", owner="gid", asset="lph", role="co-founder")]
     (arch / layout.COLLECTIONS_DIR / "w.json").write_text("\n".join(json.dumps(r) for r in rows), encoding="utf-8")
     cli.main(["build", str(arch)])
     pid = lambda i: json.loads((arch / ".hydra" / "parsed" / "declared.json").read_text())["nodes"][i].get("pid")
-    before = {i: pid(i) for i in ("w:lph", "w:hector")}
-    assert before["w:hector"] == "w:eladio"                            # drawn by the position rules
+    before = {i: pid(i) for i in ("w:lph", "w:hugo")}
+    assert before["w:hugo"] == "w:elias"                            # drawn by the position rules
     out = _review(arch, ["2", "2", "q"], "--only", "placements")
     assert out.count("Which is better?") == 2 and "rules: " in out and "now" in out
     assert "w:o1   Ownership" in out and "w:o2   Ownership" in out          # each parent as its relationship record
-    assert pid("w:hector") == "w:juarez"                               # the rule no longer puts him back
-    assert pid("w:lph") != before["w:lph"] and pid("w:lph") in {"w:gus", "w:madrigal"}
+    assert pid("w:hugo") == "w:jericho"                               # the rule no longer puts him back
+    assert pid("w:lph") != before["w:lph"] and pid("w:lph") in {"w:gid", "w:meridian"}
 
 
 # ---- prefixes and defaults -------------------------------------------------------
@@ -410,41 +410,41 @@ def _rows(arch):
 
 
 def test_tags_set_refuses_to_orphan_decisions_and_rekey_keeps_them(tmp_path, capsys):
-    """A confirmed merge, placement and caption filed under `heisenberg:` ids:
+    """A confirmed merge, placement and caption filed under `hawthorne:` ids:
     renaming the prefix refuses without --rekey; with it, all three are re-filed under
     `hb:` ids and still apply after the rebuild, with no orphan reported."""
     import yaml
     arch = _built(tmp_path)
     place = next(r for r in _rows(arch).values() if r["rel"] == "placedUnder"
-                 and r["status"] == "proposed" and r["sub"].startswith("heisenberg:"))
+                 and r["status"] == "proposed" and r["sub"].startswith("hawthorne:"))
     merge = next(r for r in _rows(arch).values() if r["rel"] == "sameAs"
-                 and {r["acap"], r["bcap"]} == {"Heisenberg", "Walter Hartwell White"})
+                 and {r["acap"], r["bcap"]} == {"Hawthorne", "Wallace Hollis Wright"})
     assert cli.main(["answer", str(arch), place["id"], "confirm", "--no-build"]) == 0
     assert cli.main(["answer", str(arch), merge["id"], "confirm"]) == 0
     assert _rows(arch)[merge["id"]]["status"] == "confirmed"
-    rid, name = "heisenberg:p-walt", "Heisenberg"                # a name the merge gave it
+    rid, name = "hawthorne:p-wal", "Hawthorne"                # a name the merge gave it
     assert cli.main(["answer", str(arch), f"cap-{rid}", name]) == 0
     capsys.readouterr()
-    assert cli.main(["collections", "prefix", str(arch), "heisenberg", "hb"]) == 1
+    assert cli.main(["collections", "prefix", str(arch), "hawthorne", "hb"]) == 1
     assert "--rekey" in capsys.readouterr().out
-    assert json.loads((arch / layout.COLLECTIONS_MANIFEST).read_text())["collections"]["heisenberg"]["prefix"] == "heisenberg"
-    assert cli.main(["collections", "prefix", str(arch), "heisenberg", "hb", "--rekey"]) == 0
+    assert json.loads((arch / layout.COLLECTIONS_MANIFEST).read_text())["collections"]["hawthorne"]["prefix"] == "hawthorne"
+    assert cli.main(["collections", "prefix", str(arch), "hawthorne", "hb", "--rekey"]) == 0
     assert "3 of 3 rewritten decisions found their rows" in capsys.readouterr().out
     doc = yaml.safe_load((arch / layout.VERDICTS).read_text(encoding="utf-8"))
-    hb = rid.replace("heisenberg:", "hb:", 1)
+    hb = rid.replace("hawthorne:", "hb:", 1)
     assert [r["status"] for r in _rows(arch).values() if r["rel"] == "sameAs"
-            and {r["a"], r["b"]} == {merge["a"].replace("heisenberg:", "hb:", 1),
-                                     merge["b"].replace("heisenberg:", "hb:", 1)}] == ["confirmed"]
+            and {r["a"], r["b"]} == {merge["a"].replace("hawthorne:", "hb:", 1),
+                                     merge["b"].replace("hawthorne:", "hb:", 1)}] == ["confirmed"]
     assert doc[f"cap-{hb}"] == name and f"cap-{rid}" not in doc
     assert json.loads((arch / ".hydra" / "parsed" / "declared.json").read_text(encoding="utf-8"))["nodes"][hb]["caption"] == name
-    moved = ids.place_key(place["sub"].replace("heisenberg:", "hb:", 1), place["sup"].replace("heisenberg:", "hb:", 1))
+    moved = ids.place_key(place["sub"].replace("hawthorne:", "hb:", 1), place["sup"].replace("hawthorne:", "hb:", 1))
     assert _rows(arch)[moved]["status"] == "confirmed"
     built = yaml.safe_load((arch / layout.BUILD_YAML).read_text(encoding="utf-8"))
     assert not [i for i in built["issues"] if i["code"].startswith("verdicts.")]
     with pytest.raises(SystemExit, match="already the prefix of"):
-        cli.main(["collections", "prefix", str(arch), "dea", "hb"])
+        cli.main(["collections", "prefix", str(arch), "dce", "hb"])
     with pytest.raises(SystemExit, match="not a usable prefix"):
-        cli.main(["collections", "prefix", str(arch), "dea", "Not OK"])
+        cli.main(["collections", "prefix", str(arch), "dce", "Not OK"])
 
 
 def test_defaults_off_on_restore_and_status(tmp_path, capsys):
@@ -479,21 +479,21 @@ def test_defaults_off_on_restore_and_status(tmp_path, capsys):
 
 
 def test_a_confirmed_rule_placement_holds_when_a_caption_changes(tmp_path, capsys):
-    """Patrick Kuby is placed by the position rules alone, under Jesse (Walt is the
-    other Leader). Confirmed, it is a pin: making Walt's caption `Heisenberg`
-    (which sorts before Jesse) changes a label only, never the confirmed parent."""
+    """Paul Kemp is placed by the position rules alone, under Jordan (Wal is the
+    other Leader). Confirmed, it is a pin: making Wal's caption `Hawthorne`
+    (which sorts before Jordan) changes a label only, never the confirmed parent."""
     arch = _built(tmp_path)
     place = next(r for r in _rows(arch).values() if r["rel"] == "placedUnder"
-                 and r["subcap"] == "Patrick Kuby")
-    assert place["sup"] == "heisenberg:p-jesse" and place["criteria"].startswith("rules:")
+                 and r["subcap"] == "Paul Kemp")
+    assert place["sup"] == "hawthorne:p-jordan" and place["criteria"].startswith("rules:")
     merge = next(r for r in _rows(arch).values() if r["rel"] == "sameAs"
-                 and {r["acap"], r["bcap"]} == {"Heisenberg", "Walter Hartwell White"})
-    for key, value in ((place["id"], "confirm"), (merge["id"], "confirm"), ("cap-heisenberg:p-walt", "Heisenberg")):
+                 and {r["acap"], r["bcap"]} == {"Hawthorne", "Wallace Hollis Wright"})
+    for key, value in ((place["id"], "confirm"), (merge["id"], "confirm"), ("cap-hawthorne:p-wal", "Hawthorne")):
         assert cli.main(["answer", str(arch), key, value]) == 0
     now = _rows(arch)[place["id"]]
-    assert (now["sup"], now["status"], now.get("stale")) == ("heisenberg:p-jesse", "confirmed", None)
+    assert (now["sup"], now["status"], now.get("stale")) == ("hawthorne:p-jordan", "confirmed", None)
     nodes = json.loads((arch / ".hydra" / "parsed" / "declared.json").read_text(encoding="utf-8"))["nodes"]
-    assert nodes[place["sub"]]["pid"] == "heisenberg:p-jesse"              # the tree, not a carried-over row
+    assert nodes[place["sub"]]["pid"] == "hawthorne:p-jordan"              # the tree, not a carried-over row
 
 
 # ---- pack / unpack -------------------------------------------------------------
@@ -613,9 +613,9 @@ def test_details_reads_a_folder_or_a_pack_without_building_or_unpacking(tmp_path
     assert packed["pack"]["with_build"] and packed["records"] == live["records"] and packed["open"] == live["open"]
     import os, time
     later = time.time() + 60
-    os.utime(arch / layout.COLLECTIONS_DIR / "heisenberg.json", (later, later))
+    os.utime(arch / layout.COLLECTIONS_DIR / "hawthorne.json", (later, later))
     assert cli.main(["details", str(arch)]) == 0
-    assert re.search(r"changed +collections/heisenberg\.json", capsys.readouterr().out)
+    assert re.search(r"changed +collections/hawthorne\.json", capsys.readouterr().out)
     fresh = tmp_path / "fresh"
     cli.main(["init", str(fresh)])
     capsys.readouterr()
@@ -647,8 +647,8 @@ def test_export_ftm_csv_graphml_agree_and_read_a_pack(tmp_path, capsys):
         known = (known - set(FTM_RENAMES.values())) | {f for f, ours in FTM_RENAMES.items() if ours in known}
         assert set(e["properties"]) <= known, (e["id"], set(e["properties"]) - known)
         assert "sources" not in e["properties"]                      # FtM's own name in an FtM export
-    m = next(e for e in ents if e["id"] == "cartel:rel-ct1")
-    assert m["properties"]["member"] == ["cartel:p-eladio"] and m["properties"]["organization"][0] in ids_
+    m = next(e for e in ents if e["id"] == "consortium:rel-ct1")
+    assert m["properties"]["member"] == ["consortium:p-elias"] and m["properties"]["organization"][0] in ids_
     assert cli.main(["export", str(arch), "--format", "csv", "-o", str(out / "g")]) == 0
     nodes = list(csv.DictReader((out / "g" / "nodes.csv").open(encoding="utf-8")))
     edges = list(csv.DictReader((out / "g" / "edges.csv").open(encoding="utf-8")))
@@ -682,8 +682,8 @@ def test_hydra_ftm_keeps_names_and_goes_back_into_a_collection(tmp_path, capsys)
     assert cli.main(["export", str(arch), "--format", "hydra-ftm", "-o", str(tmp_path / "hyd.jsonl")]) == 0
     read = lambda f: {e["id"]: e for e in map(json.loads, (tmp_path / f).read_text(encoding="utf-8").splitlines())}
     std, hyd = read("std.jsonl"), read("hyd.jsonl")
-    assert std["cartel:rel-ct1"]["properties"]["member"] == ["cartel:p-eladio"]
-    assert hyd["cartel:rel-ct1"]["properties"]["member"] == ["Eladio Vuente"]
+    assert std["consortium:rel-ct1"]["properties"]["member"] == ["consortium:p-elias"]
+    assert hyd["consortium:rel-ct1"]["properties"]["member"] == ["Elias Vaughn"]
     again = tmp_path / "again"
     cli.main(["init", str(again)])
     (again / layout.COLLECTIONS_DIR / "merged.json").write_text(
@@ -693,7 +693,7 @@ def test_hydra_ftm_keeps_names_and_goes_back_into_a_collection(tmp_path, capsys)
     assert not [i for i in built["issues"] if i["code"] == "records.literal-id"]
     assert cli.main(["export", str(again), "--format", "ftm", "-o", str(tmp_path / "std2.jsonl")]) == 0
     std2 = read("std2.jsonl")
-    assert std2["cartel:rel-ct1"]["properties"]["member"] == ["cartel:p-eladio"]
+    assert std2["consortium:rel-ct1"]["properties"]["member"] == ["consortium:p-elias"]
     links = lambda d: {(k, p, tuple(v)) for k, e in d.items() for p, v in e["properties"].items()
                        if p in ("member", "organization", "owner", "asset", "director", "employee", "employer")}
     assert links(std2) == links(std)
@@ -725,29 +725,29 @@ def test_export_leaves_open_merge_questions_out_of_an_unbuilt_archive(tmp_path, 
 def test_hints_set_copies_the_image_writes_one_quoted_rule_and_refuses_mistakes(tmp_path, capsys):
     import yaml
     arch = _built(tmp_path)
-    img = tmp_path / "gale.webp"
+    img = tmp_path / "glen.webp"
     img.write_bytes(b"RIFF....WEBPVP8 ")
     hp = arch / layout.HINTS
     assert cli.main(["hints", "set", str(arch), "portrait", str(img), "--schema", "Person",
-                     "--name", "Gale (no role, position Cook)", "--no-build"]) == 0
-    assert (arch / layout.RESOURCES_DIR / "portraits" / "gale.webp").read_bytes() == img.read_bytes()
+                     "--name", "Glen (no role, position Chef)", "--no-build"]) == 0
+    assert (arch / layout.RESOURCES_DIR / "portraits" / "glen.webp").read_bytes() == img.read_bytes()
     rules = yaml.safe_load(hp.read_text())["hints"]
-    assert rules[-1] == {"match": {"schema": "Person", "name": "Gale (no role, position Cook)"},
-                         "set": {"portrait": "portraits/gale.webp"}}
+    assert rules[-1] == {"match": {"schema": "Person", "name": "Glen (no role, position Chef)"},
+                         "set": {"portrait": "portraits/glen.webp"}}
     kept = hp.read_text()
     assert kept.startswith("# .hydra/rules/hints.yaml")                     # the comments stay
     with pytest.raises(SystemExit, match="no position 'Kook'"):
         cli.main(["hints", "set", str(arch), "thumb", str(img), "--position", "Kook"])
     assert hp.read_text() == kept                                           # put back as it was
-    clash = tmp_path / "x" / "gale.webp"
+    clash = tmp_path / "x" / "glen.webp"
     clash.parent.mkdir()
     clash.write_bytes(b"something else")
     with pytest.raises(SystemExit, match="already in"):
-        cli.main(["hints", "set", str(arch), "portrait", str(clash), "--name", "Gale"])
+        cli.main(["hints", "set", str(arch), "portrait", str(clash), "--name", "Glen"])
     with pytest.raises(SystemExit, match="say which entities"):
         cli.main(["hints", "set", str(arch), "portrait", str(img)])
     capsys.readouterr()
-    assert cli.main(["hints", "set", str(arch), "thumb", "portraits/gale.webp", "--position", "Leader"]) == 0
+    assert cli.main(["hints", "set", str(arch), "thumb", "portraits/glen.webp", "--position", "Leader"]) == 0
     out = capsys.readouterr().out
     assert "reaches" in out
     assert cli.main(["hints", str(arch)]) == 0 and "images on" in capsys.readouterr().out
@@ -807,13 +807,13 @@ def test_a_confirmed_organization_bounds_the_position_rules(tmp_path):
     import yaml
     M = lambda i, member, org, role: {"id": i, "schema": "Membership",
                                       "properties": {"member": [member], "organization": [org], "role": [role]}}
-    recs = [{"id": "outer", "schema": "Organization", "properties": {"name": ["Outer Cartel"]}},
+    recs = [{"id": "outer", "schema": "Organization", "properties": {"name": ["Outer Consortium"]}},
             {"id": "inner", "schema": "Organization", "properties": {"name": ["Inner Crew"]}},
             {"id": "boss", "schema": "Person", "properties": {"name": ["Outer Boss"]}},
             {"id": "lead", "schema": "Person", "properties": {"name": ["Inner Lead"]}},
-            {"id": "mike", "schema": "Person", "properties": {"name": ["Mike Guard"]}},
-            M("m1", "Inner Crew", "Outer Cartel", "member"), M("m2", "Outer Boss", "Outer Cartel", "leader"),
-            M("m3", "Inner Lead", "Inner Crew", "leader"), M("m4", "Mike Guard", "Inner Crew", "head of security")]
+            {"id": "marty", "schema": "Person", "properties": {"name": ["Marty Guard"]}},
+            M("m1", "Inner Crew", "Outer Consortium", "member"), M("m2", "Outer Boss", "Outer Consortium", "leader"),
+            M("m3", "Inner Lead", "Inner Crew", "leader"), M("m4", "Marty Guard", "Inner Crew", "head of security")]
     arch = tmp_path / "bound"
     cli.main(["init", str(arch), "--prefix", "b"])
     (arch / layout.COLLECTIONS_DIR / "c.json").write_text(json.dumps(recs), encoding="utf-8")
@@ -823,9 +823,9 @@ def test_a_confirmed_organization_bounds_the_position_rules(tmp_path):
         (arch / layout.VERDICTS).write_text(yaml.safe_dump(verdicts), encoding="utf-8")
         cli.main(["build", str(arch), "--force"])
         nodes = json.loads((arch / layout.READS["declared"]).read_text())["nodes"]
-        return nodes["b:mike"]["pid"], nodes["b:mike"]["placement"]["status"]
+        return nodes["b:marty"]["pid"], nodes["b:marty"]["placement"]["status"]
     assert parent({})[0] == "b:lead"                                       # the rules: under the crew's Leader
-    org = {ids.place_key("b:mike", "b:inner"): "confirmed"}
+    org = {ids.place_key("b:marty", "b:inner"): "confirmed"}
     assert parent(org) == ("b:lead", "proposed")                          # in the crew: still ranked inside it
-    no_lead = {**org, ids.place_key("b:mike", "b:lead"): "rejected"}
+    no_lead = {**org, ids.place_key("b:marty", "b:lead"): "rejected"}
     assert parent(no_lead) == ("b:inner", "confirmed")                    # never climbs out to the Outer Boss

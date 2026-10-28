@@ -49,34 +49,34 @@ def test_membership_edge_and_range_metadata_present():
 def test_demo_corpus_parses_with_records_py():
     """The corrected demo corpus (natural values, no id-references) still
     parses cleanly through the untouched records.py."""
-    text = (DEMO / "heisenberg.json").read_text(encoding="utf-8")
+    text = (DEMO / "hawthorne.json").read_text(encoding="utf-8")
     recs = records.parse_records(text)
-    walt = next(r for r in recs if r["id"] == "p-walt")
-    assert walt["properties"]["name"] == ["Walter Hartwell White"]
+    wal = next(r for r in recs if r["id"] == "p-wal")
+    assert wal["properties"]["name"] == ["Wallace Hollis Wright"]
     membership = next(r for r in recs if r["id"] == "rel-hb1")
-    # this is the corrected value — natural name, not the old "p-walt" id
-    assert membership["properties"]["member"] == ["Walter Hartwell White"]
+    # this is the corrected value — natural name, not the old "p-wal" id
+    assert membership["properties"]["member"] == ["Wallace Hollis Wright"]
 
 
-# ---- Layer 1 (types.py), exercised against the real Walter White case -----
+# ---- Layer 1 (types.py), exercised against the real Wallace Wright case -----
 
 
 def test_name_exact_match():
-    c = t.compare("name", "Walter Hartwell White", "Walter Hartwell White")
+    c = t.compare("name", "Wallace Hollis Wright", "Wallace Hollis Wright")
     assert c.signal is t.Signal.MATCH and c.how == "exact"
 
 
 def test_name_word_subset_match():
-    """"Walter White" (fring-condensed.json) is a word-subset of the primary
+    """"Wallace Wright" (fairbank-condensed.json) is a word-subset of the primary
     entity's full name — MATCH, not a fuzzy-ratio coincidence."""
-    c = t.compare("name", "Walter White", "Walter Hartwell White")
+    c = t.compare("name", "Wallace Wright", "Wallace Hollis Wright")
     assert c.signal is t.Signal.MATCH and c.how == "subset"
 
 
 def test_name_mismatch_is_neutral_not_conflict():
     """A name difference alone never blocks a merge — only a `distinct`
-    field's CONFLICT does. "Walter White" vs "Jesse Pinkman" share no words."""
-    c = t.compare("name", "Walter White", "Jesse Pinkman")
+    field's CONFLICT does. "Wallace Wright" vs "Jordan Pelham" share no words."""
+    c = t.compare("name", "Wallace Wright", "Jordan Pelham")
     assert c.signal is t.Signal.NEUTRAL
 
 
@@ -94,7 +94,7 @@ def test_email_mismatch_is_neutral_never_conflict():
     """email/phone/url are corroborating only — never identity-bearing
     enough to block a merge on mismatch (two people sharing a household
     address/phone must never read as a CONFLICT)."""
-    c = t.compare("email", "walt@example.com", "skyler@example.com")
+    c = t.compare("email", "wal@example.com", "sasha@example.com")
     assert c.signal is t.Signal.NEUTRAL
 
 
@@ -106,7 +106,7 @@ def test_missing_value_is_always_neutral():
 def test_entity_type_is_deferred_not_compared():
     import pytest
     with pytest.raises(NotImplementedError):
-        t.compare("entity", "org-fring", "org-fring")
+        t.compare("entity", "org-fairbank", "org-fairbank")
 
 
 def test_unknown_future_type_degrades_to_neutral():

@@ -3,28 +3,28 @@ sources   demo
 
   documents
 
-  HEISENBERG INVESTIGATION — DEA/ABQ CASE FILE (2008-2010) (Pages)   dea:doc-bb-casefile
-  ├── p.1 (Page)   heisenberg:doc-bb-casefile~p1
-  │   ├── Heisenberg (Person)   sources   dea:p-heisenberg-dea
-  │   ├── Henry R. Schrader (Person)   sources   dea:p-hank
-  │   └── Walter Hartwell White (Person)   sources   heisenberg:p-walt
-  ├── p.2 (Page)   fring-condensed:doc-bb-casefile~p2
-  │   ├── Gustavo Fring (Person)   sources of fring-condensed:p-fring   sess-96cfcd44:p-fring
-  │   ├── Gustavo Fring Organization (Organization)   sources of fring-condensed:org-fring   sess-96cfcd44:org-fring
-  │   └── Madrigal Electromotive GmbH (Company)   sources of fring-condensed:co-madrigal   sess-96cfcd44:co-madrigal
-  ├── p.2 (Page)   sess-96cfcd44:doc-bb-casefile~p2
-  │   ├── Gustavo Fring (Person)   sources   sess-96cfcd44:p-fring
-  │   ├── Gustavo Fring Organization (Organization)   sources   sess-96cfcd44:org-fring
-  │   └── Madrigal Electromotive GmbH (Company)   sources   sess-96cfcd44:co-madrigal
-  ├── p.3 (Page)   cartel:doc-bb-casefile~p3
-  │   ├── Eladio Vuente (Person)   sources   cartel:p-eladio
-  │   ├── Juan Bolsa (Person)   sources   cartel:p-bolsa
-  │   ├── Juarez Cartel (Organization)   sources   cartel:org-cartel
-  │   └── Tuco Salamanca (Person)   sources   cartel:p-tuco
-  ├── p.4 (Page)   cartel:doc-bb-casefile~p4
-  │   ├── Hector Salamanca (Person)   sources   cartel:p-hector
-  │   └── Maximino Arciniega (Person)   sources   cartel:p-max
-  └── p.5 (Page)   heisenberg:doc-bb-casefile~p5
-      └── Heisenberg Organization (Organization)   sources   heisenberg:org-heisenberg
+  HAWTHORNE INVESTIGATION — DCE/ALD CASE FILE (2008-2010) (Pages)   dce:doc-bq-casefile
+  ├── p.1 (Page)   hawthorne:doc-bq-casefile~p1
+  │   ├── Harold R. Sharpe (Person)   sources   dce:p-hal
+  │   ├── Hawthorne (Person)   sources   dce:p-hawthorne-dce
+  │   └── Wallace Hollis Wright (Person)   sources   hawthorne:p-wal
+  ├── p.2 (Page)   fairbank-condensed:doc-bq-casefile~p2
+  │   ├── Gideon Fairbank (Person)   sources of fairbank-condensed:p-fairbank   sess-96cfcd44:p-fairbank
+  │   ├── Gideon Fairbank Organization (Organization)   sources of fairbank-condensed:org-fairbank   sess-96cfcd44:org-fairbank
+  │   └── Meridian Electrotech GmbH (Company)   sources of fairbank-condensed:co-meridian   sess-96cfcd44:co-meridian
+  ├── p.2 (Page)   sess-96cfcd44:doc-bq-casefile~p2
+  │   ├── Gideon Fairbank (Person)   sources   sess-96cfcd44:p-fairbank
+  │   ├── Gideon Fairbank Organization (Organization)   sources   sess-96cfcd44:org-fairbank
+  │   └── Meridian Electrotech GmbH (Company)   sources   sess-96cfcd44:co-meridian
+  ├── p.3 (Page)   consortium:doc-bq-casefile~p3
+  │   ├── Elias Vaughn (Person)   sources   consortium:p-elias
+  │   ├── Jericho Consortium (Organization)   sources   consortium:org-consortium
+  │   ├── Jonas Boyd (Person)   sources   consortium:p-boyd
+  │   └── Tomas Sandoval (Person)   sources   consortium:p-tomas
+  ├── p.4 (Page)   consortium:doc-bq-casefile~p4
+  │   ├── Hugo Sandoval (Person)   sources   consortium:p-hugo
+  │   └── Maximino Arden (Person)   sources   consortium:p-max
+  └── p.5 (Page)   hawthorne:doc-bq-casefile~p5
+      └── Hawthorne Organization (Organization)   sources   hawthorne:org-hawthorne
 
   uncited   66

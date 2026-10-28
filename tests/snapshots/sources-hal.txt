@@ -1,0 +1,12 @@
+exit 0
+sources
+
+  entities   1
+
+  documents
+
+  HAWTHORNE INVESTIGATION — DCE/ALD CASE FILE (2008-2010) (Pages)   dce:doc-bq-casefile
+  └── p.1 (Page)   hawthorne:doc-bq-casefile~p1
+      └── Harold R. Sharpe (Person)   sources   dce:p-hal
+
+  uncited    0

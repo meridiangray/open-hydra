@@ -7,10 +7,10 @@ contradictions, verdict issues), one at a time. Every question is the same:
 a subject, "Which is better?", and the real alternatives, numbered, each with
 one line of evidence; the current choice is marked "now".
 
-    [1/3] Los Pollos Hermanos
+    [1/3] Loyal Provisions
     Which is better?
-      1  under Madrigal Electromotive GmbH   Ownership, parent company   now
-      2  under Gustavo Fring                 Ownership, co-founder and proprietor
+      1  under Meridian Electrotech GmbH   Ownership, parent company   now
+      2  under Gideon Fairbank                 Ownership, co-founder and proprietor
       ? not sure   u undo   q quit
 
 A merge question shows the records themselves above the choices: each one's

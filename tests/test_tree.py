@@ -24,11 +24,11 @@ def test_position_and_record_trees(tmp_path, capsys):
     assert positions.main([str(root), "--tree", "--nodes"]) == 0
     out = capsys.readouterr().out
     assert out.startswith("Associate   outside") and "└── Special agent" in out
-    assert re.search(r"records +.*\n(.*\n)*.* Walter Hartwell White +Person", out)
-    assert re.search(r"Enforcer\n.*titles +", out) and " ^" in out
+    assert re.search(r"records +.*\n(.*\n)*.* Wallace Hollis Wright +Person", out)
+    assert re.search(r"Escort\n.*titles +", out) and " ^" in out
     assert tree.main([str(root), "--ascii"]) == 0
     out = capsys.readouterr().out
-    assert "Heisenberg Organization (Organization)\n|-- Walter Hartwell White (Person) — Leader" in out
+    assert "Hawthorne Organization (Organization)\n|-- Wallace Hollis Wright (Person) — Leader" in out
     assert tree.main([str(root), "--read", "generic", "--format", "json"]) == 0
     doc = json.loads(capsys.readouterr().out)
     assert set(doc) == {"tree"} and doc["tree"]
@@ -61,7 +61,7 @@ def test_a_type_or_a_search_picks_where_the_record_tree_starts(tmp_path, capsys)
     capsys.readouterr()
     assert tree.main([str(root), "ORGANIZATION", "--format", "json"]) == 0          # any capitalisation
     assert len(json.loads(capsys.readouterr().out)["tree"]) == len(starts)
-    assert tree.starts_of(ir, [], "heisen")[0] in {"heisenberg:p-walt", "dea:p-heisenberg-dea"}   # a name's start
+    assert tree.starts_of(ir, [], "hawth")[0] in {"hawthorne:p-wal", "dce:p-hawthorne-dce"}   # a name's start
     assert tree.main([str(root), "zzqq"]) == 0 and "no record matches" in capsys.readouterr().out
 
 
@@ -204,8 +204,8 @@ def test_a_relationship_word_draws_only_those_links(tmp_path, capsys):
     out = capsys.readouterr().out
     assert out != plain and "←" not in out
     assert not re.search(r"Membership|Ownership|Employment|ProjectParticipant|\(Company\)|\(Organization\)", out)
-    assert "Hector Salamanca (Person)" in out                          # only ever a `relative`: still drawn
-    assert "Jane Margolis (Person)   Family   child (father)" in out    # worded for the child's own line
+    assert "Hugo Sandoval (Person)" in out                          # only ever a `relative`: still drawn
+    assert "Joan Marlowe (Person)   Family   child (father)" in out    # worded for the child's own line
     assert "\n\n" in out.split("\n\n", 1)[1]                            # families apart, by blank lines
     assert tree.main([str(root), "person", "family"]) == 0             # with a type
     assert tree.main([str(root), "family", "employment"]) == 0         # chained

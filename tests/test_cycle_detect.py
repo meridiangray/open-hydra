@@ -165,7 +165,7 @@ def test_org_beats_a_more_recent_project():
 
 
 def test_ended_org_membership_still_beats_an_active_project():
-    """Walter White: Leader of Heisenberg (ended 2010) outranks the projects he
+    """Wallace Wright: Leader of Hawthorne (ended 2010) outranks the projects he
     is still on; the node carries its `former` flag, nothing is dropped."""
     assert _parent_of(_ir(_org_vs_project(endDate="2005-01-01")), "Wally Person") == "Big Org"
 

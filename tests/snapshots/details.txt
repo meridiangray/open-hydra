@@ -1,21 +1,21 @@
 exit 0
-demo                                                                    built   2026-01-01 00:00:00 UTC
+demo                                                                       built   2026-01-01 00:00:00 UTC
 
-records    244                                                  review       automatic   open
-entities   227                                                  merges              17     14
-claims     914                                                  placements          40     20
-changed    .hydra/resources/.gitkeep                            references           0      3
+records    244                                                     review       automatic   open
+entities   227                                                     merges              17     14
+claims     914                                                     placements          40     20
+changed    .hydra/resources/.gitkeep                               references           0      3
 changed    .hydra/resources/icons/LICENSE-lucide.txt
-changed    .hydra/resources/icons/briefcase.svg                 tree         nodes   roots   positioned
-changed    128 more                                             declared        79      19           18
-                                                                generic         79      19           18
-collection        records   claims   in others   citations
-heisenberg             56      191           0           2      issues       count
-fring                  42      148          17           3      errors           0
-operations             42      223           0           0      warnings         0
-cartel                 38      138           0           6      info             1
-fring-condensed        34      111          17           3
-dea                    32      103           0           2
+changed    .hydra/resources/icons/briefcase.svg                    tree         nodes   roots   positioned
+changed    128 more                                                declared        79      19           18
+                                                                   generic         79      19           18
+collection           records   claims   in others   citations
+hawthorne                 56      191           0           2      issues       count
+fairbank                  42      148          17           3      errors           0
+operations                42      223           0           0      warnings         0
+consortium                38      138           0           6      info             1
+fairbank-condensed        34      111          17           3
+dce                       32      103           0           2
 
 type                 entities   records
 Person                     47        57

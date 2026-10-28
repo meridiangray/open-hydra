@@ -172,7 +172,7 @@ def match(nodes: dict, text: str, kinds=(), exact: bool = False, fields: bool = 
                     best = best if best and best[0] == 1 else (2, len(vw - qw))
                 elif (not exact and qw and all(len(q) >= 3 and any(w.startswith(q) for w in vw) for q in qw)
                       and (best is None or best > (2.5, len(vw)))):
-                    best = (2.5, len(vw))                 # "gus" starts "gustavo": a name, after whole words
+                    best = (2.5, len(vw))                 # "gid" starts "gideon": a name, after whole words
         if not best and fields:
             props, sname = n.get("props") or {}, n.get("schema", "")
             hit = (next(((p, v) for p in query.text_fields(props, sname, NAMES, free_text) for v in props[p]
@@ -419,7 +419,7 @@ def main(argv: list[str] | None = None) -> int:
     lead = words.pop(0) if words and resources.names_archive(words[0]) else None
     root = resources.ensure_built(resources.archive(lead, read_only=True))
     schema.load(root=root)
-    words, with_sources = sources_mod.take_word(words)        # `claims gus sources`
+    words, with_sources = sources_mod.take_word(words)        # `claims gid sources`
     kinds, text = query.split(words, a.type)
     distinct = lru_cache(maxsize=None)(lambda sch: frozenset(_distinct(root, sch)))   # once per schema
     if summary or not text:                       # no search: the overview (of those types)

@@ -1,5 +1,5 @@
 name: template
 format: 2
 ftm: 65c772987032a1708d22410f3a543aec8ad433b9a80fbe6c9bcfca3c8716b7ed
-# subject: {label: "Heisenberg Organization", type: Organization}   # optional: the charted subject
+# subject: {label: "Hawthorne Organization", type: Organization}   # optional: the charted subject
 # search: all        # how far searches look: all, no-text (not notes, description...), names (names and ids)

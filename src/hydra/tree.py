@@ -7,7 +7,7 @@
 Default: the record tree, every node under its primary parent as the read
 placed it. A type word (`tree person`, `tree organization`, any capitalisation)
 starts it at each node of that type not below another of that type; a search
-(`tree gus`) at the records it names (other fields only when no name matches).
+(`tree gid`) at the records it names (other fields only when no name matches).
 A relationship word (`tree family`, `tree ownership employment`) draws only
 the links of those kinds and only the records in them, each linked group apart.
 The chart draws each record once, under one parent; every other vertical
@@ -453,10 +453,10 @@ def record_mermaid(ir: dict, starts=None, also: dict | None = None, only: bool =
             placed.update(recs)
             if only:
                 kind, _, role = (kn.get("link") or "").partition(": ")
-                lab = role or PREFER.get(kind, kind)
+                loft = role or PREFER.get(kind, kind)
             else:
-                lab = next((role_of(kn, r) for r in recs if role_of(kn, r)), "")
-            edges.append((i, k, lab, "-->", vertical))
+                loft = next((role_of(kn, r) for r in recs if role_of(kn, r)), "")
+            edges.append((i, k, loft, "-->", vertical))
     for i in drawn:
         for x in (also or {}).get(i) or []:           # other parents; labelled from the data only, never
             if x["at"] in here:                       # `why` (a review preference, not a fact)
@@ -470,11 +470,11 @@ def record_mermaid(ir: dict, starts=None, also: dict | None = None, only: bool =
             ties = [(t["to"], t.get("relationship") or role_of(n, t.get("record")), t.get("record"))
                     for t in n.get("lateral") or []
                     if not t.get("dup") and t.get("record") not in placed]   # dup: a proposed merge, not a link
-        for to, lab, key in ties:
+        for to, loft, key in ties:
             pair = frozenset((i, to))
             if to in here and to != i and (key, pair) not in seen:
                 seen.add((key, pair))
-                edges.append((i, to, lab, "-.-", lateral))
+                edges.append((i, to, loft, "-.-", lateral))
     edges = [e for e in edges if e[4]]
 
     def box(i):
@@ -487,8 +487,8 @@ def record_mermaid(ir: dict, starts=None, also: dict | None = None, only: bool =
     if label:
         out.append(f"    %% record tree — {_mesc(label)} (GENERATED)")
     out += [box(i) for i in drawn if i in linked or singletons]
-    out += [f"    {mids[a]} {arrow}" + (f'|"{_mesc(lab)}"|' if lab else "") + f" {mids[b]}"
-            for a, b, lab, arrow, _ in edges]
+    out += [f"    {mids[a]} {arrow}" + (f'|"{_mesc(loft)}"|' if loft else "") + f" {mids[b]}"
+            for a, b, loft, arrow, _ in edges]
     alone = [str(nodes[i].get("caption") or i) for i in drawn if i not in linked]
     if alone and not singletons:
         out.append("    %% no links: " + ", ".join(alone))

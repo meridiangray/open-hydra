@@ -53,7 +53,7 @@ def test_hints(arch):
         {"match": {"colour": "red"}, "set": {"badge": "x"}},
         {"match": {"schema": "Person"}},
         {"match": {"schema": "Person"}, "set": {"badge": "x", "colour": "red"}},
-    ], "p-walt": {"badge": "old"}}))
+    ], "p-wal": {"badge": "old"}}))
     codes = {(i["code"], i["where"]) for i in issues(arch)}
     assert ("hints.bad-regex", "hints[0]") in codes
     assert ("hints.unknown-schema", "hints[1]") in codes
@@ -61,7 +61,7 @@ def test_hints(arch):
     assert ("hints.unknown-property", "hints[3]") in codes
     assert ("hints.incomplete", "hints[4]") in codes
     assert ("hints.shape", "hints.5.set.colour") in codes
-    assert ("hints.id-keyed", "p-walt") in codes
+    assert ("hints.id-keyed", "p-wal") in codes
 
 
 def test_direction(arch):
@@ -94,13 +94,13 @@ def test_verdicts(arch):
     write(arch, layout.VERDICTS, yaml.safe_dump({
         "merge-0000000000000000": "confirmed",
         "place-1111111111111111": "maybe",
-        "cap-heisenberg:p-walt": "Not His Name",
+        "cap-hawthorne:p-wal": "Not His Name",
         "cap-nobody:x": "X"}))
     write(arch, ".hydra/review/a/b/verdicts.yaml", yaml.safe_dump({"merge-0000000000000000": "rejected"}))
     codes = {(i["code"], i["where"]) for i in issues(arch)}
     assert ("verdicts.orphan", "merge-0000000000000000") in codes
     assert ("verdicts.bad-value", "place-1111111111111111") in codes
-    assert ("verdicts.dead-pin", "cap-heisenberg:p-walt") in codes
+    assert ("verdicts.dead-pin", "cap-hawthorne:p-wal") in codes
     assert ("verdicts.dead-pin", "cap-nobody:x") in codes
     assert ("verdicts.disagree", "merge-0000000000000000") in codes   # the nested file is read
 

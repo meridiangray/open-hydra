@@ -169,7 +169,7 @@ def main(argv: list[str] | None = None) -> int:
     lead = words.pop(0) if len(words) > 1 and resources.names_archive(words[0]) else None
     root = resources.ensure_built(resources.archive(lead, read_only=True))
     schema.load(root=root)
-    words, with_sources = sources_mod.take_word(words)        # `node find walt sources`
+    words, with_sources = sources_mod.take_word(words)        # `node find wal sources`
     kinds, text = query.split(words, a.type)
     if not text:
         raise SystemExit("hydra: node find needs a value to look for (a type alone only narrows it)")

@@ -22,19 +22,19 @@ def _build(records, verdicts=None):
                              verdicts=verdicts, direction=fam, params_dir=t.PARAMS)
 
 
-def _walter_row(ir):
-    rows = [r for r in ir["ledger"] if r["rel"] == "references" and r["value"] == "Walter White"]
+def _wallace_row(ir):
+    rows = [r for r in ir["ledger"] if r["rel"] == "references" and r["value"] == "Wallace Wright"]
     assert len(rows) == 1
     return rows[0]
 
 
-def test_ambiguous_walter_white_is_a_row_not_a_guess():
+def test_ambiguous_wallace_wright_is_a_row_not_a_guess():
     ir = _build(t._load_demo_records())
-    row = _walter_row(ir)
+    row = _wallace_row(ir)
     ids = {c["id"] for c in row["candidates"]}
     assert row["status"] == "proposed" and row["choice"] is None
-    assert {"p-walt", "p-waltjr"} <= ids
-    jr = next(n for n in ir["nodes"].values() if n["caption"] == "Walter White Jr.")
+    assert {"p-wal", "p-waljr"} <= ids
+    jr = next(n for n in ir["nodes"].values() if n["caption"] == "Wallace Wright Jr.")
     assert jr["pid"] is None
     assert row["group"] == f"{row['schema']}.{row['prop']}"
     assert ir["report"]["reference_groups"][row["group"]] >= 1
@@ -42,19 +42,19 @@ def test_ambiguous_walter_white_is_a_row_not_a_guess():
 
 def test_pin_verdict_resolves_that_one_reference_only():
     base = _build(t._load_demo_records())
-    row = _walter_row(base)
-    pinned = _build(t._load_demo_records(), {row["id"]: "p-walt"})
+    row = _wallace_row(base)
+    pinned = _build(t._load_demo_records(), {row["id"]: "p-wal"})
     prow = next(r for r in pinned["ledger"] if r["id"] == row["id"])
-    assert prow["status"] == "pinned" and prow["choice"] == "p-walt"
+    assert prow["status"] == "pinned" and prow["choice"] == "p-wal"
     count = lambda ir: len(ir["report"]["fold"]["ambiguous_endpoints"])
     assert count(pinned) == count(base) - 1
 
 
 def test_pin_to_a_vanished_record_is_ignored_not_followed():
     base = _build(t._load_demo_records())
-    row = _walter_row(base)
+    row = _wallace_row(base)
     again = _build(t._load_demo_records(), {row["id"]: "no-such-record"})
-    assert _walter_row(again)["status"] == "proposed"
+    assert _wallace_row(again)["status"] == "proposed"
 
 
 def _same_name(n):
@@ -89,9 +89,9 @@ def test_no_contradiction_when_rejection_is_honored():
 
 def _fork():
     return [
-        {"id": "b", "schema": "Person", "properties": {"name": ["Walter White"]}, "_collection": "c0"},
-        {"id": "w1", "schema": "Person", "properties": {"name": ["Walter Hartwell White"]}, "_collection": "c1"},
-        {"id": "w2", "schema": "Person", "properties": {"name": ["Walter Gale White"]}, "_collection": "c2"},
+        {"id": "b", "schema": "Person", "properties": {"name": ["Wallace Wright"]}, "_collection": "c0"},
+        {"id": "w1", "schema": "Person", "properties": {"name": ["Wallace Hollis Wright"]}, "_collection": "c1"},
+        {"id": "w2", "schema": "Person", "properties": {"name": ["Wallace Glen Wright"]}, "_collection": "c2"},
     ]
 
 
@@ -117,8 +117,8 @@ def test_confirming_one_fork_row_rejects_its_sibling_only():
     nodes = ir["nodes"]
     assert len(nodes) == 2                       # b+w1 merged, w2 stays separate
     merged = next(n for n in nodes.values() if n["id"] != "w2")
-    assert set(merged["props"]["name"]) == {"Walter White", "Walter Hartwell White"}
-    assert nodes["w2"]["caption"] == "Walter Gale White"
+    assert set(merged["props"]["name"]) == {"Wallace Wright", "Wallace Hollis Wright"}
+    assert nodes["w2"]["caption"] == "Wallace Glen Wright"
 
 
 def test_an_explicit_second_decision_is_not_overridden_by_cascade():
@@ -141,11 +141,11 @@ def test_confirm_goes_stale_when_evidence_changes_and_is_not_applied():
     row = _row(base, "b", "w1")
     verdict = {"status": "confirmed", "basis": row["basis"]}
     changed = _fork()
-    changed[0]["properties"]["weakAlias"] = ["Heisenberg"]       # new match evidence
+    changed[0]["properties"]["weakAlias"] = ["Hawthorne"]       # new match evidence
     ir = _build(changed, {row["id"]: verdict})
     r = _row(ir, "b", "w1")
     assert r["status"] == "confirmed-stale" and r["was"] == "confirmed"
-    assert sum(n["caption"] == "Walter White" for n in ir["nodes"].values()) == 1  # not merged
+    assert sum(n["caption"] == "Wallace Wright" for n in ir["nodes"].values()) == 1  # not merged
     assert any(d["ledger"] == r["id"] for d in ir["report"]["duplicates"])
 
 
@@ -153,7 +153,7 @@ def test_rejection_stays_applied_when_stale_but_is_flagged():
     base = _build(_fork())
     row = _row(base, "b", "w1")
     changed = _fork()
-    changed[0]["properties"]["weakAlias"] = ["Heisenberg"]
+    changed[0]["properties"]["weakAlias"] = ["Hawthorne"]
     ir = _build(changed, {row["id"]: {"status": "rejected", "basis": row["basis"]}})
     r = _row(ir, "b", "w1")
     assert r["status"] == "rejected" and r["stale"] is True
@@ -163,7 +163,7 @@ def test_bare_string_verdicts_still_work_with_no_staleness_check():
     base = _build(_fork())
     row = _row(base, "b", "w1")
     changed = _fork()
-    changed[0]["properties"]["weakAlias"] = ["Heisenberg"]
+    changed[0]["properties"]["weakAlias"] = ["Hawthorne"]
     ir = _build(changed, {row["id"]: "confirmed"})
     assert _row(ir, "b", "w1")["status"] == "confirmed"
 

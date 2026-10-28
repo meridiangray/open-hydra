@@ -14,7 +14,7 @@ are content, not where the content came from. Entities citing nothing are
 counted; `--uncited` names them.
 
 A type word (`sources person`) keeps to what entities of that type cite; a
-search (`sources hank`) to what the entities it names cite (names first, other
+search (`sources hal`) to what the entities it names cite (names first, other
 fields only when no name matches): only those sources, and only those entities
 under them. When no entity matches, the search is tried on the sources
 themselves (id, title, publisher, link): `sources casefile` lists those sources
@@ -23,8 +23,8 @@ with everything citing them.
 The word `sources` at the end of `claims`, `node find` or `tree` does the same
 for just the entities that command returned:
 
-    hydra-ctl claims gus sources
-    hydra-ctl node find walt sources
+    hydra-ctl claims gid sources
+    hydra-ctl node find wal sources
     hydra-ctl tree organization sources
 
 Read from the last build (`.hydra/parsed/claims.jsonl` and the declared read);

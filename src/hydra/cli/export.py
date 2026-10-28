@@ -5,11 +5,11 @@
 
 `ftm`        the merged entities as standard FollowTheMoney JSON lines: a link
              field holds the id of the record it points at (`member:
-             ["cartel:p-eladio"]`), as FtM tools and the RDF model behind them
+             ["consortium:p-elias"]`), as FtM tools and the RDF model behind them
              expect; `referents` and `datasets` kept. For Aleph / OpenAleph,
              nomenklatura and other FtM tools.
 `hydra-ftm`  the same entities in hydra's dialect: link fields keep the names
-             the records wrote (`member: ["Eladio Vuente"]`). Goes back into a
+             the records wrote (`member: ["Elias Vaughn"]`). Goes back into a
              hydra collection as it is, since hydra resolves links by name.
 `csv`        a folder with `nodes.csv` and `edges.csv` (an edge's first two columns
              are its source and target, as Kuzu's COPY FROM expects; Neo4j and

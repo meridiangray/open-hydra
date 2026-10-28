@@ -2,8 +2,8 @@
 
 One entity per surviving record: `{id, schema, properties, referents, datasets}`.
 `properties` is every value its merged records supplied (deduplicated, sorted).
-With `links="ids"` (standard FtM) an entity-typed value (`member: ["Walter
-White"]`) is written as the id of the record it resolved to, the way FtM tools
+With `links="ids"` (standard FtM) an entity-typed value (`member: ["Wallace
+Wright"]`) is written as the id of the record it resolved to, the way FtM tools
 and the RDF model behind them expect; a value that resolved to nothing, or a
 property the build does not resolve (an entity property of an edge schema other
 than its two ends), stays as its text. With `links="names"` (hydra's dialect)

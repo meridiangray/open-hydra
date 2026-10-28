@@ -1,0 +1,19 @@
+exit 0
+Gideon Fairbank (Person) — Leader
+│ also  Jericho Consortium              Membership           distributor
+│ also  Loyal Provisions                Directorship         president
+│ also  Suite design and construction   ProjectParticipant   sponsor
+├── Chad Maddox (Person) — Member
+│     also  Gideon Fairbank Organization   Membership   member
+└── Dexter Marsh (Person) — Member
+      also  Gideon Fairbank Organization   Membership   member
+Gideon Fairbank Organization (Organization)
+├── Gideon Fairbank (Person) — Leader ^
+│     also  Jericho Consortium              Membership           distributor
+│     also  Loyal Provisions                Directorship         president
+│     also  Suite design and construction   ProjectParticipant   sponsor
+├── Glen Bowman (Person)
+│     also  Suite design and construction   ProjectParticipant   lead cataloguer
+├── Suite design and construction (Project)
+├── Tobias Kent (Person)
+└── Vernon (Person)

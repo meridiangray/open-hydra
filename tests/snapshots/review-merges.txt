@@ -5,27 +5,27 @@ review   demo
   total      14           7
 
 [1/7] Merge
-  Cousins' assassination attempt on Hank Schrader   and   Wayfarer 515 mid-air collision
+  Cousins' appeal on Hal Sharpe   and   Wayfarer 515 meeting schedule
 
   operations:ev-cousins   Event
      country     us
      date        2009
-     involved    Henry R. Schrader
-                 Marco Salamanca
-                 Leonel Salamanca
-                 Michael Ehrmantraut
-     location    Albuquerque, NM
-     name        Cousins' assassination attempt on Hank Schrader
-     organizer   Juan Bolsa
-     summary     Hank survived the parking-lot ambush; Marco dead, Leonel later finished in hospital
+     involved    Harold R. Sharpe
+                 Marcel Sandoval
+                 Leland Sandoval
+                 Martin Eastwood
+     location    Alderton, NM
+     name        Cousins' appeal on Hal Sharpe
+     organizer   Jonas Boyd
+     summary     Summary of Cousins' appeal on Hal Sharpe. Mentions Hal, Marcel, Leland.
 
   operations:ev-wayfarer   Event
      country   = us
      date      = 2009
-     involved    Donald Margolis
-     location  = Albuquerque, NM
-     name        Wayfarer 515 mid-air collision
-     summary     air traffic controller Donald Margolis, grieving Jane's death, let two planes collide over ABQ
+     involved    Douglas Marlowe
+     location  = Alderton, NM
+     name        Wayfarer 515 meeting schedule
+     summary     Summary of Wayfarer 515 meeting schedule. Mentions Douglas Marlowe, Joan, ALD, Douglas Marlowe.
 
   [all fields]   fields in both   conflicting fields      Tab / Shift+Tab
 Which is better?
@@ -34,12 +34,12 @@ Which is better?
   ? not sure   u undo   q quit
 
 [2/7] Merge · conflicting: date
-  To'hajiilee shootout   and   Junkyard shootout — Tuco Salamanca killed
+  To'hajiilee session   and   Junkyard session — Tomas Sandoval kept
 
   operations:ev-tohajiilee   Event
      date        2010
 
-  operations:ev-tuco   Event
+  operations:ev-tomas   Event
      date      ≠ 2008
 
   all fields   fields in both   [conflicting fields]      Tab / Shift+Tab
@@ -49,44 +49,36 @@ Which is better?
   ? not sure   u undo   q quit
 
 [3/7] Merge · 2 candidates
-  Walter Hartwell White
+  Casa Tranquila nursing home
 
-  ┌─ Merge with ───────────────────────────────────────────────────────────────────┐
-  │ heisenberg:p-walt   Person                                                     │
-  │    birthDate         1958-09-07                                                │
-  │    deathDate         2010-09-07                                                │
-  │    name              Walter Hartwell White                                     │
-  │    notes             chemistry teacher turned meth manufacturer — 'Heisenberg' │
-  │    sources           heisenberg:doc-bb-casefile~p1                             │
-  │    weakAlias         Walt                                                      │
-  │                      Heisenberg                                                │
-  │                      Mr. Lambert                                               │
-  └────────────────────────────────────────────────────────────────────────────────┘
+  ┌─ Merge with ────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ operations:re-casa-tranquila   RealEstate                                                               │
+  │    address        Alderton, NM                                                                          │
+  │    name           Casa Tranquila nursing home                                                           │
+  │    notes          Note on Casa Tranquila nursing home. Mentions Hugo Sandoval, Fairbank, Hugo Sandoval. │
+  │    propertyType   nursing home                                                                          │
+  └─────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
-  1  heisenberg:org-heisenberg   Organization
-     dissolutionDate   2010
-     jurisdiction      us
-     name              Heisenberg Organization
-     notes             Walter White's meth operation — RV cooks, then the post-Fring 'empire business'
-     sources           heisenberg:doc-bb-casefile~p5
-     weakAlias         Walter White's operation
-                       Heisenberg's empire
+  1  fairbank-condensed:re-lantern   RealEstate
+     address      = Alderton, NM
+     name           Lantern Bright
+     propertyType   industrial linen plant
 
-  2  dea:p-heisenberg-dea   Person
-     name              Heisenberg
-     notes             DEA sketch identity — proposed merge into Walter White via the Similar record
-     sources         = heisenberg:doc-bb-casefile~p1
-     weakAlias         the Heisenberg
+  2  sess-96cfcd44:re-lantern   RealEstate
+     address      = Alderton, NM
+     name           Lantern Bright
+     notes          Note on Lantern Bright. Mentions The Suite.
+     propertyType   industrial linen plant
 
   [all fields]   fields in both   conflicting fields      Tab / Shift+Tab
 Which is better?
-  1  the same as Heisenberg Organization   heisenberg:org-heisenberg
-  2  the same as Heisenberg                dea:p-heisenberg-dea
-  3  none of these                         
+  1  the same as Lantern Bright   fairbank-condensed:re-lantern
+  2  the same as Lantern Bright   sess-96cfcd44:re-lantern
+  3  none of these                
   ? not sure   u undo   q quit
 
 [4/7] Merge · 3 candidates · conflicting: date
-  Gale Boetticher murdered; Victor killed
+  Glen Bowman moved; Vernon kept
 
   ┌─ Merge with ────────────────────┐
   │ operations:ev-boxcutter   Event │
@@ -103,78 +95,86 @@ Which is better?
 
   all fields   fields in both   [conflicting fields]      Tab / Shift+Tab
 Which is better?
-  1  the same as Casa Tranquila explosion                          operations:ev-casa-tranquila
-  2  the same as Wayfarer 515 mid-air collision                    operations:ev-wayfarer
-  3  the same as Cousins' assassination attempt on Hank Schrader   operations:ev-cousins
-  4  none of these                                                 
+  1  the same as Casa Tranquila exhibit          operations:ev-casa-tranquila
+  2  the same as Wayfarer 515 meeting schedule   operations:ev-wayfarer
+  3  the same as Cousins' appeal on Hal Sharpe   operations:ev-cousins
+  4  none of these                               
   ? not sure   u undo   q quit
 
-[5/7] Merge · 3 candidates
-  White residence — 308 Negra Arroyo Lane
+[5/7] Merge · 2 candidates
+  Wallace Hollis Wright
+
+  ┌─ Merge with ────────────────────────────────────────────────────────────┐
+  │ hawthorne:p-wal   Person                                                │
+  │    birthDate         1958-09-07                                         │
+  │    deathDate         2010-09-07                                         │
+  │    name              Wallace Hollis Wright                              │
+  │    notes             Note on Wallace Hollis Wright. Mentions Hawthorne. │
+  │    sources           hawthorne:doc-bq-casefile~p1                       │
+  │    weakAlias         Wal                                                │
+  │                      Hawthorne                                          │
+  │                      Mr. Lowell                                         │
+  └─────────────────────────────────────────────────────────────────────────┘
+
+  1  dce:p-hawthorne-dce   Person
+     name              Hawthorne
+     notes             Note on Hawthorne. Mentions DCE, Wallace Wright.
+     sources         = hawthorne:doc-bq-casefile~p1
+     weakAlias         the Hawthorne
+
+  2  hawthorne:org-hawthorne   Organization
+     dissolutionDate   2010
+     jurisdiction      us
+     name              Hawthorne Organization
+     notes             Note on Hawthorne Organization. Mentions Wallace Wright, Fairbank.
+     sources           hawthorne:doc-bq-casefile~p5
+     weakAlias         Wallace Wright's operation
+                       Hawthorne's empire
+
+  [all fields]   fields in both   conflicting fields      Tab / Shift+Tab
+Which is better?
+  1  the same as Hawthorne                dce:p-hawthorne-dce
+  2  the same as Hawthorne Organization   hawthorne:org-hawthorne
+  3  none of these                        
+  ? not sure   u undo   q quit
+
+[6/7] Merge · 3 candidates
+  Wright residence — 308 North Arbor Lane
 
   ┌─ Merge with ──────────────────────────────────────────────┐
-  │ heisenberg:re-white   RealEstate                          │
-  │    address        308 Negra Arroyo Lane, Albuquerque, NM  │
-  │    name           White residence — 308 Negra Arroyo Lane │
+  │ hawthorne:re-wright   RealEstate                          │
+  │    address        308 North Arbor Lane, Alderton, NM      │
+  │    name           Wright residence — 308 North Arbor Lane │
   │    propertyType   house                                   │
   └───────────────────────────────────────────────────────────┘
 
-  1  operations:re-casa-tranquila   RealEstate
-     address        Albuquerque, NM
+  1  sess-96cfcd44:re-lantern   RealEstate
+     address        Alderton, NM
+     name           Lantern Bright
+     notes          Note on Lantern Bright. Mentions The Suite.
+     propertyType   industrial linen plant
+
+  2  fairbank-condensed:re-lantern   RealEstate
+     address        Alderton, NM
+     name           Lantern Bright
+     propertyType   industrial linen plant
+
+  3  operations:re-casa-tranquila   RealEstate
+     address        Alderton, NM
      name           Casa Tranquila nursing home
-     notes          Hector Salamanca's residence; destroyed in the explosion that killed Fring
+     notes          Note on Casa Tranquila nursing home. Mentions Hugo Sandoval, Fairbank, Hugo Sandoval.
      propertyType   nursing home
-
-  2  sess-96cfcd44:re-lavanderia   RealEstate
-     address        Albuquerque, NM
-     name           Lavanderia Brillante
-     notes          industrial laundry bought to conceal the superlab
-     propertyType   industrial laundry
-
-  3  fring-condensed:re-lavanderia   RealEstate
-     address        Albuquerque, NM
-     name           Lavanderia Brillante
-     propertyType   industrial laundry
 
   [all fields]   fields in both   conflicting fields      Tab / Shift+Tab
 Which is better?
-  1  the same as Casa Tranquila nursing home   operations:re-casa-tranquila
-  2  the same as Lavanderia Brillante          sess-96cfcd44:re-lavanderia
-  3  the same as Lavanderia Brillante          fring-condensed:re-lavanderia
+  1  the same as Lantern Bright                sess-96cfcd44:re-lantern
+  2  the same as Lantern Bright                fairbank-condensed:re-lantern
+  3  the same as Casa Tranquila nursing home   operations:re-casa-tranquila
   4  none of these                             
   ? not sure   u undo   q quit
 
-[6/7] Merge · 2 candidates
-  Casa Tranquila nursing home
-
-  ┌─ Merge with ─────────────────────────────────────────────────────────────────────────────────┐
-  │ operations:re-casa-tranquila   RealEstate                                                    │
-  │    address        Albuquerque, NM                                                            │
-  │    name           Casa Tranquila nursing home                                                │
-  │    notes          Hector Salamanca's residence; destroyed in the explosion that killed Fring │
-  │    propertyType   nursing home                                                               │
-  └──────────────────────────────────────────────────────────────────────────────────────────────┘
-
-  1  fring-condensed:re-lavanderia   RealEstate
-     address      = Albuquerque, NM
-     name           Lavanderia Brillante
-     propertyType   industrial laundry
-
-  2  sess-96cfcd44:re-lavanderia   RealEstate
-     address      = Albuquerque, NM
-     name           Lavanderia Brillante
-     notes          industrial laundry bought to conceal the superlab
-     propertyType   industrial laundry
-
-  [all fields]   fields in both   conflicting fields      Tab / Shift+Tab
-Which is better?
-  1  the same as Lavanderia Brillante   fring-condensed:re-lavanderia
-  2  the same as Lavanderia Brillante   sess-96cfcd44:re-lavanderia
-  3  none of these                      
-  ? not sure   u undo   q quit
-
 [7/7] Merge · 2 candidates · conflicting: country, date
-  Cartel leadership massacred at the hacienda
+  Consortium leadership merged at the homestead
 
   ┌─ Merge with ───────────────┐
   │ operations:ev-pool   Event │
@@ -190,8 +190,8 @@ Which is better?
 
   all fields   fields in both   [conflicting fields]      Tab / Shift+Tab
 Which is better?
-  1  the same as Maximino Arciniega executed at the hacienda          operations:ev-max
-  2  the same as Welker compound massacre — Walter White's last act   operations:ev-felina
+  1  the same as Maximino Arden excused at the homestead              operations:ev-max
+  2  the same as Weston compound merger — Wallace Wright's last act   operations:ev-felina
   3  none of these                                                    
   ? not sure   u undo   q quit
 

@@ -11,21 +11,21 @@ from hydra.structure import fold  # noqa: E402
 
 
 def test_default_tag_is_a_valid_never_reserved_source_name():
-    assert prefixes.default_prefix("Fring Condensed") == "fring-condensed"
+    assert prefixes.default_prefix("Fairbank Condensed") == "fairbank-condensed"
     assert prefixes.default_prefix("manifest") == "manifest-c"
     assert prefixes.default_prefix("") == "collection"
-    for name in ("cartel", "Dea Files!", "a/b"):
+    for name in ("consortium", "Dce Files!", "a/b"):
         assert source_of(prefixes.default_prefix(name) + ":x") == prefixes.default_prefix(name)
 
 
 def test_manifest_choice_wins_and_defaults_are_stored_back():
-    man = {"format": 2, "collections": {"cartel": {"file": "cartel.json", "prefix": "abq"}}}
-    got = prefixes.resolve_prefixes(["cartel", "dea"], man)
-    assert got == {"cartel": "abq", "dea": "dea"}
+    man = {"format": 2, "collections": {"consortium": {"file": "consortium.json", "prefix": "ald"}}}
+    got = prefixes.resolve_prefixes(["consortium", "dce"], man)
+    assert got == {"consortium": "ald", "dce": "dce"}
     out = prefixes.manifest_with_prefixes(man, got)
-    assert out["collections"]["cartel"]["prefix"] == "abq" and out["collections"]["dea"]["prefix"] == "dea"
-    assert out["collections"]["cartel"]["file"] == "cartel.json"
-    assert man["collections"]["cartel"]["prefix"] == "abq" and "dea" not in man["collections"]
+    assert out["collections"]["consortium"]["prefix"] == "ald" and out["collections"]["dce"]["prefix"] == "dce"
+    assert out["collections"]["consortium"]["file"] == "consortium.json"
+    assert man["collections"]["consortium"]["prefix"] == "ald" and "dce" not in man["collections"]
 
 
 def test_an_invalid_manifest_tag_falls_back_to_the_default():
@@ -44,10 +44,10 @@ def test_ids_get_the_collection_tag_and_existing_prefixes_are_kept():
 def test_same_collection_id_pointers_are_rewritten_but_names_are_not():
     recs = [{"id": "d1", "schema": "Document", "_collection": "c", "properties": {"title": ["d1"]}},
             {"id": "e1", "schema": "Documentation", "_collection": "c",
-             "properties": {"document": ["d1"], "entity": ["Walter White"]}}]
+             "properties": {"document": ["d1"], "entity": ["Wallace Wright"]}}]
     out, _ = prefixes.prefix_records(recs)
     e = next(r for r in out if r["id"] == "c:e1")
-    assert e["properties"]["document"] == ["c:d1"] and e["properties"]["entity"] == ["Walter White"]
+    assert e["properties"]["document"] == ["c:d1"] and e["properties"]["entity"] == ["Wallace Wright"]
     assert next(r for r in out if r["id"] == "c:d1")["properties"]["title"] == ["d1"]
 
 
@@ -93,10 +93,10 @@ def test_the_demo_corpus_builds_the_same_graph_once_tagged():
     assert len(new["nodes"]) == len(src["nodes"]) and len(new["roots"]) == len(src["roots"])
     assert all(source_of(i) for i in new["nodes"])
     assert new["report"]["provenance"] == src["report"]["provenance"]
-    walt = next(n for n in new["nodes"].values() if n["caption"] == "Walter Hartwell White")
-    assert walt["id"].endswith(":p-walt") and "heisenberg:p-walt" in walt["referents"]
-    swalt = src["nodes"]["p-walt"]
-    assert new["nodes"][walt["pid"]]["caption"] == src["nodes"][swalt["pid"]]["caption"]
+    wal = next(n for n in new["nodes"].values() if n["caption"] == "Wallace Hollis Wright")
+    assert wal["id"].endswith(":p-wal") and "hawthorne:p-wal" in wal["referents"]
+    swal = src["nodes"]["p-wal"]
+    assert new["nodes"][wal["pid"]]["caption"] == src["nodes"][swal["pid"]]["caption"]
     cap_of = lambda ir: {n["caption"].split(":")[-1]: ir["nodes"][n["pid"]]["caption"].split(":")[-1]
                          for n in ir["nodes"].values() if n["pid"]}
     assert cap_of(new) == cap_of(src)

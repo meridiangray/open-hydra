@@ -4,13 +4,13 @@
 # (`set:`); there are no ids. Every key in `match:` must hold:
 #   schema: Person            the node is-a Person
 #   position: Leader          the node's position (see defaults/positions.yaml / positions.yaml)
-#   name: Walter White        a property: equals (case and accents set aside)
-#   name|alias: Walter White  several properties joined with |: any of them equals
+#   name: Wallace Wright        a property: equals (case and accents set aside)
+#   name|alias: Wallace Wright  several properties joined with |: any of them equals
 #                             (`name` alone never reaches aliases: ask for them)
 #   name: [A, B]              equals any of
 #   notes: {contains: rx}     regular expression (also tried with accents set aside)
 #   birthDate: {exists: true} has a value
-#   titled: [cook, chemist]   a title the data states: the entity's own `position`,
+#   titled: [chef, cataloguer]   a title the data states: the entity's own `position`,
 #                             the `role` on a relationship where it is the member,
 #                             employee, director, owner..., or a post it holds
 #                             (name or alias). Never a default. Takes a value, a

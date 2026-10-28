@@ -5,135 +5,135 @@ review   demo
   total           3           3
 
 [1/3] Reference · a name with 3 possible records
-  dea:prv-dea1   Documentation.entity   Heisenberg
+  dce:prv-dea1   Documentation.entity   Hawthorne
 
-  ┌─ Link from ─────────────────────────────────┐
-  │ dea:prv-dea1   Documentation                │
-  │    document   heisenberg:doc-bb-casefile~p1 │
-  │  → entity     Heisenberg                    │
-  └─────────────────────────────────────────────┘
+  ┌─ Link from ────────────────────────────────┐
+  │ dce:prv-dea1   Documentation               │
+  │    document   hawthorne:doc-bq-casefile~p1 │
+  │  → entity     Hawthorne                    │
+  └────────────────────────────────────────────┘
 
-  1  dea:p-heisenberg-dea   Person
-     name            = Heisenberg
-     notes             DEA sketch identity — proposed merge into Walter White via the Similar record
-     sources           heisenberg:doc-bb-casefile~p1
-     weakAlias         the Heisenberg
+  1  dce:p-hawthorne-dce   Person
+     name            = Hawthorne
+     notes             Note on Hawthorne. Mentions DCE, Wallace Wright.
+     sources           hawthorne:doc-bq-casefile~p1
+     weakAlias         the Hawthorne
 
-  2  heisenberg:p-walt   Person
+  2  hawthorne:p-wal   Person
      birthDate         1958-09-07
      deathDate         2010-09-07
-     name              Walter Hartwell White
-     notes             chemistry teacher turned meth manufacturer — 'Heisenberg'
-     sources           heisenberg:doc-bb-casefile~p1
-     weakAlias         Walt
-                     = Heisenberg
-                       Mr. Lambert
+     name              Wallace Hollis Wright
+     notes             Note on Wallace Hollis Wright. Mentions Hawthorne.
+     sources           hawthorne:doc-bq-casefile~p1
+     weakAlias         Wal
+                     = Hawthorne
+                       Mr. Lowell
 
-  3  heisenberg:org-heisenberg   Organization
+  3  hawthorne:org-hawthorne   Organization
      dissolutionDate   2010
      jurisdiction      us
-     name              Heisenberg Organization
-     notes             Walter White's meth operation — RV cooks, then the post-Fring 'empire business'
-     sources           heisenberg:doc-bb-casefile~p5
-     weakAlias         Walter White's operation
-                       Heisenberg's empire
+     name              Hawthorne Organization
+     notes             Note on Hawthorne Organization. Mentions Wallace Wright, Fairbank.
+     sources           hawthorne:doc-bq-casefile~p5
+     weakAlias         Wallace Wright's operation
+                       Hawthorne's empire
 
   [all fields]   name fields   matching fields      Tab / Shift+Tab
-Which record is "Heisenberg"?
-  1  Heisenberg                dea:p-heisenberg-dea
-  2  Walter Hartwell White     heisenberg:p-walt
-  3  Heisenberg Organization   heisenberg:org-heisenberg
-  4  none of these             
+Which record is "Hawthorne"?
+  1  Hawthorne                dce:p-hawthorne-dce
+  2  Wallace Hollis Wright    hawthorne:p-wal
+  3  Hawthorne Organization   hawthorne:org-hawthorne
+  4  none of these            
   ? not sure   u undo   q quit
 
 [2/3] Reference · a name with 3 possible records
-  fring-condensed:rel-fr-cooks   Membership.member   Walter White
+  fairbank-condensed:rel-fr-chefs   Membership.member   Wallace Wright
 
-  ┌─ Link from ──────────────────────────────────┐
-  │ fring-condensed:rel-fr-cooks   Membership    │
-  │    endDate        2010                       │
-  │  → member         Walter White               │
-  │                   Jesse Pinkman              │
-  │    organization   Gustavo Fring Organization │
-  │    role           cook                       │
-  │    startDate      2009                       │
-  └──────────────────────────────────────────────┘
+  ┌─ Link from ────────────────────────────────────┐
+  │ fairbank-condensed:rel-fr-chefs   Membership   │
+  │    endDate        2010                         │
+  │  → member         Wallace Wright               │
+  │                   Jordan Pelham                │
+  │    organization   Gideon Fairbank Organization │
+  │    role           chef                         │
+  │    startDate      2009                         │
+  └────────────────────────────────────────────────┘
 
-  1  dea:p-waltjr   Person
-     name              Walter White Jr.
-     notes             Walt and Skyler's son
-     weakAlias         Flynn
+  1  dce:p-waljr   Person
+     name              Wallace Wright Jr.
+     notes             Note on Wallace Wright Jr.. Mentions Wal, Sasha.
+     weakAlias         Finn
 
-  2  heisenberg:p-walt   Person
+  2  hawthorne:p-wal   Person
      birthDate         1958-09-07
      deathDate         2010-09-07
-     name              Walter Hartwell White
-     notes             chemistry teacher turned meth manufacturer — 'Heisenberg'
-     sources           heisenberg:doc-bb-casefile~p1
-     weakAlias         Walt
-                       Heisenberg
-                       Mr. Lambert
+     name              Wallace Hollis Wright
+     notes             Note on Wallace Hollis Wright. Mentions Hawthorne.
+     sources           hawthorne:doc-bq-casefile~p1
+     weakAlias         Wal
+                       Hawthorne
+                       Mr. Lowell
 
-  3  heisenberg:org-heisenberg   Organization
+  3  hawthorne:org-hawthorne   Organization
      dissolutionDate   2010
      jurisdiction      us
-     name              Heisenberg Organization
-     notes             Walter White's meth operation — RV cooks, then the post-Fring 'empire business'
-     sources           heisenberg:doc-bb-casefile~p5
-     weakAlias         Walter White's operation
-                       Heisenberg's empire
+     name              Hawthorne Organization
+     notes             Note on Hawthorne Organization. Mentions Wallace Wright, Fairbank.
+     sources           hawthorne:doc-bq-casefile~p5
+     weakAlias         Wallace Wright's operation
+                       Hawthorne's empire
 
   [all fields]   name fields   matching fields      Tab / Shift+Tab
-Which record is "Walter White"?
-  1  Walter White Jr.          dea:p-waltjr
-  2  Walter Hartwell White     heisenberg:p-walt
-  3  Heisenberg Organization   heisenberg:org-heisenberg
-  4  none of these             
+Which record is "Wallace Wright"?
+  1  Wallace Wright Jr.       dce:p-waljr
+  2  Wallace Hollis Wright    hawthorne:p-wal
+  3  Hawthorne Organization   hawthorne:org-hawthorne
+  4  none of these            
   ? not sure   u undo   q quit
 
 [3/3] Reference · a name with 3 possible records
-  dea:san-heisenberg   Sanction.entity   Heisenberg
+  dce:san-hawthorne   Sanction.entity   Hawthorne
 
-  ┌─ Link from ───────────────────────────────────────────────────────┐
-  │ dea:san-heisenberg   Sanction                                     │
-  │    authority   DEA                                                │
-  │  → entity      Heisenberg                                         │
-  │    program     Heisenberg investigation                           │
-  │    reason      blue methamphetamine manufacture; fugitive suspect │
-  │    startDate   2009                                               │
-  └───────────────────────────────────────────────────────────────────┘
+  ┌─ Link from ──────────────────────────────┐
+  │ dce:san-hawthorne   Sanction             │
+  │    authority   DCE                       │
+  │  → entity      Hawthorne                 │
+  │    program     Hawthorne investigation   │
+  │    reason      Reason for san-hawthorne. │
+  │    startDate   2009                      │
+  └──────────────────────────────────────────┘
 
-  1  dea:p-heisenberg-dea   Person
-     name            = Heisenberg
-     notes             DEA sketch identity — proposed merge into Walter White via the Similar record
-     sources           heisenberg:doc-bb-casefile~p1
-     weakAlias         the Heisenberg
+  1  dce:p-hawthorne-dce   Person
+     name            = Hawthorne
+     notes             Note on Hawthorne. Mentions DCE, Wallace Wright.
+     sources           hawthorne:doc-bq-casefile~p1
+     weakAlias         the Hawthorne
 
-  2  heisenberg:p-walt   Person
+  2  hawthorne:p-wal   Person
      birthDate         1958-09-07
      deathDate         2010-09-07
-     name              Walter Hartwell White
-     notes             chemistry teacher turned meth manufacturer — 'Heisenberg'
-     sources           heisenberg:doc-bb-casefile~p1
-     weakAlias         Walt
-                     = Heisenberg
-                       Mr. Lambert
+     name              Wallace Hollis Wright
+     notes             Note on Wallace Hollis Wright. Mentions Hawthorne.
+     sources           hawthorne:doc-bq-casefile~p1
+     weakAlias         Wal
+                     = Hawthorne
+                       Mr. Lowell
 
-  3  heisenberg:org-heisenberg   Organization
+  3  hawthorne:org-hawthorne   Organization
      dissolutionDate   2010
      jurisdiction      us
-     name              Heisenberg Organization
-     notes             Walter White's meth operation — RV cooks, then the post-Fring 'empire business'
-     sources           heisenberg:doc-bb-casefile~p5
-     weakAlias         Walter White's operation
-                       Heisenberg's empire
+     name              Hawthorne Organization
+     notes             Note on Hawthorne Organization. Mentions Wallace Wright, Fairbank.
+     sources           hawthorne:doc-bq-casefile~p5
+     weakAlias         Wallace Wright's operation
+                       Hawthorne's empire
 
   [all fields]   name fields   matching fields      Tab / Shift+Tab
-Which record is "Heisenberg"?
-  1  Heisenberg                dea:p-heisenberg-dea
-  2  Walter Hartwell White     heisenberg:p-walt
-  3  Heisenberg Organization   heisenberg:org-heisenberg
-  4  none of these             
+Which record is "Hawthorne"?
+  1  Hawthorne                dce:p-hawthorne-dce
+  2  Wallace Hollis Wright    hawthorne:p-wal
+  3  Hawthorne Organization   hawthorne:org-hawthorne
+  4  none of these            
   ? not sure   u undo   q quit
 
   answered   0

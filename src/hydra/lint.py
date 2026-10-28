@@ -160,7 +160,7 @@ def _archive_manifest(doc) -> list[dict]:
                              f"'{n}' cannot be switched off (only {', '.join(resources.SWITCHABLE)}); ignored"))
     if "subject" in doc and not isinstance(doc["subject"], dict):
         out.append(issue("warning", "archive.bad-subject", rel, "subject",
-                         "must be a mapping such as {label: \"Heisenberg Organization\", type: Organization}; ignored"))
+                         "must be a mapping such as {label: \"Hawthorne Organization\", type: Organization}; ignored"))
     return out
 
 

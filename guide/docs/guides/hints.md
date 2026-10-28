@@ -43,9 +43,9 @@ The last `badge` set is the main one, and the others stay listed.
 
 ## Quoting
 
-Quote a value that contains a comma, a colon or a `#` when it sits inside `{…}`. Unquoted, YAML splits `{name: Gale (no role, position Cook)}` at the comma, so the rule looks for a name of "Gale (no role" and matches nobody.
+Quote a value that contains a comma, a colon or a `#` when it sits inside `{…}`. Unquoted, YAML splits `{name: Dana Hale (no role, position Clerk)}` at the comma, so the rule looks for a name of "Gale (no role" and matches nobody.
 
-`check` flags the stray key that comes out. Write it as `{name: "Gale (no role, position Cook)"}`.
+`check` flags the stray key that comes out. Write it as `{name: "Dana Hale (no role, position Clerk)"}`.
 
 ## Checking what matched
 
@@ -55,8 +55,8 @@ hydra-ctl hints
 
 ```text
    0  {position: Leader}   {thumb: icons/crown.svg}   images on 5
-   1  {position: Enforcer}   {thumb: icons/target.svg}   images on 4
-   2  {position: Cook}   {thumb: icons/flask.svg}   images on 3
+   1  {position: Guard}   {thumb: icons/shield.svg}   images on 4
+   2  {position: Clerk}   {thumb: icons/pen.svg}   images on 3
    …
 ```
 

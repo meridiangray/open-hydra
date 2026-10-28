@@ -47,18 +47,18 @@ def test_rels_are_symmetric_per_record():
 
 
 def test_ambiguous_bare_name_membership_ties_only_the_resolvable_member_until_pinned():
-    """rel-fr-cooks names TWO members: "Jesse Pinkman" resolves, bare "Walter
-    White" is ambiguous (Walter / Walter Jr.) and must tie to neither."""
+    """rel-fr-chefs names TWO members: "Jordan Pelham" resolves, bare "Wallace
+    Wright" is ambiguous (Wallace / Wallace Jr.) and must tie to neither."""
     def ends(ir):
         return {(n["id"], r["at"]) for n in ir["nodes"].values() for r in n["rels"]
-                if r["record"] == "rel-fr-cooks"}
+                if r["record"] == "rel-fr-chefs"}
     ir = build(t._load_demo_records())
     touched = {x for pair in ends(ir) for x in pair}
-    assert "p-walt" not in touched and "p-waltjr" not in touched and touched
-    row = next(r for r in ir["ledger"] if r["rel"] == "references" and r["value"] == "Walter White")
-    pinned = build(t._load_demo_records(), {row["id"]: "p-walt"})
+    assert "p-wal" not in touched and "p-waljr" not in touched and touched
+    row = next(r for r in ir["ledger"] if r["rel"] == "references" and r["value"] == "Wallace Wright")
+    pinned = build(t._load_demo_records(), {row["id"]: "p-wal"})
     touched2 = {x for pair in ends(pinned) for x in pair}
-    assert "p-walt" in touched2 and "p-waltjr" not in touched2
+    assert "p-wal" in touched2 and "p-waljr" not in touched2
 
 
 def test_linked_evidence_hangs_off_renderable_nodes_never_becomes_a_node():

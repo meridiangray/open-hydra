@@ -19,8 +19,8 @@ def test_a_merged_entity_lists_the_ids_it_absorbed():
     ir = t._ir()
     merged = [n for n in ir["nodes"].values() if len(n["referents"]) > 1]
     assert merged
-    madrigal = ir["nodes"].get("co-madrigal") or ir["nodes"].get("sess-96cfcd44:co-madrigal")
-    assert madrigal and {"co-madrigal", "sess-96cfcd44:co-madrigal"} <= set(madrigal["referents"])
+    meridian = ir["nodes"].get("co-meridian") or ir["nodes"].get("sess-96cfcd44:co-meridian")
+    assert meridian and {"co-meridian", "sess-96cfcd44:co-meridian"} <= set(meridian["referents"])
 
 
 def test_each_source_record_belongs_to_exactly_one_entity():

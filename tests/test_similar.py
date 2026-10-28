@@ -1,6 +1,6 @@
 """`Similar` record handling (MODEL.md §4), against the real demo corpus.
-`dea.json`'s `sim-heisenberg` is the first and only real Similar record in
-the corpus — {candidate: "Heisenberg", match: "Walter Hartwell White"},
+`dce.json`'s `sim-hawthorne` is the first and only real Similar record in
+the corpus — {candidate: "Hawthorne", match: "Wallace Hollis Wright"},
 analyst note: "lands proposed in the ledger for a verdict".
 """
 import json
@@ -47,28 +47,28 @@ def _sim_rows(result):
 
 
 def test_similar_candidate_value_is_itself_ambiguous_by_strict_resolution():
-    """The reason Similar can't use the strict resolver: "Heisenberg" is
-    itself ambiguous between p-heisenberg-dea (name="Heisenberg") and
-    p-walt (weakAlias="Heisenberg") -- exactly the case Similar exists to
+    """The reason Similar can't use the strict resolver: "Hawthorne" is
+    itself ambiguous between p-hawthorne-dce (name="Hawthorne") and
+    p-wal (weakAlias="Hawthorne") -- exactly the case Similar exists to
     resolve. A strict resolver would refuse to ever fire on it."""
     _load()
     records = _load_demo_records()
     result = m.merge(records, _all_schemas(), params_dir=PARAMS)
     resolved_id, how, candidates = m.resolve_reference(
-        "Heisenberg", "Thing", _all_schemas(), result["indices"])
+        "Hawthorne", "Thing", _all_schemas(), result["indices"])
     assert resolved_id is None and how == "ambiguous"
-    assert set(candidates) >= {"p-heisenberg-dea", "p-walt"}
+    assert set(candidates) >= {"p-hawthorne-dce", "p-wal"}
 
 
 # ---- the main, intended row ------------------------------------------------
 
 
-def test_sim_heisenberg_produces_the_intended_proposed_row():
+def test_sim_hawthorne_produces_the_intended_proposed_row():
     _load()
     records = _load_demo_records()
     result = m.merge(records, _all_schemas(), params_dir=PARAMS)
     rows = _sim_rows(result)
-    main = [e for e in rows if {e["a"], e["b"]} == {"p-heisenberg-dea", "p-walt"}]
+    main = [e for e in rows if {e["a"], e["b"]} == {"p-hawthorne-dce", "p-wal"}]
     assert main
     assert main[0]["status"] == "proposed"  # never auto, matching the old engine
 
@@ -89,8 +89,8 @@ def test_similar_never_auto_even_with_no_conflicting_data():
 
 def test_similar_also_surfaces_a_weaker_implausible_pairing():
     """index.py:search() is deliberately permissive (every tier, not just
-    the one a strict resolver accepts) -- so "Heisenberg" also weakly
-    subset-matches org-heisenberg's weakAlias "Heisenberg Organization",
+    the one a strict resolver accepts) -- so "Hawthorne" also weakly
+    subset-matches org-hawthorne's weakAlias "Hawthorne Organization",
     producing a second, much weaker proposed row alongside the real one.
     This is accepted, not a bug: both are `proposed`, a human filters the
     implausible one in two seconds, and nothing is ever silently dropped."""
@@ -98,53 +98,53 @@ def test_similar_also_surfaces_a_weaker_implausible_pairing():
     records = _load_demo_records()
     result = m.merge(records, _all_schemas(), params_dir=PARAMS)
     rows = _sim_rows(result)
-    weak = [e for e in rows if {e["a"], e["b"]} == {"org-heisenberg", "p-walt"}]
+    weak = [e for e in rows if {e["a"], e["b"]} == {"org-hawthorne", "p-wal"}]
     assert weak and weak[0]["status"] == "proposed"
 
 
 # ---- confirming it: same-class absorption works, cross-class is a no-op --
 
 
-def test_confirming_the_same_class_pair_merges_properties_onto_p_walt():
+def test_confirming_the_same_class_pair_merges_properties_onto_p_wal():
     _load()
     records = _load_demo_records()
     result = m.merge(records, _all_schemas(), params_dir=PARAMS)
-    main = next(e for e in _sim_rows(result) if {e["a"], e["b"]} == {"p-heisenberg-dea", "p-walt"})
+    main = next(e for e in _sim_rows(result) if {e["a"], e["b"]} == {"p-hawthorne-dce", "p-wal"})
     result2 = m.merge(records, _all_schemas(), params_dir=PARAMS,
                       verdicts={main["id"]: "confirmed"})
-    assert result2["survivors"]["p-heisenberg-dea"] == "p-walt"
-    walt = result2["indices"]["Person"].records["p-walt"]
-    assert "the Heisenberg" in walt["properties"]["weakAlias"]
-    assert "p-heisenberg-dea" not in result2["indices"]["Person"].records
+    assert result2["survivors"]["p-hawthorne-dce"] == "p-wal"
+    wal = result2["indices"]["Person"].records["p-wal"]
+    assert "the Hawthorne" in wal["properties"]["weakAlias"]
+    assert "p-hawthorne-dce" not in result2["indices"]["Person"].records
 
 
 def test_confirming_a_cross_class_pair_never_corrupts_the_real_survivor():
     """The bug found and fixed while building this: a tied raw property-KEY
     count across two different schemas (Organization vs. Person) is not a
-    meaningful comparison -- confirming it must never repoint `p-walt`'s own
+    meaningful comparison -- confirming it must never repoint `p-wal`'s own
     survivor id onto an Organization record. Confirmed as a structural
-    no-op: the ledger row exists, nothing about p-walt changes."""
+    no-op: the ledger row exists, nothing about p-wal changes."""
     _load()
     records = _load_demo_records()
     result = m.merge(records, _all_schemas(), params_dir=PARAMS)
-    weak = next(e for e in _sim_rows(result) if {e["a"], e["b"]} == {"org-heisenberg", "p-walt"})
+    weak = next(e for e in _sim_rows(result) if {e["a"], e["b"]} == {"org-hawthorne", "p-wal"})
     result2 = m.merge(records, _all_schemas(), params_dir=PARAMS,
                       verdicts={weak["id"]: "confirmed"})
-    assert "p-walt" not in result2["survivors"]
-    assert "org-heisenberg" not in result2["survivors"]
-    assert "p-walt" in result2["indices"]["Person"].records
-    assert "org-heisenberg" in result2["indices"]["Organization"].records
+    assert "p-wal" not in result2["survivors"]
+    assert "org-hawthorne" not in result2["survivors"]
+    assert "p-wal" in result2["indices"]["Person"].records
+    assert "org-hawthorne" in result2["indices"]["Organization"].records
 
 
 def test_rejecting_a_similar_row_changes_nothing():
     _load()
     records = _load_demo_records()
     result = m.merge(records, _all_schemas(), params_dir=PARAMS)
-    main = next(e for e in _sim_rows(result) if {e["a"], e["b"]} == {"p-heisenberg-dea", "p-walt"})
+    main = next(e for e in _sim_rows(result) if {e["a"], e["b"]} == {"p-hawthorne-dce", "p-wal"})
     result2 = m.merge(records, _all_schemas(), params_dir=PARAMS,
                       verdicts={main["id"]: "rejected"})
-    assert "p-heisenberg-dea" not in result2["survivors"]
-    row = next(e for e in _sim_rows(result2) if {e["a"], e["b"]} == {"p-heisenberg-dea", "p-walt"})
+    assert "p-hawthorne-dce" not in result2["survivors"]
+    row = next(e for e in _sim_rows(result2) if {e["a"], e["b"]} == {"p-hawthorne-dce", "p-wal"})
     assert row["status"] == "rejected"
 
 
@@ -175,10 +175,10 @@ def _p(id_, schema_, name, **extra):
             "properties": {"name": [name], **{k: [v] for k, v in extra.items()}}}
 
 
-def test_confirming_the_intended_heisenberg_row_rejects_its_sibling():
+def test_confirming_the_intended_hawthorne_row_rejects_its_sibling():
     records = _load_demo_records()
     base = _merge_with(records)
-    main = next(e for e in _sim_rows(base) if {e["a"], e["b"]} == {"p-heisenberg-dea", "p-walt"})
+    main = next(e for e in _sim_rows(base) if {e["a"], e["b"]} == {"p-hawthorne-dce", "p-wal"})
     other = next(e for e in _sim_rows(base) if e is not main)
     assert main["group"] and main["group"] == other["group"]
     res = _merge_with(records, {main["id"]: "confirmed"})

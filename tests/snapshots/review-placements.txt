@@ -4,628 +4,628 @@ review   demo
   placements     20          20
   total          20          20
 
-[1/20] Placement · Employment (several parents)
-  Skyler White
+[1/20] Placement · Membership (several parents)
+  Linda Rowan-Quill
 
-  ┌─ Placing ──────────────────────────────────────────────────────────────────────┐
-  │ heisenberg:p-skyler   Person                                                   │
-  │    name           Skyler White                                                 │
-  │    notes          Walt's wife; laundered the proceeds through the A1A Car Wash │
-  │    weakAlias      Skyler Lambert                                               │
-  └────────────────────────────────────────────────────────────────────────────────┘
+  ┌─ Placing ───────────────────────────────────────────────────────┐
+  │ sess-96cfcd44:p-linda   Person                                  │
+  │    deathDate      2010                                          │
+  │    name           Linda Rowan-Quill                             │
+  │    notes          Note on Linda Rowan-Quill. Mentions Meridian. │
+  └─────────────────────────────────────────────────────────────────┘
 
-  1  heisenberg:rel-hb23   Employment   now
-     employee       Skyler White
-     employer       A1A Car Wash
-     role           manager
+  1  hawthorne:rel-hb8   Membership   now
+     member         Linda Rowan-Quill
+     notes          Note on rel-hb8. Mentions Meridian AND, Hawthorne, the Hawthorne.
+     organization   Hawthorne Organization
+     role           distributor
 
-  2  heisenberg:rel-hb7   Membership
-     member         Skyler White
-     organization   Heisenberg Organization
-     role           money laundering
+  2  operations:pp-14   ProjectParticipant
+     participant    Linda Rowan-Quill
+     project        Czech Republic distribution channel
+     role           international distribution
 
-Which is better?
-  1  under A1A Car Wash              heisenberg:co-carwash   now
-  2  under Heisenberg Organization   heisenberg:org-heisenberg
-  ? not sure   u undo   q quit
-
-[2/20] Placement · rules: Second-in-command below Leader
-  Kenny
-
-  ┌─ Placing ────────────────────────────────────┐
-  │ heisenberg:p-kenny   Person                  │
-  │    deathDate      2010                       │
-  │    name           Kenny                      │
-  │    notes          Welker's second-in-command │
-  └──────────────────────────────────────────────┘
-
-  1  heisenberg:p-jack   rules: Second-in-command below Leader   now
-
-  2  heisenberg:rel-hb16   Membership
-     endDate        2010
-     member         Kenny
-     organization   Jack Welker's gang
-     role           second-in-command
+  3  fairbank-condensed:rel-fr-emp-linda   Employment
+     employee       Linda Rowan-Quill
+     employer       Meridian Electrotech GmbH
+     role           logistics executive
 
 Which is better?
-  1  under Jack Welker          heisenberg:p-jack   now
-  2  under Jack Welker's gang   heisenberg:org-welker
+  1  under Hawthorne Organization                hawthorne:org-hawthorne   now
+  2  under Czech Republic distribution channel   operations:proj-czech
+  3  under Meridian Electrotech GmbH             sess-96cfcd44:co-meridian
   ? not sure   u undo   q quit
 
-[3/20] Placement · rules: Member below Leader
-  Ignacio Varga
+[2/20] Placement · rules: Member below Leader
+  Tyler Alford
 
-  ┌─ Placing ───────────────────────────────────────────────────────────────────────────┐
-  │ cartel:p-nacho   Person                                                             │
-  │    deathDate      2004                                                              │
-  │    name           Ignacio Varga                                                     │
-  │    notes          Salamanca lieutenant; coerced into working for Fring against Lalo │
-  │    weakAlias      Nacho                                                             │
-  └─────────────────────────────────────────────────────────────────────────────────────┘
+  ┌─ Placing ────────────────────────────────────────────────────────────────────────────┐
+  │ hawthorne:p-tyler   Person                                                           │
+  │    deathDate      2010                                                               │
+  │    name           Tyler Alford                                                       │
+  │    notes          Note on Tyler Alford. Mentions Vanguard, Jake Weston, Jake Weston. │
+  └──────────────────────────────────────────────────────────────────────────────────────┘
 
-  1  cartel:p-eladio   rules: Member below Leader   now
+  1  hawthorne:p-jordan   rules: Member below Leader   now
 
-  2  cartel:rel-ct10   Membership
-     endDate        2004
-     member         Ignacio Varga
-     organization   Tuco Salamanca's Albuquerque crew
+  2  hawthorne:rel-hb5   Membership
+     member         Tyler Alford
+     organization   Hawthorne Organization
+     role           assistant chef
+
+  3  hawthorne:rel-hb6   Membership
+     member         Tyler Alford
+     notes          Note on rel-hb6. Mentions Wright, Weston.
+     organization   Jake Weston's gang
      role           member
 
-Which is better?
-  1  under Eladio Vuente                       cartel:p-eladio   now
-  2  under Tuco Salamanca's Albuquerque crew   cartel:crew-tuco
-  a  keep all 11 placed by rules: Member below Leader
-  ? not sure   u undo   q quit
-
-[4/20] Placement · rules: Member below Leader
-  Gonzo
-
-  ┌─ Placing ────────────────────────────────────────────────┐
-  │ cartel:p-gonzo   Person                                  │
-  │    deathDate      2008                                   │
-  │    name           Gonzo                                  │
-  │    notes          Tuco's man; died moving No-Doze's body │
-  └──────────────────────────────────────────────────────────┘
-
-  1  cartel:p-eladio   rules: Member below Leader   now
-
-  2  cartel:rel-ct9   Membership
-     endDate        2008
-     member         No-Doze
-                    Gonzo
-     organization   Tuco Salamanca's Albuquerque crew
-     role           member
-
-Which is better?
-  1  under Eladio Vuente                       cartel:p-eladio   now
-  2  under Tuco Salamanca's Albuquerque crew   cartel:crew-tuco
-  a  keep all 11 placed by rules: Member below Leader
-  ? not sure   u undo   q quit
-
-[5/20] Placement · rules: Member below Leader
-  Patrick Kuby
-
-  ┌─ Placing ────────────────────────────────────────────────────────┐
-  │ heisenberg:p-kuby   Person                                       │
-  │    name           Patrick Kuby                                   │
-  │    notes          Saul's fixer; ran the 'car wash' con on Bogdan │
-  └──────────────────────────────────────────────────────────────────┘
-
-  1  heisenberg:p-jesse   rules: Member below Leader   now
-
-  2  heisenberg:rel-hb9   Membership
-     member         Huell Babineaux
-                    Patrick Kuby
-     organization   Heisenberg Organization
-     role           member
-
-Which is better?
-  1  under Jesse Bruce Pinkman       heisenberg:p-jesse   now
-  2  under Heisenberg Organization   heisenberg:org-heisenberg
-  a  keep all 11 placed by rules: Member below Leader
-  ? not sure   u undo   q quit
-
-[6/20] Placement · rules: Member below Leader
-  Chris Mara
-
-  ┌─ Placing ────────────────────────────────────────────┐
-  │ sess-96cfcd44:p-chris-mara   Person                  │
-  │    deathDate      2010                               │
-  │    name           Chris Mara                         │
-  │    notes          Fring security man; killed by Mike │
-  └──────────────────────────────────────────────────────┘
-
-  1  sess-96cfcd44:p-fring   rules: Member below Leader   now
-
-  2  fring-condensed:rel-fr-crew   Membership
-     member         Dennis Markowski
-                    Chris Mara
-     organization   Gustavo Fring Organization
-     role           member
-
-Which is better?
-  1  under Gustavo Fring                sess-96cfcd44:p-fring   now
-  2  under Gustavo Fring Organization   sess-96cfcd44:org-fring
-  a  keep all 11 placed by rules: Member below Leader
-  ? not sure   u undo   q quit
-
-[7/20] Placement · Membership (several parents)
-  Jesse Bruce Pinkman
-
-  ┌─ Placing ────────────────────────────────────────────────────────────────────────────────────────────┐
-  │ heisenberg:p-jesse   Person                                                                          │
-  │    name           Jesse Bruce Pinkman                                                                │
-  │    notes          Walt's former student and partner; held as a slave-cook by the Welker gang in 2010 │
-  │    weakAlias      Cap'n Cook                                                                         │
-  └──────────────────────────────────────────────────────────────────────────────────────────────────────┘
-
-  1  heisenberg:rel-hb2   Membership   now
-     member         Jesse Bruce Pinkman
-     organization   Heisenberg Organization
-     role           cook
-
-  2  operations:pp-5   ProjectParticipant
-     participant    Jesse Bruce Pinkman
-     project        Dead freight methylamine heist
-     role           logistics
-
-  3  operations:pp-12   ProjectParticipant
-     participant    Jesse Bruce Pinkman
-     project        Evidence-room magnet operation
-     role           crew
-
-  4  fring-condensed:rel-fr-cooks   Membership
-     endDate        2010
-     member         Walter White
-                    Jesse Pinkman
-     organization   Gustavo Fring Organization
-     role           cook
-     startDate      2009
-
-  5  heisenberg:rel-hb11   Membership
-     endDate        2009
-     member         Jesse Bruce Pinkman
-     organization   Pinkman street crew
-     role           leader
-
-  6  operations:pp-9   ProjectParticipant
-     participant    Jesse Bruce Pinkman
-     project        Vamonos Pest mobile cook program
-     role           cook
-
-Which is better?
-  1  under Heisenberg Organization            heisenberg:org-heisenberg   now
-  2  under Dead freight methylamine heist     operations:proj-train-heist
-  3  under Evidence-room magnet operation     operations:proj-magnet
-  4  under Gustavo Fring Organization         sess-96cfcd44:org-fring
-  5  under Pinkman street crew                heisenberg:crew-jesse
-  6  under Vamonos Pest mobile cook program   operations:proj-vamonos
-  ? not sure   u undo   q quit
-
-[8/20] Placement · rules: Member below Leader
-  Dennis Markowski
-
-  ┌─ Placing ──────────────────────────────────────────────────────────────────────────────┐
-  │ sess-96cfcd44:p-dennis   Person                                                        │
-  │    name           Dennis Markowski                                                     │
-  │    notes          managed the Lavanderia Brillante front; arrested after Fring's death │
-  └────────────────────────────────────────────────────────────────────────────────────────┘
-
-  1  sess-96cfcd44:p-fring   rules: Member below Leader   now
-
-  2  fring-condensed:rel-fr-crew   Membership
-     member         Dennis Markowski
-                    Chris Mara
-     organization   Gustavo Fring Organization
-     role           member
-
-Which is better?
-  1  under Gustavo Fring                sess-96cfcd44:p-fring   now
-  2  under Gustavo Fring Organization   sess-96cfcd44:org-fring
-  a  keep all 11 placed by rules: Member below Leader
-  ? not sure   u undo   q quit
-
-[9/20] Placement · rules: Member below Leader
-  Frankie
-
-  ┌─ Placing ────────────────────────────┐
-  │ heisenberg:p-frankie   Person        │
-  │    deathDate      2010               │
-  │    name           Frankie            │
-  │    notes          Welker gang member │
-  └──────────────────────────────────────┘
-
-  1  heisenberg:p-jack   rules: Member below Leader   now
-
-  2  heisenberg:rel-hb17   Membership
-     member         Frankie
-                    Lester
-                    Matt
-     organization   Jack Welker's gang
-     role           member
-
-Which is better?
-  1  under Jack Welker          heisenberg:p-jack   now
-  2  under Jack Welker's gang   heisenberg:org-welker
-  a  keep all 11 placed by rules: Member below Leader
-  ? not sure   u undo   q quit
-
-[10/20] Placement · rules: Member below Leader
-  Todd Alquist
-
-  ┌─ Placing ─────────────────────────────────────────────────────────────────────────────┐
-  │ heisenberg:p-todd   Person                                                            │
-  │    deathDate      2010                                                                │
-  │    name           Todd Alquist                                                        │
-  │    notes          Vamonos employee turned cook; Jack Welker's nephew; shot Drew Sharp │
-  └───────────────────────────────────────────────────────────────────────────────────────┘
-
-  1  heisenberg:p-jesse   rules: Member below Leader   now
-
-  2  operations:pp-6   ProjectParticipant
-     participant    Todd Alquist
-     project        Dead freight methylamine heist
+  4  operations:pp-6   ProjectParticipant
+     participant    Tyler Alford
+     project        Rail cargo mineral hauling
      role           mechanic
 
-  3  heisenberg:rel-hb5   Membership
-     member         Todd Alquist
-     organization   Heisenberg Organization
-     role           assistant cook
-
-  4  heisenberg:rel-hb6   Membership
-     member         Todd Alquist
-     notes          inside the White operation AND the Welker gang — dual scope
-     organization   Jack Welker's gang
-     role           member
-
-  5  heisenberg:rel-hb22   Employment
-     employee       Todd Alquist
-     employer       Vamonos Pest
-     notes          the cover job — competes with 'assistant cook' for parentage
+  5  hawthorne:rel-hb22   Employment
+     employee       Tyler Alford
+     employer       Vanguard Pest
+     notes          Note on rel-hb22.
      role           exterminator
 
   6  operations:pp-10   ProjectParticipant
-     participant    Todd Alquist
-     project        Vamonos Pest mobile cook program
+     participant    Tyler Alford
+     project        Vanguard Pest mobile chef program
      role           assistant
 
 Which is better?
-  1  under Jesse Bruce Pinkman                heisenberg:p-jesse   now
-  2  under Dead freight methylamine heist     operations:proj-train-heist
-  3  under Heisenberg Organization            heisenberg:org-heisenberg
-  4  under Jack Welker's gang                 heisenberg:org-welker
-  5  under Vamonos Pest                       heisenberg:co-vamonos
-  6  under Vamonos Pest mobile cook program   operations:proj-vamonos
+  1  under Jordan Brooks Pelham                hawthorne:p-jordan   now
+  2  under Hawthorne Organization              hawthorne:org-hawthorne
+  3  under Jake Weston's gang                  hawthorne:org-weston
+  4  under Rail cargo mineral hauling          operations:proj-train-hauling
+  5  under Vanguard Pest                       hawthorne:co-vanguard
+  6  under Vanguard Pest mobile chef program   operations:proj-vanguard
+  a  keep all 11 placed by rules: Member below Leader
+  ? not sure   u undo   q quit
+
+[3/20] Placement · rules: Member below Leader
+  Gizmo
+
+  ┌─ Placing ─────────────────────────────────────────────────┐
+  │ consortium:p-gizmo   Person                               │
+  │    deathDate      2008                                    │
+  │    name           Gizmo                                   │
+  │    notes          Note on Gizmo. Mentions Tomas, No-Dune. │
+  └───────────────────────────────────────────────────────────┘
+
+  1  consortium:p-elias   rules: Member below Leader   now
+
+  2  consortium:rel-ct9   Membership
+     endDate        2008
+     member         No-Dune
+                    Gizmo
+     organization   Tomas Sandoval's Alderton crew
+     role           member
+
+Which is better?
+  1  under Elias Vaughn                     consortium:p-elias   now
+  2  under Tomas Sandoval's Alderton crew   consortium:crew-tomas
+  a  keep all 11 placed by rules: Member below Leader
+  ? not sure   u undo   q quit
+
+[4/20] Placement · Employment (several parents)
+  Sasha Wright
+
+  ┌─ Placing ───────────────────────────────────────────────────────────┐
+  │ hawthorne:p-sasha   Person                                          │
+  │    name           Sasha Wright                                      │
+  │    notes          Note on Sasha Wright. Mentions Wal, A1A Car Wash. │
+  │    weakAlias      Sasha Lowell                                      │
+  └─────────────────────────────────────────────────────────────────────┘
+
+  1  hawthorne:rel-hb23   Employment   now
+     employee       Sasha Wright
+     employer       A1A Car Wash
+     role           manager
+
+  2  hawthorne:rel-hb7   Membership
+     member         Sasha Wright
+     organization   Hawthorne Organization
+     role           treasury
+
+Which is better?
+  1  under A1A Car Wash             hawthorne:co-carwash   now
+  2  under Hawthorne Organization   hawthorne:org-hawthorne
+  ? not sure   u undo   q quit
+
+[5/20] Placement · Ownership (several parents)
+  Wright residence — 308 North Arbor Lane
+
+  ┌─ Placing ─────────────────────────────────────────────────┐
+  │ hawthorne:re-wright   RealEstate                          │
+  │    address        308 North Arbor Lane, Alderton, NM      │
+  │    name           Wright residence — 308 North Arbor Lane │
+  │    propertyType   house                                   │
+  └───────────────────────────────────────────────────────────┘
+
+  1  hawthorne:rel-hb21   Ownership   now
+     asset          Wright residence — 308 North Arbor Lane
+     owner          Sasha Wright
+
+  2  hawthorne:rel-hb20   Ownership
+     asset          Wright residence — 308 North Arbor Lane
+     owner          Wallace Hollis Wright
+
+Which is better?
+  1  under Sasha Wright            hawthorne:p-sasha   now
+  2  under Wallace Hollis Wright   hawthorne:p-wal
+  ? not sure   u undo   q quit
+
+[6/20] Placement · rules: Member below Leader
+  Mitch
+
+  ┌─ Placing ─────────────────────────────────────────┐
+  │ hawthorne:p-mitch   Person                        │
+  │    deathDate      2010                            │
+  │    name           Mitch                           │
+  │    notes          Note on Mitch. Mentions Weston. │
+  └───────────────────────────────────────────────────┘
+
+  1  hawthorne:p-jake   rules: Member below Leader   now
+
+  2  hawthorne:rel-hb17   Membership
+     member         Freddie
+                    Leroy
+                    Mitch
+     organization   Jake Weston's gang
+     role           member
+
+Which is better?
+  1  under Jake Weston          hawthorne:p-jake   now
+  2  under Jake Weston's gang   hawthorne:org-weston
+  a  keep all 11 placed by rules: Member below Leader
+  ? not sure   u undo   q quit
+
+[7/20] Placement · rules: Member below Leader
+  Paul Kemp
+
+  ┌─ Placing ──────────────────────────────────────────┐
+  │ hawthorne:p-kemp   Person                          │
+  │    name           Paul Kemp                        │
+  │    notes          Note on Paul Kemp. Mentions Sol. │
+  └────────────────────────────────────────────────────┘
+
+  1  hawthorne:p-jordan   rules: Member below Leader   now
+
+  2  hawthorne:rel-hb9   Membership
+     member         Hugh Babcock
+                    Paul Kemp
+     organization   Hawthorne Organization
+     role           member
+
+Which is better?
+  1  under Jordan Brooks Pelham     hawthorne:p-jordan   now
+  2  under Hawthorne Organization   hawthorne:org-hawthorne
+  a  keep all 11 placed by rules: Member below Leader
+  ? not sure   u undo   q quit
+
+[8/20] Placement · rules: Second-in-command below Leader
+  Kyle
+
+  ┌─ Placing ────────────────────────────────────────┐
+  │ hawthorne:p-kyle   Person                        │
+  │    deathDate      2010                           │
+  │    name           Kyle                           │
+  │    notes          Note on Kyle. Mentions Weston. │
+  └──────────────────────────────────────────────────┘
+
+  1  hawthorne:p-jake   rules: Second-in-command below Leader   now
+
+  2  hawthorne:rel-hb16   Membership
+     endDate        2010
+     member         Kyle
+     organization   Jake Weston's gang
+     role           second-in-command
+
+Which is better?
+  1  under Jake Weston          hawthorne:p-jake   now
+  2  under Jake Weston's gang   hawthorne:org-weston
+  ? not sure   u undo   q quit
+
+[9/20] Placement · Membership (several parents)
+  Jordan Brooks Pelham
+
+  ┌─ Placing ─────────────────────────────────────────────────────────────┐
+  │ hawthorne:p-jordan   Person                                           │
+  │    name           Jordan Brooks Pelham                                │
+  │    notes          Note on Jordan Brooks Pelham. Mentions Wal, Weston. │
+  │    weakAlias      Skipper                                             │
+  └───────────────────────────────────────────────────────────────────────┘
+
+  1  hawthorne:rel-hb2   Membership   now
+     member         Jordan Brooks Pelham
+     organization   Hawthorne Organization
+     role           chef
+
+  2  operations:pp-12   ProjectParticipant
+     participant    Jordan Brooks Pelham
+     project        Evidence-room magnet operation
+     role           crew
+
+  3  fairbank-condensed:rel-fr-chefs   Membership
+     endDate        2010
+     member         Wallace Wright
+                    Jordan Pelham
+     organization   Gideon Fairbank Organization
+     role           chef
+     startDate      2009
+
+  4  hawthorne:rel-hb11   Membership
+     endDate        2009
+     member         Jordan Brooks Pelham
+     organization   Pelham street crew
+     role           leader
+
+  5  operations:pp-5   ProjectParticipant
+     participant    Jordan Brooks Pelham
+     project        Rail cargo mineral hauling
+     role           logistics
+
+  6  operations:pp-9   ProjectParticipant
+     participant    Jordan Brooks Pelham
+     project        Vanguard Pest mobile chef program
+     role           chef
+
+Which is better?
+  1  under Hawthorne Organization              hawthorne:org-hawthorne   now
+  2  under Evidence-room magnet operation      operations:proj-magnet
+  3  under Gideon Fairbank Organization        sess-96cfcd44:org-fairbank
+  4  under Pelham street crew                  hawthorne:crew-jordan
+  5  under Rail cargo mineral hauling          operations:proj-train-hauling
+  6  under Vanguard Pest mobile chef program   operations:proj-vanguard
+  ? not sure   u undo   q quit
+
+[10/20] Placement · rules: Member below Leader
+  Ivan Varley
+
+  ┌─ Placing ──────────────────────────────────────────────────────────────────┐
+  │ consortium:p-nino   Person                                                 │
+  │    deathDate      2004                                                     │
+  │    name           Ivan Varley                                              │
+  │    notes          Note on Ivan Varley. Mentions Sandoval, Fairbank, Lenny. │
+  │    weakAlias      Nino                                                     │
+  └────────────────────────────────────────────────────────────────────────────┘
+
+  1  consortium:p-elias   rules: Member below Leader   now
+
+  2  consortium:rel-ct10   Membership
+     endDate        2004
+     member         Ivan Varley
+     organization   Tomas Sandoval's Alderton crew
+     role           member
+
+Which is better?
+  1  under Elias Vaughn                     consortium:p-elias   now
+  2  under Tomas Sandoval's Alderton crew   consortium:crew-tomas
   a  keep all 11 placed by rules: Member below Leader
   ? not sure   u undo   q quit
 
 [11/20] Placement · Membership (several parents)
-  Gustavo Fring
+  Wallace Hollis Wright
 
-  ┌─ Placing ───────────────────────────────────────────────────────────────────────────────────────────────────┐
-  │ sess-96cfcd44:p-fring   Person                                                                              │
-  │    citizenship    cl                                                                                        │
-  │    deathDate      2010                                                                                      │
-  │    name           Gustavo Fring                                                                             │
-  │    notes          Chilean emigre; cartel distributor who built his own manufacturing and laundering network │
-  │    sources        fring-condensed:doc-bb-casefile~p2                                                        │
-  │                   sess-96cfcd44:doc-bb-casefile~p2                                                          │
-  │    weakAlias      Gus                                                                                       │
-  │                   Gus Fring                                                                                 │
-  │                   the Chicken Man                                                                           │
-  └─────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+  ┌─ Placing ────────────────────────────────────────────────────────────┐
+  │ hawthorne:p-wal   Person                                             │
+  │    birthDate      1958-09-07                                         │
+  │    deathDate      2010-09-07                                         │
+  │    name           Wallace Hollis Wright                              │
+  │    notes          Note on Wallace Hollis Wright. Mentions Hawthorne. │
+  │    sources        hawthorne:doc-bq-casefile~p1                       │
+  │    weakAlias      Wal                                                │
+  │                   Hawthorne                                          │
+  │                   Mr. Lowell                                         │
+  └──────────────────────────────────────────────────────────────────────┘
 
-  1  fring-condensed:rel-fr-leader   Membership   now
-     member         Gustavo Fring
-     organization   Gustavo Fring Organization
+  1  hawthorne:rel-hb1   Membership   now
+     endDate        2010
+     member         Wallace Hollis Wright
+     organization   Hawthorne Organization
      role           leader
 
-  2  fring-condensed:rel-fr-cartel-dist   Membership
+  2  operations:pp-11   ProjectParticipant
+     participant    Wallace Hollis Wright
+     project        Evidence-room magnet operation
+     role           planner
+
+  3  fairbank:rel-fr7   Membership
      endDate        2010
-     member         Gustavo Fring
-     organization   Juarez Cartel
-     role           distributor
+     member         Wallace Hollis Wright
+     notes          Note on rel-fr7. Mentions Glen, The Suite.
+     organization   Gideon Fairbank Organization
+     role           chef
+     startDate      2009
 
-  3  fring-condensed:rel-fr-dir-fring   Directorship
-     director       Gustavo Fring
-     organization   Los Pollos Hermanos
-     role           president
+  4  operations:pp-4   ProjectParticipant
+     participant    Wallace Hollis Wright
+     project        Rail cargo mineral hauling
+     role           planner
 
-  4  operations:pp-1   ProjectParticipant
-     participant    Gustavo Fring
-     project        Superlab design and construction
-     role           sponsor
+  5  operations:pp-8   ProjectParticipant
+     participant    Wallace Hollis Wright
+     project        Vanguard Pest mobile chef program
+     role           chef
 
 Which is better?
-  1  under Gustavo Fring Organization         sess-96cfcd44:org-fring   now
-  2  under Juarez Cartel                      cartel:org-cartel
-  3  under Los Pollos Hermanos                sess-96cfcd44:co-pollos
-  4  under Superlab design and construction   operations:proj-superlab
+  1  under Hawthorne Organization              hawthorne:org-hawthorne   now
+  2  under Evidence-room magnet operation      operations:proj-magnet
+  3  under Gideon Fairbank Organization        sess-96cfcd44:org-fairbank
+  4  under Rail cargo mineral hauling          operations:proj-train-hauling
+  5  under Vanguard Pest mobile chef program   operations:proj-vanguard
   ? not sure   u undo   q quit
 
 [12/20] Placement · Membership (several parents)
-  Gale Boetticher
+  Glen Bowman
 
-  ┌─ Placing ────────────────────────────────────────────────────────────────────────────────┐
-  │ sess-96cfcd44:p-gale   Person                                                            │
-  │    deathDate      2010                                                                   │
-  │    name           Gale Boetticher                                                        │
-  │    notes          designed and ran the superlab; replaced by Walter White, then murdered │
-  │    position       chemist                                                                │
-  └──────────────────────────────────────────────────────────────────────────────────────────┘
+  ┌─ Placing ──────────────────────────────────────────────────────────────────┐
+  │ sess-96cfcd44:p-glen   Person                                              │
+  │    deathDate      2010                                                     │
+  │    name           Glen Bowman                                              │
+  │    notes          Note on Glen Bowman. Mentions Wallace Wright, The Suite. │
+  │    position       cataloguer                                               │
+  └────────────────────────────────────────────────────────────────────────────┘
 
-  1  fring-condensed:rel-fr-chemist   Membership   now
+  1  fairbank-condensed:rel-fr-cataloguer   Membership   now
      endDate        2010
-     member         Gale Boetticher
-     organization   Gustavo Fring Organization
-     role           chemist
+     member         Glen Bowman
+     organization   Gideon Fairbank Organization
+     role           cataloguer
 
   2  operations:pp-2   ProjectParticipant
-     participant    Gale Boetticher
-     project        Superlab design and construction
-     role           lead chemist
+     participant    Glen Bowman
+     project        Suite design and construction
+     role           lead cataloguer
 
 Which is better?
-  1  under Gustavo Fring Organization         sess-96cfcd44:org-fring   now
-  2  under Superlab design and construction   operations:proj-superlab
+  1  under Gideon Fairbank Organization    sess-96cfcd44:org-fairbank   now
+  2  under Suite design and construction   operations:proj-suite
   ? not sure   u undo   q quit
 
 [13/20] Placement · rules: Member below Leader
-  Matt
+  Leroy
 
-  ┌─ Placing ────────────────────────────┐
-  │ heisenberg:p-matt   Person           │
-  │    deathDate      2010               │
-  │    name           Matt               │
-  │    notes          Welker gang member │
-  └──────────────────────────────────────┘
+  ┌─ Placing ─────────────────────────────────────────┐
+  │ hawthorne:p-leroy   Person                        │
+  │    deathDate      2010                            │
+  │    name           Leroy                           │
+  │    notes          Note on Leroy. Mentions Weston. │
+  └───────────────────────────────────────────────────┘
 
-  1  heisenberg:p-jack   rules: Member below Leader   now
+  1  hawthorne:p-jake   rules: Member below Leader   now
 
-  2  heisenberg:rel-hb17   Membership
-     member         Frankie
-                    Lester
-                    Matt
-     organization   Jack Welker's gang
+  2  hawthorne:rel-hb17   Membership
+     member         Freddie
+                    Leroy
+                    Mitch
+     organization   Jake Weston's gang
      role           member
 
 Which is better?
-  1  under Jack Welker          heisenberg:p-jack   now
-  2  under Jack Welker's gang   heisenberg:org-welker
+  1  under Jake Weston          hawthorne:p-jake   now
+  2  under Jake Weston's gang   hawthorne:org-weston
   a  keep all 11 placed by rules: Member below Leader
   ? not sure   u undo   q quit
 
-[14/20] Placement · Ownership (several parents)
-  White residence — 308 Negra Arroyo Lane
+[14/20] Placement · rules: Member below Leader
+  No-Dune
 
-  ┌─ Placing ─────────────────────────────────────────────────┐
-  │ heisenberg:re-white   RealEstate                          │
-  │    address        308 Negra Arroyo Lane, Albuquerque, NM  │
-  │    name           White residence — 308 Negra Arroyo Lane │
-  │    propertyType   house                                   │
-  └───────────────────────────────────────────────────────────┘
+  ┌─ Placing ──────────────────────────────────────────┐
+  │ consortium:p-nodune   Person                       │
+  │    deathDate      2008                             │
+  │    name           No-Dune                          │
+  │    notes          Note on No-Dune. Mentions Tomas. │
+  └────────────────────────────────────────────────────┘
 
-  1  heisenberg:rel-hb21   Ownership   now
-     asset          White residence — 308 Negra Arroyo Lane
-     owner          Skyler White
+  1  consortium:p-elias   rules: Member below Leader   now
 
-  2  heisenberg:rel-hb20   Ownership
-     asset          White residence — 308 Negra Arroyo Lane
-     owner          Walter Hartwell White
+  2  consortium:rel-ct9   Membership
+     endDate        2008
+     member         No-Dune
+                    Gizmo
+     organization   Tomas Sandoval's Alderton crew
+     role           member
 
 Which is better?
-  1  under Skyler White            heisenberg:p-skyler   now
-  2  under Walter Hartwell White   heisenberg:p-walt
+  1  under Elias Vaughn                     consortium:p-elias   now
+  2  under Tomas Sandoval's Alderton crew   consortium:crew-tomas
+  a  keep all 11 placed by rules: Member below Leader
   ? not sure   u undo   q quit
 
-[15/20] Placement · Employment (several parents)
-  Michael Ehrmantraut
+[15/20] Placement · rules: Member below Leader
+  Hugh Babcock
 
-  ┌─ Placing ──────────────────────────────────────────────────────────────────────────┐
-  │ sess-96cfcd44:p-mike   Person                                                      │
-  │    deathDate      2010                                                             │
-  │    name           Michael Ehrmantraut                                              │
-  │    notes          ex-Philadelphia police; Fring's head of security and chief fixer │
-  │    position       head of security                                                 │
-  │    weakAlias      Mike                                                             │
-  └────────────────────────────────────────────────────────────────────────────────────┘
+  ┌─ Placing ─────────────────────────────────────────────┐
+  │ hawthorne:p-hugh   Person                             │
+  │    name           Hugh Babcock                        │
+  │    notes          Note on Hugh Babcock. Mentions Sol. │
+  └───────────────────────────────────────────────────────┘
 
-  1  fring-condensed:rel-fr-emp-mike   Employment   now
-     employee       Michael Ehrmantraut
-     employer       Los Pollos Hermanos
-     role           corporate security consultant
+  1  hawthorne:p-jordan   rules: Member below Leader   now
 
-  2  operations:pp-7   ProjectParticipant
-     participant    Michael Ehrmantraut
-     project        Dead freight methylamine heist
-     role           spotter
-
-  3  operations:pp-13   ProjectParticipant
-     participant    Michael Ehrmantraut
-     project        Evidence-room magnet operation
-     role           crew
-
-  4  fring-condensed:rel-fr-security   Membership
-     member         Michael Ehrmantraut
-     organization   Gustavo Fring Organization
-     role           head of security
-
-  5  heisenberg:rel-hb3   Membership
-     endDate        2010
-     member         Michael Ehrmantraut
-     notes          stayed on after Fring's death; killed by Walter White
-     organization   Heisenberg Organization
-     role           head of security
-     startDate      2010
-
-  6  operations:pp-3   ProjectParticipant
-     participant    Michael Ehrmantraut
-     project        Superlab design and construction
-     role           security
+  2  hawthorne:rel-hb9   Membership
+     member         Hugh Babcock
+                    Paul Kemp
+     organization   Hawthorne Organization
+     role           member
 
 Which is better?
-  1  under Los Pollos Hermanos                sess-96cfcd44:co-pollos   now
-  2  under Dead freight methylamine heist     operations:proj-train-heist
-  3  under Evidence-room magnet operation     operations:proj-magnet
-  4  under Gustavo Fring Organization         sess-96cfcd44:org-fring
-  5  under Heisenberg Organization            heisenberg:org-heisenberg
-  6  under Superlab design and construction   operations:proj-superlab
+  1  under Jordan Brooks Pelham     hawthorne:p-jordan   now
+  2  under Hawthorne Organization   hawthorne:org-hawthorne
+  a  keep all 11 placed by rules: Member below Leader
   ? not sure   u undo   q quit
 
 [16/20] Placement · Membership (several parents)
-  Walter Hartwell White
+  Gideon Fairbank
 
-  ┌─ Placing ───────────────────────────────────────────────────────────────────┐
-  │ heisenberg:p-walt   Person                                                  │
-  │    birthDate      1958-09-07                                                │
-  │    deathDate      2010-09-07                                                │
-  │    name           Walter Hartwell White                                     │
-  │    notes          chemistry teacher turned meth manufacturer — 'Heisenberg' │
-  │    sources        heisenberg:doc-bb-casefile~p1                             │
-  │    weakAlias      Walt                                                      │
-  │                   Heisenberg                                                │
-  │                   Mr. Lambert                                               │
-  └─────────────────────────────────────────────────────────────────────────────┘
+  ┌─ Placing ───────────────────────────────────────────────┐
+  │ sess-96cfcd44:p-fairbank   Person                       │
+  │    citizenship    cl                                    │
+  │    deathDate      2010                                  │
+  │    name           Gideon Fairbank                       │
+  │    notes          Note on Gideon Fairbank.              │
+  │    sources        fairbank-condensed:doc-bq-casefile~p2 │
+  │                   sess-96cfcd44:doc-bq-casefile~p2      │
+  │    weakAlias      Gid                                   │
+  │                   Gid Fairbank                          │
+  │                   The Caterer                           │
+  └─────────────────────────────────────────────────────────┘
 
-  1  heisenberg:rel-hb1   Membership   now
-     endDate        2010
-     member         Walter Hartwell White
-     organization   Heisenberg Organization
+  1  fairbank-condensed:rel-fr-leader   Membership   now
+     member         Gideon Fairbank
+     organization   Gideon Fairbank Organization
      role           leader
 
-  2  operations:pp-4   ProjectParticipant
-     participant    Walter Hartwell White
-     project        Dead freight methylamine heist
-     role           planner
-
-  3  operations:pp-11   ProjectParticipant
-     participant    Walter Hartwell White
-     project        Evidence-room magnet operation
-     role           planner
-
-  4  fring:rel-fr7   Membership
+  2  fairbank-condensed:rel-fr-consortium-dist   Membership
      endDate        2010
-     member         Walter Hartwell White
-     notes          third cook of the superlab era, after Gale
-     organization   Gustavo Fring Organization
-     role           cook
-     startDate      2009
+     member         Gideon Fairbank
+     organization   Jericho Consortium
+     role           distributor
 
-  5  operations:pp-8   ProjectParticipant
-     participant    Walter Hartwell White
-     project        Vamonos Pest mobile cook program
-     role           cook
+  3  fairbank-condensed:rel-fr-dir-fairbank   Directorship
+     director       Gideon Fairbank
+     organization   Loyal Provisions
+     role           president
+
+  4  operations:pp-1   ProjectParticipant
+     participant    Gideon Fairbank
+     project        Suite design and construction
+     role           sponsor
 
 Which is better?
-  1  under Heisenberg Organization            heisenberg:org-heisenberg   now
-  2  under Dead freight methylamine heist     operations:proj-train-heist
-  3  under Evidence-room magnet operation     operations:proj-magnet
-  4  under Gustavo Fring Organization         sess-96cfcd44:org-fring
-  5  under Vamonos Pest mobile cook program   operations:proj-vamonos
+  1  under Gideon Fairbank Organization    sess-96cfcd44:org-fairbank   now
+  2  under Jericho Consortium              consortium:org-consortium
+  3  under Loyal Provisions                sess-96cfcd44:co-loyal
+  4  under Suite design and construction   operations:proj-suite
   ? not sure   u undo   q quit
 
-[17/20] Placement · rules: Member below Leader
-  Lester
+[17/20] Placement · Employment (several parents)
+  Martin Eastwood
 
-  ┌─ Placing ────────────────────────────┐
-  │ heisenberg:p-lester   Person         │
-  │    deathDate      2010               │
-  │    name           Lester             │
-  │    notes          Welker gang member │
-  └──────────────────────────────────────┘
+  ┌─ Placing ───────────────────────────────────────────────────────────────────────┐
+  │ sess-96cfcd44:p-marty   Person                                                  │
+  │    deathDate      2010                                                          │
+  │    name           Martin Eastwood                                               │
+  │    notes          Note on Martin Eastwood. Mentions Fairbank, Head of Security. │
+  │    position       head of security                                              │
+  │    weakAlias      Marty                                                         │
+  └─────────────────────────────────────────────────────────────────────────────────┘
 
-  1  heisenberg:p-jack   rules: Member below Leader   now
+  1  fairbank-condensed:rel-fr-emp-marty   Employment   now
+     employee       Martin Eastwood
+     employer       Loyal Provisions
+     role           corporate security consultant
 
-  2  heisenberg:rel-hb17   Membership
-     member         Frankie
-                    Lester
-                    Matt
-     organization   Jack Welker's gang
+  2  operations:pp-13   ProjectParticipant
+     participant    Martin Eastwood
+     project        Evidence-room magnet operation
+     role           crew
+
+  3  fairbank-condensed:rel-fr-security   Membership
+     member         Martin Eastwood
+     organization   Gideon Fairbank Organization
+     role           head of security
+
+  4  hawthorne:rel-hb3   Membership
+     endDate        2010
+     member         Martin Eastwood
+     notes          Note on rel-hb3. Mentions Fairbank, Wallace Wright.
+     organization   Hawthorne Organization
+     role           head of security
+     startDate      2010
+
+  5  operations:pp-7   ProjectParticipant
+     participant    Martin Eastwood
+     project        Rail cargo mineral hauling
+     role           spotter
+
+  6  operations:pp-3   ProjectParticipant
+     participant    Martin Eastwood
+     project        Suite design and construction
+     role           security
+
+Which is better?
+  1  under Loyal Provisions                 sess-96cfcd44:co-loyal   now
+  2  under Evidence-room magnet operation   operations:proj-magnet
+  3  under Gideon Fairbank Organization     sess-96cfcd44:org-fairbank
+  4  under Hawthorne Organization           hawthorne:org-hawthorne
+  5  under Rail cargo mineral hauling       operations:proj-train-hauling
+  6  under Suite design and construction    operations:proj-suite
+  ? not sure   u undo   q quit
+
+[18/20] Placement · rules: Member below Leader
+  Freddie
+
+  ┌─ Placing ───────────────────────────────────────────┐
+  │ hawthorne:p-freddie   Person                        │
+  │    deathDate      2010                              │
+  │    name           Freddie                           │
+  │    notes          Note on Freddie. Mentions Weston. │
+  └─────────────────────────────────────────────────────┘
+
+  1  hawthorne:p-jake   rules: Member below Leader   now
+
+  2  hawthorne:rel-hb17   Membership
+     member         Freddie
+                    Leroy
+                    Mitch
+     organization   Jake Weston's gang
      role           member
 
 Which is better?
-  1  under Jack Welker          heisenberg:p-jack   now
-  2  under Jack Welker's gang   heisenberg:org-welker
+  1  under Jake Weston          hawthorne:p-jake   now
+  2  under Jake Weston's gang   hawthorne:org-weston
   a  keep all 11 placed by rules: Member below Leader
   ? not sure   u undo   q quit
 
-[18/20] Placement · Membership (several parents)
-  Lydia Rodarte-Quayle
-
-  ┌─ Placing ─────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-  │ sess-96cfcd44:p-lydia   Person                                                                                    │
-  │    deathDate      2010                                                                                            │
-  │    name           Lydia Rodarte-Quayle                                                                            │
-  │    notes          Madrigal logistics executive in Houston; supplied methylamine; later ran the Czech distribution │
-  └───────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-
-  1  heisenberg:rel-hb8   Membership   now
-     member         Lydia Rodarte-Quayle
-     notes          inside Madrigal AND the Heisenberg operation — dual scope
-     organization   Heisenberg Organization
-     role           distributor
-
-  2  operations:pp-14   ProjectParticipant
-     participant    Lydia Rodarte-Quayle
-     project        Czech Republic distribution channel
-     role           international distribution
-
-  3  fring-condensed:rel-fr-emp-lydia   Employment
-     employee       Lydia Rodarte-Quayle
-     employer       Madrigal Electromotive GmbH
-     role           logistics executive
-
-Which is better?
-  1  under Heisenberg Organization               heisenberg:org-heisenberg   now
-  2  under Czech Republic distribution channel   operations:proj-czech
-  3  under Madrigal Electromotive GmbH           sess-96cfcd44:co-madrigal
-  ? not sure   u undo   q quit
-
 [19/20] Placement · rules: Member below Leader
-  Huell Babineaux
+  Chad Maddox
 
-  ┌─ Placing ─────────────────────────────────────────┐
-  │ heisenberg:p-huell   Person                       │
-  │    name           Huell Babineaux                 │
-  │    notes          Saul's bodyguard and legbreaker │
-  └───────────────────────────────────────────────────┘
+  ┌─ Placing ───────────────────────────────────────────────────────────────┐
+  │ sess-96cfcd44:p-chad-maddox   Person                                    │
+  │    deathDate      2010                                                  │
+  │    name           Chad Maddox                                           │
+  │    notes          Note on Chad Maddox. Mentions Fairbank, Marty, Marty. │
+  └─────────────────────────────────────────────────────────────────────────┘
 
-  1  heisenberg:p-jesse   rules: Member below Leader   now
+  1  sess-96cfcd44:p-fairbank   rules: Member below Leader   now
 
-  2  heisenberg:rel-hb9   Membership
-     member         Huell Babineaux
-                    Patrick Kuby
-     organization   Heisenberg Organization
+  2  fairbank-condensed:rel-fr-crew   Membership
+     member         Dexter Marsh
+                    Chad Maddox
+     organization   Gideon Fairbank Organization
      role           member
 
 Which is better?
-  1  under Jesse Bruce Pinkman       heisenberg:p-jesse   now
-  2  under Heisenberg Organization   heisenberg:org-heisenberg
+  1  under Gideon Fairbank                sess-96cfcd44:p-fairbank   now
+  2  under Gideon Fairbank Organization   sess-96cfcd44:org-fairbank
   a  keep all 11 placed by rules: Member below Leader
   ? not sure   u undo   q quit
 
 [20/20] Placement · rules: Member below Leader
-  No-Doze
+  Dexter Marsh
 
-  ┌─ Placing ─────────────────────────────────────────────────────────────┐
-  │ cartel:p-nodoze   Person                                              │
-  │    deathDate      2008                                                │
-  │    name           No-Doze                                             │
-  │    notes          Tuco's man; beaten to death by Tuco in the junkyard │
-  └───────────────────────────────────────────────────────────────────────┘
+  ┌─ Placing ──────────────────────────────────────────────────────────────────────────────────┐
+  │ sess-96cfcd44:p-dexter   Person                                                            │
+  │    name           Dexter Marsh                                                             │
+  │    notes          Note on Dexter Marsh. Mentions Lantern Bright, Fairbank, Lantern Bright. │
+  └────────────────────────────────────────────────────────────────────────────────────────────┘
 
-  1  cartel:p-eladio   rules: Member below Leader   now
+  1  sess-96cfcd44:p-fairbank   rules: Member below Leader   now
 
-  2  cartel:rel-ct9   Membership
-     endDate        2008
-     member         No-Doze
-                    Gonzo
-     organization   Tuco Salamanca's Albuquerque crew
+  2  fairbank-condensed:rel-fr-crew   Membership
+     member         Dexter Marsh
+                    Chad Maddox
+     organization   Gideon Fairbank Organization
      role           member
 
 Which is better?
-  1  under Eladio Vuente                       cartel:p-eladio   now
-  2  under Tuco Salamanca's Albuquerque crew   cartel:crew-tuco
+  1  under Gideon Fairbank                sess-96cfcd44:p-fairbank   now
+  2  under Gideon Fairbank Organization   sess-96cfcd44:org-fairbank
   a  keep all 11 placed by rules: Member below Leader
   ? not sure   u undo   q quit
 

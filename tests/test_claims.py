@@ -40,19 +40,19 @@ def _json(capsys, *argv):
 
 
 def test_a_name_finds_entities_grouped_by_property(demo, capsys):
-    got = _json(capsys, demo, "walter white", "--type", "person")         # any capitalisation
-    assert {b["id"] for b in got[:2]} == {"heisenberg:p-walt", "dea:p-waltjr"}   # names first...
+    got = _json(capsys, demo, "wallace wright", "--type", "person")         # any capitalisation
+    assert {b["id"] for b in got[:2]} == {"hawthorne:p-wal", "dce:p-waljr"}   # names first...
     assert len(got) > 2                                                   # ...then other fields naming him
-    walt = next(b for b in got if b["id"] == "heisenberg:p-walt")
-    assert [v["value"] for v in walt["props"]["weakAlias"]] == ["Walt", "Heisenberg", "Mr. Lambert"]
-    assert walt["props"]["name"][0]["collections"] == ["heisenberg"]
+    wal = next(b for b in got if b["id"] == "hawthorne:p-wal")
+    assert [v["value"] for v in wal["props"]["weakAlias"]] == ["Wal", "Hawthorne", "Mr. Lowell"]
+    assert wal["props"]["name"][0]["collections"] == ["hawthorne"]
 
 
 def test_type_includes_subtypes_and_exact_narrows(demo, capsys):
-    assert [b["schema"] for b in _json(capsys, demo, "pollos", "--type", "Organization")][0] == "Company"
-    assert [b["id"] for b in _json(capsys, demo, "pollos", "--type", "Person")] == ["cartel:p-max"]   # a field mentions it
-    assert _json(capsys, demo, "walter white", "--exact") == []
-    assert [b["id"] for b in _json(capsys, demo, "Walter Hartwell White", "--exact")] == ["heisenberg:p-walt"]
+    assert [b["schema"] for b in _json(capsys, demo, "loyal", "--type", "Organization")][0] == "Company"
+    assert [b["id"] for b in _json(capsys, demo, "loyal", "--type", "Person")] == ["consortium:p-max"]   # a field mentions it
+    assert _json(capsys, demo, "wallace wright", "--exact") == []
+    assert [b["id"] for b in _json(capsys, demo, "Wallace Hollis Wright", "--exact")] == ["hawthorne:p-wal"]
 
 
 def test_an_id_or_merged_away_id_finds_the_entity(corpus2, capsys):
@@ -89,17 +89,17 @@ def test_a_schema_name_is_the_type(demo, capsys):
     start = next(i for i, l in enumerate(lines) if l.split()[:2] == ["collection", "claims"]) + 1
     schemas = [line.split()[2] for line in lines[start:] if len(line.split()) >= 4]   # the middle table
     assert "Organization" in schemas and "Person" not in schemas
-    assert {b["schema"] for b in _json(capsys, demo, "company", "pollos")} == {"Company"}   # the type, as a word
-    assert _json(capsys, demo, "pollos", "COMPANY") == _json(capsys, demo, "company", "pollos")   # in any order
+    assert {b["schema"] for b in _json(capsys, demo, "company", "loyal")} == {"Company"}   # the type, as a word
+    assert _json(capsys, demo, "loyal", "COMPANY") == _json(capsys, demo, "company", "loyal")   # in any order
 
 
 def test_summary_and_text_output(demo, capsys):
     s = _json(capsys, "summary", demo)
     assert s["claims"] == sum(s["collections"].values()) and len(s["disputed_examples"]) == min(s["disputed"], 10)
     capsys.readouterr()
-    claims.main([str(demo), "heisenberg", "--type", "Person"])
+    claims.main([str(demo), "hawthorne", "--type", "Person"])
     out = capsys.readouterr().out
-    assert re.search(r"Walter Hartwell White +Person +heisenberg:p-walt", out) and "weakAlias" in out
+    assert re.search(r"Wallace Hollis Wright +Person +hawthorne:p-wal", out) and "weakAlias" in out
 
 
 def test_only_a_distinct_field_is_a_disagreement(tmp_path, capsys):
@@ -128,11 +128,11 @@ def test_every_claim_names_its_record_and_a_surviving_entity(demo):
 
 
 def test_a_value_traces_to_its_record_and_the_page_its_proof_names(demo, capsys):
-    (cartel,) = _json(capsys, demo, "Juarez Cartel", "--exact", "--type", "Organization")
-    (src,) = cartel["props"]["jurisdiction"][0]["sources"]
-    assert src["record"] == "cartel:org-cartel"
+    (consortium,) = _json(capsys, demo, "Jericho Consortium", "--exact", "--type", "Organization")
+    (src,) = consortium["props"]["jurisdiction"][0]["sources"]
+    assert src["record"] == "consortium:org-consortium"
     assert src["evidence"] and src["evidence"][0].endswith("p.3") and "CASE FILE" in src["evidence"][0]
-    assert any(d.endswith("p.3") for d in cartel["documented_in"])
+    assert any(d.endswith("p.3") for d in consortium["documented_in"])
 
 
 def test_a_value_shows_the_review_rows_it_took_part_in(tmp_path, capsys):
@@ -200,10 +200,10 @@ def test_a_search_skips_link_fields_and_a_word_can_start_a_name(tmp_path, capsys
     root = copy_template(tmp_path / "g")
     (root / layout.SOURCE_ENTRIES).mkdir(parents=True, exist_ok=True)
     (root / layout.SOURCE_ENTRIES / "wp.json").write_text(json.dumps(
-        {"id": "wp-gus", "schema": "Article", "properties": {"title": ["Gus Fring"]}}), encoding="utf-8")
-    rows = [{"id": "gus", "schema": "Person", "properties": {"name": ["Gustavo Fring"], "sources": ["wp-gus"]}},
-            {"id": "max", "schema": "Person", "properties": {"name": ["Max Arciniega"], "sources": ["wp-gus"]}}]
+        {"id": "wp-gid", "schema": "Article", "properties": {"title": ["Gid Fairbank"]}}), encoding="utf-8")
+    rows = [{"id": "gid", "schema": "Person", "properties": {"name": ["Gideon Fairbank"], "sources": ["wp-gid"]}},
+            {"id": "max", "schema": "Person", "properties": {"name": ["Max Arden"], "sources": ["wp-gid"]}}]
     (root / "collections" / "c.json").write_text("\n".join(json.dumps(r) for r in rows), encoding="utf-8")
     build.build_archive(root)
-    assert [b["caption"] for b in _json(capsys, root, "gus")] == ["Gustavo Fring"]   # not Max, who cites wp-gus
+    assert [b["caption"] for b in _json(capsys, root, "gid")] == ["Gideon Fairbank"]   # not Max, who cites wp-gid
     assert _json(capsys, root, "gu") == []                                         # 3 letters at least

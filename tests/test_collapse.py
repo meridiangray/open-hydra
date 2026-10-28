@@ -49,20 +49,20 @@ def _run_real():
     return records, result, out, collapse.collapse_position_chains(records, out)
 
 
-def _mike_id(result):
-    return result["survivors"].get("sess-96cfcd44:p-mike", "sess-96cfcd44:p-mike")
+def _marty_id(result):
+    return result["survivors"].get("sess-96cfcd44:p-marty", "sess-96cfcd44:p-marty")
 
 
-# ---- the real case: Mike holds pos-head-security under org-fring ----------
+# ---- the real case: Marty holds pos-head-security under org-fairbank ----------
 
 
-def test_mikes_occupancy_collapses_to_the_real_organization():
+def test_martys_occupancy_collapses_to_the_real_organization():
     _records, result, _out, col = _run_real()
-    mike = _mike_id(result)
-    derived = col["derived_placements"][mike]
+    marty = _marty_id(result)
+    derived = col["derived_placements"][marty]
     assert len(derived) == 1
     d = derived[0]
-    assert d["container"] == "sess-96cfcd44:org-fring"
+    assert d["container"] == "sess-96cfcd44:org-fairbank"
     assert d["role"] == "Head of Security"  # the Position's own title, reused
     assert d["via_position"] == "pos-head-security"
     assert d["derived"] is True
@@ -71,9 +71,9 @@ def test_mikes_occupancy_collapses_to_the_real_organization():
 
 def test_folded_log_records_the_collapse_for_audit():
     _records, result, _out, col = _run_real()
-    mike = _mike_id(result)
-    assert {"holder": mike, "post": "pos-head-security",
-            "org": "sess-96cfcd44:org-fring"} in col["report"]["folded"]
+    marty = _marty_id(result)
+    assert {"holder": marty, "post": "pos-head-security",
+            "org": "sess-96cfcd44:org-fairbank"} in col["report"]["folded"]
 
 
 def test_fold_pys_own_pid_still_legitimately_points_at_the_position():
@@ -81,16 +81,16 @@ def test_fold_pys_own_pid_still_legitimately_points_at_the_position():
     different question ("best-ranked real placement") -- collapsing doesn't
     retroactively make it wrong, it answers the DISPLAY question instead."""
     _records, result, out, _col = _run_real()
-    mike = _mike_id(result)
-    assert out["pid"][mike] == "pos-head-security"
+    marty = _marty_id(result)
+    assert out["pid"][marty] == "pos-head-security"
 
 
 def test_display_pid_never_points_at_a_bare_position():
     """The actual point of this module: a single-tree renderer must never
     be handed a Position as someone's primary container."""
     _records, result, _out, col = _run_real()
-    mike = _mike_id(result)
-    assert col["pid"][mike] != "pos-head-security"
+    marty = _marty_id(result)
+    assert col["pid"][marty] != "pos-head-security"
 
 
 def test_no_cycle_in_the_real_corpus():
@@ -99,11 +99,11 @@ def test_no_cycle_in_the_real_corpus():
 
 
 def test_a_child_with_no_position_routed_placement_is_unaffected():
-    """Walter White never holds a Position in this corpus -- his display
+    """Wallace Wright never holds a Position in this corpus -- his display
     pid must be identical to fold.py's own pid, untouched."""
     _records, _result, out, col = _run_real()
-    assert col["pid"]["p-walt"] == out["pid"]["p-walt"]
-    assert "p-walt" not in col["derived_placements"]
+    assert col["pid"]["p-wal"] == out["pid"]["p-wal"]
+    assert "p-wal" not in col["derived_placements"]
 
 
 # ---- synthetic: a clean single-route collapse actually changes the pick --

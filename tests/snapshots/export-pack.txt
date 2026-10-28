@@ -13,12 +13,12 @@ Exported demo as graphml to <tmp>/out/g.graphml
   entities   nodes   edges   unlinked relationships   ftm schema
        227     102     302                        1   65c772987032
 
-8bdabbf4dbce6aa4  out/csv/edges.csv
-461979147efa6049  out/csv/nodes.csv
-d5a5c158af98d35b  out/e.jsonl
-fedb8ff5ba1d4da8  out/g.graphml
+f3c298c5b7203f3e  out/csv/edges.csv
+ce22bac6597fcc68  out/csv/nodes.csv
+4fcc38c1a3c817a3  out/e.jsonl
+a8daddb7ceeeb5ad  out/g.graphml
 exit 0
 Packed demo into <tmp>/out/demo.hydra
   size     build
-  173 KB   included
+  166 KB   included
 

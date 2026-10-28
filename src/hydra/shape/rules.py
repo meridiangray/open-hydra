@@ -267,8 +267,8 @@ def rules_mermaid(rules: dict, label: str = "") -> str:
             sub.append(str(len(d["titles"])) + " title" + ("s" if len(d["titles"]) != 1 else ""))
         c = ("outside" if d.get("outside") or n not in related
              else cls.get(d.get("source") or "", "implied"))
-        lab = _mesc(n) + (f"<br/>{_mesc(' · '.join(sub))}" if sub else "")   # the break itself unescaped
-        return f'    {ids[n]}["{lab}"]:::{c}'
+        loft = _mesc(n) + (f"<br/>{_mesc(' · '.join(sub))}" if sub else "")   # the break itself unescaped
+        return f'    {ids[n]}["{loft}"]:::{c}'
 
     order = rank_order(pos, lambda n: None if pos[n].get("outside") else n, edges,
                        lambda n: (bool(pos[n].get("outside")), n.lower()))
@@ -389,7 +389,7 @@ def _regex(pattern: str):
 
 def _search(rx, value: str) -> bool:
     """A `contains:` pattern against a value as written, or with case, accents
-    and punctuation set aside (`norm_text`), so `sicario` finds "SICÁRIO"."""
+    and punctuation set aside (`norm_text`), so `sentinel` finds "SENTINÉL"."""
     return bool(rx.search(value) or rx.search(norm_text(value)))
 
 

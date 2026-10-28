@@ -1,8 +1,8 @@
 """Layer 4 (index.py + merge.py) tests, against the real corrected demo
 corpus — not synthetic records. This is the actual proof that types.py,
 classify.py, order.py and index.py compose correctly, and the named
-acceptance bar from the original outline: "Walter White" must never
-silently resolve to "Walter White Jr."
+acceptance bar from the original outline: "Wallace Wright" must never
+silently resolve to "Wallace Wright Jr."
 """
 import glob
 import json
@@ -42,34 +42,34 @@ def _all_schemas():
     return sorted(schema.SCHEMA)
 
 
-# ---- the named acceptance bar: never Walter White Jr. ----------------------
+# ---- the named acceptance bar: never Wallace Wright Jr. ----------------------
 
 
-def test_walter_white_bare_name_is_ambiguous_never_silently_wrong():
-    """fring-condensed.json's Membership.member = "Walter White" (no local
-    Person record) word-subset-matches "Walter Hartwell White" (p-walt) and
-    "Walter White Jr." (p-waltjr) -- and, found when this test was written,
-    ALSO org-heisenberg's weakAlias "Walter White's operation" (its tokens
+def test_wallace_wright_bare_name_is_ambiguous_never_silently_wrong():
+    """fairbank-condensed.json's Membership.member = "Wallace Wright" (no local
+    Person record) word-subset-matches "Wallace Hollis Wright" (p-wal) and
+    "Wallace Wright Jr." (p-waljr) -- and, found when this test was written,
+    ALSO org-hawthorne's weakAlias "Wallace Wright's operation" (its tokens
     are a superset of the query's too, structurally the same subset
     relationship, just a weaker candidate -- see test_search_ranks_the_real_
-    walter_white_candidates_above_the_weak_one for how a human-facing search
+    wallace_wright_candidates_above_the_weak_one for how a human-facing search
     distinguishes them). The invariant that actually matters: it must be
     reported ambiguous, never silently resolved to any single candidate --
-    especially never silently to p-waltjr alone."""
+    especially never silently to p-waljr alone."""
     _load()
     records = _load_demo_records()
     result = m.merge(records, _all_schemas(), params_dir=PARAMS)
     hits = [a for a in result["report"]["ambiguous_references"]
-            if a["value"] == "Walter White" and a["prop"] == "member"]
-    assert hits, "expected an ambiguous reference for bare 'Walter White'"
+            if a["value"] == "Wallace Wright" and a["prop"] == "member"]
+    assert hits, "expected an ambiguous reference for bare 'Wallace Wright'"
     candidates = set(hits[0]["candidates"])
-    assert {"p-walt", "p-waltjr"} <= candidates
+    assert {"p-wal", "p-waljr"} <= candidates
 
 
-def test_walter_hartwell_white_full_name_resolves_cleanly_to_p_walt():
-    """fring.json's rel-fr7.member and operations.json's pp-4/pp-8/pp-11
+def test_wallace_hollis_wright_full_name_resolves_cleanly_to_p_wal():
+    """fairbank.json's rel-fr7.member and operations.json's pp-4/pp-8/pp-11
     all use the full exact name post-fix -- these must resolve cleanly,
-    unlike the bare "Walter White" case above."""
+    unlike the bare "Wallace Wright" case above."""
     _load()
     records = _load_demo_records()
     by_id = {r["id"]: r for r in records}
@@ -82,25 +82,25 @@ def test_walter_hartwell_white_full_name_resolves_cleanly_to_p_walt():
     pc = classify.classify("Person", PARAMS)
     indices["Person"] = index_mod.build_index(person_records, "Person", pc)
     resolved_id, how, candidates = m.resolve_reference(
-        "Walter Hartwell White", "LegalEntity", schema_names, indices)
-    assert resolved_id == "p-walt"
+        "Wallace Hollis Wright", "LegalEntity", schema_names, indices)
+    assert resolved_id == "p-wal"
     assert how == "name-exact"
 
 
-# ---- real duplicate-record merging: Gustavo Fring across two collections --
+# ---- real duplicate-record merging: Gideon Fairbank across two collections --
 
 
-def test_gustavo_fring_duplicate_person_records_auto_merge():
-    """p-fring (fring-condensed.json) and sess-96cfcd44:p-fring (fring.json)
+def test_gideon_fairbank_duplicate_person_records_auto_merge():
+    """p-fairbank (fairbank-condensed.json) and sess-96cfcd44:p-fairbank (fairbank.json)
     are two separate Person records, same exact name, no distinct conflict
     -- must auto-merge, matching the old engine's own "same name, neither
     has known scope -> auto" behavior for this exact case."""
     _load()
     records = _load_demo_records()
     result = m.merge(records, _all_schemas(), params_dir=PARAMS)
-    a, b = "p-fring", "sess-96cfcd44:p-fring"
+    a, b = "p-fairbank", "sess-96cfcd44:p-fairbank"
     rows = [e for e in result["identical"] if {e["a"], e["b"]} == {a, b}]
-    assert rows, "no sameAs row found for the two Gustavo Fring records"
+    assert rows, "no sameAs row found for the two Gideon Fairbank records"
     assert rows[0]["status"] == "auto"
     survivors = result["survivors"]
     assert (a in survivors) != (b in survivors)  # exactly one was absorbed

@@ -1,16 +1,16 @@
 [
  {
-  "id": "sess-96cfcd44:doc-bb-casefile~p2",
+  "id": "sess-96cfcd44:doc-bq-casefile~p2",
   "schema": "Page",
   "properties": {
    "index": [
     "2"
    ],
    "document": [
-    "doc-bb-casefile"
+    "doc-bq-casefile"
    ],
    "notes": [
-    "FRING: Los Pollos Hermanos owner suspected as distributor; Madrigal Electromotive link"
+    "Note on sess-96cfcd44:doc-bq-casefile~p2. Mentions FAIRBANK, Loyal Provisions, Meridian Electrotech, Loyal Provisions."
    ]
   },
   "_meta": {
@@ -21,15 +21,15 @@
   }
  },
  {
-  "id": "sess-96cfcd44:org-fring",
+  "id": "sess-96cfcd44:org-fairbank",
   "schema": "Organization",
   "properties": {
    "name": [
-    "Gustavo Fring Organization"
+    "Gideon Fairbank Organization"
    ],
    "weakAlias": [
-    "Fring drug empire",
-    "the Chicken Man's operation"
+    "Fairbank trade empire",
+    "The Caterer's operation"
    ],
    "jurisdiction": [
     "us"
@@ -38,10 +38,10 @@
     "2010"
    ],
    "sources": [
-    "sess-96cfcd44:doc-bb-casefile~p2"
+    "sess-96cfcd44:doc-bq-casefile~p2"
    ],
    "notes": [
-    "methamphetamine manufacturing and distribution network run from Albuquerque behind Los Pollos Hermanos"
+    "Note on Gideon Fairbank Organization. Mentions Alderton, Loyal Provisions, Loyal Provisions."
    ]
   },
   "_meta": {
@@ -52,20 +52,20 @@
   }
  },
  {
-  "id": "sess-96cfcd44:co-madrigal",
+  "id": "sess-96cfcd44:co-meridian",
   "schema": "Company",
   "properties": {
    "name": [
-    "Madrigal Electromotive GmbH"
+    "Meridian Electrotech GmbH"
    ],
    "jurisdiction": [
     "de"
    ],
    "sources": [
-    "sess-96cfcd44:doc-bb-casefile~p2"
+    "sess-96cfcd44:doc-bq-casefile~p2"
    ],
    "notes": [
-    "German industrial conglomerate, Hanover; bankrolled Fring and owned Los Pollos Hermanos"
+    "Note on Meridian Electrotech GmbH. Mentions Fairbank, Loyal Provisions, Loyal Provisions, Hanover."
    ]
   },
   "_meta": {
@@ -76,17 +76,17 @@
   }
  },
  {
-  "id": "sess-96cfcd44:co-pollos",
+  "id": "sess-96cfcd44:co-loyal",
   "schema": "Company",
   "properties": {
    "name": [
-    "Los Pollos Hermanos"
+    "Loyal Provisions"
    ],
    "jurisdiction": [
     "us"
    ],
    "notes": [
-    "fast-food chain co-founded by Fring and Max Arciniega; laundering front and distribution cover"
+    "Note on Loyal Provisions. Mentions Fairbank, Max Arden."
    ]
   },
   "_meta": {
@@ -97,11 +97,11 @@
   }
  },
  {
-  "id": "sess-96cfcd44:re-pollos-abq",
+  "id": "sess-96cfcd44:re-loyal-ald",
   "schema": "RealEstate",
   "properties": {
    "name": [
-    "Los Pollos Hermanos — Albuquerque flagship"
+    "Loyal Provisions — Alderton flagship"
    ],
    "propertyType": [
     "restaurant"
@@ -122,7 +122,7 @@
   "schema": "RealEstate",
   "properties": {
    "name": [
-    "Los Pollos Hermanos chicken farm"
+    "Loyal Provisions chicken farm"
    ],
    "propertyType": [
     "farm"
@@ -131,7 +131,7 @@
     "us"
    ],
    "notes": [
-    "distribution hub outside Albuquerque"
+    "Note on Loyal Provisions chicken farm. Mentions Alderton."
    ]
   },
   "_meta": {
@@ -142,20 +142,20 @@
   }
  },
  {
-  "id": "sess-96cfcd44:re-lavanderia",
+  "id": "sess-96cfcd44:re-lantern",
   "schema": "RealEstate",
   "properties": {
    "name": [
-    "Lavanderia Brillante"
+    "Lantern Bright"
    ],
    "propertyType": [
-    "industrial laundry"
+    "industrial linen plant"
    ],
    "address": [
-    "Albuquerque, NM"
+    "Alderton, NM"
    ],
    "notes": [
-    "industrial laundry bought to conceal the superlab"
+    "Note on Lantern Bright. Mentions The Suite."
    ]
   },
   "_meta": {
@@ -166,20 +166,20 @@
   }
  },
  {
-  "id": "sess-96cfcd44:re-superlab",
+  "id": "sess-96cfcd44:re-suite",
   "schema": "RealEstate",
   "properties": {
    "name": [
-    "The Superlab"
+    "The Suite"
    ],
    "propertyType": [
-    "clandestine laboratory"
+    "private workshop"
    ],
    "parent": [
-    "Lavanderia Brillante"
+    "Lantern Bright"
    ],
    "notes": [
-    "Gale-designed meth lab beneath the laundry; Fring's production center"
+    "Note on The Suite. Mentions Fairbank."
    ]
   },
   "_meta": {
@@ -190,16 +190,16 @@
   }
  },
  {
-  "id": "sess-96cfcd44:p-fring",
+  "id": "sess-96cfcd44:p-fairbank",
   "schema": "Person",
   "properties": {
    "name": [
-    "Gustavo Fring"
+    "Gideon Fairbank"
    ],
    "weakAlias": [
-    "Gus",
-    "Gus Fring",
-    "the Chicken Man"
+    "Gid",
+    "Gid Fairbank",
+    "The Caterer"
    ],
    "citizenship": [
     "cl"
@@ -208,10 +208,10 @@
     "2010"
    ],
    "sources": [
-    "sess-96cfcd44:doc-bb-casefile~p2"
+    "sess-96cfcd44:doc-bq-casefile~p2"
    ],
    "notes": [
-    "Chilean emigre; cartel distributor who built his own manufacturing and laundering network"
+    "Note on Gideon Fairbank."
    ]
   },
   "_meta": {
@@ -222,14 +222,14 @@
   }
  },
  {
-  "id": "sess-96cfcd44:p-mike",
+  "id": "sess-96cfcd44:p-marty",
   "schema": "Person",
   "properties": {
    "name": [
-    "Michael Ehrmantraut"
+    "Martin Eastwood"
    ],
    "weakAlias": [
-    "Mike"
+    "Marty"
    ],
    "deathDate": [
     "2010"
@@ -238,7 +238,7 @@
     "head of security"
    ],
    "notes": [
-    "ex-Philadelphia police; Fring's head of security and chief fixer"
+    "Note on Martin Eastwood. Mentions Fairbank, Head of Security."
    ]
   },
   "_meta": {
@@ -249,20 +249,20 @@
   }
  },
  {
-  "id": "sess-96cfcd44:p-tyrus",
+  "id": "sess-96cfcd44:p-tobias",
   "schema": "Person",
   "properties": {
    "name": [
-    "Tyrus Kitt"
+    "Tobias Kent"
    ],
    "deathDate": [
     "2010"
    ],
    "position": [
-    "enforcer"
+    "escort"
    ],
    "notes": [
-    "Fring enforcer; died in the Casa Tranquila explosion"
+    "Note on Tobias Kent. Mentions Fairbank, Casa Tranquila exhibit."
    ]
   },
   "_meta": {
@@ -273,20 +273,20 @@
   }
  },
  {
-  "id": "sess-96cfcd44:p-victor",
+  "id": "sess-96cfcd44:p-vernon",
   "schema": "Person",
   "properties": {
    "name": [
-    "Victor"
+    "Vernon"
    ],
    "deathDate": [
     "2010"
    ],
    "position": [
-    "enforcer"
+    "escort"
    ],
    "notes": [
-    "Fring enforcer; killed by Fring with a box cutter after being seen at Gale's murder scene"
+    "Note on Vernon. Mentions Fairbank, Glen."
    ]
   },
   "_meta": {
@@ -297,20 +297,20 @@
   }
  },
  {
-  "id": "sess-96cfcd44:p-gale",
+  "id": "sess-96cfcd44:p-glen",
   "schema": "Person",
   "properties": {
    "name": [
-    "Gale Boetticher"
+    "Glen Bowman"
    ],
    "deathDate": [
     "2010"
    ],
    "position": [
-    "chemist"
+    "cataloguer"
    ],
    "notes": [
-    "designed and ran the superlab; replaced by Walter White, then murdered"
+    "Note on Glen Bowman. Mentions Wallace Wright, The Suite."
    ]
   },
   "_meta": {
@@ -321,14 +321,14 @@
   }
  },
  {
-  "id": "sess-96cfcd44:p-dennis",
+  "id": "sess-96cfcd44:p-dexter",
   "schema": "Person",
   "properties": {
    "name": [
-    "Dennis Markowski"
+    "Dexter Marsh"
    ],
    "notes": [
-    "managed the Lavanderia Brillante front; arrested after Fring's death"
+    "Note on Dexter Marsh. Mentions Lantern Bright, Fairbank, Lantern Bright."
    ]
   },
   "_meta": {
@@ -339,17 +339,17 @@
   }
  },
  {
-  "id": "sess-96cfcd44:p-chris-mara",
+  "id": "sess-96cfcd44:p-chad-maddox",
   "schema": "Person",
   "properties": {
    "name": [
-    "Chris Mara"
+    "Chad Maddox"
    ],
    "deathDate": [
     "2010"
    ],
    "notes": [
-    "Fring security man; killed by Mike"
+    "Note on Chad Maddox. Mentions Fairbank, Marty, Marty."
    ]
   },
   "_meta": {
@@ -360,17 +360,17 @@
   }
  },
  {
-  "id": "sess-96cfcd44:p-wachsberger",
+  "id": "sess-96cfcd44:p-waxman",
   "schema": "Person",
   "properties": {
    "name": [
-    "Dan Wachsberger"
+    "Dale Waxman"
    ],
    "deathDate": [
     "2010"
    ],
    "notes": [
-    "lawyer who couriered 'legacy' hush money to the Fring men's families; killed in the prison operation"
+    "Note on Dale Waxman. Mentions Fairbank."
    ]
   },
   "_meta": {
@@ -381,17 +381,17 @@
   }
  },
  {
-  "id": "sess-96cfcd44:p-schuler",
+  "id": "sess-96cfcd44:p-shearer",
   "schema": "Person",
   "properties": {
    "name": [
-    "Peter Schuler"
+    "Philip Shearer"
    ],
    "deathDate": [
     "2010"
    ],
    "notes": [
-    "Madrigal executive; bankrolled Fring; suicide during the DEA investigation"
+    "Note on Philip Shearer. Mentions Meridian, Fairbank, DCE."
    ]
   },
   "_meta": {
@@ -402,17 +402,17 @@
   }
  },
  {
-  "id": "sess-96cfcd44:p-lydia",
+  "id": "sess-96cfcd44:p-linda",
   "schema": "Person",
   "properties": {
    "name": [
-    "Lydia Rodarte-Quayle"
+    "Linda Rowan-Quill"
    ],
    "deathDate": [
     "2010"
    ],
    "notes": [
-    "Madrigal logistics executive in Houston; supplied methylamine; later ran the Czech distribution"
+    "Note on Linda Rowan-Quill. Mentions Meridian."
    ]
   },
   "_meta": {
@@ -430,7 +430,7 @@
     "Head of Security"
    ],
    "organization": [
-    "Gustavo Fring Organization"
+    "Gideon Fairbank Organization"
    ]
   },
   "_meta": {
@@ -441,17 +441,17 @@
   }
  },
  {
-  "id": "rel-occ-mike",
+  "id": "rel-occ-marty",
   "schema": "Occupancy",
   "properties": {
    "holder": [
-    "Michael Ehrmantraut"
+    "Martin Eastwood"
    ],
    "post": [
     "Head of Security"
    ],
    "notes": [
-    "the security post — folds Mike under the Fring org with the post title"
+    "Note on rel-occ-marty. Mentions Marty, Fairbank, Marty."
    ]
   },
   "_meta": {
@@ -466,10 +466,10 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Gustavo Fring"
+    "Gideon Fairbank"
    ],
    "organization": [
-    "Gustavo Fring Organization"
+    "Gideon Fairbank Organization"
    ],
    "role": [
     "leader"
@@ -487,10 +487,10 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Gustavo Fring Organization"
+    "Gideon Fairbank Organization"
    ],
    "organization": [
-    "Juarez Cartel"
+    "Jericho Consortium"
    ]
   },
   "_meta": {
@@ -505,10 +505,10 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Gustavo Fring"
+    "Gideon Fairbank"
    ],
    "organization": [
-    "Juarez Cartel"
+    "Jericho Consortium"
    ],
    "role": [
     "distributor"
@@ -517,7 +517,7 @@
     "2010"
    ],
    "notes": [
-    "Fring served the cartel as distributor while quietly building his own network"
+    "Note on rel-fr3. Mentions Fairbank, The Consortium."
    ]
   },
   "_meta": {
@@ -532,13 +532,13 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Tyrus Kitt"
+    "Tobias Kent"
    ],
    "organization": [
-    "Gustavo Fring Organization"
+    "Gideon Fairbank Organization"
    ],
    "role": [
-    "enforcer"
+    "escort"
    ],
    "endDate": [
     "2010"
@@ -556,13 +556,13 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Victor"
+    "Vernon"
    ],
    "organization": [
-    "Gustavo Fring Organization"
+    "Gideon Fairbank Organization"
    ],
    "role": [
-    "enforcer"
+    "escort"
    ],
    "endDate": [
     "2010"
@@ -580,13 +580,13 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Gale Boetticher"
+    "Glen Bowman"
    ],
    "organization": [
-    "Gustavo Fring Organization"
+    "Gideon Fairbank Organization"
    ],
    "role": [
-    "chemist"
+    "cataloguer"
    ],
    "endDate": [
     "2010"
@@ -604,13 +604,13 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Walter Hartwell White"
+    "Wallace Hollis Wright"
    ],
    "organization": [
-    "Gustavo Fring Organization"
+    "Gideon Fairbank Organization"
    ],
    "role": [
-    "cook"
+    "chef"
    ],
    "startDate": [
     "2009"
@@ -619,7 +619,7 @@
     "2010"
    ],
    "notes": [
-    "third cook of the superlab era, after Gale"
+    "Note on rel-fr7. Mentions Glen, The Suite."
    ]
   },
   "_meta": {
@@ -634,13 +634,13 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Jesse Bruce Pinkman"
+    "Jordan Brooks Pelham"
    ],
    "organization": [
-    "Gustavo Fring Organization"
+    "Gideon Fairbank Organization"
    ],
    "role": [
-    "cook"
+    "chef"
    ],
    "startDate": [
     "2009"
@@ -661,11 +661,11 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Dennis Markowski",
-    "Chris Mara"
+    "Dexter Marsh",
+    "Chad Maddox"
    ],
    "organization": [
-    "Gustavo Fring Organization"
+    "Gideon Fairbank Organization"
    ],
    "role": [
     "member"
@@ -683,16 +683,16 @@
   "schema": "Employment",
   "properties": {
    "employee": [
-    "Michael Ehrmantraut"
+    "Martin Eastwood"
    ],
    "employer": [
-    "Los Pollos Hermanos"
+    "Loyal Provisions"
    ],
    "role": [
     "corporate security consultant"
    ],
    "notes": [
-    "the cover job — competes with the real Head of Security post for parentage"
+    "Note on rel-fr10. Mentions Head of Security."
    ]
   },
   "_meta": {
@@ -707,10 +707,10 @@
   "schema": "Employment",
   "properties": {
    "employee": [
-    "Lydia Rodarte-Quayle"
+    "Linda Rowan-Quill"
    ],
    "employer": [
-    "Madrigal Electromotive GmbH"
+    "Meridian Electrotech GmbH"
    ],
    "role": [
     "logistics executive"
@@ -728,10 +728,10 @@
   "schema": "Directorship",
   "properties": {
    "director": [
-    "Gustavo Fring"
+    "Gideon Fairbank"
    ],
    "organization": [
-    "Los Pollos Hermanos"
+    "Loyal Provisions"
    ],
    "role": [
     "president"
@@ -749,10 +749,10 @@
   "schema": "Directorship",
   "properties": {
    "director": [
-    "Peter Schuler"
+    "Philip Shearer"
    ],
    "organization": [
-    "Madrigal Electromotive GmbH"
+    "Meridian Electrotech GmbH"
    ],
    "role": [
     "head of fast food division"
@@ -773,10 +773,10 @@
   "schema": "Ownership",
   "properties": {
    "owner": [
-    "Madrigal Electromotive GmbH"
+    "Meridian Electrotech GmbH"
    ],
    "asset": [
-    "Los Pollos Hermanos"
+    "Loyal Provisions"
    ]
   },
   "_meta": {
@@ -791,10 +791,10 @@
   "schema": "Ownership",
   "properties": {
    "owner": [
-    "Madrigal Electromotive GmbH"
+    "Meridian Electrotech GmbH"
    ],
    "asset": [
-    "Lavanderia Brillante"
+    "Lantern Bright"
    ]
   },
   "_meta": {
@@ -809,10 +809,10 @@
   "schema": "Ownership",
   "properties": {
    "owner": [
-    "Los Pollos Hermanos"
+    "Loyal Provisions"
    ],
    "asset": [
-    "Los Pollos Hermanos — Albuquerque flagship"
+    "Loyal Provisions — Alderton flagship"
    ]
   },
   "_meta": {
@@ -827,10 +827,10 @@
   "schema": "Ownership",
   "properties": {
    "owner": [
-    "Los Pollos Hermanos"
+    "Loyal Provisions"
    ],
    "asset": [
-    "Los Pollos Hermanos chicken farm"
+    "Loyal Provisions chicken farm"
    ]
   },
   "_meta": {
@@ -845,10 +845,10 @@
   "schema": "Representation",
   "properties": {
    "agent": [
-    "Dan Wachsberger"
+    "Dale Waxman"
    ],
    "client": [
-    "Gustavo Fring Organization"
+    "Gideon Fairbank Organization"
    ],
    "role": [
     "outside counsel"
@@ -869,13 +869,13 @@
   "schema": "Associate",
   "properties": {
    "person": [
-    "Lydia Rodarte-Quayle"
+    "Linda Rowan-Quill"
    ],
    "associate": [
-    "Gustavo Fring"
+    "Gideon Fairbank"
    ],
    "relationship": [
-    "methylamine supplier"
+    "mineral supplier"
    ]
   },
   "_meta": {
@@ -890,10 +890,10 @@
   "schema": "Documentation",
   "properties": {
    "document": [
-    "sess-96cfcd44:doc-bb-casefile~p2"
+    "sess-96cfcd44:doc-bq-casefile~p2"
    ],
    "entity": [
-    "Gustavo Fring Organization"
+    "Gideon Fairbank Organization"
    ]
   },
   "_meta": {
@@ -908,10 +908,10 @@
   "schema": "Documentation",
   "properties": {
    "document": [
-    "sess-96cfcd44:doc-bb-casefile~p2"
+    "sess-96cfcd44:doc-bq-casefile~p2"
    ],
    "entity": [
-    "Gustavo Fring"
+    "Gideon Fairbank"
    ]
   },
   "_meta": {
@@ -926,10 +926,10 @@
   "schema": "Documentation",
   "properties": {
    "document": [
-    "sess-96cfcd44:doc-bb-casefile~p2"
+    "sess-96cfcd44:doc-bq-casefile~p2"
    ],
    "entity": [
-    "Madrigal Electromotive GmbH"
+    "Meridian Electrotech GmbH"
    ]
   },
   "_meta": {

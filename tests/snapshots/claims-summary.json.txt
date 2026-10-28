@@ -4,11 +4,11 @@ exit 0
  "entities": 227,
  "collections": {
   "operations": 223,
-  "heisenberg": 191,
-  "fring": 148,
-  "cartel": 138,
-  "fring-condensed": 111,
-  "dea": 103
+  "hawthorne": 191,
+  "fairbank": 148,
+  "consortium": 138,
+  "fairbank-condensed": 111,
+  "dce": 103
  },
  "schemas": {
   "Person": 201,

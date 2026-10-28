@@ -3,13 +3,13 @@ in any order.
 
     hydra-ctl claims person tikrit
     hydra-ctl node find tikrit Person
-    hydra-ctl claims "walter white" --type person
+    hydra-ctl claims "wallace wright" --type person
 
 A word that names an FtM schema, in any capitalisation (`person`, `Person`,
 `PERSON`), keeps that type and its subtypes; several such words keep any of
 them. `--type` does the same and is just as forgiving. Every other word is
-part of the search, joined in order: `claims walter white` and
-`claims "walter white"` look for the same thing. To search for a word that is
+part of the search, joined in order: `claims wallace wright` and
+`claims "wallace wright"` look for the same thing. To search for a word that is
 also a type name (`event`), quote it together with another word.
 
 The search matches a node's names first (see each command for its ranking),

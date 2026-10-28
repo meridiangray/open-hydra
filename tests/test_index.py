@@ -59,30 +59,30 @@ def test_address_full_is_indexed_via_token_types():
     pc = classify.classify("Address", PARAMS)
     assert pc["full"].match  # confirm the override actually promotes it
     records = [
-        {"id": "a1", "schema": "Address", "properties": {"full": ["Albuquerque, New Mexico, United States"]}},
+        {"id": "a1", "schema": "Address", "properties": {"full": ["Alderton, New Mexico, United States"]}},
     ]
     idx = index_mod.build_index(records, "Address", pc)
-    assert idx.match_value("Albuquerque", "address") == {"a1"}
+    assert idx.match_value("Alderton", "address") == {"a1"}
 
 
 # ---- search(): ranked, permissive browse against the real demo corpus -----
 
 
-def test_search_ranks_the_real_walter_white_candidates_above_the_weak_one():
+def test_search_ranks_the_real_wallace_wright_candidates_above_the_weak_one():
     """The exact case that motivated search(): resolve_reference() correctly
-    refuses to pick among p-walt/p-waltjr/org-heisenberg for bare "Walter
-    White" -- but a human looking at a pick-list should see the two real
+    refuses to pick among p-wal/p-waljr/org-hawthorne for bare "Wallace
+    Wright" -- but a human looking at a pick-list should see the two real
     Person candidates ranked above the weak Organization one, since their
     matching name values are closer in length to the query."""
     _load()
     records = _load_demo_records()
     result = m.merge(records, sorted(schema.SCHEMA), params_dir=PARAMS)
-    hits = index_mod.search("Walter White", result["indices"], limit=10)
+    hits = index_mod.search("Wallace Wright", result["indices"], limit=10)
     ids_in_order = [h.record_id for h in hits]
-    assert "p-walt" in ids_in_order and "p-waltjr" in ids_in_order
-    assert "org-heisenberg" in ids_in_order
-    assert ids_in_order.index("p-walt") < ids_in_order.index("org-heisenberg")
-    assert ids_in_order.index("p-waltjr") < ids_in_order.index("org-heisenberg")
+    assert "p-wal" in ids_in_order and "p-waljr" in ids_in_order
+    assert "org-hawthorne" in ids_in_order
+    assert ids_in_order.index("p-wal") < ids_in_order.index("org-hawthorne")
+    assert ids_in_order.index("p-waljr") < ids_in_order.index("org-hawthorne")
 
 
 def test_search_is_explainable_not_a_black_box():
@@ -91,35 +91,35 @@ def test_search_is_explainable_not_a_black_box():
     _load()
     records = _load_demo_records()
     result = m.merge(records, sorted(schema.SCHEMA), params_dir=PARAMS)
-    hits = index_mod.search("Walter White", result["indices"])
-    walt = next(h for h in hits if h.record_id == "p-walt")
-    assert walt.how == "name-subset"
-    assert walt.query_tokens == 2
-    assert walt.shared_tokens == 2
-    assert walt.candidate_tokens == 3  # "Walter Hartwell White"
+    hits = index_mod.search("Wallace Wright", result["indices"])
+    wal = next(h for h in hits if h.record_id == "p-wal")
+    assert wal.how == "name-subset"
+    assert wal.query_tokens == 2
+    assert wal.shared_tokens == 2
+    assert wal.candidate_tokens == 3  # "Wallace Hollis Wright"
 
 
-def test_search_surfaces_the_heisenberg_identity_question():
-    """A different real case: "Heisenberg" is ambiguous between
-    p-heisenberg-dea and p-walt (a genuine identity question, not a
+def test_search_surfaces_the_hawthorne_identity_question():
+    """A different real case: "Hawthorne" is ambiguous between
+    p-hawthorne-dce and p-wal (a genuine identity question, not a
     reference-pin one -- see MODEL.md §4, this needs a Similar record, not
     a pick-list decision -- but search() should still surface both so a
     human reviewing a Similar record has an easy way to find both ids)."""
     _load()
     records = _load_demo_records()
     result = m.merge(records, sorted(schema.SCHEMA), params_dir=PARAMS)
-    hits = index_mod.search("Heisenberg", result["indices"])
+    hits = index_mod.search("Hawthorne", result["indices"])
     ids = {h.record_id for h in hits}
-    assert "p-walt" in ids
-    assert "p-heisenberg-dea" in ids
+    assert "p-wal" in ids
+    assert "p-hawthorne-dce" in ids
 
 
 def test_search_exact_match_outranks_subset():
     _load()
     records = _load_demo_records()
     result = m.merge(records, sorted(schema.SCHEMA), params_dir=PARAMS)
-    hits = index_mod.search("Walter Hartwell White", result["indices"])
-    assert hits[0].record_id == "p-walt"
+    hits = index_mod.search("Wallace Hollis Wright", result["indices"])
+    assert hits[0].record_id == "p-wal"
     assert hits[0].how == "name-exact"
 
 

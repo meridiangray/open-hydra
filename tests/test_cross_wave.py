@@ -32,7 +32,7 @@ def final_schema(res, rid):
 
 
 PAIRS = [  # (generic schema, specific schema, props shared by both)
-    ("Event", "Trip", {"name": "Desert cook run"}),
+    ("Event", "Trip", {"name": "Desert chef run"}),
     ("Identification", "Passport", {"number": "X1234567"}),
     ("Asset", "BankAccount", {"name": "Acme operating account"}),
     ("Contract", "License", {"name": "Spectrum licence 7"}),
@@ -62,13 +62,13 @@ def test_generic_and_specific_merge_into_the_specific_class(generic, specific, p
 
 
 def test_different_names_do_not_merge():
-    res = run([rec("g", "Event", name="Wayfarer collision"), rec("s", "Trip", name="Desert cook run")])
+    res = run([rec("g", "Event", name="Wayfarer collision"), rec("s", "Trip", name="Desert chef run")])
     assert row(res, "g", "s") is None
     assert not res["survivors"]
 
 
 def test_a_rejected_verdict_keeps_them_apart():
-    recs = [rec("g", "Event", name="Desert cook run"), rec("s", "Trip", name="Desert cook run")]
+    recs = [rec("g", "Event", name="Desert chef run"), rec("s", "Trip", name="Desert chef run")]
     key = row(run(recs), "g", "s")["id"]
     res = run(recs, {key: "rejected"})
     assert row(res, "g", "s")["status"] == "rejected" and not res["survivors"]
@@ -95,8 +95,8 @@ def test_same_wave_pairs_are_not_decided_twice():
 
 
 def test_the_merged_properties_survive_on_the_specific_record():
-    res = run([rec("g", "Event", name="Desert cook run", description="a cook"),
-               rec("s", "Trip", name="Desert cook run", startDate="2008")])
+    res = run([rec("g", "Event", name="Desert chef run", description="a chef"),
+               rec("s", "Trip", name="Desert chef run", startDate="2008")])
     keep = res["survivors"].get("g") or res["survivors"].get("s") or "s"
     final = next(i.records[keep] for i in res["indices"].values() if keep in i.records)
-    assert final["properties"]["description"] == ["a cook"] and final["properties"]["startDate"] == ["2008"]
+    assert final["properties"]["description"] == ["a chef"] and final["properties"]["startDate"] == ["2008"]

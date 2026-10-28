@@ -60,9 +60,9 @@ def test_ids_are_tagged_and_the_tags_are_stored_in_the_manifest(built):
     root, s = built
     ir = json.loads((root / build.READS["declared"]).read_text(encoding="utf-8"))
     assert all(source_of(i) for i in ir["nodes"])
-    walt = next(n for n in ir["nodes"].values() if n["caption"] == "Walter Hartwell White")
-    assert walt["id"] == "heisenberg:p-walt" and walt["position"] == "Leader"
-    assert ir["nodes"][walt["pid"]]["caption"] == "Heisenberg Organization"
+    wal = next(n for n in ir["nodes"].values() if n["caption"] == "Wallace Hollis Wright")
+    assert wal["id"] == "hawthorne:p-wal" and wal["position"] == "Leader"
+    assert ir["nodes"][wal["pid"]]["caption"] == "Hawthorne Organization"
     man = json.loads((root / layout.COLLECTIONS_MANIFEST).read_text(encoding="utf-8"))
     assert {k: v["prefix"] for k, v in man["collections"].items()} == s["prefixes"]
     assert all(source_of(c["entity"]) for c in _jl(root, layout.CLAIMS_JSONL))
@@ -92,19 +92,19 @@ def test_a_manifest_tag_chosen_by_the_user_is_used(tmp_path):
     root = _archive(tmp_path / "a")
     mp = root / layout.COLLECTIONS_MANIFEST
     man = json.loads(mp.read_text(encoding="utf-8"))
-    man["collections"]["heisenberg"]["prefix"] = "abq"
+    man["collections"]["hawthorne"]["prefix"] = "ald"
     mp.write_text(json.dumps(man), encoding="utf-8")
     s = build.build_archive(root, now=NOW)
-    assert s["prefixes"]["heisenberg"] == "abq"
+    assert s["prefixes"]["hawthorne"] == "ald"
     ir = json.loads((root / build.READS["declared"]).read_text(encoding="utf-8"))
-    assert any(i == "abq:p-walt" for i in ir["nodes"])
+    assert any(i == "ald:p-wal" for i in ir["nodes"])
 
 
 def test_no_tag_keeps_source_ids(tmp_path):
     root = _archive(tmp_path / "a")
     s = build.build_archive(root, prefix=False, now=NOW)
     ir = json.loads((root / build.READS["declared"]).read_text(encoding="utf-8"))
-    assert "p-walt" in ir["nodes"] and "prefixes" not in s
+    assert "p-wal" in ir["nodes"] and "prefixes" not in s
     man = json.loads((root / layout.COLLECTIONS_MANIFEST).read_text(encoding="utf-8"))
     assert not any("prefix" in v for v in man["collections"].values())
 
@@ -327,15 +327,15 @@ def test_source_entries_are_cited_by_id_and_are_not_tree_nodes(tmp_path):
     copy_template(root)
     (root / layout.SOURCE_ENTRIES).mkdir(parents=True, exist_ok=True)
     (root / layout.SOURCE_ENTRIES / "wikipedia.json").write_text("\n".join(json.dumps(r) for r in [
-        {"id": "wp-gus", "schema": "Article", "properties": {"title": ["Gus Fring"], "publisher": ["Wikipedia"],
-                                                             "sourceUrl": ["https://en.wikipedia.org/wiki/Gus_Fring"]}},
+        {"id": "wp-gid", "schema": "Article", "properties": {"title": ["Gid Fairbank"], "publisher": ["Wikipedia"],
+                                                             "sourceUrl": ["https://en.wikipedia.org/wiki/Gid_Fairbank"]}},
         {"id": "wp-oops", "schema": "Person", "properties": {"name": ["Not A Source"]}}]), encoding="utf-8")
     (root / layout.COLLECTIONS_DIR / "c.json").write_text(json.dumps(
-        {"id": "p1", "schema": "Person", "properties": {"name": ["Gustavo Fring"], "sources": ["wp-gus"]}}), encoding="utf-8")
+        {"id": "p1", "schema": "Person", "properties": {"name": ["Gideon Fairbank"], "sources": ["wp-gid"]}}), encoding="utf-8")
     s = build.build_archive(root, now=NOW)
     nodes = json.loads((root / build.READS["generic"]).read_text(encoding="utf-8"))["nodes"]
-    gus = next(n for n in nodes.values() if n["caption"] == "Gustavo Fring")
-    assert [x["caption"] for x in gus["linked"]] == ["Gus Fring"]              # cited by id, shown as evidence
+    gid = next(n for n in nodes.values() if n["caption"] == "Gideon Fairbank")
+    assert [x["caption"] for x in gid["linked"]] == ["Gid Fairbank"]              # cited by id, shown as evidence
     assert not any(n.get("schema") == "Article" for n in nodes.values())       # a source is not a tree node
     assert not s["ledger"].get("references")                                    # nothing left unresolved
     assert [i["where"] for i in s["issues"] if i["code"] == "sources.not-a-document"] == ["sources-wikipedia:wp-oops"]
@@ -345,4 +345,4 @@ def test_source_entries_are_cited_by_id_and_are_not_tree_nodes(tmp_path):
         out = tmp_path / f"x.{fmt}.jsonl"
         export.main([str(root), "--format", fmt, "-o", str(out)])
         ent = next(e for e in map(json.loads, out.read_text(encoding="utf-8").splitlines()) if e["id"] == "c:p1")
-        assert ent["properties"][field] == ["sources-wikipedia:wp-gus"]       # a document is addressed by id
+        assert ent["properties"][field] == ["sources-wikipedia:wp-gid"]       # a document is addressed by id

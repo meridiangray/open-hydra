@@ -2,55 +2,55 @@ exit 0
 merges   14
     row                      record                          record                         conflict   group
     merge-00783b8a5bab5fa8   operations:ev-cousins           operations:ev-wayfarer
-    merge-049613bec1847886   operations:ev-tohajiilee        operations:ev-tuco             date
-    merge-25859111f32a53ef   heisenberg:org-heisenberg       heisenberg:p-walt                         grp-320ae7194e7a
+    merge-066d9939fe71d116   fairbank-condensed:re-lantern   operations:re-casa-tranquila              grp-f02b35b32e4f
     merge-2e8c9a6a7e563ef2   operations:ev-boxcutter         operations:ev-casa-tranquila              grp-c4a89b43db05
-    merge-3296ae23a9395f1b   dea:p-heisenberg-dea            heisenberg:p-walt                         grp-320ae7194e7a
-    merge-346800259d4f3845   heisenberg:re-white             operations:re-casa-tranquila              grp-3d0328c87b2e
+    merge-3598fff283eb78c8   dce:p-hawthorne-dce             hawthorne:p-wal                           grp-61d982602391
+    merge-3748255fe8342c41   operations:re-casa-tranquila    sess-96cfcd44:re-lantern                  grp-f02b35b32e4f
     merge-57584e86d07f1bb0   operations:ev-boxcutter         operations:ev-wayfarer         date       grp-c4a89b43db05
     merge-5bc6a18cdabb97c9   operations:ev-boxcutter         operations:ev-cousins          date       grp-c4a89b43db05
-    merge-976285752386a83c   fring-condensed:re-lavanderia   operations:re-casa-tranquila              grp-f02b35b32e4f
+    merge-5da8c9fc07d8e6d9   hawthorne:re-wright             sess-96cfcd44:re-lantern                  grp-e204750ecfd1
+    merge-769e331edc25fd7b   fairbank-condensed:re-lantern   hawthorne:re-wright                       grp-e204750ecfd1
+    merge-94f635c0a0c838c2   hawthorne:re-wright             operations:re-casa-tranquila              grp-e204750ecfd1
     merge-9a6ff3acbbfa175a   operations:ev-max               operations:ev-pool             date       grp-bd35718f67c3
     merge-a43c30854f076b22   operations:ev-felina            operations:ev-pool             country    grp-bd35718f67c3
-    merge-aabdb6238cdaf4e2   heisenberg:re-white             sess-96cfcd44:re-lavanderia               grp-3d0328c87b2e
-    merge-b696ef171dede45d   operations:re-casa-tranquila    sess-96cfcd44:re-lavanderia               grp-f02b35b32e4f
-    merge-d91ee9e8d271b80c   fring-condensed:re-lavanderia   heisenberg:re-white                       grp-3d0328c87b2e
+    merge-e5b2cfffd3322250   operations:ev-tohajiilee        operations:ev-tomas            date
+    merge-edfc1285293ae43d   hawthorne:org-hawthorne         hawthorne:p-wal                           grp-61d982602391
 
 references   3
-    row                    record                         field                  value          candidates
-    ref-afcb9619d7e1fa48   dea:prv-dea1                   Documentation.entity   Heisenberg     3
-        1  Heisenberg                Person         dea:p-heisenberg-dea
-        2  Walter Hartwell White     Person         heisenberg:p-walt
-        3  Heisenberg Organization   Organization   heisenberg:org-heisenberg
-    ref-c34c2c3a7c4506d8   fring-condensed:rel-fr-cooks   Membership.member      Walter White   3
-        1  Walter White Jr.          Person         dea:p-waltjr
-        2  Walter Hartwell White     Person         heisenberg:p-walt
-        3  Heisenberg Organization   Organization   heisenberg:org-heisenberg
-    ref-ffee52ededc75eab   dea:san-heisenberg             Sanction.entity        Heisenberg     3
-        1  Heisenberg                Person         dea:p-heisenberg-dea
-        2  Walter Hartwell White     Person         heisenberg:p-walt
-        3  Heisenberg Organization   Organization   heisenberg:org-heisenberg
+    row                    record                            field                  value            candidates
+    ref-25baae2d0cc64263   dce:prv-dea1                      Documentation.entity   Hawthorne        3
+        1  Hawthorne                Person         dce:p-hawthorne-dce
+        2  Wallace Hollis Wright    Person         hawthorne:p-wal
+        3  Hawthorne Organization   Organization   hawthorne:org-hawthorne
+    ref-3a5323adc67ab09c   fairbank-condensed:rel-fr-chefs   Membership.member      Wallace Wright   3
+        1  Wallace Wright Jr.       Person         dce:p-waljr
+        2  Wallace Hollis Wright    Person         hawthorne:p-wal
+        3  Hawthorne Organization   Organization   hawthorne:org-hawthorne
+    ref-c40373057c08ec7a   dce:san-hawthorne                 Sanction.entity        Hawthorne        3
+        1  Hawthorne                Person         dce:p-hawthorne-dce
+        2  Wallace Hollis Wright    Person         hawthorne:p-wal
+        3  Hawthorne Organization   Organization   hawthorne:org-hawthorne
 
 placements   20
-    row                      record                       parent                      placed by
-    place-0885d03a61bc38c9   heisenberg:p-skyler          heisenberg:co-carwash       Employment (several parents)
-    place-0c4118cdee03bca9   heisenberg:p-kenny           heisenberg:p-jack           rules: Second-in-command below Leader
-    place-27e1c9910e192843   cartel:p-nacho               cartel:p-eladio             rules: Member below Leader
-    place-280778f8e19939a8   cartel:p-gonzo               cartel:p-eladio             rules: Member below Leader
-    place-2ffedf81d00118e1   heisenberg:p-kuby            heisenberg:p-jesse          rules: Member below Leader
-    place-4da066e8eb1c2280   sess-96cfcd44:p-chris-mara   sess-96cfcd44:p-fring       rules: Member below Leader
-    place-6b19e4077b1c5674   heisenberg:p-jesse           heisenberg:org-heisenberg   Membership (several parents)
-    place-7646c3aa76c72dbd   sess-96cfcd44:p-dennis       sess-96cfcd44:p-fring       rules: Member below Leader
-    place-7e2ec44e85b36063   heisenberg:p-frankie         heisenberg:p-jack           rules: Member below Leader
-    place-8133214d179ac23f   heisenberg:p-todd            heisenberg:p-jesse          rules: Member below Leader
-    place-82e6c53997c8299f   sess-96cfcd44:p-fring        sess-96cfcd44:org-fring     Membership (several parents)
-    place-8c4b38261fcc8f06   sess-96cfcd44:p-gale         sess-96cfcd44:org-fring     Membership (several parents)
-    place-937682b3379856bf   heisenberg:p-matt            heisenberg:p-jack           rules: Member below Leader
-    place-9bd53eff43c113e5   heisenberg:re-white          heisenberg:p-skyler         Ownership (several parents)
-    place-c418b6493a0b3f1e   sess-96cfcd44:p-mike         sess-96cfcd44:co-pollos     Employment (several parents)
-    place-cf481d4b402ec422   heisenberg:p-walt            heisenberg:org-heisenberg   Membership (several parents)
-    place-f5366e57980a065e   heisenberg:p-lester          heisenberg:p-jack           rules: Member below Leader
-    place-f56afed688593447   sess-96cfcd44:p-lydia        heisenberg:org-heisenberg   Membership (several parents)
-    place-fa861538ff9bd5f0   heisenberg:p-huell           heisenberg:p-jesse          rules: Member below Leader
-    place-fc95bcb4d4e1a2ad   cartel:p-nodoze              cartel:p-eladio             rules: Member below Leader
+    row                      record                        parent                       placed by
+    place-19202a95a80fdbb2   sess-96cfcd44:p-linda         hawthorne:org-hawthorne      Membership (several parents)
+    place-2288236df9cd1e45   hawthorne:p-tyler             hawthorne:p-jordan           rules: Member below Leader
+    place-2ca7765dc7156c69   consortium:p-gizmo            consortium:p-elias           rules: Member below Leader
+    place-47cac83bd48b8db8   hawthorne:p-sasha             hawthorne:co-carwash         Employment (several parents)
+    place-49b92199653edbd0   hawthorne:re-wright           hawthorne:p-sasha            Ownership (several parents)
+    place-568c63c058486365   hawthorne:p-mitch             hawthorne:p-jake             rules: Member below Leader
+    place-5b169226dffa4869   hawthorne:p-kemp              hawthorne:p-jordan           rules: Member below Leader
+    place-614cb3271fae2774   hawthorne:p-kyle              hawthorne:p-jake             rules: Second-in-command below Leader
+    place-664f8eab2a47cdb5   hawthorne:p-jordan            hawthorne:org-hawthorne      Membership (several parents)
+    place-75aa9f5c4c3d61ab   consortium:p-nino             consortium:p-elias           rules: Member below Leader
+    place-7688e39b8950ab38   hawthorne:p-wal               hawthorne:org-hawthorne      Membership (several parents)
+    place-ab2bdb1e5dd80682   sess-96cfcd44:p-glen          sess-96cfcd44:org-fairbank   Membership (several parents)
+    place-afb54845b2385cd6   hawthorne:p-leroy             hawthorne:p-jake             rules: Member below Leader
+    place-c23e68ca2a6df2ee   consortium:p-nodune           consortium:p-elias           rules: Member below Leader
+    place-c44be4e038731f34   hawthorne:p-hugh              hawthorne:p-jordan           rules: Member below Leader
+    place-ce34932344a9f6a0   sess-96cfcd44:p-fairbank      sess-96cfcd44:org-fairbank   Membership (several parents)
+    place-d19d8da95986f1fe   sess-96cfcd44:p-marty         sess-96cfcd44:co-loyal       Employment (several parents)
+    place-d3771981d44f8773   hawthorne:p-freddie           hawthorne:p-jake             rules: Member below Leader
+    place-f538bf87fe28dde5   sess-96cfcd44:p-chad-maddox   sess-96cfcd44:p-fairbank     rules: Member below Leader
+    place-f7ef5439ab4c1150   sess-96cfcd44:p-dexter        sess-96cfcd44:p-fairbank     rules: Member below Leader
 

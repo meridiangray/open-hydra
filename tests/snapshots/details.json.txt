@@ -5,36 +5,36 @@ exit 0
  "subject": null,
  "built": "2026-01-01T00:00:00+00:00",
  "collections": {
-  "cartel": {
-   "prefix": "cartel",
+  "consortium": {
+   "prefix": "consortium",
    "records": 38,
    "claims": 138,
    "in_others": 0,
    "citations": 6
   },
-  "dea": {
-   "prefix": "dea",
+  "dce": {
+   "prefix": "dce",
    "records": 32,
    "claims": 103,
    "in_others": 0,
    "citations": 2
   },
-  "fring-condensed": {
-   "prefix": "fring-condensed",
+  "fairbank-condensed": {
+   "prefix": "fairbank-condensed",
    "records": 34,
    "claims": 111,
    "in_others": 17,
    "citations": 3
   },
-  "fring": {
-   "prefix": "fring",
+  "fairbank": {
+   "prefix": "fairbank",
    "records": 42,
    "claims": 148,
    "in_others": 17,
    "citations": 3
   },
-  "heisenberg": {
-   "prefix": "heisenberg",
+  "hawthorne": {
+   "prefix": "hawthorne",
    "records": 56,
    "claims": 191,
    "in_others": 0,
@@ -309,11 +309,11 @@ exit 0
   ".hydra/schema/params/Vehicle.param.yaml",
   ".hydra/sources/entries/.gitkeep",
   "collections/.gitkeep",
-  "collections/cartel.json",
-  "collections/dea.json",
-  "collections/fring-condensed.json",
-  "collections/fring.json",
-  "collections/heisenberg.json",
+  "collections/consortium.json",
+  "collections/dce.json",
+  "collections/fairbank-condensed.json",
+  "collections/fairbank.json",
+  "collections/hawthorne.json",
   "collections/operations.json",
   "hydra.yaml"
  ]

@@ -2,55 +2,55 @@ exit 0
   only         links   drawn   no link
   membership      39      44        35
 
-Declan's organization (Organization)
-└── Declan (Person)   Membership   leader
+Desmond's organization (Organization)
+└── Desmond (Person)   Membership   leader
 
-Heisenberg Organization (Organization)
-├── Jesse Bruce Pinkman (Person)   Membership   cook
-│     also  Gustavo Fring Organization   Membership   cook
-│     also  Pinkman street crew          Membership   leader
-├── Walter Hartwell White (Person)   Membership   leader
-│     also  Gustavo Fring Organization   Membership   cook
-├── James Morgan McGill (Person)   Membership   counsel
-├── Lydia Rodarte-Quayle (Person)   Membership   distributor
-├── Pinkman street crew (Organization)   Membership
-│   ├── Brandon Mayhew (Person)   Membership   dealer
-│   ├── Christian Ortega (Person)   Membership   dealer
-│   └── Skinny Pete (Person)   Membership   dealer
-├── Huell Babineaux (Person)   Membership   member
-├── Patrick Kuby (Person)   Membership   member
-├── Skyler White (Person)   Membership   money laundering
-└── Todd Alquist (Person)   Membership   assistant cook
-      also  Jack Welker's gang   Membership   member
-Jack Welker's gang (Organization)
-├── Jack Welker (Person)   Membership   leader
-├── Frankie (Person)   Membership   member
-├── Kenny (Person)   Membership   second-in-command
-├── Lester (Person)   Membership   member
-└── Matt (Person)   Membership   member
-Juarez Cartel (Organization)
-├── Eladio Vuente (Person)   Membership   leader
-├── Gustavo Fring Organization (Organization)   Membership
-│   ├── Gustavo Fring (Person)   Membership   leader
-│   │     also  Juarez Cartel   Membership   distributor
-│   ├── Gale Boetticher (Person)   Membership   chemist
-│   ├── Tyrus Kitt (Person)   Membership   enforcer
-│   ├── Victor (Person)   Membership   enforcer
-│   ├── Chris Mara (Person)   Membership   member
-│   ├── Dennis Markowski (Person)   Membership   member
-│   └── Michael Ehrmantraut (Person)   Membership   head of security
-│         also  Heisenberg Organization   Membership   head of security
-├── Hector Salamanca (Person)   Membership   capo
-├── Juan Bolsa (Person)   Membership   underboss
-├── Lalo Salamanca (Person)   Membership   capo
-├── Leonel Salamanca (Person)   Membership   sicario
-├── Marco Salamanca (Person)   Membership   sicario
-└── Tuco Salamanca's Albuquerque crew (Organization)   Membership
-    ├── Domingo Gallardo Molina (Person)   Membership   distributor
-    ├── Tuco Salamanca (Person)   Membership   crew chief
-    ├── Gonzo (Person)   Membership   member
-    ├── Ignacio Varga (Person)   Membership   member
-    └── No-Doze (Person)   Membership   member
+Hawthorne Organization (Organization)
+├── Jordan Brooks Pelham (Person)   Membership   chef
+│     also  Gideon Fairbank Organization   Membership   chef
+│     also  Pelham street crew             Membership   leader
+├── Wallace Hollis Wright (Person)   Membership   leader
+│     also  Gideon Fairbank Organization   Membership   chef
+├── Jerome Mercer Mccoy (Person)   Membership   counsel
+├── Linda Rowan-Quill (Person)   Membership   distributor
+├── Pelham street crew (Organization)   Membership
+│   ├── Brendan Mayfield (Person)   Membership   dispatcher
+│   ├── Chadwick Ortiz (Person)   Membership   dispatcher
+│   └── Slim Phil (Person)   Membership   dispatcher
+├── Hugh Babcock (Person)   Membership   member
+├── Paul Kemp (Person)   Membership   member
+├── Sasha Wright (Person)   Membership   treasury
+└── Tyler Alford (Person)   Membership   assistant chef
+      also  Jake Weston's gang   Membership   member
+Jake Weston's gang (Organization)
+├── Jake Weston (Person)   Membership   leader
+├── Freddie (Person)   Membership   member
+├── Kyle (Person)   Membership   second-in-command
+├── Leroy (Person)   Membership   member
+└── Mitch (Person)   Membership   member
+Jericho Consortium (Organization)
+├── Elias Vaughn (Person)   Membership   leader
+├── Gideon Fairbank Organization (Organization)   Membership
+│   ├── Gideon Fairbank (Person)   Membership   leader
+│   │     also  Jericho Consortium   Membership   distributor
+│   ├── Glen Bowman (Person)   Membership   cataloguer
+│   ├── Tobias Kent (Person)   Membership   escort
+│   ├── Vernon (Person)   Membership   escort
+│   ├── Chad Maddox (Person)   Membership   member
+│   ├── Dexter Marsh (Person)   Membership   member
+│   └── Martin Eastwood (Person)   Membership   head of security
+│         also  Hawthorne Organization   Membership   head of security
+├── Hugo Sandoval (Person)   Membership   coordinator
+├── Jonas Boyd (Person)   Membership   undersecretary
+├── Leland Sandoval (Person)   Membership   sentinel
+├── Lenny Sandoval (Person)   Membership   coordinator
+├── Marcel Sandoval (Person)   Membership   sentinel
+└── Tomas Sandoval's Alderton crew (Organization)   Membership
+    ├── Damian Galway Morrow (Person)   Membership   distributor
+    ├── Tomas Sandoval (Person)   Membership   crew chief
+    ├── Gizmo (Person)   Membership   member
+    ├── Ivan Varley (Person)   Membership   member
+    └── No-Dune (Person)   Membership   member
 
-United States Drug Enforcement Administration (PublicBody)
-└── DEA Albuquerque Field Office (PublicBody)   Membership
+United States Department of Customs and Excise (PublicBody)
+└── DCE Alderton Field Office (PublicBody)   Membership

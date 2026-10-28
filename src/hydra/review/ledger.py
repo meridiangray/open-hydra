@@ -5,7 +5,7 @@ Everything here is derived from the merge/fold reports plus the verdicts
 sameAs is never undone by new data; `contradictions()` surfaces the case where
 other confirmed links merge a rejected pair anyway.
 
-An ambiguous reference (bare "Walter White" -> Walter / Walter Jr.) is never
+An ambiguous reference (bare "Wallace Wright" -> Wallace / Wallace Jr.) is never
 auto-resolved: it becomes a `references` row with ranked candidates. One with no
 candidate at all becomes a row with status `unresolved`. Rows are grouped by
 `schema.prop`, so a cluster of identical failures reads as one problem."""

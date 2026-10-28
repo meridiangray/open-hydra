@@ -1,16 +1,16 @@
 [
  {
-  "id": "doc-bb-casefile~p3",
+  "id": "doc-bq-casefile~p3",
   "schema": "Page",
   "properties": {
    "index": [
     "3"
    ],
    "document": [
-    "doc-bb-casefile"
+    "doc-bq-casefile"
    ],
    "notes": [
-    "CARTEL: Juarez cartel structure — Eladio, Bolsa, the Salamanca family, Albuquerque crews"
+    "Note on doc-bq-casefile~p3. Mentions CONSORTIUM, Jericho, Elias, Boyd, Sandoval, Alderton, Jericho Consortium."
    ]
   },
   "_meta": {
@@ -21,17 +21,17 @@
   }
  },
  {
-  "id": "doc-bb-casefile~p4",
+  "id": "doc-bq-casefile~p4",
   "schema": "Page",
   "properties": {
    "index": [
     "4"
    ],
    "document": [
-    "doc-bb-casefile"
+    "doc-bq-casefile"
    ],
    "notes": [
-    "HISTORY: 1989 hacienda execution of Maximino Arciniega; origin of Fring/Salamanca feud"
+    "Note on doc-bq-casefile~p4. Mentions Maximino Arden, Fairbank, Sandoval, Maximino Arden."
    ]
   },
   "_meta": {
@@ -42,24 +42,24 @@
   }
  },
  {
-  "id": "org-cartel",
+  "id": "org-consortium",
   "schema": "Organization",
   "properties": {
    "name": [
-    "Juarez Cartel"
+    "Jericho Consortium"
    ],
    "weakAlias": [
-    "The Cartel",
-    "Juarez Cartel"
+    "The Consortium",
+    "Jericho Consortium"
    ],
    "jurisdiction": [
     "mx"
    ],
    "sources": [
-    "doc-bb-casefile~p3"
+    "doc-bq-casefile~p3"
    ],
    "notes": [
-    "Mexican drug cartel headquartered in Ciudad Juarez; supplied and disciplined the Fring operation"
+    "Note on Jericho Consortium. Mentions Castle Jericho, Fairbank."
    ]
   },
   "_meta": {
@@ -70,17 +70,17 @@
   }
  },
  {
-  "id": "crew-tuco",
+  "id": "crew-tomas",
   "schema": "Organization",
   "properties": {
    "name": [
-    "Tuco Salamanca's Albuquerque crew"
+    "Tomas Sandoval's Alderton crew"
    ],
    "dissolutionDate": [
     "2008"
    ],
    "notes": [
-    "street-level distribution arm of the cartel in New Mexico"
+    "Note on Tomas Sandoval's Alderton crew. Mentions The Consortium, New Mexico."
    ]
   },
   "_meta": {
@@ -91,23 +91,23 @@
   }
  },
  {
-  "id": "p-eladio",
+  "id": "p-elias",
   "schema": "Person",
   "properties": {
    "name": [
-    "Eladio Vuente"
+    "Elias Vaughn"
    ],
    "weakAlias": [
-    "Don Eladio"
+    "Sir Elias"
    ],
    "deathDate": [
     "2010"
    ],
    "sources": [
-    "doc-bb-casefile~p3"
+    "doc-bq-casefile~p3"
    ],
    "notes": [
-    "head of the Juarez Cartel; poisoned by Gustavo Fring at his own hacienda"
+    "Note on Elias Vaughn. Mentions Jericho Consortium, Gideon Fairbank, Jericho Consortium, Gideon Fairbank."
    ]
   },
   "_meta": {
@@ -118,20 +118,20 @@
   }
  },
  {
-  "id": "p-bolsa",
+  "id": "p-boyd",
   "schema": "Person",
   "properties": {
    "name": [
-    "Juan Bolsa"
+    "Jonas Boyd"
    ],
    "deathDate": [
     "2010"
    ],
    "sources": [
-    "doc-bb-casefile~p3"
+    "doc-bq-casefile~p3"
    ],
    "notes": [
-    "cartel underboss; liaison to the Fring organization; killed in the hacienda massacre"
+    "Note on Jonas Boyd. Mentions Fairbank."
    ]
   },
   "_meta": {
@@ -142,24 +142,24 @@
   }
  },
  {
-  "id": "p-hector",
+  "id": "p-hugo",
   "schema": "Person",
   "properties": {
    "name": [
-    "Hector Salamanca"
+    "Hugo Sandoval"
    ],
    "weakAlias": [
-    "Tio",
-    "Don Hector"
+    "Tib",
+    "Sir Hugo"
    ],
    "deathDate": [
     "2010"
    ],
    "sources": [
-    "doc-bb-casefile~p4"
+    "doc-bq-casefile~p4"
    ],
    "notes": [
-    "cartel capo; executed Maximino Arciniega in 1989; died with Fring in the Casa Tranquila explosion"
+    "Note on Hugo Sandoval. Mentions Maximino Arden, Fairbank, Casa Tranquila exhibit, Maximino Arden."
    ]
   },
   "_meta": {
@@ -170,21 +170,21 @@
   }
  },
  {
-  "id": "p-lalo",
+  "id": "p-lenny",
   "schema": "Person",
   "properties": {
    "name": [
-    "Lalo Salamanca"
+    "Lenny Sandoval"
    ],
    "weakAlias": [
-    "Eduardo Salamanca",
-    "Jorge De Guzman"
+    "Edmund Sandoval",
+    "Jasper De Grant"
    ],
    "deathDate": [
     "2004"
    ],
    "notes": [
-    "Salamanca capo; investigated the Fring operation and the superlab; killed in it"
+    "Note on Lenny Sandoval. Mentions Sandoval, Fairbank, The Suite."
    ]
   },
   "_meta": {
@@ -195,20 +195,20 @@
   }
  },
  {
-  "id": "p-tuco",
+  "id": "p-tomas",
   "schema": "Person",
   "properties": {
    "name": [
-    "Tuco Salamanca"
+    "Tomas Sandoval"
    ],
    "deathDate": [
     "2008"
    ],
    "sources": [
-    "doc-bb-casefile~p3"
+    "doc-bq-casefile~p3"
    ],
    "notes": [
-    "ran the cartel's Albuquerque distribution; killed by Hank Schrader"
+    "Note on Tomas Sandoval. Mentions Alderton, Hal Sharpe, The Consortium, Hal Sharpe."
    ]
   },
   "_meta": {
@@ -219,17 +219,17 @@
   }
  },
  {
-  "id": "p-marco",
+  "id": "p-marcel",
   "schema": "Person",
   "properties": {
    "name": [
-    "Marco Salamanca"
+    "Marcel Sandoval"
    ],
    "deathDate": [
     "2009"
    ],
    "notes": [
-    "one of 'the Cousins' — cartel hitmen; killed by Hank Schrader in the parking-lot ambush"
+    "Note on Marcel Sandoval. Mentions Hal Sharpe, Hal Sharpe."
    ]
   },
   "_meta": {
@@ -240,17 +240,17 @@
   }
  },
  {
-  "id": "p-leonel",
+  "id": "p-leland",
   "schema": "Person",
   "properties": {
    "name": [
-    "Leonel Salamanca"
+    "Leland Sandoval"
    ],
    "deathDate": [
     "2009"
    ],
    "notes": [
-    "one of 'the Cousins' — cartel hitmen; survived the ambush, finished by Ehrmantraut in hospital"
+    "Note on Leland Sandoval. Mentions Eastwood."
    ]
   },
   "_meta": {
@@ -261,20 +261,20 @@
   }
  },
  {
-  "id": "p-nacho",
+  "id": "p-nino",
   "schema": "Person",
   "properties": {
    "name": [
-    "Ignacio Varga"
+    "Ivan Varley"
    ],
    "weakAlias": [
-    "Nacho"
+    "Nino"
    ],
    "deathDate": [
     "2004"
    ],
    "notes": [
-    "Salamanca lieutenant; coerced into working for Fring against Lalo"
+    "Note on Ivan Varley. Mentions Sandoval, Fairbank, Lenny."
    ]
   },
   "_meta": {
@@ -285,17 +285,17 @@
   }
  },
  {
-  "id": "p-nodoze",
+  "id": "p-nodune",
   "schema": "Person",
   "properties": {
    "name": [
-    "No-Doze"
+    "No-Dune"
    ],
    "deathDate": [
     "2008"
    ],
    "notes": [
-    "Tuco's man; beaten to death by Tuco in the junkyard"
+    "Note on No-Dune. Mentions Tomas."
    ]
   },
   "_meta": {
@@ -306,17 +306,17 @@
   }
  },
  {
-  "id": "p-gonzo",
+  "id": "p-gizmo",
   "schema": "Person",
   "properties": {
    "name": [
-    "Gonzo"
+    "Gizmo"
    ],
    "deathDate": [
     "2008"
    ],
    "notes": [
-    "Tuco's man; died moving No-Doze's body"
+    "Note on Gizmo. Mentions Tomas, No-Dune."
    ]
   },
   "_meta": {
@@ -331,17 +331,17 @@
   "schema": "Person",
   "properties": {
    "name": [
-    "Domingo Gallardo Molina"
+    "Damian Galway Morrow"
    ],
    "weakAlias": [
-    "Krazy-8",
-    "Krazy 8"
+    "Keen-8",
+    "Keen 8"
    ],
    "deathDate": [
     "2008"
    ],
    "notes": [
-    "Tuco's distributor and DEA confidential informant; strangled by Walter White"
+    "Note on Damian Galway Morrow. Mentions Tomas, DCE, Wallace Wright."
    ]
   },
   "_meta": {
@@ -356,7 +356,7 @@
   "schema": "Person",
   "properties": {
    "name": [
-    "Maximino Arciniega"
+    "Maximino Arden"
    ],
    "weakAlias": [
     "Max"
@@ -365,10 +365,10 @@
     "1989"
    ],
    "sources": [
-    "doc-bb-casefile~p4"
+    "doc-bq-casefile~p4"
    ],
    "notes": [
-    "Fring's partner and co-founder of Los Pollos Hermanos; executed by Hector on Eladio's orders"
+    "Note on Maximino Arden. Mentions Fairbank, Loyal Provisions, Hugo, Elias, Loyal Provisions."
    ]
   },
   "_meta": {
@@ -383,10 +383,10 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Eladio Vuente"
+    "Elias Vaughn"
    ],
    "organization": [
-    "Juarez Cartel"
+    "Jericho Consortium"
    ],
    "role": [
     "leader"
@@ -407,13 +407,13 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Juan Bolsa"
+    "Jonas Boyd"
    ],
    "organization": [
-    "Juarez Cartel"
+    "Jericho Consortium"
    ],
    "role": [
-    "underboss"
+    "undersecretary"
    ],
    "endDate": [
     "2010"
@@ -431,13 +431,13 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Hector Salamanca"
+    "Hugo Sandoval"
    ],
    "organization": [
-    "Juarez Cartel"
+    "Jericho Consortium"
    ],
    "role": [
-    "capo"
+    "coordinator"
    ],
    "endDate": [
     "2010"
@@ -455,13 +455,13 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Lalo Salamanca"
+    "Lenny Sandoval"
    ],
    "organization": [
-    "Juarez Cartel"
+    "Jericho Consortium"
    ],
    "role": [
-    "capo"
+    "coordinator"
    ],
    "endDate": [
     "2004"
@@ -479,14 +479,14 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Marco Salamanca",
-    "Leonel Salamanca"
+    "Marcel Sandoval",
+    "Leland Sandoval"
    ],
    "organization": [
-    "Juarez Cartel"
+    "Jericho Consortium"
    ],
    "role": [
-    "sicario"
+    "sentinel"
    ],
    "endDate": [
     "2009"
@@ -504,10 +504,10 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Tuco Salamanca's Albuquerque crew"
+    "Tomas Sandoval's Alderton crew"
    ],
    "organization": [
-    "Juarez Cartel"
+    "Jericho Consortium"
    ]
   },
   "_meta": {
@@ -522,10 +522,10 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Tuco Salamanca"
+    "Tomas Sandoval"
    ],
    "organization": [
-    "Tuco Salamanca's Albuquerque crew"
+    "Tomas Sandoval's Alderton crew"
    ],
    "role": [
     "crew chief"
@@ -546,10 +546,10 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Domingo Gallardo Molina"
+    "Damian Galway Morrow"
    ],
    "organization": [
-    "Tuco Salamanca's Albuquerque crew"
+    "Tomas Sandoval's Alderton crew"
    ],
    "role": [
     "distributor"
@@ -570,11 +570,11 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "No-Doze",
-    "Gonzo"
+    "No-Dune",
+    "Gizmo"
    ],
    "organization": [
-    "Tuco Salamanca's Albuquerque crew"
+    "Tomas Sandoval's Alderton crew"
    ],
    "role": [
     "member"
@@ -595,10 +595,10 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Ignacio Varga"
+    "Ivan Varley"
    ],
    "organization": [
-    "Tuco Salamanca's Albuquerque crew"
+    "Tomas Sandoval's Alderton crew"
    ],
    "role": [
     "member"
@@ -619,13 +619,13 @@
   "schema": "Associate",
   "properties": {
    "person": [
-    "Maximino Arciniega"
+    "Maximino Arden"
    ],
    "associate": [
-    "Gustavo Fring"
+    "Gideon Fairbank"
    ],
    "relationship": [
-    "business partner; co-founded Los Pollos Hermanos"
+    "business partner; co-founded Loyal Provisions"
    ]
   },
   "_meta": {
@@ -640,10 +640,10 @@
   "schema": "Family",
   "properties": {
    "person": [
-    "Tuco Salamanca"
+    "Tomas Sandoval"
    ],
    "relative": [
-    "Hector Salamanca"
+    "Hugo Sandoval"
    ],
    "relationship": [
     "uncle"
@@ -661,10 +661,10 @@
   "schema": "Family",
   "properties": {
    "person": [
-    "Marco Salamanca"
+    "Marcel Sandoval"
    ],
    "relative": [
-    "Hector Salamanca"
+    "Hugo Sandoval"
    ],
    "relationship": [
     "uncle"
@@ -682,10 +682,10 @@
   "schema": "Family",
   "properties": {
    "person": [
-    "Leonel Salamanca"
+    "Leland Sandoval"
    ],
    "relative": [
-    "Hector Salamanca"
+    "Hugo Sandoval"
    ],
    "relationship": [
     "uncle"
@@ -703,10 +703,10 @@
   "schema": "Family",
   "properties": {
    "person": [
-    "Lalo Salamanca"
+    "Lenny Sandoval"
    ],
    "relative": [
-    "Hector Salamanca"
+    "Hugo Sandoval"
    ],
    "relationship": [
     "uncle"
@@ -724,10 +724,10 @@
   "schema": "Family",
   "properties": {
    "person": [
-    "Marco Salamanca"
+    "Marcel Sandoval"
    ],
    "relative": [
-    "Leonel Salamanca"
+    "Leland Sandoval"
    ],
    "relationship": [
     "twin brother"
@@ -745,10 +745,10 @@
   "schema": "Family",
   "properties": {
    "person": [
-    "Tuco Salamanca"
+    "Tomas Sandoval"
    ],
    "relative": [
-    "Marco Salamanca"
+    "Marcel Sandoval"
    ],
    "relationship": [
     "cousin"
@@ -766,10 +766,10 @@
   "schema": "Family",
   "properties": {
    "person": [
-    "Tuco Salamanca"
+    "Tomas Sandoval"
    ],
    "relative": [
-    "Leonel Salamanca"
+    "Leland Sandoval"
    ],
    "relationship": [
     "cousin"
@@ -787,10 +787,10 @@
   "schema": "Family",
   "properties": {
    "person": [
-    "Lalo Salamanca"
+    "Lenny Sandoval"
    ],
    "relative": [
-    "Tuco Salamanca"
+    "Tomas Sandoval"
    ],
    "relationship": [
     "cousin"
@@ -808,10 +808,10 @@
   "schema": "Documentation",
   "properties": {
    "document": [
-    "doc-bb-casefile~p3"
+    "doc-bq-casefile~p3"
    ],
    "entity": [
-    "Juarez Cartel"
+    "Jericho Consortium"
    ]
   },
   "_meta": {
@@ -826,10 +826,10 @@
   "schema": "Documentation",
   "properties": {
    "document": [
-    "doc-bb-casefile~p3"
+    "doc-bq-casefile~p3"
    ],
    "entity": [
-    "Tuco Salamanca"
+    "Tomas Sandoval"
    ]
   },
   "_meta": {
@@ -844,10 +844,10 @@
   "schema": "Documentation",
   "properties": {
    "document": [
-    "doc-bb-casefile~p4"
+    "doc-bq-casefile~p4"
    ],
    "entity": [
-    "Maximino Arciniega"
+    "Maximino Arden"
    ]
   },
   "_meta": {

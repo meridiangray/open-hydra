@@ -1,0 +1,165 @@
+exit 0
+[
+ {
+  "id": "hawthorne:p-wal",
+  "caption": "Wallace Hollis Wright",
+  "schema": "Person",
+  "referents": [
+   "hawthorne:p-wal"
+  ],
+  "props": {
+   "birthDate": [
+    {
+     "value": "1958-09-07",
+     "also": [],
+     "collections": [
+      "hawthorne"
+     ],
+     "sources": [
+      {
+       "collection": "hawthorne",
+       "record": "hawthorne:p-wal",
+       "evidence": [
+        "HAWTHORNE INVESTIGATION — DCE/ALD CASE FILE (2008-2010) p.1"
+       ]
+      }
+     ],
+     "review": []
+    }
+   ],
+   "deathDate": [
+    {
+     "value": "2010-09-07",
+     "also": [],
+     "collections": [
+      "hawthorne"
+     ],
+     "sources": [
+      {
+       "collection": "hawthorne",
+       "record": "hawthorne:p-wal",
+       "evidence": [
+        "HAWTHORNE INVESTIGATION — DCE/ALD CASE FILE (2008-2010) p.1"
+       ]
+      }
+     ],
+     "review": []
+    }
+   ],
+   "name": [
+    {
+     "value": "Wallace Hollis Wright",
+     "also": [],
+     "collections": [
+      "hawthorne"
+     ],
+     "sources": [
+      {
+       "collection": "hawthorne",
+       "record": "hawthorne:p-wal",
+       "evidence": [
+        "HAWTHORNE INVESTIGATION — DCE/ALD CASE FILE (2008-2010) p.1"
+       ]
+      }
+     ],
+     "review": []
+    }
+   ],
+   "notes": [
+    {
+     "value": "Note on Wallace Hollis Wright. Mentions Hawthorne.",
+     "also": [],
+     "collections": [
+      "hawthorne"
+     ],
+     "sources": [
+      {
+       "collection": "hawthorne",
+       "record": "hawthorne:p-wal",
+       "evidence": [
+        "HAWTHORNE INVESTIGATION — DCE/ALD CASE FILE (2008-2010) p.1"
+       ]
+      }
+     ],
+     "review": []
+    }
+   ],
+   "sources": [
+    {
+     "value": "hawthorne:doc-bq-casefile~p1",
+     "also": [],
+     "collections": [
+      "hawthorne"
+     ],
+     "sources": [
+      {
+       "collection": "hawthorne",
+       "record": "hawthorne:p-wal",
+       "evidence": [
+        "HAWTHORNE INVESTIGATION — DCE/ALD CASE FILE (2008-2010) p.1"
+       ]
+      }
+     ],
+     "review": []
+    }
+   ],
+   "weakAlias": [
+    {
+     "value": "Wal",
+     "also": [],
+     "collections": [
+      "hawthorne"
+     ],
+     "sources": [
+      {
+       "collection": "hawthorne",
+       "record": "hawthorne:p-wal",
+       "evidence": [
+        "HAWTHORNE INVESTIGATION — DCE/ALD CASE FILE (2008-2010) p.1"
+       ]
+      }
+     ],
+     "review": []
+    },
+    {
+     "value": "Hawthorne",
+     "also": [],
+     "collections": [
+      "hawthorne"
+     ],
+     "sources": [
+      {
+       "collection": "hawthorne",
+       "record": "hawthorne:p-wal",
+       "evidence": [
+        "HAWTHORNE INVESTIGATION — DCE/ALD CASE FILE (2008-2010) p.1"
+       ]
+      }
+     ],
+     "review": []
+    },
+    {
+     "value": "Mr. Lowell",
+     "also": [],
+     "collections": [
+      "hawthorne"
+     ],
+     "sources": [
+      {
+       "collection": "hawthorne",
+       "record": "hawthorne:p-wal",
+       "evidence": [
+        "HAWTHORNE INVESTIGATION — DCE/ALD CASE FILE (2008-2010) p.1"
+       ]
+      }
+     ],
+     "review": []
+    }
+   ]
+  },
+  "disputed": [],
+  "documented_in": [
+   "HAWTHORNE INVESTIGATION — DCE/ALD CASE FILE (2008-2010) p.1"
+  ]
+ }
+]

@@ -100,7 +100,7 @@ _SLUG = re.compile(r"[^a-z0-9._-]+")
 
 
 def default_prefix(collection: str) -> str:
-    """A prefix made from the collection name: `Fring Condensed` -> `fring-condensed`."""
+    """A prefix made from the collection name: `Fairbank Condensed` -> `fairbank-condensed`."""
     slug = _SLUG.sub("-", str(collection or "").lower()).strip("-._") or "collection"
     slug = slug[:64]
     return slug + "-c" if slug in RESERVED_SOURCES else slug

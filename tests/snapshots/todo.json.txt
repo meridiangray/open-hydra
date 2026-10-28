@@ -4,13 +4,13 @@ exit 0
   {
    "id": "merge-00783b8a5bab5fa8",
    "status": "proposed",
-   "what": "Cousins' assassination attempt on Hank Schrader ~ Wayfarer 515 mid-air collision — address match only, names differ",
+   "what": "Cousins' appeal on Hal Sharpe ~ Wayfarer 515 meeting schedule — address match only, names differ",
    "row": {
     "a": "operations:ev-cousins",
-    "acap": "Cousins' assassination attempt on Hank Schrader",
+    "acap": "Cousins' appeal on Hal Sharpe",
     "b": "operations:ev-wayfarer",
-    "basis": "548f4d78fc5654ba",
-    "bcap": "Wayfarer 515 mid-air collision",
+    "basis": "83179e12791757b0",
+    "bcap": "Wayfarer 515 meeting schedule",
     "criteria": "address match only, names differ",
     "group": null,
     "id": "merge-00783b8a5bab5fa8",
@@ -22,29 +22,18 @@ exit 0
    }
   },
   {
-   "id": "merge-049613bec1847886",
+   "id": "merge-066d9939fe71d116",
    "status": "proposed",
-   "what": "To'hajiilee shootout ~ Junkyard shootout — Tuco Salamanca killed — distinct field conflict",
+   "what": "Lantern Bright ~ Casa Tranquila nursing home — address match only, names differ  [group grp-f02b35b32e4f]",
    "row": {
-    "a": "operations:ev-tohajiilee",
-    "acap": "To'hajiilee shootout",
-    "b": "operations:ev-tuco",
-    "basis": "104cc118df53cd81",
-    "bcap": "Junkyard shootout — Tuco Salamanca killed",
-    "conflicts": [
-     {
-      "a": [
-       "2010"
-      ],
-      "b": [
-       "2008"
-      ],
-      "prop": "date"
-     }
-    ],
-    "criteria": "distinct field conflict",
-    "group": null,
-    "id": "merge-049613bec1847886",
+    "a": "fairbank-condensed:re-lantern",
+    "acap": "Lantern Bright",
+    "b": "operations:re-casa-tranquila",
+    "basis": "7c57f7779cf4c752",
+    "bcap": "Casa Tranquila nursing home",
+    "criteria": "address match only, names differ",
+    "group": "grp-f02b35b32e4f",
+    "id": "merge-066d9939fe71d116",
     "matcher": "hydra/merge",
     "reads": [],
     "rel": "sameAs",
@@ -53,35 +42,15 @@ exit 0
    }
   },
   {
-   "id": "merge-25859111f32a53ef",
-   "status": "proposed",
-   "what": "Heisenberg Organization ~ Walter Hartwell White — Similar record  [group grp-320ae7194e7a]",
-   "row": {
-    "a": "heisenberg:org-heisenberg",
-    "acap": "Heisenberg Organization",
-    "b": "heisenberg:p-walt",
-    "basis": "d814c87aeb7a055e",
-    "bcap": "Walter Hartwell White",
-    "criteria": "Similar record",
-    "group": "grp-320ae7194e7a",
-    "id": "merge-25859111f32a53ef",
-    "matcher": "hydra/merge",
-    "reads": [],
-    "rel": "sameAs",
-    "similar": true,
-    "status": "proposed"
-   }
-  },
-  {
    "id": "merge-2e8c9a6a7e563ef2",
    "status": "proposed",
-   "what": "Gale Boetticher murdered; Victor killed ~ Casa Tranquila explosion — date match only, names differ  [group grp-c4a89b43db05]",
+   "what": "Glen Bowman moved; Vernon kept ~ Casa Tranquila exhibit — date match only, names differ  [group grp-c4a89b43db05]",
    "row": {
     "a": "operations:ev-boxcutter",
-    "acap": "Gale Boetticher murdered; Victor killed",
+    "acap": "Glen Bowman moved; Vernon kept",
     "b": "operations:ev-casa-tranquila",
-    "basis": "339a3afedabe7437",
-    "bcap": "Casa Tranquila explosion",
+    "basis": "4f690c57c66a1872",
+    "bcap": "Casa Tranquila exhibit",
     "criteria": "date match only, names differ",
     "group": "grp-c4a89b43db05",
     "id": "merge-2e8c9a6a7e563ef2",
@@ -93,18 +62,18 @@ exit 0
    }
   },
   {
-   "id": "merge-3296ae23a9395f1b",
+   "id": "merge-3598fff283eb78c8",
    "status": "proposed",
-   "what": "Heisenberg ~ Walter Hartwell White — weak-exact match, no conflict (asserted by a Similar record)  [group grp-320ae7194e7a]",
+   "what": "Hawthorne ~ Wallace Hollis Wright — weak-exact match, no conflict (asserted by a Similar record)  [group grp-61d982602391]",
    "row": {
-    "a": "dea:p-heisenberg-dea",
-    "acap": "Heisenberg",
-    "b": "heisenberg:p-walt",
-    "basis": "0defbd3cb485597b",
-    "bcap": "Walter Hartwell White",
+    "a": "dce:p-hawthorne-dce",
+    "acap": "Hawthorne",
+    "b": "hawthorne:p-wal",
+    "basis": "9b2e798c082c3239",
+    "bcap": "Wallace Hollis Wright",
     "criteria": "weak-exact match, no conflict (asserted by a Similar record)",
-    "group": "grp-320ae7194e7a",
-    "id": "merge-3296ae23a9395f1b",
+    "group": "grp-61d982602391",
+    "id": "merge-3598fff283eb78c8",
     "matcher": "hydra/merge",
     "reads": [],
     "rel": "sameAs",
@@ -114,18 +83,18 @@ exit 0
    }
   },
   {
-   "id": "merge-346800259d4f3845",
+   "id": "merge-3748255fe8342c41",
    "status": "proposed",
-   "what": "White residence — 308 Negra Arroyo Lane ~ Casa Tranquila nursing home — soft-subset:address match, no conflict  [group grp-3d0328c87b2e]",
+   "what": "Casa Tranquila nursing home ~ Lantern Bright — address match only, names differ  [group grp-f02b35b32e4f]",
    "row": {
-    "a": "heisenberg:re-white",
-    "acap": "White residence — 308 Negra Arroyo Lane",
-    "b": "operations:re-casa-tranquila",
-    "basis": "6d76ddde3bb2bcbd",
-    "bcap": "Casa Tranquila nursing home",
-    "criteria": "soft-subset:address match, no conflict",
-    "group": "grp-3d0328c87b2e",
-    "id": "merge-346800259d4f3845",
+    "a": "operations:re-casa-tranquila",
+    "acap": "Casa Tranquila nursing home",
+    "b": "sess-96cfcd44:re-lantern",
+    "basis": "bb9d817d4d873cf7",
+    "bcap": "Lantern Bright",
+    "criteria": "address match only, names differ",
+    "group": "grp-f02b35b32e4f",
+    "id": "merge-3748255fe8342c41",
     "matcher": "hydra/merge",
     "reads": [],
     "rel": "sameAs",
@@ -136,13 +105,13 @@ exit 0
   {
    "id": "merge-57584e86d07f1bb0",
    "status": "proposed",
-   "what": "Gale Boetticher murdered; Victor killed ~ Wayfarer 515 mid-air collision — distinct field conflict  [group grp-c4a89b43db05]",
+   "what": "Glen Bowman moved; Vernon kept ~ Wayfarer 515 meeting schedule — distinct field conflict  [group grp-c4a89b43db05]",
    "row": {
     "a": "operations:ev-boxcutter",
-    "acap": "Gale Boetticher murdered; Victor killed",
+    "acap": "Glen Bowman moved; Vernon kept",
     "b": "operations:ev-wayfarer",
-    "basis": "3dcbcd2391512cbd",
-    "bcap": "Wayfarer 515 mid-air collision",
+    "basis": "8aeb51424759dab2",
+    "bcap": "Wayfarer 515 meeting schedule",
     "conflicts": [
      {
       "a": [
@@ -167,13 +136,13 @@ exit 0
   {
    "id": "merge-5bc6a18cdabb97c9",
    "status": "proposed",
-   "what": "Gale Boetticher murdered; Victor killed ~ Cousins' assassination attempt on Hank Schrader — distinct field conflict  [group grp-c4a89b43db05]",
+   "what": "Glen Bowman moved; Vernon kept ~ Cousins' appeal on Hal Sharpe — distinct field conflict  [group grp-c4a89b43db05]",
    "row": {
     "a": "operations:ev-boxcutter",
-    "acap": "Gale Boetticher murdered; Victor killed",
+    "acap": "Glen Bowman moved; Vernon kept",
     "b": "operations:ev-cousins",
-    "basis": "37fd3c125bd23c3b",
-    "bcap": "Cousins' assassination attempt on Hank Schrader",
+    "basis": "ade66304db1d83d3",
+    "bcap": "Cousins' appeal on Hal Sharpe",
     "conflicts": [
      {
       "a": [
@@ -196,18 +165,58 @@ exit 0
    }
   },
   {
-   "id": "merge-976285752386a83c",
+   "id": "merge-5da8c9fc07d8e6d9",
    "status": "proposed",
-   "what": "Lavanderia Brillante ~ Casa Tranquila nursing home — address match only, names differ  [group grp-f02b35b32e4f]",
+   "what": "Wright residence — 308 North Arbor Lane ~ Lantern Bright — soft-subset:address match, no conflict  [group grp-e204750ecfd1]",
    "row": {
-    "a": "fring-condensed:re-lavanderia",
-    "acap": "Lavanderia Brillante",
+    "a": "hawthorne:re-wright",
+    "acap": "Wright residence — 308 North Arbor Lane",
+    "b": "sess-96cfcd44:re-lantern",
+    "basis": "7926158207dcebed",
+    "bcap": "Lantern Bright",
+    "criteria": "soft-subset:address match, no conflict",
+    "group": "grp-e204750ecfd1",
+    "id": "merge-5da8c9fc07d8e6d9",
+    "matcher": "hydra/merge",
+    "reads": [],
+    "rel": "sameAs",
+    "scope_pending": false,
+    "status": "proposed"
+   }
+  },
+  {
+   "id": "merge-769e331edc25fd7b",
+   "status": "proposed",
+   "what": "Lantern Bright ~ Wright residence — 308 North Arbor Lane — soft-subset:address match, no conflict  [group grp-e204750ecfd1]",
+   "row": {
+    "a": "fairbank-condensed:re-lantern",
+    "acap": "Lantern Bright",
+    "b": "hawthorne:re-wright",
+    "basis": "9548d7f895ae40a9",
+    "bcap": "Wright residence — 308 North Arbor Lane",
+    "criteria": "soft-subset:address match, no conflict",
+    "group": "grp-e204750ecfd1",
+    "id": "merge-769e331edc25fd7b",
+    "matcher": "hydra/merge",
+    "reads": [],
+    "rel": "sameAs",
+    "scope_pending": false,
+    "status": "proposed"
+   }
+  },
+  {
+   "id": "merge-94f635c0a0c838c2",
+   "status": "proposed",
+   "what": "Wright residence — 308 North Arbor Lane ~ Casa Tranquila nursing home — soft-subset:address match, no conflict  [group grp-e204750ecfd1]",
+   "row": {
+    "a": "hawthorne:re-wright",
+    "acap": "Wright residence — 308 North Arbor Lane",
     "b": "operations:re-casa-tranquila",
-    "basis": "ab07950c87acd102",
+    "basis": "0b23ab1d1ae4db87",
     "bcap": "Casa Tranquila nursing home",
-    "criteria": "address match only, names differ",
-    "group": "grp-f02b35b32e4f",
-    "id": "merge-976285752386a83c",
+    "criteria": "soft-subset:address match, no conflict",
+    "group": "grp-e204750ecfd1",
+    "id": "merge-94f635c0a0c838c2",
     "matcher": "hydra/merge",
     "reads": [],
     "rel": "sameAs",
@@ -218,13 +227,13 @@ exit 0
   {
    "id": "merge-9a6ff3acbbfa175a",
    "status": "proposed",
-   "what": "Maximino Arciniega executed at the hacienda ~ Cartel leadership massacred at the hacienda — distinct field conflict  [group grp-bd35718f67c3]",
+   "what": "Maximino Arden excused at the homestead ~ Consortium leadership merged at the homestead — distinct field conflict  [group grp-bd35718f67c3]",
    "row": {
     "a": "operations:ev-max",
-    "acap": "Maximino Arciniega executed at the hacienda",
+    "acap": "Maximino Arden excused at the homestead",
     "b": "operations:ev-pool",
-    "basis": "0f57569f67c34d29",
-    "bcap": "Cartel leadership massacred at the hacienda",
+    "basis": "cf24c7066afcb7cb",
+    "bcap": "Consortium leadership merged at the homestead",
     "conflicts": [
      {
       "a": [
@@ -249,13 +258,13 @@ exit 0
   {
    "id": "merge-a43c30854f076b22",
    "status": "proposed",
-   "what": "Welker compound massacre — Walter White's last act ~ Cartel leadership massacred at the hacienda — distinct field conflict  [group grp-bd35718f67c3]",
+   "what": "Weston compound merger — Wallace Wright's last act ~ Consortium leadership merged at the homestead — distinct field conflict  [group grp-bd35718f67c3]",
    "row": {
     "a": "operations:ev-felina",
-    "acap": "Welker compound massacre — Walter White's last act",
+    "acap": "Weston compound merger — Wallace Wright's last act",
     "b": "operations:ev-pool",
-    "basis": "c9ecaebef573b91a",
-    "bcap": "Cartel leadership massacred at the hacienda",
+    "basis": "3692c26b0a6132e2",
+    "bcap": "Consortium leadership merged at the homestead",
     "conflicts": [
      {
       "a": [
@@ -278,18 +287,29 @@ exit 0
    }
   },
   {
-   "id": "merge-aabdb6238cdaf4e2",
+   "id": "merge-e5b2cfffd3322250",
    "status": "proposed",
-   "what": "White residence — 308 Negra Arroyo Lane ~ Lavanderia Brillante — soft-subset:address match, no conflict  [group grp-3d0328c87b2e]",
+   "what": "To'hajiilee session ~ Junkyard session — Tomas Sandoval kept — distinct field conflict",
    "row": {
-    "a": "heisenberg:re-white",
-    "acap": "White residence — 308 Negra Arroyo Lane",
-    "b": "sess-96cfcd44:re-lavanderia",
-    "basis": "b1831ba74d0d9916",
-    "bcap": "Lavanderia Brillante",
-    "criteria": "soft-subset:address match, no conflict",
-    "group": "grp-3d0328c87b2e",
-    "id": "merge-aabdb6238cdaf4e2",
+    "a": "operations:ev-tohajiilee",
+    "acap": "To'hajiilee session",
+    "b": "operations:ev-tomas",
+    "basis": "8c70b9912112c5b6",
+    "bcap": "Junkyard session — Tomas Sandoval kept",
+    "conflicts": [
+     {
+      "a": [
+       "2010"
+      ],
+      "b": [
+       "2008"
+      ],
+      "prop": "date"
+     }
+    ],
+    "criteria": "distinct field conflict",
+    "group": null,
+    "id": "merge-e5b2cfffd3322250",
     "matcher": "hydra/merge",
     "reads": [],
     "rel": "sameAs",
@@ -298,76 +318,56 @@ exit 0
    }
   },
   {
-   "id": "merge-b696ef171dede45d",
+   "id": "merge-edfc1285293ae43d",
    "status": "proposed",
-   "what": "Casa Tranquila nursing home ~ Lavanderia Brillante — address match only, names differ  [group grp-f02b35b32e4f]",
+   "what": "Hawthorne Organization ~ Wallace Hollis Wright — Similar record  [group grp-61d982602391]",
    "row": {
-    "a": "operations:re-casa-tranquila",
-    "acap": "Casa Tranquila nursing home",
-    "b": "sess-96cfcd44:re-lavanderia",
-    "basis": "56668e5c7836f76e",
-    "bcap": "Lavanderia Brillante",
-    "criteria": "address match only, names differ",
-    "group": "grp-f02b35b32e4f",
-    "id": "merge-b696ef171dede45d",
+    "a": "hawthorne:org-hawthorne",
+    "acap": "Hawthorne Organization",
+    "b": "hawthorne:p-wal",
+    "basis": "2f2832870186e2fa",
+    "bcap": "Wallace Hollis Wright",
+    "criteria": "Similar record",
+    "group": "grp-61d982602391",
+    "id": "merge-edfc1285293ae43d",
     "matcher": "hydra/merge",
     "reads": [],
     "rel": "sameAs",
-    "scope_pending": false,
-    "status": "proposed"
-   }
-  },
-  {
-   "id": "merge-d91ee9e8d271b80c",
-   "status": "proposed",
-   "what": "Lavanderia Brillante ~ White residence — 308 Negra Arroyo Lane — soft-subset:address match, no conflict  [group grp-3d0328c87b2e]",
-   "row": {
-    "a": "fring-condensed:re-lavanderia",
-    "acap": "Lavanderia Brillante",
-    "b": "heisenberg:re-white",
-    "basis": "85e4d93514d46e4a",
-    "bcap": "White residence — 308 Negra Arroyo Lane",
-    "criteria": "soft-subset:address match, no conflict",
-    "group": "grp-3d0328c87b2e",
-    "id": "merge-d91ee9e8d271b80c",
-    "matcher": "hydra/merge",
-    "reads": [],
-    "rel": "sameAs",
-    "scope_pending": false,
+    "similar": true,
     "status": "proposed"
    }
   }
  ],
  "references": [
   {
-   "id": "ref-afcb9619d7e1fa48",
+   "id": "ref-25baae2d0cc64263",
    "status": "proposed",
-   "what": "Documentation.entity \"Heisenberg\" — proposed, 3 candidates",
+   "what": "Documentation.entity \"Hawthorne\" — proposed, 3 candidates",
    "row": {
     "candidates": [
      {
       "candidate_tokens": 1,
-      "caption": "Heisenberg",
+      "caption": "Hawthorne",
       "how": "name-exact",
-      "id": "dea:p-heisenberg-dea",
+      "id": "dce:p-hawthorne-dce",
       "query_tokens": 1,
       "schema": "Person",
       "shared_tokens": 1
      },
      {
       "candidate_tokens": 1,
-      "caption": "Walter Hartwell White",
+      "caption": "Wallace Hollis Wright",
       "how": "name-exact",
-      "id": "heisenberg:p-walt",
+      "id": "hawthorne:p-wal",
       "query_tokens": 1,
       "schema": "Person",
       "shared_tokens": 1
      },
      {
       "candidate_tokens": 2,
-      "caption": "Heisenberg Organization",
+      "caption": "Hawthorne Organization",
       "how": "name-subset",
-      "id": "heisenberg:org-heisenberg",
+      "id": "hawthorne:org-hawthorne",
       "query_tokens": 1,
       "schema": "Organization",
       "shared_tokens": 1
@@ -375,47 +375,47 @@ exit 0
     ],
     "choice": null,
     "group": "Documentation.entity",
-    "id": "ref-afcb9619d7e1fa48",
+    "id": "ref-25baae2d0cc64263",
     "matcher": "hydra/references",
     "prop": "entity",
     "range": "Thing",
     "reads": [],
-    "record": "dea:prv-dea1",
+    "record": "dce:prv-dea1",
     "rel": "references",
     "schema": "Documentation",
     "status": "proposed",
-    "value": "Heisenberg"
+    "value": "Hawthorne"
    }
   },
   {
-   "id": "ref-c34c2c3a7c4506d8",
+   "id": "ref-3a5323adc67ab09c",
    "status": "proposed",
-   "what": "Membership.member \"Walter White\" — proposed, 3 candidates",
+   "what": "Membership.member \"Wallace Wright\" — proposed, 3 candidates",
    "row": {
     "candidates": [
      {
       "candidate_tokens": 3,
-      "caption": "Walter White Jr.",
+      "caption": "Wallace Wright Jr.",
       "how": "name-subset",
-      "id": "dea:p-waltjr",
+      "id": "dce:p-waljr",
       "query_tokens": 2,
       "schema": "Person",
       "shared_tokens": 2
      },
      {
       "candidate_tokens": 3,
-      "caption": "Walter Hartwell White",
+      "caption": "Wallace Hollis Wright",
       "how": "name-subset",
-      "id": "heisenberg:p-walt",
+      "id": "hawthorne:p-wal",
       "query_tokens": 2,
       "schema": "Person",
       "shared_tokens": 2
      },
      {
       "candidate_tokens": 4,
-      "caption": "Heisenberg Organization",
+      "caption": "Hawthorne Organization",
       "how": "name-subset",
-      "id": "heisenberg:org-heisenberg",
+      "id": "hawthorne:org-hawthorne",
       "query_tokens": 2,
       "schema": "Organization",
       "shared_tokens": 2
@@ -423,47 +423,47 @@ exit 0
     ],
     "choice": null,
     "group": "Membership.member",
-    "id": "ref-c34c2c3a7c4506d8",
+    "id": "ref-3a5323adc67ab09c",
     "matcher": "hydra/references",
     "prop": "member",
     "range": "LegalEntity",
     "reads": [],
-    "record": "fring-condensed:rel-fr-cooks",
+    "record": "fairbank-condensed:rel-fr-chefs",
     "rel": "references",
     "schema": "Membership",
     "status": "proposed",
-    "value": "Walter White"
+    "value": "Wallace Wright"
    }
   },
   {
-   "id": "ref-ffee52ededc75eab",
+   "id": "ref-c40373057c08ec7a",
    "status": "proposed",
-   "what": "Sanction.entity \"Heisenberg\" — proposed, 3 candidates",
+   "what": "Sanction.entity \"Hawthorne\" — proposed, 3 candidates",
    "row": {
     "candidates": [
      {
       "candidate_tokens": 1,
-      "caption": "Heisenberg",
+      "caption": "Hawthorne",
       "how": "name-exact",
-      "id": "dea:p-heisenberg-dea",
+      "id": "dce:p-hawthorne-dce",
       "query_tokens": 1,
       "schema": "Person",
       "shared_tokens": 1
      },
      {
       "candidate_tokens": 1,
-      "caption": "Walter Hartwell White",
+      "caption": "Wallace Hollis Wright",
       "how": "name-exact",
-      "id": "heisenberg:p-walt",
+      "id": "hawthorne:p-wal",
       "query_tokens": 1,
       "schema": "Person",
       "shared_tokens": 1
      },
      {
       "candidate_tokens": 2,
-      "caption": "Heisenberg Organization",
+      "caption": "Hawthorne Organization",
       "how": "name-subset",
-      "id": "heisenberg:org-heisenberg",
+      "id": "hawthorne:org-hawthorne",
       "query_tokens": 1,
       "schema": "Organization",
       "shared_tokens": 1
@@ -471,396 +471,420 @@ exit 0
     ],
     "choice": null,
     "group": "Sanction.entity",
-    "id": "ref-ffee52ededc75eab",
+    "id": "ref-c40373057c08ec7a",
     "matcher": "hydra/references",
     "prop": "entity",
     "range": "Thing",
     "reads": [],
-    "record": "dea:san-heisenberg",
+    "record": "dce:san-hawthorne",
     "rel": "references",
     "schema": "Sanction",
     "status": "proposed",
-    "value": "Heisenberg"
+    "value": "Hawthorne"
    }
   }
  ],
  "placements": [
   {
-   "id": "place-0885d03a61bc38c9",
+   "id": "place-19202a95a80fdbb2",
    "status": "proposed",
-   "what": "Skyler White under A1A Car Wash — Employment (several parents)",
+   "what": "Linda Rowan-Quill under Hawthorne Organization — Membership (several parents)",
    "row": {
-    "criteria": "Employment (several parents)",
-    "id": "place-0885d03a61bc38c9",
+    "criteria": "Membership (several parents)",
+    "id": "place-19202a95a80fdbb2",
     "matcher": "hydra/hier",
     "reads": [
      "generic",
      "declared"
     ],
     "records": [
-     "heisenberg:rel-hb23"
+     "hawthorne:rel-hb8"
+    ],
+    "rel": "placedUnder",
+    "scope": "Hawthorne Organization",
+    "status": "proposed",
+    "sub": "sess-96cfcd44:p-linda",
+    "subcap": "Linda Rowan-Quill",
+    "sup": "hawthorne:org-hawthorne",
+    "supcap": "Hawthorne Organization"
+   }
+  },
+  {
+   "id": "place-2288236df9cd1e45",
+   "status": "proposed",
+   "what": "Tyler Alford under Jordan Brooks Pelham — rules: Member below Leader",
+   "row": {
+    "criteria": "rules: Member below Leader",
+    "id": "place-2288236df9cd1e45",
+    "matcher": "hydra/hier",
+    "reads": [
+     "generic",
+     "declared"
+    ],
+    "records": [],
+    "rel": "placedUnder",
+    "scope": "Hawthorne Organization",
+    "status": "proposed",
+    "sub": "hawthorne:p-tyler",
+    "subcap": "Tyler Alford",
+    "sup": "hawthorne:p-jordan",
+    "supcap": "Jordan Brooks Pelham"
+   }
+  },
+  {
+   "id": "place-2ca7765dc7156c69",
+   "status": "proposed",
+   "what": "Gizmo under Elias Vaughn — rules: Member below Leader",
+   "row": {
+    "criteria": "rules: Member below Leader",
+    "id": "place-2ca7765dc7156c69",
+    "matcher": "hydra/hier",
+    "reads": [
+     "generic",
+     "declared"
+    ],
+    "records": [],
+    "rel": "placedUnder",
+    "scope": "Jericho Consortium",
+    "status": "proposed",
+    "sub": "consortium:p-gizmo",
+    "subcap": "Gizmo",
+    "sup": "consortium:p-elias",
+    "supcap": "Elias Vaughn"
+   }
+  },
+  {
+   "id": "place-47cac83bd48b8db8",
+   "status": "proposed",
+   "what": "Sasha Wright under A1A Car Wash — Employment (several parents)",
+   "row": {
+    "criteria": "Employment (several parents)",
+    "id": "place-47cac83bd48b8db8",
+    "matcher": "hydra/hier",
+    "reads": [
+     "generic",
+     "declared"
+    ],
+    "records": [
+     "hawthorne:rel-hb23"
     ],
     "rel": "placedUnder",
     "scope": "A1A Car Wash",
     "status": "proposed",
-    "sub": "heisenberg:p-skyler",
-    "subcap": "Skyler White",
-    "sup": "heisenberg:co-carwash",
+    "sub": "hawthorne:p-sasha",
+    "subcap": "Sasha Wright",
+    "sup": "hawthorne:co-carwash",
     "supcap": "A1A Car Wash"
    }
   },
   {
-   "id": "place-0c4118cdee03bca9",
+   "id": "place-49b92199653edbd0",
    "status": "proposed",
-   "what": "Kenny under Jack Welker — rules: Second-in-command below Leader",
-   "row": {
-    "criteria": "rules: Second-in-command below Leader",
-    "id": "place-0c4118cdee03bca9",
-    "matcher": "hydra/hier",
-    "reads": [
-     "generic",
-     "declared"
-    ],
-    "records": [],
-    "rel": "placedUnder",
-    "scope": "Jack Welker's gang",
-    "status": "proposed",
-    "sub": "heisenberg:p-kenny",
-    "subcap": "Kenny",
-    "sup": "heisenberg:p-jack",
-    "supcap": "Jack Welker"
-   }
-  },
-  {
-   "id": "place-27e1c9910e192843",
-   "status": "proposed",
-   "what": "Ignacio Varga under Eladio Vuente — rules: Member below Leader",
-   "row": {
-    "criteria": "rules: Member below Leader",
-    "id": "place-27e1c9910e192843",
-    "matcher": "hydra/hier",
-    "reads": [
-     "generic",
-     "declared"
-    ],
-    "records": [],
-    "rel": "placedUnder",
-    "scope": "Juarez Cartel",
-    "status": "proposed",
-    "sub": "cartel:p-nacho",
-    "subcap": "Ignacio Varga",
-    "sup": "cartel:p-eladio",
-    "supcap": "Eladio Vuente"
-   }
-  },
-  {
-   "id": "place-280778f8e19939a8",
-   "status": "proposed",
-   "what": "Gonzo under Eladio Vuente — rules: Member below Leader",
-   "row": {
-    "criteria": "rules: Member below Leader",
-    "id": "place-280778f8e19939a8",
-    "matcher": "hydra/hier",
-    "reads": [
-     "generic",
-     "declared"
-    ],
-    "records": [],
-    "rel": "placedUnder",
-    "scope": "Juarez Cartel",
-    "status": "proposed",
-    "sub": "cartel:p-gonzo",
-    "subcap": "Gonzo",
-    "sup": "cartel:p-eladio",
-    "supcap": "Eladio Vuente"
-   }
-  },
-  {
-   "id": "place-2ffedf81d00118e1",
-   "status": "proposed",
-   "what": "Patrick Kuby under Jesse Bruce Pinkman — rules: Member below Leader",
-   "row": {
-    "criteria": "rules: Member below Leader",
-    "id": "place-2ffedf81d00118e1",
-    "matcher": "hydra/hier",
-    "reads": [
-     "generic",
-     "declared"
-    ],
-    "records": [],
-    "rel": "placedUnder",
-    "scope": "Heisenberg Organization",
-    "status": "proposed",
-    "sub": "heisenberg:p-kuby",
-    "subcap": "Patrick Kuby",
-    "sup": "heisenberg:p-jesse",
-    "supcap": "Jesse Bruce Pinkman"
-   }
-  },
-  {
-   "id": "place-4da066e8eb1c2280",
-   "status": "proposed",
-   "what": "Chris Mara under Gustavo Fring — rules: Member below Leader",
-   "row": {
-    "criteria": "rules: Member below Leader",
-    "id": "place-4da066e8eb1c2280",
-    "matcher": "hydra/hier",
-    "reads": [
-     "generic",
-     "declared"
-    ],
-    "records": [],
-    "rel": "placedUnder",
-    "scope": "Gustavo Fring Organization",
-    "status": "proposed",
-    "sub": "sess-96cfcd44:p-chris-mara",
-    "subcap": "Chris Mara",
-    "sup": "sess-96cfcd44:p-fring",
-    "supcap": "Gustavo Fring"
-   }
-  },
-  {
-   "id": "place-6b19e4077b1c5674",
-   "status": "proposed",
-   "what": "Jesse Bruce Pinkman under Heisenberg Organization — Membership (several parents)",
-   "row": {
-    "criteria": "Membership (several parents)",
-    "id": "place-6b19e4077b1c5674",
-    "matcher": "hydra/hier",
-    "reads": [
-     "generic",
-     "declared"
-    ],
-    "records": [
-     "heisenberg:rel-hb2"
-    ],
-    "rel": "placedUnder",
-    "scope": "Heisenberg Organization",
-    "status": "proposed",
-    "sub": "heisenberg:p-jesse",
-    "subcap": "Jesse Bruce Pinkman",
-    "sup": "heisenberg:org-heisenberg",
-    "supcap": "Heisenberg Organization"
-   }
-  },
-  {
-   "id": "place-7646c3aa76c72dbd",
-   "status": "proposed",
-   "what": "Dennis Markowski under Gustavo Fring — rules: Member below Leader",
-   "row": {
-    "criteria": "rules: Member below Leader",
-    "id": "place-7646c3aa76c72dbd",
-    "matcher": "hydra/hier",
-    "reads": [
-     "generic",
-     "declared"
-    ],
-    "records": [],
-    "rel": "placedUnder",
-    "scope": "Gustavo Fring Organization",
-    "status": "proposed",
-    "sub": "sess-96cfcd44:p-dennis",
-    "subcap": "Dennis Markowski",
-    "sup": "sess-96cfcd44:p-fring",
-    "supcap": "Gustavo Fring"
-   }
-  },
-  {
-   "id": "place-7e2ec44e85b36063",
-   "status": "proposed",
-   "what": "Frankie under Jack Welker — rules: Member below Leader",
-   "row": {
-    "criteria": "rules: Member below Leader",
-    "id": "place-7e2ec44e85b36063",
-    "matcher": "hydra/hier",
-    "reads": [
-     "generic",
-     "declared"
-    ],
-    "records": [],
-    "rel": "placedUnder",
-    "scope": "Jack Welker's gang",
-    "status": "proposed",
-    "sub": "heisenberg:p-frankie",
-    "subcap": "Frankie",
-    "sup": "heisenberg:p-jack",
-    "supcap": "Jack Welker"
-   }
-  },
-  {
-   "id": "place-8133214d179ac23f",
-   "status": "proposed",
-   "what": "Todd Alquist under Jesse Bruce Pinkman — rules: Member below Leader",
-   "row": {
-    "criteria": "rules: Member below Leader",
-    "id": "place-8133214d179ac23f",
-    "matcher": "hydra/hier",
-    "reads": [
-     "generic",
-     "declared"
-    ],
-    "records": [],
-    "rel": "placedUnder",
-    "scope": "Heisenberg Organization",
-    "status": "proposed",
-    "sub": "heisenberg:p-todd",
-    "subcap": "Todd Alquist",
-    "sup": "heisenberg:p-jesse",
-    "supcap": "Jesse Bruce Pinkman"
-   }
-  },
-  {
-   "id": "place-82e6c53997c8299f",
-   "status": "proposed",
-   "what": "Gustavo Fring under Gustavo Fring Organization — Membership (several parents)",
-   "row": {
-    "criteria": "Membership (several parents)",
-    "id": "place-82e6c53997c8299f",
-    "matcher": "hydra/hier",
-    "reads": [
-     "generic",
-     "declared"
-    ],
-    "records": [
-     "fring-condensed:rel-fr-leader",
-     "fring:rel-fr1"
-    ],
-    "rel": "placedUnder",
-    "scope": "Gustavo Fring Organization",
-    "status": "proposed",
-    "sub": "sess-96cfcd44:p-fring",
-    "subcap": "Gustavo Fring",
-    "sup": "sess-96cfcd44:org-fring",
-    "supcap": "Gustavo Fring Organization"
-   }
-  },
-  {
-   "id": "place-8c4b38261fcc8f06",
-   "status": "proposed",
-   "what": "Gale Boetticher under Gustavo Fring Organization — Membership (several parents)",
-   "row": {
-    "criteria": "Membership (several parents)",
-    "id": "place-8c4b38261fcc8f06",
-    "matcher": "hydra/hier",
-    "reads": [
-     "generic",
-     "declared"
-    ],
-    "records": [
-     "fring-condensed:rel-fr-chemist",
-     "fring:rel-fr6"
-    ],
-    "rel": "placedUnder",
-    "scope": "Gustavo Fring Organization",
-    "status": "proposed",
-    "sub": "sess-96cfcd44:p-gale",
-    "subcap": "Gale Boetticher",
-    "sup": "sess-96cfcd44:org-fring",
-    "supcap": "Gustavo Fring Organization"
-   }
-  },
-  {
-   "id": "place-937682b3379856bf",
-   "status": "proposed",
-   "what": "Matt under Jack Welker — rules: Member below Leader",
-   "row": {
-    "criteria": "rules: Member below Leader",
-    "id": "place-937682b3379856bf",
-    "matcher": "hydra/hier",
-    "reads": [
-     "generic",
-     "declared"
-    ],
-    "records": [],
-    "rel": "placedUnder",
-    "scope": "Jack Welker's gang",
-    "status": "proposed",
-    "sub": "heisenberg:p-matt",
-    "subcap": "Matt",
-    "sup": "heisenberg:p-jack",
-    "supcap": "Jack Welker"
-   }
-  },
-  {
-   "id": "place-9bd53eff43c113e5",
-   "status": "proposed",
-   "what": "White residence — 308 Negra Arroyo Lane under Skyler White — Ownership (several parents)",
+   "what": "Wright residence — 308 North Arbor Lane under Sasha Wright — Ownership (several parents)",
    "row": {
     "criteria": "Ownership (several parents)",
-    "id": "place-9bd53eff43c113e5",
+    "id": "place-49b92199653edbd0",
     "matcher": "hydra/hier",
     "reads": [
      "generic",
      "declared"
     ],
     "records": [
-     "heisenberg:rel-hb21"
+     "hawthorne:rel-hb21"
     ],
     "rel": "placedUnder",
     "scope": "",
     "status": "proposed",
-    "sub": "heisenberg:re-white",
-    "subcap": "White residence — 308 Negra Arroyo Lane",
-    "sup": "heisenberg:p-skyler",
-    "supcap": "Skyler White"
+    "sub": "hawthorne:re-wright",
+    "subcap": "Wright residence — 308 North Arbor Lane",
+    "sup": "hawthorne:p-sasha",
+    "supcap": "Sasha Wright"
    }
   },
   {
-   "id": "place-c418b6493a0b3f1e",
+   "id": "place-568c63c058486365",
    "status": "proposed",
-   "what": "Michael Ehrmantraut under Los Pollos Hermanos — Employment (several parents)",
+   "what": "Mitch under Jake Weston — rules: Member below Leader",
+   "row": {
+    "criteria": "rules: Member below Leader",
+    "id": "place-568c63c058486365",
+    "matcher": "hydra/hier",
+    "reads": [
+     "generic",
+     "declared"
+    ],
+    "records": [],
+    "rel": "placedUnder",
+    "scope": "Jake Weston's gang",
+    "status": "proposed",
+    "sub": "hawthorne:p-mitch",
+    "subcap": "Mitch",
+    "sup": "hawthorne:p-jake",
+    "supcap": "Jake Weston"
+   }
+  },
+  {
+   "id": "place-5b169226dffa4869",
+   "status": "proposed",
+   "what": "Paul Kemp under Jordan Brooks Pelham — rules: Member below Leader",
+   "row": {
+    "criteria": "rules: Member below Leader",
+    "id": "place-5b169226dffa4869",
+    "matcher": "hydra/hier",
+    "reads": [
+     "generic",
+     "declared"
+    ],
+    "records": [],
+    "rel": "placedUnder",
+    "scope": "Hawthorne Organization",
+    "status": "proposed",
+    "sub": "hawthorne:p-kemp",
+    "subcap": "Paul Kemp",
+    "sup": "hawthorne:p-jordan",
+    "supcap": "Jordan Brooks Pelham"
+   }
+  },
+  {
+   "id": "place-614cb3271fae2774",
+   "status": "proposed",
+   "what": "Kyle under Jake Weston — rules: Second-in-command below Leader",
+   "row": {
+    "criteria": "rules: Second-in-command below Leader",
+    "id": "place-614cb3271fae2774",
+    "matcher": "hydra/hier",
+    "reads": [
+     "generic",
+     "declared"
+    ],
+    "records": [],
+    "rel": "placedUnder",
+    "scope": "Jake Weston's gang",
+    "status": "proposed",
+    "sub": "hawthorne:p-kyle",
+    "subcap": "Kyle",
+    "sup": "hawthorne:p-jake",
+    "supcap": "Jake Weston"
+   }
+  },
+  {
+   "id": "place-664f8eab2a47cdb5",
+   "status": "proposed",
+   "what": "Jordan Brooks Pelham under Hawthorne Organization — Membership (several parents)",
+   "row": {
+    "criteria": "Membership (several parents)",
+    "id": "place-664f8eab2a47cdb5",
+    "matcher": "hydra/hier",
+    "reads": [
+     "generic",
+     "declared"
+    ],
+    "records": [
+     "hawthorne:rel-hb2"
+    ],
+    "rel": "placedUnder",
+    "scope": "Hawthorne Organization",
+    "status": "proposed",
+    "sub": "hawthorne:p-jordan",
+    "subcap": "Jordan Brooks Pelham",
+    "sup": "hawthorne:org-hawthorne",
+    "supcap": "Hawthorne Organization"
+   }
+  },
+  {
+   "id": "place-75aa9f5c4c3d61ab",
+   "status": "proposed",
+   "what": "Ivan Varley under Elias Vaughn — rules: Member below Leader",
+   "row": {
+    "criteria": "rules: Member below Leader",
+    "id": "place-75aa9f5c4c3d61ab",
+    "matcher": "hydra/hier",
+    "reads": [
+     "generic",
+     "declared"
+    ],
+    "records": [],
+    "rel": "placedUnder",
+    "scope": "Jericho Consortium",
+    "status": "proposed",
+    "sub": "consortium:p-nino",
+    "subcap": "Ivan Varley",
+    "sup": "consortium:p-elias",
+    "supcap": "Elias Vaughn"
+   }
+  },
+  {
+   "id": "place-7688e39b8950ab38",
+   "status": "proposed",
+   "what": "Wallace Hollis Wright under Hawthorne Organization — Membership (several parents)",
+   "row": {
+    "criteria": "Membership (several parents)",
+    "id": "place-7688e39b8950ab38",
+    "matcher": "hydra/hier",
+    "reads": [
+     "generic",
+     "declared"
+    ],
+    "records": [
+     "hawthorne:rel-hb1"
+    ],
+    "rel": "placedUnder",
+    "scope": "Hawthorne Organization",
+    "status": "proposed",
+    "sub": "hawthorne:p-wal",
+    "subcap": "Wallace Hollis Wright",
+    "sup": "hawthorne:org-hawthorne",
+    "supcap": "Hawthorne Organization"
+   }
+  },
+  {
+   "id": "place-ab2bdb1e5dd80682",
+   "status": "proposed",
+   "what": "Glen Bowman under Gideon Fairbank Organization — Membership (several parents)",
+   "row": {
+    "criteria": "Membership (several parents)",
+    "id": "place-ab2bdb1e5dd80682",
+    "matcher": "hydra/hier",
+    "reads": [
+     "generic",
+     "declared"
+    ],
+    "records": [
+     "fairbank-condensed:rel-fr-cataloguer",
+     "fairbank:rel-fr6"
+    ],
+    "rel": "placedUnder",
+    "scope": "Gideon Fairbank Organization",
+    "status": "proposed",
+    "sub": "sess-96cfcd44:p-glen",
+    "subcap": "Glen Bowman",
+    "sup": "sess-96cfcd44:org-fairbank",
+    "supcap": "Gideon Fairbank Organization"
+   }
+  },
+  {
+   "id": "place-afb54845b2385cd6",
+   "status": "proposed",
+   "what": "Leroy under Jake Weston — rules: Member below Leader",
+   "row": {
+    "criteria": "rules: Member below Leader",
+    "id": "place-afb54845b2385cd6",
+    "matcher": "hydra/hier",
+    "reads": [
+     "generic",
+     "declared"
+    ],
+    "records": [],
+    "rel": "placedUnder",
+    "scope": "Jake Weston's gang",
+    "status": "proposed",
+    "sub": "hawthorne:p-leroy",
+    "subcap": "Leroy",
+    "sup": "hawthorne:p-jake",
+    "supcap": "Jake Weston"
+   }
+  },
+  {
+   "id": "place-c23e68ca2a6df2ee",
+   "status": "proposed",
+   "what": "No-Dune under Elias Vaughn — rules: Member below Leader",
+   "row": {
+    "criteria": "rules: Member below Leader",
+    "id": "place-c23e68ca2a6df2ee",
+    "matcher": "hydra/hier",
+    "reads": [
+     "generic",
+     "declared"
+    ],
+    "records": [],
+    "rel": "placedUnder",
+    "scope": "Jericho Consortium",
+    "status": "proposed",
+    "sub": "consortium:p-nodune",
+    "subcap": "No-Dune",
+    "sup": "consortium:p-elias",
+    "supcap": "Elias Vaughn"
+   }
+  },
+  {
+   "id": "place-c44be4e038731f34",
+   "status": "proposed",
+   "what": "Hugh Babcock under Jordan Brooks Pelham — rules: Member below Leader",
+   "row": {
+    "criteria": "rules: Member below Leader",
+    "id": "place-c44be4e038731f34",
+    "matcher": "hydra/hier",
+    "reads": [
+     "generic",
+     "declared"
+    ],
+    "records": [],
+    "rel": "placedUnder",
+    "scope": "Hawthorne Organization",
+    "status": "proposed",
+    "sub": "hawthorne:p-hugh",
+    "subcap": "Hugh Babcock",
+    "sup": "hawthorne:p-jordan",
+    "supcap": "Jordan Brooks Pelham"
+   }
+  },
+  {
+   "id": "place-ce34932344a9f6a0",
+   "status": "proposed",
+   "what": "Gideon Fairbank under Gideon Fairbank Organization — Membership (several parents)",
+   "row": {
+    "criteria": "Membership (several parents)",
+    "id": "place-ce34932344a9f6a0",
+    "matcher": "hydra/hier",
+    "reads": [
+     "generic",
+     "declared"
+    ],
+    "records": [
+     "fairbank-condensed:rel-fr-leader",
+     "fairbank:rel-fr1"
+    ],
+    "rel": "placedUnder",
+    "scope": "Gideon Fairbank Organization",
+    "status": "proposed",
+    "sub": "sess-96cfcd44:p-fairbank",
+    "subcap": "Gideon Fairbank",
+    "sup": "sess-96cfcd44:org-fairbank",
+    "supcap": "Gideon Fairbank Organization"
+   }
+  },
+  {
+   "id": "place-d19d8da95986f1fe",
+   "status": "proposed",
+   "what": "Martin Eastwood under Loyal Provisions — Employment (several parents)",
    "row": {
     "criteria": "Employment (several parents)",
-    "id": "place-c418b6493a0b3f1e",
+    "id": "place-d19d8da95986f1fe",
     "matcher": "hydra/hier",
     "reads": [
      "generic",
      "declared"
     ],
     "records": [
-     "fring-condensed:rel-fr-emp-mike",
-     "fring:rel-fr10"
+     "fairbank-condensed:rel-fr-emp-marty",
+     "fairbank:rel-fr10"
     ],
     "rel": "placedUnder",
-    "scope": "Los Pollos Hermanos",
+    "scope": "Loyal Provisions",
     "status": "proposed",
-    "sub": "sess-96cfcd44:p-mike",
-    "subcap": "Michael Ehrmantraut",
-    "sup": "sess-96cfcd44:co-pollos",
-    "supcap": "Los Pollos Hermanos"
+    "sub": "sess-96cfcd44:p-marty",
+    "subcap": "Martin Eastwood",
+    "sup": "sess-96cfcd44:co-loyal",
+    "supcap": "Loyal Provisions"
    }
   },
   {
-   "id": "place-cf481d4b402ec422",
+   "id": "place-d3771981d44f8773",
    "status": "proposed",
-   "what": "Walter Hartwell White under Heisenberg Organization — Membership (several parents)",
-   "row": {
-    "criteria": "Membership (several parents)",
-    "id": "place-cf481d4b402ec422",
-    "matcher": "hydra/hier",
-    "reads": [
-     "generic",
-     "declared"
-    ],
-    "records": [
-     "heisenberg:rel-hb1"
-    ],
-    "rel": "placedUnder",
-    "scope": "Heisenberg Organization",
-    "status": "proposed",
-    "sub": "heisenberg:p-walt",
-    "subcap": "Walter Hartwell White",
-    "sup": "heisenberg:org-heisenberg",
-    "supcap": "Heisenberg Organization"
-   }
-  },
-  {
-   "id": "place-f5366e57980a065e",
-   "status": "proposed",
-   "what": "Lester under Jack Welker — rules: Member below Leader",
+   "what": "Freddie under Jake Weston — rules: Member below Leader",
    "row": {
     "criteria": "rules: Member below Leader",
-    "id": "place-f5366e57980a065e",
+    "id": "place-d3771981d44f8773",
     "matcher": "hydra/hier",
     "reads": [
      "generic",
@@ -868,45 +892,21 @@ exit 0
     ],
     "records": [],
     "rel": "placedUnder",
-    "scope": "Jack Welker's gang",
+    "scope": "Jake Weston's gang",
     "status": "proposed",
-    "sub": "heisenberg:p-lester",
-    "subcap": "Lester",
-    "sup": "heisenberg:p-jack",
-    "supcap": "Jack Welker"
+    "sub": "hawthorne:p-freddie",
+    "subcap": "Freddie",
+    "sup": "hawthorne:p-jake",
+    "supcap": "Jake Weston"
    }
   },
   {
-   "id": "place-f56afed688593447",
+   "id": "place-f538bf87fe28dde5",
    "status": "proposed",
-   "what": "Lydia Rodarte-Quayle under Heisenberg Organization — Membership (several parents)",
-   "row": {
-    "criteria": "Membership (several parents)",
-    "id": "place-f56afed688593447",
-    "matcher": "hydra/hier",
-    "reads": [
-     "generic",
-     "declared"
-    ],
-    "records": [
-     "heisenberg:rel-hb8"
-    ],
-    "rel": "placedUnder",
-    "scope": "Heisenberg Organization",
-    "status": "proposed",
-    "sub": "sess-96cfcd44:p-lydia",
-    "subcap": "Lydia Rodarte-Quayle",
-    "sup": "heisenberg:org-heisenberg",
-    "supcap": "Heisenberg Organization"
-   }
-  },
-  {
-   "id": "place-fa861538ff9bd5f0",
-   "status": "proposed",
-   "what": "Huell Babineaux under Jesse Bruce Pinkman — rules: Member below Leader",
+   "what": "Chad Maddox under Gideon Fairbank — rules: Member below Leader",
    "row": {
     "criteria": "rules: Member below Leader",
-    "id": "place-fa861538ff9bd5f0",
+    "id": "place-f538bf87fe28dde5",
     "matcher": "hydra/hier",
     "reads": [
      "generic",
@@ -914,21 +914,21 @@ exit 0
     ],
     "records": [],
     "rel": "placedUnder",
-    "scope": "Heisenberg Organization",
+    "scope": "Gideon Fairbank Organization",
     "status": "proposed",
-    "sub": "heisenberg:p-huell",
-    "subcap": "Huell Babineaux",
-    "sup": "heisenberg:p-jesse",
-    "supcap": "Jesse Bruce Pinkman"
+    "sub": "sess-96cfcd44:p-chad-maddox",
+    "subcap": "Chad Maddox",
+    "sup": "sess-96cfcd44:p-fairbank",
+    "supcap": "Gideon Fairbank"
    }
   },
   {
-   "id": "place-fc95bcb4d4e1a2ad",
+   "id": "place-f7ef5439ab4c1150",
    "status": "proposed",
-   "what": "No-Doze under Eladio Vuente — rules: Member below Leader",
+   "what": "Dexter Marsh under Gideon Fairbank — rules: Member below Leader",
    "row": {
     "criteria": "rules: Member below Leader",
-    "id": "place-fc95bcb4d4e1a2ad",
+    "id": "place-f7ef5439ab4c1150",
     "matcher": "hydra/hier",
     "reads": [
      "generic",
@@ -936,12 +936,12 @@ exit 0
     ],
     "records": [],
     "rel": "placedUnder",
-    "scope": "Juarez Cartel",
+    "scope": "Gideon Fairbank Organization",
     "status": "proposed",
-    "sub": "cartel:p-nodoze",
-    "subcap": "No-Doze",
-    "sup": "cartel:p-eladio",
-    "supcap": "Eladio Vuente"
+    "sub": "sess-96cfcd44:p-dexter",
+    "subcap": "Dexter Marsh",
+    "sup": "sess-96cfcd44:p-fairbank",
+    "supcap": "Gideon Fairbank"
    }
   }
  ],

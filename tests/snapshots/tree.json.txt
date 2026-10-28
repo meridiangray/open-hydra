@@ -9,20 +9,20 @@ exit 0
    "children": []
   },
   {
-   "name": "Dan Wachsberger (Person)",
+   "name": "Dale Waxman (Person)",
    "outside": false,
    "source": null,
    "titles": [],
    "children": []
   },
   {
-   "name": "Declan's organization (Organization)",
+   "name": "Desmond's organization (Organization)",
    "outside": false,
    "source": null,
    "titles": [],
    "children": [
     {
-     "name": "Declan (Person) — Leader",
+     "name": "Desmond (Person) — Leader",
      "outside": false,
      "source": null,
      "titles": [],
@@ -37,7 +37,7 @@ exit 0
    "titles": [],
    "children": [
     {
-     "name": "Donald Margolis (Person)",
+     "name": "Douglas Marlowe (Person)",
      "outside": false,
      "source": null,
      "titles": [],
@@ -46,69 +46,76 @@ exit 0
    ]
   },
   {
-   "name": "Heisenberg (Person)",
+   "name": "Hannah Wright (Person)",
    "outside": false,
    "source": null,
    "titles": [],
    "children": []
   },
   {
-   "name": "Heisenberg Organization (Organization)",
+   "name": "Hawthorne (Person)",
+   "outside": false,
+   "source": null,
+   "titles": [],
+   "children": []
+  },
+  {
+   "name": "Hawthorne Organization (Organization)",
    "outside": false,
    "source": null,
    "titles": [],
    "children": [
     {
-     "name": "Jesse Bruce Pinkman (Person) — Leader",
+     "name": "Jordan Brooks Pelham (Person) — Leader",
      "outside": false,
      "source": null,
      "titles": [],
      "children": [
       {
-       "name": "Huell Babineaux (Person) — Member",
+       "name": "Hugh Babcock (Person) — Member",
        "outside": false,
        "source": null,
        "titles": [],
        "children": [],
        "also": [
-        "also  Heisenberg Organization   Membership   member"
+        "also  Hawthorne Organization   Membership   member"
        ]
       },
       {
-       "name": "Patrick Kuby (Person) — Member",
+       "name": "Paul Kemp (Person) — Member",
        "outside": false,
        "source": null,
        "titles": [],
        "children": [],
        "also": [
-        "also  Heisenberg Organization   Membership   member"
+        "also  Hawthorne Organization   Membership   member"
        ]
       },
       {
-       "name": "Todd Alquist (Person) — Member",
+       "name": "Tyler Alford (Person) — Member",
        "outside": false,
        "source": null,
        "titles": [],
        "children": [],
        "also": [
-        "also  Dead freight methylamine heist     ProjectParticipant   mechanic",
-        "also  Heisenberg Organization            Membership           assistant cook",
-        "also  Jack Welker's gang                 Membership           member",
-        "also  Vamonos Pest                       Employment           exterminator",
-        "also  Vamonos Pest mobile cook program   ProjectParticipant   assistant"
+        "also  Hawthorne Organization              Membership           assistant chef",
+        "also  Jake Weston's gang                  Membership           member",
+        "also  Rail cargo mineral hauling          ProjectParticipant   mechanic",
+        "also  Vanguard Pest                       Employment           exterminator",
+        "also  Vanguard Pest mobile chef program   ProjectParticipant   assistant"
        ]
       }
      ],
      "also": [
-      "also  Dead freight methylamine heist     ProjectParticipant   logistics",
-      "also  Evidence-room magnet operation     ProjectParticipant   crew",
-      "also  Gustavo Fring Organization         Membership           cook",
-      "also  Pinkman street crew                Membership           leader",
-      "also  Vamonos Pest mobile cook program   ProjectParticipant   cook"
+      "also  Evidence-room magnet operation      ProjectParticipant   crew",
+      "also  Gideon Fairbank Organization        Membership           chef",
+      "also  Pelham street crew                  Membership           leader",
+      "also  Rail cargo mineral hauling          ProjectParticipant   logistics",
+      "also  Vanguard Pest mobile chef program   ProjectParticipant   chef"
      ]
     },
     {
-     "name": "Walter Hartwell White (Person) — Leader",
+     "name": "Wallace Hollis Wright (Person) — Leader",
      "outside": false,
      "source": null,
      "titles": [],
@@ -120,37 +127,37 @@ exit 0
        "titles": [],
        "children": [
         {
-         "name": "Skyler White (Person)",
+         "name": "Sasha Wright (Person)",
          "outside": false,
          "source": null,
          "titles": [],
          "children": [
           {
-           "name": "White residence — 308 Negra Arroyo Lane (RealEstate)",
+           "name": "Wright residence — 308 North Arbor Lane (RealEstate)",
            "outside": false,
            "source": null,
            "titles": [],
            "children": [],
            "also": [
-            "also  Walter Hartwell White   Ownership"
+            "also  Wallace Hollis Wright   Ownership"
            ]
           }
          ],
          "also": [
-          "also  Heisenberg Organization   Membership   money laundering"
+          "also  Hawthorne Organization   Membership   treasury"
          ]
         }
        ]
       },
       {
-       "name": "The Crystal Ship (Vehicle)",
+       "name": "The Cobalt Ship (Vehicle)",
        "outside": false,
        "source": null,
        "titles": [],
        "children": []
       },
       {
-       "name": "Walter White's Pontiac Aztek (Vehicle)",
+       "name": "Wallace Wright's Pontiac Aztek (Vehicle)",
        "outside": false,
        "source": null,
        "titles": [],
@@ -158,10 +165,10 @@ exit 0
       }
      ],
      "also": [
-      "also  Dead freight methylamine heist     ProjectParticipant   planner",
-      "also  Evidence-room magnet operation     ProjectParticipant   planner",
-      "also  Gustavo Fring Organization         Membership           cook",
-      "also  Vamonos Pest mobile cook program   ProjectParticipant   cook"
+      "also  Evidence-room magnet operation      ProjectParticipant   planner",
+      "also  Gideon Fairbank Organization        Membership           chef",
+      "also  Rail cargo mineral hauling          ProjectParticipant   planner",
+      "also  Vanguard Pest mobile chef program   ProjectParticipant   chef"
      ]
     },
     {
@@ -171,26 +178,26 @@ exit 0
      "titles": [],
      "children": [
       {
-       "name": "Madrigal Electromotive GmbH (Company)",
+       "name": "Meridian Electrotech GmbH (Company)",
        "outside": false,
        "source": null,
        "titles": [],
        "children": [
         {
-         "name": "Peter Schuler (Person)",
+         "name": "Philip Shearer (Person)",
          "outside": false,
          "source": null,
          "titles": [],
          "children": []
         },
         {
-         "name": "Lavanderia Brillante (RealEstate)",
+         "name": "Lantern Bright (RealEstate)",
          "outside": false,
          "source": null,
          "titles": [],
          "children": [
           {
-           "name": "The Superlab (RealEstate)",
+           "name": "The Suite (RealEstate)",
            "outside": false,
            "source": null,
            "titles": [],
@@ -199,37 +206,37 @@ exit 0
          ]
         },
         {
-         "name": "Los Pollos Hermanos (Company)",
+         "name": "Loyal Provisions (Company)",
          "outside": false,
          "source": null,
          "titles": [],
          "children": [
           {
-           "name": "Los Pollos Hermanos chicken farm (RealEstate)",
+           "name": "Loyal Provisions chicken farm (RealEstate)",
            "outside": false,
            "source": null,
            "titles": [],
            "children": []
           },
           {
-           "name": "Los Pollos Hermanos — Albuquerque flagship (RealEstate)",
+           "name": "Loyal Provisions — Alderton flagship (RealEstate)",
            "outside": false,
            "source": null,
            "titles": [],
            "children": []
           },
           {
-           "name": "Michael Ehrmantraut (Person)",
+           "name": "Martin Eastwood (Person)",
            "outside": false,
            "source": null,
            "titles": [],
            "children": [],
            "also": [
-            "also  Dead freight methylamine heist     ProjectParticipant   spotter",
-            "also  Evidence-room magnet operation     ProjectParticipant   crew",
-            "also  Gustavo Fring Organization         Membership           head of security",
-            "also  Heisenberg Organization            Membership           head of security",
-            "also  Superlab design and construction   ProjectParticipant   security"
+            "also  Evidence-room magnet operation   ProjectParticipant   crew",
+            "also  Gideon Fairbank Organization     Membership           head of security",
+            "also  Hawthorne Organization           Membership           head of security",
+            "also  Rail cargo mineral hauling       ProjectParticipant   spotter",
+            "also  Suite design and construction    ProjectParticipant   security"
            ]
           }
          ]
@@ -239,13 +246,6 @@ exit 0
      ]
     },
     {
-     "name": "Dead freight methylamine heist (Project)",
-     "outside": false,
-     "source": null,
-     "titles": [],
-     "children": []
-    },
-    {
      "name": "Evidence-room magnet operation (Project)",
      "outside": false,
      "source": null,
@@ -253,45 +253,45 @@ exit 0
      "children": []
     },
     {
-     "name": "James Morgan McGill (Person)",
+     "name": "Jerome Mercer Mccoy (Person)",
      "outside": false,
      "source": null,
      "titles": [],
      "children": []
     },
     {
-     "name": "Lydia Rodarte-Quayle (Person)",
+     "name": "Linda Rowan-Quill (Person)",
      "outside": false,
      "source": null,
      "titles": [],
      "children": [],
      "also": [
       "also  Czech Republic distribution channel   ProjectParticipant   international distribution",
-      "also  Madrigal Electromotive GmbH           Employment           logistics executive"
+      "also  Meridian Electrotech GmbH             Employment           logistics executive"
      ]
     },
     {
-     "name": "Pinkman street crew (Organization)",
+     "name": "Pelham street crew (Organization)",
      "outside": false,
      "source": null,
      "titles": [],
      "children": [
       {
-       "name": "Brandon Mayhew (Person)",
+       "name": "Brendan Mayfield (Person)",
        "outside": false,
        "source": null,
        "titles": [],
        "children": []
       },
       {
-       "name": "Christian Ortega (Person)",
+       "name": "Chadwick Ortiz (Person)",
        "outside": false,
        "source": null,
        "titles": [],
        "children": []
       },
       {
-       "name": "Skinny Pete (Person)",
+       "name": "Slim Phil (Person)",
        "outside": false,
        "source": null,
        "titles": [],
@@ -300,14 +300,21 @@ exit 0
      ]
     },
     {
-     "name": "Vamonos Pest (Company)",
+     "name": "Rail cargo mineral hauling (Project)",
      "outside": false,
      "source": null,
      "titles": [],
      "children": []
     },
     {
-     "name": "Vamonos Pest mobile cook program (Project)",
+     "name": "Vanguard Pest (Company)",
+     "outside": false,
+     "source": null,
+     "titles": [],
+     "children": []
+    },
+    {
+     "name": "Vanguard Pest mobile chef program (Project)",
      "outside": false,
      "source": null,
      "titles": [],
@@ -316,62 +323,55 @@ exit 0
    ]
   },
   {
-   "name": "Holly White (Person)",
-   "outside": false,
-   "source": null,
-   "titles": [],
-   "children": []
-  },
-  {
-   "name": "Jack Welker's gang (Organization)",
+   "name": "Jake Weston's gang (Organization)",
    "outside": false,
    "source": null,
    "titles": [],
    "children": [
     {
-     "name": "Jack Welker (Person) — Leader",
+     "name": "Jake Weston (Person) — Leader",
      "outside": false,
      "source": null,
      "titles": [],
      "children": [
       {
-       "name": "Kenny (Person) — Second-in-command",
+       "name": "Kyle (Person) — Second-in-command",
        "outside": false,
        "source": null,
        "titles": [],
        "children": [],
        "also": [
-        "also  Jack Welker's gang   Membership   second-in-command"
+        "also  Jake Weston's gang   Membership   second-in-command"
        ]
       },
       {
-       "name": "Frankie (Person) — Member",
+       "name": "Freddie (Person) — Member",
        "outside": false,
        "source": null,
        "titles": [],
        "children": [],
        "also": [
-        "also  Jack Welker's gang   Membership   member"
+        "also  Jake Weston's gang   Membership   member"
        ]
       },
       {
-       "name": "Lester (Person) — Member",
+       "name": "Leroy (Person) — Member",
        "outside": false,
        "source": null,
        "titles": [],
        "children": [],
        "also": [
-        "also  Jack Welker's gang   Membership   member"
+        "also  Jake Weston's gang   Membership   member"
        ]
       },
       {
-       "name": "Matt (Person) — Member",
+       "name": "Mitch (Person) — Member",
        "outside": false,
        "source": null,
        "titles": [],
        "children": [],
        "also": [
-        "also  Jack Welker's gang   Membership   member"
+        "also  Jake Weston's gang   Membership   member"
        ]
       }
      ]
@@ -379,121 +379,114 @@ exit 0
    ]
   },
   {
-   "name": "Jane Margolis (Person)",
-   "outside": false,
-   "source": null,
-   "titles": [],
-   "children": []
-  },
-  {
-   "name": "Juarez Cartel (Organization)",
+   "name": "Jericho Consortium (Organization)",
    "outside": false,
    "source": null,
    "titles": [],
    "children": [
     {
-     "name": "Eladio Vuente (Person) — Leader",
+     "name": "Elias Vaughn (Person) — Leader",
      "outside": false,
      "source": null,
      "titles": [],
      "children": [
       {
-       "name": "Gonzo (Person) — Member",
+       "name": "Gizmo (Person) — Member",
        "outside": false,
        "source": null,
        "titles": [],
        "children": [],
        "also": [
-        "also  Tuco Salamanca's Albuquerque crew   Membership   member"
+        "also  Tomas Sandoval's Alderton crew   Membership   member"
        ]
       },
       {
-       "name": "Ignacio Varga (Person) — Member",
+       "name": "Ivan Varley (Person) — Member",
        "outside": false,
        "source": null,
        "titles": [],
        "children": [],
        "also": [
-        "also  Tuco Salamanca's Albuquerque crew   Membership   member"
+        "also  Tomas Sandoval's Alderton crew   Membership   member"
        ]
       },
       {
-       "name": "No-Doze (Person) — Member",
+       "name": "No-Dune (Person) — Member",
        "outside": false,
        "source": null,
        "titles": [],
        "children": [],
        "also": [
-        "also  Tuco Salamanca's Albuquerque crew   Membership   member"
+        "also  Tomas Sandoval's Alderton crew   Membership   member"
        ]
       }
      ]
     },
     {
-     "name": "Gustavo Fring Organization (Organization)",
+     "name": "Gideon Fairbank Organization (Organization)",
      "outside": false,
      "source": null,
      "titles": [],
      "children": [
       {
-       "name": "Gustavo Fring (Person) — Leader",
+       "name": "Gideon Fairbank (Person) — Leader",
        "outside": false,
        "source": null,
        "titles": [],
        "children": [
         {
-         "name": "Chris Mara (Person) — Member",
+         "name": "Chad Maddox (Person) — Member",
          "outside": false,
          "source": null,
          "titles": [],
          "children": [],
          "also": [
-          "also  Gustavo Fring Organization   Membership   member"
+          "also  Gideon Fairbank Organization   Membership   member"
          ]
         },
         {
-         "name": "Dennis Markowski (Person) — Member",
+         "name": "Dexter Marsh (Person) — Member",
          "outside": false,
          "source": null,
          "titles": [],
          "children": [],
          "also": [
-          "also  Gustavo Fring Organization   Membership   member"
+          "also  Gideon Fairbank Organization   Membership   member"
          ]
         }
        ],
        "also": [
-        "also  Juarez Cartel                      Membership           distributor",
-        "also  Los Pollos Hermanos                Directorship         president",
-        "also  Superlab design and construction   ProjectParticipant   sponsor"
+        "also  Jericho Consortium              Membership           distributor",
+        "also  Loyal Provisions                Directorship         president",
+        "also  Suite design and construction   ProjectParticipant   sponsor"
        ]
       },
       {
-       "name": "Gale Boetticher (Person)",
+       "name": "Glen Bowman (Person)",
        "outside": false,
        "source": null,
        "titles": [],
        "children": [],
        "also": [
-        "also  Superlab design and construction   ProjectParticipant   lead chemist"
+        "also  Suite design and construction   ProjectParticipant   lead cataloguer"
        ]
       },
       {
-       "name": "Superlab design and construction (Project)",
+       "name": "Suite design and construction (Project)",
        "outside": false,
        "source": null,
        "titles": [],
        "children": []
       },
       {
-       "name": "Tyrus Kitt (Person)",
+       "name": "Tobias Kent (Person)",
        "outside": false,
        "source": null,
        "titles": [],
        "children": []
       },
       {
-       "name": "Victor (Person)",
+       "name": "Vernon (Person)",
        "outside": false,
        "source": null,
        "titles": [],
@@ -502,55 +495,55 @@ exit 0
      ]
     },
     {
-     "name": "Hector Salamanca (Person)",
+     "name": "Hugo Sandoval (Person)",
      "outside": false,
      "source": null,
      "titles": [],
      "children": []
     },
     {
-     "name": "Juan Bolsa (Person)",
+     "name": "Jonas Boyd (Person)",
      "outside": false,
      "source": null,
      "titles": [],
      "children": []
     },
     {
-     "name": "Lalo Salamanca (Person)",
+     "name": "Leland Sandoval (Person)",
      "outside": false,
      "source": null,
      "titles": [],
      "children": []
     },
     {
-     "name": "Leonel Salamanca (Person)",
+     "name": "Lenny Sandoval (Person)",
      "outside": false,
      "source": null,
      "titles": [],
      "children": []
     },
     {
-     "name": "Marco Salamanca (Person)",
+     "name": "Marcel Sandoval (Person)",
      "outside": false,
      "source": null,
      "titles": [],
      "children": []
     },
     {
-     "name": "Tuco Salamanca's Albuquerque crew (Organization)",
+     "name": "Tomas Sandoval's Alderton crew (Organization)",
      "outside": false,
      "source": null,
      "titles": [],
      "children": [
       {
-       "name": "Domingo Gallardo Molina (Person)",
+       "name": "Damian Galway Morrow (Person)",
        "outside": false,
        "source": null,
        "titles": [],
        "children": []
       },
       {
-       "name": "Tuco Salamanca (Person)",
+       "name": "Tomas Sandoval (Person)",
        "outside": false,
        "source": null,
        "titles": [],
@@ -561,47 +554,54 @@ exit 0
    ]
   },
   {
-   "name": "Marie Schrader (Person)",
+   "name": "Joan Marlowe (Person)",
    "outside": false,
    "source": null,
    "titles": [],
    "children": []
   },
   {
-   "name": "Maximino Arciniega (Person)",
+   "name": "Maren Sharpe (Person)",
    "outside": false,
    "source": null,
    "titles": [],
    "children": []
   },
   {
-   "name": "United States Drug Enforcement Administration (PublicBody)",
+   "name": "Maximino Arden (Person)",
+   "outside": false,
+   "source": null,
+   "titles": [],
+   "children": []
+  },
+  {
+   "name": "United States Department of Customs and Excise (PublicBody)",
    "outside": false,
    "source": null,
    "titles": [],
    "children": [
     {
-     "name": "DEA Albuquerque Field Office (PublicBody)",
+     "name": "DCE Alderton Field Office (PublicBody)",
      "outside": false,
      "source": null,
      "titles": [],
      "children": [
       {
-       "name": "George Merkert (Person)",
+       "name": "Gordon Merkert (Person)",
        "outside": false,
        "source": null,
        "titles": [],
        "children": []
       },
       {
-       "name": "Henry R. Schrader (Person)",
+       "name": "Harold R. Sharpe (Person)",
        "outside": false,
        "source": null,
        "titles": [],
        "children": []
       },
       {
-       "name": "Steven Gomez (Person)",
+       "name": "Simon Gray (Person)",
        "outside": false,
        "source": null,
        "titles": [],
@@ -612,21 +612,14 @@ exit 0
    ]
   },
   {
-   "name": "Walter White Jr. (Person)",
+   "name": "Wallace Wright Jr. (Person)",
    "outside": false,
    "source": null,
    "titles": [],
    "children": []
   },
   {
-   "name": "operations:addr-abq (Address)",
-   "outside": false,
-   "source": null,
-   "titles": [],
-   "children": []
-  },
-  {
-   "name": "operations:addr-hacienda (Address)",
+   "name": "operations:addr-ald (Address)",
    "outside": false,
    "source": null,
    "titles": [],
@@ -640,7 +633,14 @@ exit 0
    "children": []
   },
   {
-   "name": "operations:addr-juarez (Address)",
+   "name": "operations:addr-homestead (Address)",
+   "outside": false,
+   "source": null,
+   "titles": [],
+   "children": []
+  },
+  {
+   "name": "operations:addr-jericho (Address)",
    "outside": false,
    "source": null,
    "titles": [],

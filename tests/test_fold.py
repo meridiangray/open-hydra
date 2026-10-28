@@ -1,5 +1,5 @@
 """Layer 5 (fold.py) tests, against the real corrected demo corpus. The
-named acceptance bar: Walter White keeps every one of his real placements,
+named acceptance bar: Wallace Wright keeps every one of his real placements,
 across four files, none collapsed into a single parent.
 """
 import json
@@ -88,84 +88,84 @@ def test_unclassified_edge_schema_reports_a_gap_not_silent_lateral():
     assert d == {"kind": None}
 
 
-# ---- the named acceptance bar: Walter White's full placement set ----------
+# ---- the named acceptance bar: Wallace Wright's full placement set ----------
 
 
-def test_walter_white_keeps_every_resolvable_real_placement():
-    """5 entries, not 6: Leader@Heisenberg, Cook@Fring (fring.json's exact
-    "Walter Hartwell White" resolves cleanly), planner/cook/planner across 3
-    Project containers. fring-condensed.json's bare "Walter White" does NOT
+def test_wallace_wright_keeps_every_resolvable_real_placement():
+    """5 entries, not 6: Leader@Hawthorne, Chef@Fairbank (fairbank.json's exact
+    "Wallace Hollis Wright" resolves cleanly), planner/chef/planner across 3
+    Project containers. fairbank-condensed.json's bare "Wallace Wright" does NOT
     produce a 6th corroborating entry here -- it is genuinely ambiguous
-    (also subset-matches p-waltjr, see test_index.py), so it correctly lands
+    (also subset-matches p-waljr, see test_index.py), so it correctly lands
     in report.ambiguous_endpoints instead of being silently placed. An
     earlier MODEL.md worked example claimed both records "corroborate" the
     same placement -- that was wrong, found by actually running this."""
     _load()
     out = _run_fold()
-    walt = out["placements"]["p-walt"]
-    assert len(walt) == 5
-    containers = [p["container"] for p in walt]
-    assert containers.count("org-heisenberg") == 1
-    assert containers.count("sess-96cfcd44:org-fring") == 1
-    roles = sorted(p["role"] for p in walt)
-    assert roles == ["cook", "cook", "leader", "planner", "planner"]
+    wal = out["placements"]["p-wal"]
+    assert len(wal) == 5
+    containers = [p["container"] for p in wal]
+    assert containers.count("org-hawthorne") == 1
+    assert containers.count("sess-96cfcd44:org-fairbank") == 1
+    roles = sorted(p["role"] for p in wal)
+    assert roles == ["chef", "chef", "leader", "planner", "planner"]
 
 
-def test_fring_condensed_bare_walter_white_is_reported_ambiguous_not_dropped():
+def test_fairbank_condensed_bare_wallace_wright_is_reported_ambiguous_not_dropped():
     """The named acceptance bar in its strictest form: the record isn't
     silently ignored, it's explicitly surfaced as ambiguous with both real
-    candidates listed -- never silently resolved to p-waltjr."""
+    candidates listed -- never silently resolved to p-waljr."""
     _load()
     out = _run_fold()
     hits = [a for a in out["report"]["ambiguous_endpoints"]
-            if a["record"] == "rel-fr-cooks" and a["value"] == "Walter White"]
+            if a["record"] == "rel-fr-chefs" and a["value"] == "Wallace Wright"]
     assert hits
-    assert {"p-walt", "p-waltjr"} <= set(hits[0]["candidates"])
+    assert {"p-wal", "p-waljr"} <= set(hits[0]["candidates"])
 
 
-def test_walter_whites_project_placements_from_operations_json():
+def test_wallace_whites_project_placements_from_operations_json():
     _load()
     out = _run_fold()
-    projects = {p["container"]: p["role"] for p in out["placements"]["p-walt"]
+    projects = {p["container"]: p["role"] for p in out["placements"]["p-wal"]
                 if p["schema"] == "ProjectParticipant"}
     assert projects == {
-        "proj-train-heist": "planner",
-        "proj-vamonos": "cook",
+        "proj-train-hauling": "planner",
+        "proj-vanguard": "chef",
         "proj-magnet": "planner",
     }
 
 
-def test_walter_white_primary_pid_is_one_of_his_real_containers():
+def test_wallace_wright_primary_pid_is_one_of_his_real_containers():
     _load()
     out = _run_fold()
-    assert out["pid"]["p-walt"] in {p["container"] for p in out["placements"]["p-walt"]}
+    assert out["pid"]["p-wal"] in {p["container"] for p in out["placements"]["p-wal"]}
 
 
-def test_walter_whites_primary_pid_prefers_an_active_placement():
-    """Both his Fring Membership (endDate 2010) and Heisenberg Membership
+def test_wallace_whites_primary_pid_prefers_an_active_placement():
+    """Both his Fairbank Membership (endDate 2010) and Hawthorne Membership
     (endDate 2010) are stale; his three Project placements have no dates at
     all, so they're treated as ongoing and correctly outrank both stale
     ones. Deterministic tiebreak among the three ties on alphabetical
-    container id: "proj-magnet" < "proj-train-heist" < "proj-vamonos"."""
+    container id: "proj-magnet" < "proj-train-hauling" < "proj-vanguard"."""
     _load()
     out = _run_fold()
-    assert out["pid"]["p-walt"] == "proj-magnet"
-    chosen = next(p for p in out["placements"]["p-walt"] if p["container"] == "proj-magnet")
+    assert out["pid"]["p-wal"] == "proj-magnet"
+    chosen = next(p for p in out["placements"]["p-wal"] if p["container"] == "proj-magnet")
     assert chosen["endDate"] is None
 
 
 def test_ambiguous_primary_reports_overlapping_alternatives_never_silent():
-    """Walter's other 4 placements all either have no dates at all (open
+    """Wallace's other 4 placements all either have no dates at all (open
     spans, which count as overlapping everything per dates.overlaps()'s own
     "unknown means can't tell" rule) or do overlap the chosen span -- so
     they must all appear as ambiguous alternatives, not be silently
     dropped from the report just because a primary was picked."""
     _load()
     out = _run_fold()
-    entry = next(e for e in out["report"]["ambiguous_primary"] if e["child"] == "p-walt")
+    entry = next(e for e in out["report"]["ambiguous_primary"] if e["child"] == "p-wal")
     assert entry["chosen"] == "proj-magnet"
     assert set(entry["alternatives"]) == {
-        "proj-train-heist", "proj-vamonos", "sess-96cfcd44:org-fring", "org-heisenberg"}
+        "proj-train-hauling", "proj-vanguard", "sess-96cfcd44:org-fairbank", "org-hawthorne"}
 
 
 def test_sequential_primary_fires_on_cleanly_disjoint_dates():
@@ -204,16 +204,16 @@ def test_sequential_primary_fires_on_cleanly_disjoint_dates():
 
 
 def test_governing_tier_applied_to_directorship_not_membership():
-    """Gustavo Fring's two duplicate Person records (fring.json/fring-
+    """Gideon Fairbank's two duplicate Person records (fairbank.json/fairbank-
     condensed.json) auto-merge -- the survivor is whichever had more
-    properties (sess-96cfcd44:p-fring, which carries an extra `notes`),
+    properties (sess-96cfcd44:p-fairbank, which carries an extra `notes`),
     not the bare id. Confirmed against merge.py's own survivor map, not
     assumed."""
     _load()
     out = _run_fold()
-    fring_person = out["placements"].get("sess-96cfcd44:p-fring") or []
-    directorships = [p for p in fring_person if p["schema"] == "Directorship"]
-    memberships = [p for p in fring_person if p["schema"] == "Membership"]
+    fairbank_person = out["placements"].get("sess-96cfcd44:p-fairbank") or []
+    directorships = [p for p in fairbank_person if p["schema"] == "Directorship"]
+    memberships = [p for p in fairbank_person if p["schema"] == "Membership"]
     assert directorships and all(p["tier"] == "governing" for p in directorships)
     assert memberships and all(p["tier"] == "belonging" for p in memberships)
 
@@ -278,20 +278,20 @@ def test_position_organization_is_a_real_direct_property_fold():
     assert len(placed) == 1
     p = placed[0]
     assert p["schema"] == "Position"
-    assert p["container"] == "sess-96cfcd44:org-fring"
+    assert p["container"] == "sess-96cfcd44:org-fairbank"
     assert p["role"] == "Head of Security"
 
 
 def test_occupancy_still_places_the_holder_under_the_position_itself():
     """Position-chain collapsing is deliberately NOT done here (see fold.py's
-    module docstring) -- Mike's Occupancy placement must point at the
+    module docstring) -- Marty's Occupancy placement must point at the
     Position record itself, not transitively through to the Organization."""
     _load()
     out = _run_fold()
     records = _load_demo_records()
     result = m.merge(records, _all_schemas(), params_dir=PARAMS)
-    mike = result["survivors"].get("sess-96cfcd44:p-mike", "sess-96cfcd44:p-mike")
-    occupancy = [p for p in out["placements"][mike] if p["schema"] == "Occupancy"]
+    marty = result["survivors"].get("sess-96cfcd44:p-marty", "sess-96cfcd44:p-marty")
+    occupancy = [p for p in out["placements"][marty] if p["schema"] == "Occupancy"]
     assert occupancy and occupancy[0]["container"] == "pos-head-security"
 
 
@@ -306,8 +306,8 @@ def test_a_schema_with_two_above_properties_produces_two_placements():
     records = _load_demo_records()
     synthetic = {
         "id": "veh-synthetic", "schema": "Vehicle", "_collection": "test",
-        "properties": {"name": ["Test Van"], "owner": ["Walter Hartwell White"],
-                       "operator": ["Jesse Bruce Pinkman"]},
+        "properties": {"name": ["Test Van"], "owner": ["Wallace Hollis Wright"],
+                       "operator": ["Jordan Brooks Pelham"]},
     }
     all_records = records + [synthetic]
     direction = fold.load_direction(DIRECTION)
@@ -315,7 +315,7 @@ def test_a_schema_with_two_above_properties_produces_two_placements():
     out = fold.fold(all_records, result, _all_schemas(), direction=direction, params_dir=PARAMS)
     placed = out["placements"]["veh-synthetic"]
     containers = {p["container"]: p["role"] for p in placed}
-    assert containers == {"p-walt": "owner", "p-jesse": "operator"}
+    assert containers == {"p-wal": "owner", "p-jordan": "operator"}
 
 
 def test_direct_property_fold_falls_back_to_property_name_when_no_title():
@@ -326,7 +326,7 @@ def test_direct_property_fold_falls_back_to_property_name_when_no_title():
     records = _load_demo_records()
     synthetic = {
         "id": "acct-synthetic", "schema": "BankAccount", "_collection": "test",
-        "properties": {"accountNumber": ["001"], "bank": ["Gustavo Fring Organization"]},
+        "properties": {"accountNumber": ["001"], "bank": ["Gideon Fairbank Organization"]},
     }
     all_records = records + [synthetic]
     direction = fold.load_direction(DIRECTION)
@@ -339,13 +339,13 @@ def test_direct_property_fold_falls_back_to_property_name_when_no_title():
 def test_direct_property_fold_resolves_against_already_merged_survivors():
     """pos-head-security's `organization` value resolves to whichever
     Organization record actually survived the merge (sess-96cfcd44:org-
-    fring), not a raw unmerged duplicate -- the specific bug class this
+    fairbank), not a raw unmerged duplicate -- the specific bug class this
     whole layer exists to prevent."""
     _load()
     records = _load_demo_records()
     result = m.merge(records, _all_schemas(), params_dir=PARAMS)
-    assert "org-fring" not in result["indices"]["Organization"].records  # absorbed
-    assert "sess-96cfcd44:org-fring" in result["indices"]["Organization"].records
+    assert "org-fairbank" not in result["indices"]["Organization"].records  # absorbed
+    assert "sess-96cfcd44:org-fairbank" in result["indices"]["Organization"].records
 
 
 # ---- parallel edges: one entry per record, order from data alone ----------

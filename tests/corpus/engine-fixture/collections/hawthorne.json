@@ -1,16 +1,16 @@
 [
  {
-  "id": "doc-bb-casefile~p1",
+  "id": "doc-bq-casefile~p1",
   "schema": "Page",
   "properties": {
    "index": [
     "1"
    ],
    "document": [
-    "doc-bb-casefile"
+    "doc-bq-casefile"
    ],
    "notes": [
-    "SUBJECT: unidentified cook 'Heisenberg' — composite sketch, blue methamphetamine"
+    "Note on doc-bq-casefile~p1. Mentions Hawthorne."
    ]
   },
   "_meta": {
@@ -21,17 +21,17 @@
   }
  },
  {
-  "id": "doc-bb-casefile~p5",
+  "id": "doc-bq-casefile~p5",
   "schema": "Page",
   "properties": {
    "index": [
     "5"
    ],
    "document": [
-    "doc-bb-casefile"
+    "doc-bq-casefile"
    ],
    "notes": [
-    "POST-FRING: White operation, Welker gang, Declan buyout, prison murders"
+    "Note on doc-bq-casefile~p5. Mentions Wright, Weston, Desmond, Desmond."
    ]
   },
   "_meta": {
@@ -42,15 +42,15 @@
   }
  },
  {
-  "id": "org-heisenberg",
+  "id": "org-hawthorne",
   "schema": "Organization",
   "properties": {
    "name": [
-    "Heisenberg Organization"
+    "Hawthorne Organization"
    ],
    "weakAlias": [
-    "Walter White's operation",
-    "Heisenberg's empire"
+    "Wallace Wright's operation",
+    "Hawthorne's empire"
    ],
    "jurisdiction": [
     "us"
@@ -59,10 +59,10 @@
     "2010"
    ],
    "sources": [
-    "doc-bb-casefile~p5"
+    "doc-bq-casefile~p5"
    ],
    "notes": [
-    "Walter White's meth operation — RV cooks, then the post-Fring 'empire business'"
+    "Note on Hawthorne Organization. Mentions Wallace Wright, Fairbank."
    ]
   },
   "_meta": {
@@ -73,21 +73,21 @@
   }
  },
  {
-  "id": "org-welker",
+  "id": "org-weston",
   "schema": "Organization",
   "properties": {
    "name": [
-    "Jack Welker's gang"
+    "Jake Weston's gang"
    ],
    "weakAlias": [
-    "the Aryan gang",
-    "the neo-Nazis"
+    "The Ridge crew",
+    "The Ridge group"
    ],
    "dissolutionDate": [
     "2010"
    ],
    "notes": [
-    "white supremacist gang; contracted enforcers, later took the operation by force"
+    "Note on Jake Weston's gang."
    ]
   },
   "_meta": {
@@ -98,11 +98,11 @@
   }
  },
  {
-  "id": "org-declan",
+  "id": "org-desmond",
   "schema": "Organization",
   "properties": {
    "name": [
-    "Declan's organization"
+    "Desmond's organization"
    ],
    "jurisdiction": [
     "us"
@@ -111,7 +111,7 @@
     "2010"
    ],
    "notes": [
-    "Phoenix-based rival distributor; bought out, then wiped out by the Welker gang"
+    "Note on Desmond's organization. Mentions Weston."
    ]
   },
   "_meta": {
@@ -122,17 +122,17 @@
   }
  },
  {
-  "id": "crew-jesse",
+  "id": "crew-jordan",
   "schema": "Organization",
   "properties": {
    "name": [
-    "Pinkman street crew"
+    "Pelham street crew"
    ],
    "dissolutionDate": [
     "2009"
    ],
    "notes": [
-    "Jesse's street-level dealers: Badger, Skinny Pete, Combo"
+    "Note on Pelham street crew. Mentions Jordan, Barlow, Slim Phil, Chord, Slim Phil, Barlow, Chord."
    ]
   },
   "_meta": {
@@ -143,17 +143,17 @@
   }
  },
  {
-  "id": "co-vamonos",
+  "id": "co-vanguard",
   "schema": "Company",
   "properties": {
    "name": [
-    "Vamonos Pest"
+    "Vanguard Pest"
    ],
    "jurisdiction": [
     "us"
    ],
    "notes": [
-    "fumigation company bought by White, Pinkman and Ehrmantraut; tent jobs hid mobile cook sites"
+    "Note on Vanguard Pest. Mentions Wright, Pelham, Eastwood."
    ]
   },
   "_meta": {
@@ -174,7 +174,7 @@
     "us"
    ],
    "notes": [
-    "bought to launder the cook money; run by Skyler White"
+    "Note on A1A Car Wash. Mentions Sasha Wright, Sasha Wright."
    ]
   },
   "_meta": {
@@ -185,17 +185,17 @@
   }
  },
  {
-  "id": "re-white",
+  "id": "re-wright",
   "schema": "RealEstate",
   "properties": {
    "name": [
-    "White residence — 308 Negra Arroyo Lane"
+    "Wright residence — 308 North Arbor Lane"
    ],
    "propertyType": [
     "house"
    ],
    "address": [
-    "308 Negra Arroyo Lane, Albuquerque, NM"
+    "308 North Arbor Lane, Alderton, NM"
    ]
   },
   "_meta": {
@@ -206,16 +206,16 @@
   }
  },
  {
-  "id": "p-walt",
+  "id": "p-wal",
   "schema": "Person",
   "properties": {
    "name": [
-    "Walter Hartwell White"
+    "Wallace Hollis Wright"
    ],
    "weakAlias": [
-    "Walt",
-    "Heisenberg",
-    "Mr. Lambert"
+    "Wal",
+    "Hawthorne",
+    "Mr. Lowell"
    ],
    "birthDate": [
     "1958-09-07"
@@ -224,10 +224,10 @@
     "2010-09-07"
    ],
    "sources": [
-    "doc-bb-casefile~p1"
+    "doc-bq-casefile~p1"
    ],
    "notes": [
-    "chemistry teacher turned meth manufacturer — 'Heisenberg'"
+    "Note on Wallace Hollis Wright. Mentions Hawthorne."
    ]
   },
   "_meta": {
@@ -238,17 +238,17 @@
   }
  },
  {
-  "id": "p-jesse",
+  "id": "p-jordan",
   "schema": "Person",
   "properties": {
    "name": [
-    "Jesse Bruce Pinkman"
+    "Jordan Brooks Pelham"
    ],
    "weakAlias": [
-    "Cap'n Cook"
+    "Skipper"
    ],
    "notes": [
-    "Walt's former student and partner; held as a slave-cook by the Welker gang in 2010"
+    "Note on Jordan Brooks Pelham. Mentions Wal, Weston."
    ]
   },
   "_meta": {
@@ -259,18 +259,18 @@
   }
  },
  {
-  "id": "p-saul",
+  "id": "p-sol",
   "schema": "Person",
   "properties": {
    "name": [
-    "James Morgan McGill"
+    "Jerome Mercer Mccoy"
    ],
    "weakAlias": [
-    "Saul Goodman",
-    "Gene Takavic"
+    "Sol Goodwin",
+    "Graham Tavish"
    ],
    "notes": [
-    "criminal lawyer and consigliere to the White operation; later a Cinnabon manager in Omaha"
+    "Note on Jerome Mercer Mccoy. Mentions Wright."
    ]
   },
   "_meta": {
@@ -281,17 +281,17 @@
   }
  },
  {
-  "id": "p-skyler",
+  "id": "p-sasha",
   "schema": "Person",
   "properties": {
    "name": [
-    "Skyler White"
+    "Sasha Wright"
    ],
    "weakAlias": [
-    "Skyler Lambert"
+    "Sasha Lowell"
    ],
    "notes": [
-    "Walt's wife; laundered the proceeds through the A1A Car Wash"
+    "Note on Sasha Wright. Mentions Wal, A1A Car Wash."
    ]
   },
   "_meta": {
@@ -302,17 +302,17 @@
   }
  },
  {
-  "id": "p-todd",
+  "id": "p-tyler",
   "schema": "Person",
   "properties": {
    "name": [
-    "Todd Alquist"
+    "Tyler Alford"
    ],
    "deathDate": [
     "2010"
    ],
    "notes": [
-    "Vamonos employee turned cook; Jack Welker's nephew; shot Drew Sharp"
+    "Note on Tyler Alford. Mentions Vanguard, Jake Weston, Jake Weston."
    ]
   },
   "_meta": {
@@ -323,14 +323,14 @@
   }
  },
  {
-  "id": "p-huell",
+  "id": "p-hugh",
   "schema": "Person",
   "properties": {
    "name": [
-    "Huell Babineaux"
+    "Hugh Babcock"
    ],
    "notes": [
-    "Saul's bodyguard and legbreaker"
+    "Note on Hugh Babcock. Mentions Sol."
    ]
   },
   "_meta": {
@@ -341,14 +341,14 @@
   }
  },
  {
-  "id": "p-kuby",
+  "id": "p-kemp",
   "schema": "Person",
   "properties": {
    "name": [
-    "Patrick Kuby"
+    "Paul Kemp"
    ],
    "notes": [
-    "Saul's fixer; ran the 'car wash' con on Bogdan"
+    "Note on Paul Kemp. Mentions Sol."
    ]
   },
   "_meta": {
@@ -359,17 +359,17 @@
   }
  },
  {
-  "id": "p-declan",
+  "id": "p-desmond",
   "schema": "Person",
   "properties": {
    "name": [
-    "Declan"
+    "Desmond"
    ],
    "deathDate": [
     "2010"
    ],
    "notes": [
-    "Phoenix distributor; bought Mike's share of the operation; killed by the Welker gang"
+    "Note on Desmond. Mentions Marty, Weston, Marty."
    ]
   },
   "_meta": {
@@ -380,17 +380,17 @@
   }
  },
  {
-  "id": "p-jack",
+  "id": "p-jake",
   "schema": "Person",
   "properties": {
    "name": [
-    "Jack Welker"
+    "Jake Weston"
    ],
    "deathDate": [
     "2010"
    ],
    "notes": [
-    "gang leader; executed Hank Schrader; killed by Walt's M60 rig"
+    "Note on Jake Weston. Mentions Hal Sharpe, Wal's M60, Hal Sharpe."
    ]
   },
   "_meta": {
@@ -401,17 +401,17 @@
   }
  },
  {
-  "id": "p-kenny",
+  "id": "p-kyle",
   "schema": "Person",
   "properties": {
    "name": [
-    "Kenny"
+    "Kyle"
    ],
    "deathDate": [
     "2010"
    ],
    "notes": [
-    "Welker's second-in-command"
+    "Note on Kyle. Mentions Weston."
    ]
   },
   "_meta": {
@@ -422,17 +422,17 @@
   }
  },
  {
-  "id": "p-frankie",
+  "id": "p-freddie",
   "schema": "Person",
   "properties": {
    "name": [
-    "Frankie"
+    "Freddie"
    ],
    "deathDate": [
     "2010"
    ],
    "notes": [
-    "Welker gang member"
+    "Note on Freddie. Mentions Weston."
    ]
   },
   "_meta": {
@@ -443,17 +443,17 @@
   }
  },
  {
-  "id": "p-lester",
+  "id": "p-leroy",
   "schema": "Person",
   "properties": {
    "name": [
-    "Lester"
+    "Leroy"
    ],
    "deathDate": [
     "2010"
    ],
    "notes": [
-    "Welker gang member"
+    "Note on Leroy. Mentions Weston."
    ]
   },
   "_meta": {
@@ -464,17 +464,17 @@
   }
  },
  {
-  "id": "p-matt",
+  "id": "p-mitch",
   "schema": "Person",
   "properties": {
    "name": [
-    "Matt"
+    "Mitch"
    ],
    "deathDate": [
     "2010"
    ],
    "notes": [
-    "Welker gang member"
+    "Note on Mitch. Mentions Weston."
    ]
   },
   "_meta": {
@@ -485,17 +485,17 @@
   }
  },
  {
-  "id": "p-badger",
+  "id": "p-barlow",
   "schema": "Person",
   "properties": {
    "name": [
-    "Brandon Mayhew"
+    "Brendan Mayfield"
    ],
    "weakAlias": [
-    "Badger"
+    "Barlow"
    ],
    "notes": [
-    "Jesse's friend and street dealer"
+    "Note on Brendan Mayfield. Mentions Jordan."
    ]
   },
   "_meta": {
@@ -506,14 +506,14 @@
   }
  },
  {
-  "id": "p-skinnypete",
+  "id": "p-slimphil",
   "schema": "Person",
   "properties": {
    "name": [
-    "Skinny Pete"
+    "Slim Phil"
    ],
    "notes": [
-    "Jesse's friend and street dealer"
+    "Note on Slim Phil. Mentions Jordan."
    ]
   },
   "_meta": {
@@ -524,20 +524,20 @@
   }
  },
  {
-  "id": "p-combo",
+  "id": "p-chord",
   "schema": "Person",
   "properties": {
    "name": [
-    "Christian Ortega"
+    "Chadwick Ortiz"
    ],
    "weakAlias": [
-    "Combo"
+    "Chord"
    ],
    "deathDate": [
     "2009"
    ],
    "notes": [
-    "Jesse's friend and street dealer; shot by Tomas on rival dealers' orders"
+    "Note on Chadwick Ortiz. Mentions Jordan, Tomas."
    ]
   },
   "_meta": {
@@ -552,10 +552,10 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Walter Hartwell White"
+    "Wallace Hollis Wright"
    ],
    "organization": [
-    "Heisenberg Organization"
+    "Hawthorne Organization"
    ],
    "role": [
     "leader"
@@ -576,13 +576,13 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Jesse Bruce Pinkman"
+    "Jordan Brooks Pelham"
    ],
    "organization": [
-    "Heisenberg Organization"
+    "Hawthorne Organization"
    ],
    "role": [
-    "cook"
+    "chef"
    ]
   },
   "_meta": {
@@ -597,10 +597,10 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Michael Ehrmantraut"
+    "Martin Eastwood"
    ],
    "organization": [
-    "Heisenberg Organization"
+    "Hawthorne Organization"
    ],
    "role": [
     "head of security"
@@ -612,7 +612,7 @@
     "2010"
    ],
    "notes": [
-    "stayed on after Fring's death; killed by Walter White"
+    "Note on rel-hb3. Mentions Fairbank, Wallace Wright."
    ]
   },
   "_meta": {
@@ -627,10 +627,10 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "James Morgan McGill"
+    "Jerome Mercer Mccoy"
    ],
    "organization": [
-    "Heisenberg Organization"
+    "Hawthorne Organization"
    ],
    "role": [
     "counsel"
@@ -651,13 +651,13 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Todd Alquist"
+    "Tyler Alford"
    ],
    "organization": [
-    "Heisenberg Organization"
+    "Hawthorne Organization"
    ],
    "role": [
-    "assistant cook"
+    "assistant chef"
    ]
   },
   "_meta": {
@@ -672,16 +672,16 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Todd Alquist"
+    "Tyler Alford"
    ],
    "organization": [
-    "Jack Welker's gang"
+    "Jake Weston's gang"
    ],
    "role": [
     "member"
    ],
    "notes": [
-    "inside the White operation AND the Welker gang — dual scope"
+    "Note on rel-hb6. Mentions Wright, Weston."
    ]
   },
   "_meta": {
@@ -696,13 +696,13 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Skyler White"
+    "Sasha Wright"
    ],
    "organization": [
-    "Heisenberg Organization"
+    "Hawthorne Organization"
    ],
    "role": [
-    "money laundering"
+    "treasury"
    ]
   },
   "_meta": {
@@ -717,16 +717,16 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Lydia Rodarte-Quayle"
+    "Linda Rowan-Quill"
    ],
    "organization": [
-    "Heisenberg Organization"
+    "Hawthorne Organization"
    ],
    "role": [
     "distributor"
    ],
    "notes": [
-    "inside Madrigal AND the Heisenberg operation — dual scope"
+    "Note on rel-hb8. Mentions Meridian AND, Hawthorne, the Hawthorne."
    ]
   },
   "_meta": {
@@ -741,11 +741,11 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Huell Babineaux",
-    "Patrick Kuby"
+    "Hugh Babcock",
+    "Paul Kemp"
    ],
    "organization": [
-    "Heisenberg Organization"
+    "Hawthorne Organization"
    ],
    "role": [
     "member"
@@ -763,10 +763,10 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Pinkman street crew"
+    "Pelham street crew"
    ],
    "organization": [
-    "Heisenberg Organization"
+    "Hawthorne Organization"
    ]
   },
   "_meta": {
@@ -781,10 +781,10 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Jesse Bruce Pinkman"
+    "Jordan Brooks Pelham"
    ],
    "organization": [
-    "Pinkman street crew"
+    "Pelham street crew"
    ],
    "role": [
     "leader"
@@ -805,14 +805,14 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Brandon Mayhew",
-    "Skinny Pete"
+    "Brendan Mayfield",
+    "Slim Phil"
    ],
    "organization": [
-    "Pinkman street crew"
+    "Pelham street crew"
    ],
    "role": [
-    "dealer"
+    "dispatcher"
    ]
   },
   "_meta": {
@@ -827,13 +827,13 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Christian Ortega"
+    "Chadwick Ortiz"
    ],
    "organization": [
-    "Pinkman street crew"
+    "Pelham street crew"
    ],
    "role": [
-    "dealer"
+    "dispatcher"
    ],
    "endDate": [
     "2009"
@@ -851,10 +851,10 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Declan"
+    "Desmond"
    ],
    "organization": [
-    "Declan's organization"
+    "Desmond's organization"
    ],
    "role": [
     "leader"
@@ -875,10 +875,10 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Jack Welker"
+    "Jake Weston"
    ],
    "organization": [
-    "Jack Welker's gang"
+    "Jake Weston's gang"
    ],
    "role": [
     "leader"
@@ -899,10 +899,10 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Kenny"
+    "Kyle"
    ],
    "organization": [
-    "Jack Welker's gang"
+    "Jake Weston's gang"
    ],
    "role": [
     "second-in-command"
@@ -923,12 +923,12 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Frankie",
-    "Lester",
-    "Matt"
+    "Freddie",
+    "Leroy",
+    "Mitch"
    ],
    "organization": [
-    "Jack Welker's gang"
+    "Jake Weston's gang"
    ],
    "role": [
     "member"
@@ -946,10 +946,10 @@
   "schema": "Ownership",
   "properties": {
    "owner": [
-    "Heisenberg Organization"
+    "Hawthorne Organization"
    ],
    "asset": [
-    "Vamonos Pest"
+    "Vanguard Pest"
    ]
   },
   "_meta": {
@@ -964,7 +964,7 @@
   "schema": "Ownership",
   "properties": {
    "owner": [
-    "Walter Hartwell White"
+    "Wallace Hollis Wright"
    ],
    "asset": [
     "A1A Car Wash"
@@ -982,10 +982,10 @@
   "schema": "Ownership",
   "properties": {
    "owner": [
-    "Walter Hartwell White"
+    "Wallace Hollis Wright"
    ],
    "asset": [
-    "White residence — 308 Negra Arroyo Lane"
+    "Wright residence — 308 North Arbor Lane"
    ]
   },
   "_meta": {
@@ -1000,10 +1000,10 @@
   "schema": "Ownership",
   "properties": {
    "owner": [
-    "Skyler White"
+    "Sasha Wright"
    ],
    "asset": [
-    "White residence — 308 Negra Arroyo Lane"
+    "Wright residence — 308 North Arbor Lane"
    ]
   },
   "_meta": {
@@ -1018,16 +1018,16 @@
   "schema": "Employment",
   "properties": {
    "employee": [
-    "Todd Alquist"
+    "Tyler Alford"
    ],
    "employer": [
-    "Vamonos Pest"
+    "Vanguard Pest"
    ],
    "role": [
     "exterminator"
    ],
    "notes": [
-    "the cover job — competes with 'assistant cook' for parentage"
+    "Note on rel-hb22."
    ]
   },
   "_meta": {
@@ -1042,7 +1042,7 @@
   "schema": "Employment",
   "properties": {
    "employee": [
-    "Skyler White"
+    "Sasha Wright"
    ],
    "employer": [
     "A1A Car Wash"
@@ -1063,13 +1063,13 @@
   "schema": "Representation",
   "properties": {
    "agent": [
-    "James Morgan McGill"
+    "Jerome Mercer Mccoy"
    ],
    "client": [
-    "Walter Hartwell White"
+    "Wallace Hollis Wright"
    ],
    "role": [
-    "criminal defense counsel"
+    "defense counsel"
    ],
    "startDate": [
     "2009"
@@ -1090,13 +1090,13 @@
   "schema": "Representation",
   "properties": {
    "agent": [
-    "James Morgan McGill"
+    "Jerome Mercer Mccoy"
    ],
    "client": [
-    "Jesse Bruce Pinkman"
+    "Jordan Brooks Pelham"
    ],
    "role": [
-    "criminal defense counsel"
+    "defense counsel"
    ]
   },
   "_meta": {
@@ -1111,13 +1111,13 @@
   "schema": "Associate",
   "properties": {
    "person": [
-    "Walter Hartwell White"
+    "Wallace Hollis Wright"
    ],
    "associate": [
-    "Declan"
+    "Desmond"
    ],
    "relationship": [
-    "rival distributor; bought out the partnership's share, later hostilities"
+    "rival distributor; bought out the partnership's share, later hearings"
    ]
   },
   "_meta": {
@@ -1132,16 +1132,16 @@
   "schema": "Succession",
   "properties": {
    "predecessor": [
-    "Gustavo Fring Organization"
+    "Gideon Fairbank Organization"
    ],
    "successor": [
-    "Heisenberg Organization"
+    "Hawthorne Organization"
    ],
    "date": [
     "2010"
    ],
    "notes": [
-    "the White operation inherited the Fring network's lab, contacts and methylamine supply"
+    "Note on rel-hb27. Mentions Wright, Fairbank."
    ]
   },
   "_meta": {
@@ -1156,10 +1156,10 @@
   "schema": "Family",
   "properties": {
    "person": [
-    "Todd Alquist"
+    "Tyler Alford"
    ],
    "relative": [
-    "Jack Welker"
+    "Jake Weston"
    ],
    "relationship": [
     "uncle"
@@ -1177,10 +1177,10 @@
   "schema": "Documentation",
   "properties": {
    "document": [
-    "doc-bb-casefile~p1"
+    "doc-bq-casefile~p1"
    ],
    "entity": [
-    "Walter Hartwell White"
+    "Wallace Hollis Wright"
    ]
   },
   "_meta": {
@@ -1195,10 +1195,10 @@
   "schema": "Documentation",
   "properties": {
    "document": [
-    "doc-bb-casefile~p5"
+    "doc-bq-casefile~p5"
    ],
    "entity": [
-    "Jack Welker's gang"
+    "Jake Weston's gang"
    ]
   },
   "_meta": {
@@ -1213,10 +1213,10 @@
   "schema": "Documentation",
   "properties": {
    "document": [
-    "doc-bb-casefile~p5"
+    "doc-bq-casefile~p5"
    ],
    "entity": [
-    "Declan's organization"
+    "Desmond's organization"
    ]
   },
   "_meta": {

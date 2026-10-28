@@ -5,219 +5,219 @@ exit 0
  "entries": [],
  "documents": [
   {
-   "id": "dea:doc-bb-casefile",
+   "id": "dce:doc-bq-casefile",
    "schema": "Pages",
-   "title": "HEISENBERG INVESTIGATION — DEA/ABQ CASE FILE (2008-2010)",
+   "title": "HAWTHORNE INVESTIGATION — DCE/ALD CASE FILE (2008-2010)",
    "publisher": "",
    "url": "",
-   "collection": "dea",
+   "collection": "dce",
    "entry": false,
    "document": "",
    "page": "",
    "cited_by": [],
    "pages": [
     {
-     "id": "heisenberg:doc-bb-casefile~p1",
+     "id": "hawthorne:doc-bq-casefile~p1",
      "schema": "Page",
-     "title": "HEISENBERG INVESTIGATION — DEA/ABQ CASE FILE (2008-2010) p.1",
+     "title": "HAWTHORNE INVESTIGATION — DCE/ALD CASE FILE (2008-2010) p.1",
      "publisher": "",
      "url": "",
-     "collection": "heisenberg",
+     "collection": "hawthorne",
      "entry": false,
-     "document": "dea:doc-bb-casefile",
+     "document": "dce:doc-bq-casefile",
      "page": "1",
      "cited_by": [
       {
-       "id": "dea:p-heisenberg-dea",
-       "caption": "Heisenberg",
+       "id": "dce:p-hal",
+       "caption": "Harold R. Sharpe",
        "schema": "Person",
        "records": [
-        "dea:p-heisenberg-dea"
+        "dce:p-hal"
        ]
       },
       {
-       "id": "dea:p-hank",
-       "caption": "Henry R. Schrader",
+       "id": "dce:p-hawthorne-dce",
+       "caption": "Hawthorne",
        "schema": "Person",
        "records": [
-        "dea:p-hank"
+        "dce:p-hawthorne-dce"
        ]
       },
       {
-       "id": "heisenberg:p-walt",
-       "caption": "Walter Hartwell White",
+       "id": "hawthorne:p-wal",
+       "caption": "Wallace Hollis Wright",
        "schema": "Person",
        "records": [
-        "heisenberg:p-walt"
+        "hawthorne:p-wal"
        ]
       }
      ]
     },
     {
-     "id": "fring-condensed:doc-bb-casefile~p2",
+     "id": "fairbank-condensed:doc-bq-casefile~p2",
      "schema": "Page",
-     "title": "HEISENBERG INVESTIGATION — DEA/ABQ CASE FILE (2008-2010) p.2",
+     "title": "HAWTHORNE INVESTIGATION — DCE/ALD CASE FILE (2008-2010) p.2",
      "publisher": "",
      "url": "",
-     "collection": "fring-condensed",
+     "collection": "fairbank-condensed",
      "entry": false,
-     "document": "dea:doc-bb-casefile",
+     "document": "dce:doc-bq-casefile",
      "page": "2",
      "cited_by": [
       {
-       "id": "sess-96cfcd44:p-fring",
-       "caption": "Gustavo Fring",
+       "id": "sess-96cfcd44:p-fairbank",
+       "caption": "Gideon Fairbank",
        "schema": "Person",
        "records": [
-        "fring-condensed:p-fring"
+        "fairbank-condensed:p-fairbank"
        ]
       },
       {
-       "id": "sess-96cfcd44:org-fring",
-       "caption": "Gustavo Fring Organization",
+       "id": "sess-96cfcd44:org-fairbank",
+       "caption": "Gideon Fairbank Organization",
        "schema": "Organization",
        "records": [
-        "fring-condensed:org-fring"
+        "fairbank-condensed:org-fairbank"
        ]
       },
       {
-       "id": "sess-96cfcd44:co-madrigal",
-       "caption": "Madrigal Electromotive GmbH",
+       "id": "sess-96cfcd44:co-meridian",
+       "caption": "Meridian Electrotech GmbH",
        "schema": "Company",
        "records": [
-        "fring-condensed:co-madrigal"
+        "fairbank-condensed:co-meridian"
        ]
       }
      ]
     },
     {
-     "id": "sess-96cfcd44:doc-bb-casefile~p2",
+     "id": "sess-96cfcd44:doc-bq-casefile~p2",
      "schema": "Page",
-     "title": "HEISENBERG INVESTIGATION — DEA/ABQ CASE FILE (2008-2010) p.2",
+     "title": "HAWTHORNE INVESTIGATION — DCE/ALD CASE FILE (2008-2010) p.2",
      "publisher": "",
      "url": "",
-     "collection": "fring",
+     "collection": "fairbank",
      "entry": false,
-     "document": "dea:doc-bb-casefile",
+     "document": "dce:doc-bq-casefile",
      "page": "2",
      "cited_by": [
       {
-       "id": "sess-96cfcd44:p-fring",
-       "caption": "Gustavo Fring",
+       "id": "sess-96cfcd44:p-fairbank",
+       "caption": "Gideon Fairbank",
        "schema": "Person",
        "records": [
-        "sess-96cfcd44:p-fring"
+        "sess-96cfcd44:p-fairbank"
        ]
       },
       {
-       "id": "sess-96cfcd44:org-fring",
-       "caption": "Gustavo Fring Organization",
+       "id": "sess-96cfcd44:org-fairbank",
+       "caption": "Gideon Fairbank Organization",
        "schema": "Organization",
        "records": [
-        "sess-96cfcd44:org-fring"
+        "sess-96cfcd44:org-fairbank"
        ]
       },
       {
-       "id": "sess-96cfcd44:co-madrigal",
-       "caption": "Madrigal Electromotive GmbH",
+       "id": "sess-96cfcd44:co-meridian",
+       "caption": "Meridian Electrotech GmbH",
        "schema": "Company",
        "records": [
-        "sess-96cfcd44:co-madrigal"
+        "sess-96cfcd44:co-meridian"
        ]
       }
      ]
     },
     {
-     "id": "cartel:doc-bb-casefile~p3",
+     "id": "consortium:doc-bq-casefile~p3",
      "schema": "Page",
-     "title": "HEISENBERG INVESTIGATION — DEA/ABQ CASE FILE (2008-2010) p.3",
+     "title": "HAWTHORNE INVESTIGATION — DCE/ALD CASE FILE (2008-2010) p.3",
      "publisher": "",
      "url": "",
-     "collection": "cartel",
+     "collection": "consortium",
      "entry": false,
-     "document": "dea:doc-bb-casefile",
+     "document": "dce:doc-bq-casefile",
      "page": "3",
      "cited_by": [
       {
-       "id": "cartel:p-eladio",
-       "caption": "Eladio Vuente",
+       "id": "consortium:p-elias",
+       "caption": "Elias Vaughn",
        "schema": "Person",
        "records": [
-        "cartel:p-eladio"
+        "consortium:p-elias"
        ]
       },
       {
-       "id": "cartel:p-bolsa",
-       "caption": "Juan Bolsa",
-       "schema": "Person",
-       "records": [
-        "cartel:p-bolsa"
-       ]
-      },
-      {
-       "id": "cartel:org-cartel",
-       "caption": "Juarez Cartel",
+       "id": "consortium:org-consortium",
+       "caption": "Jericho Consortium",
        "schema": "Organization",
        "records": [
-        "cartel:org-cartel"
+        "consortium:org-consortium"
        ]
       },
       {
-       "id": "cartel:p-tuco",
-       "caption": "Tuco Salamanca",
+       "id": "consortium:p-boyd",
+       "caption": "Jonas Boyd",
        "schema": "Person",
        "records": [
-        "cartel:p-tuco"
+        "consortium:p-boyd"
+       ]
+      },
+      {
+       "id": "consortium:p-tomas",
+       "caption": "Tomas Sandoval",
+       "schema": "Person",
+       "records": [
+        "consortium:p-tomas"
        ]
       }
      ]
     },
     {
-     "id": "cartel:doc-bb-casefile~p4",
+     "id": "consortium:doc-bq-casefile~p4",
      "schema": "Page",
-     "title": "HEISENBERG INVESTIGATION — DEA/ABQ CASE FILE (2008-2010) p.4",
+     "title": "HAWTHORNE INVESTIGATION — DCE/ALD CASE FILE (2008-2010) p.4",
      "publisher": "",
      "url": "",
-     "collection": "cartel",
+     "collection": "consortium",
      "entry": false,
-     "document": "dea:doc-bb-casefile",
+     "document": "dce:doc-bq-casefile",
      "page": "4",
      "cited_by": [
       {
-       "id": "cartel:p-hector",
-       "caption": "Hector Salamanca",
+       "id": "consortium:p-hugo",
+       "caption": "Hugo Sandoval",
        "schema": "Person",
        "records": [
-        "cartel:p-hector"
+        "consortium:p-hugo"
        ]
       },
       {
-       "id": "cartel:p-max",
-       "caption": "Maximino Arciniega",
+       "id": "consortium:p-max",
+       "caption": "Maximino Arden",
        "schema": "Person",
        "records": [
-        "cartel:p-max"
+        "consortium:p-max"
        ]
       }
      ]
     },
     {
-     "id": "heisenberg:doc-bb-casefile~p5",
+     "id": "hawthorne:doc-bq-casefile~p5",
      "schema": "Page",
-     "title": "HEISENBERG INVESTIGATION — DEA/ABQ CASE FILE (2008-2010) p.5",
+     "title": "HAWTHORNE INVESTIGATION — DCE/ALD CASE FILE (2008-2010) p.5",
      "publisher": "",
      "url": "",
-     "collection": "heisenberg",
+     "collection": "hawthorne",
      "entry": false,
-     "document": "dea:doc-bb-casefile",
+     "document": "dce:doc-bq-casefile",
      "page": "5",
      "cited_by": [
       {
-       "id": "heisenberg:org-heisenberg",
-       "caption": "Heisenberg Organization",
+       "id": "hawthorne:org-hawthorne",
+       "caption": "Hawthorne Organization",
        "schema": "Organization",
        "records": [
-        "heisenberg:org-heisenberg"
+        "hawthorne:org-hawthorne"
        ]
       }
      ]
@@ -227,13 +227,13 @@ exit 0
  ],
  "unsourced": [
   {
-   "id": "heisenberg:co-carwash",
+   "id": "hawthorne:co-carwash",
    "caption": "A1A Car Wash",
    "schema": "Company"
   },
   {
-   "id": "heisenberg:p-badger",
-   "caption": "Brandon Mayhew",
+   "id": "hawthorne:p-barlow",
+   "caption": "Brendan Mayfield",
    "schema": "Person"
   },
   {
@@ -242,13 +242,13 @@ exit 0
    "schema": "RealEstate"
   },
   {
-   "id": "sess-96cfcd44:p-chris-mara",
-   "caption": "Chris Mara",
+   "id": "sess-96cfcd44:p-chad-maddox",
+   "caption": "Chad Maddox",
    "schema": "Person"
   },
   {
-   "id": "heisenberg:p-combo",
-   "caption": "Christian Ortega",
+   "id": "hawthorne:p-chord",
+   "caption": "Chadwick Ortiz",
    "schema": "Person"
   },
   {
@@ -257,43 +257,38 @@ exit 0
    "schema": "Project"
   },
   {
-   "id": "sess-96cfcd44:p-wachsberger",
-   "caption": "Dan Wachsberger",
+   "id": "sess-96cfcd44:p-waxman",
+   "caption": "Dale Waxman",
    "schema": "Person"
   },
   {
-   "id": "dea:pb-dea-abq",
-   "caption": "DEA Albuquerque Field Office",
+   "id": "consortium:p-krazy8",
+   "caption": "Damian Galway Morrow",
+   "schema": "Person"
+  },
+  {
+   "id": "dce:pb-dce-ald",
+   "caption": "DCE Alderton Field Office",
    "schema": "PublicBody"
   },
   {
-   "id": "operations:proj-train-heist",
-   "caption": "Dead freight methylamine heist",
-   "schema": "Project"
-  },
-  {
-   "id": "heisenberg:p-declan",
-   "caption": "Declan",
+   "id": "hawthorne:p-desmond",
+   "caption": "Desmond",
    "schema": "Person"
   },
   {
-   "id": "heisenberg:org-declan",
-   "caption": "Declan's organization",
+   "id": "hawthorne:org-desmond",
+   "caption": "Desmond's organization",
    "schema": "Organization"
   },
   {
-   "id": "sess-96cfcd44:p-dennis",
-   "caption": "Dennis Markowski",
+   "id": "sess-96cfcd44:p-dexter",
+   "caption": "Dexter Marsh",
    "schema": "Person"
   },
   {
-   "id": "cartel:p-krazy8",
-   "caption": "Domingo Gallardo Molina",
-   "schema": "Person"
-  },
-  {
-   "id": "dea:p-margolis",
-   "caption": "Donald Margolis",
+   "id": "dce:p-marlowe",
+   "caption": "Douglas Marlowe",
    "schema": "Person"
   },
   {
@@ -302,148 +297,143 @@ exit 0
    "schema": "Project"
   },
   {
-   "id": "dea:pb-faa",
+   "id": "dce:pb-faa",
    "caption": "Federal Aviation Administration",
    "schema": "PublicBody"
   },
   {
-   "id": "heisenberg:p-frankie",
-   "caption": "Frankie",
+   "id": "hawthorne:p-freddie",
+   "caption": "Freddie",
    "schema": "Person"
   },
   {
-   "id": "sess-96cfcd44:p-gale",
-   "caption": "Gale Boetticher",
+   "id": "consortium:p-gizmo",
+   "caption": "Gizmo",
    "schema": "Person"
   },
   {
-   "id": "dea:p-merkert",
-   "caption": "George Merkert",
+   "id": "sess-96cfcd44:p-glen",
+   "caption": "Glen Bowman",
    "schema": "Person"
   },
   {
-   "id": "cartel:p-gonzo",
-   "caption": "Gonzo",
+   "id": "dce:p-merkert",
+   "caption": "Gordon Merkert",
    "schema": "Person"
   },
   {
-   "id": "dea:p-holly",
-   "caption": "Holly White",
+   "id": "dce:p-hannah",
+   "caption": "Hannah Wright",
    "schema": "Person"
   },
   {
-   "id": "heisenberg:p-huell",
-   "caption": "Huell Babineaux",
+   "id": "hawthorne:p-hugh",
+   "caption": "Hugh Babcock",
    "schema": "Person"
   },
   {
-   "id": "cartel:p-nacho",
-   "caption": "Ignacio Varga",
+   "id": "consortium:p-nino",
+   "caption": "Ivan Varley",
    "schema": "Person"
   },
   {
-   "id": "heisenberg:p-jack",
-   "caption": "Jack Welker",
+   "id": "hawthorne:p-jake",
+   "caption": "Jake Weston",
    "schema": "Person"
   },
   {
-   "id": "heisenberg:org-welker",
-   "caption": "Jack Welker's gang",
+   "id": "hawthorne:org-weston",
+   "caption": "Jake Weston's gang",
    "schema": "Organization"
   },
   {
-   "id": "heisenberg:p-saul",
-   "caption": "James Morgan McGill",
+   "id": "hawthorne:p-sol",
+   "caption": "Jerome Mercer Mccoy",
    "schema": "Person"
   },
   {
-   "id": "dea:p-jane",
-   "caption": "Jane Margolis",
+   "id": "dce:p-joan",
+   "caption": "Joan Marlowe",
    "schema": "Person"
   },
   {
-   "id": "heisenberg:p-jesse",
-   "caption": "Jesse Bruce Pinkman",
+   "id": "hawthorne:p-jordan",
+   "caption": "Jordan Brooks Pelham",
    "schema": "Person"
   },
   {
-   "id": "heisenberg:p-kenny",
-   "caption": "Kenny",
+   "id": "hawthorne:p-kyle",
+   "caption": "Kyle",
    "schema": "Person"
   },
   {
-   "id": "cartel:p-lalo",
-   "caption": "Lalo Salamanca",
-   "schema": "Person"
-  },
-  {
-   "id": "sess-96cfcd44:re-lavanderia",
-   "caption": "Lavanderia Brillante",
+   "id": "sess-96cfcd44:re-lantern",
+   "caption": "Lantern Bright",
    "schema": "RealEstate"
   },
   {
-   "id": "cartel:p-leonel",
-   "caption": "Leonel Salamanca",
+   "id": "consortium:p-leland",
+   "caption": "Leland Sandoval",
    "schema": "Person"
   },
   {
-   "id": "heisenberg:p-lester",
-   "caption": "Lester",
+   "id": "consortium:p-lenny",
+   "caption": "Lenny Sandoval",
    "schema": "Person"
   },
   {
-   "id": "sess-96cfcd44:co-pollos",
-   "caption": "Los Pollos Hermanos",
+   "id": "hawthorne:p-leroy",
+   "caption": "Leroy",
+   "schema": "Person"
+  },
+  {
+   "id": "sess-96cfcd44:p-linda",
+   "caption": "Linda Rowan-Quill",
+   "schema": "Person"
+  },
+  {
+   "id": "sess-96cfcd44:co-loyal",
+   "caption": "Loyal Provisions",
    "schema": "Company"
   },
   {
    "id": "sess-96cfcd44:re-farm",
-   "caption": "Los Pollos Hermanos chicken farm",
+   "caption": "Loyal Provisions chicken farm",
    "schema": "RealEstate"
   },
   {
-   "id": "fring-condensed:re-pollos-abq",
-   "caption": "Los Pollos Hermanos — Albuquerque flagship",
+   "id": "fairbank-condensed:re-loyal-ald",
+   "caption": "Loyal Provisions — Alderton flagship",
    "schema": "RealEstate"
   },
   {
-   "id": "sess-96cfcd44:p-lydia",
-   "caption": "Lydia Rodarte-Quayle",
+   "id": "consortium:p-marcel",
+   "caption": "Marcel Sandoval",
    "schema": "Person"
   },
   {
-   "id": "cartel:p-marco",
-   "caption": "Marco Salamanca",
+   "id": "dce:p-maren",
+   "caption": "Maren Sharpe",
    "schema": "Person"
   },
   {
-   "id": "dea:p-marie",
-   "caption": "Marie Schrader",
+   "id": "sess-96cfcd44:p-marty",
+   "caption": "Martin Eastwood",
    "schema": "Person"
   },
   {
-   "id": "heisenberg:p-matt",
-   "caption": "Matt",
+   "id": "hawthorne:p-mitch",
+   "caption": "Mitch",
    "schema": "Person"
   },
   {
-   "id": "sess-96cfcd44:p-mike",
-   "caption": "Michael Ehrmantraut",
+   "id": "consortium:p-nodune",
+   "caption": "No-Dune",
    "schema": "Person"
   },
   {
-   "id": "cartel:p-nodoze",
-   "caption": "No-Doze",
-   "schema": "Person"
-  },
-  {
-   "id": "operations:addr-abq",
-   "caption": "operations:addr-abq",
-   "schema": "Address"
-  },
-  {
-   "id": "operations:addr-hacienda",
-   "caption": "operations:addr-hacienda",
+   "id": "operations:addr-ald",
+   "caption": "operations:addr-ald",
    "schema": "Address"
   },
   {
@@ -452,8 +442,13 @@ exit 0
    "schema": "Address"
   },
   {
-   "id": "operations:addr-juarez",
-   "caption": "operations:addr-juarez",
+   "id": "operations:addr-homestead",
+   "caption": "operations:addr-homestead",
+   "schema": "Address"
+  },
+  {
+   "id": "operations:addr-jericho",
+   "caption": "operations:addr-jericho",
    "schema": "Address"
   },
   {
@@ -462,98 +457,103 @@ exit 0
    "schema": "Address"
   },
   {
-   "id": "heisenberg:p-kuby",
-   "caption": "Patrick Kuby",
+   "id": "hawthorne:p-kemp",
+   "caption": "Paul Kemp",
    "schema": "Person"
   },
   {
-   "id": "sess-96cfcd44:p-schuler",
-   "caption": "Peter Schuler",
-   "schema": "Person"
-  },
-  {
-   "id": "heisenberg:crew-jesse",
-   "caption": "Pinkman street crew",
+   "id": "hawthorne:crew-jordan",
+   "caption": "Pelham street crew",
    "schema": "Organization"
   },
   {
-   "id": "heisenberg:p-skinnypete",
-   "caption": "Skinny Pete",
+   "id": "sess-96cfcd44:p-shearer",
+   "caption": "Philip Shearer",
    "schema": "Person"
   },
   {
-   "id": "heisenberg:p-skyler",
-   "caption": "Skyler White",
+   "id": "operations:proj-train-hauling",
+   "caption": "Rail cargo mineral hauling",
+   "schema": "Project"
+  },
+  {
+   "id": "hawthorne:p-sasha",
+   "caption": "Sasha Wright",
    "schema": "Person"
   },
   {
-   "id": "dea:p-gomez",
-   "caption": "Steven Gomez",
+   "id": "dce:p-gray",
+   "caption": "Simon Gray",
    "schema": "Person"
   },
   {
-   "id": "operations:proj-superlab",
-   "caption": "Superlab design and construction",
+   "id": "hawthorne:p-slimphil",
+   "caption": "Slim Phil",
+   "schema": "Person"
+  },
+  {
+   "id": "operations:proj-suite",
+   "caption": "Suite design and construction",
    "schema": "Project"
   },
   {
    "id": "operations:veh-rv",
-   "caption": "The Crystal Ship",
+   "caption": "The Cobalt Ship",
    "schema": "Vehicle"
   },
   {
-   "id": "sess-96cfcd44:re-superlab",
-   "caption": "The Superlab",
+   "id": "sess-96cfcd44:re-suite",
+   "caption": "The Suite",
    "schema": "RealEstate"
   },
   {
-   "id": "heisenberg:p-todd",
-   "caption": "Todd Alquist",
+   "id": "sess-96cfcd44:p-tobias",
+   "caption": "Tobias Kent",
    "schema": "Person"
   },
   {
-   "id": "cartel:crew-tuco",
-   "caption": "Tuco Salamanca's Albuquerque crew",
+   "id": "consortium:crew-tomas",
+   "caption": "Tomas Sandoval's Alderton crew",
    "schema": "Organization"
   },
   {
-   "id": "sess-96cfcd44:p-tyrus",
-   "caption": "Tyrus Kitt",
+   "id": "hawthorne:p-tyler",
+   "caption": "Tyler Alford",
    "schema": "Person"
   },
   {
-   "id": "dea:pb-dea",
-   "caption": "United States Drug Enforcement Administration",
+   "id": "dce:pb-dce",
+   "caption": "United States Department of Customs and Excise",
    "schema": "PublicBody"
   },
   {
-   "id": "heisenberg:co-vamonos",
-   "caption": "Vamonos Pest",
+   "id": "hawthorne:co-vanguard",
+   "caption": "Vanguard Pest",
    "schema": "Company"
   },
   {
-   "id": "operations:proj-vamonos",
-   "caption": "Vamonos Pest mobile cook program",
+   "id": "operations:proj-vanguard",
+   "caption": "Vanguard Pest mobile chef program",
    "schema": "Project"
   },
   {
-   "id": "sess-96cfcd44:p-victor",
-   "caption": "Victor",
+   "id": "sess-96cfcd44:p-vernon",
+   "caption": "Vernon",
    "schema": "Person"
   },
   {
-   "id": "dea:p-waltjr",
-   "caption": "Walter White Jr.",
+   "id": "dce:p-waljr",
+   "caption": "Wallace Wright Jr.",
    "schema": "Person"
   },
   {
    "id": "operations:veh-aztek",
-   "caption": "Walter White's Pontiac Aztek",
+   "caption": "Wallace Wright's Pontiac Aztek",
    "schema": "Vehicle"
   },
   {
-   "id": "heisenberg:re-white",
-   "caption": "White residence — 308 Negra Arroyo Lane",
+   "id": "hawthorne:re-wright",
+   "caption": "Wright residence — 308 North Arbor Lane",
    "schema": "RealEstate"
   }
  ]

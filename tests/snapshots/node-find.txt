@@ -1,6 +1,6 @@
 exit 0
-score   name                      schema         id                          position   parent                         matched
-1.00    Heisenberg                Person         dea:p-heisenberg-dea
-1.00    Walter Hartwell White     Person         heisenberg:p-walt           Leader     Heisenberg Organization        weakAlias  Heisenberg
-0.95    Heisenberg Organization   Organization   heisenberg:org-heisenberg
-0.75    Henry R. Schrader         Person         dea:p-hank                             DEA Albuquerque Field Office   notes  DEA agent; ran the Heisenberg investigation; kill…
+score   name                     schema         id                        position   parent                      matched
+1.00    Hawthorne                Person         dce:p-hawthorne-dce
+1.00    Wallace Hollis Wright    Person         hawthorne:p-wal           Leader     Hawthorne Organization      weakAlias  Hawthorne
+0.95    Hawthorne Organization   Organization   hawthorne:org-hawthorne
+0.75    Harold R. Sharpe         Person         dce:p-hal                            DCE Alderton Field Office   notes  Note on Harold R. Sharpe. Mentions DCE, Hawthorne…

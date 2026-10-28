@@ -1,13 +1,13 @@
 [
  {
-  "id": "doc-bb-casefile~p2",
+  "id": "doc-bq-casefile~p2",
   "schema": "Page",
   "properties": {
    "index": [
     "2"
    ],
    "document": [
-    "doc-bb-casefile"
+    "doc-bq-casefile"
    ]
   },
   "_meta": {
@@ -18,15 +18,15 @@
   }
  },
  {
-  "id": "org-fring",
+  "id": "org-fairbank",
   "schema": "Organization",
   "properties": {
    "name": [
-    "Gustavo Fring Organization"
+    "Gideon Fairbank Organization"
    ],
    "weakAlias": [
-    "Fring drug empire",
-    "the Chicken Man's operation"
+    "Fairbank trade empire",
+    "The Caterer's operation"
    ],
    "jurisdiction": [
     "us"
@@ -35,7 +35,7 @@
     "2010"
    ],
    "sources": [
-    "doc-bb-casefile~p2"
+    "doc-bq-casefile~p2"
    ]
   },
   "_meta": {
@@ -46,17 +46,17 @@
   }
  },
  {
-  "id": "co-madrigal",
+  "id": "co-meridian",
   "schema": "Company",
   "properties": {
    "name": [
-    "Madrigal Electromotive GmbH"
+    "Meridian Electrotech GmbH"
    ],
    "jurisdiction": [
     "de"
    ],
    "sources": [
-    "doc-bb-casefile~p2"
+    "doc-bq-casefile~p2"
    ]
   },
   "_meta": {
@@ -67,11 +67,11 @@
   }
  },
  {
-  "id": "co-pollos",
+  "id": "co-loyal",
   "schema": "Company",
   "properties": {
    "name": [
-    "Los Pollos Hermanos"
+    "Loyal Provisions"
    ],
    "jurisdiction": [
     "us"
@@ -85,11 +85,11 @@
   }
  },
  {
-  "id": "re-pollos-abq",
+  "id": "re-loyal-ald",
   "schema": "RealEstate",
   "properties": {
    "name": [
-    "Los Pollos Hermanos — Albuquerque flagship"
+    "Loyal Provisions — Alderton flagship"
    ],
    "propertyType": [
     "restaurant"
@@ -110,7 +110,7 @@
   "schema": "RealEstate",
   "properties": {
    "name": [
-    "Los Pollos Hermanos chicken farm"
+    "Loyal Provisions chicken farm"
    ],
    "propertyType": [
     "farm"
@@ -127,17 +127,17 @@
   }
  },
  {
-  "id": "re-lavanderia",
+  "id": "re-lantern",
   "schema": "RealEstate",
   "properties": {
    "name": [
-    "Lavanderia Brillante"
+    "Lantern Bright"
    ],
    "propertyType": [
-    "industrial laundry"
+    "industrial linen plant"
    ],
    "address": [
-    "Albuquerque, NM"
+    "Alderton, NM"
    ]
   },
   "_meta": {
@@ -148,17 +148,17 @@
   }
  },
  {
-  "id": "re-superlab",
+  "id": "re-suite",
   "schema": "RealEstate",
   "properties": {
    "name": [
-    "The Superlab"
+    "The Suite"
    ],
    "propertyType": [
-    "clandestine laboratory"
+    "private workshop"
    ],
    "parent": [
-    "Lavanderia Brillante"
+    "Lantern Bright"
    ]
   },
   "_meta": {
@@ -169,16 +169,16 @@
   }
  },
  {
-  "id": "p-fring",
+  "id": "p-fairbank",
   "schema": "Person",
   "properties": {
    "name": [
-    "Gustavo Fring"
+    "Gideon Fairbank"
    ],
    "weakAlias": [
-    "Gus",
-    "Gus Fring",
-    "the Chicken Man"
+    "Gid",
+    "Gid Fairbank",
+    "The Caterer"
    ],
    "citizenship": [
     "cl"
@@ -187,7 +187,7 @@
     "2010"
    ],
    "sources": [
-    "doc-bb-casefile~p2"
+    "doc-bq-casefile~p2"
    ]
   },
   "_meta": {
@@ -198,14 +198,14 @@
   }
  },
  {
-  "id": "p-mike",
+  "id": "p-marty",
   "schema": "Person",
   "properties": {
    "name": [
-    "Michael Ehrmantraut"
+    "Martin Eastwood"
    ],
    "weakAlias": [
-    "Mike"
+    "Marty"
    ],
    "deathDate": [
     "2010"
@@ -222,17 +222,17 @@
   }
  },
  {
-  "id": "p-tyrus",
+  "id": "p-tobias",
   "schema": "Person",
   "properties": {
    "name": [
-    "Tyrus Kitt"
+    "Tobias Kent"
    ],
    "deathDate": [
     "2010"
    ],
    "position": [
-    "enforcer"
+    "escort"
    ]
   },
   "_meta": {
@@ -243,17 +243,17 @@
   }
  },
  {
-  "id": "p-victor",
+  "id": "p-vernon",
   "schema": "Person",
   "properties": {
    "name": [
-    "Victor"
+    "Vernon"
    ],
    "deathDate": [
     "2010"
    ],
    "position": [
-    "enforcer"
+    "escort"
    ]
   },
   "_meta": {
@@ -264,17 +264,17 @@
   }
  },
  {
-  "id": "p-gale",
+  "id": "p-glen",
   "schema": "Person",
   "properties": {
    "name": [
-    "Gale Boetticher"
+    "Glen Bowman"
    ],
    "deathDate": [
     "2010"
    ],
    "position": [
-    "chemist"
+    "cataloguer"
    ]
   },
   "_meta": {
@@ -285,11 +285,11 @@
   }
  },
  {
-  "id": "p-dennis",
+  "id": "p-dexter",
   "schema": "Person",
   "properties": {
    "name": [
-    "Dennis Markowski"
+    "Dexter Marsh"
    ]
   },
   "_meta": {
@@ -300,11 +300,11 @@
   }
  },
  {
-  "id": "p-chris-mara",
+  "id": "p-chad-maddox",
   "schema": "Person",
   "properties": {
    "name": [
-    "Chris Mara"
+    "Chad Maddox"
    ],
    "deathDate": [
     "2010"
@@ -318,11 +318,11 @@
   }
  },
  {
-  "id": "p-wachsberger",
+  "id": "p-waxman",
   "schema": "Person",
   "properties": {
    "name": [
-    "Dan Wachsberger"
+    "Dale Waxman"
    ],
    "deathDate": [
     "2010"
@@ -336,11 +336,11 @@
   }
  },
  {
-  "id": "p-schuler",
+  "id": "p-shearer",
   "schema": "Person",
   "properties": {
    "name": [
-    "Peter Schuler"
+    "Philip Shearer"
    ],
    "deathDate": [
     "2010"
@@ -354,11 +354,11 @@
   }
  },
  {
-  "id": "p-lydia",
+  "id": "p-linda",
   "schema": "Person",
   "properties": {
    "name": [
-    "Lydia Rodarte-Quayle"
+    "Linda Rowan-Quill"
    ],
    "deathDate": [
     "2010"
@@ -376,10 +376,10 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Gustavo Fring"
+    "Gideon Fairbank"
    ],
    "organization": [
-    "Gustavo Fring Organization"
+    "Gideon Fairbank Organization"
    ],
    "role": [
     "leader"
@@ -397,10 +397,10 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Michael Ehrmantraut"
+    "Martin Eastwood"
    ],
    "organization": [
-    "Gustavo Fring Organization"
+    "Gideon Fairbank Organization"
    ],
    "role": [
     "head of security"
@@ -414,18 +414,18 @@
   }
  },
  {
-  "id": "rel-fr-enforcers",
+  "id": "rel-fr-escorts",
   "schema": "Membership",
   "properties": {
    "member": [
-    "Tyrus Kitt",
-    "Victor"
+    "Tobias Kent",
+    "Vernon"
    ],
    "organization": [
-    "Gustavo Fring Organization"
+    "Gideon Fairbank Organization"
    ],
    "role": [
-    "enforcer"
+    "escort"
    ],
    "endDate": [
     "2010"
@@ -439,17 +439,17 @@
   }
  },
  {
-  "id": "rel-fr-chemist",
+  "id": "rel-fr-cataloguer",
   "schema": "Membership",
   "properties": {
    "member": [
-    "Gale Boetticher"
+    "Glen Bowman"
    ],
    "organization": [
-    "Gustavo Fring Organization"
+    "Gideon Fairbank Organization"
    ],
    "role": [
-    "chemist"
+    "cataloguer"
    ],
    "endDate": [
     "2010"
@@ -463,18 +463,18 @@
   }
  },
  {
-  "id": "rel-fr-cooks",
+  "id": "rel-fr-chefs",
   "schema": "Membership",
   "properties": {
    "member": [
-    "Walter White",
-    "Jesse Pinkman"
+    "Wallace Wright",
+    "Jordan Pelham"
    ],
    "organization": [
-    "Gustavo Fring Organization"
+    "Gideon Fairbank Organization"
    ],
    "role": [
-    "cook"
+    "chef"
    ],
    "startDate": [
     "2009"
@@ -495,11 +495,11 @@
   "schema": "Membership",
   "properties": {
    "member": [
-    "Dennis Markowski",
-    "Chris Mara"
+    "Dexter Marsh",
+    "Chad Maddox"
    ],
    "organization": [
-    "Gustavo Fring Organization"
+    "Gideon Fairbank Organization"
    ],
    "role": [
     "member"
@@ -513,14 +513,14 @@
   }
  },
  {
-  "id": "rel-fr-cartel-org",
+  "id": "rel-fr-consortium-org",
   "schema": "Membership",
   "properties": {
    "member": [
-    "Gustavo Fring Organization"
+    "Gideon Fairbank Organization"
    ],
    "organization": [
-    "Juarez Cartel"
+    "Jericho Consortium"
    ]
   },
   "_meta": {
@@ -531,14 +531,14 @@
   }
  },
  {
-  "id": "rel-fr-cartel-dist",
+  "id": "rel-fr-consortium-dist",
   "schema": "Membership",
   "properties": {
    "member": [
-    "Gustavo Fring"
+    "Gideon Fairbank"
    ],
    "organization": [
-    "Juarez Cartel"
+    "Jericho Consortium"
    ],
    "role": [
     "distributor"
@@ -555,14 +555,14 @@
   }
  },
  {
-  "id": "rel-fr-emp-mike",
+  "id": "rel-fr-emp-marty",
   "schema": "Employment",
   "properties": {
    "employee": [
-    "Michael Ehrmantraut"
+    "Martin Eastwood"
    ],
    "employer": [
-    "Los Pollos Hermanos"
+    "Loyal Provisions"
    ],
    "role": [
     "corporate security consultant"
@@ -576,14 +576,14 @@
   }
  },
  {
-  "id": "rel-fr-emp-lydia",
+  "id": "rel-fr-emp-linda",
   "schema": "Employment",
   "properties": {
    "employee": [
-    "Lydia Rodarte-Quayle"
+    "Linda Rowan-Quill"
    ],
    "employer": [
-    "Madrigal Electromotive GmbH"
+    "Meridian Electrotech GmbH"
    ],
    "role": [
     "logistics executive"
@@ -597,14 +597,14 @@
   }
  },
  {
-  "id": "rel-fr-dir-fring",
+  "id": "rel-fr-dir-fairbank",
   "schema": "Directorship",
   "properties": {
    "director": [
-    "Gustavo Fring"
+    "Gideon Fairbank"
    ],
    "organization": [
-    "Los Pollos Hermanos"
+    "Loyal Provisions"
    ],
    "role": [
     "president"
@@ -618,14 +618,14 @@
   }
  },
  {
-  "id": "rel-fr-dir-schuler",
+  "id": "rel-fr-dir-shearer",
   "schema": "Directorship",
   "properties": {
    "director": [
-    "Peter Schuler"
+    "Philip Shearer"
    ],
    "organization": [
-    "Madrigal Electromotive GmbH"
+    "Meridian Electrotech GmbH"
    ],
    "role": [
     "head of fast food division"
@@ -642,15 +642,15 @@
   }
  },
  {
-  "id": "rel-own-madrigal",
+  "id": "rel-own-meridian",
   "schema": "Ownership",
   "properties": {
    "owner": [
-    "Madrigal Electromotive GmbH"
+    "Meridian Electrotech GmbH"
    ],
    "asset": [
-    "Los Pollos Hermanos",
-    "Lavanderia Brillante"
+    "Loyal Provisions",
+    "Lantern Bright"
    ]
   },
   "_meta": {
@@ -661,15 +661,15 @@
   }
  },
  {
-  "id": "rel-own-pollos",
+  "id": "rel-own-loyal",
   "schema": "Ownership",
   "properties": {
    "owner": [
-    "Los Pollos Hermanos"
+    "Loyal Provisions"
    ],
    "asset": [
-    "Los Pollos Hermanos — Albuquerque flagship",
-    "Los Pollos Hermanos chicken farm"
+    "Loyal Provisions — Alderton flagship",
+    "Loyal Provisions chicken farm"
    ]
   },
   "_meta": {
@@ -684,10 +684,10 @@
   "schema": "Representation",
   "properties": {
    "agent": [
-    "Dan Wachsberger"
+    "Dale Waxman"
    ],
    "client": [
-    "Gustavo Fring Organization"
+    "Gideon Fairbank Organization"
    ],
    "role": [
     "outside counsel"
@@ -704,17 +704,17 @@
   }
  },
  {
-  "id": "rel-fr-assoc-lydia",
+  "id": "rel-fr-assoc-linda",
   "schema": "Associate",
   "properties": {
    "person": [
-    "Lydia Rodarte-Quayle"
+    "Linda Rowan-Quill"
    ],
    "associate": [
-    "Gustavo Fring"
+    "Gideon Fairbank"
    ],
    "relationship": [
-    "methylamine supplier"
+    "mineral supplier"
    ]
   },
   "_meta": {

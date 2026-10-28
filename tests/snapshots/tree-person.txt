@@ -1,90 +1,90 @@
 exit 0
-Dan Wachsberger (Person)
-Declan (Person) — Leader
-Donald Margolis (Person)
-Heisenberg (Person)
-Jesse Bruce Pinkman (Person) — Leader
-│ also  Dead freight methylamine heist     ProjectParticipant   logistics
-│ also  Evidence-room magnet operation     ProjectParticipant   crew
-│ also  Gustavo Fring Organization         Membership           cook
-│ also  Pinkman street crew                Membership           leader
-│ also  Vamonos Pest mobile cook program   ProjectParticipant   cook
-├── Huell Babineaux (Person) — Member
-│     also  Heisenberg Organization   Membership   member
-├── Patrick Kuby (Person) — Member
-│     also  Heisenberg Organization   Membership   member
-└── Todd Alquist (Person) — Member
-      also  Dead freight methylamine heist     ProjectParticipant   mechanic
-      also  Heisenberg Organization            Membership           assistant cook
-      also  Jack Welker's gang                 Membership           member
-      also  Vamonos Pest                       Employment           exterminator
-      also  Vamonos Pest mobile cook program   ProjectParticipant   assistant
-Walter Hartwell White (Person) — Leader
-│ also  Dead freight methylamine heist     ProjectParticipant   planner
-│ also  Evidence-room magnet operation     ProjectParticipant   planner
-│ also  Gustavo Fring Organization         Membership           cook
-│ also  Vamonos Pest mobile cook program   ProjectParticipant   cook
+Dale Waxman (Person)
+Desmond (Person) — Leader
+Douglas Marlowe (Person)
+Hannah Wright (Person)
+Hawthorne (Person)
+Jordan Brooks Pelham (Person) — Leader
+│ also  Evidence-room magnet operation      ProjectParticipant   crew
+│ also  Gideon Fairbank Organization        Membership           chef
+│ also  Pelham street crew                  Membership           leader
+│ also  Rail cargo mineral hauling          ProjectParticipant   logistics
+│ also  Vanguard Pest mobile chef program   ProjectParticipant   chef
+├── Hugh Babcock (Person) — Member
+│     also  Hawthorne Organization   Membership   member
+├── Paul Kemp (Person) — Member
+│     also  Hawthorne Organization   Membership   member
+└── Tyler Alford (Person) — Member
+      also  Hawthorne Organization              Membership           assistant chef
+      also  Jake Weston's gang                  Membership           member
+      also  Rail cargo mineral hauling          ProjectParticipant   mechanic
+      also  Vanguard Pest                       Employment           exterminator
+      also  Vanguard Pest mobile chef program   ProjectParticipant   assistant
+Wallace Hollis Wright (Person) — Leader
+│ also  Evidence-room magnet operation      ProjectParticipant   planner
+│ also  Gideon Fairbank Organization        Membership           chef
+│ also  Rail cargo mineral hauling          ProjectParticipant   planner
+│ also  Vanguard Pest mobile chef program   ProjectParticipant   chef
 ├── A1A Car Wash (Company)
-│   └── Skyler White (Person)
-│       │ also  Heisenberg Organization   Membership   money laundering
-│       └── White residence — 308 Negra Arroyo Lane (RealEstate)
-│             also  Walter Hartwell White   Ownership
-├── The Crystal Ship (Vehicle)
-└── Walter White's Pontiac Aztek (Vehicle)
-Peter Schuler (Person)
-Michael Ehrmantraut (Person)
-  also  Dead freight methylamine heist     ProjectParticipant   spotter
-  also  Evidence-room magnet operation     ProjectParticipant   crew
-  also  Gustavo Fring Organization         Membership           head of security
-  also  Heisenberg Organization            Membership           head of security
-  also  Superlab design and construction   ProjectParticipant   security
-James Morgan McGill (Person)
-Lydia Rodarte-Quayle (Person)
+│   └── Sasha Wright (Person)
+│       │ also  Hawthorne Organization   Membership   treasury
+│       └── Wright residence — 308 North Arbor Lane (RealEstate)
+│             also  Wallace Hollis Wright   Ownership
+├── The Cobalt Ship (Vehicle)
+└── Wallace Wright's Pontiac Aztek (Vehicle)
+Philip Shearer (Person)
+Martin Eastwood (Person)
+  also  Evidence-room magnet operation   ProjectParticipant   crew
+  also  Gideon Fairbank Organization     Membership           head of security
+  also  Hawthorne Organization           Membership           head of security
+  also  Rail cargo mineral hauling       ProjectParticipant   spotter
+  also  Suite design and construction    ProjectParticipant   security
+Jerome Mercer Mccoy (Person)
+Linda Rowan-Quill (Person)
   also  Czech Republic distribution channel   ProjectParticipant   international distribution
-  also  Madrigal Electromotive GmbH           Employment           logistics executive
-Brandon Mayhew (Person)
-Christian Ortega (Person)
-Skinny Pete (Person)
-Holly White (Person)
-Jack Welker (Person) — Leader
-├── Kenny (Person) — Second-in-command
-│     also  Jack Welker's gang   Membership   second-in-command
-├── Frankie (Person) — Member
-│     also  Jack Welker's gang   Membership   member
-├── Lester (Person) — Member
-│     also  Jack Welker's gang   Membership   member
-└── Matt (Person) — Member
-      also  Jack Welker's gang   Membership   member
-Jane Margolis (Person)
-Eladio Vuente (Person) — Leader
-├── Gonzo (Person) — Member
-│     also  Tuco Salamanca's Albuquerque crew   Membership   member
-├── Ignacio Varga (Person) — Member
-│     also  Tuco Salamanca's Albuquerque crew   Membership   member
-└── No-Doze (Person) — Member
-      also  Tuco Salamanca's Albuquerque crew   Membership   member
-Gustavo Fring (Person) — Leader
-│ also  Juarez Cartel                      Membership           distributor
-│ also  Los Pollos Hermanos                Directorship         president
-│ also  Superlab design and construction   ProjectParticipant   sponsor
-├── Chris Mara (Person) — Member
-│     also  Gustavo Fring Organization   Membership   member
-└── Dennis Markowski (Person) — Member
-      also  Gustavo Fring Organization   Membership   member
-Gale Boetticher (Person)
-  also  Superlab design and construction   ProjectParticipant   lead chemist
-Tyrus Kitt (Person)
-Victor (Person)
-Hector Salamanca (Person)
-Juan Bolsa (Person)
-Lalo Salamanca (Person)
-Leonel Salamanca (Person)
-Marco Salamanca (Person)
-Domingo Gallardo Molina (Person)
-Tuco Salamanca (Person)
-Marie Schrader (Person)
-Maximino Arciniega (Person)
-George Merkert (Person)
-Henry R. Schrader (Person)
-Steven Gomez (Person)
-Walter White Jr. (Person)
+  also  Meridian Electrotech GmbH             Employment           logistics executive
+Brendan Mayfield (Person)
+Chadwick Ortiz (Person)
+Slim Phil (Person)
+Jake Weston (Person) — Leader
+├── Kyle (Person) — Second-in-command
+│     also  Jake Weston's gang   Membership   second-in-command
+├── Freddie (Person) — Member
+│     also  Jake Weston's gang   Membership   member
+├── Leroy (Person) — Member
+│     also  Jake Weston's gang   Membership   member
+└── Mitch (Person) — Member
+      also  Jake Weston's gang   Membership   member
+Elias Vaughn (Person) — Leader
+├── Gizmo (Person) — Member
+│     also  Tomas Sandoval's Alderton crew   Membership   member
+├── Ivan Varley (Person) — Member
+│     also  Tomas Sandoval's Alderton crew   Membership   member
+└── No-Dune (Person) — Member
+      also  Tomas Sandoval's Alderton crew   Membership   member
+Gideon Fairbank (Person) — Leader
+│ also  Jericho Consortium              Membership           distributor
+│ also  Loyal Provisions                Directorship         president
+│ also  Suite design and construction   ProjectParticipant   sponsor
+├── Chad Maddox (Person) — Member
+│     also  Gideon Fairbank Organization   Membership   member
+└── Dexter Marsh (Person) — Member
+      also  Gideon Fairbank Organization   Membership   member
+Glen Bowman (Person)
+  also  Suite design and construction   ProjectParticipant   lead cataloguer
+Tobias Kent (Person)
+Vernon (Person)
+Hugo Sandoval (Person)
+Jonas Boyd (Person)
+Leland Sandoval (Person)
+Lenny Sandoval (Person)
+Marcel Sandoval (Person)
+Damian Galway Morrow (Person)
+Tomas Sandoval (Person)
+Joan Marlowe (Person)
+Maren Sharpe (Person)
+Maximino Arden (Person)
+Gordon Merkert (Person)
+Harold R. Sharpe (Person)
+Simon Gray (Person)
+Wallace Wright Jr. (Person)

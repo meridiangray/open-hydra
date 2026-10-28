@@ -2,34 +2,34 @@ exit 0
   only     links   drawn   no link
   family       3      15        64
 
-Marie Schrader (Person)
-  also  Skyler White   Family   sister   sideways
-Henry R. Schrader (Person)
-  also  Marie Schrader   Family   wife   sideways
-Skyler White (Person)
-  also  Walter Hartwell White   Family   husband   sideways
-Walter Hartwell White (Person)
-│ also  Henry R. Schrader   Family   brother-in-law   sideways
-├── Holly White (Person)   Family   child (father)
-└── Walter White Jr. (Person)   Family   child (father)
+Maren Sharpe (Person)
+  also  Sasha Wright   Family   sister   sideways
+Harold R. Sharpe (Person)
+  also  Maren Sharpe   Family   wife   sideways
+Sasha Wright (Person)
+  also  Wallace Hollis Wright   Family   husband   sideways
+Wallace Hollis Wright (Person)
+│ also  Harold R. Sharpe   Family   brother-in-law   sideways
+├── Hannah Wright (Person)   Family   child (father)
+└── Wallace Wright Jr. (Person)   Family   child (father)
 
-Donald Margolis (Person)
-└── Jane Margolis (Person)   Family   child (father)
+Douglas Marlowe (Person)
+└── Joan Marlowe (Person)   Family   child (father)
 
-Hector Salamanca (Person)
-Lalo Salamanca (Person)
-  also  Hector Salamanca   Family   uncle    sideways
-  also  Tuco Salamanca     Family   cousin   sideways
-Leonel Salamanca (Person)
-  also  Hector Salamanca   Family   uncle   sideways
-Marco Salamanca (Person)
-  also  Hector Salamanca   Family   uncle          sideways
-  also  Leonel Salamanca   Family   twin brother   sideways
-Tuco Salamanca (Person)
-  also  Hector Salamanca   Family   uncle    sideways
-  also  Leonel Salamanca   Family   cousin   sideways
-  also  Marco Salamanca    Family   cousin   sideways
+Hugo Sandoval (Person)
+Leland Sandoval (Person)
+  also  Hugo Sandoval   Family   uncle   sideways
+Lenny Sandoval (Person)
+  also  Hugo Sandoval    Family   uncle    sideways
+  also  Tomas Sandoval   Family   cousin   sideways
+Marcel Sandoval (Person)
+  also  Hugo Sandoval     Family   uncle          sideways
+  also  Leland Sandoval   Family   twin brother   sideways
+Tomas Sandoval (Person)
+  also  Hugo Sandoval     Family   uncle    sideways
+  also  Leland Sandoval   Family   cousin   sideways
+  also  Marcel Sandoval   Family   cousin   sideways
 
-Jack Welker (Person)
-Todd Alquist (Person)
-  also  Jack Welker   Family   uncle   sideways
+Jake Weston (Person)
+Tyler Alford (Person)
+  also  Jake Weston   Family   uncle   sideways

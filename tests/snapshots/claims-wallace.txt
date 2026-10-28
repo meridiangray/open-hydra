@@ -1,0 +1,16 @@
+exit 0
+entity                  type     id                claims   collections
+Wallace Hollis Wright   Person   hawthorne:p-wal        8             1
+
+    field       value                                                record            collection
+    birthDate   1958-09-07                                           hawthorne:p-wal   hawthorne
+    deathDate   2010-09-07                                           hawthorne:p-wal   hawthorne
+    name        Wallace Hollis Wright                                hawthorne:p-wal   hawthorne
+    notes       Note on Wallace Hollis Wright. Mentions Hawthorne.   hawthorne:p-wal   hawthorne
+    sources     hawthorne:doc-bq-casefile~p1                         hawthorne:p-wal   hawthorne
+    weakAlias   Wal                                                  hawthorne:p-wal   hawthorne
+                Hawthorne                                            hawthorne:p-wal   hawthorne
+                Mr. Lowell                                           hawthorne:p-wal   hawthorne
+
+  documented in     HAWTHORNE INVESTIGATION — DCE/ALD CASE FILE (2008-2010) p.1
+

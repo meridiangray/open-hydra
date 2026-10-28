@@ -5,59 +5,59 @@ sources
 
   documents
 
-  HEISENBERG INVESTIGATION — DEA/ABQ CASE FILE (2008-2010) (Pages)   dea:doc-bb-casefile
-  ├── p.1 (Page)   heisenberg:doc-bb-casefile~p1
-  │   ├── Heisenberg (Person)   sources   dea:p-heisenberg-dea
-  │   ├── Henry R. Schrader (Person)   sources   dea:p-hank
-  │   └── Walter Hartwell White (Person)   sources   heisenberg:p-walt
-  ├── p.2 (Page)   fring-condensed:doc-bb-casefile~p2
-  │   └── Gustavo Fring (Person)   sources of fring-condensed:p-fring   sess-96cfcd44:p-fring
-  ├── p.2 (Page)   sess-96cfcd44:doc-bb-casefile~p2
-  │   └── Gustavo Fring (Person)   sources   sess-96cfcd44:p-fring
-  ├── p.3 (Page)   cartel:doc-bb-casefile~p3
-  │   ├── Eladio Vuente (Person)   sources   cartel:p-eladio
-  │   ├── Juan Bolsa (Person)   sources   cartel:p-bolsa
-  │   └── Tuco Salamanca (Person)   sources   cartel:p-tuco
-  └── p.4 (Page)   cartel:doc-bb-casefile~p4
-      ├── Hector Salamanca (Person)   sources   cartel:p-hector
-      └── Maximino Arciniega (Person)   sources   cartel:p-max
+  HAWTHORNE INVESTIGATION — DCE/ALD CASE FILE (2008-2010) (Pages)   dce:doc-bq-casefile
+  ├── p.1 (Page)   hawthorne:doc-bq-casefile~p1
+  │   ├── Harold R. Sharpe (Person)   sources   dce:p-hal
+  │   ├── Hawthorne (Person)   sources   dce:p-hawthorne-dce
+  │   └── Wallace Hollis Wright (Person)   sources   hawthorne:p-wal
+  ├── p.2 (Page)   fairbank-condensed:doc-bq-casefile~p2
+  │   └── Gideon Fairbank (Person)   sources of fairbank-condensed:p-fairbank   sess-96cfcd44:p-fairbank
+  ├── p.2 (Page)   sess-96cfcd44:doc-bq-casefile~p2
+  │   └── Gideon Fairbank (Person)   sources   sess-96cfcd44:p-fairbank
+  ├── p.3 (Page)   consortium:doc-bq-casefile~p3
+  │   ├── Elias Vaughn (Person)   sources   consortium:p-elias
+  │   ├── Jonas Boyd (Person)   sources   consortium:p-boyd
+  │   └── Tomas Sandoval (Person)   sources   consortium:p-tomas
+  └── p.4 (Page)   consortium:doc-bq-casefile~p4
+      ├── Hugo Sandoval (Person)   sources   consortium:p-hugo
+      └── Maximino Arden (Person)   sources   consortium:p-max
 
   uncited    38
-     Brandon Mayhew            Person   heisenberg:p-badger
-     Chris Mara                Person   sess-96cfcd44:p-chris-mara
-     Christian Ortega          Person   heisenberg:p-combo
-     Dan Wachsberger           Person   sess-96cfcd44:p-wachsberger
-     Declan                    Person   heisenberg:p-declan
-     Dennis Markowski          Person   sess-96cfcd44:p-dennis
-     Domingo Gallardo Molina   Person   cartel:p-krazy8
-     Donald Margolis           Person   dea:p-margolis
-     Frankie                   Person   heisenberg:p-frankie
-     Gale Boetticher           Person   sess-96cfcd44:p-gale
-     George Merkert            Person   dea:p-merkert
-     Gonzo                     Person   cartel:p-gonzo
-     Holly White               Person   dea:p-holly
-     Huell Babineaux           Person   heisenberg:p-huell
-     Ignacio Varga             Person   cartel:p-nacho
-     Jack Welker               Person   heisenberg:p-jack
-     James Morgan McGill       Person   heisenberg:p-saul
-     Jane Margolis             Person   dea:p-jane
-     Jesse Bruce Pinkman       Person   heisenberg:p-jesse
-     Kenny                     Person   heisenberg:p-kenny
-     Lalo Salamanca            Person   cartel:p-lalo
-     Leonel Salamanca          Person   cartel:p-leonel
-     Lester                    Person   heisenberg:p-lester
-     Lydia Rodarte-Quayle      Person   sess-96cfcd44:p-lydia
-     Marco Salamanca           Person   cartel:p-marco
-     Marie Schrader            Person   dea:p-marie
-     Matt                      Person   heisenberg:p-matt
-     Michael Ehrmantraut       Person   sess-96cfcd44:p-mike
-     No-Doze                   Person   cartel:p-nodoze
-     Patrick Kuby              Person   heisenberg:p-kuby
-     Peter Schuler             Person   sess-96cfcd44:p-schuler
-     Skinny Pete               Person   heisenberg:p-skinnypete
-     Skyler White              Person   heisenberg:p-skyler
-     Steven Gomez              Person   dea:p-gomez
-     Todd Alquist              Person   heisenberg:p-todd
-     Tyrus Kitt                Person   sess-96cfcd44:p-tyrus
-     Victor                    Person   sess-96cfcd44:p-victor
-     Walter White Jr.          Person   dea:p-waltjr
+     Brendan Mayfield       Person   hawthorne:p-barlow
+     Chad Maddox            Person   sess-96cfcd44:p-chad-maddox
+     Chadwick Ortiz         Person   hawthorne:p-chord
+     Dale Waxman            Person   sess-96cfcd44:p-waxman
+     Damian Galway Morrow   Person   consortium:p-krazy8
+     Desmond                Person   hawthorne:p-desmond
+     Dexter Marsh           Person   sess-96cfcd44:p-dexter
+     Douglas Marlowe        Person   dce:p-marlowe
+     Freddie                Person   hawthorne:p-freddie
+     Gizmo                  Person   consortium:p-gizmo
+     Glen Bowman            Person   sess-96cfcd44:p-glen
+     Gordon Merkert         Person   dce:p-merkert
+     Hannah Wright          Person   dce:p-hannah
+     Hugh Babcock           Person   hawthorne:p-hugh
+     Ivan Varley            Person   consortium:p-nino
+     Jake Weston            Person   hawthorne:p-jake
+     Jerome Mercer Mccoy    Person   hawthorne:p-sol
+     Joan Marlowe           Person   dce:p-joan
+     Jordan Brooks Pelham   Person   hawthorne:p-jordan
+     Kyle                   Person   hawthorne:p-kyle
+     Leland Sandoval        Person   consortium:p-leland
+     Lenny Sandoval         Person   consortium:p-lenny
+     Leroy                  Person   hawthorne:p-leroy
+     Linda Rowan-Quill      Person   sess-96cfcd44:p-linda
+     Marcel Sandoval        Person   consortium:p-marcel
+     Maren Sharpe           Person   dce:p-maren
+     Martin Eastwood        Person   sess-96cfcd44:p-marty
+     Mitch                  Person   hawthorne:p-mitch
+     No-Dune                Person   consortium:p-nodune
+     Paul Kemp              Person   hawthorne:p-kemp
+     Philip Shearer         Person   sess-96cfcd44:p-shearer
+     Sasha Wright           Person   hawthorne:p-sasha
+     Simon Gray             Person   dce:p-gray
+     Slim Phil              Person   hawthorne:p-slimphil
+     Tobias Kent            Person   sess-96cfcd44:p-tobias
+     Tyler Alford           Person   hawthorne:p-tyler
+     Vernon                 Person   sess-96cfcd44:p-vernon
+     Wallace Wright Jr.     Person   dce:p-waljr

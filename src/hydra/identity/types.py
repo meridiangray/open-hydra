@@ -124,8 +124,8 @@ compare_checksum = compare_identifier
 
 
 def compare_name(a: str, b: str) -> Comparison:
-    """Exact normalized match, or word-subset ("Walter White" subset of
-    "Walter Hartwell White"). Never CONFLICT on its own — a name mismatch
+    """Exact normalized match, or word-subset ("Wallace Wright" subset of
+    "Wallace Hollis Wright"). Never CONFLICT on its own — a name mismatch
     only blocks a merge via a separate `distinct` field's comparator."""
     na, ta = name_key(a)
     nb, tb = name_key(b)
@@ -186,7 +186,7 @@ compare_url = _soft_exact(norm_url)
 
 compare_address = compare_name
 """`address` is free text with the same subset relationship as a name
-("Albuquerque" is validly a subset of "Albuquerque, New Mexico, United
+("Alderton" is validly a subset of "Alderton, New Mexico, United
 States") — not in classify.py's default `match` type set (no evidence every
 address field is identity-bearing), but a real comparator exists for when
 one IS explicitly promoted via param.yaml (`Address.full`/`street`/`city`)."""

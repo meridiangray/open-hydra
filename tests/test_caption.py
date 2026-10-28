@@ -8,8 +8,8 @@ def r(*names):
 
 
 def test_fullest_name_beats_first_seen():
-    assert captions.caption(r("Walter White", "Walter Hartwell White")) == "Walter Hartwell White"
-    assert captions.caption(r("Walter Hartwell White", "Walter White")) == "Walter Hartwell White"
+    assert captions.caption(r("Wallace Wright", "Wallace Hollis Wright")) == "Wallace Hollis Wright"
+    assert captions.caption(r("Wallace Hollis Wright", "Wallace Wright")) == "Wallace Hollis Wright"
 
 
 def test_ties_keep_first_seen():
@@ -17,9 +17,9 @@ def test_ties_keep_first_seen():
 
 
 def test_pin_overrides_but_only_for_an_own_value():
-    rec = r("Walter White", "Walter Hartwell White")
-    assert captions.caption(rec, {"cap-x1": "Walter White"}) == "Walter White"
-    assert captions.caption(rec, {"cap-x1": "Someone Else"}) == "Walter Hartwell White"
+    rec = r("Wallace Wright", "Wallace Hollis Wright")
+    assert captions.caption(rec, {"cap-x1": "Wallace Wright"}) == "Wallace Wright"
+    assert captions.caption(rec, {"cap-x1": "Someone Else"}) == "Wallace Hollis Wright"
 
 
 def test_no_name_falls_back_to_title_then_id():

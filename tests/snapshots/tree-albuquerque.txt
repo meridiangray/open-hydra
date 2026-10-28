@@ -1,9 +1,0 @@
-exit 0
-DEA Albuquerque Field Office (PublicBody)
-├── George Merkert (Person)
-├── Henry R. Schrader (Person)
-└── Steven Gomez (Person)
-Tuco Salamanca's Albuquerque crew (Organization)
-├── Domingo Gallardo Molina (Person)
-└── Tuco Salamanca (Person)
-Los Pollos Hermanos — Albuquerque flagship (RealEstate)
