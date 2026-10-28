@@ -72,22 +72,32 @@ Which is better?
   ? not sure   u undo   q quit
 ```
 
-And any tree exports as a Mermaid chart, which renders right here on GitHub (`hydra-ctl tree israeli --format mermaid --vertical`):
+And any tree exports as a Mermaid chart, which renders right here on GitHub. With `--lateral` the links that are not parent and child are drawn dotted, so the case reads as a graph around Pollard (`hydra-ctl tree --format mermaid --lateral`):
 
 ```mermaid
 flowchart TD
     %% record tree — pollard (GENERATED)
-    org-ez802bp11f["Israeli Air Force"]
-    per-6q0b4zamfq["Aviem Sella<br/><i>fighter pilot</i>"]
-    org-6t8fkjn4kr["Israeli Consulate New York"]
-    per-p8w1q8cajn["Joseph Yagur<br/><i>Counselor for Scientific Affairs</i>"]
-    org-xfqaxke58a["Israeli Embassy in Washington, D.C."]
-    per-jyft1ret42["Ilan Ravid<br/><i>Attache for Scientific Affairs</i>"]
-    per-89cafr9tn9["Irit Erb<br/><i>secretary</i>"]
-    org-ez802bp11f -->|"fighter pilot"| per-6q0b4zamfq
-    org-6t8fkjn4kr -->|"Counselor for Scientific Affairs"| per-p8w1q8cajn
-    org-xfqaxke58a -->|"Attache for Scientific Affairs"| per-jyft1ret42
-    org-xfqaxke58a -->|"secretary"| per-89cafr9tn9
+    per_jbcv7nwbwb["Anne Henderson-Pollard"]
+    org_2hzt03a6z9["Israel"]
+    per_6q0b4zamfq["Aviem Sella<br/><i>fighter pilot</i>"]
+    per_p8w1q8cajn["Joseph Yagur<br/><i>Counselor for Scientific Affairs</i>"]
+    per_89cafr9tn9["Irit Erb<br/><i>secretary</i>"]
+    org_8b2fsev104["Anti-Terrorist Alert Center"]
+    org_1phejc0ngk["Navy Field Operational Intelligence Office"]
+    org_3kk63smvp7["Naval Ocean Surveillance Information Center"]
+    org_f8xs95cwk2["New York University"]
+    per_9n72sstcw8["Rafael Eitan<br/><i>senior career official in Israeli intelligence</i>"]
+    per_w3v2f7z7pe["Jonathan Jay Pollard<br/><i>Analyst</i>"]
+    org_f8xs95cwk2 -.-> per_6q0b4zamfq
+    org_8b2fsev104 -.->|"analyst"| per_w3v2f7z7pe
+    org_3kk63smvp7 -.->|"research analyst"| per_w3v2f7z7pe
+    org_1phejc0ngk -.->|"analyst"| per_w3v2f7z7pe
+    per_w3v2f7z7pe -.-|"wife"| per_jbcv7nwbwb
+    per_w3v2f7z7pe -.-|"first handler"| per_6q0b4zamfq
+    per_w3v2f7z7pe -.-|"handler"| per_89cafr9tn9
+    per_w3v2f7z7pe -.- org_2hzt03a6z9
+    per_w3v2f7z7pe -.-|"primary, direct handler"| per_p8w1q8cajn
+    per_w3v2f7z7pe -.-|"senior Israeli official in charge of the case"| per_9n72sstcw8
 ```
 
 ## How it works
