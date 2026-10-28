@@ -20,5 +20,5 @@ a8daddb7ceeeb5ad  out/g.graphml
 exit 0
 Packed demo into <tmp>/out/demo.hydra
   size     build
-  166 KB   included
+  165 KB   included
 
