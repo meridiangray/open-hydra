@@ -16,6 +16,7 @@ GROUPS = {
     },
     "Build": {
         "import": ("hydra.cli.importer", "Load FtM JSON (standard or hydra's), CSV or GraphML as a collection"),
+        "wikidata": ("hydra.cli.wikidata", "Read Wikidata items into the archive by its map; find what the map misses"),
         "build": ("hydra.cli.build", "Compile collections/ into .hydra/parsed/"),
         "check": ("hydra.cli.check", "Find problems in the archive's files, without building"),
     },
@@ -34,6 +35,13 @@ GROUPS = {
         "reset": ("hydra.cli.reset", "Remove decisions (backs them up first)"),
         "stubs": ("hydra.cli.stubs", "List names that link to no record; graduate one into an entity"),
     },
+    "Universe": {
+        "universe": ("hydra.cli.universe", "Canonical ids (Hs) across this archive and its members"),
+        "wiki": ("hydra.cli.wiki", "Read the universe as a wiki: serve it, or write it as a static site"),
+    },
+    "History": {
+        "history": ("hydra.cli.history", "Snapshots and branches of the authored files: log, diff, restore, merge"),
+    },
     "Share": {
         "pack": ("hydra.cli.pack", "Pack an archive into one portable .hydra file"),
         "unpack": ("hydra.cli.pack:unpack_main", "Unpack a .hydra file into a folder"),
@@ -49,6 +57,47 @@ COMMANDS = {name: entry for group in GROUPS.values() for name, entry in group.it
 SHOWN = {"node": "node find"}
 ALIASES = {"position": "positions"}
 READ_ONLY = {"check", "details", "tree", "positions", "todo", "node", "claims", "sources", "export"}   # commands that write no archive file
+
+
+# commands that may write authored files: a snapshot follows each that succeeds (none when nothing changed)
+SNAPSHOT_AFTER = {"init", "import", "wikidata", "build", "answer", "review", "reset", "stubs", "hints", "collections",
+                  "defaults", "universe", "wiki"}
+
+# the subcommand a multi-verb command was run with decides whether it writes:
+# these never do (everything else of these commands may)
+READ_SUBS = {"universe": {"status", "review", "show"}, "wikidata": {"unread", "prop"},
+             "wiki": {"serve", "check", "edges", "sections", "badges"},
+             "collections": set(), "defaults": set(), "stubs": set(), "hints": set()}
+# and these always do (a `collections` list or bare `defaults` does not)
+WRITE_SUBS = {"collections": {"prefix"}, "defaults": {"off", "on", "restore"},
+              "stubs": {"graduate", "drop"}, "hints": {"set"}}
+
+
+def _sub(args: list[str]) -> str:
+    """The subcommand: the first argument that is no flag and no archive name."""
+    from hydra import resources
+    return next((x for x in args[1:] if not x.startswith("-") and not resources.names_archive(x)), "")
+
+
+def _writes(args: list[str]) -> bool:
+    """Does this invocation write authored files? The command's subcommand says
+    (`universe status` reads, `universe merge` writes; `wiki site` writes only with --publish)."""
+    cmd, sub = args[0], _sub(args)
+    if cmd == "wiki":
+        return sub not in READ_SUBS["wiki"] and (sub != "site" or "--publish" in args)
+    if cmd in WRITE_SUBS:
+        return sub in WRITE_SUBS[cmd]
+    return sub not in READ_SUBS.get(cmd, {"__never__"})
+
+
+def _snapshot_after(args: list[str]) -> None:
+    from hydra import history, resources
+    where = next((x for x in args[1:3] if not x.startswith("-") and resources.names_archive(x)), None)
+    try:
+        root = resources.archive(where)
+    except SystemExit:                    # a .hydra file, or no archive here: nothing of ours was written
+        return
+    history.auto(root, history.plain_command("hydra-ctl " + " ".join(args))[:200])
 
 
 def usage() -> str:
@@ -93,13 +142,15 @@ def main(argv: list[str] | None = None) -> int:
     mod, _, fn = COMMANDS[args[0]][0].partition(":")
     run_it = getattr(importlib.import_module(mod), fn or "main")
     try:
-        if args[0] in READ_ONLY or (args[0] == "collections" and args[1:2] != ["prefix"]) \
-                or (args[0] == "stubs" and args[1:2] not in (["graduate"], ["drop"])) \
-                or (args[0] == "hints" and args[1:2] != ["set"]):
+        writes = _writes(args)
+        if args[0] in READ_ONLY or not writes:
             from hydra import yamlcache
             with yamlcache.frozen():              # changes nothing: each file is looked at once
                 return run_it(args[1:])
-        return run_it(args[1:])
+        rc = run_it(args[1:])
+        if not rc and args[0] in SNAPSHOT_AFTER:
+            _snapshot_after(args)
+        return rc
     except Exception as e:                        # any command that builds an archive with no records
         from hydra.build import NothingToBuild
         if isinstance(e, NothingToBuild):

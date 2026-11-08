@@ -24,7 +24,7 @@ CODE = ("import sys; sys.path.insert(0, %r); from hydra import build; "
 def archives(work: Path) -> dict[str, Path]:
     out = {}
     src = REPO / "src" / "hydra" / "template"
-    for name, cols in (("demo", HERE.parent.parent / "examples" / "demo" / "collections"), ("corpus2", HERE.parent / "corpus2" / "collections")):
+    for name, cols in (("demo", HERE.parent.parent / "archive-demos" / "demo" / "collections"), ("corpus2", HERE.parent / "corpus2" / "collections")):
         root = work / "arch" / name
         if not root.exists():
             shutil.copytree(src, root)

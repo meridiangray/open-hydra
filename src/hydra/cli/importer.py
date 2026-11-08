@@ -1,7 +1,12 @@
 """import: load FtM records, or a graph export, into the archive as a collection.
 
     hydra-ctl import [<dir>] <path> --format ftm|hydra-ftm|csv|graphml
-        [--name <collection>] [--force] [--no-build]
+        [--name <collection>] [--map MAP.yaml] [--force] [--no-build]
+
+`--map`: the source's habits mapped to hydra's shape as it is imported (facts in
+notes lines lifted into properties and relationships, qualifiers moved out of
+names, links written as ids, approximate dates kept); see hydra/importmap.py
+for the file, and the report says every change it made.
 
 The formats `export` writes, read back:
 
@@ -33,7 +38,7 @@ from pathlib import Path
 from hydra import layout, resources, schema
 from hydra.cli import style
 from hydra.cli.export import FORMATS, NAME_PROPS
-from hydra.ingest import FTM_RENAMES, parse_records
+from hydra.ingest import FTM_RENAMES, parse_records, raw_records
 
 DERIVED = ("placedUnder", "sameAs")              # edges a build makes, not data
 ENDINGS = (".jsonl", ".json", ".jsonld", ".ftm", ".hydra-ftm", ".csv", ".graphml", "-graph")
@@ -127,6 +132,7 @@ def main(argv: list[str] | None = None, say=print) -> int:
                     help="ftm: standard FtM · hydra-ftm: links as names · csv: an export's folder · graphml")
     ap.add_argument("--name", default="", help="the collection's name (default: the file's)")
     ap.add_argument("--force", action="store_true", help="replace a collection of that name")
+    ap.add_argument("--map", help="a YAML map of the source's habits (notes, names, links, dates)")
     ap.add_argument("--no-build", action="store_true", help="do not rebuild")
     a = ap.parse_args(argv)
     words = list(a.words)
@@ -159,6 +165,15 @@ def main(argv: list[str] | None = None, say=print) -> int:
         text = "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in recs)
     if not n:
         raise SystemExit(f"hydra: {src} holds no records with an id")
+    mapped = None
+    if a.map:
+        import yaml
+        from hydra import importmap
+        schema.load(root=root)
+        spec = yaml.safe_load(Path(a.map).read_text(encoding="utf-8")) or {}
+        recs, mapped = importmap.apply(raw_records(text), spec)
+        n = len(recs)
+        text = json.dumps(recs, indent=1, ensure_ascii=False) + "\n"
     for f in there:
         f.unlink()
     cdir.mkdir(parents=True, exist_ok=True)
@@ -166,9 +181,17 @@ def main(argv: list[str] | None = None, say=print) -> int:
     say(f"{style.verb('Imported')} {style.name(src.name)} as collection {style.name(name)}: "
         f"{n:,} {'record' if n == 1 else 'records'}"
         + "".join(f", {v} {k} left out" for k, v in skipped.items() if v))
+    if mapped:
+        for what, count in sorted(mapped["changes"].items()):
+            ex = "; ".join(str(x) for x in mapped["examples"].get(what, [])[:2])
+            say(f"  {count:5} {what}" + style.aside(f"  e.g. {ex}" if ex else ""))
     if not a.no_build:
         from hydra import build
         say(build.report(root, build.build_archive(root), verb="Rebuilt"))
+    from hydra.universe import review
+    pinned = review.publish_pinned(root, raw_records(text), by="import")
+    if pinned:
+        say(f"  {pinned:5} computed Hs the records pin published, so the pins hold")
     return 0
 
 

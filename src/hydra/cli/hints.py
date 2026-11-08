@@ -3,9 +3,13 @@
     hydra-ctl hints [<dir>]
     hydra-ctl hints set [<dir>] portrait|thumb|logo <image> [--schema S] [--position P]
         [--titled TEXT] [--name N] [--no-build]
+    hydra-ctl hints set [<dir>] badge <token> [--schema S] [--position P] [--titled TEXT] [--name N]
 
 With no action: each rule, numbered as `check` and the build name them, what it
 matches, what it sets, and how many nodes it reached in the last build.
+
+`set badge <token>` gives every entity a match picks a badge instead: the token is an icon's
+file name under resources/icons/ (`crown`, `shield`) or any plain word.
 
 `set` links an image file to every entity a match picks. The image is copied
 into .hydra/resources/ (portraits/, icons/ for a thumb, logos/), unless it is
@@ -38,7 +42,8 @@ FOLDER = {"portrait": "portraits", "thumb": "icons", "logo": "logos"}
 IMAGE_TYPES = (".svg", ".png", ".jpg", ".jpeg", ".webp", ".gif")
 USAGE = ("usage: hydra-ctl hints [<dir>]\n"
          "       hydra-ctl hints set [<dir>] portrait|thumb|logo <image> [--schema S] [--position P]\n"
-         "                           [--titled TEXT] [--name N] [--no-build]")
+         "                           [--titled TEXT] [--name N] [--no-build]\n"
+         "       hydra-ctl hints set [<dir>] badge <token> [same matches]")
 
 
 def flow(v) -> str:
@@ -48,15 +53,7 @@ def flow(v) -> str:
 
 def _hits(root: Path) -> dict[int, int] | None:
     """{rule index: nodes it put an image on} from the last build's declared read, or None unbuilt."""
-    p = root / f"{layout.PARSED_DIR}/declared.json"
-    if not p.is_file():
-        return None
-    nodes = (json.loads(p.read_text(encoding="utf-8")).get("nodes") or {}).values()
-    out: dict[int, int] = {}
-    for n in nodes:
-        for i in {x["rule"] for k in rules.IMAGES for x in n.get(f"{k}s") or []}:
-            out[i] = out.get(i, 0) + 1
-    return out
+    return rules.image_reach(root)
 
 
 def show(root: Path, say) -> int:
@@ -113,7 +110,7 @@ def set_rule(root: Path, kind: str, image: Path, match: dict, no_build: bool, sa
     if not isinstance(old, dict) or not isinstance(old.get("hints") or [], list):
         raise SystemExit(f"hydra: {layout.HINTS} is not a `hints:` list; fix it first (`check` says how)")
     rows = old.get("hints") or []
-    path = place_image(root, image, kind)
+    path = str(image) if kind == "badge" else place_image(root, image, kind)    # a badge is a token, not a file
     rule = {"match": match, "set": {kind: path}}
     for i, h in enumerate(rows):
         if h == rule:
@@ -172,7 +169,7 @@ def main(argv: list[str] | None = None, say=print) -> int:
         if words:
             style.usage(USAGE)
         return show(resources.archive(lead, read_only=True), say)
-    if len(words) != 2 or words[0] not in FOLDER:
+    if len(words) != 2 or (words[0] not in FOLDER and words[0] != "badge"):
         style.usage(USAGE)
     match = {k: v for k, v in (("schema", a.schema), ("position", a.position),
                                 ("titled", {"contains": a.titled} if a.titled else ""), ("name", a.name)) if v}

@@ -1,0 +1,36 @@
+# .hydra/rules/vocabularies.yaml — the words some string properties take, and what each means.
+#
+# A record's `status` or `capacity` is free text in FtM. The tools act on a few of those
+# words (a former stake is not counted as current; a reported one is flagged), so the words
+# and their meaning live here, never in code. An archive's own file replaces this one: add,
+# relabel or drop values as its sources need.
+#
+# Each vocabulary lists the properties it applies to as `Schema.prop`; a record whose schema
+# extends that one is covered too (`Interest.status` covers Ownership, Membership...).
+# Each value may say:
+#   label        how a reader sees it
+#   why          what it says about the record (the page shows it on hover)
+#   tone         ok | warn | "" : style only
+#   caveat       true: it qualifies the fact itself, so it is shown wherever the fact is
+#   ended        true: the relationship is over; the record is not counted as current
+#   beneficiary  false: the one who acted is not the one who gains (capacities)
+# A value not listed is shown as typed, and `wiki check` / `check_records` report it.
+
+status:
+  applies_to: [Interest.status, Occupancy.status]
+  values:
+    reported:            {label: Reported, tone: warn, caveat: true, why: "a news report; the source does not confirm it"}
+    "stated officially": {label: Officially stated, why: "said by the parties or their officials; not independently confirmed"}
+    current:             {label: Current, tone: ok, why: "held now, as of the source"}
+    former:              {label: Former, ended: true, why: "no longer held"}
+    ended:               {label: Ended, ended: true, why: "no longer held"}
+
+capacity:
+  applies_to: [Representation.capacity]
+  values:
+    officer:      {label: "Officer of the client", beneficiary: false, why: "chairs, governs or directs the client"}
+    negotiator:   {label: "Negotiated for the client", beneficiary: false}
+    signatory:    {label: "Signed for the client", beneficiary: false}
+    nominee:      {label: "Nominee: bid or bought for the client", beneficiary: false}
+    intermediary: {label: "Intermediary for the client", beneficiary: false}
+    principal:    {label: "Acted for themselves", beneficiary: true}

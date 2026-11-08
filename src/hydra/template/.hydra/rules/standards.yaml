@@ -1,0 +1,15 @@
+# .hydra/rules/standards.yaml — archive overrides for ISO code lists.
+#
+# Country, currency, language and script codes are resolved from ISO (3166, 4217, 639-3, 15924)
+# and built-in demonym tables in hydra.standards. This file lets an archive override or extend:
+#   countries    per code (lower case): `name` to use instead of ISO's, `demonym` (the word for a
+#                national: "a British national"), and custom codes ISO does not assign
+#   properties   string properties that hold a standard's codes, as `prop` or `Schema.prop`
+#                (FtM types `country` and `language` are known already)
+
+countries: {}
+  # gb: {name: United Kingdom, demonym: British}
+  # xk: {name: Kosovo, demonym: Kosovar}
+
+properties:
+  currency: currency

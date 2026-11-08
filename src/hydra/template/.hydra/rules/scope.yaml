@@ -1,0 +1,28 @@
+# .hydra/rules/scope.yaml — what this archive is about; everything else is context.
+#
+# Context entities stay in the data (ids, keys, merges untouched). The wiki names them as plain
+# text on the pages that mention them, lists them nowhere (search, categories, the landing page,
+# random), and still opens their page at its address; `wiki check` does not count them.
+#
+# Scope starts at the seeds and flows along the relationships below, in the direction given,
+# and no further: an in-scope owner brings in what it owns, never the asset's other owners.
+# With no seeds, everything is in scope. An archive's own file replaces this one.
+#
+# seeds:
+#   collections: [people]              # every entity these collections record
+#   entities: []                       # Hs or keys: H-p0-..., wikidata:Q57340
+# flow:
+#   edges:                             # relationship: the end that passes scope on (or both)
+#     Family: both
+#     Membership: member               # a member brings in its organization (a house, a party)
+#     Occupancy: both                  # a holder and their post
+#     Ownership: owner                 # an owner brings in what it owns
+#     Directorship: director
+#     Employment: employee
+#     Representation: client           # a client brings in who acted for it
+#   properties: [organization]         # a post brings in the body it belongs to
+#   deals: true                        # a deal an in-scope entity takes part in
+# include: []                          # always in scope: an H, a key, a record id, a title, collection:<name>
+# exclude: []                          # never in scope
+
+seeds: {}

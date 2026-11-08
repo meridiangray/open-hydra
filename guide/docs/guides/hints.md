@@ -25,7 +25,7 @@ hints:
 
 Image paths are inside `.hydra/resources/`. A path that leaves it is refused, and `check` reports it.
 
-The images above are examples. Only `icons/crown.svg`, `icons/briefcase.svg`, `icons/public-body.svg` and `icons/star-2.svg` ship; add your own with `hydra-ctl hints set`.
+The images above are examples. About thirty Lucide icons ship (`crown`, `shield`, `castle`, `graduation-cap`, `trophy`, `briefcase-business` and so on; see `LICENSE-lucide.txt` and the `icons/` folder); portraits and logos are yours, added with `hydra-ctl hints set`. How the wiki uses them: [Laying out the wiki](wiki.md#pictures-icons-and-badges).
 
 ## Matching
 

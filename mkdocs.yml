@@ -53,6 +53,8 @@ nav:
       - Reviewing: guides/reviewing.md
       - Defining Hierarchies: guides/hierarchy.md
       - Images and badges: guides/hints.md
+      - Laying out the wiki: guides/wiki.md
+      - Reading Wikidata: guides/wikidata.md
       - hydra-mcp (AI assistants): guides/mcp.md
   - Command reference:
       - Overview: commands/index.md

@@ -5,4 +5,4 @@ TESTS = Path(__file__).resolve().parent
 HYDRA = TESTS.parent
 SRC = HYDRA / "src"
 TEMPLATE = SRC / "hydra" / "template"
-DEMO = HYDRA / "tests" / "corpus" / "engine-fixture" / "collections"      # engine regression data; the public demo is examples/demo
+DEMO = HYDRA / "tests" / "corpus" / "engine-fixture" / "collections"      # engine regression data; the public demo is archive-demos/demo

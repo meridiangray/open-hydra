@@ -1,13 +1,18 @@
 """pack / unpack: an archive as one portable `.hydra` file (a zip).
 
-    hydra-ctl pack [<dir>] [-o FILE.hydra] [--no-parsed] [--force]
+    hydra-ctl pack [<dir>] [-o FILE.hydra] [--no-parsed] [--no-history] [--force]
     hydra-ctl unpack FILE.hydra [<dir>]
 
 `pack` stores everything the archive is made of: `hydra.yaml`, `collections/`,
-`session/`, and `.hydra/` (sources, rules with your decisions, schema,
-resources, and the last build in `.hydra/parsed/`), so the pack can be read at once. `--no-parsed`
-leaves the build out for a smaller file; a build regenerates it byte for byte,
-and hydra builds it on the first command that needs it.
+`session/`, `.hydra/` (sources, rules with your decisions, schema,
+resources, history, and the last build in `.hydra/parsed/`) and the universe
+layer `universe/` when there is one, so the pack can be read at once. `--no-parsed`
+leaves the builds out for a smaller file (`.hydra/parsed/` and `universe/.parsed/`);
+a build regenerates them byte for byte, and hydra builds on the first command
+that needs it. `--no-history` leaves out `.hydra/history/`: a copy to share
+without its past. `hydra-pack.json` names the layers the pack carries
+(`archive`, and `universe` with a universe layer) and each embedded member's
+SHA-256; the pack format stays 1 either way, so any hydra unpacks it.
 Backups (`*.bak`), `__pycache__` and activation markers never go in; neither do
 symbolic links. The same archive always packs to the same bytes (sorted entries,
 fixed timestamps). `hydra-pack.json` inside lists every file with its SHA-256.
@@ -41,14 +46,18 @@ _SKIP_DIRS = {"__pycache__"}
 _SKIP_FILES = re.compile(r"(\.bak$|^\.hydra-activate$|^\.DS_Store$)")
 
 
-def _files(root: Path, with_parsed: bool) -> tuple[list[str], list[str]]:
+def _files(root: Path, with_parsed: bool, with_history: bool = True) -> tuple[list[str], list[str]]:
     """-> (archive-relative posix paths to pack, sorted; symbolic links skipped)."""
     out, links = [], []
+    left_out = [f"{layout.CACHE_DIR}/"]
+    if not with_parsed:
+        left_out += [layout.PARSED_DIR + "/", layout.UNIVERSE_PARSED + "/"]
+    if not with_history:
+        left_out.append(layout.HISTORY_DIR + "/")
     for p in sorted(root.rglob("*")):
         rel = p.relative_to(root)
         parts = rel.parts
-        if any(x in _SKIP_DIRS for x in parts) or rel.as_posix().startswith(f"{layout.INTERNAL}/cache/") \
-                or (not with_parsed and rel.as_posix().startswith(layout.PARSED_DIR + "/")):
+        if any(x in _SKIP_DIRS for x in parts) or rel.as_posix().startswith(tuple(left_out)):
             continue
         if p.is_symlink():
             links.append(rel.as_posix())
@@ -68,7 +77,8 @@ def _name(root: Path) -> str:
     return str(doc.get("name") or root.resolve().name)
 
 
-def pack(root, out=None, with_parsed: bool = True, force: bool = False) -> tuple[Path, int, list[str]]:
+def pack(root, out=None, with_parsed: bool = True, force: bool = False,
+         with_history: bool = True) -> tuple[Path, int, list[str]]:
     """-> (the .hydra written, files packed, symbolic links skipped)."""
     root = Path(root)
     if not resources.is_archive(root):
@@ -81,14 +91,22 @@ def pack(root, out=None, with_parsed: bool = True, force: bool = False) -> tuple
         raise SystemExit(f"hydra: {out} exists; --force replaces it")
     out_abs = out.resolve()
     with_parsed = with_parsed and (root / layout.BUILD_YAML).is_file()     # never built: nothing to carry
-    files, links = _files(root, with_parsed)
+    files, links = _files(root, with_parsed, with_history)
     files = [f for f in files if (root / f).resolve() != out_abs]       # never pack the pack itself
     index = {"format": PACK_FORMAT, "name": name, "parsed": with_parsed, "files": {}}
+    members_dir = layout.UNIVERSE_MEMBERS + "/"
+    if (root / layout.UNIVERSE_MANIFEST).is_file():      # keys absent otherwise: older packs keep their bytes
+        index["layers"] = ["archive", "universe"]
+        index["members"] = {}
+    if with_history and any(f.startswith(layout.HISTORY_DIR + "/") for f in files):
+        index["history"] = True
     tmp = out.with_name(out.name + ".part")
     with zipfile.ZipFile(tmp, "w", compression=zipfile.ZIP_DEFLATED) as z:
         for rel in files:
             data = (root / rel).read_bytes()
             index["files"][rel] = _sha(data)
+            if "members" in index and rel.startswith(members_dir) and rel.endswith(SUFFIX):
+                index["members"][rel[len(members_dir):]] = index["files"][rel]
             info = zipfile.ZipInfo(rel, date_time=_EPOCH)
             info.compress_type = zipfile.ZIP_DEFLATED
             info.external_attr = 0o644 << 16
@@ -161,11 +179,12 @@ def main(argv: list[str] | None = None, say=print) -> int:
     ap.add_argument("dir", nargs="?", help="the archive (default: the active one, or this folder)")
     ap.add_argument("-o", "--out", help="the .hydra to write (default: <archive name>.hydra here)")
     ap.add_argument("--no-parsed", action="store_true", help="leave out .hydra/parsed/ (the last build)")
+    ap.add_argument("--no-history", action="store_true", help="leave out .hydra/history/ (the snapshots)")
     ap.add_argument("--force", action="store_true", help="replace an existing file")
     a = ap.parse_args(argv)
     root = resources.archive(a.dir)
     built = (root / layout.BUILD_YAML).is_file()
-    out, n, links = pack(root, a.out, not a.no_parsed, a.force)
+    out, n, links = pack(root, a.out, not a.no_parsed, a.force, with_history=not a.no_history)
     say(f"{style.verb('Packed')} {style.name(root.name)} into {style.path(out)}")
     for line in style.across(["size", "build"], [f"{out.stat().st_size / 1024:,.0f} KB",
                                                  "left out" if a.no_parsed else "included" if built else "never built"]):

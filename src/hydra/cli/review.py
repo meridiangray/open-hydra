@@ -496,7 +496,9 @@ class Session:
             if pick == cur:
                 changes = [(r["id"], "confirmed")]
             else:                                         # the new parent pinned; the old one let go
-                changes = [(ids.place_key(rid, pick), "confirmed"), (r["id"], "rejected" if by_rule else None)]
+                from hydra.universe import bridge         # by H when both have one: it outlives a survivor change
+                changes = [(bridge.placement_key(self.root, rid, pick), "confirmed"),
+                           (r["id"], "rejected" if by_rule else None)]
             self.write(changes, f"{cap(rid)} under {cap(pick)}")
             self.done.add(r["id"])
         return got

@@ -11,7 +11,14 @@ license = "AGPL-3.0-only AND MIT"      # the program code is AGPL; the template 
 license-files = ["LICENSE", "NOTICE.md", "src/hydra/template/.hydra/LICENSE-template.txt"]
 authors = [{ name = "Meridian Gray", email = "gray.crested645@passfwd.com" }]
 requires-python = ">=3.11"
-dependencies = ["PyYAML>=6", "pydantic>=2,<3"]
+dependencies = ["PyYAML>=6", "pydantic>=2,<3", "pycountry>=24"]
+
+[project.optional-dependencies]
+# ISO code lists (countries current and former, subdivisions, currencies, languages, scripts) for
+# names and checks; without it, codes are shown as written (src/hydra/standards.py)
+standards = ["pycountry>=24"]
+# the suite: `pytest` runs it; `pytest -n auto` runs it in parallel (~4x faster)
+test = ["pytest>=8", "pytest-xdist>=3"]
 
 [project.urls]
 Homepage = "https://meridiangray.github.io/open-hydra/"
@@ -20,6 +27,7 @@ Issues = "https://github.com/meridiangray/open-hydra/issues"
 
 [project.scripts]
 hydra-ctl = "hydra.cli:run"
+hydra-desktop = "hydra.desktop:main"
 
 [tool.setuptools.dynamic]
 version = { attr = "hydra.__version__" }
@@ -29,6 +37,7 @@ hydra = [
     "template/**/*", "template/**/.gitkeep",
     "template/.hydra/**/*", "template/.hydra/**/.gitkeep",   # glob skips dot-folders unless named
     "recipes/*.yaml",
+    "wiki/assets/*",
 ]
 
 [tool.pytest.ini_options]

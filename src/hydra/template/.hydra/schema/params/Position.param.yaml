@@ -6,7 +6,10 @@ match:
   - name
   - alias
   - weakAlias
-  - organization
+
+# not `organization`: two posts of one body share it (Minister, Deputy Minister,
+# Adviser to the Minister of Interior), so it is no evidence they are one post.
+# A different organization still keeps two posts apart (`distinct`).
 
 distinct:
   - organization

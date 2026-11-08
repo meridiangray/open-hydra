@@ -52,6 +52,8 @@ def entities(r, links: str = "ids") -> list[dict]:
                 if ours in props:
                     props[ftm] = props.pop(ours)
         ent = {"id": rid, "schema": sname, "properties": dict(sorted(props.items()))}
+        if rec.get("_meta"):
+            ent["_meta"] = rec["_meta"]
         merged = sorted(members.get(rid, set()) - {rid})
         if merged:
             ent["referents"] = merged

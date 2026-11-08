@@ -6,8 +6,8 @@ entities   227                                                     merges       
 claims     914                                                     placements          40     20
 changed    .hydra/resources/.gitkeep                               references           0      3
 changed    .hydra/resources/icons/LICENSE-lucide.txt
-changed    .hydra/resources/icons/briefcase.svg                    tree         nodes   roots   positioned
-changed    128 more                                                declared        79      19           18
+changed    .hydra/resources/icons/anchor.svg                       tree         nodes   roots   positioned
+changed    174 more                                                declared        79      19           18
                                                                    generic         79      19           18
 collection           records   claims   in others   citations
 hawthorne                 56      191           0           2      issues       count

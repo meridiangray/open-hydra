@@ -120,6 +120,21 @@ def test_init_build_todo_check(tmp_path, capsys):
     assert "hints.bad-regex" in capsys.readouterr().out
 
 
+def test_an_archive_from_a_newer_hydra_is_refused_and_a_bad_format_reported(tmp_path, capsys):
+    arch = tmp_path / "case"
+    assert cli.main(["init", str(arch), "--name", "case"]) == 0
+    m = arch / layout.MANIFEST
+    text = m.read_text(encoding="utf-8")
+    assert f"format: {layout.FORMAT_VERSION}" in text
+    m.write_text(text.replace(f"format: {layout.FORMAT_VERSION}", f"format: {layout.FORMAT_VERSION + 1}"), encoding="utf-8")
+    with pytest.raises(SystemExit, match="upgrade hydra|Upgrade hydra"):
+        cli.main(["details", str(arch)])
+    m.write_text(text.replace(f"format: {layout.FORMAT_VERSION}", "format: two"), encoding="utf-8")
+    capsys.readouterr()
+    cli.main(["check", str(arch)])
+    assert "archive.bad-format" in capsys.readouterr().out
+
+
 def test_check_lists_what_only_the_last_build_found_while_it_stands(tmp_path, capsys):
     """`check` never builds, but while the last build stands its own issues are
     listed and counted too: a duplicate id is an error only a build sees."""
@@ -782,15 +797,17 @@ def test_import_reads_back_every_export_format_to_the_same_graph(tmp_path, capsy
     src = _built(tmp_path)
     def graph(arch, name):
         out = tmp_path / name
-        assert cli.main(["export", str(arch), "--format", "csv", "-o", str(out)]) == 0
+        assert cli.main(["export", str(arch), "--format", "csv", "-o", str(out), "--with-sources", "--orphans"]) == 0
         nodes = {r["id"]: (r["schema"], r["caption"]) for r in csv.DictReader((out / "nodes.csv").open())}
-        edges = {(r["source"], r["target"], r["type"], r["role"], r["start"], r["end"])
-                 for r in csv.DictReader((out / "edges.csv").open()) if r["type"] not in ("placedUnder", "sameAs")}
+        edges = {(r["source"], r["target"], r["type"], ";".join(sorted(r["role"].split(";"))), r["start"], r["end"])
+                 for r in csv.DictReader((out / "edges.csv").open())
+                 if r["type"] not in ("placedUnder", "sameAs") and not r["prop"]}
         return nodes, edges
     want = graph(src, "orig")
     for fmt in ("ftm", "hydra-ftm", "csv", "graphml"):
         exported = tmp_path / f"case.{fmt}"
-        assert cli.main(["export", str(src), "--format", fmt, "-o", str(exported)]) == 0
+        full = ["--with-sources", "--orphans"] if fmt in ("csv", "graphml") else []
+        assert cli.main(["export", str(src), "--format", fmt, "-o", str(exported), *full]) == 0
         arch = tmp_path / f"in-{fmt}"
         cli.main(["init", str(arch)])
         assert cli.main(["import", str(arch), str(exported), "--format", fmt]) == 0

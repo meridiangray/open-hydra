@@ -1,0 +1,18 @@
+# .hydra/rules/capacity.yaml — people who act for an interest that is not theirs alone.
+#
+# In a deal, a person may negotiate, sign, bid or chair for a state, a fund or a company
+# without being the one who owns the result. Record that as a Representation
+# (agent -> client) with a `capacity`, and name the deal in `transaction`. The wiki then:
+#   - lists the person on the deal's page under Parties, with the capacity and who they acted for;
+#   - lists the deal on the person's page under "Acted for", never under what they own;
+#   - never adds an agent to an asset's Owners: owners are Ownership records only.
+# The capacities themselves, and the statuses a record may carry, are in vocabularies.yaml.
+# Nothing here is inferred except `identical_interest`, and the page says so when it uses it.
+
+# When the agent already holds one of these links to the client (an office in it, a seat on its
+# board, membership, employment), the two interests are one: the agent speaks for the client
+# because of that association. The deal's page shows "acting for <client> as <post>" from the
+# link itself, marked as read from the association rather than stated by the source.
+identical_interest:
+  via: [Occupancy, Directorship, Membership, Employment]
+  mark: "by their office"

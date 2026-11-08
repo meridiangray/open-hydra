@@ -95,6 +95,8 @@ def rekey_plan(root, ren) -> tuple[list[tuple], list[str]]:
             if not isinstance(k, str):
                 continue
             new, val = k, v
+            if k.startswith(("cap-H-", "place-H-")):
+                continue                            # keyed by H: no record id in it to rename
             if k.startswith("cap-"):
                 new = ids.caption_key(ren(k[len("cap-"):]))
             elif k in rows:
@@ -112,6 +114,23 @@ def rekey_plan(root, ren) -> tuple[list[tuple], list[str]]:
             if new != k or val != v:
                 moves.append((f, k, new, val))
     return moves, untraced
+
+
+def _rename_in_canon(root, mapping: dict) -> None:
+    """The H-table names records as `self/<id>`: renamed ids follow, so every published
+    or decided H keeps its records (its body never changes)."""
+    from hydra.universe import layer, table
+    if not layer.is_universe(root):
+        return
+    rows = table.load(root)
+    ren = lambda ref: f"{layer.SELF}/{mapping[ref[5:]]}" if ref.startswith(layer.SELF + "/") and ref[5:] in mapping else ref
+    changed = False
+    for row in rows.values():
+        new_anchor, new_members = ren(row["anchor"]), sorted(ren(r) for r in row.get("members") or [])
+        if new_anchor != row["anchor"] or new_members != sorted(row.get("members") or []):
+            row["anchor"], row["members"], changed = new_anchor, new_members, True
+    if changed:
+        table.save(root, rows)
 
 
 def set_prefix(root, coll: str, prefix: str, rekey: bool, no_build: bool, say) -> int:
@@ -152,6 +171,7 @@ def set_prefix(root, coll: str, prefix: str, rekey: bool, no_build: bool, say) -
     for f, k, new, val in moves:
         set_verdict(f, k, None)
         set_verdict(f, new, val)
+    _rename_in_canon(root, mapping)
     say(f"{style.verb('Changed')} {style.name(coll)}'s prefix: {old} -> {style.name(prefix)}"
         + (style.aside(f" ({style.plural(len(moves), 'decision')} rewritten)") if moves else ""))
     if untraced:

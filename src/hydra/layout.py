@@ -18,6 +18,14 @@ RULES_DIR = f"{INTERNAL}/rules"
 POSITIONS = f"{RULES_DIR}/positions.yaml"      # this archive's own positions
 DEFAULT_POSITIONS = f"{RULES_DIR}/defaults/positions.yaml"   # the positions hydra ships
 HINTS = f"{RULES_DIR}/hints.yaml"
+VOCABULARIES = f"{RULES_DIR}/vocabularies.yaml"   # the words a status or capacity takes, and what each means
+CAPACITY = f"{RULES_DIR}/capacity.yaml"           # when an agent's office makes the client's interest theirs
+KEYS = f"{RULES_DIR}/keys.yaml"                   # the namespaces of keys other systems give entities, and the primary one
+STANDARDS = f"{RULES_DIR}/standards.yaml"         # what ISO code lists do not say: labels, demonyms, coded properties
+GROUPS = f"{RULES_DIR}/groups.yaml"               # organizations whose members a page names as a group (a house, a party)
+KINSHIP = f"{RULES_DIR}/kinship.yaml"             # what each Family word says: parent, child, sibling, spouse, gender
+WIKIDATA = f"{RULES_DIR}/wikidata.yaml"           # which Wikidata properties fill which fields when an item is imported
+SCOPE = f"{RULES_DIR}/scope.yaml"                # what the archive is about; the rest is context, not listed
 REVIEW_DIR = f"{INTERNAL}/review"         # written by review commands, not by hand
 VERDICTS = f"{REVIEW_DIR}/verdicts.yaml"
 PARAMS_DIR = f"{INTERNAL}/schema/params"                   # <Type>.param.yaml match/distinct/fold policy
@@ -44,3 +52,17 @@ READS = {"declared": f"{PARSED_DIR}/declared.json",    # the two reads a build w
 CLAIMS_JSONL = f"{PARSED_DIR}/claims.jsonl"
 IDENTICAL_JSONL = f"{PARSED_DIR}/identical.jsonl"
 LEDGER_JSONL = f"{PARSED_DIR}/ledger.jsonl"
+CACHE_DIR = f"{INTERNAL}/cache"
+
+# History: snapshots of the authored files (never of what a build recomputes)
+HISTORY_DIR = f"{INTERNAL}/history"
+
+# Universe layer: a parallel layer beside the archive's own (see hydra/universe/)
+UNIVERSE_DIR = "universe"
+UNIVERSE_MANIFEST = f"{UNIVERSE_DIR}/universe.yaml"
+CANON = f"{UNIVERSE_DIR}/canon.jsonl"                    # the H-table: written by review and publishing only
+UNIVERSE_VERDICTS = f"{UNIVERSE_DIR}/review/verdicts.yaml"
+UNIVERSE_WIKI = f"{UNIVERSE_DIR}/wiki.yaml"              # the universe's own wiki config: over every member's
+UNIVERSE_COLLECTIONS = f"{UNIVERSE_DIR}/collections"
+UNIVERSE_MEMBERS = f"{UNIVERSE_DIR}/members"
+UNIVERSE_PARSED = f"{UNIVERSE_DIR}/.parsed"              # what `universe build` writes, and all it writes

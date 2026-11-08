@@ -1,0 +1,52 @@
+# .hydra/rules/kinship.yaml — what each Family `relationship` word says.
+#
+# A Family record's word describes the relative from the person's side: person "Ana Reyes",
+# relative "Marco Reyes", relationship "father" (Marco is Ana's father). The tree, the wiki's
+# parents, children, siblings and ancestors, and the checks (a mother recorded as a father)
+# read only what this file says each word means; a word not listed stays a plain sideways tie.
+# Add the words your sources use (another language, "stepfather", "adoptive mother"). An
+# archive's own file replaces this one.
+#
+#   is       parent | child | sibling | spouse   (what the relative is to the person)
+#   gender   male | female                       (the relative's, as the word says it)
+
+words:
+  father:          {is: parent, gender: male}
+  mother:          {is: parent, gender: female}
+  parent:          {is: parent}
+  son:             {is: child, gender: male}
+  daughter:        {is: child, gender: female}
+  child:           {is: child}
+  brother:         {is: sibling, gender: male}
+  sister:          {is: sibling, gender: female}
+  sibling:         {is: sibling}
+  half-brother:    {is: sibling, gender: male}
+  half-sister:     {is: sibling, gender: female}
+  husband:         {is: spouse, gender: male}
+  wife:            {is: spouse, gender: female}
+  spouse:          {is: spouse}
+  grandfather:     {gender: male}
+  grandmother:     {gender: female}
+  grandson:        {gender: male}
+  granddaughter:   {gender: female}
+  uncle:           {gender: male}
+  aunt:            {gender: female}
+  nephew:          {gender: male}
+  niece:           {gender: female}
+  stepfather:      {gender: male}
+  stepmother:      {gender: female}
+  stepson:         {gender: male}
+  stepdaughter:    {gender: female}
+  father-in-law:   {gender: male}
+  mother-in-law:   {gender: female}
+  son-in-law:      {gender: male}
+  daughter-in-law: {gender: female}
+  brother-in-law:  {gender: male}
+  sister-in-law:   {gender: female}
+
+# How a page words a relative it reads (a child, a sibling), by that person's recorded gender.
+names:
+  parent:  {male: father, female: mother, other: parent}
+  child:   {male: son, female: daughter, other: child}
+  sibling: {male: brother, female: sister, other: sibling}
+  spouse:  {male: husband, female: wife, other: spouse}

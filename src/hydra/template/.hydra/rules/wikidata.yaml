@@ -1,0 +1,86 @@
+# .hydra/rules/wikidata.yaml — which Wikidata claims fill which fields when `hydra-ctl wikidata import` runs.
+#
+# Wikidata names a fact by a property code (P569 "date of birth"); Hydra by a field (Person.birthDate).
+# This file says which goes where. The field's own type says how its value is read, so only the code
+# is named here:
+#
+#   date       a time claim. Day, month and year precision are kept; a decade becomes its first year
+#              with `_meta.approx: decade`; anything vaguer is left out and counted
+#   country    an item -> its ISO 3166-1 alpha-2 (P297), lower case. No code: left out and counted
+#   language   an item -> its ISO 639-3 code (P220)
+#   other      text and urls as written; an item as its English label; a quantity as its amount
+#
+# A property may be written `P21: {to: gender, values: {Q6581097: male}}` to map an item to the word
+# the field takes. Deprecated claims are never read; when a property has preferred claims only those are.
+# `hydra-ctl wikidata unread Q… ` lists the claims nothing here reads yet, and the field each could fill;
+# `hydra-ctl wikidata prop P…` says what a code means. An archive's own file replaces this one.
+
+classes:                          # P31 (instance of) -> schema; an item whose class is not here is left out
+  Q5:        Person
+  Q43229:    Organization
+  Q4830453:  Company
+  Q891723:   Company
+  Q6881511:  Company
+  Q783794:   Company
+  Q7210356:  Organization
+  Q327333:   PublicBody
+
+ignore:                           # claims about the page, not the thing: `unread` never lists them
+  - P5008     # on focus list of Wikimedia project
+  - P1424     # topic has template
+  - P373      # Commons category
+  - P910      # topic's main category
+  - P1151     # topic's main Wikimedia portal
+  - P935      # Commons gallery
+  - P7763     # copyright status as a creator
+  - P6363     # WordLift URL (a third-party mirror of the item)
+  - P1889     # different from (a disambiguation hint)
+
+common:                           # every schema
+  description: summary            # the item's short English description fills this field
+  P856: website
+  P18:  null                      # an image: named so it is not listed as unread
+
+properties:                       # schema: {P…: field}
+  Person:
+    P569: birthDate
+    P570: deathDate
+    P19:  birthPlace
+    P21:
+      to: gender
+      values: {Q6581097: male, Q6581072: female, Q1097630: other, Q2449503: other, Q48270: other}
+    P27:  citizenship
+    P172: ethnicity
+    P140: religion
+    P1412: spokenLanguage
+    P735: firstName
+    P734: lastName
+    P106: position                # occupation, by label
+    P69:  education
+  Organization:
+    P571: incorporationDate
+    P576: dissolutionDate
+    P17:  country
+    P159: address
+    P452: sector
+    P1278: leiCode
+  Company:
+    P571: incorporationDate
+    P576: dissolutionDate
+    P17:  country
+    P159: address
+    P452: sector
+    P1278: leiCode
+
+relationships:                    # a claim becomes a record of its own; {self} and {value} are Wikidata ids
+  Person:                         #   target: the schema the item at the other end is made as
+    P26: {schema: Family, person: "{self}", relative: "{value}", relationship: spouse, target: Person,
+          dates: {P580: startDate, P582: endDate}}
+    P22: {schema: Family, person: "{self}", relative: "{value}", relationship: father, target: Person}
+    P25: {schema: Family, person: "{self}", relative: "{value}", relationship: mother, target: Person}
+    P40: {schema: Family, person: "{self}", relative: "{value}", relationship: child, target: Person}
+    P3373: {schema: Family, person: "{self}", relative: "{value}", relationship: sibling, target: Person}
+    P463: {schema: Membership, member: "{self}", organization: "{value}", target: Organization,
+           dates: {P580: startDate, P582: endDate}}
+    P108: {schema: Employment, employee: "{self}", employer: "{value}", target: Organization,
+           dates: {P580: startDate, P582: endDate}}

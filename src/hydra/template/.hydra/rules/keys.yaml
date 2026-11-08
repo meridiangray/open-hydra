@@ -1,0 +1,26 @@
+# .hydra/rules/keys.yaml — the keys other systems give entities, and which one comes first.
+#
+# A record's `upstream` may hold keys as `namespace:key` beside its H pins:
+#   "upstream": ["wikidata:Q57340", "acme:EMP-0042"]
+# Records carrying one key are one entity, in one collection or across many. Any namespace
+# works without being declared here (`wiki check` lists undeclared ones, so a typo shows);
+# declaring one adds a label, a link, the FtM property that holds the same key, and rules.
+#
+#   label     how a reader sees it
+#   url       a link for the key; {key} is replaced
+#   property  the FtM property holding the same key: `wikidataId: Q1` is `wikidata:Q1` too
+#   unique    true: an entity holds at most one key here; two in one entity is a conflict
+#   case      upper | lower: how a key is written before it is compared
+#
+# primary: the namespace an entity is keyed by first (or a list, most preferred first). An
+# entity holding a primary key gets its H from that key, not from its first record, so its H
+# and its page's address hold however the records change; its page lists that key first.
+# An archive's own file replaces this one.
+
+primary: []
+
+namespaces:
+  wikidata:      {label: Wikidata, url: "https://www.wikidata.org/wiki/{key}", property: wikidataId, unique: true, case: upper}
+  lei:           {label: LEI, url: "https://search.gleif.org/#/record/{key}", property: leiCode, unique: true, case: upper}
+  imo:           {label: IMO number, property: imoNumber, unique: true}
+  opensanctions: {label: OpenSanctions, url: "https://www.opensanctions.org/entities/{key}/"}

@@ -8,7 +8,9 @@
     ref-…     <n> | <record id> | none | clear
                                             n: a candidate's number in `todo --list`;
                                             none: the text names nothing here
-    cap-<id>  <name> | clear                one of that node's own names
+    cap-<id>  <name> | clear                one of that node's own names; written as
+                                            cap-H-<body> when the node has an H, so the
+                                            pin holds whichever record names it later
 
 The id must be in the last build (`todo --list` shows them). Only that key's line
 in verdicts.yaml is written or removed; the rest of the file, comments
@@ -39,7 +41,7 @@ def value_for(root: Path, key: str, choice: str):
     if choice == "clear":
         return None
     if key.startswith("cap-"):
-        node = resources.declared_nodes(root).get(key[4:])
+        node = _caption_node(root, key)
         if node is None:
             raise SystemExit(f"hydra: no node '{key[4:]}' in the last build")
         names = (node.get("props") or {}).get("name") or []
@@ -107,6 +109,27 @@ def set_verdict(path: Path, key: str, value) -> str | None:
     return line
 
 
+def _caption_node(root: Path, key: str):
+    """The node a caption pin names: `cap-<node id>`, or `cap-H-<body>` (whichever node holds that H)."""
+    from hydra.universe import bridge
+    nodes = resources.declared_nodes(root)
+    if not key.startswith(bridge.CAP_H):
+        return nodes.get(key[4:])
+    rids = set(bridge.records_by_body(root).get(key[len(bridge.CAP_H):], ()))
+    return next((n for nid, n in nodes.items() if nid in rids or rids & set(n.get("referents") or ())), None)
+
+
+def h_key(root: Path, key: str) -> str:
+    """A caption pin on a node with a published or decided H is written by H
+    (`cap-H-<body>`): it holds through merges and prefix changes alike. Otherwise by
+    record id, which holds through merges (a pin on any merged record counts)."""
+    if not key.startswith("cap-") or key.startswith("cap-H-"):
+        return key
+    from hydra.universe import bridge
+    body = bridge.node_body(root, key[4:])
+    return bridge.caption_key(body) if body else key
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="hydra-ctl answer",
                                  description="Record one decision, then rebuild.")
@@ -117,7 +140,10 @@ def main(argv: list[str] | None = None) -> int:
     a = ap.parse_args(argv)
     root = resources.ensure_built(resources.archive(a.dir))
     value = value_for(root, a.id, a.choice)
-    line = set_verdict(root / layout.VERDICTS, a.id, value)
+    key = h_key(root, a.id)
+    if key != a.id and value is None:               # clearing: both forms go
+        set_verdict(root / layout.VERDICTS, a.id, None)
+    line = set_verdict(root / layout.VERDICTS, key, value)
     print(f"{style.verb('Recorded')} {line}" if line else f"{style.verb('Cleared')} {a.id}")
     if not a.no_build:
         print(build.report(root, build.build_archive(root), verb="Rebuilt"))

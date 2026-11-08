@@ -20,8 +20,10 @@ from pathlib import Path
 
 import yaml
 
-from hydra import freshness, ingest as ingest_mod, layout, lint, resources, schema, yamlcache
+from hydra import consistency, freshness, ingest as ingest_mod, kinship, layout, lint, resources, schema, yamlcache
 from hydra.ingest import parse_records
+from hydra.shape import entities as entities_mod
+from hydra.universe import bridge
 from hydra.review import verdicts as vd
 from hydra.shape.reads import build_reads, diff_reads, resolve
 from hydra.shape.rules import canonical, compile_rules
@@ -216,12 +218,15 @@ def _build_archive(root, *, prefix: bool, write: bool, now: str | None, capture:
     rule = lambda name, rel: {} if name in off else _yaml(root / rel)
     generic, declared = rule("generic", layout.DEFAULT_POSITIONS), rule("hierarchy", layout.POSITIONS)
     hints = rule("hints", layout.HINTS)
-    verdicts, v_issues = vd.load(root)
+    file_verdicts, v_issues = vd.load(root)
+    verdicts = bridge.before_resolve(root, file_verdicts)     # + the universe's decisions on these records
     observed = _observed_titles(records)
 
     rules_generic = compile_rules(generic, None, observed, direction)
     rules_decl = compile_rules(generic, declared, observed, direction)
+    records = bridge.share_pins(root, records)                # an upstream pin joins the records holding that H
     shared = resolve(records, verdicts, direction, params_dir)    # rules-independent, once
+    verdicts = bridge.after_resolve(root, verdicts, shared.survivors, {r["id"] for r in records})   # placements decided between Hs
     kw = dict(overrides=hints, direction=direction, params_dir=params_dir, resolved=shared)
     read1 = build_reads(records, rules_generic, verdicts, read="generic", **kw)
     read2 = build_reads(records, rules_decl, verdicts, read="declared", **kw)
@@ -230,20 +235,26 @@ def _build_archive(root, *, prefix: bool, write: bool, now: str | None, capture:
     ledger = merge_ledgers(read1["ledger"], read2["ledger"], prev, verdicts)
     claims = read1["claims"]
     _collection_counts(collections, claims)
+    compiled = dict(resolved=shared, ledger=ledger, reads={ir["read"]: ir for ir in (read1, read2)})
     if capture is not None:            # `export`: the build's result in memory, nothing written
-        capture.update(resolved=shared, ledger=ledger, reads={ir["read"]: ir for ir in (read1, read2)})
+        capture.update(compiled)
     reads = {ir["read"]: {k: v for k, v in ir.items() if k not in ("ledger", "claims")}
              for ir in (read1, read2)}
     change = diff_reads(read1, read2)
     reads["declared"]["diff"] = change
 
+    if write:
+        _universe_of_one(root, compiled, now)
     meta = _yaml(root / layout.MANIFEST)
     issues = lint.sort(lint.check(root, direction) + lint.build_issues(
-        compile_issues=rules_decl["issues"], verdict_disagreements=v_issues, verdicts=verdicts,
+        compile_issues=rules_decl["issues"], verdict_disagreements=v_issues, verdicts=file_verdicts,
         ledger=ledger, nodes=read2["nodes"], records=records, report=read2["report"],
         duplicates=duplicates, prefix_report=prefix_report,
         subject_in_hierarchy=bool((declared or {}).get("subject")),
-        record_count=len(records), record_guide=RECORD_GUIDE))
+        record_count=len(records), record_guide=RECORD_GUIDE)
+        + consistency.check(entities_mod.entities(shared), kinship.load(root))
+        + [lint.issue("warning", "verdicts.dead-h", layout.VERDICTS, k, why)
+           for k, why in bridge.dead_keys(root, file_verdicts)])
     summary = {
         "format": layout.FORMAT_VERSION, "name": meta.get("name") or root.name,
         **({"subject": meta["subject"]} if isinstance(meta.get("subject"), dict) else {}),
@@ -289,6 +300,18 @@ def _build_archive(root, *, prefix: bool, write: bool, now: str | None, capture:
     if prefix:                                    # what `build` checks before building again
         yamlcache.remember(root, "last_build", freshness.fingerprint(root))
     return summary
+
+
+def _universe_of_one(root: Path, compiled: dict, now) -> None:
+    """A universe whose only member is this archive gets its Hs from every build, from
+    the archive just compiled (a universe with other members: `universe build`)."""
+    from hydra.universe import build as ubuild, layer
+    if not layer.is_universe(root):
+        return
+    doc = layer.read_manifest(root)
+    if set(doc.get("members") or {}) != {layer.SELF}:
+        return
+    ubuild.build(root, capture=compiled, pages=False, now=now)
 
 
 def _collection_counts(collections: dict, claims: list[dict]) -> None:

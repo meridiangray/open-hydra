@@ -110,7 +110,12 @@ def _resolve(records: list[dict], verdicts: dict | None = None, direction: dict 
     cyc = cycles_mod.detect(f["placements"], schema_of, cycles_mod.cycle_map(names, direction))
     tscan = ties_mod.scan(records, m, names, pins=pins, resolver=resolver)
     by_id = {r["id"]: r for r in records}
-    cap = {rid: caption(r, verdicts) for rid, r in ents.items()}
+    merged_in: dict[str, list[str]] = {}
+    for r in records:
+        s = find(r["id"])
+        if s != r["id"]:
+            merged_in.setdefault(s, []).append(r["id"])
+    cap = {rid: caption(r, verdicts, merged_in.get(rid, ())) for rid, r in ents.items()}
     return Resolved(
         m=m, f=f, survivors=survivors, ents=ents, schema_of=schema_of,
         cap=cap,

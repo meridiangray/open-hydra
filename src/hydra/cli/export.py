@@ -1,7 +1,13 @@
 """export: the archive, compiled, in formats other tools read.
 
     hydra-ctl export [<dir> | FILE.hydra] --format ftm|hydra-ftm|csv|graphml
-        [-o PATH] [--read declared|generic] [--force]
+        [-o PATH] [--read declared|generic] [--force] [--ids record|h] [--publish]
+
+`--ids h` (ftm, hydra-ftm): each entity with a canonical id goes out under it,
+`H-<12 characters>`, its record ids in `referents`, every link to it rewritten.
+`--publish`: the exported entities' computed Hs become published, so they keep
+their ids from now on (an export others link to is a promise); it writes the
+H-table, so it needs a folder, not a `.hydra`.
 
 `ftm`        the merged entities as standard FollowTheMoney JSON lines: a link
              field holds the id of the record it points at (`member:
@@ -82,12 +88,15 @@ def schema_pin(root: Path) -> str:
 
 
 def graph(ents: list[dict], tree: dict, rows: list[dict],
-          open_merges: bool = True) -> tuple[list[dict], list[dict], dict]:
-    """-> (nodes, edges, report). `open_merges`: include the `sameAs` questions."""
+          open_merges: bool = True, with_sources: bool = False,
+          orphans: bool = False) -> tuple[list[dict], list[dict], dict]:
+    """-> (nodes, edges, report). `open_merges`: include the `sameAs` questions. `with_sources`
+    keeps the evidence layer (Document-family nodes and `sources` links); `orphans` keeps the
+    nodes left without an edge once that layer is out."""
     is_edge = lambda s: bool((schema.SCHEMA.get(s) or {}).get("edge"))
     nodes = {}
     for e in ents:
-        if is_edge(e["schema"]):
+        if is_edge(e["schema"]) or (not with_sources and schema.is_a(e["schema"], "Document")):
             continue
         t = tree.get(e["id"]) or {}
         nodes[e["id"]] = {"id": e["id"], "schema": e["schema"], "caption": t.get("caption") or _caption(e),
@@ -105,7 +114,7 @@ def graph(ents: list[dict], tree: dict, rows: list[dict],
             for s, t in ends:
                 edges.append({"source": s, "target": t, "type": e["schema"], "id": e["id"],
                               "directed": "false" if edge.get("directed") is False else "true", "status": "",
-                              "role": ";".join(props.get("role") or []),
+                              "role": ";".join(props.get("role") or props.get("relationship") or []),
                               "start": dates.earliest(props.get("startDate")) or "",
                               "end": dates.latest(props.get("endDate")) or "", "prop": ""})
             continue
@@ -113,7 +122,7 @@ def graph(ents: list[dict], tree: dict, rows: list[dict],
             continue
         for p, vals in sorted(props.items()):
             p = ingest.FTM_RENAMES.get(p, p)          # hydra's name for the field (`sources`), not FtM's
-            if (pdefs.get(p) or {}).get("type") != "entity":
+            if (pdefs.get(p) or {}).get("type") != "entity" or (p == "sources" and not with_sources):
                 continue
             for v in vals:
                 if v in nodes and v != e["id"]:
@@ -135,6 +144,9 @@ def graph(ents: list[dict], tree: dict, rows: list[dict],
             edges.append({"source": a, "target": b, "type": "sameAs", "id": r["id"], "directed": "false",
                           "status": r["status"], "role": "", "start": "", "end": "", "prop": ""})
     edges.sort(key=lambda x: (x["type"], x["source"], x["target"], x["id"], x["prop"]))
+    if not orphans:
+        linked = {x["source"] for x in edges} | {x["target"] for x in edges}
+        nodes = {i: n for i, n in nodes.items() if i in linked}
     return (sorted(nodes.values(), key=lambda n: n["id"]), edges,
             {"entities": len(ents), "nodes": len(nodes), "edges": len(edges), "unlinked_relationships": dangling})
 
@@ -176,17 +188,45 @@ def _graphml(nodes, edges, pin: str) -> str:
     return '<?xml version="1.0" encoding="UTF-8"?>\n' + ET.tostring(g_root, encoding="unicode") + "\n"
 
 
-def export(root: Path, fmt: str, out: Path, read: str = "declared") -> dict:
+def by_h(ents: list[dict], hmap: dict) -> list[dict]:
+    """Entities under their canonical ids: an entity with an H takes `H-<body>` as its id and
+    lists its record ids in `referents` (the canonical-id form FtM tools such as
+    nomenklatura read); a link to it is rewritten to match. Relationships keep record ids."""
+    out = []
+    for e in ents:
+        e = dict(e, properties={p: [("H-" + hmap[v]) if v in hmap else v for v in vals]
+                                for p, vals in e["properties"].items()})
+        if e["id"] in hmap:
+            e["referents"] = sorted({e["id"], *(e.get("referents") or [])})
+            e["id"] = "H-" + hmap[e["id"]]
+        out.append(e)
+    return out
+
+
+def export(root: Path, fmt: str, out: Path, read: str = "declared", ids: str = "record",
+           publish: bool = False, with_sources: bool = False, orphans: bool = False) -> dict:
+    from hydra.universe import bridge
     cap, pin = compile_(root), schema_pin(root)
+    r = cap["resolved"]
+    hmap = bridge.body_keys(root, r.survivors, r.records) if ids == "h" or publish else {}
+    extra = {}
+    if publish:
+        from hydra import history
+        from hydra.universe import review
+        extra["published"] = review.publish(root, sorted(set(hmap.values())))
+        history.auto(root, f"export --publish: {extra['published']} H(s) published")
     if fmt in ("ftm", "hydra-ftm"):
-        ents = entities_mod.entities(cap["resolved"], links="ids" if fmt == "ftm" else "names")
+        ents = entities_mod.entities(r, links="ids" if fmt == "ftm" else "names")
+        if ids == "h":
+            ents = by_h(ents, hmap)
         out.write_text("".join(json.dumps(e, ensure_ascii=False, sort_keys=True) + "\n" for e in ents),
                        encoding="utf-8")
-        return {"entities": len(ents), "ftm schema": pin}
+        return {"entities": len(ents), **({"by h": len({e["id"] for e in ents} & {"H-" + b for b in hmap.values()})}
+                                          if ids == "h" else {}), **extra, "ftm schema": pin}
     # open merge questions are review state: exported only from an archive that has been built
     built = (root / layout.BUILD_YAML).is_file()
     nodes, edges, report = graph(entities_mod.entities(cap["resolved"]), cap["reads"][read]["nodes"],
-                                 cap["ledger"], open_merges=built)
+                                 cap["ledger"], open_merges=built, with_sources=with_sources, orphans=orphans)
     if not built:
         report["open_merges"] = "left out"             # an unbuilt archive has no merge questions
     if fmt == "csv":
@@ -198,7 +238,7 @@ def export(root: Path, fmt: str, out: Path, read: str = "declared") -> dict:
             encoding="utf-8")
     else:
         out.write_text(_graphml(nodes, edges, pin), encoding="utf-8")
-    return {**report, "ftm schema": pin}
+    return {**report, **extra, "ftm schema": pin}
 
 
 def main(argv: list[str] | None = None, say=print) -> int:
@@ -210,7 +250,17 @@ def main(argv: list[str] | None = None, say=print) -> int:
     ap.add_argument("-o", "--out", help="where to write (default: named after the archive, here)")
     ap.add_argument("--read", choices=tuple(READS), default="declared")
     ap.add_argument("--force", action="store_true", help="replace an existing output")
+    ap.add_argument("--ids", choices=("record", "h"), default="record",
+                    help="ftm, hydra-ftm: an entity's id is its record id (default), or its canonical H")
+    ap.add_argument("--publish", action="store_true",
+                    help="the exported entities' computed Hs become published (others will point at them)")
+    ap.add_argument("--with-sources", action="store_true",
+                    help="csv, graphml: keep the evidence layer (Document nodes and sources links)")
+    ap.add_argument("--orphans", action="store_true",
+                    help="csv, graphml: keep nodes that end up with no edge")
     a = ap.parse_args(argv)
+    if a.publish and a.target and resources.is_pack(a.target):
+        raise SystemExit(f"hydra: --publish writes the archive's H-table; open {a.target} first: init {a.target}")
     root = resources.archive(a.target, read_only=True, built=False)
     name = re.sub(r"[^\w.-]+", "-", Path(a.target).stem if a.target and resources.is_pack(a.target)
                   else archive_name(root)).strip("-.")
@@ -218,7 +268,8 @@ def main(argv: list[str] | None = None, say=print) -> int:
                                                     "csv": f"{name}-graph", "graphml": f"{name}.graphml"}[a.format]
     if out.exists() and not a.force:
         raise SystemExit(f"hydra: {out} exists; --force replaces it")
-    report = export(root, a.format, out, a.read)
+    report = export(root, a.format, out, a.read, ids=a.ids, publish=a.publish,
+                    with_sources=a.with_sources, orphans=a.orphans)
     say(f"{style.verb('Exported')} {style.name(name)} as {a.format} to {style.path(out)}")
     for line in style.across([k.replace("_", " ") for k in report],
                              [f"{v:,}" if isinstance(v, int) else str(v)[:12] if k == "ftm schema" else str(v)

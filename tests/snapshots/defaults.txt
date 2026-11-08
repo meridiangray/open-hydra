@@ -6,3 +6,11 @@ direction  default
 collate    default
 params     default
 artifact   default
+keys       default
+kinship    default
+scope      default
+standards  default
+vocabularies default
+wikidata   default
+capacity   default
+groups     default

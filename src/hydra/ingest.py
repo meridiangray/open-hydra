@@ -24,6 +24,18 @@ from hydra import schema
 
 
 
+def raw_records(text: str) -> list[dict]:
+    """The file's records as written (a list, {"entities": [...]}, or JSON lines): every
+    key kept, as opposed to parse_records' normalized {id, schema, properties, _meta}."""
+    text = text.strip()
+    try:
+        data = json.loads(text) if text else []
+        items = data if isinstance(data, list) else data.get("entities", [data])
+    except json.JSONDecodeError:
+        items = [json.loads(l) for l in text.splitlines() if l.strip()]
+    return [r for r in items if isinstance(r, dict) and r.get("id")]
+
+
 def parse_records(text: str) -> list[dict]:
     text = text.strip()
     try:
@@ -40,6 +52,9 @@ def parse_records(text: str) -> list[dict]:
                    "properties": _props(r.get("properties"))}
             if "_meta" in r:
                 rec["_meta"] = r["_meta"]
+            pins = (r.get("properties") or {}).get("upstream")
+            if pins:                             # as written, labels kept (`pollard:H-...`): the universe reads them
+                rec["_upstream"] = [str(x) for x in (pins if isinstance(pins, list) else [pins])]
             upstream = [str(x) for x in r.get("referents") or [] if x] if isinstance(r.get("referents"), list) else []
             if upstream:                         # ids an upstream tool (OpenSanctions, nomenklatura) merged into it
                 rec["_referents"] = upstream
@@ -80,6 +95,9 @@ def _props(d) -> dict:
     out: dict[str, list] = {}
     for p, v in (d or {}).items():
         out.setdefault(FTM_RENAMES.get(p, p), []).extend(str(x) for x in (v if isinstance(v, list) else [v]))
+    if out.get("upstream"):            # an H is its body: `H-d4-x`, `H-c0-x` and `u:H-x` are one pin
+        from hydra.universe import hid
+        out["upstream"] = list(dict.fromkeys(hid.pin_key(v) or v for v in out["upstream"]))
     return out
 
 

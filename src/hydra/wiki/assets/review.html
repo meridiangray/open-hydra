@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Review</title>
+<script>(function(){var q=new URLSearchParams(location.search).get('mode'),s=null;try{s=localStorage.getItem('hydra-mode')}catch(e){}var m=q||s;if(m==='dark'||m==='light')document.documentElement.setAttribute('data-mode',m)})();</script>
+<style>
+  :root{
+    --ink:#221e19; --ink2:#57503f; --mute:#8b8172;
+    --paper:#f4f1ea; --panel:#fffdf9; --soft:#ece7db; --soft2:#f7f4ed; --hair:#e2dccd; --hair2:#d3cbba;
+    --teal:#0e5047; --teal-hi:#0a3d37; --teal-soft:#e3efe9;
+    --ok:#2f7a4d; --ok-soft:#e9f3ea;
+    --caution:#a5621a; --caution-soft:#f8efe0;
+    --bad:#a53650; --bad-soft:color-mix(in srgb,var(--bad) 8%,var(--panel));
+    --amb:#6559a8; --amb-soft:#ece9f6;
+    --uni:#8a4a6e; --uni-soft:#f5e9f0;
+    --fix:#5f6975; --fix-soft:#edf0f3;
+    --shadow:0 1px 2px rgba(34,30,25,.06),0 10px 30px -8px rgba(34,30,25,.10);
+    --sans:ui-sans-serif,system-ui,"Segoe UI",Roboto,sans-serif;
+    --serif:var(--sans);
+    --mono:ui-monospace,"Cascadia Mono",Consolas,monospace;
+    --on-teal:#fff;
+    --radius:12px; --th:var(--soft);   /* stand-ins when the wiki's theme is not there to set them */
+  }
+  :root[data-mode=dark]{
+    --ink:#ece6da; --ink2:#c3baa8; --mute:#8f8676;
+    --paper:#171512; --panel:#211e1a; --soft:#2c2823; --soft2:#26231e; --hair:#38332c; --hair2:#4a443a;
+    --teal:#4fb3a2; --teal-hi:#6cc7b7; --teal-soft:#1d3531;
+    --ok:#6cbf8a; --ok-soft:#1d2e22; --caution:#e0a35a; --caution-soft:#3a2c1a;
+    --bad:#f3a0ad; --bad-soft:color-mix(in srgb,var(--bad) 8%,var(--panel)); --amb:#a99ce6; --amb-soft:#2a2640;
+    --uni:#d38fb6; --uni-soft:#3a2432; --fix:#a7b1bd; --fix-soft:#2a2e33;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px -8px rgba(0,0,0,.5);
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-mode=light]){
+    --ink:#ece6da; --ink2:#c3baa8; --mute:#8f8676;
+    --paper:#171512; --panel:#211e1a; --soft:#2c2823; --soft2:#26231e; --hair:#38332c; --hair2:#4a443a;
+    --teal:#4fb3a2; --teal-hi:#6cc7b7; --teal-soft:#1d3531;
+    --ok:#6cbf8a; --ok-soft:#1d2e22; --caution:#e0a35a; --caution-soft:#3a2c1a;
+    --bad:#f3a0ad; --bad-soft:color-mix(in srgb,var(--bad) 8%,var(--panel)); --amb:#a99ce6; --amb-soft:#2a2640;
+    --uni:#d38fb6; --uni-soft:#3a2432; --fix:#a7b1bd; --fix-soft:#2a2e33;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px -8px rgba(0,0,0,.5);
+  }}
+  *{box-sizing:border-box}
+  html{scrollbar-gutter:stable}
+  body{font:15px/1.65 var(--sans);color:var(--ink);background:var(--paper);margin:0}
+  a{color:var(--teal);text-decoration:none}
+  a:hover{text-decoration:underline;text-underline-offset:2px}
+  button{font:inherit;color:inherit}
+  :focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+  .id{font:11.5px/1.3 var(--mono);color:var(--mute)}
+
+  /* ── top bar ─────────────────────────── */
+  header.top{box-sizing:border-box;display:flex;align-items:center;gap:1rem;width:calc(100% - 3rem);max-width:89rem;
+             margin:1.2rem auto .85rem;padding:0 0 .25rem;   /* the wiki's h1: same margins, same rule beneath */
+             
+             border-bottom:1px solid var(--hair)}
+  header.top h1{font:400 2rem var(--serif);margin:.2rem 0 0}
+  header.top .prog{font:.9rem var(--sans);color:var(--mute)}
+  header.top .spacer{flex:1}
+  /* the wiki's view tabs: pills, the open one filled */
+  .seg{display:flex;flex-wrap:wrap;gap:.45rem}
+  .seg button{display:inline-flex;align-items:center;gap:.4rem;font:500 .9rem var(--sans);color:var(--ink);cursor:pointer;
+              padding:.38rem .8rem;border:1px solid var(--hair);border-radius:999px;background:var(--paper)}
+  .seg button:hover{border-color:var(--accent,var(--teal))}
+  .seg button.on{background:var(--teal);border-color:var(--teal);color:var(--on-teal)}
+  #apply{display:inline-flex;align-items:center;gap:8px;font:600 12.5px var(--sans);
+         color:var(--on-teal);background:var(--teal);border:1px solid var(--teal);border-radius:8px;
+         padding:7px 14px;cursor:pointer}
+  #apply:hover:not(:disabled){background:var(--teal-hi)}
+  #apply:disabled{background:transparent;color:var(--mute);border-color:var(--hair2);cursor:default}
+  #apply .n{background:rgba(255,255,255,.2);border-radius:99px;padding:1px 7px;font-size:11.5px}
+  .iconbtn{width:30px;height:30px;border-radius:var(--radius);border:1px solid var(--hair2);background:var(--panel);
+           color:var(--ink2);cursor:pointer;font:600 13px/1 var(--sans)}
+  .iconbtn:hover{border-color:var(--teal);color:var(--teal)}
+
+  /* ── layout: the rail is the wiki's sidebar (same bar, headings, links and current-page mark) ── */
+  body{display:grid;grid-template-columns:15rem minmax(0,1fr)}
+  .right{min-width:0}
+  nav.rail{border:1px solid var(--hair);border-radius:var(--radius);box-shadow:var(--shadow);background:var(--panel);
+           position:sticky;top:.75rem;height:calc(100dvh - 1.5rem);margin:.75rem 0 .75rem .75rem;
+           overflow-y:auto;display:flex;flex-direction:column}
+  nav.rail .bar{background:var(--head,var(--teal));color:var(--headink,#fff);padding:1.3rem 1.3rem 1.2rem;
+                border-radius:calc(var(--radius) - 1px) calc(var(--radius) - 1px) 0 0}
+  nav.rail .brand,nav.rail .brand:visited{display:flex;flex-direction:column;line-height:1.15;color:inherit}
+  nav.rail .brand:hover{text-decoration:none}
+  nav.rail .brand b{font:400 1.55rem/1.15 var(--serif);letter-spacing:.012em}
+  nav.rail .bar{border-bottom:1px solid color-mix(in srgb,var(--headink,#fff) 12%,transparent)}
+  nav.rail .brand i{font:400 .74rem/1.3 var(--sans);font-style:normal;letter-spacing:.02em;opacity:.75;margin-top:3px}
+  nav.rail .groups{padding:.8rem .6rem 1rem}
+  nav.rail h3{font:600 .7rem/1 var(--sans);letter-spacing:.09em;text-transform:uppercase;
+              color:var(--mute);margin:.85rem .7rem .3rem}
+  nav.rail .groups a{display:flex;align-items:center;gap:.5rem;margin-bottom:.12rem;padding:.28rem .7rem;border-radius:var(--radius);color:var(--teal);
+             font:500 .92rem/1.35 var(--sans);cursor:pointer}
+  nav.rail .groups a:hover{background:var(--soft);text-decoration:none}
+  nav.rail a.on{background:var(--soft);color:var(--ink);font-weight:600;box-shadow:inset 3px 0 var(--accent,var(--teal))}
+  nav.rail a .lbl{flex:1}
+  nav.rail .n{font:600 .72rem var(--sans);min-width:1.4rem;text-align:center;color:var(--ink2);
+              background:var(--soft);border-radius:99px;padding:.1rem .45rem}
+  nav.rail a.on .n{background:var(--panel)}
+  nav.rail a.empty{color:var(--mute)}
+  nav.rail a.empty .n{background:transparent;color:var(--ok)}
+  nav.rail .note{font:.8rem/1.45 var(--sans);color:var(--mute);margin-top:auto;padding:1rem 1.3rem;border-top:1px solid var(--hair)}
+
+  /* ── stage ───────────────────────────── */
+  section.stage{max-width:92rem;width:100%;margin:0 auto;padding:0 1.5rem 3rem}   /* the wiki's main */
+  .steps{display:flex;align-items:center;gap:6px;margin:0 0 12px;font:12.5px var(--sans);color:var(--mute)}
+  .steps .dots{display:flex;gap:5px;flex-wrap:wrap}
+  .steps .dot{width:22px;height:22px;border-radius:calc(var(--radius) * .6);border:1px solid var(--hair2);background:var(--panel);
+              font:600 10.5px/20px var(--sans);color:var(--ink2);text-align:center;cursor:pointer;padding:0}
+  .steps .dot:hover{border-color:var(--teal);color:var(--teal)}
+  .steps .dot.cur{background:var(--teal);border-color:var(--teal);color:var(--on-teal)}
+  .steps .dot.skipped{border-color:var(--caution);color:var(--caution);background:var(--caution-soft)}
+  .steps .dot.cur.skipped{background:var(--teal);color:var(--on-teal)}
+  .steps .arrows{margin-left:auto;display:flex;gap:5px}
+  .steps .arrows button{width:28px;height:28px;border-radius:var(--radius);border:1px solid var(--hair2);background:var(--panel);
+                        color:var(--ink2);font:15px/1 var(--sans);cursor:pointer}
+  .steps .arrows button:hover:not(:disabled){border-color:var(--teal);color:var(--teal)}
+  .steps .arrows button:disabled{opacity:.35;cursor:default}
+
+  /* a box as on the wiki's main page: a title bar in the theme's header tint, the serif title, the same radius and shadow */
+  .panel{background:var(--panel);border:1px solid var(--hair);border-radius:var(--radius);box-shadow:var(--shadow);
+         overflow:hidden}
+  .qhead{padding:.7rem 1.2rem .8rem;border-bottom:1px solid var(--hair);background:var(--th)}
+  .qmeta{display:flex;align-items:center;gap:10px;margin-bottom:.35rem}
+  .tag{font:700 .68rem/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;padding:.3rem .6rem;border-radius:999px}
+  .tag.merge{background:var(--teal-soft);color:var(--teal)}
+  .tag.conflict{background:var(--caution-soft);color:var(--caution)}
+  .tag.ref,.tag.place{background:var(--amb-soft);color:var(--amb)}
+  .tag.shared{background:var(--uni-soft);color:var(--uni)}
+  .tag.stale,.tag.contra,.tag.broken{background:var(--bad-soft);color:var(--bad)}
+  .tag.cleanup{background:var(--fix-soft);color:var(--fix)}
+  .skipnote{font:600 11.5px var(--sans);color:var(--caution)}
+  .qhead h2{font:400 1.4rem/1.3 var(--serif);margin:0;color:var(--ink)}
+  .qhead .why{font:.9rem/1.5 var(--sans);color:var(--mute);margin:.3rem 0 0}
+
+  .banner{display:flex;gap:12px;padding:12px 24px;font:13.5px/1.5 var(--sans);border-bottom:1px solid var(--hair)}
+  .banner b{font-weight:600}
+  .banner.warn{background:var(--caution-soft);color:var(--ink)}
+  .banner.bad{background:var(--bad-soft);color:var(--ink)}
+  .banner .ic{font-weight:700;flex:none}
+  .banner .then{display:block;color:var(--ink2);margin-top:2px}
+  .banner.warn .ic{color:var(--caution)} .banner.bad .ic{color:var(--bad)}
+
+  .body{padding:1rem 1.2rem 1.1rem}
+  .toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+
+  /* side-by-side comparison */
+  /* tables as the wiki's wikitable: header band in --th, sans cells, a faint accent on hover */
+  table.cmp{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden;background:var(--panel)}
+  table.cmp th{text-align:left;vertical-align:bottom;padding:.45rem .7rem;background:var(--th);border-bottom:1px solid var(--hair);font-weight:400}
+  table.cmp th .nm{display:block;font:600 .95rem/1.3 var(--sans);color:var(--ink)}
+  table.cmp th .src{display:block;font:12px/1.4 var(--sans);color:var(--mute);margin-top:2px}
+  table.cmp th.f{width:130px}
+  table.cmp td{padding:.45rem .7rem;border-bottom:1px solid var(--hair);vertical-align:top;font:.92rem/1.45 var(--sans)}
+  table.cmp tr:last-child td{border-bottom:0}
+  table.cmp tr:not(.diff):hover td{background:color-mix(in srgb,var(--accent,var(--teal)) 6%,var(--panel))}
+  table.cmp td.f{font:500 .85rem/1.6 var(--sans);color:var(--ink2);white-space:nowrap}
+  table.cmp td.f .m{display:inline-block;width:16px;font-weight:700}
+  table.cmp .empty{color:var(--mute)}
+  tr.same .m,tr.similar .m{color:var(--ok)}
+  tr.diff td{background:var(--bad-soft)}
+  tr.diff td:first-child{box-shadow:inset 3px 0 var(--bad)}
+  tr.diff .m{color:var(--bad)}
+  tr.one .m{color:var(--mute)}
+  .alt,.from{display:block;font:12px var(--sans);color:var(--mute);margin-top:1px}
+  .needs{font:600 12px var(--sans);color:var(--bad)}
+
+  details.ev{margin-top:14px;border:1px solid var(--hair);border-radius:var(--radius);background:var(--soft2)}
+  details.ev summary{cursor:pointer;padding:10px 14px;font:600 12.5px var(--sans);color:var(--ink2);list-style:none}
+  details.ev summary::before{content:"▸";display:inline-block;width:14px;color:var(--mute)}
+  details.ev[open] summary::before{transform:rotate(90deg)}
+  details.ev .qs{padding:0 14px 12px}
+  blockquote{font:14px/1.55 var(--serif);color:var(--ink2);margin:8px 0;padding:2px 0 2px 14px;border-left:3px solid var(--hair2)}
+  blockquote cite{display:block;font:12px var(--sans);font-style:normal;color:var(--mute);margin-top:3px}
+
+  /* choices */
+  .opts{display:grid;gap:8px}
+  .opt{display:grid;grid-template-columns:28px 1fr;gap:2px 12px;text-align:left;cursor:pointer;
+       background:var(--panel);border:1.5px solid var(--hair);border-radius:var(--radius);padding:13px 16px;
+       transition:border-color .12s,background .12s,box-shadow .12s}
+  .opt .num{grid-row:span 3;width:24px;height:24px;border-radius:99px;border:1.5px solid var(--hair2);
+            font:600 11px/21px var(--sans);text-align:center;color:var(--mute);align-self:start;margin-top:1px}
+  .opt .ov{font:17px/1.35 var(--serif);color:var(--ink)}
+  .opt .od{font:13px/1.45 var(--sans);color:var(--ink2)}
+  .sub{font:700 10px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin:18px 0 8px}
+  .sub:first-child{margin-top:0}
+
+  /* the record a question is about */
+  .subject{border:1px solid var(--hair);border-radius:var(--radius);padding:12px 16px;margin-bottom:16px;background:var(--soft2)}
+  .subject .lab{font:700 10px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+  .subject .nm{font:600 15px/1.3 var(--sans);margin-top:6px}
+  .subject blockquote{margin-bottom:0}
+  .subject .rows{margin-top:6px;display:grid;grid-template-columns:auto 1fr;gap:2px 14px;font:13px/1.45 var(--sans)}
+  .subject .rows .k{color:var(--mute)}
+
+  dl.facts{display:grid;grid-template-columns:140px 1fr;gap:8px 16px;margin:0;font:14px/1.45 var(--sans)}
+  dl.facts dt{color:var(--mute)}
+  dl.facts dd{margin:0}
+  dl.facts .gone{color:var(--bad)}
+
+  /* actions */
+  .hint{font:12.5px var(--sans);color:var(--mute)}
+
+  /* clean-up lists */
+  ul.tasks{list-style:none;margin:0;padding:0;border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden}
+  ul.tasks li{display:flex;align-items:center;gap:14px;padding:11px 16px;border-bottom:1px solid var(--hair)}
+  ul.tasks li:last-child{border-bottom:0}
+  ul.tasks li:hover{background:var(--soft2)}
+  ul.tasks .t{flex:1;min-width:0}
+  ul.tasks .t b{display:block;font:500 14.5px/1.35 var(--sans)}
+  ul.tasks .t span{display:block;font:12.5px/1.4 var(--sans);color:var(--mute)}
+  ul.tasks select{font:13px var(--sans);padding:6px 8px;border-radius:7px;border:1px solid var(--hair2);background:var(--panel);color:var(--ink)}
+  ul.tasks .open{font:600 12.5px var(--sans);white-space:nowrap}
+  .more{font:12.5px var(--sans);color:var(--mute);margin:10px 2px 0}
+
+  /* list view */
+  table.list{width:100%;border-collapse:separate;border-spacing:0;background:var(--panel);
+             border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  table.list th{font:600 .72rem var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--mute);white-space:nowrap;
+                text-align:left;padding:.45rem .7rem;background:var(--th);border-bottom:1px solid var(--hair)}
+  table.list td{padding:.45rem .7rem;border-bottom:1px solid var(--hair);vertical-align:middle;font:.88rem/1.4 var(--sans)}
+  table.list tr:last-child td{border-bottom:0}
+  table.list tr.row{cursor:pointer}
+  table.list tr.row:hover td{background:color-mix(in srgb,var(--accent,var(--teal)) 6%,var(--panel))}
+  table.list td .why{display:block;font-size:12.5px;color:var(--mute);margin-top:2px}
+  table.list td.go{text-align:right;white-space:nowrap;color:var(--teal);font-weight:600;font-size:13px}
+
+  /* answered log */
+
+  /* toast, empty, help */
+  .emptystate{text-align:center;padding:80px 20px 90px}
+  .emptystate .big{width:56px;height:56px;margin:0 auto 16px;border-radius:99px;background:var(--ok-soft);
+                   color:var(--ok);font:600 26px/56px var(--sans)}
+  .emptystate h2{font:400 22px var(--serif);margin:0 0 6px}
+  .emptystate p{font:14px/1.5 var(--sans);color:var(--ink2);margin:4px 0}
+  .emptystate .next{display:inline-block;margin-top:18px}
+  .help{position:fixed;inset:0;background:rgba(20,18,15,.35);display:none;align-items:center;justify-content:center;z-index:20}
+  .help.on{display:flex}
+  .help .box{background:var(--panel);border:1px solid var(--hair);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 26px;min-width:340px}
+  .help h2{font:600 15px var(--sans);margin:0 0 14px}
+  .help dl{display:grid;grid-template-columns:auto 1fr;gap:9px 18px;margin:0;font:13.5px var(--sans)}
+  .help dt{text-align:right}
+  .help dd{margin:0;color:var(--ink2)}
+  .help p{font:12.5px var(--sans);color:var(--mute);margin:16px 0 0}
+
+  @media (max-width:63.99rem){      /* where the wiki folds its sidebar into a bar */
+    body{display:block}
+    nav.rail{position:static;height:auto;margin:.75rem}
+    nav.rail .bar{padding:.6rem 1rem}
+    header.top{flex-wrap:wrap}
+    header.top h1{font-size:1.6rem}
+  }
+</style>
+<!--theme-->
+<style>@view-transition{navigation:auto}::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation-duration:.12s}@media (prefers-reduced-motion:reduce){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none}}nav.rail{view-transition-name:menu}</style>
+<link rel=expect href='#end' blocking=render>
+<style>
+  /* served by the wiki: its theme's variables arrive above, and the review colours follow them */
+  :root.themed{
+    --paper:var(--bg); --hair:var(--line); --hair2:color-mix(in srgb,var(--line) 78%,var(--ink));
+    --mute:var(--muted); --ink2:color-mix(in srgb,var(--ink) 78%,var(--bg));
+    --soft2:color-mix(in srgb,var(--soft) 50%,var(--panel));
+    --teal:var(--link); --teal-hi:color-mix(in srgb,var(--link) 82%,var(--ink));
+    --teal-soft:color-mix(in srgb,var(--link) 12%,var(--panel)); --on-teal:var(--bg);
+  }
+</style>
+</head>
+<body data-archive="{{archive}}">
+<nav class=rail id=rail></nav>
+<div class=right>
+<header class=top>
+  <h1>Review</h1>
+  <span class=prog id=prog></span>
+  <span class=spacer></span>
+  <div class=seg role=tablist><button id=vcard class=on>One at a time</button><button id=vlist>List</button></div>
+  <button class=iconbtn id=helpbtn title="Keyboard shortcuts">?</button>
+</header>
+<section class=stage id=stage></section>
+</div>
+<div class=help id=help><div class=box>
+  <h2>Keyboard shortcuts</h2>
+  <dl>
+    <dt><span class=kbd>←</span> <span class=kbd>→</span></dt><dd>Previous / next question</dd>
+    <dt><span class=kbd>E</span></dt><dd>Show or hide source excerpts</dd>
+    <dt><span class=kbd>?</span></dt><dd>This list</dd>
+  </dl>
+</div></div>
+<!--cards-->
+<script>
+const FIELD = {name:"Name", wikidata:"Wikidata ID", birthDate:"Born", deathDate:"Died", nationality:"Nationality",
+               position:"Position", occupation:"Occupation", founded:"Founded"};
+const SECTIONS = [
+  {h:"Decide", items:[
+    {id:"merge",  label:"Possible duplicates"},
+    {id:"ref",    label:"Unclear references"},
+    {id:"place",  label:"Placements"}]},
+  {h:"Re-check", items:[
+    {id:"stale",  label:"Changed since you decided"},
+    {id:"contra", label:"Contradictions"},
+    {id:"broken", label:"Broken decisions"}]},
+];
+const TAG = {merge:"Possible duplicate", ref:"Unclear reference", place:"Placement", stale:"Changed since decided",
+             contra:"Contradiction", broken:"Broken decision"};
+
+let CARDS = [];
+let S = {g:"merge", pos:0, view:"card", fv:"all"};
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
+const fl = f => FIELD[f] || f.replace(/([a-z])([A-Z])/g, "$1 $2").replace(/^./, m => m.toUpperCase());
+const sectionOf = id => SECTIONS.flatMap(s => s.items).find(i => i.id === id);
+const queue = g => CARDS.filter(c => c.g === g);
+const current = () => { const q = queue(S.g); return q[Math.min(S.pos, q.length - 1)]; };
+const question = c => c.q || "Are these the same entity?";
+
+/* ── card bodies ── */
+const MARK = {same:"✓", similar:"≈", diff:"≠", one:"·"};
+const status = r => r[3] || (!r[1] || !r[2] ? "one" : r[1] === r[2] ? "same" : "diff");
+function pairBody(c){
+  const all = c.rows.map(r => [...r.slice(0, 3), status(r)]);
+  const diffs = all.filter(r => r[3] !== "same").length;
+  const rows = S.fv === "diff" ? all.filter(r => r[3] !== "same") : all;
+  const cell = v => v ? esc(v) : `<span class=empty>—</span>`;
+  return `<div class=toolbar><div class=seg>
+      <button data-fv=all class="${S.fv === "all" ? "on" : ""}">All fields · ${all.length}</button>
+      <button data-fv=diff class="${S.fv === "diff" ? "on" : ""}">Differences · ${diffs}</button></div></div>
+    <table class=cmp>
+      <tr><th class=f></th><th><span class=nm>${esc(c.a.name)}</span></th><th><span class=nm>${esc(c.b.name)}</span></th></tr>
+      ${rows.map(r => `<tr class=${r[3]}><td class=f><span class=m>${MARK[r[3]]}</span>${esc(fl(r[0]))}</td>
+        <td>${cell(r[1])}</td><td>${cell(r[2])}</td></tr>`).join("") ||
+        `<tr><td colspan=3 class=hint>No differences — every field matches.</td></tr>`}
+    </table>`;
+}
+const option = ({v, d}, i) => `<div class=opt><span class=num>${i + 1}</span><span class=ov>${esc(v)}</span>${d ? `<span class=od>${esc(d)}</span>` : ""}</div>`;
+function body(c){
+  if (c.type === "pair") return pairBody(c);
+  if (c.type === "ref") return `<div class=subject><div class=lab>Mentioned in · ${esc(c.in.field)}</div><div class=nm>${esc(c.in.name)}</div></div>
+    <div class=sub>Could be</div><div class=opts>${c.cands.map((k, i) => option({v:k.name, d:k.d}, i)).join("")}</div>`;
+  if (c.type === "orphan") return `<dl class=facts>${c.facts.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${v}</dd>`).join("")}</dl>`;
+  return "";
+}
+
+function cardHtml(c){
+  const q = queue(S.g);
+  const steps = q.length > 1 ? `<div class=steps>${q.length > 40 ? `<span class=hint>${S.pos + 1} of ${q.length}</span>`
+      : `<span class=dots>${q.map((x, i) => `<button class="dot${i === S.pos ? " cur" : ""}" data-j=${i}>${i + 1}</button>`).join("")}</span>`}
+      <span class=arrows><button data-nav=-1 ${S.pos === 0 ? "disabled" : ""} aria-label=Previous>‹</button><button data-nav=1 ${S.pos >= q.length - 1 ? "disabled" : ""} aria-label=Next>›</button></span></div>` : "";
+  const why = c.why ? `<p class=why>${esc(c.why)}</p>` : "";
+  return `${steps}<article class=panel>
+    <div class=qhead><div class=qmeta><span class="tag ${c.g}">${TAG[c.g]}</span></div>
+      <h2>${esc(question(c))}</h2>${why}</div>
+    ${body(c) ? `<div class=body>${body(c)}</div>` : ""}
+  </article>`;
+}
+
+function listHtml(){
+  const rows = SECTIONS.flatMap(s => s.items).flatMap(it => queue(it.id).map(c =>
+    `<tr class=row data-goto="${c.o}"><td><span class="tag ${c.g}">${TAG[c.g]}</span></td>
+      <td>${c.type === "pair" ? `${esc(c.a.name)} <span class=meta>and</span> ${esc(c.b.name)}` : esc(question(c))}</td><td class=go>Review →</td></tr>`));
+  return rows.length ? `<table class=list><tr><th style="width:190px">Kind</th><th>Question</th><th></th></tr>${rows.join("")}</table>`
+    : emptyHtml("Nothing left to decide.");
+}
+function emptyHtml(msg){
+  const next = SECTIONS.flatMap(s => s.items).find(it => queue(it.id).length);
+  return `<div class=emptystate><div class=big>✓</div><h2>${esc(msg)}</h2>
+    ${next ? `<a class=next data-g="${next.id}" href="#">Next: ${esc(next.label)} (${queue(next.id).length}) →</a>` : ""}</div>`;
+}
+function stageHtml(){
+  if (S.view === "list") return listHtml();
+  const c = current();
+  return c ? cardHtml(c) : emptyHtml(`No ${sectionOf(S.g).label.toLowerCase()} left.`);
+}
+const ARCHIVE = /^\{\{/.test(document.body.dataset.archive) ? "Archive" : document.body.dataset.archive;
+function railHtml(){
+  const groups = SECTIONS.map(s => `<h3>${s.h}</h3>` + s.items.map(it => {
+    const n = queue(it.id).length;
+    return `<a class="${it.id === S.g && S.view === "card" ? "on" : ""}${n ? "" : " empty"}" data-g="${it.id}">
+      <span class=lbl>${it.label}</span><span class=n>${n || "✓"}</span></a>`;
+  }).join("")).join("");
+  return `<div class=bar><a class=brand href="/"><b>${esc(ARCHIVE)}</b></a></div>
+    <div class=groups><a href="/"><span class=lbl>← Back to the wiki</span></a>${groups}</div>`;
+}
+
+function render(){
+  const y = window.scrollY;
+  $("prog").textContent = `${CARDS.length} open question${CARDS.length === 1 ? "" : "s"}`;
+  $("rail").innerHTML = railHtml();
+  $("stage").innerHTML = stageHtml();
+  $("vcard").className = S.view === "card" ? "on" : ""; $("vlist").className = S.view === "list" ? "on" : "";
+  window.scrollTo(0, y);
+}
+
+/* ── moving about ── */
+function toTop(){           // a new card: bring its top into view, and only when it is not already
+  const r = $("stage").getBoundingClientRect();      // the title row scrolls away, as on the wiki's pages
+  if (r.top < 0) window.scrollTo(0, window.scrollY + r.top - 24);
+}
+function go(g){ S.g = g; S.pos = 0; S.view = "card"; S.fv = "all"; history.replaceState(null, "", "#" + g); render(); toTop(); }
+function nav(d){ const q = queue(S.g); if (!q.length) return; S.pos = Math.max(0, Math.min(q.length - 1, S.pos + d)); S.fv = "all"; render(); toTop(); }
+
+document.addEventListener("click", e => {
+  const t = e.target.closest("[data-g],[data-j],[data-nav],[data-fv],[data-goto]");
+  if (!t) return;
+  const d = t.dataset;
+  if (d.g !== undefined){ e.preventDefault(); go(d.g); }
+  else if (d.j !== undefined){ S.pos = +d.j; S.fv = "all"; render(); toTop(); }
+  else if (d.nav !== undefined) nav(+d.nav);
+  else if (d.fv !== undefined){ S.fv = d.fv; render(); }
+  else if (d.goto !== undefined){ const c = CARDS[+d.goto]; S.view = "card"; S.g = c.g; S.pos = queue(c.g).indexOf(c); render(); toTop(); }
+});
+$("vcard").onclick = () => { S.view = "card"; render(); };
+$("vlist").onclick = () => { S.view = "list"; render(); };
+$("helpbtn").onclick = () => $("help").classList.add("on");
+$("help").onclick = e => { if (e.target === $("help")) $("help").classList.remove("on"); };
+
+document.addEventListener("keydown", e => {
+  if (/INPUT|SELECT|TEXTAREA/.test(e.target.tagName) || e.metaKey || e.ctrlKey || e.altKey) return;
+  const help = $("help");
+  if (e.key === "Escape") return help.classList.remove("on");
+  if (e.key === "?") return help.classList.toggle("on");
+  if (help.classList.contains("on")) return;
+  if (e.key === "ArrowRight") nav(1);
+  else if (e.key === "ArrowLeft") nav(-1);
+});
+
+CARDS = window.CARDS || []; CARDS.forEach((c, i) => c.o = i);
+{
+  const [hg, hp] = location.hash.slice(1).split("/");
+  if (sectionOf(hg)) { S.g = hg; S.pos = Math.max(0, (+hp || 1) - 1); }
+  else S.g = (SECTIONS.flatMap(s => s.items).find(i => queue(i.id).length) || {id:"merge"}).id;
+  render();
+}
+</script>
+<i id=end></i>
+</body>
+</html>

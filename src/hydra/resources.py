@@ -48,6 +48,23 @@ def is_archive(p) -> bool:
     return p.is_dir() and (p / layout.MANIFEST).is_file()
 
 
+def archive_format(root) -> int | None:
+    """hydra.yaml `format:` as a number; None when it is missing or not a number."""
+    p = Path(root) / layout.MANIFEST
+    doc = (yamlcache.load(p) or {}) if p.is_file() else {}
+    got = doc.get("format") if isinstance(doc, dict) else None
+    return got if isinstance(got, int) and not isinstance(got, bool) else None
+
+
+def _readable(root) -> Path:
+    """`root`, unless a newer hydra wrote it: its files would be read wrongly, and silently."""
+    got = archive_format(root)
+    if got is not None and got > layout.FORMAT_VERSION:
+        raise SystemExit(f"hydra: {root} is archive format {got}; this hydra reads format "
+                         f"{layout.FORMAT_VERSION} and older. Upgrade hydra to open it")
+    return Path(root)
+
+
 def names_archive(word) -> bool:
     """True when a command's first word is an archive folder or a `.hydra` file
     (taken as the archive), not a search word or a file."""
@@ -104,6 +121,14 @@ DEFAULTS = {
     "params": tuple(sorted(f"{layout.PARAMS_DIR}/{p.name}"
                            for p in (TEMPLATE / layout.PARAMS_DIR).glob("*.param.yaml"))),
     "artifact": (layout.ARTIFACT,),
+    "keys": (layout.KEYS,),
+    "kinship": (layout.KINSHIP,),
+    "scope": (layout.SCOPE,),
+    "standards": (layout.STANDARDS,),
+    "vocabularies": (layout.VOCABULARIES,),
+    "wikidata": (layout.WIKIDATA,),
+    "capacity": (layout.CAPACITY,),
+    "groups": (layout.GROUPS,),
 }
 # The hierarchy defaults can be switched off (the build reads them as empty);
 # the others are what the compiler itself runs on.
@@ -197,15 +222,15 @@ def archive(path=None, *, read_only: bool = False, built: bool = True) -> Path:
     if path:
         if not is_archive(path):
             raise SystemExit(f"hydra: {path} is not an archive (no {layout.MANIFEST})")
-        return Path(path)
+        return _readable(path)
     act = activated()
     if act:
         if not is_archive(act):
             raise SystemExit(f"hydra: the active archive {act} is gone or no longer an archive "
                              f"(no {layout.MANIFEST}); activate another, or deactivate")
-        return act
+        return _readable(act)
     if is_archive(Path.cwd()):
-        return Path.cwd()
+        return _readable(Path.cwd())
     raise SystemExit("hydra: no archive given, none active (activate <dir>), "
                      "and the current folder is not one")
 

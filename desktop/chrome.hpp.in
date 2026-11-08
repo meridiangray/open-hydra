@@ -1,0 +1,3 @@
+#pragma once
+
+inline constexpr char hydra_desktop_chrome[] = R"hydra(@HYDRA_DESKTOP_CHROME@)hydra";

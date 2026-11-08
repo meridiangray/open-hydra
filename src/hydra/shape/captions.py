@@ -10,12 +10,15 @@ from hydra.identity.types import norm_text
 from hydra.review import ids
 
 
-def caption(rec: dict, verdicts: dict | None = None) -> str:
+def caption(rec: dict, verdicts: dict | None = None, also=()) -> str:
+    """`also`: the ids merged into `rec`; a pin on any of them holds for the entity
+    (the record that survives a merge can change, a decision on the entity should not)."""
     props = rec.get("properties") or {}
     names = props.get("name") or []
-    pin = (verdicts or {}).get(ids.caption_key(rec["id"]))
-    if isinstance(pin, str) and pin in names:
-        return pin
+    for rid in (rec["id"], *sorted(also)):
+        pin = (verdicts or {}).get(ids.caption_key(rid))
+        if isinstance(pin, str) and pin in names:
+            return pin
     if names:
         return max(names, key=lambda n: (len(norm_text(n).split()), len(n), -names.index(n)))
     return (props.get("title") or

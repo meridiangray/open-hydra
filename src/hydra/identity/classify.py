@@ -146,11 +146,38 @@ def classify(schema_name: str, params_dir: str | Path | None = None) -> dict[str
     schema.ensure()
     key = (schema.LOADED.get("key"), schema_name, _param_stamp(params_dir, schema_name))
     if key[0] is not None and key in _CACHE:
-        return PropMap(_CACHE[key])
-    out = _classify(schema_name, params_dir)
-    if key[0] is not None:
-        _CACHE[key] = out
-    return PropMap(out)
+        out = _CACHE[key]
+    else:
+        out = _classify(schema_name, params_dir)
+        if key[0] is not None:
+            _CACHE[key] = out
+    pm = PropMap(out)
+    pm.__dict__["same_name"] = same_name_policy(params_dir, schema_name)
+    return pm
+
+
+SAME_NAME = ("review", "merge")
+DEFAULT_SAME_NAME = "review"      # when neither the type's param file nor hydra.yaml says
+
+
+def same_name_policy(params_dir, schema_name: str) -> str:
+    """What an exact name with nothing against it does: `same_name:` in
+    `<Type>.param.yaml`, else in the archive's `hydra.yaml`, else `review`.
+    `review`: proposed, never merged on its own, since a name is no proof of
+    identity. `merge`: merged (with scope deciding for people, see scope.py),
+    for an archive or a type whose names are their identity."""
+    got = None
+    if params_dir:
+        path = Path(params_dir) / f"{schema_name}.param.yaml"
+        if yamlcache.is_file(path):
+            got = (yamlcache.load(path) or {}).get("same_name")
+        if got is None:
+            parents = Path(params_dir).parents
+            manifest = parents[2] / "hydra.yaml" if len(parents) > 2 else None
+            if manifest is not None and yamlcache.is_file(manifest):
+                got = (yamlcache.load(manifest) or {}).get("same_name")
+    got = str(got or DEFAULT_SAME_NAME)
+    return got if got in SAME_NAME else "review"
 
 
 def _classify(schema_name: str, params_dir: str | Path | None = None) -> dict[str, PropertyClass]:
@@ -179,6 +206,9 @@ def _classify(schema_name: str, params_dir: str | Path | None = None) -> dict[st
             replace[cat] = prop in wanted_set
             out[prop] = PropertyClass(prop=pc.prop, ftm_type=pc.ftm_type, range=pc.range,
                                       **replace)
+    if "upstream" in out:          # a canonical pin is identity by definition: no param file can demote it
+        out["upstream"] = PropertyClass(prop="upstream", ftm_type="identifier", range=None,
+                                        match=True, distinct=True, fold=False)
     return out
 
 
@@ -198,6 +228,9 @@ def param_issues(params_dir, schema_names) -> list[str]:
             continue
         if doc.get("schema") not in (None, name):
             issues.append(f"params: {fp.name} says `schema: {doc.get('schema')}`")
+        if doc.get("same_name") not in (None, *SAME_NAME):
+            issues.append(f"params: {fp.name} `same_name: {doc.get('same_name')}` is not one of "
+                          f"{', '.join(SAME_NAME)}; review is used")
         props = schema.resolve(name)["props"]
         for cat in ("match", "distinct", "fold"):
             unknown = [p for p in doc.get(cat) or [] if p not in props]

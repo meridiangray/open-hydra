@@ -1,4 +1,0 @@
-# Positions for the Pollard demo. One rank is enough here: the titles below are what
-# the records' roles are matched against. The titles the demo's other roles use
-# (fighter pilot, secretary...) are left out on purpose: `hydra-ctl positions --unplaced` lists them.
-Analyst: {titles: [analyst, research analyst]}

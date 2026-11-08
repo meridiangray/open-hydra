@@ -83,6 +83,7 @@ class ParamFile(_Strict):
     match: list[str] | None = None
     distinct: list[str] | None = None
     fold: list[str] | None = None
+    same_name: str | None = None
 
 
 DISPLAY_FIELDS = ("thumb", "portrait", "logo", "badge", "icon")   # render fields, filled by hints.yaml only
@@ -130,10 +131,28 @@ def check(root, direction: dict | None = None) -> list[dict]:
     out += _collections(root)
     out += _old_layout(root)
     out += _archive_manifest(_yaml(root, layout.MANIFEST, out))
+    out += _rules_files(root)
     return out
 
 
-MANIFEST_KEYS = ("name", "format", "ftm", "prefix", "subject", "search", resources.OFF_KEY)
+RULE_FILES = (layout.KEYS, layout.KINSHIP, layout.SCOPE, layout.STANDARDS, layout.VOCABULARIES,
+              layout.WIKIDATA, layout.CAPACITY, layout.GROUPS, "wiki.yaml",
+              layout.UNIVERSE_WIKI, layout.UNIVERSE_VERDICTS)
+
+
+def _rules_files(root: Path) -> list[dict]:
+    """The rules and config YAMLs beyond the ones `check` reads closely: each must parse
+    and be a mapping (a string or a list in one silently does nothing)."""
+    out = []
+    for rel in RULE_FILES:
+        doc = _yaml(root, rel, out)
+        if doc is not None and not isinstance(doc, dict):
+            out.append(issue("error", "rules.shape", rel, "", "must be a mapping; ignored"))
+    return out
+
+
+MANIFEST_KEYS = ("name", "format", "ftm", "prefix", "subject", "search", "same_name", "history",
+                 "author", "collections", resources.OFF_KEY)
 
 
 def _archive_manifest(doc) -> list[dict]:
@@ -148,9 +167,16 @@ def _archive_manifest(doc) -> list[dict]:
         return [issue("error", "archive.shape", rel, "", "must be a mapping of settings")]
     out = [issue("warning", "archive.unknown-key", rel, str(k), f"'{k}' is not a setting; ignored "
                  f"(settings: {', '.join(MANIFEST_KEYS)})") for k in doc if k not in MANIFEST_KEYS]
+    fmt = doc.get("format")
+    if "format" in doc and (not isinstance(fmt, int) or isinstance(fmt, bool) or fmt < 1):
+        out.append(issue("warning", "archive.bad-format", rel, "format",
+                         f"'{fmt}' is not an archive format number; this hydra writes {layout.FORMAT_VERSION}"))
     if "search" in doc and doc["search"] not in SEARCH:
         out.append(issue("warning", "archive.bad-search", rel, "search",
                          f"'{doc['search']}' is not a search mode ({', '.join(SEARCH)}); searches use all"))
+    if "same_name" in doc and doc["same_name"] not in classify.SAME_NAME:
+        out.append(issue("warning", "archive.bad-same-name", rel, "same_name",
+                         f"'{doc['same_name']}' is not one of {', '.join(classify.SAME_NAME)}; review is used"))
     if "prefix" in doc and not valid_prefix(doc["prefix"]):
         out.append(issue("warning", "archive.bad-prefix", rel, "prefix",
                          f"'{doc['prefix']}' is not a valid id prefix; collections use their own names"))
@@ -161,6 +187,17 @@ def _archive_manifest(doc) -> list[dict]:
     if "subject" in doc and not isinstance(doc["subject"], dict):
         out.append(issue("warning", "archive.bad-subject", rel, "subject",
                          "must be a mapping such as {label: \"Hawthorne Organization\", type: Organization}; ignored"))
+    colls = doc.get("collections")
+    if colls is not None:
+        if not isinstance(colls, dict):
+            out.append(issue("warning", "archive.bad-collections", rel, "collections",
+                             "must be a mapping of collection name to {wiki: {...}}; ignored"))
+        else:
+            for n, spec in colls.items():
+                if not isinstance(spec, dict) or ("wiki" in spec and not isinstance(spec["wiki"], dict)):
+                    out.append(issue("warning", "archive.bad-collections", rel, "collections",
+                                     f"'{n}': a collection's entry is a mapping of overrides, "
+                                     "such as {wiki: {sections: {...}}}; ignored"))
     return out
 
 
@@ -430,6 +467,8 @@ def build_issues(*, compile_issues, verdict_disagreements, verdicts, ledger, nod
     rows = {e["id"] for e in ledger}
     by_id = {r["id"]: r for r in records}
     for k, v in sorted(verdicts.items()):
+        if k.startswith(("cap-H-", "place-H-")):     # decisions by H: universe/bridge.dead_keys checks them
+            continue
         if k.startswith("stub-"):                     # a graduated name: stubs.py
             if v not in schema.SCHEMA:
                 out.append(issue("warning", "verdicts.bad-stub", layout.VERDICTS, k, f"no schema '{v}'; ignored"))

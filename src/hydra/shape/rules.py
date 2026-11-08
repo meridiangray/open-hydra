@@ -354,6 +354,20 @@ IMAGES = ("thumb", "portrait", "logo")      # a rule's image effects; a node col
 EFFECTS = ("position", "badge") + IMAGES
 
 
+def image_reach(root) -> dict[int, int] | None:
+    """{rule index: entities it put an image on} from the last build's declared read, or None when unbuilt."""
+    import json
+    from pathlib import Path
+    p = Path(root) / f"{layout.PARSED_DIR}/declared.json"
+    if not p.is_file():
+        return None
+    out: dict[int, int] = {}
+    for n in (json.loads(p.read_text(encoding="utf-8")).get("nodes") or {}).values():
+        for i in {x["rule"] for k in IMAGES for x in n.get(f"{k}s") or []}:
+            out[i] = out.get(i, 0) + 1
+    return out
+
+
 def rule_set(h) -> dict:
     """A hint rule's effects, from its `set:`."""
     base = h.get("set") if isinstance(h, dict) and isinstance(h.get("set"), dict) else {}

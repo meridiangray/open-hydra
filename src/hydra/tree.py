@@ -30,7 +30,7 @@ from pathlib import Path
 
 import yaml
 
-from hydra import layout, query, resources, schema
+from hydra import kinship, layout, query, resources, schema
 from hydra import sources as sources_mod
 from hydra.cli import style
 from hydra.review import ids, verdicts as vd
@@ -124,14 +124,25 @@ PREFER = {"ownership": "Ownership", "membership": "Membership", "employment": "E
           "directorship": "Directorship", "occupancy": "Occupancy", "family": "Family"}
 # FtM's Family is sideways; only its `relationship` text says who is above whom.
 # That text describes the `relative` from the `person`'s side ("father": the
-# relative is the person's father). These words, and only these, make it
-# vertical; any other (spouse, sibling, uncle, in-law) stays sideways.
-FAMILY_CHILD = {"son", "daughter", "child"}       # the relative is the person's child
-FAMILY_PARENT = {"father", "mother", "parent"}    # the relative is the person's parent
+# relative is the person's father). The words kinship.yaml marks parent or child,
+# and only those, make it vertical; any other (spouse, sibling, uncle, in-law)
+# stays sideways. KIN is the archive's, set when its Family words are read.
+KIN = kinship.load(None)
+
+
+def _is_child(word: str) -> bool:                 # the relative is the person's child
+    return KIN.is_(word, "child")
+
+
+def _is_parent(word: str) -> bool:                # the relative is the person's parent
+    return KIN.is_(word, "parent")
 
 
 def _family_roles(root: Path) -> dict[str, str]:
-    """{Family record id: its `relationship` text}, from the build's claims."""
+    """{Family record id: its `relationship` text}, from the build's claims (and the archive's
+    kinship words become the ones `_above` and `_says` read)."""
+    global KIN
+    KIN = kinship.load(root)
     p = Path(root) / layout.CLAIMS_JSONL
     out = {}
     for line in p.read_text(encoding="utf-8").splitlines() if p.is_file() else ():
@@ -146,9 +157,9 @@ def _above(r: dict, direction: dict, family_roles: dict) -> bool:
     via = r.get("via") or ""
     if via == "Family":
         role = str(family_roles.get(r.get("record")) or "").strip().lower()
-        if role in FAMILY_CHILD:
+        if _is_child(role):
             return r.get("label") == "relative"   # this node is the child
-        if role in FAMILY_PARENT:
+        if _is_parent(role):
             return r.get("label") == "person"
         return False
     d = fold.infer_direction(via, direction)
@@ -185,7 +196,7 @@ def _says(x: dict, about: str) -> str:
     if x["kind"] != "family" or x["of"] == about or not role:
         return role
     w = role.lower()
-    return f"child ({role})" if w in FAMILY_PARENT else f"parent ({role})" if w in FAMILY_CHILD else role
+    return f"child ({role})" if _is_parent(w) else f"parent ({role})" if _is_child(w) else role
 
 
 def prefer(ir: dict, kinds, direction: dict, verdicts: dict | None = None,

@@ -19,7 +19,7 @@ import re
 import unicodedata
 from dataclasses import dataclass
 from functools import lru_cache
-from datetime import date, timedelta
+from datetime import date
 from enum import Enum
 from typing import Callable
 
@@ -61,11 +61,34 @@ def norm_text(v: str) -> str:
 
 def norm_identifier(v: str) -> str:
     """strip everything but alnum, casefold — passportNumber/iban/taxNumber/..."""
-    return re.sub(r"[^a-z0-9]", "", str(v).casefold())
+    s = str(v).strip()
+    if "H-" in s:
+        from hydra.universe import hid
+        pk = hid.pin_key(s)
+        if pk:
+            return "h" + pk[2:]
+    return re.sub(r"[^a-z0-9]", "", s.casefold())
+
+
+def _ns_identifier(v: str) -> tuple[str | None, str]:
+    """(namespace, normalized_key) for `ns:key` or `H-...` pins; (None, norm_identifier) otherwise."""
+    s = str(v).strip()
+    if "H-" in s:
+        from hydra.universe import hid
+        pk = hid.pin_key(s)
+        if pk:
+            return "_h", pk[2:]
+    if ":" in s:
+        ns, _, rest = s.partition(":")
+        ns, rest = ns.strip().casefold(), rest.strip()
+        if ns and rest and re.fullmatch(r"[a-z0-9_-]+", ns):
+            return ns, norm_identifier(rest)
+    return None, norm_identifier(s)
 
 
 def norm_country(v: str) -> str:
-    return str(v).strip().casefold()[:2]
+    from hydra import standards
+    return standards.country_code(v) or norm_text(v)
 
 
 def norm_email(v: str) -> str:
@@ -83,26 +106,12 @@ def norm_url(v: str) -> str:
     return v.rstrip("/")
 
 
-_DATE = re.compile(r"^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?$")
-
-
-def parse_date_range(v: str) -> tuple[date, date] | None:
+def parse_date_range(v: str) -> tuple["date", "date"] | None:
     """Partial dates cover their whole period: "2008" -> the full year,
-    "2008-06" -> the full month. None if unparseable."""
-    m = _DATE.match(str(v).strip())
-    if not m:
-        return None
-    y = int(m.group(1))
-    if m.group(2) and m.group(3):
-        d = date(y, int(m.group(2)), int(m.group(3)))
-        return (d, d)
-    if m.group(2):
-        mo = int(m.group(2))
-        start = date(y, mo, 1)
-        end_month, end_year = (mo % 12 + 1), (y + 1 if mo == 12 else y)
-        end = date(end_year, end_month, 1) - timedelta(days=1)
-        return (start, end)
-    return (date(y, 1, 1), date(y, 12, 31))
+    "2008-06" -> the full month, an approximate one ("c. 1748", "1950s") the
+    period of the date it holds. None if unparseable."""
+    from hydra import dates
+    return dates.date_range(v)
 
 
 # ---- comparators ------------------------------------------------------------
@@ -112,8 +121,11 @@ def parse_date_range(v: str) -> tuple[date, date] | None:
 
 
 def compare_identifier(a: str, b: str) -> Comparison:
-    na, nb = norm_identifier(a), norm_identifier(b)
+    nsa, na = _ns_identifier(a)
+    nsb, nb = _ns_identifier(b)
     if not na or not nb:
+        return NEUTRAL
+    if nsa != nsb and (nsa is not None or nsb is not None):
         return NEUTRAL
     return (Comparison(Signal.MATCH, "exact") if na == nb
             else Comparison(Signal.CONFLICT, "differs"))

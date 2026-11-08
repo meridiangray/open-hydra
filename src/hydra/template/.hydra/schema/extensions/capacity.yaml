@@ -1,0 +1,37 @@
+# .hydra/schema/extensions/capacity.yaml — deals, and the capacity people act in.
+#
+# A deal (a takeover, an auction sale, a purchase) is an Event: it has a date, a price,
+# and the parties in `involved`. Every ownership, representation and payment record
+# that belongs to a deal names it in `transaction`, so the deal's page can list its
+# parties and what each one did. Who a person acted FOR is a Representation
+# (agent -> client): `capacity` says in what capacity, and the rules in
+# .hydra/rules/capacity.yaml say which capacities leave the beneficiary someone else.
+
+Interval:
+  properties:
+    transaction:
+      label: Transaction
+      description: "The deal (an Event) this record belongs to."
+      type: entity
+      range: Event
+      reverse:
+        name: transactionRecords
+        label: Records of this deal
+
+Representation:
+  properties:
+    capacity:
+      label: Capacity
+      description: >
+        In what capacity the agent acted for the client: one of the keys in
+        .hydra/rules/capacity.yaml (negotiator, nominee, officer, signatory...).
+      type: string
+
+Event:
+  properties:
+    amount:
+      label: Amount
+      type: number
+    currency:
+      label: Currency
+      type: string

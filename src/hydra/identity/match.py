@@ -193,17 +193,26 @@ def decide(rec_a: dict, rec_b: dict, pcs: dict, resolved: dict):
     """One candidate pair -> (status, criteria, match_hows), or None when
     nothing matched (a pair that only shared a candidate word is no pair, even
     when a distinct field differs). The rules are the whole of Layer 4's
-    decision: a match with a distinct conflict is only proposed; a hard identifier or exact name merges; a soft
-    exact match alone (address, date) is proposed unless there is nothing else
-    to go on; weaker matches are proposed."""
+    decision. Only proof merges on its own: a hard identifier or a resolved
+    entity, with no distinct conflict. A name is no proof: an exact name is
+    proposed, unless one side is a stub (a bare name standing in for a record)
+    or the type's `same_name: merge` says its name is its identity. A match
+    with a distinct conflict is only proposed; a soft exact match alone
+    (address, date) is proposed unless there is nothing else to go on; weaker
+    matches are proposed."""
     sp = specific(rec_a["schema"], rec_b["schema"])
     conflict, match_hows, _clashes = compare_detail(rec_a, rec_b, pcs[sp], resolved)
     if not match_hows:
         return None             # shared a candidate word, agreed on nothing: not a pair
     if conflict:
         status, criteria = "proposed", "distinct field conflict"
-    elif is_hard(match_hows) or "exact" in match_hows:
+    elif is_hard(match_hows):
         status, criteria = "auto", "exact match, no conflict"
+    elif "exact" in match_hows and (rec_a.get("_stub") or rec_b.get("_stub")
+                                    or getattr(pcs[sp], "same_name", "review") == "merge"):
+        status, criteria = "auto", "exact match, no conflict"
+    elif "exact" in match_hows:
+        status, criteria = "proposed", "same name only: a name is no proof"
     elif _soft_exact(match_hows) and not (
             _named(rec_a, pcs[rec_a["schema"]]) or _named(rec_b, pcs[rec_b["schema"]])):
         status, criteria = "auto", "exact match, no conflict"   # nothing else to go on

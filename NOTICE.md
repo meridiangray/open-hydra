@@ -11,3 +11,6 @@
 The rest of the template, `src/hydra/template/`, is Hydra's own and is MIT licensed (see `src/hydra/template/.hydra/LICENSE-template.txt`). Hydra copies it into every archive it creates, so an archive's files are not AGPL. The Lucide icons in the template keep their own ISC license (`LICENSE-lucide.txt`).
 
 Everything else in this repository, including all of the program code under `src/hydra/` outside `template/`, is AGPL-3.0-only (see LICENSE).
+
+The wheel build downloads pinned npm packages [flag-icons](https://github.com/lipis/flag-icons) (Copyright (c) 2013 Panayiotis Lipiridis) and [circle-flags](https://github.com/HatScripts/circle-flags) (Copyright (c) 2026 HatScripts). Their SVGs and MIT license files ship under `hydra/wiki/assets/flags/` in the wheel, not in the repository. The versions and build-time download are defined in `src/hydra/wiki/flagdata.py`.
+

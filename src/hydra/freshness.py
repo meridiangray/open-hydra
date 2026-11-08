@@ -23,8 +23,13 @@ def input_files(root) -> dict[str, Path]:
     changed (and the code did not), building again would give the same result."""
     root = Path(root)
     out = dict(schema.config_files(root))
-    for rel in (layout.MANIFEST, layout.POSITIONS, layout.HINTS, layout.DEFAULT_POSITIONS, layout.DIRECTION):
+    for rel in (layout.MANIFEST, layout.POSITIONS, layout.HINTS, layout.DEFAULT_POSITIONS, layout.DIRECTION,
+                layout.CANON, layout.UNIVERSE_VERDICTS, layout.UNIVERSE_WIKI, "wiki.yaml"):
         out[rel] = root / rel
+    for f in sorted((root / layout.RULES_DIR).glob("*.yaml")):     # keys/kinship/scope/standards/vocabularies/...
+        out[f.relative_to(root).as_posix()] = f
+    for f in sorted((root / layout.UNIVERSE_DIR / "review").glob("*")):
+        out[f.relative_to(root).as_posix()] = f
     for f in vd.files(root):
         out[f.relative_to(root).as_posix()] = f
     for d in (layout.COLLECTIONS_DIR, layout.SOURCE_ENTRIES, layout.PARSED_DIR, layout.RESOURCES_DIR):

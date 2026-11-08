@@ -7,7 +7,8 @@ from hydra import dates  # noqa: E402
 
 def test_bounds_year_month_day():
     assert dates.bounds("2008") == ("2008-01-01", "2008-12-31")
-    assert dates.bounds("2008-06") == ("2008-06-01", "2008-06-31")
+    assert dates.bounds("2008-06") == ("2008-06-01", "2008-06-30")
+    assert dates.bounds("2008-02") == ("2008-02-01", "2008-02-29")
     assert dates.bounds("2008-06-15") == ("2008-06-15", "2008-06-15")
     assert dates.bounds("") is None
     assert dates.bounds(None) is None

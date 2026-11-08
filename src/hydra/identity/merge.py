@@ -219,7 +219,13 @@ def _merge(records: list[dict], schema_names: list[str],
                             if v not in bucket:
                                 bucket.append(v)
                 final_schema = comp_schema[keep]
-                merged_by_class[final_schema].append({**base, "properties": props, "schema": final_schema})
+                approx = {}
+                for member_id in members:
+                    approx.update((by_id[member_id].get("_meta") or {}).get("approx") or {})
+                merged = {**base, "properties": props, "schema": final_schema}
+                if approx:
+                    merged["_meta"] = {**(base.get("_meta") or {}), "approx": approx}
+                merged_by_class[final_schema].append(merged)
                 if emit:
                     for member_id in members:
                         if member_id != keep:

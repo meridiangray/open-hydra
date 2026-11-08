@@ -1,0 +1,21 @@
+# .hydra/rules/groups.yaml — organizations whose members a page names as one group.
+#
+# A family house, a dynasty, a tribe, a party, a regiment: an Organization whose members the
+# wiki gathers. A page whose record is a member (a Membership, or the relationship in `via`)
+# of such an organization shows it in an infobox row, is listed in its category, and gets a
+# foot box of the group's other members. Which organizations are groups is said here, by
+# name or by a property's value; nothing is read from notes. An archive's own file replaces
+# this one. Hydra ships none:
+#
+# groups:
+#   house:
+#     label: House                  # the infobox row
+#     via: Membership               # the relationship that makes a member (member -> organization)
+#     match:                        # which memberships count: any of these
+#       role: house                 #   the relationship's own role (case ignored)
+#       # name: "^House of "        #   or a regular expression on the organization's title
+#       # classification: dynasty   #   or a property of the organization and the value it must have
+#     category: "{name}"            # the category's name; {name} is the organization's title
+#     box: {order: birth, min: 3}   # the foot box: by year of birth (or `name`), when it has 3 or more
+
+groups: {}

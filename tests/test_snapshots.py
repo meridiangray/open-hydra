@@ -12,6 +12,7 @@ accepted by writing the snapshots again,
 and the diff of `tests/snapshots/` is the record of what changed."""
 import hashlib
 import os
+import re
 from pathlib import Path
 
 import pytest
@@ -82,13 +83,22 @@ def _run(argv, tmp, capsys) -> str:
     return f"exit {code}\n{out.out}" + (f"--- stderr\n{out.err}" if out.err else "")
 
 
+def _scrub(text: str, tmp) -> str:
+    """The tmp dir's absolute path out of the output (`<tmp>`), with Windows separators
+    normalized (the path also appears JSON-escaped, `C:\\tmp\\...`)."""
+    pat = re.escape(str(tmp)).replace(re.escape(os.sep), r"[\\/]+") if os.sep == "\\" else re.escape(str(tmp))
+    text = re.sub(pat, "<tmp>", text)
+    return re.sub(r"<tmp>((?:[\\/]+[\w.-]+)+)",
+                  lambda m: "<tmp>" + re.sub(r"[\\/]+", "/", m.group(1)), text)
+
+
 @pytest.mark.parametrize("name", sorted(COMMANDS))
 def test_command_output(name, demo, capsys, monkeypatch):
     tmp, arch, _ = demo
     monkeypatch.setenv("COLUMNS", "120")
     monkeypatch.setenv("NO_COLOR", "1")
     argv = [str(arch) if a == D else a for a in COMMANDS[name]]
-    _check(name, _run(argv, tmp, capsys).replace(str(tmp), "<tmp>"))
+    _check(name, _scrub(_run(argv, tmp, capsys), tmp))
 
 
 @pytest.mark.parametrize("kind", REVIEWS)
@@ -100,7 +110,7 @@ def test_review_session(kind, demo, monkeypatch):
     before = vfile.read_bytes() if vfile.is_file() else None
     review.main([str(arch), "--only", kind, "--no-build"], ask=lambda _p: "", say=out.append)
     assert (vfile.read_bytes() if vfile.is_file() else None) == before          # skipped: nothing written
-    _check(f"review-{kind}", "\n".join(map(str, out)).replace(str(tmp), "<tmp>") + "\n")
+    _check(f"review-{kind}", _scrub("\n".join(map(str, out)), tmp) + "\n")
 
 
 def test_build_line_and_files(demo):
@@ -127,5 +137,7 @@ def test_export_and_pack(demo, capsys, monkeypatch):
     files = sorted(p for p in (tmp / "out").rglob("*") if p.is_file())
     out += [f"{hashlib.sha256(p.read_bytes()).hexdigest()[:16]}  {p.relative_to(tmp).as_posix()}"
             for p in files if p.name != "export.yaml"]
-    out.append(_run(["pack", str(arch), "-o", str(tmp / "out" / "demo.hydra")], tmp, capsys))
-    _check("export-pack", "\n".join(out).replace(str(tmp), "<tmp>") + "\n")
+    # the pack's size follows its history (snapshot times, line endings): the files above are the check
+    out.append(re.sub(r"\d[\d,]* KB", "<size> KB",
+                      _run(["pack", str(arch), "-o", str(tmp / "out" / "demo.hydra")], tmp, capsys)))
+    _check("export-pack", _scrub("\n".join(out), tmp) + "\n")

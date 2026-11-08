@@ -28,7 +28,9 @@ from hydra.ingest import default_prefix, valid_prefix
 from hydra.cli import style
 
 
-def create(dest, name: str = "", prefix: str = "") -> Path:
+def create(dest, name: str = "", prefix: str = "", universe: bool = True) -> Path:
+    """A new archive at `dest`, with a universe layer of one (itself, as `self`) unless
+    `universe` is off: every build then gives its entities canonical ids (Hs)."""
     dest = Path(dest)
     if dest.exists() and any(dest.iterdir()):
         raise SystemExit(f"hydra: {dest} exists and is not empty")
@@ -41,6 +43,9 @@ def create(dest, name: str = "", prefix: str = "") -> Path:
     text = re.sub(r"(?m)^name: .*$", lambda _: f"name: {value}" + (f"\nprefix: {prefix}" if prefix else ""),
                   text, count=1)
     manifest.write_text(text, encoding="utf-8")
+    if universe:
+        from hydra.universe import layer
+        layer.init(dest)
     return dest
 
 

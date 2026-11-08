@@ -38,6 +38,7 @@ CACHE_DIR = f"{layout.INTERNAL}/cache"
 _FILE = "yaml.json"
 _FORMAT = 2
 _STORES: dict[str, dict] = {}                         # archive root -> {"files": {...}, "derived": {...}, "dirty": bool}
+_MEM: dict[tuple, object] = {}                        # (path, size, mtime) -> parsed doc for non-archive files (template)
 _FROZEN: dict | None = None                            # during a build: path -> stat result (or None)
 _ROOTS: dict[str, Path | None] = {}                    # folder -> the archive it is in
 _TEMPLATE = Path(__file__).resolve().parent / "template"   # the shipped template: never cached into
@@ -120,12 +121,15 @@ def _stamp(st) -> list:
 def load(path):
     """yaml.safe_load of the file at `path`, from the cache while it is unchanged."""
     path = Path(os.path.abspath(path))
-    root = _archive_of(path.parent)
-    if root is None:
-        return parse(path.read_text(encoding="utf-8"))
     st = stat(path)
     if st is None:
         raise FileNotFoundError(path)
+    root = _archive_of(path.parent)
+    if root is None:
+        key = (str(path), st.st_size, st.st_mtime_ns)
+        if key not in _MEM:
+            _MEM[key] = parse(path.read_text(encoding="utf-8"))
+        return copy.deepcopy(_MEM[key])
     store, rel = _store(root), path.relative_to(root).as_posix()
     hit = store["files"].get(rel)
     if hit and hit[0] == _stamp(st):

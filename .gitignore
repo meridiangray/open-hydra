@@ -51,3 +51,12 @@ Thumbs.db
 
 # mkdocs output
 site/
+
+# stray scratch dirs (design notes now live in the hydra-docs repo)
+extra/
+
+# local demo/working archives: data, not code, never tracked
+archive-demos/
+
+# flag SVGs fetched at build/dev time (flagdata.py) — never committed
+src/hydra/wiki/assets/flags/

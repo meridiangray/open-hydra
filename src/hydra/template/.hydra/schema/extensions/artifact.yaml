@@ -17,6 +17,14 @@ Thing:
       reverse:
         name: sourced
         label: Entities sourced
+    # `upstream`: what this record is canonically. Either an H (`H-d0-7k2m9q4xbz3t`, optionally
+    # `universe:H-...`): two records pinned to one H are one entity, compared by the H's body
+    # (its state and flags never matter). Or a key another system gave it, `namespace:key`
+    # (`wikidata:Q57340`, `acme:EMP-0042`): records holding one key are one entity, and
+    # .hydra/rules/keys.yaml says how each namespace is shown and compared, and which is primary.
+    upstream:
+      label: Upstream
+      type: identifier
 
 # Free-text annotation on interval/edge records and case-file pages.
 Interval:
